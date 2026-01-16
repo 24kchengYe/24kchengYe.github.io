@@ -1,0 +1,87 @@
+{
+  "personal": {
+    "name": "Yecheng Zhang",
+    "name_chinese": "张业成",
+    "title": "PhD Student",
+    "affiliation": "Beijing City Lab, Tsinghua University",
+    "profile_image": "images/profile.jpg"
+  },
+
+  "biography": {
+    "identity": "I am a PhD student at Beijing City Lab, Tsinghua University.",
+    "education": "I received my bachelor's degree from Hefei University of Technology in 2023.",
+    "research_interests": "My research focuses on urban modeling, urbanization processes, AI applications in urban science, and urban resilience."
+  },
+
+  "research_fields": [
+    "Urban Model",
+    "Urbanization",
+    "AI for Urban Science",
+    "Urban Resilience"
+  ],
+
+  "statistics": {
+    "total_citations": {
+      "display": "Total Citations",
+      "value": 0,
+      "auto_update": true,
+      "source": "google_scholar"
+    },
+    "total_downloads": {
+      "display": "Total Downloads",
+      "value": 17000,
+      "auto_update": false
+    },
+    "highly_cited_papers": {
+      "display": "Highly Cited Papers",
+      "value": 1,
+      "auto_update": true,
+      "source": "google_scholar"
+    }
+  },
+
+  "contact": [
+    {
+      "display": "Email",
+      "value": "zhangyec23@mails.tsinghua.edu.cn",
+      "link": "mailto:zhangyec23@mails.tsinghua.edu.cn",
+      "icon": "📧"
+    },
+    {
+      "display": "Google Scholar",
+      "value": "Google Scholar Profile",
+      "link": "https://scholar.google.com/",
+      "icon": "🎓"
+    },
+    {
+      "display": "GitHub",
+      "value": "GitHub Profile",
+      "link": "https://github.com/",
+      "icon": "💻"
+    },
+    {
+      "display": "ORCID",
+      "value": "0000-0000-0000-0000",
+      "link": "https://orcid.org/0000-0000-0000-0000",
+      "icon": "🔗"
+    },
+    {
+      "display": "Figshare",
+      "value": "Figshare Profile",
+      "link": "https://figshare.com/",
+      "icon": "📊"
+    },
+    {
+      "display": "ResearchGate",
+      "value": "ResearchGate Profile",
+      "link": "https://www.researchgate.net/",
+      "icon": "📖"
+    }
+  ],
+
+  "news_config": {
+    "items_per_page": 10,
+    "show_pagination": true,
+    "auto_generate": true
+  }
+}

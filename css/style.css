@@ -1,0 +1,1161 @@
+/* ========================================
+   个人主页样式表
+   ======================================== */
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "微软雅黑", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #24292e;
+    background: #f6f8fa;
+    font-size: 16px;
+}
+
+/* 容器 */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========================================
+   导航菜单
+   ======================================== */
+#navbar {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#navbar a {
+    color: #0366d6;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#navbar a:hover {
+    background: #f6f8fa;
+    color: #0056b3;
+}
+
+#navbar a:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   通用区块样式
+   ======================================== */
+.section {
+    background: white;
+    margin: 30px 0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #24292e;
+    border-bottom: 3px solid #0366d6;
+    padding-bottom: 10px;
+}
+
+.section h3 {
+    font-size: 1.5em;
+    margin: 30px 0 20px;
+    color: #586069;
+}
+
+/* ========================================
+   个人信息卡片
+   ======================================== */
+.profile-header {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 4px solid #fff;
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #24292e;
+}
+
+.profile-info .title {
+    font-size: 1.3em;
+    color: #586069;
+    margin-bottom: 5px;
+}
+
+.profile-info .affiliation {
+    font-size: 1.1em;
+    color: #6a737d;
+    margin-bottom: 20px;
+}
+
+/* 社交链接 */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    background: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(3, 102, 214, 0.3);
+}
+
+/* 学术统计 */
+.stats {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 6px;
+    border-left: 4px solid #0366d6;
+}
+
+.stats p {
+    margin: 8px 0;
+    font-size: 1.05em;
+    color: #24292e;
+}
+
+.stat-number {
+    font-weight: bold;
+    color: #0366d6;
+    font-size: 1.1em;
+}
+
+/* 研究兴趣 */
+.research-interests {
+    margin: 30px 0;
+}
+
+.research-interests h2 {
+    border-color: #28a745;
+}
+
+.research-interests ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.research-interests li {
+    padding: 12px 20px;
+    background: #f6f8fa;
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.research-interests li:hover {
+    background: #e8f5e9;
+    transform: translateX(5px);
+}
+
+/* 个人简介 */
+.biography {
+    margin: 30px 0;
+}
+
+.biography p {
+    margin: 12px 0;
+    line-height: 1.8;
+    color: #24292e;
+    text-align: left;
+}
+
+/* 中文名样式 */
+.name-chinese {
+    font-size: 0.7em;
+    color: #6a737d;
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+/* ========================================
+   数据集部分
+   ======================================== */
+.dataset-intro {
+    font-size: 1.2em;
+    color: #0366d6;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f0f7ff;
+    border-left: 4px solid #0366d6;
+    border-radius: 4px;
+}
+
+.dataset-list,
+#datasets-container {
+    display: grid;
+    gap: 20px;
+}
+
+.dataset-item {
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    transition: all 0.3s ease;
+}
+
+.dataset-item:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.dataset-item h4 {
+    color: #24292e;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+}
+
+.dataset-item p {
+    color: #586069;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.dataset-item .icon {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+.dataset-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.dataset-links a {
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.dataset-links a:hover {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* 代码工具部分 */
+#code-container {
+    display: grid;
+    gap: 20px;
+}
+
+.code-tool-item {
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    border-left: 4px solid #6f42c1;
+    transition: all 0.3s ease;
+}
+
+.code-tool-item:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.code-tool-item h4 {
+    color: #24292e;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+}
+
+.code-tool-item p {
+    color: #586069;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.code-tool-item .icon {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+.code-tool-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.code-tool-links a {
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.code-tool-links a:hover {
+    background: #6f42c1;
+    color: white;
+    border-color: #6f42c1;
+}
+
+.paper-note {
+    color: #d73a49;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ========================================
+   新闻动态
+   ======================================== */
+.news-list {
+    max-width: 900px;
+}
+
+.news-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e1e4e8;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    background: #f6f8fa;
+    padding-left: 10px;
+}
+
+.news-date {
+    font-weight: bold;
+    color: #0366d6;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.news-content {
+    flex: 1;
+    color: #24292e;
+}
+
+/* 置顶统计行样式 */
+#stats-line-container {
+    margin-bottom: 30px;
+}
+
+.news-item.pinned {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    border-left: 4px solid #ffd700;
+    border-bottom: none;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.news-item.pinned:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    padding-left: 20px;
+}
+
+.news-item.pinned .news-date {
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+.news-item.pinned .news-content {
+    color: white;
+}
+
+.news-item.pinned strong {
+    color: #ffd700;
+}
+
+/* 分页控制样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.pagination button,
+.page-btn {
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #24292e;
+}
+
+.pagination button:hover,
+.page-btn:hover {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(3, 102, 214, 0.3);
+}
+
+.pagination button.active,
+.page-btn.active {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+    font-weight: 600;
+}
+
+.pagination button:disabled,
+.page-btn:disabled,
+.pagination button.disabled,
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f6f8fa;
+}
+
+.pagination button:disabled:hover,
+.page-btn:disabled:hover,
+.pagination button.disabled:hover,
+.page-btn.disabled:hover {
+    background: #f6f8fa;
+    color: #24292e;
+    transform: none;
+    box-shadow: none;
+}
+
+.page-ellipsis {
+    padding: 10px 8px;
+    color: #6a737d;
+    font-weight: 500;
+}
+
+/* ========================================
+   论文列表
+   ======================================== */
+.pub-category {
+    color: #0366d6;
+    font-size: 1.4em;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid #0366d6;
+}
+
+.paper-item {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    background: white;
+}
+
+.paper-thumbnail {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid #e1e4e8;
+}
+
+.paper-info {
+    flex: 1;
+}
+
+.paper-title {
+    font-size: 1.15em;
+    margin-bottom: 12px;
+    color: #24292e;
+    line-height: 1.4;
+}
+
+.paper-authors {
+    margin-bottom: 8px;
+    color: #586069;
+}
+
+.paper-authors strong {
+    color: #0366d6;
+    font-weight: 600;
+}
+
+.paper-venue {
+    margin-bottom: 8px;
+    color: #6a737d;
+}
+
+.paper-venue em {
+    font-style: normal;
+    font-weight: 500;
+    color: #24292e;
+}
+
+.show_paper_citations {
+    color: #28a745;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.paper-links a {
+    padding: 6px 14px;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #24292e;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.paper-links a:hover {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+}
+
+/* ========================================
+   荣誉奖项
+   ======================================== */
+#awards-container {
+    max-width: 900px;
+}
+
+.award-year-section {
+    margin-bottom: 30px;
+}
+
+.award-year-section h3 {
+    color: #0366d6;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid #0366d6;
+}
+
+.award-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    background: #f6f8fa;
+    border-radius: 6px;
+    border-left: 3px solid #ffd700;
+    transition: all 0.3s ease;
+}
+
+.award-item:hover {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.award-item h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #24292e;
+}
+
+.award-item p {
+    color: #586069;
+    font-size: 0.95em;
+}
+
+/* 旧版荣誉样式保留 */
+.honors-list {
+    max-width: 900px;
+}
+
+.honor-item {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.honor-year {
+    font-weight: bold;
+    color: #0366d6;
+    font-size: 1.2em;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.honor-content h4 {
+    font-size: 1.15em;
+    margin-bottom: 5px;
+    color: #24292e;
+}
+
+.honor-content p {
+    color: #586069;
+}
+
+/* ========================================
+   教育经历
+   ======================================== */
+.education-list {
+    max-width: 900px;
+}
+
+.education-item {
+    display: flex;
+    gap: 30px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.edu-timeline {
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.edu-year {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #0366d6;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.edu-content h4 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #24292e;
+}
+
+.edu-school {
+    font-weight: 600;
+    color: #0366d6;
+    margin-bottom: 5px;
+}
+
+.edu-advisor,
+.edu-desc {
+    color: #586069;
+    margin-bottom: 5px;
+}
+
+/* ========================================
+   学术报告
+   ======================================== */
+.talks-list {
+    max-width: 900px;
+}
+
+.talk-item {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.talk-date {
+    font-weight: bold;
+    color: #0366d6;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.talk-content h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #24292e;
+}
+
+.talk-content p {
+    color: #586069;
+}
+
+/* ========================================
+   学术活动
+   ======================================== */
+.activities-group {
+    margin: 30px 0;
+}
+
+.activities-group h3 {
+    color: #0366d6;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    padding-left: 15px;
+    border-left: 4px solid #0366d6;
+}
+
+.activities-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.activities-group li {
+    padding: 12px 0 12px 25px;
+    border-left: 3px solid #e1e4e8;
+    margin-bottom: 10px;
+    color: #24292e;
+    transition: all 0.3s ease;
+    background: #f6f8fa;
+    border-radius: 4px;
+}
+
+.activities-group li:hover {
+    border-left-color: #0366d6;
+    padding-left: 30px;
+    color: #0366d6;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 技能标签 */
+.skills-container {
+    margin-top: 20px;
+}
+
+.skill-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    margin: 6px 8px 6px 0;
+    background: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 20px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+    transform: translateY(-2px);
+}
+
+.skill-item .skill-name {
+    font-weight: 600;
+}
+
+.skill-item .skill-level {
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+/* ========================================
+   联系方式
+   ======================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #0366d6;
+    color: white;
+    border-color: #0366d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(3, 102, 214, 0.3);
+}
+
+.contact-item .icon {
+    font-size: 1.5em;
+    flex-shrink: 0;
+}
+
+.contact-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.contact-item:hover strong {
+    color: white;
+}
+
+.contact-item a {
+    color: #0366d6;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover a {
+    color: white;
+}
+
+/* 旧版联系方式样式保留（如需要） */
+.contact-info {
+    max-width: 700px;
+    padding: 20px;
+    background: #f6f8fa;
+    border-radius: 8px;
+    border-left: 4px solid #0366d6;
+}
+
+.contact-info p {
+    margin: 12px 0;
+    color: #24292e;
+    font-size: 1.05em;
+}
+
+.contact-info strong {
+    color: #0366d6;
+    min-width: 80px;
+    display: inline-block;
+}
+
+/* ========================================
+   返回顶部按钮
+   ======================================== */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #0366d6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: none;
+}
+
+#back-to-top:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(3, 102, 214, 0.5);
+}
+
+#back-to-top.visible {
+    display: block;
+}
+
+/* ========================================
+   页脚
+   ======================================== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #24292e;
+    color: #959da5;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ========================================
+   响应式设计
+   ======================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 25px 20px;
+        margin: 20px 0;
+    }
+
+    .section h2 {
+        font-size: 1.6em;
+    }
+
+    /* 导航菜单 */
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #navbar a {
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* 个人信息 */
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-info h1 {
+        font-size: 2em;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* 论文列表 */
+    .paper-item {
+        flex-direction: column;
+    }
+
+    .paper-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 教育、荣誉等列表 */
+    .education-item,
+    .honor-item,
+    .talk-item,
+    .news-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .edu-year,
+    .honor-year,
+    .talk-date,
+    .news-date {
+        min-width: auto;
+    }
+
+    /* 研究兴趣 */
+    .research-interests ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* 联系方式网格 */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 分页控制 */
+    .pagination {
+        gap: 6px;
+    }
+
+    .pagination button,
+    .page-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    /* 置顶News */
+    .news-item.pinned {
+        padding: 15px;
+    }
+
+    .news-item.pinned .news-date {
+        font-size: 1.2em;
+    }
+
+    /* 数据集和代码工具 */
+    #datasets-container,
+    #code-container {
+        gap: 15px;
+    }
+
+    .dataset-item,
+    .code-tool-item {
+        padding: 15px;
+    }
+
+    /* 奖项 */
+    .award-item {
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.4em;
+    }
+
+    .profile-info h1 {
+        font-size: 1.8em;
+    }
+
+    .social-links a {
+        font-size: 0.85em;
+        padding: 8px 12px;
+    }
+
+    .paper-links a {
+        font-size: 0.85em;
+    }
+}
+
+/* ========================================
+   打印样式
+   ======================================== */
+@media print {
+    #navbar {
+        position: static;
+        box-shadow: none;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .social-links a,
+    .paper-links a {
+        color: #0366d6;
+        border: 1px solid #d1d5da;
+    }
+
+    footer {
+        background: white;
+        color: #24292e;
+    }
+}
+
+/* ========================================
+   动画效果
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 加载动画 */
+.stat-number:empty::after,
+.show_paper_citations:empty::after {
+    content: "⏳";
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

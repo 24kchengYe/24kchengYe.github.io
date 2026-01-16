@@ -1,0 +1,42 @@
+Yecheng Zhang
+Beijing City Lab, Tsinghua University | zhangyec23@mails.tsinghua.edu.cn
+[Google Scholar] | [GitHub] | [Figshare] 
+EDUCATION
+RESEARCH FIELDS
+Urban Model; Urbanization; AI4UrbanScience; Urban Resilience
+OPEN SOURCE DATASETS & CODE
+Total Downloads 17,000+: Global Harmonized Urban Definition (GloPPRUA), Global Ghost City Index (GloGCI), China’s Multi-Attribute Building dataset (CMAB), Generative AI Benchmarks for Urban Science (AI4US)
+PUBLICATIONS
+Selected Journal Papers (Published) (*Corresponding, †co-first)
+Zhang Y†, Zhao H†, Long Y*. CMAB: A Multi-Attribute Building Dataset of China. Scientific Data, 2025, 12(1): 430. (ESI Highly Cited Paper)  
+Zhang Y, Tu T, Long Y*. Inferring Ghost Cities on the Globe in Newly Developed Urban Areas based on Urban Vitality with Multi-source Data. Habitat International, 2025, 158: 103350. 
+Zhang Y, Zhang Q, ..., & Zheng H*. Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic. International Journal of Applied Earth Observation and Geoinformation, 2022, 112: 102942. 
+Li W†, Zhang Y†, ..., & Long Y*. Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition. iScience, 2024, 27(6): 110125.
+Wang L, Hou C, Zhang Y, He J. Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. International Journal of Applied Earth Observation and Geoinformation, 2024, 132: 104058.
+Selected Conference Proceedings (*Corresponding)
+Shi C, Xu H, Li Y, Wei YL, Feng Y, Zhang Y, Niu D. WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval. Proceedings of the 39th AAAI Conference on Artificial Intelligence (AAAI-25), 2025.
+Zhang Y*. Revealing Laws of City Life Cycle. Annual Meeting of American Association of Geographers, Detroit, USA, 2025.
+Zhang Y*, Zhang, Q, ..., & Zheng, H. Artificial Intelligence Prediction of Urban Spatial Risk Factors. In Hybrid Intelligence: Proceedings of the 4th International Conference on Computational Design and Robotic Fabrication, 2022.
+Gu Y, Zhang Y, Xuan W. Generative Design Method of Building Group based on AIP (Aging in Place) Assessment: The Case of Dense Urban Renewal Districts in Hong Kong. Proceedings of the World Congress of Architects, 2023: 479-495.
+Papers Under Review (Working Papers)
+Zhang Y, Zhao R, Huang Z, Long Y*. GenAI Models Capture Urban Science but Oversimplify Complexity. Nature Cities.
+Zhang Y, Long Y*. Systematic Review for Building-Scale Urban Analytics and Simulation. Building Simulation.
+Zhao H†, Zhang Y†, ... ,Long Y*. Monitoring Nationwide and Block-level Housing Vacancy. One Earth. 
+Li F†, Zhang Y†, ... ,Long Y*. Building Restoration Lags Socioeconomic Recovery after Disasters Worldwide. Landscape and Urban Planning. 
+Liu F, Zhao H, Zhang Y, Long Y*, Wang K*. Controlling Housing Vacancy for Urban Carbon Mitigation through Intensive Population–housing Alignment in China. Nature Sustainability. 
+Ma Y, Hong Q, Zhang Y, ... ,Long Y*. Large-scale Imagery and Multi-modal Al Reveal Sustainability Dilemmas in Tibetan Cultural Landscapes across the Trans-Himalaya. npj Urban Sustainability. 
+AWARDS
+"Rising Star" Award (Ten Young Scholars in GIS), The 13th China College GIS Forum, 2025
+"Academic Rising Star" Nominee (Academic Honor, 0.1%), Tsinghua University, 2025
+Outstanding Case for "AI-Empowered Planning", Urban Planning Society of China, 2025
+First Prize Scholarship, Tsinghua University, 2024
+First Prize, WUPENiCity International Competition on Urban Design, 2023
+Top Ten College Students (Highest Honor, 0.1%), Hefei University of Technology, 2023
+ACADEMIC ACTIVITIES
+Exhibitor, China Pavilion, 18th/19th Venice Architecture Biennale, 2023/2025
+Speaker, Applied Urban Modelling (AUM2024), University of Cambridge, UK, 2024
+Speaker, Global Smart Cities Summit (GSCS), Hong Kong, 2023
+Speaker, UIA World Congress of Architects, Copenhagen, Denmark, 2023
+Invited Reviewer: Nature Portfolio journals (Nature Cities, Scientific Data, npj Urban Sustainability), Cities, Computers, Environment and Urban Systems
+TECHNICAL SKILLS
+Tools: Python, GIS; Languages: English, Chinese (Native)

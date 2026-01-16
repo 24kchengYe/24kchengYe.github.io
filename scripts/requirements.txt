@@ -1,0 +1,6 @@
+PyMuPDF>=1.23.0
+Pillow>=10.0.0
+python-dotenv>=1.0.0
+openai>=1.0.0
+anthropic>=0.8.0
+opencv-python>=4.8.0  # 可选，用于本地人脸检测

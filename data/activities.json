@@ -1,0 +1,82 @@
+{
+  "activities": {
+    "exhibitions": [
+      {
+        "title": "China Pavilion, 18th/19th Venice Architecture Biennale",
+        "year": "2023/2025",
+        "location": "Venice, Italy",
+        "role": "Exhibitor",
+        "added_date": "2023-05-01"
+      }
+    ],
+    "talks": [
+      {
+        "title": "Applied Urban Modelling (AUM2024)",
+        "location": "University of Cambridge, UK",
+        "year": 2024,
+        "role": "Speaker",
+        "added_date": "2024-07-15"
+      },
+      {
+        "title": "Global Smart Cities Summit (GSCS)",
+        "location": "Hong Kong",
+        "year": 2023,
+        "role": "Speaker",
+        "added_date": "2023-11-01"
+      },
+      {
+        "title": "UIA World Congress of Architects",
+        "location": "Copenhagen, Denmark",
+        "year": 2023,
+        "role": "Speaker",
+        "added_date": "2023-07-01"
+      }
+    ],
+    "peer_review": [
+      {
+        "journal": "Nature Cities",
+        "role": "Invited Reviewer",
+        "organization": "Nature Portfolio",
+        "added_date": "2024-03-01"
+      },
+      {
+        "journal": "Scientific Data",
+        "role": "Invited Reviewer",
+        "organization": "Nature Portfolio",
+        "added_date": "2024-02-01"
+      },
+      {
+        "journal": "npj Urban Sustainability",
+        "role": "Invited Reviewer",
+        "organization": "Nature Portfolio",
+        "added_date": "2024-01-01"
+      },
+      {
+        "journal": "Cities",
+        "role": "Invited Reviewer",
+        "organization": "Elsevier",
+        "added_date": "2023-12-01"
+      },
+      {
+        "journal": "Computers, Environment and Urban Systems",
+        "role": "Invited Reviewer",
+        "organization": "Elsevier",
+        "added_date": "2023-11-01"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Programming",
+        "items": ["Python", "GIS"]
+      },
+      {
+        "category": "Languages",
+        "items": ["English (Fluent)", "Chinese (Native)"]
+      },
+      {
+        "category": "Expertise",
+        "items": ["Machine Learning", "Deep Learning", "Urban Analytics", "Data Science"]
+      }
+    ]
+  }
+}

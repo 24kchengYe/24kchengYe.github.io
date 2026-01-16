@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "id": "glopprua",
+      "name": "Global Harmonized Urban Definition (GloPPRUA)",
+      "description": "A comprehensive global dataset for harmonized urban area definition and population analysis. Provides consistent urban definitions across countries for comparative urban research.",
+      "downloads": 5000,
+      "icon": "🌍",
+      "links": {
+        "dataset": "#",
+        "paper": "#",
+        "documentation": "#"
+      },
+      "related_paper": "glopprua_2024",
+      "added_date": "2024-06-01"
+    },
+    {
+      "id": "glogci",
+      "name": "Global Ghost City Index (GloGCI)",
+      "description": "A global-scale dataset for identifying and analyzing ghost cities based on urban vitality metrics. Includes multi-source data integration for measuring urban activity patterns.",
+      "downloads": 4000,
+      "icon": "🏙️",
+      "links": {
+        "dataset": "#",
+        "paper": "#",
+        "documentation": "#"
+      },
+      "related_paper": "ghost_cities_2025",
+      "added_date": "2024-12-15"
+    },
+    {
+      "id": "cmab",
+      "name": "China's Multi-Attribute Building Dataset (CMAB)",
+      "description": "A comprehensive multi-attribute building dataset for China, published in Scientific Data (ESI Highly Cited Paper). Contains detailed building footprints and attributes across Chinese cities.",
+      "downloads": 6000,
+      "icon": "🏢",
+      "links": {
+        "dataset": "#",
+        "paper": "#",
+        "code": "#"
+      },
+      "related_paper": "cmab_2025",
+      "added_date": "2025-01-15"
+    },
+    {
+      "id": "ai4us",
+      "name": "Generative AI Benchmarks for Urban Science (AI4US)",
+      "description": "Benchmark datasets for evaluating generative AI models in urban science applications. Designed to test AI performance on various urban analytical tasks.",
+      "downloads": 2000,
+      "icon": "🤖",
+      "links": {
+        "dataset": "#",
+        "code": "#",
+        "documentation": "#"
+      },
+      "related_paper": "genai_review",
+      "added_date": "2024-11-01"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "news": [
+    {
+      "id": "stats_pinned",
+      "date": "auto",
+      "content": "📊 <strong>Total Downloads:</strong> <span id='news-downloads'>17,000+</span> | <strong>Citations:</strong> <span id='news-citations'>Loading...</span> | <strong>Highly Cited:</strong> <span id='news-highly-cited'>1</span> paper",
+      "type": "statistics",
+      "pinned": true,
+      "auto_generated": false
+    },
+    {
+      "id": "news_001",
+      "date": "2025-01-15",
+      "content": "Our paper <em>CMAB: A Multi-Attribute Building Dataset of China</em> was published in <em>Scientific Data</em> (ESI Highly Cited Paper).",
+      "type": "publication",
+      "related_id": "cmab_2025",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_002",
+      "date": "2025-01-10",
+      "content": "Received \"Rising Star\" Award (Ten Young Scholars in GIS) at The 13th China College GIS Forum.",
+      "type": "award",
+      "related_id": "award_2025_1",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_003",
+      "date": "2025-01-10",
+      "content": "Our paper <em>WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval</em> was accepted at <em>AAAI-25</em>.",
+      "type": "publication",
+      "related_id": "wavec2r_2025",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_004",
+      "date": "2025-01-05",
+      "content": "Nominated for \"Academic Rising Star\" at Tsinghua University (Top 0.1%).",
+      "type": "award",
+      "related_id": "award_2025_2",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_005",
+      "date": "2024-12-15",
+      "content": "Our paper <em>Inferring Ghost Cities on the Globe in Newly Developed Urban Areas based on Urban Vitality with Multi-source Data</em> was published in <em>Habitat International</em>.",
+      "type": "publication",
+      "related_id": "ghost_cities_2025",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_006",
+      "date": "2024-12-15",
+      "content": "Released Global Ghost City Index (GloGCI) dataset.",
+      "type": "dataset",
+      "related_id": "glogci",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_007",
+      "date": "2024-07-15",
+      "content": "Presented at Applied Urban Modelling (AUM2024) at University of Cambridge, UK.",
+      "type": "activity",
+      "related_id": "talk_2024_1",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_008",
+      "date": "2024-06-01",
+      "content": "Our paper on global urbanization (<em>Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition</em>) was published in <em>iScience</em>.",
+      "type": "publication",
+      "related_id": "glopprua_2024",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_009",
+      "date": "2024-06-01",
+      "content": "Released Global Harmonized Urban Definition (GloPPRUA) dataset.",
+      "type": "dataset",
+      "related_id": "glopprua",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_010",
+      "date": "2023-11-01",
+      "content": "Presented at Global Smart Cities Summit (GSCS) in Hong Kong.",
+      "type": "activity",
+      "related_id": "talk_2023_1",
+      "pinned": false,
+      "auto_generated": true
+    }
+  ]
+}

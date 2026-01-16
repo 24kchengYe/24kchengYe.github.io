@@ -1,0 +1,18 @@
+{
+  "tools": [],
+  "_comment": "Code & Tools section is currently empty. This section will be hidden on the webpage until you add your first tool.",
+  "_example": {
+    "id": "example_tool",
+    "name": "Urban Data Analyzer",
+    "description": "Python toolkit for urban spatial analysis and visualization. Provides tools for processing multi-source urban data.",
+    "language": "Python",
+    "stars": 0,
+    "icon": "🛠️",
+    "links": {
+      "github": "https://github.com/YOUR_USERNAME/tool-name",
+      "documentation": "#",
+      "demo": "#"
+    },
+    "added_date": "2024-08-01"
+  }
+}

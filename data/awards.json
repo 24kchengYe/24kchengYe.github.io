@@ -1,0 +1,52 @@
+{
+  "awards": [
+    {
+      "year": 2025,
+      "name": "\"Rising Star\" Award (Ten Young Scholars in GIS)",
+      "organization": "The 13th China College GIS Forum",
+      "level": "national",
+      "description": "",
+      "added_date": "2025-01-10"
+    },
+    {
+      "year": 2025,
+      "name": "\"Academic Rising Star\" Nominee (Top 0.1%)",
+      "organization": "Tsinghua University",
+      "level": "university",
+      "description": "Academic Honor",
+      "added_date": "2025-01-05"
+    },
+    {
+      "year": 2025,
+      "name": "Outstanding Case for \"AI-Empowered Planning\"",
+      "organization": "Urban Planning Society of China",
+      "level": "national",
+      "description": "",
+      "added_date": "2025-01-01"
+    },
+    {
+      "year": 2024,
+      "name": "First Prize Scholarship",
+      "organization": "Tsinghua University",
+      "level": "university",
+      "description": "",
+      "added_date": "2024-09-01"
+    },
+    {
+      "year": 2023,
+      "name": "First Prize, WUPENiCity International Competition on Urban Design",
+      "organization": "WUPENiCity International Competition",
+      "level": "international",
+      "description": "",
+      "added_date": "2023-08-01"
+    },
+    {
+      "year": 2023,
+      "name": "Top Ten College Students (Highest Honor, Top 0.1%)",
+      "organization": "Hefei University of Technology",
+      "level": "university",
+      "description": "",
+      "added_date": "2023-06-01"
+    }
+  ]
+}

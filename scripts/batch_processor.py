@@ -279,9 +279,36 @@ class BatchPDFProcessor:
                 print(f"[INFO] 替换了 {replaced_count} 个旧条目")
                 print(f"[INFO] 添加了 {len(new_publications)} 个新条目")
             else:
-                # 普通模式：只添加新条目
-                publications_data['publications'].extend(new_publications)
-                print(f"[INFO] 添加了 {len(new_publications)} 个新条目")
+                # 普通模式：智能去重添加新条目
+                # 收集现有条目的ID和标题（用于去重检查）
+                existing_ids = {p['id'] for p in publications_data['publications']}
+                existing_titles = {p['title'].lower() for p in publications_data['publications']}
+
+                added_count = 0
+                skipped_duplicate_count = 0
+
+                for new_pub in new_publications:
+                    # 检查ID重复
+                    if new_pub['id'] in existing_ids:
+                        print(f"[SKIP] ID重复，跳过: {new_pub['id']}")
+                        skipped_duplicate_count += 1
+                        continue
+
+                    # 检查标题重复
+                    if new_pub['title'].lower() in existing_titles:
+                        print(f"[SKIP] 标题重复，跳过: {new_pub['title'][:50]}...")
+                        skipped_duplicate_count += 1
+                        continue
+
+                    # 不重复，添加新条目
+                    publications_data['publications'].append(new_pub)
+                    existing_ids.add(new_pub['id'])
+                    existing_titles.add(new_pub['title'].lower())
+                    added_count += 1
+
+                print(f"[INFO] 添加了 {added_count} 个新条目")
+                if skipped_duplicate_count > 0:
+                    print(f"[INFO] 跳过 {skipped_duplicate_count} 个重复条目")
 
             # 保存
             if self.save_publications(publications_data):

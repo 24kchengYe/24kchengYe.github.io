@@ -593,6 +593,58 @@
         "verified_online": false,
         "notes": "The specific volume, issue, and page range are not provided in the text."
       }
+    },
+    {
+      "id": "generative_design_method_0",
+      "title": "Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong",
+      "authors": [],
+      "author_note": "",
+      "venue": "",
+      "year": 0,
+      "volume": "",
+      "pages": "",
+      "type": "",
+      "status": "",
+      "badges": [],
+      "image": "images/papers/10Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong.png",
+      "links": {
+        "pdf": "pdfs/10Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong.pdf",
+        "doi": "#"
+      },
+      "citation_key": "generative_design_method_0",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "low",
+        "verified_online": false,
+        "notes": "The provided text does not contain any information due to the limitation in the input text. Please provide the actual content from the PDF for accurate metadata extraction."
+      }
+    },
+    {
+      "id": "generative_design_method_0",
+      "title": "Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong",
+      "authors": [],
+      "author_note": "",
+      "venue": "",
+      "year": 0,
+      "volume": "",
+      "pages": "",
+      "type": "",
+      "status": "",
+      "badges": [],
+      "image": "images/papers/10Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong.png",
+      "links": {
+        "pdf": "pdfs/10Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong.pdf",
+        "doi": "#"
+      },
+      "citation_key": "generative_design_method_0",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "low",
+        "verified_online": false,
+        "notes": "The provided text does not contain any information due to the limitation in the input text. Unable to extract metadata without actual content."
+      }
     }
   ]
 }

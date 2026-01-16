@@ -78,16 +78,18 @@ class PaperMetadataExtractor:
         """
         try:
             doc = fitz.open(pdf_path)
+            total_pages = len(doc)  # Store page count before closing
+            pages_to_extract = min(max_pages, total_pages)
             text = ""
 
-            for page_num in range(min(max_pages, len(doc))):
+            for page_num in range(pages_to_extract):
                 page = doc[page_num]
                 text += page.get_text()
                 text += f"\n\n--- Page {page_num + 1} End ---\n\n"
 
             doc.close()
 
-            print(f"[OK] 已提取前 {min(max_pages, len(doc))} 页文本 ({len(text)} 字符)")
+            print(f"[OK] 已提取前 {pages_to_extract} 页文本 ({len(text)} 字符)")
             return text
 
         except Exception as e:

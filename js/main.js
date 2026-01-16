@@ -674,6 +674,152 @@ function initPaperPlaceholders() {
     }
 }
 
+/**
+ * 图片放大查看功能（Lightbox）
+ */
+function initImageLightbox() {
+    // 创建Lightbox容器
+    const lightbox = document.createElement('div');
+    lightbox.id = 'image-lightbox';
+    lightbox.style.cssText = `
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+    `;
+
+    const lightboxImg = document.createElement('img');
+    lightboxImg.id = 'lightbox-image';
+    lightboxImg.style.cssText = `
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    `;
+
+    const closeBtn = document.createElement('button');
+    closeBtn.id = 'lightbox-close';
+    closeBtn.innerHTML = '✕';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        background: white;
+        color: #333;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    `;
+
+    closeBtn.addEventListener('mouseenter', () => {
+        closeBtn.style.transform = 'scale(1.1) rotate(90deg)';
+        closeBtn.style.background = '#f44336';
+        closeBtn.style.color = 'white';
+    });
+
+    closeBtn.addEventListener('mouseleave', () => {
+        closeBtn.style.transform = 'scale(1) rotate(0deg)';
+        closeBtn.style.background = 'white';
+        closeBtn.style.color = '#333';
+    });
+
+    lightbox.appendChild(lightboxImg);
+    lightbox.appendChild(closeBtn);
+    document.body.appendChild(lightbox);
+
+    // 打开Lightbox函数
+    function openLightbox(imageSrc) {
+        lightboxImg.src = imageSrc;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // 防止背景滚动
+    }
+
+    // 关闭Lightbox函数
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // 点击背景关闭
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // 点击关闭按钮关闭
+    closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeLightbox();
+    });
+
+    // ESC键关闭
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            closeLightbox();
+        }
+    });
+
+    // 为所有论文缩略图添加点击事件
+    function attachLightboxToImages() {
+        const paperImages = document.querySelectorAll('.paper-thumbnail');
+
+        paperImages.forEach(img => {
+            // 添加点击提示样式
+            img.style.cursor = 'pointer';
+            img.title = 'Click to enlarge';
+
+            // 添加点击事件
+            img.addEventListener('click', function() {
+                if (this.src && !this.src.includes('placeholder')) {
+                    openLightbox(this.src);
+                }
+            });
+
+            // 添加hover效果
+            img.addEventListener('mouseenter', function() {
+                this.style.opacity = '0.8';
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'all 0.3s ease';
+            });
+
+            img.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // 初始附加
+    attachLightboxToImages();
+
+    // MutationObserver监听DOM变化（处理动态加载的图片）
+    const observer = new MutationObserver(() => {
+        attachLightboxToImages();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
 // ========================================
 // 主初始化函数
 // ========================================
@@ -724,6 +870,7 @@ async function initApp() {
     initSmoothScroll();
     initBackToTop();
     initPaperPlaceholders();
+    initImageLightbox();
 
     console.log('✓ All modules initialized successfully');
 }

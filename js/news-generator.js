@@ -24,7 +24,7 @@ class NewsGenerator {
             // 获取DOM元素
             this.newsContainer = document.getElementById('news-container');
             this.paginationContainer = document.getElementById('news-pagination');
-            this.statsLine = document.getElementById('stats-line');
+            this.statsLine = document.getElementById('stats-line-container');
 
             if (!this.newsContainer) {
                 console.error('News container not found');
@@ -33,6 +33,12 @@ class NewsGenerator {
 
             // 加载News数据
             await this.loadNews();
+
+            // 渲染置顶News（统计数据行）
+            if (this.statsLine && this.pinnedNews.length > 0) {
+                const pinnedItem = this.pinnedNews[0];
+                this.statsLine.innerHTML = pinnedItem.content;
+            }
 
             // 渲染第一页
             this.renderPage(1);

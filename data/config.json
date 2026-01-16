@@ -2,22 +2,21 @@
   "personal": {
     "name": "Yecheng Zhang",
     "name_chinese": "张业成",
-    "title": "PhD Student",
+    "title": "26, PhD Student",
     "affiliation": "Beijing City Lab, Tsinghua University",
     "profile_image": "images/profile.jpg"
   },
 
   "biography": {
-    "identity": "I am a PhD student at Beijing City Lab, Tsinghua University.",
-    "education": "I received my bachelor's degree from Hefei University of Technology in 2023.",
-    "research_interests": "My research focuses on urban modeling, urbanization processes, AI applications in urban science, and urban resilience."
+    "identity": "Apr 2023 - Sep 2022, PhD Student Urban Planning at Tsinghua University (THU), supervised by Prof. Ying Long",
+    "education": "Sep 2018 - Jun 2023, B.Eng. in Urban Planning at Hefei University of Technology (HFUT).",
+    "research_interests": "My research focuses on urban science and AI."
   },
 
   "research_fields": [
     "Urban Model",
-    "Urbanization",
-    "AI for Urban Science",
-    "Urban Resilience"
+    "AI for Science",
+    "Agent System"
   ],
 
   "statistics": {

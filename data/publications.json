@@ -1,92 +1,185 @@
 {
   "publications": [
     {
-      "id": "cmab_2025",
-      "title": "CMAB: A Multi-Attribute Building Dataset of China",
-      "authors": ["Zhang Y†", "Zhao H†", "Long Y*"],
-      "author_note": "†co-first, *corresponding",
-      "venue": "Scientific Data",
-      "year": 2025,
-      "volume": "12(1)",
-      "pages": "430",
-      "type": "journal",
-      "status": "published",
-      "badges": ["🏆 ESI Highly Cited Paper"],
-      "image": "images/papers/cmab.png",
-      "links": {
-        "pdf": "#",
-        "dataset": "#",
-        "code": "#",
-        "doi": "https://doi.org/10.1038/xxx"
-      },
-      "citation_key": "cmab_2025",
-      "added_date": "2025-01-15"
-    },
-    {
-      "id": "ghost_cities_2025",
-      "title": "Inferring Ghost Cities on the Globe in Newly Developed Urban Areas based on Urban Vitality with Multi-source Data",
-      "authors": ["Zhang Y", "Tu T", "Long Y*"],
+      "id": "urban_spatial_risk_2022",
+      "title": "Urban spatial risk prediction and optimization analysis of POI based on deep learning from the perspective of an epidemic",
+      "authors": [
+        "Yecheng Zhang a",
+        "Qimin Zhang b",
+        "Yuxuan Zhao a",
+        "Yunjie Deng a",
+        "Hao Zheng c*"
+      ],
       "author_note": "*corresponding",
-      "venue": "Habitat International",
-      "year": 2025,
-      "volume": "158",
-      "pages": "103350",
-      "type": "journal",
-      "status": "published",
-      "badges": [],
-      "image": "images/papers/ghost_cities.png",
-      "links": {
-        "pdf": "#",
-        "dataset": "#"
-      },
-      "citation_key": "ghost_cities_2025",
-      "added_date": "2024-12-15"
-    },
-    {
-      "id": "urban_risk_2022",
-      "title": "Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic",
-      "authors": ["Zhang Y", "Zhang Q", "...", "Zheng H*"],
-      "author_note": "*corresponding",
-      "venue": "International Journal of Applied Earth Observation and Geoinformation",
+      "venue": "International Journal of Applied Earth Observations and Geoinformation",
       "year": 2022,
       "volume": "112",
       "pages": "102942",
       "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/urban_risk.png",
+      "image": "images/papers/01Zhang et al 2022 JAG-GAN.png",
       "links": {
-        "pdf": "#",
-        "code": "#"
+        "pdf": "pdfs/01Zhang et al 2022 JAG-GAN.pdf",
+        "doi": "#"
       },
-      "citation_key": "urban_risk_2022",
-      "added_date": "2022-06-01"
+      "citation_key": "urban_spatial_risk_2022",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
     },
     {
-      "id": "glopprua_2024",
-      "title": "Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition",
-      "authors": ["Li W†", "Zhang Y†", "...", "Long Y*"],
+      "id": "modular_assembly_of_2022",
+      "title": "Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles",
+      "authors": [
+        "Xuyin Ding",
+        "Yecheng Zhang",
+        "Yue Zhang",
+        "Xufa Ding",
+        "Hanxin Zhang",
+        "Tian Cao",
+        "Zhi-bei Qu",
+        "Jing Ren",
+        "Lei Li",
+        "Zhijun Guo",
+        "Feng Xu",
+        "Qi-Xian Wang",
+        "Xing Wu",
+        "Guoyue Shi",
+        "Hossam Haick*",
+        "Min Zhang*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "ACS Nano",
+      "year": 2022,
+      "volume": "16",
+      "pages": "17376−17388",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/02Ding et al 2022 ACS_nano-Datafusion.png",
+      "links": {
+        "pdf": "pdfs/02Ding et al 2022 ACS_nano-Datafusion.pdf",
+        "doi": "https://doi.org/10.1021/acsnano.2c08266"
+      },
+      "citation_key": "modular_assembly_of_2022",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "greening_the_concrete_2023",
+      "title": "Greening the concrete jungle: Unveiling the co-mitigation of greenspace configuration on PM2.5 and land surface temperature with explanatory machine learning",
+      "authors": [
+        "Yan Li",
+        "Yecheng Zhang",
+        "Qilin Wu",
+        "Ran Xue",
+        "Xiaoran Wang",
+        "Menglin Si",
+        "Yuyang Zhang*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "Urban Forestry & Urban Greening",
+      "year": 2023,
+      "volume": "88",
+      "pages": "128086",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/03Li et al 2023 UFUG-SHAP.png",
+      "links": {
+        "pdf": "pdfs/03Li et al 2023 UFUG-SHAP.pdf",
+        "doi": "#"
+      },
+      "citation_key": "greening_the_concrete_2023",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
+    },
+    {
+      "id": "rethinking_the_countrylevel_2024",
+      "title": "Rethinking the country-level percentage of population residing in urban area with a global harmonized urban definition",
+      "authors": [
+        "Wenyue Li†",
+        "Yecheng Zhang†",
+        "Mengxing Li",
+        "Ying Long*"
+      ],
       "author_note": "†co-first, *corresponding",
       "venue": "iScience",
       "year": 2024,
-      "volume": "27(6)",
+      "volume": "27",
       "pages": "110125",
       "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/glopprua.png",
+      "image": "images/papers/04Li et al 2024 iScience-GloPPRUA.png",
       "links": {
-        "pdf": "#",
-        "dataset": "#"
+        "pdf": "pdfs/04Li et al 2024 iScience-GloPPRUA.pdf",
+        "doi": "https://doi.org/10.1016/j.isci.2024.110125"
       },
-      "citation_key": "glopprua_2024",
-      "added_date": "2024-06-01"
+      "citation_key": "rethinking_the_countrylevel_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
     },
     {
-      "id": "solar_2024",
-      "title": "Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images",
-      "authors": ["Wang L", "Hou C", "Zhang Y", "He J"],
-      "author_note": "",
+      "id": "_2024",
+      "title": "新城市科学：技术、计算、变革与应用",
+      "authors": [
+        "龙瀛*",
+        "赵慧敏",
+        "张业成"
+      ],
+      "author_note": "*corresponding",
+      "venue": "城市规划 CITY PLANNING REVIEW",
+      "year": 2024,
+      "volume": "48",
+      "pages": "",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/05龙瀛等 2024 城市规划-新城市科学.png",
+      "links": {
+        "pdf": "pdfs/05龙瀛等 2024 城市规划-新城市科学.pdf",
+        "doi": "https://doi.org/10.11819/cpr20240702a"
+      },
+      "citation_key": "_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "measuring_solar_radiation_2024",
+      "title": "Measuring solar radiation and spatio-temporal distribution in different street network direction through solar trajectories and street view images",
+      "authors": [
+        "Lei Wang a",
+        "Ce Hou c",
+        "Yecheng Zhang d",
+        "Jie He a,b*"
+      ],
+      "author_note": "*corresponding",
       "venue": "International Journal of Applied Earth Observation and Geoinformation",
       "year": 2024,
       "volume": "132",
@@ -94,192 +187,412 @@
       "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/solar.png",
+      "image": "images/papers/06Wang et al 2024 JAG-SolarSVIs.png",
       "links": {
-        "pdf": "#"
+        "pdf": "pdfs/06Wang et al 2024 JAG-SolarSVIs.pdf",
+        "doi": "#"
       },
-      "citation_key": "solar_2024",
-      "added_date": "2024-08-01"
+      "citation_key": "measuring_solar_radiation_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
     },
     {
-      "id": "wavec2r_2025",
-      "title": "WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval",
-      "authors": ["Shi C", "Xu H", "Li Y", "Wei YL", "Feng Y", "Zhang Y", "Niu D"],
+      "id": "inferring_ghost_cities_2025",
+      "title": "Inferring ghost cities on the globe in newly developed urban areas based on urban vitality with multi-source data",
+      "authors": [
+        "Yecheng Zhang",
+        "Tangqi Tu",
+        "Ying Long*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "Habitat International",
+      "year": 2025,
+      "volume": "",
+      "pages": "",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png",
+      "links": {
+        "pdf": "pdfs/07Zhang et al 2025 Habitat_International-GloGCI.pdf",
+        "doi": "#"
+      },
+      "citation_key": "inferring_ghost_cities_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "medium",
+        "verified_online": false,
+        "notes": "Specific details such as volume, issue, pages, and DOI are not provided in the text."
+      }
+    },
+    {
+      "id": "cmab_a_multiattribute_2025",
+      "title": "CMAB: A Multi-Attribute Building Dataset of China",
+      "authors": [
+        "Yecheng Zhang†",
+        "Huimin Zhao†",
+        "Ying Long*"
+      ],
+      "author_note": "†co-first, *corresponding",
+      "venue": "Scientific Data",
+      "year": 2025,
+      "volume": "12",
+      "pages": "430",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png",
+      "links": {
+        "pdf": "pdfs/08Zhang et al 2025 Scientific_Data-CMAB.pdf",
+        "doi": "https://doi.org/10.1038/s41597-025-04730-5"
+      },
+      "citation_key": "cmab_a_multiattribute_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "decoding_the_spatial_2025",
+      "title": "Decoding the Spatial Heterogeneity of Bike-Sharing Impacts: Machine Learning Model of Meteorology, Epidemic, and Urban Factors",
+      "authors": [
+        "Jiawei Yao",
+        "Yixin Jian",
+        "Yanting Shen",
+        "Wen Wen",
+        "Chenyu Huang",
+        "Jinyu Wang",
+        "Jiayan Fu",
+        "Zhongqi Yu",
+        "Yecheng Zhang"
+      ],
       "author_note": "",
-      "venue": "Proceedings of the 39th AAAI Conference on Artificial Intelligence (AAAI-25)",
+      "venue": "Journal of Urban Planning and Development",
       "year": 2025,
       "volume": "",
       "pages": "",
-      "type": "conference",
+      "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/wavec2r.png",
+      "image": "images/papers/09Yao et al2025 JUPD.png",
       "links": {
-        "pdf": "#",
-        "code": "#"
+        "pdf": "pdfs/09Yao et al2025 JUPD.pdf",
+        "doi": "https://doi.org/10.1061/JUPDDM.UPENG-5192"
       },
-      "citation_key": "wavec2r_2025",
-      "added_date": "2025-01-10"
+      "citation_key": "decoding_the_spatial_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
     },
     {
-      "id": "city_lifecycle_2025",
-      "title": "Revealing Laws of City Life Cycle",
-      "authors": ["Zhang Y*"],
+      "id": "urban_spatial_risk_2022",
+      "title": "Urban spatial risk prediction and optimization analysis of POI based on deep learning from the perspective of an epidemic",
+      "authors": [
+        "Yecheng Zhang a",
+        "Qimin Zhang b",
+        "Yuxuan Zhao a",
+        "Yunjie Deng a",
+        "Hao Zheng c*"
+      ],
       "author_note": "*corresponding",
-      "venue": "Annual Meeting of American Association of Geographers",
-      "year": 2025,
-      "volume": "",
-      "pages": "",
-      "type": "conference",
-      "status": "published",
-      "badges": [],
-      "image": "images/papers/city_lifecycle.png",
-      "links": {
-        "abstract": "#",
-        "slides": "#"
-      },
-      "citation_key": "city_lifecycle_2025",
-      "added_date": "2025-01-05"
-    },
-    {
-      "id": "ai_prediction_2022",
-      "title": "Artificial Intelligence Prediction of Urban Spatial Risk Factors",
-      "authors": ["Zhang Y*", "Zhang Q", "...", "Zheng H"],
-      "author_note": "*corresponding",
-      "venue": "Hybrid Intelligence: Proceedings of the 4th International Conference on Computational Design and Robotic Fabrication",
+      "venue": "International Journal of Applied Earth Observations and Geoinformation",
       "year": 2022,
-      "volume": "",
-      "pages": "",
-      "type": "conference",
+      "volume": "112",
+      "pages": "102942",
+      "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/ai_prediction.png",
+      "image": "images/papers/01Zhang et al 2022 JAG-GAN.png",
       "links": {
-        "pdf": "#"
+        "pdf": "pdfs/01Zhang et al 2022 JAG-GAN.pdf",
+        "doi": "#"
       },
-      "citation_key": "ai_prediction_2022",
-      "added_date": "2022-09-01"
+      "citation_key": "urban_spatial_risk_2022",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
     },
     {
-      "id": "aging_design_2023",
-      "title": "Generative Design Method of Building Group based on AIP (Aging in Place) Assessment: The Case of Dense Urban Renewal Districts in Hong Kong",
-      "authors": ["Gu Y", "Zhang Y", "Xuan W"],
-      "author_note": "",
-      "venue": "Proceedings of the World Congress of Architects",
+      "id": "modular_assembly_of_2022",
+      "title": "Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles",
+      "authors": [
+        "Xuyin Ding",
+        "Yecheng Zhang",
+        "Yue Zhang",
+        "Xufa Ding",
+        "Hanxin Zhang",
+        "Tian Cao",
+        "Zhi-bei Qu",
+        "Jing Ren",
+        "Lei Li",
+        "Zhijun Guo",
+        "Feng Xu",
+        "Qi-Xian Wang",
+        "Xing Wu",
+        "Guoyue Shi",
+        "Hossam Haick*",
+        "Min Zhang*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "ACS Nano",
+      "year": 2022,
+      "volume": "16",
+      "pages": "17376−17388",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/02Ding et al 2022 ACS_nano-Datafusion.png",
+      "links": {
+        "pdf": "pdfs/02Ding et al 2022 ACS_nano-Datafusion.pdf",
+        "doi": "https://doi.org/10.1021/acsnano.2c08266"
+      },
+      "citation_key": "modular_assembly_of_2022",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "greening_the_concrete_2023",
+      "title": "Greening the concrete jungle: Unveiling the co-mitigation of greenspace configuration on PM2.5 and land surface temperature with explanatory machine learning",
+      "authors": [
+        "Yan Li",
+        "Yecheng Zhang",
+        "Qilin Wu",
+        "Ran Xue",
+        "Xiaoran Wang",
+        "Menglin Si",
+        "Yuyang Zhang*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "Urban Forestry & Urban Greening",
       "year": 2023,
-      "volume": "",
-      "pages": "479-495",
-      "type": "conference",
+      "volume": "88",
+      "pages": "128086",
+      "type": "journal",
       "status": "published",
       "badges": [],
-      "image": "images/papers/aging_design.png",
+      "image": "images/papers/03Li et al 2023 UFUG-SHAP.png",
       "links": {
-        "pdf": "#"
+        "pdf": "pdfs/03Li et al 2023 UFUG-SHAP.pdf",
+        "doi": "#"
       },
-      "citation_key": "aging_design_2023",
-      "added_date": "2023-07-01"
+      "citation_key": "greening_the_concrete_2023",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
     },
     {
-      "id": "genai_review",
-      "title": "GenAI Models Capture Urban Science but Oversimplify Complexity",
-      "authors": ["Zhang Y", "Zhao R", "Huang Z", "Long Y*"],
-      "author_note": "*corresponding",
-      "venue": "Nature Cities",
-      "year": 2025,
-      "volume": "",
-      "pages": "",
-      "type": "journal",
-      "status": "under_review",
-      "badges": [],
-      "image": "images/papers/genai.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-11-01"
-    },
-    {
-      "id": "building_sim_review",
-      "title": "Systematic Review for Building-Scale Urban Analytics and Simulation",
-      "authors": ["Zhang Y", "Long Y*"],
-      "author_note": "*corresponding",
-      "venue": "Building Simulation",
-      "year": 2025,
-      "volume": "",
-      "pages": "",
-      "type": "journal",
-      "status": "under_review",
-      "badges": [],
-      "image": "images/papers/building_sim.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-10-01"
-    },
-    {
-      "id": "vacancy_review",
-      "title": "Monitoring Nationwide and Block-level Housing Vacancy",
-      "authors": ["Zhao H†", "Zhang Y†", "...", "Long Y*"],
+      "id": "rethinking_the_countrylevel_2024",
+      "title": "Rethinking the country-level percentage of population residing in urban area with a global harmonized urban definition",
+      "authors": [
+        "Wenyue Li†",
+        "Yecheng Zhang†",
+        "Mengxing Li",
+        "Ying Long*"
+      ],
       "author_note": "†co-first, *corresponding",
-      "venue": "One Earth",
+      "venue": "iScience",
+      "year": 2024,
+      "volume": "27",
+      "pages": "110125",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/04Li et al 2024 iScience-GloPPRUA.png",
+      "links": {
+        "pdf": "pdfs/04Li et al 2024 iScience-GloPPRUA.pdf",
+        "doi": "https://doi.org/10.1016/j.isci.2024.110125"
+      },
+      "citation_key": "rethinking_the_countrylevel_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "_2024",
+      "title": "新城市科学：技术、计算、变革与应用",
+      "authors": [
+        "龙瀛*",
+        "赵慧敏",
+        "张业成"
+      ],
+      "author_note": "*corresponding",
+      "venue": "城市规划 CITY PLANNING REVIEW",
+      "year": 2024,
+      "volume": "48",
+      "pages": "",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/05龙瀛等 2024 城市规划-新城市科学.png",
+      "links": {
+        "pdf": "pdfs/05龙瀛等 2024 城市规划-新城市科学.pdf",
+        "doi": "https://doi.org/10.11819/cpr20240702a"
+      },
+      "citation_key": "_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
+    },
+    {
+      "id": "measuring_solar_radiation_2024",
+      "title": "Measuring solar radiation and spatio-temporal distribution in different street network direction through solar trajectories and street view images",
+      "authors": [
+        "Lei Wang a",
+        "Ce Hou c",
+        "Yecheng Zhang d",
+        "Jie He a,b*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "International Journal of Applied Earth Observation and Geoinformation",
+      "year": 2024,
+      "volume": "132",
+      "pages": "104058",
+      "type": "journal",
+      "status": "published",
+      "badges": [],
+      "image": "images/papers/06Wang et al 2024 JAG-SolarSVIs.png",
+      "links": {
+        "pdf": "pdfs/06Wang et al 2024 JAG-SolarSVIs.pdf",
+        "doi": "#"
+      },
+      "citation_key": "measuring_solar_radiation_2024",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "DOI not provided in the text"
+      }
+    },
+    {
+      "id": "inferring_ghost_cities_2025",
+      "title": "Inferring ghost cities on the globe in newly developed urban areas based on urban vitality with multi-source data",
+      "authors": [
+        "Yecheng Zhang",
+        "Tangqi Tu",
+        "Ying Long*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "Habitat International",
       "year": 2025,
       "volume": "",
       "pages": "",
       "type": "journal",
-      "status": "under_review",
+      "status": "published",
       "badges": [],
-      "image": "images/papers/vacancy.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-09-01"
+      "image": "images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png",
+      "links": {
+        "pdf": "pdfs/07Zhang et al 2025 Habitat_International-GloGCI.pdf",
+        "doi": "#"
+      },
+      "citation_key": "inferring_ghost_cities_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "medium",
+        "verified_online": false,
+        "notes": "Volume, issue, pages, and DOI information are not provided in the text."
+      }
     },
     {
-      "id": "disaster_review",
-      "title": "Building Restoration Lags Socioeconomic Recovery after Disasters Worldwide",
-      "authors": ["Li F†", "Zhang Y†", "...", "Long Y*"],
+      "id": "cmab_a_multiattribute_2025",
+      "title": "CMAB: A Multi-Attribute Building Dataset of China",
+      "authors": [
+        "Yecheng Zhang†",
+        "Huimin Zhao†",
+        "Ying Long*"
+      ],
       "author_note": "†co-first, *corresponding",
-      "venue": "Landscape and Urban Planning",
+      "venue": "Scientific Data",
       "year": 2025,
-      "volume": "",
-      "pages": "",
+      "volume": "12",
+      "pages": "430",
       "type": "journal",
-      "status": "under_review",
+      "status": "published",
       "badges": [],
-      "image": "images/papers/disaster.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-08-01"
+      "image": "images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png",
+      "links": {
+        "pdf": "pdfs/08Zhang et al 2025 Scientific_Data-CMAB.pdf",
+        "doi": "https://doi.org/10.1038/s41597-025-04730-5"
+      },
+      "citation_key": "cmab_a_multiattribute_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": ""
+      }
     },
     {
-      "id": "carbon_review",
-      "title": "Controlling Housing Vacancy for Urban Carbon Mitigation through Intensive Population–housing Alignment in China",
-      "authors": ["Liu F", "Zhao H", "Zhang Y", "Long Y*", "Wang K*"],
-      "author_note": "*corresponding",
-      "venue": "Nature Sustainability",
+      "id": "decoding_the_spatial_2025",
+      "title": "Decoding the Spatial Heterogeneity of Bike-Sharing Impacts: Machine Learning Model of Meteorology, Epidemic, and Urban Factors",
+      "authors": [
+        "Jiawei Yao, Ph.D.",
+        "Yixin Jian",
+        "Yanting Shen",
+        "Wen Wen",
+        "Chenyu Huang, Ph.D.",
+        "Jinyu Wang",
+        "Jiayan Fu",
+        "Zhongqi Yu, Ph.D.",
+        "Yecheng Zhang, Ph.D."
+      ],
+      "author_note": "",
+      "venue": "Journal of Urban Planning and Development",
       "year": 2025,
       "volume": "",
       "pages": "",
       "type": "journal",
-      "status": "under_review",
+      "status": "published",
       "badges": [],
-      "image": "images/papers/carbon.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-07-01"
-    },
-    {
-      "id": "tibet_review",
-      "title": "Large-scale Imagery and Multi-modal AI Reveal Sustainability Dilemmas in Tibetan Cultural Landscapes across the Trans-Himalaya",
-      "authors": ["Ma Y", "Hong Q", "Zhang Y", "...", "Long Y*"],
-      "author_note": "*corresponding",
-      "venue": "npj Urban Sustainability",
-      "year": 2025,
-      "volume": "",
-      "pages": "",
-      "type": "journal",
-      "status": "under_review",
-      "badges": [],
-      "image": "images/papers/tibet.png",
-      "links": {},
-      "citation_key": "",
-      "added_date": "2024-06-15"
+      "image": "images/papers/09Yao et al2025 JUPD.png",
+      "links": {
+        "pdf": "pdfs/09Yao et al2025 JUPD.pdf",
+        "doi": "https://doi.org/10.1061/JUPDDM.UPENG-5192"
+      },
+      "citation_key": "decoding_the_spatial_2025",
+      "added_date": "2026-01-16",
+      "_metadata": {
+        "extracted_by": "AI",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "The specific volume, issue, and page range are not provided in the text."
+      }
     }
   ]
 }

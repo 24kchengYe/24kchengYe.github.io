@@ -5,8 +5,8 @@
 ## 🌟 核心特性
 
 ### 🤖 AI自动化功能
-- ✅ **AI驱动的PDF论文处理** - 放入PDF自动提取封面图和完整元数据，无需手动输入
-- ✅ **智能图片裁剪** - AI识别最佳论文封面区域，智能人脸检测和头像裁剪
+- ✅ **AI驱动的PDF论文处理** - 放入PDF自动提取完整首页缩略图和元数据，无需手动输入
+- ✅ **批量PDF处理** - 一次性处理多篇论文PDF，自动提取元数据并生成缩略图
 - ✅ **自动内容格式化** - AI辅助将非结构化文本转换为标准JSON格式
 - ✅ **自动News生成** - 添加论文/数据集/奖项时自动生成对应新闻条目
 - ✅ **APA引用格式化** - AI自动格式化标准学术引用
@@ -40,9 +40,8 @@
 │   ├── main.js                         # 核心功能（ConfigLoader + PageRenderer）
 │   └── news-generator.js               # News自动生成与分页
 ├── images/
-│   ├── profile.jpg                     # 自动处理后的头像（400×400）
+│   ├── profile.jpg                     # 个人头像（需手动准备）
 │   ├── papers/                         # 自动处理后的论文封面（400×300）
-│   ├── raw-avatars/                    # 【新增】原始头像文件夹
 │   └── raw-papers/                     # 【新增】原始论文PDF文件夹
 ├── data/                               # 【新增】JSON数据文件
 │   ├── config.json                     # 主配置（个人信息、Biography、Contact）
@@ -53,10 +52,9 @@
 │   ├── activities.json                 # 学术活动数据
 │   └── news.json                       # News历史记录（自动生成）
 ├── scripts/                            # 【新增】Python自动化脚本
-│   ├── image_processor.py              # 主图片处理脚本
-│   ├── pdf_cover_extractor.py          # PDF封面提取（AI识别）
-│   ├── ai_image_analyzer.py            # 头像智能裁剪（三重回退）
-│   ├── pdf_metadata_extractor.py       # PDF元数据自动提取
+│   ├── batch_processor.py              # 批量PDF处理器（主脚本）
+│   ├── pdf_cover_extractor.py          # PDF完整首页提取
+│   ├── pdf_metadata_extractor.py       # PDF元数据自动提取（AI驱动）
 │   ├── content_formatter.py            # 内容格式化助手（AI辅助）
 │   └── requirements.txt                # Python依赖
 ├── .env                                # 【新增】API密钥配置（需用户创建）
@@ -102,28 +100,24 @@ cp .env.example .env
 OPENAI_BASE_URL=https://your-proxy-url.com/v1
 ```
 
-### 步骤3: 处理图片（可选）
+### 步骤3: 处理论文PDF（可选）
 
-如果您有论文PDF和个人照片需要处理：
+如果您有论文PDF需要处理：
 
 ```bash
 # 1. 将PDF放入文件夹
 cp your_paper.pdf images/raw-papers/
 
-# 2. 将照片放入文件夹
-cp your_photo.jpg images/raw-avatars/
-
-# 3. 运行自动处理（一键处理所有）
-python scripts/image_processor.py --all
+# 2. 运行批量处理
+python scripts/batch_processor.py
 ```
 
 **自动完成**:
-- ✅ 提取PDF代表性图片（AI识别）并裁剪为400×300
+- ✅ 提取PDF完整首页并生成400×300缩略图
 - ✅ 提取PDF元数据（标题、作者、期刊、DOI等）
 - ✅ 格式化为APA引用
 - ✅ 自动添加到 `data/publications.json`
 - ✅ 自动生成News条目
-- ✅ 智能裁剪头像为400×400正方形
 
 ### 步骤4: 更新内容
 
@@ -191,32 +185,32 @@ python scripts/image_processor.py --papers
 2. ✅ AI识别并提取元数据（标题、作者、期刊、年份、DOI、卷号、页码）
 3. ✅ 标注共同一作†和通讯作者*
 4. ✅ 格式化为标准APA引用
-5. ✅ 提取代表性图片（框架图/核心图表，AI识别）
-6. ✅ 裁剪为400×300像素论文封面
-7. ✅ 结构化为JSON并添加到 `data/publications.json`
-8. ✅ 自动生成News条目："Our paper on [title] was published in [venue]."
-9. ✅ 去重检查（避免重复添加）
+5. ✅ 提取PDF完整首页并生成400×300像素缩略图
+6. ✅ 结构化为JSON并添加到 `data/publications.json`
+7. ✅ 自动生成News条目："Our paper on [title] was published in [venue]."
+8. ✅ 去重检查（避免重复添加）
 
 **技术细节**:
 - 使用 **GPT-4 Turbo** 提取元数据（温度0.1保证准确性）
-- 使用 **GPT-4 Vision** 识别最佳封面区域
-- 300 DPI高清渲染PDF页面
+- 300 DPI高清渲染PDF完整首页
+- 保持宽高比的缩放至400×300像素
 - LANCZOS算法高质量图片缩放
 
-### 2. 智能头像裁剪
+### 2. 批量PDF处理
 
-**三重回退策略**确保100%成功率：
+**批量处理所有PDF文件**：
 
 ```bash
-python scripts/image_processor.py --avatar
+python scripts/batch_processor.py
 ```
 
 **处理流程**:
-1. **方法1: AI人脸检测** - 使用GPT-4 Vision识别人脸中心坐标
-2. **方法2: OpenCV本地检测** - 使用Haar级联分类器（无需API）
-3. **方法3: 中心裁剪** - 如果前两者均失败，裁剪图片中心区域
+1. 扫描 `images/raw-papers/` 文件夹中的所有PDF文件
+2. 自动跳过已处理的PDF（通过检查图片路径去重）
+3. 批量提取元数据和生成缩略图
+4. 统一更新 `data/publications.json` 和 `data/news.json`
 
-**输出**: `images/profile.jpg` (400×400像素正方形)
+**输出**: 自动生成的论文封面图片 (400×300像素) 和结构化JSON数据
 
 ### 3. News自动生成与智能分页
 
@@ -352,17 +346,14 @@ python scripts/content_formatter.py --type award
 ### 场景4: 更新个人头像
 
 ```bash
-# 1. 放入新照片
-cp new_photo.jpg images/raw-avatars/
-
-# 2. 运行智能裁剪
-python scripts/image_processor.py --avatar
-
-# AI检测人脸并智能裁剪为正方形
-# 保存为 images/profile.jpg
+# 1. 手动准备400×400像素的正方形头像
+# 2. 直接替换文件
+cp new_photo.jpg images/profile.jpg
 
 # 3. 刷新网页看到新头像
 ```
+
+**建议**: 使用图片编辑工具（如Photoshop、GIMP）将照片裁剪为正方形400×400像素。
 
 ---
 
@@ -390,7 +381,7 @@ code data/config.json  # 或用任意文本编辑器
 ```bash
 # OpenAI API配置
 OPENAI_API_KEY=sk-your-key-here          # 必填
-OPENAI_MODEL=gpt-4-vision-preview        # 图片识别模型
+OPENAI_MODEL=gpt-4-turbo-preview         # 元数据提取模型
 OPENAI_BASE_URL=https://api.openai.com/v1  # API端点（国内用户改为代理）
 
 # 图片处理配置
@@ -545,10 +536,10 @@ class NewsGenerator {
 
 ### Q: API调用失败怎么办？
 
-**A**: 图片处理脚本有回退策略：
-- PDF封面: AI失败 → 使用首页完整截图
-- 头像裁剪: AI失败 → OpenCV本地检测 → 中心裁剪
+**A**: 批量处理脚本的回退策略：
+- PDF封面: 始终提取完整首页（无需AI）
 - 元数据提取: AI失败 → 手动编辑JSON
+- 可检查网络连接和API密钥配置
 
 ### Q: 国内访问OpenAI API慢？
 
@@ -626,9 +617,8 @@ mv data/news.json data/news_backup_2024.json
 - Python 3.8+
 - PyMuPDF (PDF处理)
 - Pillow (图片处理)
-- OpenAI GPT-4 Vision (AI识别)
-- OpenAI GPT-4 Turbo (文本处理)
-- OpenCV (可选本地人脸检测)
+- OpenAI GPT-4 Turbo (元数据提取)
+- python-dotenv (环境配置)
 
 **数据**:
 - JSON (结构化存储)

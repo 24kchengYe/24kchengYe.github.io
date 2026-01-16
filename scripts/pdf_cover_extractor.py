@@ -268,158 +268,78 @@ class PDFCoverExtractor:
     def analyze_with_ai(self, image):
         """使用AI分析图片并识别最佳裁剪区域
 
+        【已禁用】由于AI裁剪不可靠，现在直接保存完整首页
+        此方法仅为保持代码兼容性而保留
+
         Args:
             image: PIL.Image对象
 
         Returns:
-            dict: 包含裁剪坐标的字典 {'x': int, 'y': int, 'width': int, 'height': int}
-                  如果AI分析失败，返回None
+            None: 始终返回None，使用完整页面
         """
-        if not self.ai_enabled:
-            return None
-
-        try:
-            # 将图片转为base64
-            buffered = BytesIO()
-            image.save(buffered, format="PNG")
-            img_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
-
-            # 构建AI提示词
-            prompt = f"""分析这张学术论文首页图片，识别最适合作为封面的内容。
-
-请按以下优先级识别：
-1. **框架图/流程图** - 展示研究方法或系统架构的图表
-2. **核心图表** - 关键结果可视化、数据图表
-3. **示意图** - 研究对象或概念的图示
-4. 如果没有合适的图表，选择**标题和作者区域**
-
-要求：
-- 返回JSON格式的裁剪坐标
-- 坐标基于原图尺寸 {image.width}x{image.height} 像素
-- 裁剪区域尽量保持4:3的宽高比（宽度稍大）
-- 确保完整包含识别的图表，不要裁切边缘
-
-返回格式示例：
-{{
-    "type": "framework_diagram",
-    "description": "研究方法框架图",
-    "x": 100,
-    "y": 150,
-    "width": 800,
-    "height": 600,
-    "confidence": "high"
-}}
-
-只返回JSON，不要其他文字。"""
-
-            # 调用OpenAI Vision API
-            response = self.client.chat.completions.create(
-                extra_headers=self.extra_headers,
-                model=self.model,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {"type": "text", "text": prompt},
-                            {
-                                "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:image/png;base64,{img_base64}"
-                                }
-                            }
-                        ]
-                    }
-                ],
-                max_tokens=500
-            )
-
-            # 解析响应
-            result_text = response.choices[0].message.content.strip()
-
-            # 提取JSON（可能被代码块包裹）
-            if '```json' in result_text:
-                result_text = result_text.split('```json')[1].split('```')[0].strip()
-            elif '```' in result_text:
-                result_text = result_text.split('```')[1].split('```')[0].strip()
-
-            crop_info = json.loads(result_text)
-
-            print(f"[OK] AI识别: {crop_info.get('description', 'unknown')} (置信度: {crop_info.get('confidence', 'unknown')})")
-
-            return crop_info
-
-        except Exception as e:
-            print(f"[WARNING] AI分析失败: {e}")
-            print("   将使用默认裁剪策略")
-            return None
+        print("[INFO] 跳过AI智能裁剪，将保存完整PDF首页")
+        return None
 
     def get_default_crop(self, image):
-        """获取默认裁剪区域（当AI不可用时）
+        """获取默认裁剪区域（现在返回完整页面）
 
         Args:
             image: PIL.Image对象
 
         Returns:
-            dict: 裁剪坐标
+            dict: 完整页面的坐标（即不裁剪）
         """
         width, height = image.size
 
-        # 默认策略：裁剪上半部分的中心区域（通常包含标题和主要图表）
-        # 目标比例 4:3
-        crop_width = min(width * 0.9, width - 40)  # 留边距
-        crop_height = crop_width * 3 / 4
-
-        # 如果高度超出，调整
-        if crop_height > height * 0.6:
-            crop_height = height * 0.6
-            crop_width = crop_height * 4 / 3
-
-        # 居中
-        x = (width - crop_width) / 2
-        y = height * 0.15  # 从上方15%处开始
-
+        # 新策略：返回完整页面坐标（不裁剪）
         return {
-            'type': 'default',
-            'description': '默认裁剪区域',
-            'x': int(x),
-            'y': int(y),
-            'width': int(crop_width),
-            'height': int(crop_height),
-            'confidence': 'default'
+            'type': 'full_page',
+            'description': '完整PDF首页（不裁剪）',
+            'x': 0,
+            'y': 0,
+            'width': width,
+            'height': height,
+            'confidence': 'full'
         }
 
     def crop_and_resize(self, image, crop_info):
-        """根据裁剪信息裁剪并调整图片尺寸
+        """根据裁剪信息调整图片尺寸（现在不裁剪，直接缩放完整首页）
 
         Args:
             image: PIL.Image对象
             crop_info: 裁剪信息字典
 
         Returns:
-            PIL.Image: 裁剪并调整尺寸后的图片
+            PIL.Image: 调整尺寸后的图片
         """
-        # 提取坐标
-        x = crop_info['x']
-        y = crop_info['y']
-        width = crop_info['width']
-        height = crop_info['height']
-
-        # 确保坐标在图片范围内
         img_width, img_height = image.size
-        x = max(0, min(x, img_width))
-        y = max(0, min(y, img_height))
-        width = min(width, img_width - x)
-        height = min(height, img_height - y)
 
-        # 裁剪
-        cropped = image.crop((x, y, x + width, y + height))
+        # 新策略：始终使用完整页面
+        print(f"[INFO] 使用完整PDF首页 ({img_width}x{img_height})")
 
-        # 调整到目标尺寸
-        resized = cropped.resize((self.output_width, self.output_height), Image.Resampling.LANCZOS)
+        # 计算缩放比例以适应目标尺寸（保持宽高比）
+        width_ratio = self.output_width / img_width
+        height_ratio = self.output_height / img_height
+        scale_ratio = min(width_ratio, height_ratio)  # 使用最小比例以确保完全适应
 
-        print(f"[OK] 裁剪并调整尺寸至 {self.output_width}x{self.output_height}")
+        # 计算新尺寸
+        new_width = int(img_width * scale_ratio)
+        new_height = int(img_height * scale_ratio)
 
-        return resized
+        # 缩放图片
+        resized = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+
+        # 创建目标尺寸的白色背景
+        final_image = Image.new('RGB', (self.output_width, self.output_height), 'white')
+
+        # 将缩放后的图片居中粘贴到背景上
+        paste_x = (self.output_width - new_width) // 2
+        paste_y = (self.output_height - new_height) // 2
+        final_image.paste(resized, (paste_x, paste_y))
+
+        print(f"[OK] 已调整为 {self.output_width}x{self.output_height}（保持宽高比，居中显示）")
+
+        return final_image
 
     def process_pdf(self, pdf_path, output_path, page_range=None):
         """处理单个PDF文件

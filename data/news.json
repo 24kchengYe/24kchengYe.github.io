@@ -9,6 +9,15 @@
       "auto_generated": false
     },
     {
+      "id": "news_generative_design_method_0",
+      "date": "2026-01-16",
+      "content": "Our paper on <em>Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong</em> appeared in <em></em>.",
+      "type": "publication",
+      "related_id": "generative_design_method_0",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
       "id": "news_decoding_the_spatial_2025",
       "date": "2026-01-16",
       "content": "Our paper on <em>Decoding the Spatial Heterogeneity of Bike-Sharing Impacts: Machine Learning Model of Meteorology, Epidemic, and Urban Factors</em> was published in <em>Journal of Urban Planning and Development</em>.",

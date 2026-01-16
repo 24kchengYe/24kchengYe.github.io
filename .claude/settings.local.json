@@ -15,7 +15,10 @@
       "WebFetch(domain:openrouter.ai)",
       "Bash(python scripts/pdf_metadata_extractor.py:*)",
       "Bash(python scripts/batch_processor.py:*)",
-      "Bash(start http://localhost:8000)"
+      "Bash(start http://localhost:8000)",
+      "Bash(python scripts/avatar_cropper.py:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(timeout 2 tail:*)"
     ]
   }
 }

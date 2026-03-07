@@ -25,6 +25,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 # News
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
+- *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
 - *2025.11*: "新城市科学" paper listed in **CNKI Top 20 Most-Cited Papers** (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
 - *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) & chaired the Rising Star session at The 13th China College GIS Forum, Shanghai.
@@ -36,7 +37,6 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.05*: Exhibitor at **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
 - *2025.03*: Presented at **AAG 2025**, Detroit, USA.
 - *2025.01*: Paper "CMAB" published in **Scientific Data** — **23,000+ downloads**.
-- *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.01*: Received **Outstanding Case Award for "AI-Empowered Planning"** from Urban Planning Society of China.
 - *2024.12*: Paper "Inferring Ghost Cities" published in **Habitat International**.
 - *2024.06*: Invited talk at **Applied Urban Modelling (AUM2024)**, University of Cambridge, UK.

@@ -1,4 +1,11 @@
 .env
+.env.example
 __pycache__/
 .claude/
+.idea/
 nul
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/

@@ -1,3 +1,4 @@
+# Environment & IDE
 .env
 .env.example
 __pycache__/
@@ -9,6 +10,21 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 /vendor/
+
+# AI project guide (keep locally, not needed for website)
+CLAUDE.md
+
+# Local scripts
+run_server.sh
+
+# Duplicate paper folders (website uses cv/ for PDFs)
+pdfs/
+
+# Source files for image generation (not needed for website)
+images/raw-papers/
+images/raw-avatars/
+images/README.md
+images/papers/README.md
 
 # Sensitive CV files (keep locally, exclude from GitHub)
 cv/*.tex
@@ -24,4 +40,6 @@ cv/照片.png
 cv/hfut_logo.png
 cv/tsinghua_logo.png
 cv/夏俊豪简历.pdf
+cv/resume_cn.pdf
+cv/resume_en.pdf
 cv/NUL

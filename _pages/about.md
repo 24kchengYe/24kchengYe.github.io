@@ -52,9 +52,8 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 *Nature Cities* (2nd round review). [PDF](cv/aiusv3.pdf)
 
-- Designed the **AI4US benchmark framework** to systematically evaluate data synthesis capabilities of leading LLMs (GPT-4o, Claude 3.5, etc.) across **symbolic reasoning** (scaling laws, distance decay, urban vitality) and **multimodal perception**, running **10,000+ automated experiments**.
-- Built a multi-paradigm prompt engineering pipeline (independent/joint sampling, blueprint prompting) that improved LLM output fidelity from R²=0.15 to **0.90+**.
-- Discovered critical failure modes including **distributional collapse** and **ambiguity aversion**, providing systematic prompt engineering optimization pathways.
+- Designed the **AI4US benchmark** evaluating leading LLMs (GPT, Claude, GLM, DeepSeek, etc.) over **40K+** synthesis trials across symbolic reasoning and multimodal perception, fitting established scientific laws (scaling laws, distance decay, urban vitality, urban perception).
+- Discovered the **"group flattening" effect** and **systematic bias in fitting established scientific laws**, and proposed **multi-paradigm prompt optimization strategies** (independent/joint sampling, in-context prompting).
 </div>
 </div>
 
@@ -112,7 +111,6 @@ Wenyue Li&dagger;, **Yecheng Zhang**&dagger;, Mengxing Li, Ying Long*
 *iScience*, 27, 110125, 2024. [DOI](https://doi.org/10.1016/j.isci.2024.110125) \| [PDF](cv/04Li et al 2024 iScience-GloPPRUA.pdf)
 
 - Constructed a **global harmonized urban definition (GloPPRUA)** dataset, providing consistent urban-rural boundaries across countries for comparative urbanization research.
-- 5,000+ downloads on Figshare.
 </div>
 </div>
 
@@ -198,5 +196,5 @@ Chengyang Shi, ..., **Yecheng Zhang**, Danni Niu
 # Open-source Datasets
 - **CMAB** — China's Multi-Attribute Building Dataset (32M+ buildings, 23,000+ downloads, ESI Highly Cited). [Dataset](https://figshare.com/authors/Yecheng_Zhang/20402873)
 - **GloGCI** — Global Ghost City Index (10,000+ cities worldwide, 4,000+ downloads).
-- **GloPPRUA** — Global Harmonized Urban Definition (5,000+ downloads).
+- **GloPPRUA** — Global Harmonized Urban Definition.
 - **AI4US** — Generative AI Benchmarks for Urban Science (2,000+ downloads).

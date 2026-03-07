@@ -105,9 +105,9 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 **GenAI Models Capture Urban Science but Oversimplify Complexity**
 
-**Yecheng Zhang**, Renhe Zhao, Zhenliang Huang, Ying Long*
+**Yecheng Zhang**, Rong Zhao, Zimu Huang, Xinyu Wang, Yue Ma, Ying Long*
 
-*Nature Cities* (2nd round review). [PDF](cv/aiusv3.pdf)
+*Nature Cities* (2nd round review). [![arXiv](https://img.shields.io/badge/arXiv-2505.13803-b31b1b.svg)](https://arxiv.org/abs/2505.13803) \| [PDF](cv/aiusv3.pdf)
 
 <div lang="en" markdown="1">
 - Designed the **AI4US benchmark** evaluating leading LLMs (GPT, Claude, GLM, DeepSeek, etc.) over **40K+** synthesis trials across symbolic reasoning and multimodal perception, fitting established scientific laws (scaling laws, distance decay, urban vitality, urban perception).
@@ -129,9 +129,9 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 **UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment**
 
-**Yecheng Zhang**, Renhe Zhao, Ying Long, Chengyang Shi*
+**Yecheng Zhang**, Rong Zhao, Zhizhou Sha, Yong Li, Lei Wang, Ce Hou, Wen Ji, Hao Huang, Yunshan Wan, Jian Yu, Junhao Xia, Yuru Zhang, Chunlei Shi*
 
-*ECCV 2026* (under review, CCF-B). [PDF](cv/arxiv-eccv.pdf)
+*ECCV 2026* (under review, CCF-B). [![arXiv](https://img.shields.io/badge/arXiv-2602.19442-b31b1b.svg)](https://arxiv.org/abs/2602.19442) \| [PDF](cv/arxiv-eccv.pdf)
 
 <div lang="en" markdown="1">
 - Proposed a **training-free post-hoc concept bottleneck method** to align frozen VLM outputs with human preferences — no fine-tuning, RLHF, or GPU training required.
@@ -249,9 +249,9 @@ Wenyue Li&dagger;, **Yecheng Zhang**&dagger;, Mengxing Li, Ying Long*
 
 **WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval**
 
-Chengyang Shi, ..., **Yecheng Zhang**, Danni Niu
+Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, Dan Niu
 
-*AAAI 2026* (CCF-A). [PDF](cv/卫星雷达反演zyc20250730.pdf)
+*AAAI 2026* (CCF-A). [![arXiv](https://img.shields.io/badge/arXiv-2511.17558-b31b1b.svg)](https://arxiv.org/abs/2511.17558) \| [PDF](cv/卫星雷达反演zyc20250730.pdf)
 
 <div lang="en" markdown="1">
 - Satellite-to-radar reflectivity inversion using wavelet-driven coarse-to-refined hierarchical learning framework for meteorological remote sensing.

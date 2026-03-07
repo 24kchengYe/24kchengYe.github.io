@@ -21,7 +21,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yecheng Zhang (张业成)"
+  name             : "Yecheng Zhang"
+  name_cn          : "张业成"
   avatar           : "images/profile.jpg"
   bio              : "Ph.D. Student at Tsinghua University"
   location         : "Beijing, China"

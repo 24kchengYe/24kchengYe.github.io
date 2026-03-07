@@ -62,7 +62,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2023.08*: Presented at **The First Research Summit of Urban Science**, Beijing.
 - *2023.08*: Presented at **Global Smart Cities Summit (GSCS) & 3rd International Conference on Urban Informatics (ICUI)**, Hong Kong.
 - *2023.07*: Presented at **UIA World Congress of Architects**, Copenhagen, Denmark.
-- *2023.06*: Invited talk at **Tongji University Architectural DigitalFUTURES** "Emerging Planetarism", Shanghai.
+- *2023.06*: Teaching assistant at **Tongji University Architectural DigitalFUTURES** workshop "Emerging Planetarism", Shanghai.
 - *2023.05*: Exhibitor at **China Pavilion, 18th Venice Architecture Biennale**, Venice, Italy.
 - *2022.09*: Presented at **CUSR Urban Big Data Annual Meeting**, Beijing.
 - *2022.07*: Presented at **4th International Conference on Computational Design and Robotic Fabrication**, Shanghai.
@@ -92,7 +92,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2023.08*: 在**第一届城市科学大会 (The First Research Summit of Urban Science)** 作报告，北京。
 - *2023.08*: 在**全球智慧城市峰会暨第三届国际城市信息学大会 (GSCS & ICUI)** 作报告，中国香港。
 - *2023.07*: 在**UIA世界建筑师大会**作报告，丹麦哥本哈根。
-- *2023.06*: 受邀在**同济大学 Architectural DigitalFUTURES** "Emerging Planetarism" 作报告，上海。
+- *2023.06*: 担任**同济大学 Architectural DigitalFUTURES** workshop "Emerging Planetarism" 助教，上海。
 - *2023.05*: 参展**第18届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
 - *2022.09*: 在**中国城市科学研究会城市大数据专业委员会2022年会**作报告，北京。
 - *2022.07*: 在**第四届国际计算设计和机器人制造会议**作报告，上海。
@@ -122,7 +122,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2023.08*: **第1回都市科学研究サミット (The First Research Summit of Urban Science)** にて発表、北京。
 - *2023.08*: **グローバルスマートシティサミット (GSCS) & 第3回国際都市情報学会議 (ICUI)** にて発表、香港。
 - *2023.07*: **UIA世界建築家会議**にて発表、デンマーク・コペンハーゲン。
-- *2023.06*: **同済大学 Architectural DigitalFUTURES** "Emerging Planetarism" にて招待講演、上海。
+- *2023.06*: **同済大学 Architectural DigitalFUTURES** ワークショップ "Emerging Planetarism" にてティーチングアシスタント、上海。
 - *2023.05*: **第18回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
 - *2022.09*: **中国都市科学研究会都市ビッグデータ委員会2022年次会議**にて発表、北京。
 - *2022.07*: **第4回国際コンピュテーショナルデザイン・ロボティックファブリケーション会議**にて発表、上海。
@@ -399,7 +399,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 - *2023.08*, **The First Research Summit of Urban Science**, Beijing.
 - *2023.08*, **Global Smart Cities Summit (GSCS) & ICUI**, Hong Kong.
 - *2023.07*, **UIA World Congress of Architects**, Copenhagen, Denmark.
-- *2023.06*, **Tongji University Architectural DigitalFUTURES** "Emerging Planetarism", Shanghai.
+- *2023.06*, **Tongji University Architectural DigitalFUTURES** workshop "Emerging Planetarism", Shanghai. Teaching Assistant.
 - *2022.09*, **CUSR Urban Big Data Annual Meeting**, Beijing.
 - *2022.07*, **4th International Conference on Computational Design and Robotic Fabrication**, Shanghai.
 

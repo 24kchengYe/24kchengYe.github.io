@@ -1,0 +1,169 @@
+% !TEX program = xelatex
+% !TEX recipe = xelatex (single run)
+\documentclass[10pt,a4paper]{article}
+
+% ===== 页面设置 =====
+\usepackage[left=1.0cm,right=1.0cm,top=0.7cm,bottom=0.7cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=black]{hyperref}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{#2}}}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{Calibri}
+\setCJKmainfont[BoldFont=Microsoft YaHei Bold]{Microsoft YaHei}
+\setCJKsansfont[BoldFont=Microsoft YaHei Bold]{Microsoft YaHei}
+
+% ===== 颜色 =====
+\definecolor{lightgray}{HTML}{666666}
+\definecolor{sectioncolor}{HTML}{1A1A1A}
+
+% ===== 段落与间距 =====
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\setlist{nosep}
+\linespread{1.35}
+
+% ===== 字体层级 =====
+% 头部：\Large — 姓名，\normalsize — 联系方式/意向
+% 正文三级：
+%   一级：\normalsize\bfseries — 项目标题、学校名
+%   二级：\normalsize — 描述正文
+%   三级：\normalsize\bfseries — 论文引用（加粗）
+
+% ===== Section 样式 =====
+\titleformat{\section}{\large\bfseries\color{sectioncolor}}{}{0em}{}[\vspace{-5pt}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{20pt}{8pt}
+
+% ===== 自定义命令 =====
+\newcommand{\project}[3]{%
+  \vspace{1pt}
+  {\textbf{#1}} {\textbf{(#3)}} \hfill {\color{lightgray}#2}\par\vspace{0pt}
+}
+
+\newlength{\projectnumwidth}
+\settowidth{\projectnumwidth}{\textbf{[1] }}
+
+\begin{document}
+
+% ===== 头部信息 =====
+\noindent
+\begin{minipage}[c]{0.84\textwidth}
+  \centering
+  {\Large\textbf{张业成}}\\[5pt]
+  {
+    手机/微信号：18013979786\quad$|$\quad
+    \href{mailto:zhangyec23@mails.tsinghua.edu.cn}{zhangyec23@mails.tsinghua.edu.cn}\\[2pt]
+    \href{https://github.com/24kchengYe}{GitHub} \quad$|$\quad
+    \href{https://scholar.google.com/citations?user=6vKhpBoAAAAJ&hl=en}{Google Scholar} \quad$|$\quad
+    意向城市：北京
+  }\\[3pt]
+  {\textbf{意向岗位：大模型算法实习 / AI算法实习}}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.13\textwidth}
+  \includegraphics[width=\linewidth, trim=0 2cm 0 0, clip]{photo.png}
+\end{minipage}
+\vspace{6pt}
+
+% ===== 教育背景 =====
+\section{教育背景}
+
+\textbf{清华大学} \hfill 2023.09 -- 至今\\
+城市规划博士生（研究方向：大模型评测与对齐、AI4Science、计算机视觉） $|$ 综合一等奖学金
+
+\vspace{6pt}
+\textbf{合肥工业大学} \hfill 2018.09 -- 2023.06\\
+城乡规划学士 $|$ GPA排名 \textbf{1}/40 $|$ 校十佳大学生 $|$ 优秀毕业生
+
+% ===== 研究经历 =====
+\section{研究经历}
+
+\project{[1] 大模型的人类偏好对齐}{2025.10 -- 2026.02}
+{第一作者 $|$ \href{https://arxiv.org/abs/2602.19442}{arXiv} $|$ ECCV 2026 在投}
+
+\begingroup\leftskip=\projectnumwidth
+大型视觉语言模型（VLM）能识别丰富视觉元素，但其输出与人类偏好存在系统性偏差，现有对齐方法（微调、RLHF）依赖大量标注数据与GPU算力。提出免训练后置概念瓶颈对齐方法（Post-hoc Concept Bottleneck）：自动发现可解释评价维度，通过Observer-Debater-Judge多智能体链从冻结VLM提取鲁棒概念分数，在视觉-语义混合流形上经局部加权岭回归校准至人类评分，并由端到端维度优化闭环联合保证精度与可解释性。在城市感知任务（Place Pulse 2.0，6类）上达到\textbf{72.2\%}准确率（$\kappa$=0.45），超越有监督基线\textbf{+15.1pp}、未校准VLM \textbf{+16.3pp}，无需修改任何模型权重。\\[2pt]
+{论文：\textbf{Zhang Y}, Zhao R, \ldots, Shi C*. UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment. \href{https://arxiv.org/abs/2602.19442}{arXiv}, 2026.}\par
+\endgroup
+
+\vspace{12pt}
+\project{[2] 大模型合成科学数据能力评测}{2024.09 -- 2025.10}
+{第一作者 $|$ \href{https://arxiv.org/abs/2505.13803}{arXiv} $|$ Nature Cities 二审}
+
+\begingroup\leftskip=\projectnumwidth
+大模型日益用于科学数据生成，但其能否再现复杂系统的科学规律尚缺乏系统评估。设计AI4US评测框架，对国际主流大模型（GPT、Claude、GLM、DeepSeek等）在城市科学领域进行累计\textbf{4万+次合成实验}，覆盖多模态数据（符号与感知），拟合标度律、距离衰减、城市活力、城市感知等科学规律。发现大模型存在的\textbf{"群体扁平化"效应}，拟合\textbf{已有科学规律的系统性偏差}，\textbf{提出多范式提示优化路径}（独立/联合采样、上下文提示）。\\[2pt]
+{论文：\textbf{Zhang Y}, Zhao R, Huang Z, Long Y*. GenAI Models Capture Urban Science but Oversimplify Complexity. \href{https://arxiv.org/abs/2505.13803}{arXiv}, 2025.}\par
+\endgroup
+
+\vspace{12pt}
+\project{[3] AI应用 | 全球城市开源数据集}{2021.09 -- 2025.10}
+{第一作者等 $|$ \href{https://doi.org/10.1038/s41597-025-04730-5}{Scientific Data}, \href{https://doi.org/10.1016/j.habitatint.2025.103350}{Habitat International}, \href{https://doi.org/10.1016/j.jag.2022.102942}{JAG} 【SCIQ1】}
+
+\begingroup\leftskip=\projectnumwidth
+城市研究缺乏标准化的大规模城市与建筑数据集。首先，基于GAN融合多源数据实现城市空间特征预测。其次，基于GIS模型构建器构建全球城市边界GloPPRUA并开发全球鬼城指数GloGCI，融合人口、道路、经济数据，覆盖\textbf{全球8,000+城市}。最后，构建中国首个多属性建筑数据集CMAB，\textbf{融合数十亿张遥感、街景等多源数据}，基于OCRNet语义分割与XGBoost集成学习，覆盖全国\textbf{3200万+}栋建筑与\textbf{100+}项属性。CMAB论文上线半年获\textbf{ESI高被引}（Geoscience领域），数据与代码\href{https://figshare.com/authors/Yecheng_Zhang/20402873}{\textbf{共获得23,000+次下载}} 。\\[2pt]
+{论文：\textbf{Zhang Y}$^{\dag}$, Zhao H$^{\dag}$, Long Y*. CMAB: A Multi-Attribute Building Dataset of China. \href{https://doi.org/10.1038/s41597-025-04730-5}{Scientific Data}, 2025.\\
+论文：\textbf{Zhang Y}, Tu T, Long Y*. Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data. \href{https://doi.org/10.1016/j.habitatint.2025.103350}{Habitat International}, 2025.\\
+论文：\textbf{Zhang Y}, Zhang Q, \ldots, Zheng H*. Urban Spatial Risk Prediction and Optimization Analysis of POI Based on Deep Learning. \href{https://doi.org/10.1016/j.jag.2022.102942}{International Journal of Applied Earth Observation and Geoinformation}, 2022.\\
+论文：Li W$^{\dag}$, \textbf{Zhang Y}$^{\dag}$, Li M, Long Y*. Rethinking the Country-Level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition. \href{https://doi.org/10.1016/j.isci.2024.110125}{iScience}, 2024.}\par
+\endgroup
+
+% ===== 实习项目 =====
+\section{项目经历}
+\project{市政建设工程智能标书系统}{2026}
+{独立开发}
+
+市政建设工程投标涉及资质审查、评分标准解读、标书撰写等多环节，传统人工流程效率低且质量不稳定。独立设计并开发两阶段多智能体系统：审阅阶段由\textbf{7}个并行Agent（ThreadPoolExecutor，独立连接池）对招标文件进行结构化解读（资质、评分、风险等）；生成阶段由Writer$\to$Reviewer$\to$Designer条件触发流水线协作（Reviewer评分低于阈值自动触发Designer优化），内置全链路Agent行为追踪。技术栈集成ChromaDB向量检索增强（RAG）、PyMuPDF/RapidOCR文档解析（含扫描件OCR），支持\textbf{12+}大模型按上下文窗口自适应切换，基于Streamlit构建\textbf{7,000+}行生产代码。系统已助力某公司完成\textbf{500+}份标书。\par
+
+\vspace{12pt}
+\project{南京信大气象科学技术研究院}{2025}
+{博士生实践 $|$ 实习考评优秀}
+
+地面雷达存在覆盖盲区，偏远地区（如新疆）缺乏雷达观测，制约强对流天气的实时预警。系统性对比\textbf{10+}种深度学习架构（CNN/GAN/扩散模型/Transformer/流匹配），基于FY-4B卫星\textbf{22}通道输入（15基础通道+7手工设计亮温差特征，编码云相态与水汽梯度等物理信息）构建卫星到雷达组合反射率反演模型；针对气象数据极端类不平衡（强对流回波$<$0.1\%像素）设计指数加权损失函数。条件流匹配（CFM）模型CSI较基线\textbf{+7.2\%}，FAR \textbf{-30\%}；\textbf{零样本跨域迁移}至无雷达覆盖区（新疆），以GPM卫星数据验证泛化性。\\[2pt]
+{论文：Shi C, Han X, \textbf{Zhang Y}, Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. arXiv, 2026.\\
+论文：Shi C, \ldots, \textbf{Zhang Y}, Niu D. WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval. \href{https://arxiv.org/abs/2511.17558}{AAAI}, 2025.}\par
+
+
+% ===== 工具技能 =====
+\section{工具技能}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\textbf{AI/ML} & PyTorch等主流深度学习框架，Claude Code等编程智能体 \\
+\textbf{编程} & Python，PyCharm、VS Code、Git等，开发skills如claude-code-recall \\
+\textbf{数据} & GIS类软件及地理信息软件库（QGIS、ArcGIS、GeoPandas等） \\
+\end{tabularx}
+
+% ===== 参与项目 =====
+\section{参与项目}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt, parsep=1pt, topsep=2pt]
+  \item 国家自然科学基金重大项目（No. 62394335, 62394331）：数据智能驱动的城市群韧性规划决策理论与方法
+  \item 国家自然科学基金面上项目（No. 52178044）：城市收缩背景下城市空置的智能测度与规划响应
+  \item 能源基金会项目（No. G-2306-34815）：中国城市房屋空置测度及其碳排放含义研究
+\end{itemize}
+
+% ===== 荣誉奖励 =====
+\section{荣誉奖励}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt, parsep=1pt, topsep=2pt]
+  \item 中国高校GIS论坛"GIS新秀"（共10人），主持新秀专场论坛，第十三届全国高校GIS论坛，2025
+  \item 清华大学"学术新秀"提名（共44人），2025
+  \item "AI赋能规划"优秀案例，中国城市规划学会，2025
+  \item 清华大学电子工程系+美团合办课程《大数据技术的应用与实践》优秀作业rk2，2024
+\end{itemize}
+
+% ===== 社会活动 =====
+\section{社会活动}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt, parsep=1pt, topsep=2pt]
+  \item 学术报告：剑桥大学AUM、香港GSCS全球智慧城市峰会等国际会议
+  \item 审稿人：Nature Cities, Scientific Data, npj Urban Sustainability, Cities, Computers, Environment and Urban Systems, Verixiv
+  \item 社会工作：清华大学研究生会体育部副部长，负责活动宣发与筹备工作，2024.09 -- 2025.07
+\end{itemize}
+
+\end{document}

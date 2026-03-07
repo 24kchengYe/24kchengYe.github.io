@@ -2,21 +2,22 @@
   "personal": {
     "name": "Yecheng Zhang",
     "name_chinese": "张业成",
-    "title": "26, PhD Student",
+    "title": "PhD Student",
     "affiliation": "Tsinghua University",
     "profile_image": "images/profile.jpg"
   },
 
   "biography": {
-    "identity": "Apr 2023 - Sep 2022, PhD Student Urban Planning at Tsinghua University (THU), supervised by Prof. Ying Long, Beijing City Lab",
-    "education": "Sep 2018 - Jun 2023, B.Eng. in Urban Planning at Hefei University of Technology (HFUT).",
-    "research_interests": "My research focuses on urban science and AI. "
+    "identity": "I am a PhD student at <a href='https://www.beijingcitylab.com/'>Beijing City Lab</a>, Tsinghua University, supervised by Prof. <a href='https://www.arch.tsinghua.edu.cn/info/rw_yjsjy/1634'>Ying Long</a>.",
+    "education": "I received my B.Eng. in Urban Planning from Hefei University of Technology in 2023.",
+    "research_interests": "My research lies at the intersection of LLM/VLM evaluation and alignment, multi-agent systems, and urban AI. I build large-scale urban datasets and evaluate how generative AI models capture scientific patterns."
   },
 
   "research_fields": [
-    "Urban Model",
-    "AI for Science",
-    "Agent System"
+    "LLM Evaluation & Alignment",
+    "Vision-Language Models",
+    "Multi-Agent Systems",
+    "Urban AI & Data Science"
   ],
 
   "statistics": {
@@ -28,7 +29,7 @@
     },
     "total_downloads": {
       "display": "Total Downloads",
-      "value": 17000,
+      "value": 23000,
       "auto_update": false
     },
     "highly_cited_papers": {
@@ -49,25 +50,25 @@
     {
       "display": "Google Scholar",
       "value": "Google Scholar Profile",
-      "link": "https://scholar.google.com/",
+      "link": "https://scholar.google.com/citations?user=6vKhpBoAAAAJ&hl=en",
       "icon": "🎓"
     },
     {
       "display": "GitHub",
       "value": "GitHub Profile",
-      "link": "https://github.com/",
+      "link": "https://github.com/24kchengYe",
       "icon": "💻"
     },
     {
       "display": "ORCID",
-      "value": "0000-0000-0000-0000",
-      "link": "https://orcid.org/0000-0000-0000-0000",
+      "value": "ORCID Profile",
+      "link": "https://orcid.org/",
       "icon": "🔗"
     },
     {
       "display": "Figshare",
       "value": "Figshare Profile",
-      "link": "https://figshare.com/",
+      "link": "https://figshare.com/authors/Yecheng_Zhang/20402873",
       "icon": "📊"
     },
     {

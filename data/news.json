@@ -3,7 +3,7 @@
     {
       "id": "stats_pinned",
       "date": "auto",
-      "content": "📊 <strong>Total Downloads:</strong> <span id='news-downloads'>17,000+</span> | <strong>Citations:</strong> <span id='news-citations'>Loading...</span> | <strong>Highly Cited:</strong> <span id='news-highly-cited'>1</span> paper",
+      "content": "📊 <strong>Total Downloads:</strong> <span id='news-downloads'>23,000+</span> | <strong>Citations:</strong> <span id='news-citations'>Loading...</span> | <strong>Highly Cited:</strong> <span id='news-highly-cited'>1</span> paper",
       "type": "statistics",
       "pinned": true,
       "auto_generated": false
@@ -95,6 +95,42 @@
       "content": "Our paper on <em>Urban spatial risk prediction and optimization analysis of POI based on deep learning from the perspective of an epidemic</em> was published in <em>International Journal of Applied Earth Observations and Geoinformation</em>.",
       "type": "publication",
       "related_id": "urban_spatial_risk_2022",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_urbanalign_2026",
+      "date": "2026-02-28",
+      "content": "Our paper <em>UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment</em> was submitted to <em>ECCV 2026</em>.",
+      "type": "publication",
+      "related_id": "urbanalign_eccv_2026",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_awflows2r_2026",
+      "date": "2026-01-15",
+      "content": "Our paper <em>AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval</em> was released on <em>arXiv</em>.",
+      "type": "publication",
+      "related_id": "awflows2r_arxiv_2026",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_genai_nature_cities",
+      "date": "2025-10-01",
+      "content": "Our paper <em>GenAI Models Capture Urban Science but Oversimplify Complexity</em> entered 2nd round review at <em>Nature Cities</em>.",
+      "type": "publication",
+      "related_id": "genai_urban_science_2025",
+      "pinned": false,
+      "auto_generated": true
+    },
+    {
+      "id": "news_wavec2r_aaai",
+      "date": "2025-01-15",
+      "content": "Our paper <em>WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval</em> was accepted at <em>AAAI 2025</em> (CCF-A).",
+      "type": "publication",
+      "related_id": "wavec2r_aaai_2025",
       "pinned": false,
       "auto_generated": true
     },

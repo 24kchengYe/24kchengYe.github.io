@@ -1,11 +1,39 @@
 /* ==========================================================================
-   i18n Language Switcher
+   i18n — Pure CSS language switching based on <html lang="...">
    ========================================================================== */
 
+/* Hide content that doesn't match the current html lang.
+   Default is lang="en", so zh/ja are hidden on first paint. */
+html[lang="en"] [lang="zh"],
+html[lang="en"] [lang="ja"],
+html[lang="zh"] [lang="en"],
+html[lang="zh"] [lang="ja"],
+html[lang="ja"] [lang="en"],
+html[lang="ja"] [lang="zh"] {
+  display: none !important;
+}
+
+/* Keep dropdown menu items always visible */
+.lang-dropdown a {
+  display: block !important;
+}
+
+/* Masthead: put nav + lang-switch on the same line */
+.masthead__menu {
+  display: flex;
+  align-items: center;
+}
+
+.masthead__menu .greedy-nav {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Language switcher button */
 .lang-switch {
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  flex-shrink: 0;
+  margin-left: 0.5em;
 }
 
 .lang-btn {
@@ -41,7 +69,6 @@
   z-index: 100;
 
   a {
-    display: block;
     padding: 0.35em 0.7em;
     color: $text-color;
     text-decoration: none;

@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Yecheng Zhang - Tsinghua University"
-description              : "PhD student at Tsinghua University. Research interests include LLM evaluation & alignment, vision-language models, multi-agent systems, and urban AI."
+description              : "Research interests include LLM evaluation & alignment, vision-language models, multi-agent systems, and urban AI."
 repository               : "24kchengYe/24kchengYe.github.io"
 google_scholar_stats_use_cdn : true
 

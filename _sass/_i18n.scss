@@ -18,30 +18,26 @@ html[lang="ja"] [lang="zh"] {
   display: block !important;
 }
 
-/* Masthead: put nav + lang-switch on the same line */
-.masthead__menu {
-  display: flex;
-  align-items: center;
-}
-
-.masthead__menu .greedy-nav {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Language switcher button */
+/* Language switcher — absolute positioned in masthead */
 .lang-switch {
-  position: relative;
-  flex-shrink: 0;
-  margin-left: 0.5em;
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 25;
+}
+
+/* Give greedy-nav right padding so items don't go under the switcher */
+.greedy-nav {
+  padding-right: 3em !important;
 }
 
 .lang-btn {
   background: none;
   border: 1.5px solid $border-color;
   border-radius: 4px;
-  padding: 0.2em 0.5em;
-  font-size: 0.8em;
+  padding: 0.25em 0.6em;
+  font-size: 0.85em;
   font-family: $sans-serif-narrow;
   font-weight: 700;
   cursor: pointer;

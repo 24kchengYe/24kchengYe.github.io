@@ -23,7 +23,6 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 
 # News
-- *2026.06*: Invited to present at **Applied Urban Modelling (AUM2026)**, University of Cambridge, UK (upcoming).
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
@@ -167,7 +166,6 @@ Chengyang Shi, ..., **Yecheng Zhang**, Danni Niu
 - *2018.09 - 2023.06*, B.Eng. in Urban Planning, **Hefei University of Technology**, Hefei, China.
 
 # Invited Talks & Conferences
-- *2026.06*, **Applied Urban Modelling (AUM2026)**, University of Cambridge, UK (upcoming).
 - *2025.11*, **The 13th China College GIS Forum — Rising Star Forum**, Shanghai. Session Chair & Speaker.
 - *2025.10*, **China Urban Planning Informatization Annual Conference**, Foshan. Poster.
 - *2025.03*, **AAG 2025** (American Association of Geographers Annual Meeting), Detroit, USA.

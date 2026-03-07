@@ -19,11 +19,11 @@ redirect_from:
 
 I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
 
-My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in venues including Nature Cities, Scientific Data, AAAI, Habitat International, and ECCV, with <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> total Google Scholar citations. My open-source datasets have received **23,000+** downloads, including **1 ESI Highly Cited Paper**.
+My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers at top venues including Scientific Data, AAAI, Habitat International, and iScience, with papers under review at Nature Cities and ECCV. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **1 ESI Highly Cited Paper**.
 
 
 # News
-- *2026.06*: Invited to present at **Applied Urban Modelling (AUM2026)**, University of Cambridge, UK.
+- *2026.06*: Invited to present at **Applied Urban Modelling (AUM2026)**, University of Cambridge, UK (upcoming).
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
@@ -37,7 +37,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.05*: Exhibitor at **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
 - *2025.03*: Presented at **AAG 2025**, Detroit, USA.
 - *2025.01*: Paper "CMAB" published in **Scientific Data** — **23,000+ downloads**.
-- *2025.01*: Paper "WaveC2R" accepted at **AAAI 2025** (CCF-A).
+- *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.01*: Received **Outstanding Case Award for "AI-Empowered Planning"** from Urban Planning Society of China.
 - *2024.12*: Paper "Inferring Ghost Cities" published in **Habitat International**.
 - *2024.06*: Invited talk at **Applied Urban Modelling (AUM2024)**, University of Cambridge, UK.
@@ -130,14 +130,14 @@ Wenyue Li&dagger;, **Yecheng Zhang**&dagger;, Mengxing Li, Ying Long*
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/papers/wavec2r.png' alt="WaveC2R" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2026</div><img src='images/papers/wavec2r.png' alt="WaveC2R" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval**
 
 Chengyang Shi, ..., **Yecheng Zhang**, Danni Niu
 
-*AAAI 2025* (CCF-A). [PDF](cv/卫星雷达反演zyc20250730.pdf)
+*AAAI 2026* (CCF-A). [PDF](cv/卫星雷达反演zyc20250730.pdf)
 
 - Satellite-to-radar reflectivity inversion using wavelet-driven coarse-to-refined hierarchical learning framework for meteorological remote sensing.
 </div>

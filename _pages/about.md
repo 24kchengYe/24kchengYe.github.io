@@ -43,12 +43,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
-- *2025.11*: "新城市科学" paper listed in **CNKI Top 20 Most-Cited Papers** (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
+- *2025.11*: "新城市科学" paper listed in [**CNKI Top 20 Most-Cited Papers**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
 - *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) & chaired the Rising Star session at The 13th China College GIS Forum, Shanghai.
 - *2025.10*: Our paper "GenAI Models Capture Urban Science..." entered **2nd round review** at **Nature Cities**.
 - *2025.10*: Received **Jin Jingchang Outstanding Paper Award** (佳作奖, 22nd edition), Shanghai.
 - *2025.08*: Recognized as **Outstanding Teaching Assistant** (Top 5%) at Tsinghua University.
-- *2025.06*: CMAB research featured on **Tsinghua University's official Facebook account**.
+- *2025.06*: CMAB research featured on [**Tsinghua University's official Facebook account**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213).
 - *2025.05*: Nominated for **"Academic Rising Star"** (学术新秀) at Tsinghua University (10 university-wide, sole nominee from School of Architecture).
 - *2025.05*: Exhibitor at **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
 - *2025.03*: Presented at **AAG 2025**, Detroit, USA.
@@ -63,12 +63,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.01*: 全球鬼城研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
 - *2025.11*: CMAB论文入选Geoscience领域 **ESI高被引论文**。
-- *2025.11*: "新城市科学"论文入选 **中国知网《城市规划》2024-2025年度高被引论文TOP20** 榜单。
+- *2025.11*: "新城市科学"论文入选 [**中国知网《城市规划》2024-2025年度高被引论文TOP20**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) 榜单。
 - *2025.11*: 获**全国高校GIS新秀奖**（全国10人）并主持"高校GIS新秀"专场论坛，第十三届全国高校GIS论坛，上海。
 - *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Cities** **二审**。
 - *2025.10*: 获第22届**金经昌城市规划优秀论文佳作奖**，上海。
 - *2025.08*: 获清华大学2024-2025学年度秋季学期**优秀研究生助教**（前5%）。
-- *2025.06*: CMAB研究成果被**清华大学官方Facebook账号**推送报道。
+- *2025.06*: CMAB研究成果被[**清华大学官方Facebook账号**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)推送报道。
 - *2025.05*: 获清华大学第二十九届研究生**"学术新秀"提名**（全校10人，建筑学院唯一推荐）。
 - *2025.05*: 参展**第19届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
 - *2025.03*: 在**2025年美国地理学家协会年会 (AAG 2025)** 作报告，美国底特律。
@@ -83,12 +83,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.01*: グローバルゴーストシティ研究が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。
 - *2025.11*: CMAB論文が地球科学分野の **ESI高被引用論文** に認定。
-- *2025.11*: "新城市科学"論文が **CNKI 被引用数Top20論文**（2024-2025）に選出、*城市规划*。
+- *2025.11*: "新城市科学"論文が [**CNKI 被引用数Top20論文**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）に選出、*城市规划*。
 - *2025.11*: **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにて新星セッション座長、上海。
 - *2025.10*: 論文 "GenAI Models Capture Urban Science..." が **Nature Cities** の**第2回査読**に進出。
 - *2025.10*: **金経昌都市計画優秀論文賞**（第22回）受賞、上海。
 - *2025.08*: 清華大学 **優秀ティーチングアシスタント**（上位5%）に認定。
-- *2025.06*: CMAB研究が**清華大学公式Facebookアカウント**で紹介。
+- *2025.06*: CMAB研究が[**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)で紹介。
 - *2025.05*: 清華大学第29回大学院生**「学術新星」候補**に推薦（全学10名、建築学院唯一の推薦）。
 - *2025.05*: **第19回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
 - *2025.03*: **AAG 2025**（米国地理学者協会年次総会）にて発表、米国デトロイト。
@@ -163,17 +163,17 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 <div lang="en" markdown="1">
 - Built **China's Multi-Attribute Building Dataset** by integrating remote sensing, POI, and street-view imagery, covering **32M+ buildings** with **10+ attributes** nationwide.
 - **23,000+ downloads** on Figshare/GitHub; recognized as **ESI Highly Cited Paper** in Geoscience.
-- Featured by **Tsinghua University's official Facebook account** for research impact.
+- Featured by [**Tsinghua University's official Facebook account**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213) for research impact.
 </div>
 <div lang="zh" markdown="1">
 - 构建**中国多属性建筑数据集（CMAB）**，融合遥感、POI、街景等多源数据，覆盖全国 **3200万+栋建筑**、**10+属性**。
 - Figshare/GitHub累计 **23,000+次下载**；入选Geoscience领域 **ESI高被引论文**。
-- 研究成果被**清华大学官方Facebook账号**报道推送。
+- 研究成果被[**清华大学官方Facebook账号**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)报道推送。
 </div>
 <div lang="ja" markdown="1">
 - リモートセンシング、POI、ストリートビュー画像を統合し、全国**3,200万棟以上**の建物、**10以上の属性**をカバーする**中国多属性建物データセット（CMAB）** を構築。
 - Figshare/GitHubにて **23,000回以上ダウンロード**；地球科学分野の **ESI高被引用論文** に認定。
-- **清華大学公式Facebookアカウント**にて研究成果が紹介。
+- [**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)にて研究成果が紹介。
 </div>
 </div>
 </div>
@@ -278,7 +278,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="en" markdown="1">
 - *2025.11* **ESI Highly Cited Paper** (Geoscience), CMAB paper in *Scientific Data*.
 - *2025.11* **"GIS Rising Star" Award** (全国高校GIS新秀, 10 nationwide) & Session Chair, The 13th China College GIS Forum, Shanghai.
-- *2025.11* **"新城市科学" Highly Cited Paper**, CNKI Top 20 Most-Cited (2024-2025), *城市规划*.
+- *2025.11* **"新城市科学" Highly Cited Paper**, [CNKI Top 20 Most-Cited](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025), *城市规划*.
 - *2025.10* **Jin Jingchang Outstanding Paper Award** (金经昌城市规划优秀论文佳作奖, 22nd edition), Shanghai.
 - *2025.08* **Outstanding Teaching Assistant** (Top 5%), Tsinghua University, 2024-2025 Fall.
 - *2025.05* **"Academic Rising Star" Nominee** (学术新秀, 10 university-wide, sole nominee from School of Architecture), Tsinghua University.
@@ -290,7 +290,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="zh" markdown="1">
 - *2025.11* **ESI高被引论文**（Geoscience领域），CMAB论文，*Scientific Data*。
 - *2025.11* **全国高校GIS新秀奖**（全国10人）并主持专场论坛，第十三届全国高校GIS论坛，上海。
-- *2025.11* **"新城市科学"高被引论文**，中国知网《城市规划》2024-2025年度高被引论文TOP20榜单。
+- *2025.11* **"新城市科学"高被引论文**，[中国知网《城市规划》2024-2025年度高被引论文TOP20榜单](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)。
 - *2025.10* **金经昌城市规划优秀论文佳作奖**（第22届），上海。
 - *2025.08* **优秀研究生助教**（前5%），清华大学2024-2025学年秋季学期。
 - *2025.05* 清华大学第二十九届研究生 **"学术新秀"候选人**（全校10人，建筑学院唯一推荐）。
@@ -302,7 +302,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="ja" markdown="1">
 - *2025.11* **ESI高被引用論文**（地球科学分野）、CMAB論文、*Scientific Data*。
 - *2025.11* **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにてセッション座長、上海。
-- *2025.11* **「新城市科学」高被引用論文**、CNKI被引用数Top20（2024-2025）、*城市规划*。
+- *2025.11* **「新城市科学」高被引用論文**、[CNKI被引用数Top20](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）、*城市规划*。
 - *2025.10* **金経昌都市計画優秀論文賞**（第22回）、上海。
 - *2025.08* **優秀ティーチングアシスタント**（上位5%）、清華大学2024-2025秋学期。
 - *2025.05* 清華大学第29回大学院生 **「学術新星」候補**（全学10名、建築学院唯一の推薦）。

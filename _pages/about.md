@@ -46,6 +46,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.11*: "新城市科学" paper listed in [**CNKI Top 20 Most-Cited Papers**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
 - *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) & chaired the Rising Star session at The 13th China College GIS Forum, Shanghai.
 - *2025.10*: Our paper "GenAI Models Capture Urban Science..." entered **2nd round review** at **Nature Cities**.
+- *2025.10*: Poster at **China Urban Planning Informatization Annual Conference**, Foshan.
 - *2025.10*: Received **Jin Jingchang Outstanding Paper Award** (佳作奖, 22nd edition), Shanghai.
 - *2025.08*: Recognized as **Outstanding Teaching Assistant** (Top 5%) at Tsinghua University.
 - *2025.06*: CMAB research featured on [**Tsinghua University's official Facebook account**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213).
@@ -55,7 +56,16 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.01*: Paper "CMAB" published in **Scientific Data** — **23,000+ downloads**.
 - *2025.01*: Received **Outstanding Case Award for "AI-Empowered Planning"** from Urban Planning Society of China.
 - *2024.12*: Paper "Inferring Ghost Cities" published in **Habitat International**.
+- *2024.11*: Presented at **Tsinghua University "Future Urban Construction" Ph.D. Forum**, Beijing.
 - *2024.06*: Invited talk at **Applied Urban Modelling (AUM2024)**, University of Cambridge, UK.
+- *2024.01*: Attended **NSFC Major Project Kick-off Meeting**, Guangzhou.
+- *2023.08*: Presented at **The First Research Summit of Urban Science**, Beijing.
+- *2023.08*: Presented at **Global Smart Cities Summit (GSCS) & 3rd International Conference on Urban Informatics (ICUI)**, Hong Kong.
+- *2023.07*: Presented at **UIA World Congress of Architects**, Copenhagen, Denmark.
+- *2023.06*: Invited talk at **Tongji University Architectural DigitalFUTURES** "Emerging Planetarism", Shanghai.
+- *2023.05*: Exhibitor at **China Pavilion, 18th Venice Architecture Biennale**, Venice, Italy.
+- *2022.09*: Presented at **CUSR Urban Big Data Annual Meeting**, Beijing.
+- *2022.07*: Presented at **4th International Conference on Computational Design and Robotic Fabrication**, Shanghai.
 </div>
 
 <div lang="zh" markdown="1">
@@ -66,6 +76,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.11*: "新城市科学"论文入选 [**中国知网《城市规划》2024-2025年度高被引论文TOP20**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) 榜单。
 - *2025.11*: 获**全国高校GIS新秀奖**（全国10人）并主持"高校GIS新秀"专场论坛，第十三届全国高校GIS论坛，上海。
 - *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Cities** **二审**。
+- *2025.10*: 在**中国城市规划信息化年会**展示展板，佛山。
 - *2025.10*: 获第22届**金经昌城市规划优秀论文佳作奖**，上海。
 - *2025.08*: 获清华大学2024-2025学年度秋季学期**优秀研究生助教**（前5%）。
 - *2025.06*: CMAB研究成果被[**清华大学官方Facebook账号**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)推送报道。
@@ -75,7 +86,16 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.01*: 论文 "CMAB" 发表于 **Scientific Data** — 累计 **23,000+次下载**。
 - *2025.01*: 获中国城市规划学会 **"AI赋能规划"优秀案例奖**。
 - *2024.12*: 论文 "Inferring Ghost Cities" 发表于 **Habitat International**。
+- *2024.11*: 在清华大学**"未来城市建设与发展"博士生学术论坛**作报告，北京。
 - *2024.06*: 受邀在英国**剑桥大学 Applied Urban Modelling (AUM2024)** 会议作报告。
+- *2024.01*: 参加**国家自然科学基金委重大项目启动会**，广州。
+- *2023.08*: 在**第一届城市科学大会 (The First Research Summit of Urban Science)** 作报告，北京。
+- *2023.08*: 在**全球智慧城市峰会暨第三届国际城市信息学大会 (GSCS & ICUI)** 作报告，中国香港。
+- *2023.07*: 在**UIA世界建筑师大会**作报告，丹麦哥本哈根。
+- *2023.06*: 受邀在**同济大学 Architectural DigitalFUTURES** "Emerging Planetarism" 作报告，上海。
+- *2023.05*: 参展**第18届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
+- *2022.09*: 在**中国城市科学研究会城市大数据专业委员会2022年会**作报告，北京。
+- *2022.07*: 在**第四届国际计算设计和机器人制造会议**作报告，上海。
 </div>
 
 <div lang="ja" markdown="1">
@@ -86,6 +106,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.11*: "新城市科学"論文が [**CNKI 被引用数Top20論文**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）に選出、*城市规划*。
 - *2025.11*: **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにて新星セッション座長、上海。
 - *2025.10*: 論文 "GenAI Models Capture Urban Science..." が **Nature Cities** の**第2回査読**に進出。
+- *2025.10*: **中国都市計画情報化年次会議**にてポスター発表、佛山。
 - *2025.10*: **金経昌都市計画優秀論文賞**（第22回）受賞、上海。
 - *2025.08*: 清華大学 **優秀ティーチングアシスタント**（上位5%）に認定。
 - *2025.06*: CMAB研究が[**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)で紹介。
@@ -95,7 +116,16 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.01*: 論文 "CMAB" が **Scientific Data** に掲載 — **23,000回以上ダウンロード**。
 - *2025.01*: 中国都市計画学会より **「AI活用計画」優秀事例賞** を受賞。
 - *2024.12*: 論文 "Inferring Ghost Cities" が **Habitat International** に掲載。
+- *2024.11*: 清華大学**「未来都市建設」博士課程フォーラム**にて発表、北京。
 - *2024.06*: 英国**ケンブリッジ大学 Applied Urban Modelling (AUM2024)** にて招待講演。
+- *2024.01*: **国家自然科学基金委員会重大プロジェクトキックオフ会議**に参加、広州。
+- *2023.08*: **第1回都市科学研究サミット (The First Research Summit of Urban Science)** にて発表、北京。
+- *2023.08*: **グローバルスマートシティサミット (GSCS) & 第3回国際都市情報学会議 (ICUI)** にて発表、香港。
+- *2023.07*: **UIA世界建築家会議**にて発表、デンマーク・コペンハーゲン。
+- *2023.06*: **同済大学 Architectural DigitalFUTURES** "Emerging Planetarism" にて招待講演、上海。
+- *2023.05*: **第18回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
+- *2022.09*: **中国都市科学研究会都市ビッグデータ委員会2022年次会議**にて発表、北京。
+- *2022.07*: **第4回国際コンピュテーショナルデザイン・ロボティックファブリケーション会議**にて発表、上海。
 </div>
 
 # <span lang="en">Publications</span><span lang="zh">论文</span><span lang="ja">論文</span>
@@ -366,6 +396,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 - *2025.03*, **AAG 2025** (American Association of Geographers Annual Meeting), Detroit, USA.
 - *2024.11*, **Tsinghua University "Future Urban Construction" Ph.D. Forum**, Beijing.
 - *2024.06*, **Applied Urban Modelling (AUM2024)**, University of Cambridge, UK.
+- *2023.08*, **The First Research Summit of Urban Science**, Beijing.
 - *2023.08*, **Global Smart Cities Summit (GSCS) & ICUI**, Hong Kong.
 - *2023.07*, **UIA World Congress of Architects**, Copenhagen, Denmark.
 - *2023.06*, **Tongji University Architectural DigitalFUTURES** "Emerging Planetarism", Shanghai.

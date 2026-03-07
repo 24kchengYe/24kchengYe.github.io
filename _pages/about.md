@@ -165,6 +165,24 @@ Chengyang Shi, ..., **Yecheng Zhang**, Danni Niu
 - *2023.09 - present*, Ph.D. in Urban Planning (AI for Urban Science), **Tsinghua University**, Beijing, China. Advisor: Prof. Ying Long.
 - *2018.09 - 2023.06*, B.Eng. in Urban Planning, **Hefei University of Technology**, Hefei, China.
 
+# Research Experience
+
+**LLM Scientific Data Generation Evaluation — AI4US** \| First Author \| 2024.06 – 2025.01
+- Designed the AI4US benchmark framework to systematically evaluate data synthesis capabilities of leading LLMs (GPT-4o, Claude 3.5, etc.) across symbolic reasoning (scaling laws, distance decay, urban vitality) and multimodal perception, running **10,000+ automated experiments**.
+- Built a multi-paradigm prompt engineering pipeline (independent/joint sampling, blueprint prompting) that improved LLM output fidelity from R²=0.15 to **0.90+**; discovered critical failure modes including distributional collapse and ambiguity aversion.
+- Tech: Python, OpenAI/Anthropic API, CLIP, statistical modeling.
+
+**Training-Free VLM-Human Preference Alignment — UrbanAlign** \| First Author \| 2024.10 – 2025.02
+- Proposed a training-free post-hoc concept bottleneck method to align frozen VLM outputs with human preferences — no fine-tuning, RLHF, or GPU training required.
+- Designed an Observer-Debater-Judge **multi-agent reasoning chain** for structured scoring, and developed **locally-weighted ridge regression (LWRR)** on a hybrid CLIP+semantic manifold for geometric calibration.
+- Achieved **72.2% accuracy** (+28.8pp over raw VLM, +15.1pp over supervised baselines) with full dimension-level interpretability.
+- Tech: Python, GPT-4o API, CLIP, multi-agent orchestration, manifold learning, scikit-learn.
+
+**Global-Scale Urban Dataset Construction — CMAB & GloGCI** \| First Author \| 2023.09 – 2025.01
+- Built **CMAB** (China's Multi-Attribute Building Dataset) by integrating remote sensing, POI, and street-view imagery, covering **32M+ buildings** with 10+ attributes nationwide; **23,000+ downloads** and ESI Highly Cited.
+- Developed **GloGCI** (Global Ghost City Index) through multi-source data fusion (satellite imagery, mobility, economic indicators) with contextual multi-armed bandit sampling and ensemble learning across **10,000+ global cities**.
+- Tech: Python, GIS, remote sensing, Web scraping, PostgreSQL.
+
 # Invited Talks & Conferences
 - *2025.11*, **The 13th China College GIS Forum — Rising Star Forum**, Shanghai. Session Chair & Speaker.
 - *2025.10*, **China Urban Planning Informatization Annual Conference**, Foshan. Poster.

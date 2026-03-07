@@ -9,3 +9,19 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 /vendor/
+
+# Sensitive CV files (keep locally, exclude from GitHub)
+cv/*.tex
+cv/*.aux
+cv/*.bbl
+cv/*.log
+cv/*.out
+cv/*.synctex.gz
+cv/*.docx
+cv/*.md
+cv/photo.png
+cv/照片.png
+cv/hfut_logo.png
+cv/tsinghua_logo.png
+cv/夏俊豪简历.pdf
+cv/NUL

@@ -11,6 +11,13 @@
     ],
     "talks": [
       {
+        "title": "The 13th China College GIS Forum - Rising Star Forum",
+        "location": "China",
+        "year": 2025,
+        "role": "Session Chair & Speaker",
+        "added_date": "2025-01-10"
+      },
+      {
         "title": "Applied Urban Modelling (AUM2024)",
         "location": "University of Cambridge, UK",
         "year": 2024,
@@ -62,20 +69,30 @@
         "role": "Invited Reviewer",
         "organization": "Elsevier",
         "added_date": "2023-11-01"
+      },
+      {
+        "journal": "Verixiv",
+        "role": "Invited Reviewer",
+        "organization": "Verixiv",
+        "added_date": "2025-01-01"
       }
     ],
     "skills": [
       {
         "category": "Programming",
-        "items": ["Python", "GIS"]
+        "items": ["Python", "SQL", "JavaScript", "Linux", "Git"]
+      },
+      {
+        "category": "AI/ML",
+        "items": ["PyTorch", "LLM/VLM APIs", "Prompt Engineering", "Multi-Agent Systems", "Diffusion Models", "Flow Matching"]
+      },
+      {
+        "category": "Data & GIS",
+        "items": ["QGIS", "ArcGIS", "GeoPandas", "Remote Sensing", "Web Scraping", "PostgreSQL"]
       },
       {
         "category": "Languages",
         "items": ["English (Fluent)", "Chinese (Native)"]
-      },
-      {
-        "category": "Expertise",
-        "items": ["Machine Learning", "Deep Learning", "Urban Analytics", "Data Science"]
       }
     ]
   }

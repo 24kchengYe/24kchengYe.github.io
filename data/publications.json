@@ -1,6 +1,133 @@
 {
   "publications": [
     {
+      "id": "genai_urban_science_2025",
+      "title": "GenAI Models Capture Urban Science but Oversimplify Complexity",
+      "authors": [
+        "Yecheng Zhang",
+        "Renhe Zhao",
+        "Zhenliang Huang",
+        "Ying Long*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "Nature Cities",
+      "year": 2025,
+      "volume": "",
+      "pages": "",
+      "type": "journal",
+      "status": "under review (2nd round)",
+      "badges": [],
+      "image": "",
+      "links": {
+        "pdf": "",
+        "doi": "#"
+      },
+      "citation_key": "genai_urban_science_2025",
+      "added_date": "2026-03-07",
+      "_metadata": {
+        "extracted_by": "manual",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "Under 2nd round review at Nature Cities. AI4US benchmark with 40,000+ synthesis trials."
+      }
+    },
+    {
+      "id": "urbanalign_eccv_2026",
+      "title": "UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment",
+      "authors": [
+        "Yecheng Zhang",
+        "Renhe Zhao",
+        "Ying Long",
+        "Chengyang Shi*"
+      ],
+      "author_note": "*corresponding",
+      "venue": "ECCV 2026",
+      "year": 2026,
+      "volume": "",
+      "pages": "",
+      "type": "conference",
+      "status": "submitted",
+      "badges": [],
+      "image": "",
+      "links": {
+        "pdf": "",
+        "doi": "#"
+      },
+      "citation_key": "urbanalign_eccv_2026",
+      "added_date": "2026-03-07",
+      "_metadata": {
+        "extracted_by": "manual",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "Training-free post-hoc concept bottleneck method. 72.2% accuracy (+28.8pp over raw VLM)."
+      }
+    },
+    {
+      "id": "wavec2r_aaai_2025",
+      "title": "WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval",
+      "authors": [
+        "Chengyang Shi",
+        "others",
+        "Yecheng Zhang",
+        "Danni Niu"
+      ],
+      "author_note": "",
+      "venue": "AAAI 2025",
+      "year": 2025,
+      "volume": "",
+      "pages": "",
+      "type": "conference",
+      "status": "published",
+      "badges": ["CCF-A"],
+      "image": "",
+      "links": {
+        "pdf": "",
+        "doi": "#"
+      },
+      "citation_key": "wavec2r_aaai_2025",
+      "added_date": "2026-03-07",
+      "_metadata": {
+        "extracted_by": "manual",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "CCF-A conference. Satellite-to-radar reflectivity inversion."
+      }
+    },
+    {
+      "id": "awflows2r_arxiv_2026",
+      "title": "AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval",
+      "authors": [
+        "Chengyang Shi",
+        "Xin Han",
+        "Yecheng Zhang",
+        "Bin Wu",
+        "Jingnan Hou",
+        "Jingsong Wang",
+        "Danni Niu"
+      ],
+      "author_note": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "volume": "",
+      "pages": "",
+      "type": "preprint",
+      "status": "preprint",
+      "badges": [],
+      "image": "",
+      "links": {
+        "pdf": "",
+        "doi": "#"
+      },
+      "citation_key": "awflows2r_arxiv_2026",
+      "added_date": "2026-03-07",
+      "_metadata": {
+        "extracted_by": "manual",
+        "confidence": "high",
+        "verified_online": false,
+        "notes": "Flow matching for satellite-to-radar retrieval. CSI +7.2%, FAR -30%."
+      }
+    },
+    {
       "id": "urban_spatial_risk_2022",
       "title": "Urban spatial risk prediction and optimization analysis of POI based on deep learning from the perspective of an epidemic",
       "authors": [
@@ -246,7 +373,7 @@
       "pages": "430",
       "type": "journal",
       "status": "published",
-      "badges": [],
+      "badges": ["ESI Highly Cited"],
       "image": "images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png",
       "links": {
         "pdf": "pdfs/08Zhang et al 2025 Scientific_Data-CMAB.pdf",
@@ -298,16 +425,19 @@
       }
     },
     {
-      "id": "generative_design_method_0",
+      "id": "generative_design_method_2023",
       "title": "Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong",
-      "authors": [],
+      "authors": [
+        "Yecheng Zhang",
+        "others"
+      ],
       "author_note": "",
-      "venue": "",
-      "year": 0,
+      "venue": "UIA World Congress of Architects",
+      "year": 2023,
       "volume": "",
       "pages": "",
-      "type": "",
-      "status": "",
+      "type": "conference",
+      "status": "published",
       "badges": [],
       "image": "images/papers/10Generative Design Method of Building Group Based on AIP (Aging in Place) Assessment-The Case of Dense Urban Renewal Districts in Hong Kong.png",
       "links": {

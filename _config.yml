@@ -8,6 +8,8 @@
 # Site Settings
 title                    : "Yecheng Zhang - Tsinghua University"
 description              : "Research interests include LLM evaluation & alignment, vision-language models, multi-agent systems, and urban AI."
+description_zh           : "研究兴趣包括大模型评测与对齐、视觉语言模型、多智能体系统和城市人工智能。"
+description_ja           : "研究分野はLLM評価とアライメント、視覚言語モデル、マルチエージェントシステム、都市AI。"
 repository               : "24kchengYe/24kchengYe.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -25,6 +27,8 @@ author:
   name_cn          : "张业成"
   avatar           : "images/profile.jpg"
   bio              : "Ph.D. Student at Tsinghua University"
+  bio_zh           : "清华大学博士生"
+  bio_ja           : "清華大学博士課程"
   location         : "Beijing, China"
   employer         :
   pubmed           :

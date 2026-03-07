@@ -4,11 +4,43 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
+            <a href="#about-me">
+              <span lang="en">Homepage</span><span lang="zh">主页</span><span lang="ja">ホーム</span>
+            </a>
+          </li>
           {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item">
+              <a href="{{ domain }}{{ link.url }}">
+                {% if link.title == "About Me" %}
+                  <span lang="en">About Me</span><span lang="zh">关于我</span><span lang="ja">自己紹介</span>
+                {% elsif link.title == "News" %}
+                  <span lang="en">News</span><span lang="zh">动态</span><span lang="ja">ニュース</span>
+                {% elsif link.title == "Publications" %}
+                  <span lang="en">Publications</span><span lang="zh">论文</span><span lang="ja">論文</span>
+                {% elsif link.title == "Honors and Awards" %}
+                  <span lang="en">Honors and Awards</span><span lang="zh">荣誉奖励</span><span lang="ja">受賞歴</span>
+                {% elsif link.title == "Educations" %}
+                  <span lang="en">Educations</span><span lang="zh">教育背景</span><span lang="ja">学歴</span>
+                {% elsif link.title == "Invited Talks" %}
+                  <span lang="en">Invited Talks</span><span lang="zh">学术报告</span><span lang="ja">招待講演</span>
+                {% elsif link.title == "Internships" %}
+                  <span lang="en">Internships</span><span lang="zh">实习项目</span><span lang="ja">インターン</span>
+                {% else %}
+                  {{ link.title }}
+                {% endif %}
+              </a>
+            </li>
           {% endfor %}
         </ul>
+        <div class="lang-switch">
+          <button id="lang-btn" class="lang-btn">EN</button>
+          <div class="lang-dropdown">
+            <a href="#" onclick="switchLang('en');return false;">English</a>
+            <a href="#" onclick="switchLang('zh');return false;">中文</a>
+            <a href="#" onclick="switchLang('ja');return false;">日本語</a>
+          </div>
+        </div>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

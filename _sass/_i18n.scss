@@ -1,0 +1,61 @@
+/* ==========================================================================
+   i18n Language Switcher
+   ========================================================================== */
+
+.lang-switch {
+  position: relative;
+  display: inline-block;
+  margin-left: 1em;
+  vertical-align: middle;
+}
+
+.lang-btn {
+  background: none;
+  border: 1.5px solid $border-color;
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  font-size: 0.8em;
+  font-family: $sans-serif-narrow;
+  font-weight: 700;
+  cursor: pointer;
+  color: $text-color;
+  line-height: 1.4;
+
+  &:hover,
+  &:focus {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  min-width: 100px;
+  z-index: 100;
+
+  a {
+    display: block;
+    padding: 0.4em 0.8em;
+    color: $text-color;
+    text-decoration: none;
+    font-size: 0.85em;
+    white-space: nowrap;
+
+    &:hover {
+      background: $lighter-gray;
+      color: $primary-color;
+    }
+  }
+}
+
+.lang-switch:hover .lang-dropdown,
+.lang-switch:focus-within .lang-dropdown {
+  display: block;
+}

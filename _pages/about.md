@@ -434,6 +434,6 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 - **AI4US** — 都市科学のための生成AIベンチマーク（2,000回以上ダウンロード）。
 </div>
 
-<div style="width:300px; margin:2em auto 0;">
-<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=RnbIqBAqdWF_aYJ-2H8ID3YGd7OYr5OY0YFDIM750n8"></script>
+<div id="clustrmaps-container" style="width:300px; height:300px; margin:2em auto 0;">
+<script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=RnbIqBAqdWF_aYJ-2H8ID3YGd7OYr5OY0YFDIM750n8"></script>
 </div>

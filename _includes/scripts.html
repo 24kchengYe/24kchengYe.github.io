@@ -2,3 +2,17 @@
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
+
+<!-- ClustrMaps Globe Visitor Tracker: dynamically load into container -->
+<script>
+(function(){
+  var c = document.getElementById('clustrmaps-container');
+  if (c) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.id = 'clstr_globe';
+    s.src = 'https://clustrmaps.com/globe.js?d=RnbIqBAqdWF_aYJ-2H8ID3YGd7OYr5OY0YFDIM750n8';
+    c.appendChild(s);
+  }
+})();
+</script>

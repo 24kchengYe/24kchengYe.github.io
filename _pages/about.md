@@ -20,25 +20,26 @@ redirect_from:
 <div lang="en" markdown="1">
 I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
 
-My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in SCI/SSCI journals and CCF-A conferences including *Scientific Data*, *AAAI*, *Habitat International*, and *iScience*, with papers under review at *Nature Cities* and *ECCV*. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **1 ESI Highly Cited Paper**.
+My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in SCI/SSCI journals and CCF-A conferences including *Scientific Data*, *AAAI*, *Habitat International*, and *iScience*, with papers under review at *Nature Cities* and *ECCV*. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **2 ESI Highly Cited Papers**.
 </div>
 
 <div lang="zh" markdown="1">
 我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。2023年获[合肥工业大学](https://www.hfut.edu.cn/)城乡规划学士学位。
 
-研究方向包括**大模型评测与对齐**、**多智能体系统**和**城市人工智能**。致力于构建大规模城市数据集，系统评估生成式AI模型在科学数据合成与视觉理解中的能力。已在 *Scientific Data*、*AAAI*、*Habitat International*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有论文在 *Nature Cities* 和 *ECCV* 审稿中。研究成果获 <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar 引用，开源数据集累计 **23,000+** 次下载，含 **1篇ESI高被引论文**。
+研究方向包括**大模型评测与对齐**、**多智能体系统**和**城市人工智能**。致力于构建大规模城市数据集，系统评估生成式AI模型在科学数据合成与视觉理解中的能力。已在 *Scientific Data*、*AAAI*、*Habitat International*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有论文在 *Nature Cities* 和 *ECCV* 审稿中。研究成果获 <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar 引用，开源数据集累计 **23,000+** 次下载，含 **2篇ESI高被引论文**。
 </div>
 
 <div lang="ja" markdown="1">
 [清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。2023年に[合肥工業大学](https://www.hfut.edu.cn/)にて都市計画の学士号を取得しました。
 
-研究分野は**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**、**都市AI**です。大規模都市データセットの構築と、科学データ合成・視覚理解における生成AIモデルの体系的評価に取り組んでいます。*Scientific Data*、*AAAI*、*Habitat International*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Cities* と *ECCV* に投稿中の論文があります。研究成果は <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> のGoogle Scholar引用を受け、オープンソースデータセットは累計 **23,000回以上** ダウンロードされ、**ESI高被引用論文1本** を含みます。
+研究分野は**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**、**都市AI**です。大規模都市データセットの構築と、科学データ合成・視覚理解における生成AIモデルの体系的評価に取り組んでいます。*Scientific Data*、*AAAI*、*Habitat International*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Cities* と *ECCV* に投稿中の論文があります。研究成果は <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> のGoogle Scholar引用を受け、オープンソースデータセットは累計 **23,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
 </div>
 
 
 # <span lang="en">News</span><span lang="zh">动态</span><span lang="ja">ニュース</span>
 
 <div lang="en" markdown="1">
+- *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
@@ -69,6 +70,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 </div>
 
 <div lang="zh" markdown="1">
+- *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
 - *2026.02*: 论文 "UrbanAlign" 投稿至 **ECCV 2026**。
 - *2026.01*: 全球鬼城研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
@@ -99,6 +101,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 </div>
 
 <div lang="ja" markdown="1">
+- *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
 - *2026.02*: 論文 "UrbanAlign" を **ECCV 2026** に投稿。
 - *2026.01*: グローバルゴーストシティ研究が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。
@@ -211,7 +214,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Habitat International</div><img src='images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png' alt="GloGCI" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data**
+**Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data** [![](https://img.shields.io/badge/ESI-Highly%20Cited-red)]()
 
 **Yecheng Zhang**, Tangqi Tu, Ying Long*
 
@@ -219,15 +222,15 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 <div lang="en" markdown="1">
 - Developed **GloGCI (Global Ghost City Index)** through multi-source data fusion (satellite imagery, mobility, economic indicators) with contextual multi-armed bandit sampling and ensemble learning across **10,000+ global cities**.
-- Research reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
+- Recognized as **ESI Highly Cited Paper** in Social Science. Research reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 </div>
 <div lang="zh" markdown="1">
 - 开发 **GloGCI（全球鬼城指数）**，融合卫星影像、移动数据、经济指标等多源数据，结合上下文多臂赌博机采样与集成学习，覆盖全球 **10,000+城市**。
-- 研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
+- 入选Social Science领域 **ESI高被引论文**。研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 </div>
 <div lang="ja" markdown="1">
 - 衛星画像、モビリティデータ、経済指標などのマルチソースデータ融合により、コンテキスト多腕バンディットサンプリングとアンサンブル学習を用いて **GloGCI（グローバルゴーストシティ指数）** を開発、世界 **10,000都市以上** をカバー。
-- 研究成果が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
+- 社会科学分野の **ESI高被引用論文** に認定。研究成果が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 </div>
 </div>
 </div>
@@ -306,6 +309,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 # <span lang="en">Honors and Awards</span><span lang="zh">荣誉奖励</span><span lang="ja">受賞歴</span>
 
 <div lang="en" markdown="1">
+- *2026.04* **ESI Highly Cited Paper** (Social Science), Ghost Cities paper in *Habitat International*.
 - *2025.11* **ESI Highly Cited Paper** (Geoscience), CMAB paper in *Scientific Data*.
 - *2025.11* **"GIS Rising Star" Award** (全国高校GIS新秀, 10 nationwide) & Session Chair, The 13th China College GIS Forum, Shanghai.
 - *2025.11* **"新城市科学" Highly Cited Paper**, [CNKI Top 20 Most-Cited](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025), *城市规划*.
@@ -318,6 +322,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 
 <div lang="zh" markdown="1">
+- *2026.04* **ESI高被引论文**（Social Science领域），鬼城论文，*Habitat International*。
 - *2025.11* **ESI高被引论文**（Geoscience领域），CMAB论文，*Scientific Data*。
 - *2025.11* **全国高校GIS新秀奖**（全国10人）并主持专场论坛，第十三届全国高校GIS论坛，上海。
 - *2025.11* **"新城市科学"高被引论文**，[中国知网《城市规划》2024-2025年度高被引论文TOP20榜单](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)。
@@ -330,6 +335,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 
 <div lang="ja" markdown="1">
+- *2026.04* **ESI高被引用論文**（社会科学分野）、ゴーストシティ論文、*Habitat International*。
 - *2025.11* **ESI高被引用論文**（地球科学分野）、CMAB論文、*Scientific Data*。
 - *2025.11* **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにてセッション座長、上海。
 - *2025.11* **「新城市科学」高被引用論文**、[CNKI被引用数Top20](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）、*城市规划*。

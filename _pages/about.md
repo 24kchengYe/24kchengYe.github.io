@@ -40,6 +40,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 <div lang="en" markdown="1">
 - *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
+- *2026.04*: Paper "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" accepted at **CVPR 2026 Findings**. [Project Page](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
@@ -71,6 +72,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 <div lang="zh" markdown="1">
 - *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
+- *2026.04*: 论文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" 被 **CVPR 2026 Findings** 录用。[项目主页](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: 论文 "UrbanAlign" 投稿至 **ECCV 2026**。
 - *2026.01*: 全球鬼城研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
@@ -102,6 +104,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 <div lang="ja" markdown="1">
 - *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
+- *2026.04*: 論文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" が **CVPR 2026 Findings** に採択。[プロジェクトページ](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: 論文 "UrbanAlign" を **ECCV 2026** に投稿。
 - *2026.01*: グローバルゴーストシティ研究が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。

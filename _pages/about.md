@@ -39,6 +39,8 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 # <span lang="en">News</span><span lang="zh">动态</span><span lang="ja">ニュース</span>
 
 <div lang="en" markdown="1">
+- *2026.06*: Paper "UrbanAlign" accepted at **ECCV 2026**.
+- *2026.06*: Paper "Towards building-scale urban analytics and simulation" published in **Building Simulation** (SCI Q1).
 - *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
 - *2026.04*: Paper "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" accepted at **CVPR 2026 Findings**. [Project Page](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
@@ -71,6 +73,8 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 </div>
 
 <div lang="zh" markdown="1">
+- *2026.06*: 论文 "UrbanAlign" 被 **ECCV 2026** 录用。
+- *2026.06*: 论文 "Towards building-scale urban analytics and simulation" 发表于 **Building Simulation**（SCI Q1）。
 - *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
 - *2026.04*: 论文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" 被 **CVPR 2026 Findings** 录用。[项目主页](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: 论文 "UrbanAlign" 投稿至 **ECCV 2026**。
@@ -103,6 +107,8 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 </div>
 
 <div lang="ja" markdown="1">
+- *2026.06*: 論文 "UrbanAlign" が **ECCV 2026** に採択。
+- *2026.06*: 論文 "Towards building-scale urban analytics and simulation" が **Building Simulation** (SCI Q1) に掲載。
 - *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
 - *2026.04*: 論文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" が **CVPR 2026 Findings** に採択。[プロジェクトページ](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.02*: 論文 "UrbanAlign" を **ECCV 2026** に投稿。
@@ -167,7 +173,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 **Yecheng Zhang**, Rong Zhao, Zhizhou Sha, Yong Li, Lei Wang, Ce Hou, Wen Ji, Hao Huang, Yunshan Wan, Jian Yu, Junhao Xia, Yuru Zhang, Chunlei Shi*
 
-*ECCV 2026* (under review, CCF-B). [![arXiv](https://img.shields.io/badge/arXiv-2602.19442-b31b1b.svg)](https://arxiv.org/abs/2602.19442) \| [PDF](cv/arxiv-eccv.pdf)
+*ECCV 2026*. [![arXiv](https://img.shields.io/badge/arXiv-2602.19442-b31b1b.svg)](https://arxiv.org/abs/2602.19442) \| [PDF](cv/arxiv-eccv.pdf)
 
 <div lang="en" markdown="1">
 - Proposed a **training-free post-hoc concept bottleneck method** to align frozen VLM outputs with human preferences — no fine-tuning, RLHF, or GPU training required.
@@ -301,6 +307,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 </div>
 
+- **Zhang Y**, Long Y*. Towards building-scale urban analytics and simulation. *Building Simulation*, 2026. [PDF](cv/building-simulation.pdf)
 - Shi C, Han X, **Zhang Y**, Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. *arXiv*, 2026.
 - Wang L, Hou C, **Zhang Y**, He J*. Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation*, 132, 104058, 2024. [PDF](cv/06Wang et al 2024 JAG-SolarSVIs.pdf)
 - Long Y*, Zhao H, **Zhang Y**. 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW*, 48, 2024. [DOI](https://doi.org/10.11819/cpr20240702a) \| [PDF](cv/05龙瀛等 2024 城市规划-新城市科学.pdf)

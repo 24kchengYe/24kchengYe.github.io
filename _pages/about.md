@@ -20,19 +20,19 @@ redirect_from:
 <div lang="en" markdown="1">
 I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
 
-My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in SCI/SSCI journals and CCF-A conferences including *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, and *iScience*, with papers under review at *Nature Cities* and *ECCV*. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **2 ESI Highly Cited Papers**.
+My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*, with a first/corresponding-author paper in 2nd-round review at *Nature Communications*. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **2 ESI Highly Cited Papers**.
 </div>
 
 <div lang="zh" markdown="1">
 我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。2023年获[合肥工业大学](https://www.hfut.edu.cn/)城乡规划学士学位。
 
-研究方向包括**大模型评测与对齐**、**多智能体系统**和**城市人工智能**。致力于构建大规模城市数据集，系统评估生成式AI模型在科学数据合成与视觉理解中的能力。已在 *Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有论文在 *Nature Cities* 和 *ECCV* 审稿中。研究成果获 <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar 引用，开源数据集累计 **23,000+** 次下载，含 **2篇ESI高被引论文**。
+研究方向包括**大模型评测与对齐**、**多智能体系统**和**城市人工智能**。致力于构建大规模城市数据集，系统评估生成式AI模型在科学数据合成与视觉理解中的能力。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有第一/通讯作者论文在 *Nature Communications* 二审。研究成果获 <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar 引用，开源数据集累计 **23,000+** 次下载，含 **2篇ESI高被引论文**。
 </div>
 
 <div lang="ja" markdown="1">
 [清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。2023年に[合肥工業大学](https://www.hfut.edu.cn/)にて都市計画の学士号を取得しました。
 
-研究分野は**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**、**都市AI**です。大規模都市データセットの構築と、科学データ合成・視覚理解における生成AIモデルの体系的評価に取り組んでいます。*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Cities* と *ECCV* に投稿中の論文があります。研究成果は <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> のGoogle Scholar引用を受け、オープンソースデータセットは累計 **23,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
+研究分野は**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**、**都市AI**です。大規模都市データセットの構築と、科学データ合成・視覚理解における生成AIモデルの体系的評価に取り組んでいます。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Communications* に第2回査読中の筆頭/責任著者論文があります。研究成果は <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> のGoogle Scholar引用を受け、オープンソースデータセットは累計 **23,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
 </div>
 
 
@@ -43,13 +43,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.06*: Paper "Towards building-scale urban analytics and simulation" published in **Building Simulation** (SCI Q1).
 - *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
 - *2026.04*: Paper "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" accepted at **CVPR 2026 Findings**. [Project Page](https://junhaoooxia.github.io/DAPE.github.io/)
-- *2026.02*: Paper "UrbanAlign" submitted to **ECCV 2026**.
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
 - *2025.11*: "新城市科学" paper listed in [**CNKI Top 20 Most-Cited Papers**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
 - *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) & chaired the Rising Star session at The 13th China College GIS Forum, Shanghai.
-- *2025.10*: Our paper "GenAI Models Capture Urban Science..." entered **2nd round review** at **Nature Cities**.
+- *2025.10*: Our paper "GenAI Models Capture Urban Science..." entered **2nd round review** at **Nature Communications**.
 - *2025.10*: Poster at **China Urban Planning Informatization Annual Conference**, Foshan.
 - *2025.10*: Received **Jin Jingchang Outstanding Paper Award** (佳作奖, 22nd edition), Shanghai.
 - *2025.08*: Recognized as **Outstanding Teaching Assistant** (Top 5%) at Tsinghua University.
@@ -77,13 +76,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.06*: 论文 "Towards building-scale urban analytics and simulation" 发表于 **Building Simulation**（SCI Q1）。
 - *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
 - *2026.04*: 论文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" 被 **CVPR 2026 Findings** 录用。[项目主页](https://junhaoooxia.github.io/DAPE.github.io/)
-- *2026.02*: 论文 "UrbanAlign" 投稿至 **ECCV 2026**。
 - *2026.01*: 全球鬼城研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
 - *2025.11*: CMAB论文入选Geoscience领域 **ESI高被引论文**。
 - *2025.11*: "新城市科学"论文入选 [**中国知网《城市规划》2024-2025年度高被引论文TOP20**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) 榜单。
 - *2025.11*: 获**全国高校GIS新秀奖**（全国10人）并主持"高校GIS新秀"专场论坛，第十三届全国高校GIS论坛，上海。
-- *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Cities** **二审**。
+- *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Communications** **二审**。
 - *2025.10*: 在**中国城市规划信息化年会**展示展板，佛山。
 - *2025.10*: 获第22届**金经昌城市规划优秀论文佳作奖**，上海。
 - *2025.08*: 获清华大学2024-2025学年度秋季学期**优秀研究生助教**（前5%）。
@@ -111,13 +109,12 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2026.06*: 論文 "Towards building-scale urban analytics and simulation" が **Building Simulation** (SCI Q1) に掲載。
 - *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
 - *2026.04*: 論文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" が **CVPR 2026 Findings** に採択。[プロジェクトページ](https://junhaoooxia.github.io/DAPE.github.io/)
-- *2026.02*: 論文 "UrbanAlign" を **ECCV 2026** に投稿。
 - *2026.01*: グローバルゴーストシティ研究が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。
 - *2025.11*: CMAB論文が地球科学分野の **ESI高被引用論文** に認定。
 - *2025.11*: "新城市科学"論文が [**CNKI 被引用数Top20論文**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）に選出、*城市规划*。
 - *2025.11*: **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにて新星セッション座長、上海。
-- *2025.10*: 論文 "GenAI Models Capture Urban Science..." が **Nature Cities** の**第2回査読**に進出。
+- *2025.10*: 論文 "GenAI Models Capture Urban Science..." が **Nature Communications** の**第2回査読**に進出。
 - *2025.10*: **中国都市計画情報化年次会議**にてポスター発表、佛山。
 - *2025.10*: **金経昌都市計画優秀論文賞**（第22回）受賞、上海。
 - *2025.08*: 清華大学 **優秀ティーチングアシスタント**（上位5%）に認定。
@@ -142,26 +139,26 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 # <span lang="en">Publications</span><span lang="zh">论文</span><span lang="ja">論文</span>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Nature Cities</div><img src='images/papers/ai4us.png' alt="AI4US" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Nature Communications</div><img src='images/papers/ai4us.png' alt="AI4US" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **GenAI Models Capture Urban Science but Oversimplify Complexity**
 
 **Yecheng Zhang**, Rong Zhao, Zimu Huang, Xinyu Wang, Yue Ma, Ying Long*
 
-*Nature Cities* (2nd round review). [![arXiv](https://img.shields.io/badge/arXiv-2505.13803-b31b1b.svg)](https://arxiv.org/abs/2505.13803) \| [PDF](cv/aiusv3.pdf)
+*Nature Communications* (2nd round review). [![arXiv](https://img.shields.io/badge/arXiv-2505.13803-b31b1b.svg)](https://arxiv.org/abs/2505.13803) \| [PDF](cv/aiusv3.pdf)
 
 <div lang="en" markdown="1">
-- Designed the **AI4US benchmark** evaluating leading LLMs (GPT, Claude, GLM, DeepSeek, etc.) over **40K+** synthesis trials across symbolic reasoning and multimodal perception, fitting established scientific laws (scaling laws, distance decay, urban vitality, urban perception).
-- Discovered the **"group flattening" effect** and **systematic bias in fitting established scientific laws**, and proposed **multi-paradigm prompt optimization strategies** (independent/joint sampling, in-context prompting).
+- Designed the **AI4US benchmark** evaluating leading LLMs (GPT, Claude, GLM, DeepSeek, etc.) over **1M+** synthesis trials across symbolic reasoning and multimodal perception, fitting established scientific laws (scaling laws, distance decay, urban vitality, urban perception).
+- Discovered the **"group flattening" effect**, **systematic bias in fitting established scientific laws**, and a **culturally uneven baseline** in LLM urban perception; proposed **multi-paradigm context optimization strategies** (independent/joint sampling, boundary constraints).
 </div>
 <div lang="zh" markdown="1">
-- 设计 **AI4US 评测框架**，系统评估 GPT、Claude、GLM、DeepSeek 等主流大模型在符号推理和多模态感知领域的数据合成能力，累计执行 **40,000+** 次实验，拟合已有科学定律（标度律、距离衰减、城市活力、城市感知）。
-- 发现 **"群体扁平化"效应** 和 **拟合科学定律中的系统性偏差**，提出**多范式提示优化策略**（独立/联合采样、蓝图提示）。
+- 设计 **AI4US 评测框架**，系统评估 GPT、Claude、GLM、DeepSeek 等主流大模型在符号推理和多模态感知领域的数据合成能力，累计执行 **100万+** 次实验，拟合已有科学定律（标度律、距离衰减、城市活力、城市感知）。
+- 发现 **"群体扁平化"效应**、**拟合科学定律中的系统性偏差**和城市感知中的**文化基准不均等**现象，提出**多范式上下文优化策略**（独立/联合采样、边界约束）。
 </div>
 <div lang="ja" markdown="1">
-- **AI4USベンチマーク**を設計し、主要LLM（GPT、Claude、GLM、DeepSeek等）の**40,000回以上**の合成試行を通じて、記号推論とマルチモーダル知覚における科学法則（スケーリング則、距離減衰、都市活力、都市知覚）への適合を評価。
-- **「集団平坦化」効果**と**科学法則適合における系統的バイアス**を発見し、**マルチパラダイムプロンプト最適化戦略**（独立/共同サンプリング、インコンテキストプロンプティング）を提案。
+- **AI4USベンチマーク**を設計し、主要LLM（GPT、Claude、GLM、DeepSeek等）の**100万回以上**の合成試行を通じて、記号推論とマルチモーダル知覚における科学法則（スケーリング則、距離減衰、都市活力、都市知覚）への適合を評価。
+- **「集団平坦化」効果**、**科学法則適合における系統的バイアス**、都市知覚における**文化的に不均等なベースライン**を発見し、**マルチパラダイム文脈最適化戦略**（独立/共同サンプリング、境界制約）を提案。
 </div>
 </div>
 </div>
@@ -307,7 +304,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 </div>
 
-- **Zhang Y**, Long Y*. Towards building-scale urban analytics and simulation. *Building Simulation*, 2026. [PDF](cv/building-simulation.pdf)
+- **Zhang Y**, Long Y*. Towards building-scale urban analytics and simulation. *Building Simulation*, 2026.
 - Shi C, Han X, **Zhang Y**, Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. *arXiv*, 2026.
 - Wang L, Hou C, **Zhang Y**, He J*. Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation*, 132, 104058, 2024. [PDF](cv/06Wang et al 2024 JAG-SolarSVIs.pdf)
 - Long Y*, Zhao H, **Zhang Y**. 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW*, 48, 2024. [DOI](https://doi.org/10.11819/cpr20240702a) \| [PDF](cv/05龙瀛等 2024 城市规划-新城市科学.pdf)

@@ -108,3 +108,77 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.vision-card {
+    margin: 1.25rem 0 2.5rem;
+    padding: 1.6rem;
+    border: 1px solid rgba(0, 54, 159, .14);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0, 116, 241, .08), rgba(255, 255, 255, .96) 52%, rgba(15, 118, 110, .06));
+    box-shadow: 0 12px 32px rgba(15, 23, 42, .06);
+
+    h2 { margin: .25rem 0 .6rem; font-size: 1.45rem; }
+    > p { max-width: 48rem; }
+}
+
+.vision-kicker {
+    margin: 0;
+    color: #006fe6;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .11em;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem;
+    margin-top: 1.2rem;
+
+    div { padding: .85rem; border-radius: 9px; background: rgba(255, 255, 255, .76); }
+    strong, span { display: block; }
+    strong { margin-bottom: .25rem; color: #172033; font-size: .82rem; }
+    span { color: #536076; font-size: .76rem; line-height: 1.55; }
+}
+
+.vision-links { margin: 1rem 0 0; font-weight: 700; }
+
+@media (max-width: 640px) {
+    .vision-card { padding: 1.1rem; }
+    .vision-grid { grid-template-columns: 1fr; }
+}
+
+.project-matrix {
+    margin: 1.25rem 0 2.5rem;
+    overflow-x: auto;
+    border: 1px solid rgba(15, 23, 42, .08);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, .045);
+
+    table { min-width: 680px; margin: 0; background: #fff; }
+    thead th { padding: .85rem 1rem; background: #f5f6f8; border-bottom: 2px solid rgba(0, 0, 0, .1); }
+    tbody tr:not(.project-group) { transition: background-color 150ms ease; }
+    tbody tr:not(.project-group):hover { background: rgba(42, 42, 42, .035); }
+    td { padding: .68rem 1rem; font-size: .78rem; }
+    tbody tr:not(.project-group) td:first-child { position: sticky; left: 0; z-index: 1; min-width: 150px; background: #fff; transition: background-color 150ms ease; }
+    tbody tr:not(.project-group):hover td:first-child { background: #efefef; }
+}
+
+.project-group td {
+    padding: .55rem 1rem;
+    color: #4b5563;
+    background: #f5f6f8;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.project-more {
+    margin: 0;
+    padding: .8rem 1rem;
+    background: #fafafa;
+    text-align: right;
+    font-size: .78rem;
+    font-weight: 700;
+}

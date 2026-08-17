@@ -374,9 +374,11 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 # <span lang="en">Internship Projects</span><span lang="zh">实习项目</span><span lang="ja">インターンシッププロジェクト</span>
 
 <div lang="en" markdown="1">
-**Municipal Construction Intelligent Bidding System** \| Solo Developer \| 2026
-- Independently designed a two-stage **multi-agent system** for municipal construction bidding: the review stage deploys **7 parallel agents** (ThreadPoolExecutor, isolated connection pools) for structured tender analysis (qualification, scoring, risk, etc.); the generation stage uses a Writer→Reviewer→Designer conditionally-triggered pipeline with full agent trace logging.
-- Tech stack integrates **ChromaDB RAG**, PyMuPDF/RapidOCR parsing (incl. scanned OCR), and **12+ LLMs** with context-window-adaptive model selection, built on Streamlit with **7,000+ lines** of production code. System has produced **500+ bidding documents** for a client company.
+**ByteDance (Lark) · Base AI** \| LLM Algorithm Intern \| 2026.05 – Present
+- Built a **Category–Rubric–Mode** three-tier rubric system for Spec evaluation, spanning five core domains (Table/Workflow/Dashboard/Permission/Form) with **199 violation modes**, S0–S1–S2 severity and L1–L2–L3 mechanism grading; constructed training data via multiple data strategies and trained a **Judge model** on the Seed 2.0 (300B) base (SFT + GRPO) reaching GPT-5.6 (Sol XHigh) accuracy — the core of data synthesis.
+- Assembled the Judge model into a **Verifier Agent** as the data-synthesis quality gate — E2E human-machine consistency **+60%**, synthesizing **11,000+** training trajectories (9,197 validated).
+- Developed **AutoResearch**, a self-evolving (**SkillOpt**) PE-optimization harness for Spec generation that closes the loop — Spec is the input to data synthesis while its synthesis prompt is the output — **+30 pp** on DB-system generation.
+- Co-trained **Spec/Plan, CodeAct, and Judge/Reward** models (CodeAct judge pass **40.34% → 48.74%**, P50 latency **3.1 min → 23 s**).
 
 **Nanjing NUIST Meteorological Science & Technology Institute** \| Doctoral Practice (Excellent Evaluation) \| 2025
 - Systematically benchmarked **10+ deep learning architectures** (CNN/GAN/Diffusion/Transformer/Flow Matching) for FY-4B satellite-to-radar composite reflectivity inversion using **22-channel** input (15 base + 7 hand-crafted BTD features encoding cloud phase and moisture gradients); designed exponentially-weighted loss to address extreme class imbalance.
@@ -384,9 +386,11 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 
 <div lang="zh" markdown="1">
-**市政建设智能投标系统** \| 独立开发 \| 2026
-- 独立设计两阶段**多智能体系统**用于市政建设投标：审查阶段部署 **7个并行Agent**（ThreadPoolExecutor，隔离连接池）进行结构化标书分析（资质、评分、风险等）；生成阶段使用 Writer→Reviewer→Designer 条件触发流水线，完整记录Agent调用链。
-- 技术栈集成 **ChromaDB RAG**、PyMuPDF/RapidOCR解析（含扫描件OCR）和 **12+大模型**的上下文窗口自适应选择，基于Streamlit构建 **7,000+行**生产代码。已为客户公司生成 **500+份投标文件**。
+**字节跳动（飞书）· Base AI** \| 大模型算法实习 \| 2026.05 – 至今
+- 构建 **Category–Rubric–Mode 三层 Rubric 体系** 用于 Spec 评测，覆盖 Table/Workflow/Dashboard/Permission/Form 五个核心域，**199 个违规模式**，S0–S1–S2 严重度 + L1–L2–L3 机制分级；通过多种数据策略构建训练数据，基于 Seed 2.0（300B）基座（SFT + GRPO）训练 **Judge 模型**，准确率达 GPT-5.6（Sol XHigh）——作为数据合成的核心。
+- 将 Judge 模型组装为 **Verifier Agent** 作为数据合成准出门禁——E2E 人机一致性 **+60%**，合成 **1.1万+** 条训练轨迹（9,197 条有效）。
+- 研发 **AutoResearch**，自进化（**SkillOpt**）的 Spec 生成 PE 优化 Harness，形成闭环——Spec 是数据合成链路的输入、其合成 Prompt 是链路的输出——数据库生成任务 **+30 pp**。
+- 参与 **Spec/Plan、CodeAct、Judge/Reward** 多模型合训（CodeAct Judge 通过率 **40.34% → 48.74%**，P50 延迟 **3.1 分钟 → 23 秒**）。
 
 **南京信息工程大学气象科技研究院** \| 博士实践（优秀评价）\| 2025
 - 系统基准测试 **10+深度学习架构**（CNN/GAN/Diffusion/Transformer/Flow Matching），用于FY-4B卫星-雷达组合反射率反演，使用 **22通道**输入（15基础通道+7个手工设计BTD特征，编码云相态和水汽梯度）；设计指数加权损失函数解决极端类别不平衡问题。
@@ -394,9 +398,11 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 
 <div lang="ja" markdown="1">
-**市政建設インテリジェント入札システム** \| 単独開発 \| 2026
-- 市政建設入札のための二段階**マルチエージェントシステム**を独自に設計：審査段階では **7つの並列エージェント**（ThreadPoolExecutor、分離接続プール）による構造化入札分析（資格、スコアリング、リスク等）、生成段階ではWriter→Reviewer→Designerの条件付きパイプラインとエージェントトレースログを実装。
-- 技術スタックは **ChromaDB RAG**、PyMuPDF/RapidOCR解析（スキャンOCR含む）、**12以上のLLM**のコンテキストウィンドウ適応型モデル選択を統合し、Streamlit上で **7,000行以上**の本番コードを構築。クライアント企業向けに **500件以上の入札書類** を作成。
+**ByteDance（Lark）· Base AI** \| LLMアルゴリズムインターン \| 2026.05 – 現在
+- Spec評価のための **Category–Rubric–Mode 3層ルーブリック体系** を構築、Table/Workflow/Dashboard/Permission/Formの5つの中核ドメインをカバーし、**199の違反モード**、S0–S1–S2重大度＋L1–L2–L3メカニズム等級を実装；複数のデータ戦略で訓練データを構築し、Seed 2.0（300B）基盤（SFT＋GRPO）で **Judgeモデル** を訓練、GPT-5.6（Sol XHigh）と同等の精度を達成——データ合成の中核に。
+- Judgeモデルを **Verifier Agent** として組み立てデータ合成品質ゲートに——E2Eの人間・機械一致率 **+60%**、**11,000件以上**の訓練軌跡（有効9,197件）を合成。
+- 自己進化（**SkillOpt**）するSpec生成PE最適化ハーネス **AutoResearch** を開発しループを閉じる——Specはデータ合成の入力、その合成Promptは出力——DB生成タスク **+30 pp**。
+- **Spec/Plan、CodeAct、Judge/Reward**の多モデル共訓練に参加（CodeAct Judge通過率 **40.34% → 48.74%**、P50遅延 **3.1分 → 23秒**）。
 
 **南京情報工程大学気象科学技術研究院** \| 博士実践（優秀評価）\| 2025
 - FY-4B衛星-レーダー合成反射率反転のために **10以上の深層学習アーキテクチャ**（CNN/GAN/Diffusion/Transformer/Flow Matching）を体系的にベンチマーク、**22チャネル**入力（15ベース+7手作りBTD特徴量、雲相と水蒸気勾配をエンコード）を使用；極端なクラス不均衡に対処する指数加重損失を設計。

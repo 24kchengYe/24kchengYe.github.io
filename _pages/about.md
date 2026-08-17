@@ -8,31 +8,96 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 <span class='anchor' id='about-me'></span>
 
 <div lang="en" markdown="1">
 I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
 
-My research interests include **LLM/VLM evaluation and alignment**, **multi-agent systems**, and **urban AI**. I build large-scale urban datasets and systematically evaluate generative AI models for scientific data synthesis and visual understanding. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*, with a first/corresponding-author paper in 2nd-round review at *Nature Communications*. My work has received <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar citations, and my open-source datasets have received **23,000+** downloads, including **2 ESI Highly Cited Papers**.
+My research focuses on **building-scale urban analytics and simulation**, **LLM/VLM evaluation and alignment**, and **multi-agent systems**. I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*, with a first/corresponding-author paper in 2nd-round review at *Nature Communications*. See my [Google Scholar profile](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) for current citations; my open-source datasets have received **45,000+** downloads, including **2 ESI Highly Cited Papers**.
 </div>
 
 <div lang="zh" markdown="1">
 我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。2023年获[合肥工业大学](https://www.hfut.edu.cn/)城乡规划学士学位。
 
-研究方向包括**大模型评测与对齐**、**多智能体系统**和**城市人工智能**。致力于构建大规模城市数据集，系统评估生成式AI模型在科学数据合成与视觉理解中的能力。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有第一/通讯作者论文在 *Nature Communications* 二审。研究成果获 <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> Google Scholar 引用，开源数据集累计 **23,000+** 次下载，含 **2篇ESI高被引论文**。
+研究方向包括**建筑尺度城市分析与模拟**、**大模型评测与对齐**和**多智能体系统**。致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有第一/通讯作者论文在 *Nature Communications* 二审。当前引用情况见 [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ)；开源数据集累计 **45,000+** 次下载，含 **2篇ESI高被引论文**。
 </div>
 
 <div lang="ja" markdown="1">
 [清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。2023年に[合肥工業大学](https://www.hfut.edu.cn/)にて都市計画の学士号を取得しました。
 
-研究分野は**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**、**都市AI**です。大規模都市データセットの構築と、科学データ合成・視覚理解における生成AIモデルの体系的評価に取り組んでいます。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Communications* に第2回査読中の筆頭/責任著者論文があります。研究成果は <a href='https://scholar.google.com/citations?user=6vKhpBoAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> のGoogle Scholar引用を受け、オープンソースデータセットは累計 **23,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
+研究分野は**建築スケール都市分析・シミュレーション**、**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**です。大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Communications* に第2回査読中の筆頭/責任著者論文があります。最新の引用状況は [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) を参照してください。オープンソースデータセットは累計 **45,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
+</div>
+
+
+# <span lang="en">Research Vision</span><span lang="zh">研究愿景</span><span lang="ja">研究ビジョン</span>
+
+<div class="vision-card" lang="en">
+  <p class="vision-kicker">BUILDING-SCALE URBAN ANALYTICS &amp; SIMULATION</p>
+  <h2>Buildings are the basic cells of urban systems.</h2>
+  <p>I connect building engineering with urban science through data foundations, generative AI, and bottom-up simulation.</p>
+  <div class="vision-grid">
+    <div><strong>01 · Unified modeling</strong><span>Connect semantic depth at the building scale with geographic breadth at the urban scale.</span></div>
+    <div><strong>02 · Data foundations</strong><span>Build comprehensive, AI-enhanced building datasets with full spatial and temporal coverage.</span></div>
+    <div><strong>03 · Generative diagnosis</strong><span>Use generative AI to evaluate building quality, performance, and urban efficacy.</span></div>
+    <div><strong>04 · Bottom-up simulation</strong><span>Combine AI and generative rules to model morphological and behavioral transformations.</span></div>
+  </div>
+  <p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective paper</a> · <a href="cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+
+<div class="vision-card" lang="zh">
+  <p class="vision-kicker">建筑尺度城市分析与模拟</p>
+  <h2>建筑是城市复杂系统的基本细胞。</h2>
+  <p>通过数据底座、生成式人工智能和自下而上的模拟，连接建筑研究的语义深度与城市科学的地理广度。</p>
+  <div class="vision-grid">
+    <div><strong>01 · 统一建模</strong><span>衔接建筑尺度的语义深度与城市尺度的地理广度。</span></div>
+    <div><strong>02 · 数据底座</strong><span>借助人工智能构建时空覆盖完整的建筑级综合数据集。</span></div>
+    <div><strong>03 · 生成式诊断</strong><span>利用生成式人工智能评估建筑质量、性能与城市效能。</span></div>
+    <div><strong>04 · 自下而上模拟</strong><span>结合人工智能与生成规则，模拟城市形态和行为的复杂演化。</span></div>
+  </div>
+  <p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective 论文</a> · <a href="cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+
+<div class="vision-card" lang="ja">
+  <p class="vision-kicker">建築スケール都市分析・シミュレーション</p>
+  <h2>建築は都市複雑系を構成する基本単位です。</h2>
+  <p>データ基盤、生成AI、ボトムアップ・シミュレーションを通じて、建築研究と都市科学を接続します。</p>
+  <div class="vision-grid">
+    <div><strong>01 · 統一モデリング</strong><span>建築スケールの意味的深さと都市スケールの地理的広がりを接続。</span></div>
+    <div><strong>02 · データ基盤</strong><span>AIを活用し、時空間を包括する建築データセットを構築。</span></div>
+    <div><strong>03 · 生成的診断</strong><span>生成AIにより建築の品質、性能、都市効果を評価。</span></div>
+    <div><strong>04 · ボトムアップ・シミュレーション</strong><span>AIと生成ルールを組み合わせ、形態と行動の変容をモデル化。</span></div>
+  </div>
+  <p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective論文</a> · <a href="cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+
+# <span lang="en">Open-source Systems</span><span lang="zh">开源系统</span><span lang="ja">オープンソース・システム</span>
+
+<div class="project-matrix">
+<table>
+  <thead><tr>
+    <th><span lang="en">Project</span><span lang="zh">项目</span><span lang="ja">プロジェクト</span></th>
+    <th><span lang="en">What it does</span><span lang="zh">主要贡献</span><span lang="ja">主な機能</span></th>
+    <th><span lang="en">Evidence</span><span lang="zh">链接</span><span lang="ja">リンク</span></th>
+  </tr></thead>
+  <tbody>
+    <tr class="project-group"><td colspan="3"><span lang="en">Research systems</span><span lang="zh">研究系统</span><span lang="ja">研究システム</span></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/AI4UrbanScience"><strong>AI4UrbanScience</strong></a></td><td><span lang="en">Evaluate and calibrate GenAI for urban-science data synthesis.</span><span lang="zh">评测并校准生成式AI的城市科学数据合成能力。</span><span lang="ja">都市科学データ生成における生成AIを評価・校正。</span></td><td><a href="https://arxiv.org/abs/2505.13803">Paper</a> · <a href="https://github.com/24kchengYe/AI4UrbanScience">Code</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/UrbanAlign"><strong>UrbanAlign</strong></a></td><td><span lang="en">Training-free VLM–human preference alignment.</span><span lang="zh">免训练的视觉语言模型与人类偏好对齐。</span><span lang="ja">学習不要のVLM–人間選好アライメント。</span></td><td><a href="https://arxiv.org/abs/2602.19442">ECCV 2026</a> · <a href="https://github.com/24kchengYe/UrbanAlign">Code</a></td></tr>
+    <tr class="project-group"><td colspan="3"><span lang="en">AI products</span><span lang="zh">AI产品</span><span lang="ja">AIプロダクト</span></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/MemoMind"><strong>MemoMind</strong></a></td><td><span lang="en">Persistent, local memory and evolving knowledge graphs for AI agents.</span><span lang="zh">面向AI智能体的本地持久记忆与演化知识图谱。</span><span lang="ja">AIエージェント向けローカル永続メモリと進化型知識グラフ。</span></td><td><a href="https://github.com/24kchengYe/MemoMind">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/human-skill-tree"><strong>HumanSkillTree</strong></a></td><td><span lang="en">AI-powered lifelong learning grounded in cognitive science.</span><span lang="zh">基于认知科学的AI终身学习系统。</span><span lang="ja">認知科学に基づくAI生涯学習システム。</span></td><td><a href="https://github.com/24kchengYe/human-skill-tree">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/Zync"><strong>Zync</strong></a></td><td><span lang="en">An IDE for orchestrating multiple coding agents in parallel.</span><span lang="zh">并行编排多个编程智能体的IDE。</span><span lang="ja">複数のコーディングエージェントを並列編成するIDE。</span></td><td><a href="https://github.com/24kchengYe/Zync">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/DigitalMe"><strong>DigitalMe</strong></a></td><td><span lang="en">Control coding agents from Feishu, Telegram, or Slack.</span><span lang="zh">通过飞书、Telegram或Slack远程控制编程智能体。</span><span lang="ja">Feishu、Telegram、Slackからコーディングエージェントを操作。</span></td><td><a href="https://github.com/24kchengYe/DigitalMe">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/SmartBidding-Server"><strong>SmartBidding 🔒</strong></a></td><td><span lang="en">Production engineering-bid intelligence platform for OCR, structured review, retrieval, generation, and audit.</span><span lang="zh">面向工程投标的生产级智能审查与生成平台，覆盖OCR、结构化审查、检索、生成与审计。</span><span lang="ja">OCR、構造化レビュー、検索、生成、監査を備えた入札インテリジェンス基盤。</span></td><td><a href="https://github.com/24kchengYe/SmartBidding-Server">GitHub</a></td></tr>
+
+    <tr class="project-group"><td colspan="3"><span lang="en">Infrastructure and data</span><span lang="zh">基础设施与数据</span><span lang="ja">基盤とデータ</span></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/ai-api-gateway"><strong>AI API Gateway 🔒</strong></a></td><td><span lang="en">Private model routing, shared-service access, device isolation, and credential-control architecture.</span><span lang="zh">私有模型路由、共享服务接入、设备隔离与凭据控制架构。</span><span lang="ja">プライベートモデルルーティング、共有サービス接続、デバイス分離、認証情報管理。</span></td><td><a href="https://github.com/24kchengYe/ai-api-gateway">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/gehi-batch-router"><strong>GEHI Batch Router</strong></a></td><td><span lang="en">Restartable historical-imagery routing with actual-date provenance, quality gates, and auditable manifests.</span><span lang="zh">支持断点续跑的历史影像路由，记录实际日期、质量门禁与可审计血缘。</span><span lang="ja">実取得日、品質ゲート、監査可能なマニフェストを備えた再開可能な歴史画像ルーティング。</span></td><td><a href="https://github.com/24kchengYe/gehi-batch-router">GitHub</a></td></tr>
+    <tr><td><a href="https://github.com/24kchengYe/daylife"><strong>DayLife</strong></a></td><td><span lang="en">Local-first personal activity understanding and AI-assisted reflection.</span><span lang="zh">Local-first 的个人活动理解与AI辅助反思系统。</span><span lang="ja">ローカルファーストな個人活動理解とAI支援リフレクション。</span></td><td><a href="https://github.com/24kchengYe/daylife">GitHub</a></td></tr>
+  </tbody>
+</table>
+<p class="project-more"><span lang="en">Supporting systems include InfoHub, web-novel-crawler, HomeSync, Desktop Controller, Recall, Prompt Harness, Experiment Log, Note2Video, AI Reviewer, CiteMind, and k2md.</span><span lang="zh">配套系统包括 InfoHub、web-novel-crawler、HomeSync、Desktop Controller、Recall、Prompt Harness、Experiment Log、Note2Video、AI Reviewer、CiteMind 与 k2md。</span><span lang="ja">関連システムには InfoHub、web-novel-crawler、HomeSync、Desktop Controller、Recall、Prompt Harness、Experiment Log、Note2Video、AI Reviewer、CiteMind、k2md があります。</span></p>
+<p class="project-more"><a href="https://github.com/24kchengYe?tab=repositories"><span lang="en">Explore the complete project catalog →</span><span lang="zh">查看完整项目列表 →</span><span lang="ja">全プロジェクト一覧を見る →</span></a></p>
 </div>
 
 
@@ -56,7 +121,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.05*: Nominated for **"Academic Rising Star"** (学术新秀) at Tsinghua University (10 university-wide, sole nominee from School of Architecture).
 - *2025.05*: Exhibitor at **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
 - *2025.03*: Presented at **AAG 2025**, Detroit, USA.
-- *2025.01*: Paper "CMAB" published in **Scientific Data** — **23,000+ downloads**.
+- *2025.01*: Paper "CMAB" published in **Scientific Data** — **45,000+ downloads**.
 - *2025.01*: Received **Outstanding Case Award for "AI-Empowered Planning"** from Urban Planning Society of China.
 - *2024.12*: Paper "Inferring Ghost Cities" published in **Habitat International**.
 - *2024.11*: Presented at **Tsinghua University "Future Urban Construction" Ph.D. Forum**, Beijing.
@@ -89,7 +154,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.05*: 获清华大学第二十九届研究生**"学术新秀"提名**（全校10人，建筑学院唯一推荐）。
 - *2025.05*: 参展**第19届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
 - *2025.03*: 在**2025年美国地理学家协会年会 (AAG 2025)** 作报告，美国底特律。
-- *2025.01*: 论文 "CMAB" 发表于 **Scientific Data** — 累计 **23,000+次下载**。
+- *2025.01*: 论文 "CMAB" 发表于 **Scientific Data** — 累计 **45,000+次下载**。
 - *2025.01*: 获中国城市规划学会 **"AI赋能规划"优秀案例奖**。
 - *2024.12*: 论文 "Inferring Ghost Cities" 发表于 **Habitat International**。
 - *2024.11*: 在清华大学**"未来城市建设与发展"博士生学术论坛**作报告，北京。
@@ -122,7 +187,7 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 - *2025.05*: 清華大学第29回大学院生**「学術新星」候補**に推薦（全学10名、建築学院唯一の推薦）。
 - *2025.05*: **第19回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
 - *2025.03*: **AAG 2025**（米国地理学者協会年次総会）にて発表、米国デトロイト。
-- *2025.01*: 論文 "CMAB" が **Scientific Data** に掲載 — **23,000回以上ダウンロード**。
+- *2025.01*: 論文 "CMAB" が **Scientific Data** に掲載 — **45,000回以上ダウンロード**。
 - *2025.01*: 中国都市計画学会より **「AI活用計画」優秀事例賞** を受賞。
 - *2024.12*: 論文 "Inferring Ghost Cities" が **Habitat International** に掲載。
 - *2024.11*: 清華大学**「未来都市建設」博士課程フォーラム**にて発表、北京。
@@ -190,6 +255,30 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Building Simulation · Perspective</div><img src='images/papers/building-scale-urban.png' alt="Towards building-scale urban analytics and simulation" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Towards Building-Scale Urban Analytics and Simulation**
+
+**Yecheng Zhang**, Ying Long*
+
+*Building Simulation*, 19(5), 1171–1176, 2026. [DOI](https://doi.org/10.1007/s12273-026-1461-9) \| [Publisher](https://www.sciopen.com/article/10.1007/s12273-026-1461-9) \| [PDF](cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf)
+
+<div lang="en" markdown="1">
+- Proposed **Building-Scale Urban Analytics and Simulation** as a bridge between building studies and urban science.
+- Defined four pillars: unified multi-scale modeling, comprehensive building data foundations, generative-AI diagnosis, and bottom-up urban simulation.
+</div>
+<div lang="zh" markdown="1">
+- 提出**建筑尺度城市分析与模拟**研究框架，连接建筑研究与城市科学。
+- 明确四个支柱：多尺度统一建模、综合建筑数据底座、生成式AI诊断，以及自下而上的城市模拟。
+</div>
+<div lang="ja" markdown="1">
+- 建築研究と都市科学をつなぐ**建築スケール都市分析・シミュレーション**を提案。
+- マルチスケール統一モデリング、包括的建築データ基盤、生成AI診断、ボトムアップ都市シミュレーションの4本柱を提示。
+</div>
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Scientific Data</div><img src='images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png' alt="CMAB" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -201,17 +290,17 @@ My research interests include **LLM/VLM evaluation and alignment**, **multi-agen
 
 <div lang="en" markdown="1">
 - Built **China's Multi-Attribute Building Dataset** by integrating remote sensing, POI, and street-view imagery, covering **32M+ buildings** with **10+ attributes** nationwide.
-- **23,000+ downloads** on Figshare/GitHub; recognized as **ESI Highly Cited Paper** in Geoscience.
+- **45,000+ downloads** on Figshare/GitHub; recognized as **ESI Highly Cited Paper** in Geoscience.
 - Featured by [**Tsinghua University's official Facebook account**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213) for research impact.
 </div>
 <div lang="zh" markdown="1">
 - 构建**中国多属性建筑数据集（CMAB）**，融合遥感、POI、街景等多源数据，覆盖全国 **3200万+栋建筑**、**10+属性**。
-- Figshare/GitHub累计 **23,000+次下载**；入选Geoscience领域 **ESI高被引论文**。
+- Figshare/GitHub累计 **45,000+次下载**；入选Geoscience领域 **ESI高被引论文**。
 - 研究成果被[**清华大学官方Facebook账号**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)报道推送。
 </div>
 <div lang="ja" markdown="1">
 - リモートセンシング、POI、ストリートビュー画像を統合し、全国**3,200万棟以上**の建物、**10以上の属性**をカバーする**中国多属性建物データセット（CMAB）** を構築。
-- Figshare/GitHubにて **23,000回以上ダウンロード**；地球科学分野の **ESI高被引用論文** に認定。
+- Figshare/GitHubにて **45,000回以上ダウンロード**；地球科学分野の **ESI高被引用論文** に認定。
 - [**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)にて研究成果が紹介。
 </div>
 </div>
@@ -304,7 +393,6 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </div>
 </div>
 
-- **Zhang Y**, Long Y*. Towards building-scale urban analytics and simulation. *Building Simulation*, 2026.
 - Shi C, Han X, **Zhang Y**, Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. *arXiv*, 2026.
 - Wang L, Hou C, **Zhang Y**, He J*. Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation*, 132, 104058, 2024. [PDF](cv/06Wang et al 2024 JAG-SolarSVIs.pdf)
 - Long Y*, Zhao H, **Zhang Y**. 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW*, 48, 2024. [DOI](https://doi.org/10.11819/cpr20240702a) \| [PDF](cv/05龙瀛等 2024 城市规划-新城市科学.pdf)
@@ -433,21 +521,21 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 # <span lang="en">Open-source Datasets</span><span lang="zh">开源数据集</span><span lang="ja">オープンソースデータセット</span>
 
 <div lang="en" markdown="1">
-- **CMAB** — China's Multi-Attribute Building Dataset (32M+ buildings, 23,000+ downloads, ESI Highly Cited). [Dataset](https://figshare.com/authors/Yecheng_Zhang/20402873)
+- **CMAB** — China's Multi-Attribute Building Dataset (32M+ buildings, 45,000+ downloads, ESI Highly Cited). [Dataset](https://figshare.com/authors/Yecheng_Zhang/20402873)
 - **GloGCI** — Global Ghost City Index (10,000+ cities worldwide, 4,000+ downloads).
 - **GloPPRUA** — Global Harmonized Urban Definition.
 - **AI4US** — Generative AI Benchmarks for Urban Science (2,000+ downloads).
 </div>
 
 <div lang="zh" markdown="1">
-- **CMAB** — 中国多属性建筑数据集（3200万+栋建筑，23,000+次下载，ESI高被引）。[数据集](https://figshare.com/authors/Yecheng_Zhang/20402873)
+- **CMAB** — 中国多属性建筑数据集（3200万+栋建筑，45,000+次下载，ESI高被引）。[数据集](https://figshare.com/authors/Yecheng_Zhang/20402873)
 - **GloGCI** — 全球鬼城指数（覆盖全球10,000+城市，4,000+次下载）。
 - **GloPPRUA** — 全球统一城市定义数据集。
 - **AI4US** — 城市科学生成式AI评测基准（2,000+次下载）。
 </div>
 
 <div lang="ja" markdown="1">
-- **CMAB** — 中国多属性建物データセット（3,200万棟以上、23,000回以上ダウンロード、ESI高被引用）。[データセット](https://figshare.com/authors/Yecheng_Zhang/20402873)
+- **CMAB** — 中国多属性建物データセット（3,200万棟以上、45,000回以上ダウンロード、ESI高被引用）。[データセット](https://figshare.com/authors/Yecheng_Zhang/20402873)
 - **GloGCI** — グローバルゴーストシティ指数（世界10,000都市以上、4,000回以上ダウンロード）。
 - **GloPPRUA** — グローバル統一都市定義データセット。
 - **AI4US** — 都市科学のための生成AIベンチマーク（2,000回以上ダウンロード）。

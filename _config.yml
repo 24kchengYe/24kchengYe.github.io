@@ -7,9 +7,9 @@
 
 # Site Settings
 title                    : "Yecheng Zhang - Tsinghua University"
-description              : "Research interests include LLM evaluation & alignment, vision-language models, multi-agent systems, and urban AI."
-description_zh           : "研究兴趣包括大模型评测与对齐、视觉语言模型、多智能体系统和城市人工智能。"
-description_ja           : "研究分野はLLM評価とアライメント、視覚言語モデル、マルチエージェントシステム、都市AI。"
+description              : "Building-scale urban analytics and simulation, generative AI evaluation and alignment, and open-source research systems."
+description_zh           : "建筑尺度城市分析与模拟、生成式AI评测与对齐，以及开源研究系统。"
+description_ja           : "建築スケール都市分析・シミュレーション、生成AI評価・アライメント、オープンソース研究システム。"
 repository               : "24kchengYe/24kchengYe.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -50,7 +50,7 @@ author:
   lastfm           :
   linkedin         :
   dblp             :
-  orcid            : "https://orcid.org/0000-0002-1234-5678"
+  orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    :

@@ -463,9 +463,9 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 <div lang="en" markdown="1">
 **ByteDance (Lark) · Base AI** \| LLM Algorithm Intern \| 2026.05 – Present
-- Built a **Judge Infra Model** to internalize GPT-class judges: a Category–Rubric–Mode three-tier rubric system spanning five core domains (Table/Workflow/Dashboard/Permission/Form) with 199 violation modes, graded on two axes — severity (S0–S1–S2) and checker (L1–L2–L3); post-trained a **judge model** on the Seed 2.0 (300B) base (SFT + GRPO) using Judge-Fix pipeline data, reaching GPT-5.6 Sol XHigh (4000B) accuracy while surpassing its stability and coverage (**vote agreement +75%, rubric coverage +80%**) — the evaluation backbone of data synthesis.
-- Assembled the Judge model into a **Verifier Agent**: unlike the sparse verdict of traditional LLM-as-Judge, it samples the Judge Infra Model to output per-rubric verdicts with token-sampled multi-level probability logprobs before/after fix, extracting fix-judge dense signals via multi-rollout (K) sampling; markedly improving accuracy, coverage, and stability over LLM-as-Judge, with Judge-Fix engineering design (early-stop, V/Q voting, mixed-precision inference) boosting token efficiency — **E2E human-machine consistency +60%**, **11,000+** trajectories (9,197 validated).
-- Developed **AutoResearch**: a self-evolving dynamic PE-optimization harness adapting SkillOpt 1&2 to Base Spec generation — multi-rollout sampling + cross-batch adversarial synthesis to remove sampling noise and discover common root causes, gated by evidence/stability/adversarial/net-gain to synthesize high-leverage low-regression prompt patches — a self-evolving loop, **+30 pp** on DB-system generation.
+- Built a **Judge Infra Model** to internalize GPT-class judges: a Category–Rubric–Mode three-tier rubric system spanning five core domains (Table/Workflow/Dashboard/Permission/Form) with 199 violation modes, graded on two axes — severity (S0–S1–S2) and checker (L1–L2–L3); **post-trained a judge model on the Seed 2.0 (300B) base (SFT + GRPO) using Judge-Fix pipeline data**, reaching GPT-5.6 Sol XHigh (4000B) accuracy while **surpassing its stability and coverage over 10x larger models (vote agreement +75%, rubric coverage +80%)** — the evaluation backbone of data synthesis.
+- Assembled the Judge model into a **Verifier Agent**: unlike the sparse verdict of traditional LLM-as-Judge, it samples the Judge Infra Model to output per-rubric verdicts with token-sampled multi-level probability logprobs before/after fix, extracting fix-judge dense signals via multi-rollout (K) sampling; markedly improving accuracy, coverage, and stability over LLM-as-Judge, with Judge-Fix engineering design (early-stop, V/Q voting, mixed-precision inference) boosting **token efficiency 58%** — **E2E human-machine consistency +60%, 11,000+ trajectories (9,197 validated)**.
+- Developed **AutoResearch**: a self-evolving dynamic PE-optimization harness adapting SkillOpt 1&2 to Base Spec generation — multi-rollout sampling + cross-batch adversarial synthesis to remove sampling noise and discover common root causes, gated by evidence/stability/adversarial/net-gain to synthesize high-leverage low-regression prompt patches — **a self-evolving loop, +30 pp on DB-system generation (Seed 2.0 Lite base)**.
 - Co-trained **Spec/Plan, CodeAct, and Judge/Reward** models (CodeAct judge pass **40.34% → 48.74%**, P50 latency **3.1 min → 23 s**).
 
 **Nanjing NUIST Meteorological Science & Technology Institute** \| Doctoral Practice (Excellent Evaluation) \| 2025
@@ -475,9 +475,9 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 <div lang="zh" markdown="1">
 **字节跳动（飞书）· Base AI** \| 大模型算法实习 \| 2026.05 – 至今
-- 构建 **Judge Infra Model**：为内部化 GPT 级评测，构建 Category–Rubric–Mode 三层 Rubric 体系，覆盖多维表格五大核心域（Table/Workflow/Dashboard/Permission/Form）共 199 个违规模式，按严重度 S0–S1–S2 与 checker L1–L2–L3 双维分级；复用 Judge-Fix 全过程数据构建训练集，基于 Seed 2.0（300B）基座（SFT + GRPO）后训练 **Judge 模型**，准确率达 GPT-5.6 Sol XHigh（4000B）、稳定性与覆盖度超过之（**Vote 一致率 +75%、Rubric 覆盖率 +80%**），作为数据合成评测底座。
-- 将 Judge 模型组装为 **Verifier Agent**：相较传统 LLM-as-Judge 的稀疏判定，采样 Judge Infra Model 输出局部 Rubric 判定在 fix 前后的 token 采样多档概率 logprob，经多路 rollout（K）采样精准提取 fix-judge 反馈的稠密信号；在准确性、覆盖度、稳定性上相较 LLM-as-Judge 显著提升，并由 Judge-Fix 链路的工程设计（早停、投票 V/Q 准出、混合精度推理）提升 token 利用效率——**E2E 人机一致性 +60%**，**1.1万+** 条轨迹（9,197 条有效）。
-- 研发 **AutoResearch**：基于 SkillOpt 1&2 并结合 Base Spec 生成场景深度改造的自进化 PE 优化动态 Harness，多路 rollout 采样 + 跨批次对抗式综合消除采样噪声、发现共性根因，经证据/稳定性/抗对抗/净收益门控合成高杠杆低回归的 Prompt patch，形成自进化闭环——数据库生成任务 **+30 pp**。
+- 构建 **Judge Infra Model**：为内部化 GPT 级评测，构建 Category–Rubric–Mode 三层 Rubric 体系，覆盖多维表格五大核心域（Table/Workflow/Dashboard/Permission/Form）共 199 个违规模式，按严重度 S0–S1–S2 与 checker L1–L2–L3 双维分级；复用 Judge-Fix 全过程数据构建训练集，基于 **Seed 2.0（300B）基座（SFT + GRPO）后训练 Judge 模型**，准确率达 GPT-5.6 Sol XHigh（4000B）、**稳定性与覆盖度超过十倍参数模型（Vote 一致率 +75%、Rubric 覆盖率 +80%**），作为数据合成评测底座。
+- 将 Judge 模型组装为 **Verifier Agent**：相较传统 LLM-as-Judge 的稀疏判定，采样 Judge Infra Model 输出局部 Rubric 判定在 fix 前后的 token 采样多档概率 logprob，经多路 rollout（K）采样精准提取 fix-judge 反馈的稠密信号；在准确性、覆盖度、稳定性上相较 LLM-as-Judge 显著提升，并由 Judge-Fix 链路的工程设计（早停、投票 V/Q 准出、混合精度推理）提升 **token 利用效率 58%**——**E2E 人机一致性 +60%，1.1万+ 条轨迹（9,197 条有效）**。
+- 研发 **AutoResearch**：基于 SkillOpt 1&2 并结合 Base Spec 生成场景深度改造的自进化 PE 优化动态 Harness，多路 rollout 采样 + 跨批次对抗式综合消除采样噪声、发现共性根因，经证据/稳定性/抗对抗/净收益门控合成高杠杆低回归的 Prompt patch，**自进化闭环，豆包模型（Seed 2.0 Lite 基座）在数据库生成任务提升 +30 pp**。
 - 参与 **Spec/Plan、CodeAct、Judge/Reward** 多模型合训（CodeAct Judge 通过率 **40.34% → 48.74%**，P50 延迟 **3.1 分钟 → 23 秒**）。
 
 **南京信息工程大学气象科技研究院** \| 博士实践（优秀评价）\| 2025
@@ -487,9 +487,9 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 <div lang="ja" markdown="1">
 **ByteDance（Lark）· Base AI** \| LLMアルゴリズムインターン \| 2026.05 – 現在
-- **Judge Infra Model** を構築：GPT級の評価を内部化するため、Category–Rubric–Mode 3層ルーブリック体系を構築し、Table/Workflow/Dashboard/Permission/Formの5つの中核ドメインをカバー、199の違反モードを重大度S0–S1–S2とchecker L1–L2–L3の二次元で等級付け；Judge-Fix全过程データで訓練セットを構築し、Seed 2.0（300B）基盤（SFT＋GRPO）で **Judgeモデル** を後訓練、GPT-5.6 Sol XHigh（4000B）と同等の精度、安定性・カバレッジで上回る（**投票一致率+75%、Rubricカバレッジ+80%**）、データ合成の評価基盤として。
-- Judgeモデルを **Verifier Agent** として組み立て：従来のLLM-as-Judgeのスパース判定に対し、Judge Infra Modelをサンプリングして局所Rubric判定を出力し、各判定のfix前後のtokenサンプリング多段階確率logprobから、多路rollout（K）サンプリングでfix-judgeフィードバックの稠密信号を精密抽出；正確性・カバレッジ・安定性でLLM-as-Judgeを大幅に上回り、Judge-Fixチェーンの工学設計（早期停止、V/Q投票、混合精度推論）でtoken効率を向上——**E2Eの人間・機械一致率 +60%**、**11,000件以上**の軌跡（有効9,197件）。
-- **AutoResearch** を開発：SkillOpt 1&2をBase Spec生成シナリオ向けに深く改造した自己進化型PE最適化ダイナミックHarness、多路rolloutサンプリング＋クロスバッチ敵対的統合でサンプリングノイズを除去し共通根因を発見、証拠/安定性/抗敵対/純利益ゲートでハイレバレッジ・低回帰のPrompt patchを合成、自己進化ループを形成——DB生成タスク **+30 pp**。
+- **Judge Infra Model** を構築：GPT級の評価を内部化するため、Category–Rubric–Mode 3層ルーブリック体系を構築し、Table/Workflow/Dashboard/Permission/Formの5つの中核ドメインをカバー、199の違反モードを重大度S0–S1–S2とchecker L1–L2–L3の二次元で等級付け；Judge-Fix全过程データで訓練セットを構築し、**Seed 2.0（300B）基盤（SFT＋GRPO）で Judgeモデル を後訓練**、GPT-5.6 Sol XHigh（4000B）と同等の精度、**安定性・カバレッジで10倍規模モデルを上回る（投票一致率+75%、Rubricカバレッジ+80%**）、データ合成の評価基盤として。
+- Judgeモデルを **Verifier Agent** として組み立て：従来のLLM-as-Judgeのスパース判定に対し、Judge Infra Modelをサンプリングして局所Rubric判定を出力し、各判定のfix前後のtokenサンプリング多段階確率logprobから、多路rollout（K）サンプリングでfix-judgeフィードバックの稠密信号を精密抽出；正確性・カバレッジ・安定性でLLM-as-Judgeを大幅に上回り、Judge-Fixチェーンの工学設計（早期停止、V/Q投票、混合精度推論）で **token効率 58%** を向上——**E2Eの人間・機械一致率 +60%、11,000件以上の軌跡（有効9,197件）**。
+- **AutoResearch** を開発：SkillOpt 1&2をBase Spec生成シナリオ向けに深く改造した自己進化型PE最適化ダイナミックHarness、多路rolloutサンプリング＋クロスバッチ敵対的統合でサンプリングノイズを除去し共通根因を発見、証拠/安定性/抗敵対/純利益ゲートでハイレバレッジ・低回帰のPrompt patchを合成、**自己進化ループ、豆包モデル（Seed 2.0 Lite基盤）でDB生成タスク +30 pp を向上**。
 - **Spec/Plan、CodeAct、Judge/Reward**の多モデル共訓練に参加（CodeAct Judge通過率 **40.34% → 48.74%**、P50遅延 **3.1分 → 23秒**）。
 
 **南京情報工程大学気象科学技術研究院** \| 博士実践（優秀評価）\| 2025

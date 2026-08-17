@@ -464,8 +464,8 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="en" markdown="1">
 **ByteDance (Lark) · Base AI** \| LLM Algorithm Intern \| 2026.05 – Present
 - Built a **Category–Rubric–Mode** three-tier rubric system for Spec evaluation, spanning five core domains (Table/Workflow/Dashboard/Permission/Form) with **199 violation modes**, S0–S1–S2 severity and L1–L2–L3 mechanism grading; constructed training data via multiple data strategies and trained a **Judge model** on the Seed 2.0 (300B) base (SFT + GRPO) reaching GPT-5.6 (Sol XHigh) accuracy — the core of data synthesis.
-- Assembled the Judge model into a **Verifier Agent** as the data-synthesis quality gate — E2E human-machine consistency **+60%**, synthesizing **11,000+** training trajectories (9,197 validated).
-- Developed **AutoResearch**, a self-evolving (**SkillOpt**) PE-optimization harness for Spec generation that closes the loop — Spec is the input to data synthesis while its synthesis prompt is the output — **+30 pp** on DB-system generation.
+- Assembled the Judge model into a **Verifier Agent**: unlike the sparse verdict of traditional LLM-as-Judge, it scores each rubric (C) in the three-tier rubric system, emitting 10-level grading logprobs before/after fix and extracting fix signals via multi-rollout (K) sampling — dense evaluation signals; markedly improving accuracy, coverage, and stability over LLM-as-Judge, with Judge-Fix engineering design (early-stop, V/Q voting, mixed-precision inference) boosting token efficiency — E2E **+60%**, **11,000+** trajectories (9,197 validated).
+- Developed **AutoResearch**, an adaptation of the SkillOpt paper deeply customized for Base Spec generation: multi-rollout sampling + cross-batch adversarial synthesis to remove sampling noise and discover common root causes, gated by evidence/stability/adversarial/net-gain to synthesize high-leverage low-regression prompt patches — a self-evolving loop, **+30 pp** on DB-system generation.
 - Co-trained **Spec/Plan, CodeAct, and Judge/Reward** models (CodeAct judge pass **40.34% → 48.74%**, P50 latency **3.1 min → 23 s**).
 
 **Nanjing NUIST Meteorological Science & Technology Institute** \| Doctoral Practice (Excellent Evaluation) \| 2025
@@ -476,8 +476,8 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="zh" markdown="1">
 **字节跳动（飞书）· Base AI** \| 大模型算法实习 \| 2026.05 – 至今
 - 构建 **Category–Rubric–Mode 三层 Rubric 体系** 用于 Spec 评测，覆盖 Table/Workflow/Dashboard/Permission/Form 五个核心域，**199 个违规模式**，S0–S1–S2 严重度 + L1–L2–L3 机制分级；通过多种数据策略构建训练数据，基于 Seed 2.0（300B）基座（SFT + GRPO）训练 **Judge 模型**，准确率达 GPT-5.6（Sol XHigh）——作为数据合成的核心。
-- 将 Judge 模型组装为 **Verifier Agent** 作为数据合成准出门禁——E2E 人机一致性 **+60%**，合成 **1.1万+** 条训练轨迹（9,197 条有效）。
-- 研发 **AutoResearch**，自进化（**SkillOpt**）的 Spec 生成 PE 优化 Harness，形成闭环——Spec 是数据合成链路的输入、其合成 Prompt 是链路的输出——数据库生成任务 **+30 pp**。
+- 将 Judge 模型组装为 **Verifier Agent**：相较传统 LLM-as-Judge 的稀疏判定，对三层分级 Rubric 逐条打分，每个 Rubric（C）在 fix 前后输出 10 档分级每一档的概率 logprob，经多路 rollout（K）采样精准提取 fix 信号，形成稠密评测信号；在准确性、覆盖度、稳定性上相较 LLM-as-Judge 显著提升，并由 Judge-Fix 链路的工程设计（早停、投票 V/Q 准出、混合精度推理）提升 token 利用效率——E2E **+60%**，**1.1万+** 条轨迹（9,197 条有效）。
+- 研发 **AutoResearch**：基于 SkillOpt 论文并结合 Base Spec 生成场景深度改造，多路 rollout 采样 + 跨批次对抗式综合消除采样噪声、发现共性根因，经证据/稳定性/抗对抗/净收益门控合成高杠杆低回归的 Prompt patch，形成自进化闭环——数据库生成任务 **+30 pp**。
 - 参与 **Spec/Plan、CodeAct、Judge/Reward** 多模型合训（CodeAct Judge 通过率 **40.34% → 48.74%**，P50 延迟 **3.1 分钟 → 23 秒**）。
 
 **南京信息工程大学气象科技研究院** \| 博士实践（优秀评价）\| 2025
@@ -488,8 +488,8 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="ja" markdown="1">
 **ByteDance（Lark）· Base AI** \| LLMアルゴリズムインターン \| 2026.05 – 現在
 - Spec評価のための **Category–Rubric–Mode 3層ルーブリック体系** を構築、Table/Workflow/Dashboard/Permission/Formの5つの中核ドメインをカバーし、**199の違反モード**、S0–S1–S2重大度＋L1–L2–L3メカニズム等級を実装；複数のデータ戦略で訓練データを構築し、Seed 2.0（300B）基盤（SFT＋GRPO）で **Judgeモデル** を訓練、GPT-5.6（Sol XHigh）と同等の精度を達成——データ合成の中核に。
-- Judgeモデルを **Verifier Agent** として組み立てデータ合成品質ゲートに——E2Eの人間・機械一致率 **+60%**、**11,000件以上**の訓練軌跡（有効9,197件）を合成。
-- 自己進化（**SkillOpt**）するSpec生成PE最適化ハーネス **AutoResearch** を開発しループを閉じる——Specはデータ合成の入力、その合成Promptは出力——DB生成タスク **+30 pp**。
+- Judgeモデルを **Verifier Agent** として組み立て：従来のLLM-as-Judgeのスパース判定に対し、3層ルーブリックを逐条スコアリングし、各Rubric（C）のfix前後の10段階等級ごとのlogprobを出力、多路rollout（K）サンプリングでfix信号を精密抽出し稠密評価信号を形成；正確性・カバレッジ・安定性でLLM-as-Judgeを大幅に上回り、Judge-Fixチェーンの工学設計（早期停止、V/Q投票、混合精度推論）でtoken効率を向上——E2E **+60%**、**11,000件以上**の軌跡（有効9,197件）。
+- **AutoResearch** を開発：SkillOpt論文に基づきBase Spec生成シナリオ向けに深く改造、多路rolloutサンプリング＋クロスバッチ敵対的統合でサンプリングノイズを除去し共通根因を発見、証拠/安定性/抗敵対/純利益ゲートでハイレバレッジ・低回帰のPrompt patchを合成、自己進化ループを形成——DB生成タスク **+30 pp**。
 - **Spec/Plan、CodeAct、Judge/Reward**の多モデル共訓練に参加（CodeAct Judge通過率 **40.34% → 48.74%**、P50遅延 **3.1分 → 23秒**）。
 
 **南京情報工程大学気象科学技術研究院** \| 博士実践（優秀評価）\| 2025

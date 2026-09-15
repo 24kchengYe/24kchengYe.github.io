@@ -42,7 +42,12 @@ cv/tsinghua_logo.png
 cv/夏俊豪简历.pdf
 cv/resume_cn.pdf
 cv/resume_en.pdf
+cv/resume_zyc*.pdf
+cv/YechengZhang_CV.pdf
 cv/NUL
+
+# Terminal Paste Image folder
+/.cp-images
 
 # Terminal Paste Image folder
 /.cp-images

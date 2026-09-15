@@ -145,7 +145,7 @@ My research focuses on **building-scale urban analytics and simulation**, **LLM/
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
 - *2025.11*: CMAB论文入选Geoscience领域 **ESI高被引论文**。
 - *2025.11*: "新城市科学"论文入选 [**中国知网《城市规划》2024-2025年度高被引论文TOP20**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) 榜单。
-- *2025.11*: 获**全国高校GIS新秀奖**（全国10人）并主持"高校GIS新秀"专场论坛，第十三届全国高校GIS论坛，上海。
+- *2025.11*: 获**2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人）并主持新秀专场论坛，上海。
 - *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Communications** **二审**。
 - *2025.10*: 在**中国城市规划信息化年会**展示展板，佛山。
 - *2025.10*: 获第22届**金经昌城市规划优秀论文佳作奖**，上海。
@@ -406,7 +406,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="en" markdown="1">
 - *2026.04* **ESI Highly Cited Paper** (Social Science), Ghost Cities paper in *Habitat International*.
 - *2025.11* **ESI Highly Cited Paper** (Geoscience), CMAB paper in *Scientific Data*.
-- *2025.11* **"GIS Rising Star" Award** (全国高校GIS新秀, 10 nationwide) & Session Chair, The 13th China College GIS Forum, Shanghai.
+- *2025.11* **"GIS Rising Star"** (2025 13th College GIS Forum, one of 10 nationwide) & Session Chair, Shanghai.
 - *2025.11* **"新城市科学" Highly Cited Paper**, [CNKI Top 20 Most-Cited](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025), *城市规划*.
 - *2025.10* **Jin Jingchang Outstanding Paper Award** (金经昌城市规划优秀论文佳作奖, 22nd edition), Shanghai.
 - *2025.08* **Outstanding Teaching Assistant** (Top 5%), Tsinghua University, 2024-2025 Fall.
@@ -419,7 +419,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 <div lang="zh" markdown="1">
 - *2026.04* **ESI高被引论文**（Social Science领域），鬼城论文，*Habitat International*。
 - *2025.11* **ESI高被引论文**（Geoscience领域），CMAB论文，*Scientific Data*。
-- *2025.11* **全国高校GIS新秀奖**（全国10人）并主持专场论坛，第十三届全国高校GIS论坛，上海。
+- *2025.11* **2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人）并主持新秀专场论坛，上海。
 - *2025.11* **"新城市科学"高被引论文**，[中国知网《城市规划》2024-2025年度高被引论文TOP20榜单](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)。
 - *2025.10* **金经昌城市规划优秀论文佳作奖**（第22届），上海。
 - *2025.08* **优秀研究生助教**（前5%），清华大学2024-2025学年秋季学期。

@@ -29,7 +29,7 @@ function sizeFigures(document) {
 function build(slug) {
   const source = fs.readFileSync(path.join(root, '_data/writing', `${slug}.html`), 'utf8');
   const translations = JSON.parse(fs.readFileSync(path.join(root, '_data/writing', `${slug}.json`), 'utf8'));
-  const dom = new JSDOM(source);
+  const dom = new JSDOM(source.trimEnd());
   const { document, NodeFilter } = dom.window;
   document.querySelector('.report-site-nav')?.remove();
   document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);
@@ -89,7 +89,7 @@ function build(slug) {
 for (const slug of slugs) build(slug);
 for (const slug of slugs) {
   const file = path.join(root, 'writing', slug, 'technical/index.html');
-  const dom = new JSDOM(fs.readFileSync(file, 'utf8'));
+  const dom = new JSDOM(fs.readFileSync(file, 'utf8').trimEnd());
   dom.window.document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);
   dom.window.document.querySelector('.report-site-nav a:nth-child(2)').href = `/writing/${slug}/`;
   sizeFigures(dom.window.document);

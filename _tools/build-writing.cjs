@@ -5,14 +5,17 @@ const { JSDOM } = require('jsdom');
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
-const navigation = slug => `<nav class="report-site-nav" aria-label="Writing">
-  <a href="/#writing" data-site-link><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
-  <a href="/writing/${slug}/technical/"><span lang="en">Technical report · Chinese →</span><span lang="zh">技术报告 →</span><span lang="ja">技術レポート（中国語）→</span></a>
-  <div class="languages" role="group" aria-label="Language">
+const navigation = (slug, edition = 'blog') => `<nav class="report-site-nav" aria-label="Writing">
+  <a class="writing-back" href="/#writing" data-site-link><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+  <div class="edition-switch" aria-label="Article version">
+    <a href="/writing/${slug}/" data-site-link${edition === 'blog' ? ' aria-current="page"' : ''}>Blog</a>
+    <a href="/writing/${slug}/technical/"${edition === 'technical' ? ' aria-current="page"' : ''}><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>
+  </div>
+  ${edition === 'technical' ? '<span class="edition-language">中文</span>' : `<div class="languages" role="group" aria-label="Language">
     <button type="button" data-language="en" aria-label="English">EN</button>
     <button type="button" data-language="zh" aria-label="中文">中</button>
     <button type="button" data-language="ja" aria-label="日本語">日</button>
-  </div>
+  </div>`}
 </nav>`;
 
 function sizeFigures(document) {
@@ -74,7 +77,7 @@ function build(slug) {
   document.querySelector('h1').insertAdjacentElement('afterend', figureNote);
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = '/assets/css/writing-language.css';
+  stylesheet.href = '/assets/css/writing-language.css?v=edition-nav-1';
   document.head.append(stylesheet);
   const script = document.createElement('script');
   script.src = '/assets/js/minimal.js?v=writing-i18n-2';
@@ -90,10 +93,19 @@ for (const slug of slugs) build(slug);
 for (const slug of slugs) {
   const file = path.join(root, 'writing', slug, 'technical/index.html');
   const dom = new JSDOM(fs.readFileSync(file, 'utf8').trimEnd());
-  dom.window.document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);
-  dom.window.document.querySelector('.report-site-nav a:nth-child(2)').href = `/writing/${slug}/`;
-  sizeFigures(dom.window.document);
-  dom.window.document.querySelector('img[src]')?.setAttribute('loading', 'eager');
+  const { document } = dom.window;
+  document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);
+  document.querySelector('.report-site-nav')?.remove();
+  document.body.insertAdjacentHTML('afterbegin', navigation(slug, 'technical'));
+  let stylesheet = document.querySelector('link[href*="/assets/css/writing-language.css"]');
+  if (!stylesheet) {
+    stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    document.head.append(stylesheet);
+  }
+  stylesheet.href = '/assets/css/writing-language.css?v=edition-nav-1';
+  sizeFigures(document);
+  document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   fs.writeFileSync(file, dom.serialize() + '\n');
   dom.window.close();
 }

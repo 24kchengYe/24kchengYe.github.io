@@ -47,7 +47,10 @@ Selected writing appears before research, in both page order and navigation.
 All three full blog articles support the homepage's English, Chinese, and
 Japanese switcher. Language choices persist across article and homepage links.
 Figures retain their original Chinese labels, with translated captions and
-explanations. Technical reports remain in Chinese, explicitly marked on links.
+explanations. Technical reports remain in Chinese, marked in their page navigation.
+Each article opens as a Blog, with a prominent Blog / Technical report switch
+above the title. The current edition is underlined. The series title on the
+homepage uses normal-case, dark semibold text, with its description below.
 
 - `_includes/writing.html`: three article entries and their CSS illustrations.
 - `writing/spec-generation/`: full multilingual essay and Chinese technical report.

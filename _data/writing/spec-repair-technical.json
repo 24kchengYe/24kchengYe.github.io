@@ -1,0 +1,1534 @@
+{
+  "引言": [
+    "Introduction",
+    "はじめに"
+  ],
+  "实验设置": [
+    "Experimental setup",
+    "実験設定"
+  ],
+  "Judge–Fix 主链路": [
+    "The Judge–Fix pipeline",
+    "Judge–Fix主パイプライン"
+  ],
+  "Fix 策略实验": [
+    "Fix strategy experiments",
+    "Fix戦略の実験"
+  ],
+  "Judge 配置": [
+    "Judge configuration",
+    "Judge設定"
+  ],
+  "格式准出": [
+    "Format release checks",
+    "形式の出荷判定"
+  ],
+  "提示词回归实验": [
+    "Prompt regression experiments",
+    "プロンプト回帰実験"
+  ],
+  "结论": [
+    "Conclusions",
+    "結論"
+  ],
+  "Judge–Fix 技术报告": [
+    "Judge–Fix: Technical Report",
+    "Judge–Fix：技術レポート"
+  ],
+  "摘要": [
+    "Abstract",
+    "概要"
+  ],
+  "本研究面向多维表格设计文档的自动修复：模型根据用户需求和产品规则发现问题，修改 SpecDoc 或 HostPlan，并检查最终设计能否支持实际建表。2026 年 6—10 月，项目比较了局部修复、模型切换、历史反馈、投票、格式恢复和 Verifier 前后版本验证，形成了四域 Judge–Fix–Router 主链路及独立的修改验证路线。": [
+    "This study investigates automated repair of multidimensional-table design documents. Models use user requirements and product rules to identify defects, revise SpecDoc or HostPlan, and check whether the final design supports actual table construction. From June to October 2026, experiments compared local repairs, model switching, history feedback, voting, format recovery, and before/after verification, yielding a four-domain Judge–Fix–Router pipeline and a separate change-verification track.",
+    "多次元テーブル設計文書の自動修復を研究する。モデルがユーザー要求と製品規則から欠陥を見つけ、SpecDocまたはHostPlanを修正し、最終設計が実際の構築を支えられるかを調べる。2026年6〜10月に局所修復、モデル切替、履歴フィードバック、投票、形式復旧、修正前後の検証を比較し、四領域Judge–Fix–Routerと独立の変更検証系統を構築した。"
+  ],
+  "实验表明，限制修改范围和澄清具体业务规则能改善部分固定样本上的修复结果：Non-Table 300 条中，保护合格段落使 Fix 阶段通过数从 156 增至 177；8 条工作流难例中，保留补丁方式、只补业务规则使准出数从 3 增至 7。更复杂的审核和更大预算没有稳定带来收益。Verifier 的前置分析在 40 个域判断单元中将参考一致数从 33 提高到 38，但另一组完整修复实验的参考通过数从 4/10 降至 1/10。下一步应先查明 Judge 报出的问题是否真实存在，再检查 Fix 是否修好问题并保留原需求，最后用端到端评测验证建表结果。": [
+    "Limiting edit scope and clarifying business rules improved repairs on some fixed samples. Protecting valid paragraphs raised Fix-stage passes from 156 to 177 on 300 Non-Table cases; retaining the patch protocol while adding business rules raised releases from 3 to 7 on eight difficult Workflow cases. More elaborate review and larger budgets did not consistently help. Verifier pre-analysis raised reference agreement from 33 to 38 of 40 domain units, but a separate full-repair experiment fell from 4/10 to 1/10 reference passes. Next, verify that reported defects are real, that Fix closes them without losing requirements, and finally that E2E construction succeeds.",
+    "編集範囲の制限と業務規則の明確化は、一部の固定集合で修復を改善した。Non-Table 300件では合格段落の保護によりFix段階の合格が156から177へ増え、Workflow難例8件ではパッチ方式を維持して業務規則だけを補うと出荷数が3から7へ増えた。複雑な審査や予算増は安定した効果を生まなかった。Verifierの事前分析は40領域単位の参照一致を33から38へ高めたが、別の全修復実験では参照合格が4/10から1/10へ低下した。まず指摘が実在するか、次に要求を残して修復できたかを確認し、最後にE2Eで構築結果を検証する。"
+  ],
+  "1. 引言": [
+    "1. Introduction",
+    "1. はじめに"
+  ],
+  "执行器按照多维表格设计文档实现用户需求。它既要说明有哪些表、字段、视图和流程，也要满足字段类型、组件能力和权限规则。设计中只写出一个目标名称，并不等于给出了可执行的方法。例如“培训完成度”可以是手工填报值，也可以是需要按培训记录自动汇总的结果；是否缺少计算方式，要结合用户需求和完整设计判断。": [
+    "The executor implements requirements from a table-system design document. The document must specify tables, fields, views, and workflows while respecting field types, component capabilities, and permission rules. Naming a goal does not make it executable. “Training completion,” for example, may be manually reported or automatically aggregated from training records. Whether a computation is missing depends on the requirements and complete design.",
+    "実行器は多次元テーブルの設計文書に基づき要求を実現する。文書は表、フィールド、ビュー、処理を記述し、型・部品能力・権限規則を満たす必要がある。目標名を書くだけでは実行方法にならない。「研修完了率」は手入力でも研修記録からの自動集計でもよく、計算の欠落かどうかは要求と設計全体から判断する。"
+  ],
+  "自动修复的困难有两部分。首先，Judge 必须区分业务缺口、能力限制和允许的表达差异，不能把正常设计误判成错误。其次，Fix 不仅要消除已报问题，还要保留原来的业务含义。将管理员改成只读，可能让一条权限限制通过，却使其无法完成管理职责；把净现金流改成收入，可能消除公式问题，却改变了指标。": [
+    "Automated repair faces two problems. Judges must distinguish business gaps, capability limits, and acceptable variations in expression without flagging valid designs. Fix must remove defects while preserving meaning. Making an administrator read-only may satisfy one permission constraint but prevent administration; replacing net cash flow with income may remove a formula defect while changing the metric.",
+    "自動修復には二つの難しさがある。Judgeは業務上の欠落、能力制限、許容される表現差を区別し、正常設計を誤検出してはならない。Fixは問題を消すと同時に元の意味を保つ必要がある。管理者を閲覧専用にすると一規則は満たせても管理業務ができず、純キャッシュフローを収入に変えると式の問題は消えても指標が変わる。"
+  ],
+  "主链路采用“按域检查—按依赖修复—修后重判”的方式处理这些问题。Verifier 则进一步比较修前与修后两份文档，显式判断目标是否关闭、原有需求是否保留。两者的研究目标相同，但检查得更细不代表最终修得更好，必须分别测量。": [
+    "The main pipeline checks by domain, repairs by dependency, and rejudges after edits. Verifier additionally compares before and after documents to assess target closure and requirement preservation. Both pursue the same goal, but more detailed checking does not necessarily improve the final repair; the outcomes must be measured separately.",
+    "主パイプラインは領域別確認、依存順修復、修正後再判定を行う。Verifierはさらに修正前後を比較し、目標解消と要求保持を明示判定する。目的は同じでも、確認を細かくするほど最終修復が良くなるとは限らず、別々に測る必要がある。"
+  ],
+  "图 2　研究时间线": [
+    "Figure 2  Research timeline",
+    "図2　研究の時系列"
+  ],
+  "主要实验问题如下。": [
+    "The main research questions are:",
+    "主な研究課題は次のとおり。"
+  ],
+  "研究问题": [
+    "Research question",
+    "研究課題"
+  ],
+  "被比较的方法": [
+    "Methods compared",
+    "比較手法"
+  ],
+  "主要评价": [
+    "Main evaluation",
+    "主な評価"
+  ],
+  "如何让 Fix 修对问题且少改坏已有内容？": [
+    "How can Fix resolve defects without damaging valid content?",
+    "Fixは既存の正しい内容を壊さず問題を直せるか"
+  ],
+  "局部保护、末轮换模型、历史反馈、对象定位、全文候选": [
+    "Local protection, final-round model switching, history, object targeting, full-document candidates",
+    "局所保護、最終回モデル切替、履歴、対象特定、全文候補"
+  ],
+  "原问题关闭数、退化数、准出数、调用成本": [
+    "Original issues closed, regressions, releases, call cost",
+    "既存問題の解消、悪化、出荷数、呼び出しコスト"
+  ],
+  "如何减少重复检查，同时保持判断质量？": [
+    "How can repeated checks be reduced without losing judgment quality?",
+    "判定品質を維持して重複確認を減らせるか"
+  ],
+  "Judge 模型、推理强度、同版本投票、早停、有效票复用": [
+    "Judge model, reasoning effort, same-version votes, early stopping, valid-vote reuse",
+    "Judgeモデル、推論強度、同版投票、早期停止、有効票再利用"
+  ],
+  "参考一致率、重复判定差异、调用成本": [
+    "Reference agreement, repeat-judgment variation, call cost",
+    "参照一致率、再判定差、呼び出しコスト"
+  ],
+  "前后版本验证能否改善修复？": [
+    "Can before/after verification improve repair?",
+    "修正前後の検証は修復を改善するか"
+  ],
+  "分离问题分析和评分、结构化修复目标、Transition 接纳": [
+    "Separate analysis and scoring, structured repair targets, Transition acceptance",
+    "分析と採点の分離、構造化修復目標、Transition採否"
+  ],
+  "判断质量、误接纳、误拒绝及最终文档质量": [
+    "Judgment quality, false acceptance/rejection, final document quality",
+    "判定品質、誤採用・誤棄却、最終文書品質"
+  ],
+  "文档通过能否转化为建表通过？": [
+    "Does document acceptance translate to successful construction?",
+    "文書合格は構築合格につながるか"
+  ],
+  "格式恢复、提示词对照、固定设计的 E2E": [
+    "Format recovery, prompt comparisons, E2E with fixed designs",
+    "形式復旧、プロンプト比較、設計固定E2E"
+  ],
+  "设计、执行和评审三方面的逐例证据": [
+    "Case-level evidence from design, execution, and evaluation",
+    "設計・実行・審査の逐例証拠"
+  ],
+  "链路准出、独立参考复核和 E2E 分开统计。历史累计交付率不等于单次实验通过率，模型判定也不等于人工准确率。详细实验记录可在正文中展开。": [
+    "Pipeline release, independent reference review, and E2E are counted separately. Cumulative historical delivery is not a single-run pass rate; model judgments are not human accuracy. Detailed experiment records expand within the article.",
+    "パイプライン出荷、独立参照審査、E2Eは別集計とする。過去累積出荷率は一回の合格率ではなく、モデル判定も人手精度ではない。詳細記録は本文内で展開できる。"
+  ],
+  "2. 实验设置": [
+    "2. Experimental setup",
+    "2. 実験設定"
+  ],
+  "输入是用户需求（Query）和待修设计。设计有两种格式：Markdown 形式的 SpecDoc，以及包含": [
+    "Inputs are a user Query and a design to repair. Designs use either Markdown SpecDoc or HostPlan JSON containing",
+    "入力はQueryと修復対象設計。形式はMarkdown SpecDoc、または次を含むHostPlan JSONである："
+  ],
+  "的 HostPlan JSON。四个业务域分别是数据表、仪表盘、工作流和权限。Table Fix 可以修表、字段和计算依赖；Non-Table Fix 修改后三域，遇到缺失的表或字段时交回 Table。": [
+    ". The four domains are Table, Dashboard, Workflow, and Permission. Table Fix repairs tables, fields, and computational dependencies. Non-Table Fix edits the other three domains and hands missing tables or fields back to Table.",
+    "。四領域はTable、Dashboard、Workflow、Permission。Table Fixは表・フィールド・計算依存を修復する。Non-Table Fixは残る三領域を修正し、表やフィールドの不足はTableへ戻す。"
+  ],
+  "研究使用三类结果：": [
+    "Three outcome types are used:",
+    "結果は三種類に分ける："
+  ],
+  "是最终文档通过本次 Judge 和格式检查；": [
+    "means the final document passes the run's Judge and format checks;",
+    "は、その実行のJudgeと形式確認に最終文書が合格したことを示す。"
+  ],
+  "独立参考复核": [
+    "Independent reference review",
+    "独立参照審査"
+  ],
+  "是另一套模型评审对最终文档或修改前后对的判断；": [
+    "means another model-review setup evaluates the final document or the before/after pair;",
+    "は、別のモデル審査設定による最終文書または修正前後ペアの評価である。"
+  ],
+  "是执行器建出 Base 后的业务评测。文中相关参考标签来自模型，未当作人工金标。": [
+    "evaluates the Base constructed by the executor. Reference labels here come from models, not human gold annotations.",
+    "は、実行器が構築したBaseの業務評価である。本稿の参照ラベルはモデル由来で、人手の正解ラベルではない。"
+  ],
+  "2.1 指标定义": [
+    "2.1 Metrics",
+    "2.1 指標"
+  ],
+  "样本级指标以完整 Query＋文档为单位；域级指标以“样本×业务域”为单位；问题级指标还区分规则类型与具体对象。Fix 阶段通过数、最终准出数和 E2E 通过数处于不同阶段，不能相互替换。调用数统计请求，token 统计模型处理的文本量；更高并发只改变同时运行的请求数。": [
+    "Sample-level metrics use a complete Query + document; domain-level metrics use sample × domain; issue-level metrics also distinguish rule type and specific object. Fix-stage passes, final releases, and E2E passes measure different stages. Calls count requests; tokens count model-processed text. Higher concurrency changes only how many requests run simultaneously.",
+    "サンプル単位はQuery＋文書全体、領域単位はサンプル×領域、問題単位は規則種別と具体対象も区別する。Fix合格、最終出荷、E2E合格は異なる段階の指標である。呼び出し数は要求件数、tokenは処理テキスト量で、並列度は同時実行数だけを変える。"
+  ],
+  "成本对照报告总量，也检查每份参考合格文档的消耗。未实际推理的限流请求不计作业务失败。历史实验多数为单次或小规模定向对照；若样本被用于提示词开发，结果用于回归诊断，不写成未见样本上的泛化收益。": [
+    "Cost comparisons report totals and consumption per reference-qualified document. Rate-limited requests that never ran inference are not business failures. Most historical experiments are one-off or small targeted comparisons; samples used in prompt development support regression diagnosis, not claims of unseen-data generalization.",
+    "コストは総量と参照合格文書一件当たりの消費を報告する。推論に至らないレート制限要求は業務失敗としない。過去実験の多くは一回または小規模の比較で、プロンプト開発に使った例は回帰診断に用い、未知データへの汎化効果とは扱わない。"
+  ],
+  "2.2 数据集": [
+    "2.2 Datasets",
+    "2.2 データセット"
+  ],
+  "主要数据及用途如下。不同集合分别统计，后续比较均注明使用哪一批输入。": [
+    "Main datasets and uses follow. Each set is counted separately, and every comparison identifies its input batch.",
+    "主なデータと用途を示す。集合ごとに集計し、各比較で入力バッチを明記する。"
+  ],
+  "数据或实验集合": [
+    "Dataset or experiment set",
+    "データ・実験集合"
+  ],
+  "用途及结果": [
+    "Use and result",
+    "用途と結果"
+  ],
+  "早期 7,233 条设计": [
+    "Early 7,233 designs",
+    "初期7,233件の設計"
+  ],
+  "建立批量修复基线；首轮四域通过 3,588 条，一轮 Fix 后 6,039 条": [
+    "Batch-repair baseline: 3,588 four-domain passes initially, 6,039 after one Fix round",
+    "一括修復基準。初回四領域合格3,588件、Fix一回後6,039件"
+  ],
+  "6,457 条 SpecDoc": [
+    "6,457 SpecDocs",
+    "SpecDoc 6,457件"
+  ],
+  "研究修后重判和准出稳定性；链内通过 6,291 条，单次独立重判通过 5,315 条": [
+    "Rejudging and release stability: 6,291 pipeline passes, 5,315 in one independent rejudge",
+    "再判定と出荷安定性。パイプライン6,291件、独立一回再判定5,315件"
+  ],
+  "HostPlan 多批数据": [
+    "Multiple HostPlan batches",
+    "複数HostPlanバッチ"
+  ],
+  "完成两种文档格式适配；包含 2,106 条原始集合、豆包 45 条及后续抽样集合": [
+    "Adapt both formats; includes 2,106 original cases, 45 Doubao cases, and later samples",
+    "両形式へ対応。元2,106件、豆包45件、後続サンプルを含む"
+  ],
+  "50 条、17 条、8 条策略对照": [
+    "50-, 17-, and 8-case strategy comparisons",
+    "50・17・8件の戦略比較"
+  ],
+  "比较 Fix 模型、补丁方式、历史信息和修复预算": [
+    "Compare Fix models, patches, history, and repair budgets",
+    "Fixモデル、パッチ、履歴、修復予算を比較"
+  ],
+  "从原始需求和设计出发，比较提示词修改及建表结果": [
+    "Compare prompt edits and constructed Bases from original requirements and designs",
+    "元要求・設計からプロンプト変更と構築結果を比較"
+  ],
+  "4,480 条历史池": [
+    "Historical pool of 4,480",
+    "過去プール4,480件"
+  ],
+  "多轮修复后累计准出 3,999 条；另一个 1,500 条集合准出 1,052 条": [
+    "Cumulative releases after several repairs: 3,999; a separate 1,500-item set released 1,052",
+    "複数回修復の累積出荷3,999件。別1,500件集合は1,052件出荷"
+  ],
+  "Verifier 的 10 条小样本系列": [
+    "Verifier's 10-case series",
+    "Verifierの10件実験系列"
+  ],
+  "分别验证问题分析、修改接纳、单次修复和完整链路；各实验不是同一批结果的连续阶段": [
+    "Separate tests of issue analysis, edit acceptance, single repairs, and full pipelines—not successive stages of one result set",
+    "問題分析、採否、単回修復、全系統を別検証。同一結果の連続段階ではない"
+  ],
+  "8 月策略实验的 G1—G6、困难样本策略 J1—J13，与 9 月提示词 G、J 不是同一套编号。下文先写方法，编号只用于定位原记录。": [
+    "August's G1–G6 strategies and hard-case J1–J13 are numbered separately from September's G and J prompts. Methods are named first; identifiers locate the original records.",
+    "8月のG1〜G6および難例J1〜J13と、9月のG・Jプロンプトは別の番号体系である。以下では方法名を先に示し、番号は原記録の識別に用いる。"
+  ],
+  "3. Judge–Fix 主链路": [
+    "3. The Judge–Fix pipeline",
+    "3. Judge–Fix主パイプライン"
+  ],
+  "3.1 调度流程": [
+    "3.1 Scheduling",
+    "3.1 実行管理"
+  ],
+  "主链路先检查四域，再根据依赖选择修复节点。表和字段是其他域的前置条件，因此缺少资源时优先修 Table；表结构稳定后，再修仪表盘、工作流和权限。每次修改后重新检查，普通阶段仍未解决的样本进入预算有限的难例阶段。": [
+    "The pipeline first checks four domains, then chooses a repair node by dependency. Tables and fields support the other domains, so missing resources go to Table first. Once table structure stabilizes, Dashboard, Workflow, and Permission are repaired. Every edit is rechecked; cases unresolved in normal stages enter a bounded hard-case phase.",
+    "まず四領域を確認し、依存関係に従って修復ノードを選ぶ。表とフィールドは他領域の前提なので、不足資源は先にTableで補う。表構造が安定してからDashboard・Workflow・Permissionを修復する。変更ごとに再確認し、通常段階で残るケースは有限予算の難例段階へ進む。"
+  ],
+  "准出检查针对同一份最终文档。最多检查 V 次，至少 Q 次通过；已能确定多数结果时提前结束。格式模块随后检查文档能否按下游约定读取。格式修改若改变了文档，需要重新确认业务判断。最终导出保存实际文档、投票和失败原因。": [
+    "Release checks inspect the same final document up to V times, requiring at least Q passes and stopping once the majority is determined. Format checks then verify downstream readability. A format edit that changes the document requires renewed business validation. Exports retain the actual document, votes, and failure reasons.",
+    "出荷確認は同じ最終文書を最大V回検査し、Q回以上の合格を要求、過半数が確定すれば停止する。続く形式確認で下流の読み取り規約を検証する。形式変更で文書が変われば業務判定も再確認する。出力には文書、票、失敗理由を保存する。"
+  ],
+  "图 3　主链路": [
+    "Figure 3  Main pipeline",
+    "図3　主パイプライン"
+  ],
+  "3.2 Fix 内部流程": [
+    "3.2 Inside Fix",
+    "3.2 Fix内部"
+  ],
+  "Fix 接收 Query、当前文档及待修问题，生成局部补丁或完整 JSON。程序先解析输出，再核对补丁是否真正应用。零匹配、多匹配、截断等错误进入输出恢复；候选写入成功后，才检查目标是否修复、是否允许替换当前版本。被拒绝时保留旧文档和失败原因，后续候选读取这些反馈。": [
+    "Fix receives the Query, current document, and target issues, then emits a local patch or complete JSON. Code parses it and verifies the patch actually applied. Zero/multiple matches and truncation trigger output recovery. Only a successfully written candidate is checked for target closure and replacement eligibility. Rejection preserves the old document and reason, which later candidates read.",
+    "FixはQuery、現文書、対象問題から局所パッチまたは完全JSONを出す。プログラムが解析し適用成功を確認する。ゼロ/複数一致や切断は出力復旧へ回す。書き込み成功後に目標解消と置換可否を判定し、却下時は旧文書と理由を保ち次候補へ渡す。"
+  ],
+  "一次进入 Fix 可以包含多轮，每轮也可以有多个候选。候选分别评估，不把不同候选的修改直接拼在一起。局部 Fix 通过后返回主链路，继续做整体检查。": [
+    "One Fix entry may contain several rounds and multiple candidates per round. Candidates are evaluated separately; edits from different candidates are not spliced together. A locally successful Fix returns to the main pipeline for global checks.",
+    "Fix一回の進入に複数ラウンド、各ラウンドに複数候補を含められる。候補は個別評価し、異なる候補の変更を継ぎ合わせない。局所合格後は主パイプラインへ戻り全体を確認する。"
+  ],
+  "图 4　Fix 内部流程": [
+    "Figure 4  Inside Fix",
+    "図4　Fix内部フロー"
+  ],
+  "配置快照（2026-10-16）": [
+    "Configuration snapshot (October 16, 2026)",
+    "設定スナップショット（2026-10-16）"
+  ],
+  "项目": [
+    "Item",
+    "項目"
+  ],
+  "快照中的配置或实现": [
+    "Configuration or implementation",
+    "設定・実装"
+  ],
+  "执行入口": [
+    "Entry point",
+    "実行入口"
+  ],
+  "，Design 0-1，显式选择 SpecDoc / HostPlan": [
+    "; Design 0-1; explicitly choose SpecDoc / HostPlan",
+    "、Design 0-1、SpecDoc / HostPlanを明示選択"
+  ],
+  "Luna；普通检查和前两票 medium，确需第三票时 high": [
+    "Luna; medium for normal checks and first two votes, high only for a needed third vote",
+    "Luna。通常確認と最初の二票はmedium、必要な第三票のみhigh"
+  ],
+  "Seed2 low；每次进入 Fix 最多 F=5，候选数 N_fix=3": [
+    "Seed2 low; at most F=5 rounds per Fix entry, N_fix=3 candidates",
+    "Seed2 low。Fix進入ごと最大F=5、候補N_fix=3"
+  ],
+  "准出票": [
+    "Release votes",
+    "出荷票"
+  ],
+  "V=3、Q=2；同一文档的有效票可复用，结论锁定后早停": [
+    "V=3, Q=2; reuse valid same-document votes and stop when decided",
+    "V=3、Q=2。同文書の有効票を再利用し、結論確定で停止"
+  ],
+  "SpecDoc 写回": [
+    "SpecDoc write-back",
+    "SpecDoc書き戻し"
+  ],
+  "有界局部补丁或对象替换，核对是否成功应用": [
+    "Bounded local patches or object replacement; verify application",
+    "有界局所パッチまたは対象置換。適用を確認"
+  ],
+  "HostPlan 写回": [
+    "HostPlan write-back",
+    "HostPlan書き戻し"
+  ],
+  "完整 JSON，按其自身格式验证": [
+    "Complete JSON, validated against its own format",
+    "完全JSONを固有形式で検証"
+  ],
+  "技术恢复": [
+    "Technical recovery",
+    "技術的復旧"
+  ],
+  "处理输出协议、截断、稳定章节丢失等问题，与业务修复次数区分": [
+    "Output protocol, truncation, or lost stable sections; separate from business-repair rounds",
+    "出力規約、切断、安定章欠落を処理。業務修復回数と区別"
+  ],
+  "终局整篇改写": [
+    "Final full-document rewrite",
+    "終端の全文改稿"
+  ],
+  "默认关闭，实验中显式开启": [
+    "Off by default; explicitly enabled for experiments",
+    "標準では無効。実験で明示有効化"
+  ],
+  "不参与该快照的四域调度；历史内容可能透传": [
+    "Not scheduled in this snapshot's four domains; historical content may pass through",
+    "この四領域実行には不参加。過去内容は透過保持され得る"
+  ],
+  "以上是报告收录时的本地状态，不代表所有历史实验配置，也不替代线上部署核验。": [
+    "This is the local state captured for the report, not the configuration of every historical run or a substitute for production deployment verification.",
+    "これは報告時点のローカル状態で、全過去実験の設定でも本番配備の検証の代替でもない。"
+  ],
+  "3.3 文档格式适配": [
+    "3.3 Document-format adaptation",
+    "3.3 文書形式への対応"
+  ],
+  "早期 HostPlan 适配分别修改了四域 Judge、两种 Fix、消息模板和文件映射。日期精度、公式输出类型、闭合选项、按月统计来源、跨任务依赖等被整理成业务规则，而不是持续追加具体坏例。": [
+    "Early HostPlan adaptation updated all four Judges, both Fixes, message templates, and file mappings. Date precision, formula output types, closed options, monthly aggregation sources, and cross-task dependencies became business rules instead of an ever-growing list of bad examples.",
+    "初期HostPlan対応では四Judge、二Fix、メッセージテンプレート、ファイル対応を変更した。日付精度、式出力型、閉じた選択肢、月次集計元、タスク間依存を、悪例の追加ではなく業務規則へ整理した。"
+  ],
+  "统一 Design 0-1 Judge 后，曾出现 Markdown SpecDoc 被 Fix 改成": [
+    "After unifying the Design 0-1 Judge, Fix sometimes converted Markdown SpecDoc into",
+    "Design 0-1 Judgeの統一後、FixがMarkdown SpecDocを次の形式のJSONへ変える問題が起きた："
+  ],
+  "JSON 的问题。后续通过显式文档格式和独立输出验证处理；Rewrite 作为单独任务，仅在需要转换格式时调用。业务检查通用，不意味着输入输出格式也必须相同。": [
+    "JSON. Explicit document formats and independent output validation addressed this; Rewrite became a separate task used only for format conversion. Shared business checks do not require identical input/output formats.",
+    "。文書形式の明示と独立出力検証で対応し、Rewriteは形式変換時のみ使う別タスクとした。業務確認の共通化は入出力形式の同一化を意味しない。"
+  ],
+  "4. Fix 策略实验": [
+    "4. Fix strategy experiments",
+    "4. Fix戦略の実験"
+  ],
+  "4.1 限制修改范围": [
+    "4.1 Limiting edit scope",
+    "4.1 編集範囲の制限"
+  ],
+  "本组分别检验增加能力说明、限制修改范围的效果。固定同一批 Non-Table 输入，比较原版、增加能力说明、再增加合格内容保护三种提示词；指标是 Fix 阶段通过数和已合格域的退化次数。": [
+    "This experiment separates capability explanations from scope restrictions. On fixed Non-Table inputs, it compares the original prompt, added capability guidance, and added protection of valid content, measuring Fix-stage passes and regressions in already-passing domains.",
+    "能力説明の追加と編集範囲制限を分けて検証する。同じNon-Table入力で原版、能力説明追加、合格内容保護追加を比較し、Fix段階合格と既合格領域の悪化を測る。"
+  ],
+  "6 月首先比较旧版 Fix 与加入能力说明的新版。50 条小试曾显示旧版更好，扩到 300 条后，两版的 Non-Table Fix 阶段通过数分别为 156 和 154，差距很小。继续加入“保留合格段落，只修改问题及必要依赖”的约束后，通过数增至 177，记录中的域退化次数从 76 降至 47。": [
+    "June first compared legacy Fix with added capability guidance. A 50-case pilot favored the old version; on 300 cases, Non-Table Fix passes were 156 and 154, nearly equal. Adding “preserve valid paragraphs; edit only defects and necessary dependencies” raised passes to 177 and reduced recorded domain regressions from 76 to 47.",
+    "6月は旧Fixと能力説明追加版を比較した。50件予備試験では旧版が良かったが、300件ではNon-Table Fix合格156対154で差は小さかった。「合格段落を保ち、問題と必要依存のみ修正」を加えると177件へ増え、領域悪化は76から47へ減った。"
+  ],
+  "Non-Table，固定 300 条": [
+    "Non-Table, 300 fixed cases",
+    "Non-Table、固定300件"
+  ],
+  "Fix 阶段通过": [
+    "Fix-stage passes",
+    "Fix段階の合格"
+  ],
+  "原版": [
+    "Original",
+    "原版"
+  ],
+  "增加能力说明": [
+    "Added capability guidance",
+    "能力説明を追加"
+  ],
+  "增加合格内容保护": [
+    "Added protection of valid content",
+    "合格内容の保護を追加"
+  ],
+  "另一组 Table 对照中，两版都是 179/300，没有复现这项提升。因此保留下来的是按问题限制修改范围，而不是要求所有已有内容一律不能改。": [
+    "A separate Table comparison scored 179/300 for both versions and did not reproduce the gain. The retained principle is issue-bounded editing, not forbidding all changes to existing content.",
+    "別Table比較は両版179/300で改善を再現しなかった。残した原則は問題に即した範囲制限であり、既存内容の一律変更禁止ではない。"
+  ],
+  "跨域依赖决定了局部修复的边界。例如仪表盘、工作流同时依赖一个缺失字段，只改下游描述无法解决。Router 先让 Table 补齐字段，再回到相关域，避免各域分别生成互不一致的替代方案。": [
+    "Cross-domain dependencies bound local repairs. If both Dashboard and Workflow need a missing field, rewriting downstream text cannot fix it. Router sends it to Table first, then returns to the affected domains, avoiding inconsistent substitutes.",
+    "局所修復の境界は領域間依存で決まる。DashboardとWorkflowが同じ欠落フィールドに依存する場合、下流の記述変更だけでは直らない。Routerが先にTableで補い、関係領域へ戻すことで不整合な代替を防ぐ。"
+  ],
+  "图 5　跨域修复顺序": [
+    "Figure 5  Cross-domain repair order",
+    "図5　領域間の修復順"
+  ],
+  "4.2 50 条样本策略对照": [
+    "4.2 Strategy comparison on 50 cases",
+    "4.2 50件の戦略比較"
+  ],
+  "这组检验两种替代思路：修不好时换更强模型，或扩大候选的修改范围并增加审核。输入固定为同一批 50 条，记录最终准出、请求总量和输入输出 token。六种条件同时包含模型、历史信息及输出形式的变化，只有相邻条件明确只改一项时，才能单独解释该项影响。": [
+    "This tests switching to a stronger model after failed repairs versus expanding edits and adding review. The same 50 inputs are used, recording releases, requests, and input/output tokens. The six conditions vary model, history, and output form together; only adjacent conditions changing one factor isolate that factor.",
+    "修復できない際に強いモデルへ替える案と、編集範囲を広げ審査を増やす案を検証した。同じ50入力で出荷、要求数、入出力tokenを記録した。六条件はモデル・履歴・出力形式を含むため、隣接条件で一項目だけ変わる場合に限り単独効果を解釈する。"
+  ],
+  "8 月同一批 50 条比较六种策略。局部补丁的原版使用三轮 Seed；替代方案把末轮换成 Luna，再分别加入历史、全文候选和审核。表中的轮数指每次进入 Fix 的局部预算。": [
+    "In August, six strategies shared 50 cases. The local-patch baseline used three Seed rounds; variants replaced the last round with Luna, then added history, full-document candidates, and review. Round counts are the local budget per Fix entry.",
+    "8月は同じ50件で六戦略を比較した。局所パッチの原版はSeed三回、代案は末回をLunaへ替え、履歴・全文候補・審査を順に加えた。回数はFix進入ごとの局所予算を表す。"
+  ],
+  "Fix 策略": [
+    "Fix strategy",
+    "Fix戦略"
+  ],
+  "准出": [
+    "Released",
+    "出荷"
+  ],
+  "token，百万": [
+    "Tokens, millions",
+    "token、百万"
+  ],
+  "Seed 三轮，局部补丁，无历史（G1）": [
+    "Three Seed rounds, local patches, no history (G1)",
+    "Seed三回、局所パッチ、履歴なし（G1）"
+  ],
+  "Seed 两轮→Luna 一轮，局部补丁（G2）": [
+    "Two Seed rounds → one Luna round, local patches (G2)",
+    "Seed二回→Luna一回、局所パッチ（G2）"
+  ],
+  "同上，加入本次 Fix 内的历史（G3）": [
+    "As above, with history within this Fix entry (G3)",
+    "上記＋今回Fix内の履歴（G3）"
+  ],
+  "全文候选＋程序保护＋模型审核，无历史（G4）": [
+    "Full-document candidates + program guards + model review, no history (G4)",
+    "全文候補＋コード保護＋モデル審査、履歴なし（G4）"
+  ],
+  "全文候选＋保护＋审核，再加入历史（G5）": [
+    "Full-document candidates + guards + review + history (G5)",
+    "全文候補＋保護＋審査＋履歴（G5）"
+  ],
+  "局部补丁＋历史，同时更新 Judge/Fix（G6）": [
+    "Local patches + history; Judge/Fix updated together (G6)",
+    "局所パッチ＋履歴、Judge/Fix同時更新（G6）"
+  ],
+  "末轮换 Luna 在该组多准出 3 条；加入局部历史保持 43 条，少调用 429 次。全文方案没有超过局部补丁。全文加历史的一组有 320 次审核、139 次回滚，最终只有 37 条准出，说明更多候选被拦住后，并未生成足够多的有效替代。": [
+    "Switching the final round to Luna released three more cases. Adding local history retained 43 releases while saving 429 calls. Full-document variants did not beat local patches. The full-document-plus-history arm performed 320 reviews and 139 rollbacks but released only 37 cases: rejecting more candidates did not produce enough effective replacements.",
+    "末回Lunaで出荷が3件増え、局所履歴追加は43件を維持し429呼び出し削減した。全文案は局所パッチを上回らなかった。全文＋履歴群は審査320回、ロールバック139回でも出荷37件にとどまり、多くを止めても有効な代替が十分生まれなかった。"
+  ],
+  "4.3 8 条工作流难例对照": [
+    "4.3 Eight difficult Workflow cases",
+    "4.3 Workflow難例8件の比較"
+  ],
+  "针对 8 个工作流难例，另一组实验把“按原文精确替换”改成“对象 ID＋预期文档哈希”。意图是让补丁更稳定地找到修改位置；另外比较了提交后复查并回滚、全文改写，以及只补充业务规则。": [
+    "On eight difficult Workflow cases, exact-text replacement was changed to “object ID + expected document hash” to target patches more reliably. Other arms tested post-commit review/rollback, full rewrites, and business-rule additions only.",
+    "Workflow難例8件で、原文完全一致置換を「対象ID＋想定文書ハッシュ」へ変更し、位置特定の安定化を試した。ほかに適用後再確認・撤回、全文改稿、業務規則のみ追加を比較した。"
+  ],
+  "同一批 8 条": [
+    "Same eight cases",
+    "同じ8件"
+  ],
+  "原文精确补丁": [
+    "Exact-text patches",
+    "原文完全一致パッチ"
+  ],
+  "对象 ID＋文档哈希": [
+    "Object ID + document hash",
+    "対象ID＋文書ハッシュ"
+  ],
+  "对象定位＋提交后复查、回滚": [
+    "Object targeting + post-commit review and rollback",
+    "対象特定＋適用後確認・撤回"
+  ],
+  "原补丁＋工作流业务规则": [
+    "Original patches + Workflow business rules",
+    "元パッチ＋Workflow業務規則"
+  ],
+  "全文候选＋保护": [
+    "Full-document candidates + guards",
+    "全文候補＋保護"
+  ],
+  "对象定位两组分别拒绝了 348、330 个候选，原补丁为 88 个。新协议降低了候选进入业务检查的数量。效果最好的一组没有更换协议，只明确了 OR 每个分支的范围、Switch 首次命中、完成状态的事实来源等规则。资源限制、AI 结果写回等要求，仅在用户需求确实涉及它们时检查。": [
+    "The object-targeting arms rejected 348 and 330 candidates versus 88 for original patches, reducing entry into business checks. The best arm kept the protocol and clarified OR branch scope, Switch first-match behavior, and the factual source of completion states. Resource limits and AI write-back were checked only when the requirements actually called for them.",
+    "対象特定の二群は候補348・330件を却下し、元パッチ88件より多く、業務確認へ進む数が減った。最良群は方式を変えず、OR各分岐の範囲、Switch最初の一致、完了状態の事実源を明確化した。資源制限やAI書き戻しは要求にある場合だけ確認した。"
+  ],
+  "这批已知难例支持先修业务规则。对象定位仍可用于具体的补丁失败，但不能仅凭“定位更稳定”就推断整链质量更高。全文条件的运行参数未完整启用预期 Supervisor，因此 2/8 只用于诊断实际执行方案，不评价未真正运行的完整审核方案。": [
+    "These known hard cases favor fixing business rules first. Object targeting can still address specific patch failures, but more reliable targeting alone does not prove better pipeline quality. The full-document run did not fully enable the intended Supervisor, so its 2/8 diagnoses the executed setup, not the unexecuted full-review design.",
+    "既知難例ではまず業務規則を直す方針を支持した。対象特定は具体的パッチ失敗に使えるが、定位安定だけで全系統品質向上とはいえない。全文条件は想定Supervisorが完全有効でなく、2/8は実行済み設定の診断に用い、未実行の完全審査案は評価しない。"
+  ],
+  "图 6　修复策略对照": [
+    "Figure 6  Repair strategy comparisons",
+    "図6　修復戦略の比較"
+  ],
+  "上述实验中，保护合格内容、补充具体业务规则取得了收益；更换补丁协议没有提高准出数。三组实验使用不同样本集，图中的绝对通过率不作跨组比较。": [
+    "Protecting valid content and clarifying business rules helped; changing the patch protocol did not increase releases. The three experiments use different sample sets, so their absolute pass rates are not compared across groups.",
+    "合格内容保護と具体業務規則は改善を生んだが、パッチ方式変更は出荷数を増やさなかった。三実験は別集合なので絶対合格率を群間比較しない。"
+  ],
+  "4.4 增加难例修复预算": [
+    "4.4 Increasing the hard-case budget",
+    "4.4 難例の修復予算増"
+  ],
+  "另一个 50 条实验的 CodeAct E2E 为 33/50。从中选取 17 条下游失败，比较增加轮数、历史信息和终局改写。": [
+    "A separate 50-case experiment scored CodeAct E2E 33/50. Its 17 downstream failures were selected to compare more rounds, history, and final rewrites.",
+    "別の50件実験はCodeAct E2E 33/50だった。その下流失敗17件で回数増、履歴、終端改稿を比較した。"
+  ],
+  "17 条难例策略": [
+    "Strategy for 17 hard cases",
+    "難例17件の戦略"
+  ],
+  "Seed 五轮，无历史": [
+    "Five Seed rounds, no history",
+    "Seed五回、履歴なし"
+  ],
+  "同预算，加入历史": [
+    "Same budget, with history",
+    "同予算、履歴あり"
+  ],
+  "Seed 四轮＋Luna 一轮，加入历史": [
+    "Four Seed rounds + one Luna round, with history",
+    "Seed四回＋Luna一回、履歴あり"
+  ],
+  "上一项再加终局改写": [
+    "Above plus final rewrite",
+    "上記＋終端改稿"
+  ],
+  "Seed 六轮＋Luna 一轮，加入历史": [
+    "Six Seed rounds + one Luna round, with history",
+    "Seed六回＋Luna一回、履歴あり"
+  ],
+  "增加到七轮后，通过数回到 13，调用从五轮基线的 1,689 次增加到 1,925 次，token 从 44.57M 增至 53.11M。该集合没有显示扩大预算的净收益。": [
+    "At seven rounds, passes returned to 13, while calls rose from the five-round baseline's 1,689 to 1,925 and tokens from 44.57M to 53.11M. This set showed no net gain from the larger budget.",
+    "七回に増やすと合格は13へ戻り、五回基準比で呼び出し1,689→1,925、token 44.57M→53.11Mに増えた。この集合で予算増の純利益は示されなかった。"
+  ],
+  "后续还比较分支搜索、稳定域复用、末端反馈回传、全 Luna Fix 等小子集方案。全量策略 J10 的链内准出达到 46/50，略高于起点的 45/50，但 CodeAct E2E 从 33/50 降至 26/50，177 个代码子任务却全部执行成功。逐例发现过把人工办理自动写成完成、无依据推算截止日期等设计问题。局部检查通过，仍不代表已经实现业务需求。": [
+    "Later small-subset experiments tested branch search, stable-domain reuse, terminal feedback, and all-Luna Fix. Full strategy J10 reached pipeline 46/50 versus 45/50 initially, but CodeAct E2E fell 33/50→26/50 despite all 177 code subtasks executing successfully. Cases included automatically marking manual work complete and inventing due dates. Passing local checks did not guarantee business fulfillment.",
+    "後に分岐探索、安定領域再利用、終端フィードバック、全Luna Fixを小集合で試した。全量J10は内部出荷46/50と起点45/50を僅かに上回ったが、177コード小タスク全成功でもCodeAct E2Eは33/50→26/50へ低下した。手作業を自動完了にする、期限を根拠なく推定するなどが見られ、局所合格は業務達成を保証しなかった。"
+  ],
+  "5. Judge 配置": [
+    "5. Judge configuration",
+    "5. Judge設定"
+  ],
+  "5.1 同版本多数投票": [
+    "5.1 Same-version majority voting",
+    "5.1 同版での多数決"
+  ],
+  "研究问题是：一次“通过”能否代表最终文档已稳定满足规则？早期实验对同一最终版本重新调用相同 Judge，观察通过判定是否翻转；后续才引入同版本多数投票。这里的重判差异反映模型评审波动，不等同于文档在重判时被修改。": [
+    "Does one pass mean the final document stably meets the rules? Early tests re-called the same Judge on an unchanged final document to observe flips; same-version majority voting followed. Rejudgment differences reflect evaluator variation, not document edits during rechecking.",
+    "一回の合格で最終文書が安定して規則を満たすといえるか。初期は同じ最終文書を同Judgeで再判定し、反転を調べた後に同版多数決を導入した。この差は審査モデルの揺れで、再判定中の文書変更ではない。"
+  ],
+  "早期 954 条难例修复中，累计曾通过 914 条，最终一次重判却只有 625 条通过。之后的 6,457 条集合也出现链内通过 6,291、单次独立重判通过 5,315 的差异。这推动链路保存文档版本，并用重复判断区分一次通过和多次一致通过。": [
+    "Of 954 early hard cases, 914 had passed at some point, but only 625 passed the final rejudge. The 6,457-case set later showed 6,291 pipeline passes versus 5,315 in one independent rejudge. This motivated preserving document versions and distinguishing a single pass from repeated agreement.",
+    "初期難例954件は累積一度合格914件に対し、最終再判定は625件だった。後の6,457件でも内部6,291対独立一回5,315の差が生じ、文書版の保存と単回合格・反復一致の区別を促した。"
+  ],
+  "对原链路或独立重判至少一次失败的 1,218 条，复用已有失败反馈进入难例 Router；每次完整四域检查算一票，三票至少两票通过。技术异常恢复后，最终准出 1,212 条：864 条三票全过，348 条两票通过。样本": [
+    "The 1,218 cases failing either the original pipeline or an independent rejudge entered hard-case Router with existing feedback. One full four-domain check counts as a vote; two of three are required. After technical recovery, 1,212 released: 864 unanimous, 348 with two passes. Sample",
+    "元パイプラインまたは独立再判定で一度でも失敗した1,218件を、既存フィードバックで難例Routerへ入れた。四領域全確認を一票とし、三票中二票を要求。技術復旧後は1,212件出荷（全票合格864、二票合格348）。サンプル"
+  ],
+  "虽投票通过，仍含重复 JSON 尾部；输出验证因此不能由投票替代。": [
+    "passed voting but still had a duplicated JSON tail; voting cannot replace output validation.",
+    "は投票合格でもJSON末尾が重複し、投票は出力検証を代替できなかった。"
+  ],
+  "图 7　同版本多数投票": [
+    "Figure 7  Same-version majority voting",
+    "図7　同版多数決"
+  ],
+  "投票后来覆盖各个准出出口。V 是最多票数，Q 是通过门槛；导出记录保留修复阶段、票数和质量标签。需要第三票时，一票可能包含四个业务域的独立调用，不能将“12 个 case 需要第三票”计作 12 次单域 Judge。": [
+    "Voting later covered every release exit. V is the vote cap and Q the passing threshold; exports retain repair stage, votes, and quality labels. A third vote may contain four domain calls, so “12 cases need a third vote” is not 12 single-domain Judge calls.",
+    "投票は後に全出荷出口を覆った。Vは票数上限、Qは合格閾値で、出力に修復段階・票・品質ラベルを残す。第三票は四領域呼び出しを含み得るため、「12ケースが第三票を必要」は単領域Judge12回ではない。"
+  ],
+  "5.2 降低调用成本": [
+    "5.2 Reducing call cost",
+    "5.2 呼び出しコストの削減"
+  ],
+  "同一 43 条上的成本实验使用 GPT-5.5 作外部复核。Luna 并发 22 的方案通过 29/43，GPT-5.2 基线为 30/43；DeepSeek V4 Flash 在自身链路中全过，外部复核只有 10/43。因此模型选择同时看外部复核和调用成本，不采用自身放行数作为质量结论。": [
+    "A cost study on the same 43 cases used GPT-5.5 for external review. Luna at concurrency 22 passed 29/43 versus GPT-5.2's 30/43. DeepSeek V4 Flash passed everything internally but only 10/43 externally. Model selection therefore considers external review and cost, not self-release counts.",
+    "同じ43件のコスト実験は外部審査にGPT-5.5を使用した。Luna並列22は29/43、GPT-5.2基準は30/43。DeepSeek V4 Flashは内部全合格でも外部10/43だった。モデル選択は自己放行数でなく外部審査とコストを併せて見る。"
+  ],
+  "后续 Mixed Judge 采用 Luna：普通检查和前两票 medium，只有需要第三票时切 high。这里的 mixed 指推理强度混用，与 E2E 的 Building Mix 评测模式不同。": [
+    "Mixed Judge later used Luna medium for ordinary checks and the first two votes, switching to high only when a third vote was needed. “Mixed” means mixed reasoning effort, not the E2E Building Mix metric.",
+    "後のMixed Judgeは通常確認と最初の二票をLuna medium、必要な第三票だけhighにした。mixedは推論強度混用で、E2EのBuilding Mixとは異なる。"
+  ],
+  "成本改动": [
+    "Cost change",
+    "コスト施策"
+  ],
+  "处理方式": [
+    "Mechanism",
+    "処理"
+  ],
+  "实测结果": [
+    "Measured result",
+    "実測"
+  ],
+  "多数锁定后早停": [
+    "Stop once majority is determined",
+    "多数確定で停止"
+  ],
+  "已确定达到或无法达到通过门槛时，不再凑满票数": [
+    "Stop when reaching—or no longer being able to reach—the threshold",
+    "合格閾値への到達または到達不能が確定したら停止"
+  ],
+  "与有效首票复用合计，146 个节点回放的调用 2,442→2,190，结论相同": [
+    "With valid first-vote reuse, 146-node replay cut calls 2,442→2,190 with identical decisions",
+    "初票再利用と合わせ146ノード再生で2,442→2,190呼び出し、結論同一"
+  ],
+  "复用同版本有效首票": [
+    "Reuse a valid first vote on the same version",
+    "同版の有効初票を再利用"
+  ],
+  "刚完成且对应同一文档的四域全过，计入准出确认": [
+    "A just-completed four-domain pass on the same document counts toward confirmation",
+    "直近の同文書四領域合格を出荷確認票へ算入"
+  ],
+  "文档、规则和模型配置必须一致": [
+    "Document, rules, and model settings must match",
+    "文書・規則・モデル設定の一致が必要"
+  ],
+  "提高并发": [
+    "Increase concurrency",
+    "並列度を上げる"
+  ],
+  "分开控制 case 并行数和进程总请求量": [
+    "Control case parallelism separately from total in-process requests",
+    "ケース並列とプロセス内総要求量を別制御"
+  ],
+  "一组并发 8→22，耗时 122.3→74.6 分钟；重试 10→286": [
+    "One run: concurrency 8→22, time 122.3→74.6 min, retries 10→286",
+    "一比較で並列8→22、122.3→74.6分、再試行10→286"
+  ],
+  "在线验证早停": [
+    "Online early-stop validation",
+    "オンライン早期停止検証"
+  ],
+  "交换顺序重跑对照": [
+    "Repeat comparisons with execution order swapped",
+    "実行順を交換して再比較"
+  ],
+  "一次仅缩短约 90 秒，约 0.66%": [
+    "One run saved about 90s, or 0.66%",
+    "一回は約90秒、0.66%のみ短縮"
+  ],
+  "离线回放固定了已有票据，证明的是相同判断下可以少调用；在线模型重新采样后，还会受到限流、重试和返回速度影响。因此少调用没有按相同比例缩短总耗时。重复配对实验的三次全过数增量也出现 +3、0、−4，单次差一两条不足以判定配置更优。": [
+    "Offline replay fixes existing votes and shows fewer calls for identical judgments. Online resampling also faces rate limits, retries, and response-time variation, so call savings did not translate proportionally to wall time. Three repeated paired runs changed all-pass counts by +3, 0, and −4; one or two cases in a single run cannot establish superiority.",
+    "オフライン再生は既存票を固定し、同じ判定で呼び出しを減らせることを示す。オンライン再抽選では制限・再試行・応答時間にも左右され、削減率どおりに時間は縮まらなかった。三回のペア比較は全合格差+3、0、−4で、一回の一、二件差では優劣を確定できない。"
+  ],
+  "6.1 验证一次修改": [
+    "6.1 Verifying one edit",
+    "6.1 一つの変更を検証する"
+  ],
+  "主链路主要判断“这份文档是否有问题”。Verifier 增加“这次修改是否值得接受”的判断：需要在相同需求下比较两个版本，不能只看新版本的错误列表是否变短。它同时研究问题覆盖、连续评分和候选接纳，不只是把原 Judge 换一个名字。": [
+    "The main pipeline asks whether a document has defects. Verifier also asks whether an edit should be accepted, comparing both versions against the same requirements rather than merely checking whether the new issue list is shorter. It studies issue coverage, continuous scoring, and candidate acceptance—not just a renamed Judge.",
+    "主系統は文書に問題があるかを問う。Verifierは変更を採用すべきかも問い、新版の問題リストが短いかだけでなく同じ要求で両版を比較する。問題網羅、連続採点、候補採否を扱う仕組みである。"
+  ],
+  "2026-07-23 的研究方案提出：在覆盖旧文档前，明确这次修改解决了哪些问题，是否删除需求或破坏正确功能。具体分成三种检查：": [
+    "The July 23, 2026 proposal required checking which issues were resolved and whether requirements or correct functions were lost before overwriting a document. It separates three checks:",
+    "2026-07-23案は上書き前に解消問題と要求・正常機能の損失を確認することを求め、三検査へ分けた："
+  ],
+  "检查": [
+    "Check",
+    "確認"
+  ],
+  "输入": [
+    "Input",
+    "入力"
+  ],
+  "输出及用途": [
+    "Output and use",
+    "出力と用途"
+  ],
+  "State：当前状态": [
+    "State: current document",
+    "State：現在状態"
+  ],
+  "Query、当前文档、业务规则": [
+    "Query, current document, business rules",
+    "Query、現文書、業務規則"
+  ],
+  "找出问题、对象和证据，作为 Fix 的目标": [
+    "Identify issues, objects, and evidence as Fix targets",
+    "問題、対象、証拠を特定してFix目標にする"
+  ],
+  "Transition：修改比较": [
+    "Transition: compare edits",
+    "Transition：変更比較"
+  ],
+  "原问题、修前文档、修后候选": [
+    "Original issues, before document, after candidate",
+    "元問題、修正前文書、修正後候補"
+  ],
+  "确认目标是否关闭、需求是否保留、是否产生新问题；决定接受、回退或待确认": [
+    "Check closure, requirement preservation, and new defects; accept, revert, or defer",
+    "解消、要求保持、新問題を確認し、採用・撤回・保留を決定"
+  ],
+  "Release：最终检查": [
+    "Release: final check",
+    "Release：最終確認"
+  ],
+  "Query、最终全文、业务规则": [
+    "Query, full final document, business rules",
+    "Query、最終全文、業務規則"
+  ],
+  "判断整份文档是否满足准出要求": [
+    "Check whether the complete document meets release requirements",
+    "全文が出荷要件を満たすか判断"
+  ],
+  "图 8　Verifier 方法": [
+    "Figure 8  Verifier method",
+    "図8　Verifier方式"
+  ],
+  "V12 指南的四域共 79 条 Rubric、181 种错误模式。State/Release 按域调用，一域一次请求，四域并行；不是每条规则调用一次。输出逐条对应选中的规则，缺项或重复项属于无效输出。Transition 检查修复目标、需求保留、可执行性和跨域一致性。": [
+    "The V12 guide has 79 rubrics and 181 error modes across four domains. State/Release call once per domain, with four domains parallel—not once per rule. Output must cover each selected rule exactly once; missing or duplicate entries are invalid. Transition checks repair targets, requirement retention, executability, and cross-domain consistency.",
+    "V12指南は四領域79 Rubric・181誤り型を持つ。State/Releaseは規則ごとでなく一領域一要求、四領域並列で呼ぶ。選択規則へ一対一で回答し、欠落・重複は無効。Transitionは修復目標、要求保持、実行可能性、領域間整合を確認する。"
+  ],
+  "连续评分用于比较满足硬约束的候选。需求被删除、目标未解决或权限退化时，不能用更高的平均分抵消。最小实现每轮只生成一个候选，同时保留旧版；候选被拒绝时，下一轮读取失败反馈。V12 指南常规最多三次候选生成，难例第二阶段默认关闭。": [
+    "Continuous scores compare candidates that meet hard constraints. Higher averages cannot offset deleted requirements, unresolved targets, or permission regressions. The minimal implementation generates one candidate per round while retaining the old version; rejection feedback informs the next round. V12 normally permits at most three candidates, with the second hard-case phase off by default.",
+    "連続スコアは必須制約を満たした候補を比較する。平均点上昇で要求削除、目標未解決、権限悪化を相殺しない。最小実装は旧版を保ち毎回一候補を生成し、却下理由を次回へ渡す。V12は通常最大三候補で、難例第二段階は標準無効である。"
+  ],
+  "概率读取也经历过修改：多个评分位置会遗漏低概率档位，十级量表难以稳定取得完整分布，A—E 又与候选名称混淆。后续 Transition 使用 P—T 五级量表，两版各请求一个评分位置。接口不支持原生概率时，可用独立成对投票，但分别记录。": [
+    "Probability extraction also changed. Multiple scoring positions missed low-probability bins; a ten-level scale was hard to retrieve completely; A–E conflicted with candidate names. Transition later used P–T, one scoring position per version. If native probabilities are unavailable, independent paired voting can be used and reported separately.",
+    "確率取得も改良した。複数採点位置では低確率区分が欠落し、十段階では全分布取得が不安定で、A〜Eは候補名と混同した。後にP〜T五段階を各版一採点位置で取得し、原生確率非対応時は独立ペア投票を別記録で利用する。"
+  ],
+  "连续评分的计算和用途如下。原生概率模式先取齐五个合法评分 token 的 logprob，在这五档内归一化，再按冻结的档位权重计算期望分；比较的是候选与修前版本的分差。": [
+    "Continuous scoring works as follows. Native mode retrieves logprobs for all five legal score tokens, normalizes within those tokens, and computes an expectation using frozen level weights. The comparison is the candidate-minus-before score difference.",
+    "連続採点は五つの合法スコアtokenのlogprobを全取得し、その五区分内で正規化して固定重みの期待値を計算する。比較するのは候補と修正前の差分である。"
+  ],
+  "，　Δs = s(候选) − s(修前)": [
+    ",  Δs = s(candidate) − s(before)",
+    "、Δs = s(候補) − s(修正前)"
+  ],
+  "其中 ℓ 是接口返回的 logprob，v 是由差到好映射到 0—1 的五档权重。任一合法档位缺失，都不能把它的概率补为零；自动模式保留失败回执，改用完整的成对投票。投票交替交换两版的展示顺序，候选支持率为“（候选胜票＋0.5×平票）/有效票数”。这两种量分别记录，均不是经校准的“判断正确概率”。": [
+    "Here ℓ is the API logprob and v maps the five levels from worst to best onto 0–1. Missing a legal level must not be treated as zero probability. Automatic mode records the failure and falls back to complete paired voting, alternating presentation order. Candidate support is (wins + 0.5 × ties) / valid votes. These measures are recorded separately; neither is a calibrated probability of correct judgment.",
+    "ℓはAPIのlogprob、vは悪い順から良い順へ0〜1に対応する五段階重みである。合法区分の欠落を確率ゼロで埋めてはならない。自動モードは失敗を保存し、表示順を交互にする完全ペア投票へ切り替える。支持率は（候補勝票＋0.5×同点票）/有効票。両指標を別記録し、いずれも校正済み正答確率ではない。"
+  ],
+  "接纳先检查硬约束，再看分数：目标未关闭、发生关键业务退化或跨域引用损坏，直接回退；通过这些检查后，才比较目标改善和应保留项的变化；证据不足则暂缓。接受一处修改也不代表整篇准出，仍要由 Release 检查最终全文。这些是已有设计，后文实验检验其实际效果。": [
+    "Acceptance checks hard constraints before scores. Unclosed targets, critical regressions, or broken cross-domain references cause rollback. Only then are target gains and preserved content compared; insufficient evidence defers acceptance. Accepting one edit does not release the document: Release still checks the complete final text. The following experiments test this design.",
+    "採否は得点より先に必須制約を見る。目標未解消、重大業務悪化、領域間参照破損は撤回する。通過後に目標改善と保持内容を比較し、証拠不足なら保留する。一変更の採用は全文出荷を意味せず、最後にReleaseが全文確認する。後の実験でこの設計を検証する。"
+  ],
+  "6.2 先分析问题，再评分": [
+    "6.2 Analyze first, then score",
+    "6.2 先に問題を分析し、後で採点"
+  ],
+  "架构对照固定 10 份文档、四域 V11 规则和 Gemini 评分模型。原方案由 Gemini 2.5 Pro 分析并评分；替代方案由 GPT-5.6 Sol xhigh 先找问题，再由 Gemini 读出评分概率。参考为另行生成的 Sol 三次评审加裁决。": [
+    "The architecture comparison fixes 10 documents, four-domain V11 rules, and the Gemini scorer. The original uses Gemini 2.5 Pro for both analysis and scoring; the alternative uses GPT-5.6 Sol xhigh for analysis, then Gemini score probabilities. The reference is three separately generated Sol reviews plus adjudication.",
+    "10文書、四領域V11規則、Gemini採点モデルを固定した。原案はGemini 2.5 Proが分析・採点、代案はGPT-5.6 Sol xhighが先に分析しGeminiが確率を読む。参照は別に行うSol三回審査と裁定である。"
+  ],
+  "40 个样本×域单元": [
+    "40 sample × domain units",
+    "40サンプル×領域単位"
+  ],
+  "Gemini 分析＋评分": [
+    "Gemini analysis + scoring",
+    "Gemini分析＋採点"
+  ],
+  "Sol 分析＋Gemini 评分": [
+    "Sol analysis + Gemini scoring",
+    "Sol分析＋Gemini採点"
+  ],
+  "域通过/失败判断与参考一致": [
+    "Domain pass/fail agreement with reference",
+    "領域合否の参照一致"
+  ],
+  "找回的参考问题": [
+    "Reference issues recovered",
+    "参照問題の検出数"
+  ],
+  "误报 / 漏报": [
+    "False positives / false negatives",
+    "誤検出 / 見逃し"
+  ],
+  "问题类型 F1": [
+    "Issue-type F1",
+    "問題種別F1"
+  ],
+  "分阶段活跃耗时": [
+    "Active time across stages",
+    "段階別の実稼働時間"
+  ],
+  "439.3 秒": [
+    "439.3 seconds",
+    "439.3秒"
+  ],
+  "584.5 秒": [
+    "584.5 seconds",
+    "584.5秒"
+  ],
+  "API 等价成本": [
+    "API-equivalent cost",
+    "API換算コスト"
+  ],
+  "两组评分后端相同，问题识别的收益支持继续验证前置分析。它没有执行 Fix，且分析模型与参考模型同源，不能据此直接切换整链默认配置。两组评分 token 上限在技术补跑时存在 64/256 的差异，概率质量的严格对照需要统一该设置；问题集合指标单独保留。成本包含实际尝试并按 API 单价折算，非实际支付金额。": [
+    "With the same scorer, better issue recognition supports further testing of pre-analysis. No Fix ran, and analyzer and reference share a model family, so this does not justify changing the full pipeline default. Technical reruns used score-token caps of 64/256; strict probability comparisons must align them, while issue-set metrics remain separate. Costs include actual attempts at API list prices, not actual payments.",
+    "採点側が同じ条件で問題識別が改善し、事前分析の継続検証を支持した。ただしFix未実行で分析・参照モデルが同系統のため、全系統の既定変更は正当化しない。技術再実行で採点token上限64/256の差があり、確率品質比較では統一が必要。問題集合指標は別に保持する。コストは実試行をAPI単価で換算し、実支払額ではない。"
+  ],
+  "6.3 完整链路实验": [
+    "6.3 Full-pipeline experiment",
+    "6.3 全パイプライン実験"
+  ],
+  "这组实验检验“更好的初始判断能否带来更好的最终设计”。两条链路读取同一组 10 条初始 Query＋Spec，使用相同 Fix v4/Seed2 配置；基线是生产 Judge–Fix，处理组采用 V11 State/Proof、反馈式 Fix、逐目标 Transition 和独立 Release，最多扩至 24 次 Fix。初始和两种最终文档匿名后，由 Sol xhigh 三次独立盲评并另行裁决。": [
+    "This tests whether better initial judgment yields better final designs. Both pipelines start from the same 10 Query + Spec inputs and use Fix v4/Seed2. The baseline is production Judge–Fix; the treatment uses V11 State/Proof, feedback-driven Fix, per-target Transition, and independent Release, extending to at most 24 Fix calls. Initial and final documents are anonymized for three independent Sol xhigh blind reviews plus separate adjudication.",
+    "良い初期判定が最終設計改善につながるかを検証した。両系統は同じ10 Query＋SpecとFix v4/Seed2を使用。基準は本番Judge–Fix、処置群はV11 State/Proof、フィードバックFix、目標別Transition、独立Releaseを用い最大24 Fixまで拡張した。初期・最終文書を匿名化しSol xhigh三回盲検審査と別裁定を行った。"
+  ],
+  "Verifier 首次域判断的三轮平均参考一致率为 86.7%，原链路为 81.7%；最终文档的独立参考通过却从 4/10 降到 1/10。": [
+    "Verifier's initial domain judgments averaged 86.7% reference agreement across three rounds versus 81.7% for the original pipeline; final independent reference passes nevertheless fell from 4/10 to 1/10.",
+    "初回領域判定の三回平均参照一致はVerifier 86.7%、元系統81.7%だったが、最終文書の独立参照合格は4/10から1/10へ低下した。"
+  ],
+  "10 条整链结果": [
+    "Full-pipeline results, 10 cases",
+    "全系統結果、10件"
+  ],
+  "原 Judge–Fix": [
+    "Original Judge–Fix",
+    "元Judge–Fix"
+  ],
+  "内部准出": [
+    "Internal release",
+    "内部出荷"
+  ],
+  "独立参考确认通过": [
+    "Independently confirmed passes",
+    "独立参照の確認合格"
+  ],
+  "已关闭的初始问题": [
+    "Initial issues closed",
+    "初期問題の解消"
+  ],
+  "最终残余问题": [
+    "Final residual issues",
+    "最終残存問題"
+  ],
+  "新增问题": [
+    "New issues",
+    "新規問題"
+  ],
+  "总 token": [
+    "Total tokens",
+    "総token"
+  ],
+  "每份参考通过文档的 token": [
+    "Tokens per reference-qualified document",
+    "参照合格文書一件当たりtoken"
+  ],
+  "153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，32 个候选进入后续接纳比较。最终 6 条保留初始文档，从第 4 轮增加到第 24 轮也没有增加内部准出。新增问题少，主要伴随修改没有被采用；原来的 130 个问题仍在。": [
+    "Among 153 Fix calls, 66 repeated candidates and 53 unapplied patches were recorded; 32 candidates reached acceptance comparison. Six cases retained their original document. Extending from round 4 to 24 added no internal releases. Fewer new defects accompanied many unapplied edits; the original 130 issues remained.",
+    "Fix153回のうち重複候補66、適用不能パッチ53を記録し、32候補が採否比較へ進んだ。最終6件は初期文書を維持し、4回から24回へ増やしても内部出荷は増えなかった。新問題が少ない一方で多くの変更が不採用となり、元の130問題は残った。"
+  ],
+  "图 9　Verifier 两项独立对照": [
+    "Figure 9  Two independent Verifier comparisons",
+    "図9　Verifierの独立した二比較"
+  ],
+  "这两项实验给出不同层次的结论：前置分析能帮助找问题，但完整链路还受 Fix 候选和接纳判断制约。整链中更少的新增问题伴随大量回退，不能单独作为修复质量提高的证据。预算从第 4 轮增加到第 24 轮不再新增准出，也不支持先增加循环次数。": [
+    "The two studies address different levels. Pre-analysis helps find issues, but complete repair remains limited by candidate generation and acceptance. Fewer new defects alongside many rollbacks is not sufficient evidence of better repair. No new releases between rounds 4 and 24 also argues against simply expanding loops first.",
+    "二実験は異なる層の結論を示す。事前分析は検出を助けるが、修復全体は候補と採否に制約される。大量撤回に伴う新問題減だけでは品質改善を示せず、4〜24回で出荷が増えない結果も先に反復数を増やす方針を支持しない。"
+  ],
+  "6.4 失败案例": [
+    "6.4 Failure cases",
+    "6.4 失敗例"
+  ],
+  "10 对修前/修后文档做三次独立接纳判断，正确数分别为 8、7、8，多数票仍是 8。H002 的错误图表三次均被接受，H003 的正确日期修改三次均被暂缓。重复投票没有解决这两类系统性误判。": [
+    "Three independent acceptance judgments on 10 before/after pairs got 8, 7, and 8 right; majority voting still got 8. H002's invalid chart was accepted all three times; H003's correct date edit was deferred all three times. Voting did not fix these systematic errors.",
+    "修正前後10ペアの独立採否三回は正解8、7、8で、多数決も8だった。H002の誤図表は三回採用、H003の正しい日付変更は三回保留となり、投票は系統的誤判定を解消しなかった。"
+  ],
+  "案例": [
+    "Case",
+    "事例"
+  ],
+  "修改及判定": [
+    "Edit and decision",
+    "変更と判定"
+  ],
+  "暴露的问题": [
+    "Problem exposed",
+    "明らかになった問題"
+  ],
+  "趋势图同时使用时间和处理阶段两个分类维度，三次被接受": [
+    "Trend chart uses both time and processing stage as categorical dimensions; accepted three times",
+    "推移図が時間と処理段階の二分類軸を使用し、三回採用"
+  ],
+  "未识别组件能力边界": [
+    "Missed the component capability boundary",
+    "部品の能力境界を見落とした"
+  ],
+  "只修改日期格式，三次把未改变的权限问题当作新增问题": [
+    "Date-only edit; unchanged permission defects called new issues three times",
+    "日付形式だけの変更で、不変の権限問題を三回とも新問題とした"
+  ],
+  "未准确区分旧问题和本次修改引入的问题": [
+    "Failed to distinguish pre-existing defects from edit-induced defects",
+    "既存問題と今回の変更による問題を区別できなかった"
+  ],
+  "两次正确拒绝，一次误接受": [
+    "Two correct rejections, one false acceptance",
+    "二回正しく却下、一回誤採用"
+  ],
+  "多数票纠正了随机翻转": [
+    "Majority voting corrected a random flip",
+    "多数決がランダム反転を修正"
+  ],
+  "另一组 10 个单次修复事务固定 Luna medium，只把旧 Design Fix 输入改成结构化问题合同。它提供具体对象、证据、修复目标和约束，减少 Fix 需要读取的长提示词。": [
+    "Another 10 single-repair transactions fixed Luna medium and replaced only the old Design Fix input with a structured issue contract. Concrete objects, evidence, goals, and constraints reduced the long prompt Fix needed to read.",
+    "別の単回修復10件はLuna mediumを固定し、旧Design Fix入力のみを構造化問題Contractへ変更した。具体対象、証拠、目標、制約を渡し、Fixが読む長文を減らした。"
+  ],
+  "单次修复，10 个事务": [
+    "Single repair, 10 transactions",
+    "単回修復、10件"
+  ],
+  "旧 Design Fix": [
+    "Old Design Fix",
+    "旧Design Fix"
+  ],
+  "结构化合同": [
+    "Structured contract",
+    "構造化Contract"
+  ],
+  "结构有效": [
+    "Structurally valid",
+    "構造有効"
+  ],
+  "全部原目标关闭": [
+    "All original targets closed",
+    "元目標を全て解消"
+  ],
+  "有效候选中无新增问题": [
+    "No new issues among valid candidates",
+    "有効候補で新問題なし"
+  ],
+  "可安全接纳": [
+    "Safe to accept",
+    "安全に採用可能"
+  ],
+  "结构化输入减少了约 25.6% token，但发生了业务含义替换：N02 把净现金流改成收入，N04 用创建人替代实际业务负责人。目标问题不再出现在列表中，并不足以证明原需求已满足。T01 的字段删除、T05 的补丁定位失败，则分别属于内容保护和写入问题。": [
+    "Structured input reduced tokens by about 25.6% but changed business meaning: N02 replaced net cash flow with income, and N04 replaced the actual owner with the creator. Removing a defect from the list does not prove the original requirement is met. T01's field deletion and T05's targeting failure are content-protection and write-back problems, respectively.",
+    "構造化入力はtokenを約25.6%減らしたが、N02で純キャッシュフローを収入へ、N04で実責任者を作成者へ置き換えた。問題がリストから消えても要求達成を示さない。T01のフィールド削除は内容保護、T05の定位失敗は書き込みの問題である。"
+  ],
+  "V12 因此继续保留具体对象、Query/Spec 证据、禁止项、合法能力取值和前一候选失败原因。已有对象匹配、目标关闭和候选去重机制需要检查实际判定，不能仅靠缩短输入或提高接纳率。": [
+    "V12 therefore retains concrete objects, Query/Spec evidence, prohibitions, legal capability values, and previous-candidate failures. Existing matching, closure, and deduplication must be checked in practice; shorter inputs or higher acceptance alone are insufficient.",
+    "V12は具体対象、Query/Spec証拠、禁止事項、合法能力値、前候補の失敗理由を保持する。既存の対象一致、目標解消、重複排除が実際に正しく判定するかを調べ、短文化や採用率向上だけに頼らない。"
+  ],
+  "6.5 E2E 预实验": [
+    "6.5 Preliminary E2E study",
+    "6.5 E2E予備実験"
+  ],
+  "后续 V12 的另一组 10 条配对建表实验，正式 Mix 通过从 6/10 变成 5/10，均分从 9.16 增至 9.54。017、033 拉高均分，037、041 丢失全项通过。复核中，033/041 主要关联 CodeAct 和样例数据波动，037 涉及 Mix 对业务闭环的定义及复判次数差异。": [
+    "A separate later V12 paired construction test on 10 cases changed formal Mix passes from 6/10 to 5/10 while mean score rose 9.16→9.54. Cases 017/033 lifted the mean; 037/041 lost all-check passes. Review linked 033/041 mainly to CodeAct and sample-data variation; 037 involved Mix's business-completeness definition and different rejudge counts.",
+    "後の別V12構築10ペアでは正式Mix合格6/10→5/10、平均9.16→9.54だった。017・033が平均を上げ、037・041が全項合格を失った。033・041は主にCodeActとサンプルデータの揺れ、037はMixの業務完結性定義と再判定回数差に関連した。"
+  ],
+  "它提供了日期事实、跨域依赖、图表业务含义等反馈，但没有证明 Verifier 全链优于原方案；也不是前述 V11 十条整链实验的 E2E 结果。": [
+    "It yielded feedback on date facts, cross-domain dependencies, and chart meaning, but did not establish full Verifier superiority. It is not the E2E continuation of the preceding V11 ten-case full-pipeline experiment.",
+    "日付事実、領域間依存、図表の業務意味のフィードバックは得たが、Verifier全体の優位は示さなかった。前述V11の10件全系統実験をそのままE2Eへ進めた結果ではない。"
+  ],
+  "7. 格式准出": [
+    "7. Format release checks",
+    "7. 形式の出荷判定"
+  ],
+  "7.1 格式模块": [
+    "7.1 Format module",
+    "7.1 形式モジュール"
+  ],
+  "设计即使在业务层被判通过，仍可能因为补丁无法写入、结构不合规或资源引用含糊而不能交付。格式路线检验的是：能否把表达问题从业务修复中分离，同时不让格式修改改变语义。": [
+    "Even a business-approved design may be undeliverable because a patch did not apply, structure is invalid, or resource references are ambiguous. The format track asks whether expression defects can be separated from business repair without changing semantics.",
+    "業務合格でも、パッチ不適用、構造不正、資源参照の曖昧さで納品不能になり得る。形式系統は意味を変えずに表現問題を業務修復から分離できるかを検証する。"
+  ],
+  "格式模块在业务修复后检查下游要求的表达形式。只涉及表达的错误在本模块处理；需要改变字段来源、授权范围或业务资源的，交回对应 Fix。局部补丁后检查全文，避免修好一处却破坏其他章节。": [
+    "After business repair, the format module checks downstream expression requirements. It handles expression-only defects; changes to field sources, grant scope, or business resources go back to the relevant Fix. The full document is checked after local patches to prevent collateral section damage.",
+    "業務修復後に下流表現規約を検査する。表現だけの問題は形式側で処理し、フィールド源、許可範囲、業務資源の変更は該当Fixへ戻す。局所パッチ後は全文を確認し、他章の破損を防ぐ。"
+  ],
+  "A · 全文校验": [
+    "A · Validate full text",
+    "A · 全文検証"
+  ],
+  "B · 复核问题": [
+    "B · Review issues",
+    "B · 問題再確認"
+  ],
+  "C · 提交候选": [
+    "C · Submit candidate",
+    "C · 候補提出"
+  ],
+  "图 10　格式模块": [
+    "Figure 10  Format module",
+    "図10　形式モジュール"
+  ],
+  "失败统计需要区分：补丁未写入、严格格式未过、候选改变业务含义、复核响应无法解析、格式后业务投票失败，以及业务回修仍未完成。它们发生在同一个阶段，但需要改的代码或提示词不同。": [
+    "Failure counts distinguish unapplied patches, strict-format failure, semantic changes, unparseable review output, business-vote failure after formatting, and unresolved business handbacks. They share a stage but require different code or prompt fixes.",
+    "失敗はパッチ不適用、厳格形式不合格、意味変更、審査応答解析不能、形式後業務投票失敗、業務差し戻し未解決を分ける。同段階でも直すコードやPromptは異なる。"
+  ],
+  "7.2 1,312 条恢复实验": [
+    "7.2 Recovery of 1,312 cases",
+    "7.2 1,312件の復旧実験"
+  ],
+  "补丁和协议恢复、Workflow/Permission 反馈回传等改动，先后在 398、383、273 条等继续修复集合上验证。这些集合有重叠。最终 1,312 条恢复实验准出 831 条，剩余 481 条的最后失败原因如下。": [
+    "Patch/protocol recovery and Workflow/Permission feedback were tested on overlapping continuation sets of 398, 383, 273, and other sizes. The final 1,312-case recovery released 831; the remaining 481 had these last failure reasons.",
+    "パッチ・規約復旧とWorkflow/Permissionフィードバックを、重複する398・383・273件などの継続修復集合で検証した。最終1,312件復旧は831件出荷、残り481件の最後の失敗理由は次のとおり。"
+  ],
+  "最后失败原因，互不重复": [
+    "Mutually exclusive final failure reason",
+    "重複しない最終失敗理由"
+  ],
+  "条数": [
+    "Count",
+    "件数"
+  ],
+  "格式补丁未成功写入": [
+    "Format patch failed to apply",
+    "形式パッチの書き込み失敗"
+  ],
+  "严格格式仍不满足": [
+    "Strict format still invalid",
+    "厳格形式を未達"
+  ],
+  "语义修复或投票预算耗尽": [
+    "Semantic repair or vote budget exhausted",
+    "意味修復・投票予算を消費"
+  ],
+  "格式后语义投票失败": [
+    "Post-format semantic voting failed",
+    "形式後の意味投票不合格"
+  ],
+  "回交业务域后仍未解决": [
+    "Still unresolved after business-domain handback",
+    "業務領域への差し戻し後も未解決"
+  ],
+  "候选语义不等价": [
+    "Candidate not semantically equivalent",
+    "候補が意味的に非等価"
+  ],
+  "复核输出协议失败": [
+    "Review output protocol failed",
+    "再確認出力規約の失敗"
+  ],
+  "格式职责内无法安全表达": [
+    "Cannot safely express within format scope",
+    "形式責務内では安全に表現できない"
+  ],
+  "合计": [
+    "Total",
+    "合計"
+  ],
+  "这不是从原始输入重跑所有数据，而是对历史未准出集合继续修复。831 条与此前 3,168 条合并，形成累计 3,999/4,480（89.26%）的交付版本。前 3,168 条未在该轮全量重判，因此这个比例表示多轮累计交付，不是同一配置的一次通过率。": [
+    "This continued repairs on historical unreleased cases rather than rerunning all original inputs. Combining 831 with 3,168 earlier releases produced cumulative delivery of 3,999/4,480 (89.26%). The earlier 3,168 were not fully rejudged in this round, so this is cumulative delivery, not one configuration's single-run pass rate.",
+    "元入力全件の再実行でなく、過去未出荷集合の継続修復である。831件を先の3,168件へ加え、累積3,999/4,480（89.26%）となった。先の3,168件は今回全件再判定していないため、同一設定の単回合格率ではない。"
+  ],
+  "7.3 交付后的格式问题": [
+    "7.3 Format defects after delivery",
+    "7.3 納品後の形式問題"
+  ],
+  "“工作流非标准 Key”的 94 条扫描结果中，53 条来自旧准出，41 条来自恢复后准出。88 条是当前规则允许的通知正文 Key；另 6 条确有其他非标准 Key，旧准出 2 条、新恢复 4 条，均是此前已有却未被拦截的问题。": [
+    "A scan of 94 “nonstandard Workflow keys” found 53 old releases and 41 recovered releases. Of these, 88 were notification-body keys permitted by current rules. Six had genuine other nonstandard keys—two old and four recovered—all pre-existing defects previously missed.",
+    "「Workflow非標準Key」94件の内訳は旧出荷53・復旧出荷41。88件は現規則で合法な通知本文Keyで、真の非標準Keyは旧2・新復旧4の計6件、いずれも従来から見逃された問題だった。"
+  ],
+  "随后拿到的 874 条索引全部匹配到历史准出 Spec，其中 424 条来自 3,999 集合，450 条来自 1,052 集合。扫描规则也混入了生成模板差异，例如双向关联、原生“新增/修改满足条件”触发不能仅凭字面形式判错。因此先逐项对齐产品规则，再统计确认错误数。": [
+    "All 874 later indexes matched historical released Specs: 424 from the 3,999 set and 450 from the 1,052 set. Scan rules also conflated template variations, such as bidirectional links or native create/update-condition triggers. Product rules must be aligned item by item before counting confirmed errors.",
+    "後の874索引は全て過去出荷Specに一致し、3,999集合由来424、1,052集合由来450だった。スキャンは双方向関連や原生の作成/更新条件トリガーなど、生成テンプレート差も混同した。製品規則を逐項整合してから確定誤りを数える。"
+  ],
+  "独立格式后处理另外尝试了“全文检查→局部补丁→程序保护→完整 diff 复核→全文复查”。前两版因分号、权限竖线误改而停止；第三版完成 481 条，在线格式通过 445 条。补保护后离线保留 436 条，其中 432 条有修改，398 条只是移除标题加粗。由于未重新做业务检查和 E2E，新增 Judge–Fix 准出和数据交付均为零。": [
+    "A separate format postprocessor tried full scan → local patch → program guards → complete-diff review → full recheck. The first two versions stopped after damaging semicolons and permission separators. Version 3 completed 481 cases with 445 online format passes; added offline guards retained 436, of which 432 changed and 398 only removed bold headings. Without renewed business or E2E checks, it added zero Judge–Fix releases or delivered data.",
+    "独立形式後処理は全文検査→局所パッチ→コード保護→完全diff審査→全文再確認を試した。初二版はセミコロンや権限区切りの誤変更で停止。第三版は481件完了、オンライン形式合格445、保護追加後オフライン保持436（変更432、うち見出し太字除去のみ398）。業務とE2Eを再確認していないため、Judge–Fix出荷・データ納品の増分はゼロである。"
+  ],
+  "8. 提示词回归实验": [
+    "8. Prompt regression experiments",
+    "8. プロンプト回帰実験"
+  ],
+  "8.1 A—E 定向回归": [
+    "8.1 Targeted A–E regressions",
+    "8.1 A〜Eの対象回帰"
+  ],
+  "这一系列检验：把 E2E 坏例归纳成通用规则后，能否减少同类缺口，而不引入无依据的收缩或扩写？早期用相同 checkpoint 检查可修复性，后期用原始 Building 50 同时检查准出和实际 Base。两种起点分别保留，避免把重复修复的效果当作提示词净收益。": [
+    "This series asks whether general rules derived from E2E failures reduce recurring gaps without unjustified narrowing or expansion. Early tests used identical checkpoints for repairability; later tests used original Building50 for release and Base outcomes. These starting points are kept separate so repeated repair is not mistaken for prompt-only gain.",
+    "E2E失敗を一般規則へまとめ、根拠のない縮小・拡張を起こさず同種欠落を減らせるかを検証した。初期は同一checkpointで修復可能性を、後期は元Building50で出荷とBaseを確認した。継続修復をPrompt純効果と混同しないよう起点を分ける。"
+  ],
+  "9 月提示词实验首先针对三类问题：应计算的结果被写成普通字段，角色必要权限被缩成只读，以及修复工作流时改变了原来的处理范围。": [
+    "September focused on computed results represented as ordinary fields, necessary role permissions reduced to read-only, and Workflow repairs changing processing scope.",
+    "9月は計算結果を普通フィールドにする、必要権限を閲覧専用へ縮める、Workflow修復で処理範囲を変える三問題に注目した。"
+  ],
+  "计算案例中，Building Case 2 的“资源完成度”“培训完成度”仅有普通进度字段，没有计算或汇总来源。Judge 没指出生成方式缺失，Fix 就没有补；后续版本加入公式/Lookup 后，还需检查分母范围。规则因此要求对计算、汇总或条件判断产生的结果，核对其合法生成方式，而不是只查同名字段是否存在。": [
+    "In Building Case 2, “resource completion” and “training completion” had ordinary progress fields but no calculation or aggregation source. Judge missed the mechanism, so Fix did not add it. Later Formula/Lookup additions still required denominator checks. Rules therefore verify a legal production mechanism for computed, aggregated, or conditional results, not merely a same-named field.",
+    "Building Case 2の資源・研修完了率は普通進捗フィールドのみで、計算や集計元がなかった。Judgeが生成方法不足を指摘せずFixも補わなかった。後にFormula/Lookupを加えても分母範囲の確認が必要だった。規則は同名フィールドの有無だけでなく、計算・集計・条件結果の合法な生成方法を確認する。"
+  ],
+  "首批比较使用 8 份相同 checkpoint，来自 6 条 Query；Case 2、49 各有两份历史文档。各组均从同一 checkpoint 开始。": [
+    "The first comparison used eight identical checkpoints from six Queries; Cases 2 and 49 each had two historical documents. Every arm started from the same checkpoints.",
+    "最初は6 Query由来の同じ8 checkpointを使い、Case 2・49は各二つの過去文書を持った。全群が同checkpointから開始した。"
+  ],
+  "提示词改动": [
+    "Prompt change",
+    "Prompt変更"
+  ],
+  "逐例结果": [
+    "Case-level result",
+    "逐例結果"
+  ],
+  "MR102 对照（A）": [
+    "MR102 control (A)",
+    "MR102対照（A）"
+  ],
+  "起点": [
+    "Starting point",
+    "起点"
+  ],
+  "通用计算、权限、流程规则（B）": [
+    "General calculation, permission, and process rules (B)",
+    "一般計算・権限・処理規則（B）"
+  ],
+  "有改善，仍有计算漏判和权限问题": [
+    "Improved, but calculation misses and permission defects remained",
+    "改善したが計算見逃しと権限問題が残る"
+  ],
+  "强化当前证据等约束（C）": [
+    "Stronger current-evidence constraints (C)",
+    "現証拠などの制約強化（C）"
+  ],
+  "未保持 B 的收益": [
+    "Did not retain B's gains",
+    "Bの改善を維持せず"
+  ],
+  "B 吸收部分 C 改进（D）": [
+    "B with selected C improvements (D)",
+    "BへCの一部を反映（D）"
+  ],
+  "存在权限退化、计算漏判": [
+    "Permission regressions and missed calculations",
+    "権限悪化、計算見逃し"
+  ],
+  "补计算链和权限保护（E）": [
+    "Calculation chains and permission protection (E)",
+    "計算連鎖と権限保護を補完（E）"
+  ],
+  "部分计算及可见性改善，仍有权限降级和补丁失败": [
+    "Some calculation/visibility gains; permission downgrades and patch failures remained",
+    "一部計算・可視性は改善、権限降格とパッチ失敗は残る"
+  ],
+  "E 的": [
+    "E's",
+    "Eの"
+  ],
+  "保留了历史可见性，却连续遇到原文四处匹配、对象替换长度限制、标题不一致，三次修改均未应用。它需要检查补丁恢复，不能按三次有效修复失败处理。": [
+    "preserved historical visibility but hit four text matches, object-replacement length limits, and heading mismatches; none of three edits applied. This calls for patch-recovery checks, not counting three effective failed business repairs.",
+    "は過去の可視性を保ったが、原文四箇所一致、対象置換長制限、見出し不一致に連続遭遇し、三変更とも未適用だった。パッチ復旧を調べるべきで、有効な業務修復三回の失敗とは数えない。"
+  ],
+  "8.2 F—J 提示词改动": [
+    "8.2 F–J prompt changes",
+    "8.2 F〜JのPrompt変更"
+  ],
+  "排查完整请求时发现，部分入口传入 OriginalSpecDoc 后会追加“本次不是第一次 Judge，语气、风格、结构变化也算问题”，即使它实际是首轮。该运行时消息与域规则允许等价表达冲突。F/G 阶段明确以当前全文判断，历史仅用于核对真实功能损失。": [
+    "Inspection of full requests found some entries appending “this is not the first Judge; tone, style, and structural changes count as issues” after OriginalSpecDoc even on the first round. This runtime message contradicted domain rules allowing equivalent expression. F/G clarified that current full text is authoritative and history only checks real functional loss.",
+    "完全要求を調べると、初回でもOriginalSpecDoc後に「初回Judgeではなく、口調・文体・構造変更も問題」と付記する入口があった。等価表現を認める領域規則と矛盾するため、F/Gでは現全文で判断し、履歴は実機能損失の確認だけに使うと明確化した。"
+  ],
+  "G 重点限制几类误改：不能因 Query 没逐字段授权就把角色设为全只读；保留必要关联输入；新增与编辑分别核对；拆流程不得扩大或缩小处理集合；不得删除办理动作、只留通知。14 条原始输入回归准出 9 条。H 增加完整输入、Lookup 类型和事件时序约束后为 8/14，Case 41、43 出现权限退化，未选为全量配置。": [
+    "G constrained several bad edits: do not make roles entirely read-only merely because Query lacks field-by-field authorization; preserve required relational inputs; check create/edit separately; preserve record sets when splitting workflows; retain business actions, not notifications alone. It released 9/14 original-input regressions. H added complete-input, Lookup-type, and event-order constraints but scored 8/14, with permission regressions in Cases 41/43, so it was not expanded.",
+    "Gは逐フィールド許可の明示がないだけで全閲覧専用にしない、必要な関連入力を保つ、作成と編集を別確認する、フロー分割で対象集合を変えない、通知だけでなく実処理を残すと制約した。元入力14件で9出荷。Hは完全入力、Lookup型、イベント順を加えて8/14、41・43で権限悪化が起き全量化しなかった。"
+  ],
+  "G 扩到原始 Building 50，链内准出 31 条，CodeAgent E2E 通过也为 31 条，但两者交集只有 24 条。I 在 G 上吸收扫描和 E2E 问题，修正过 Judge 中的 Fix 语气、统一用 1/0 AVG 表示完成率等不当规则。I12 仍准出 31/50，却有五条新增、五条减少，调用 6,681→7,463。固定候选的前两票也频繁分歧，变化同时含有规则影响和模型波动。": [
+    "Expanded to original Building50, G released 31 and passed CodeAgent E2E on 31, but only 24 overlapped. I incorporated scans/E2E findings, removing Fix-like wording in Judges and inappropriate rules such as always computing completion by 1/0 AVG. I12 still released 31/50, with five gains and five losses; calls rose 6,681→7,463. Frequent disagreement between the first two votes on fixed candidates showed both rule effects and model variation.",
+    "Gを元Building50へ広げると内部出荷31、CodeAgent E2E合格31だが共通は24だった。Iはスキャン/E2Eを取り込み、Judge内のFix口調や完了率を一律1/0 AVGにする不適切規則を修正した。I12は31/50のまま新規5・減少5、呼び出し6,681→7,463。固定候補の初二票も頻繁に割れ、規則効果とモデル変動が混在した。"
+  ],
+  "J 随后回到 G，明确 Workflow 记录筛选的左右值都不能沿 Link 下钻；同时要求替代写法保留记录身份、字段类型和原比较含义。后续 K/L/M 继续检验这些限制是否真正改善设计。": [
+    "J returned to G and clarified that neither side of a Workflow record filter may traverse a Link. Replacements must preserve record identity, field type, and comparison meaning. K/L/M continued testing whether these constraints actually improve designs.",
+    "JはGへ戻り、Workflowレコードフィルタの左右値ともLink下位参照を禁じ、代替でレコード同一性・型・比較意味を保つと明示した。K/L/Mはこの制約が本当に設計を改善するかを続けて検証した。"
+  ],
+  "8.3 G/K E2E 对照": [
+    "8.3 G/K E2E comparison",
+    "8.3 G/KのE2E比較"
+  ],
+  "G/K 都从相同原始 50 条 Query＋Spec 开始。K 只修改 Workflow Judge、Table Fix 和 Non-Table Fix，Permission Judge 未变；两组使用 Luna medium（必要第三票 high）判断、Seed2 low 修复和路由。代码执行固定为同一 SFT CodeAgent、同一 SDK，分别创建独立 Base；E2E 固定 GPT-5.5 high、Building Mix、全部维度，不传 before Base，也不使用单 case 专属提示词。": [
+    "G/K start from the same original 50 Query + Spec pairs. K changes only Workflow Judge, Table Fix, and Non-Table Fix; Permission Judge is unchanged. Both use Luna medium (high for a needed third vote) and Seed2 low for Fix/Router. Code execution fixes the SFT CodeAgent and SDK, creates independent Bases, and evaluates with GPT-5.5 high, Building Mix, all dimensions, no before Base, and no case-specific prompt.",
+    "G/Kは同じ元50 Query＋Specから開始する。Kが変えるのはWorkflow Judge、Table Fix、Non-Table FixのみでPermission Judgeは不変。両群はLuna medium（必要第三票high）、Fix/Router Seed2 low。コード実行は同SFT CodeAgent・SDKを固定し独立Baseを作り、E2EはGPT-5.5 high・Building Mix全次元、before Baseなし、ケース専用Promptなしとした。"
+  ],
+  "这样可以比较当次完整方案，但模型生成、辅助布局和 E2E 评审仍有波动。历史 G 的 62% 是另一轮结果；同期重跑的 G 才是 K 的直接对照。": [
+    "This compares complete configurations in that run, while generation, helper layouts, and E2E judging still vary. Historical G's 62% is a different run; concurrent G is K's direct control.",
+    "当該実行の全設定を比較できる一方、生成・補助配置・E2E判定には揺れが残る。過去Gの62%は別実行で、Kの直接対照は同期再実行Gである。"
+  ],
+  "配置及实验": [
+    "Configuration / experiment",
+    "設定・実験"
+  ],
+  "Judge–Fix 准出": [
+    "Judge–Fix releases",
+    "Judge–Fix出荷"
+  ],
+  "CodeAgent E2E 通过": [
+    "CodeAgent E2E passes",
+    "CodeAgent E2E合格"
+  ],
+  "历史 G": [
+    "Historical G",
+    "過去G"
+  ],
+  "同期 G 复跑": [
+    "Concurrent G rerun",
+    "同期G再実行"
+  ],
+  "G 运行时＋筛选、身份、可配置约束（K）": [
+    "G runtime + filter, identity, and configurability constraints (K)",
+    "G実行系＋フィルタ・同一性・設定可能性制約（K）"
+  ],
+  "L 定向六例": [
+    "L, six targeted cases",
+    "L、対象六例"
+  ],
+  "1/6；G 同例为 2/6": [
+    "1/6; G scored 2/6 on these cases",
+    "1/6、同例Gは2/6"
+  ],
+  "未完成整组 E2E，未扩量": [
+    "Full-group E2E unfinished; not expanded",
+    "全群E2E未完了、拡大せず"
+  ],
+  "后续 M": [
+    "Later M",
+    "後続M"
+  ],
+  "图 11　同期 G / K 对照": [
+    "Figure 11  Concurrent G / K comparison",
+    "図11　同期G/K比較"
+  ],
+  "G/K 的 E2E 有 9 条由通过变失败、5 条由失败变通过，净少 4 条；K 的 Judge–Fix 调用增加 29.1%。这组结果没有支持整包替换 G。对照原始设计、修改反馈、代码和 Base，可以进一步定位具体退化。": [
+    "G/K E2E had nine pass-to-fail flips and five fail-to-pass flips, a net loss of four; K's Judge–Fix calls rose 29.1%. This did not support replacing G wholesale. Original designs, repair feedback, code, and Base traces locate the regressions.",
+    "G/K E2Eは合格→不合格9、不合格→合格5で純減4、KのJudge–Fix呼び出しは29.1%増だった。Gの一括置換を支持せず、元設計・修正指摘・コード・Baseから個別悪化を特定する。"
+  ],
+  "可核对的变化": [
+    "Verifiable change",
+    "確認できる変更"
+  ],
+  "对修改方案的反馈": [
+    "Implication for the edit",
+    "変更案への示唆"
+  ],
+  "Building 41，权限": [
+    "Building 41, permissions",
+    "Building 41、権限"
+  ],
+  "原始管理员可编辑；K 的 Judge 建议缩为只读，Fix 接受，生成代码把七张表设成只读": [
+    "The original administrator could edit; K's Judge proposed read-only, Fix accepted, and generated code made seven tables read-only",
+    "元管理者は編集可能。KのJudgeが閲覧専用を提案しFixが採用、コードは七表を閲覧専用へ"
+  ],
+  "错误来自设计阶段的建议和修复，不能全部归给 CodeAgent": [
+    "The defect originates in design-stage advice and repair, not entirely in CodeAgent",
+    "設計段階の提案と修復が原因で、全てCodeAgentに帰せない"
+  ],
+  "Building 14，权限": [
+    "Building 14, permissions",
+    "Building 14、権限"
+  ],
+  "G、K 都发生只读退化，只有 K 的 E2E 报出": [
+    "Both G and K regressed to read-only; only K's E2E reported it",
+    "G/K両方が閲覧専用へ悪化、KのE2Eだけが検出"
+  ],
+  "共用规则也有缺陷，判定差异不是全部由新增提示词造成": [
+    "Shared rules also have defects; detection differences are not all due to new prompts",
+    "共通規則にも欠陥があり、検出差は新Promptだけの影響ではない"
+  ],
+  "Building 38，筛选": [
+    "Building 38, filtering",
+    "Building 38、フィルタ"
+  ],
+  "用 Lookup 替代关联下钻，却未写清单值/集合和比较语义": [
+    "Lookup replaces Link traversal without specifying scalar/set output or comparison semantics",
+    "Link下位参照をLookupへ置換したが、単値/集合と比較意味を未指定"
+  ],
+  "替代必须保留原含义；撤掉能力边界不能解决此问题": [
+    "Replacement must preserve meaning; removing the capability boundary does not solve it",
+    "等義性保持が必要で、能力境界の撤去では解決しない"
+  ],
+  "Building 50，可配置流程": [
+    "Building 50, configurable workflow",
+    "Building 50、設定可能な処理"
+  ],
+  "新增配置表并读取，维护权限、状态更新仍不完整": [
+    "Added and read a configuration table, but maintenance permissions and state updates remained incomplete",
+    "設定表を追加・参照したが、維持権限と状態更新が不完全"
+  ],
+  "修复只覆盖了配置载体，未完成使用流程": [
+    "Repair covered the configuration container, not the full usage process",
+    "設定の入れ物だけを直し、利用手順を完結できなかった"
+  ],
+  "L 的 Case 38": [
+    "L, Case 38",
+    "LのCase 38"
+  ],
+  "原文重复匹配后已有对象替换兜底，格式检查通过；最终语义投票仅一票通过": [
+    "Object-replacement fallback handled repeated text matches and format passed; only one final semantic vote passed",
+    "複数一致には既存対象置換が働き形式合格、最終意味投票は一票のみ合格"
+  ],
+  "最后阻塞不在定位，重复新增稳定定位机制无助于该次失败": [
+    "Final blockage was not targeting; adding another stable locator would not fix it",
+    "最終障害は定位でなく、定位機構追加は役立たない"
+  ],
+  "M 的 Case 12": [
+    "M, Case 12",
+    "MのCase 12"
+  ],
+  "格式候选把目标字段名写成字符串": [
+    "Format candidate rendered a target field name as a string",
+    "形式候補が対象フィールド名を文字列として記述"
+  ],
+  "格式修改改变了赋值含义": [
+    "Formatting changed assignment semantics",
+    "形式変更が代入の意味を変えた"
+  ],
+  "M 的 Case 34": [
+    "M, Case 34",
+    "MのCase 34"
+  ],
+  "右值关联下钻、文本 ID 写入关联字段被拦": [
+    "Right-hand Link traversal and text-ID writes into Link fields were blocked",
+    "右値Link下位参照と関連フィールドへのテキストID書き込みを阻止"
+  ],
+  "Judge 找到真实能力问题，Fix 仍缺合法类型和记录身份替代": [
+    "Judge found real capability defects; Fix still lacked type-safe, identity-preserving alternatives",
+    "Judgeは実在能力問題を検出したが、Fixに合法型・同一性を保つ代替が不足"
+  ],
+  "M/G 的 E2E 有 15 条通过转失败、3 条失败转通过。执行成功从 45/50 降到 39/50，首次编译成功从 34 降到 28，CodeAgent token 约 5.14M→9.88M。但 E2E Judge 同时从": [
+    "M/G E2E had 15 pass-to-fail and 3 fail-to-pass flips. Execution success fell 45/50→39/50, first-compile success 34→28, and CodeAgent tokens rose about 5.14M→9.88M. However, the E2E Judge also changed from",
+    "M/G E2Eは合格→不合格15、不合格→合格3。実行成功45/50→39/50、初回compile成功34→28、CodeAgent token約5.14M→9.88Mとなった。ただしE2E Judgeも次の版から"
+  ],
+  "更新到": [
+    "to",
+    "次の版へ更新された："
+  ],
+  "，涉及 136 个文件，不能把净少的 12 条全部归因于 M 提示词。": [
+    ", affecting 136 files, so the net loss of 12 cannot all be attributed to M's prompts.",
+    "。136ファイルが変わっており、純減12件を全てMのPromptへ帰属できない。"
+  ],
+  "8.4 E2E 失败归因": [
+    "8.4 E2E failure attribution",
+    "8.4 E2E失敗の原因分析"
+  ],
+  "图 12　E2E 失败归因": [
+    "Figure 12  E2E failure attribution",
+    "図12　E2E失敗の原因分析"
+  ],
+  "评测固定输入设计，分别检查代码是否编译、是否执行完成，以及实际 Base 是否满足 Building Mix 的业务要求。出现失败时，按需求、修前/修后文档、代码、Base、Judge 输入逐层核对。一个案例可以同时有设计和执行问题。": [
+    "Evaluation fixes the input design and separately checks compilation, execution completion, and whether Base meets Building Mix requirements. Failures are traced through requirements, before/after designs, code, Base, and Judge input. One case can contain both design and execution defects.",
+    "入力設計を固定し、compile、実行完了、BaseのBuilding Mix要求達成を別確認する。失敗時は要求、修正前後設計、コード、Base、Judge入力の順で照合する。一例に設計・実行の両問題があり得る。"
+  ],
+  "历史评测处理过高级权限 Base 分组错误、旧 Base 复用、空模板表残留、专属 case 提示词索引错位、执行日志截断和 Viewer 绑定错误。这些都可能改变分数，应保留在实验配置和原始证据中。": [
+    "Historical evaluations handled advanced-permission Base grouping errors, reuse of old Bases, leftover template tables, misindexed case-specific prompts, truncated execution logs, and incorrect Viewer bindings. All can change scores and belong in configuration and raw evidence records.",
+    "過去評価では高度権限Baseのグループ誤り、旧Base再利用、空テンプレート表残り、専用Prompt索引ずれ、実行ログ切断、Viewer結合誤りを処理した。いずれも得点へ影響し得るため設定と原証拠へ残す。"
+  ],
+  "10 月又以 G 提示词从原始 50 条重跑，Judge–Fix 准出 28 条，CodeAct E2E 通过 24 条。CodeAgent 组 20 次请求均遇到 429，另 30 条未启动，没有可用于比较的业务分数。它不应被记成 CodeAgent 能力为 0%。": [
+    "An October rerun from the original 50 with G released 28 and passed CodeAct E2E on 24. CodeAgent hit 429 on all 20 attempted requests; the remaining 30 never started. There is no business score to compare, and this is not 0% CodeAgent capability.",
+    "10月に元50件をGで再実行し、Judge–Fix出荷28、CodeAct E2E合格24だった。CodeAgentは試行20件全て429、残り30件は未開始で、比較できる業務得点はなく、能力0%とは記録しない。"
+  ],
+  "9. 结论": [
+    "9. Conclusions",
+    "9. 結論"
+  ],
+  "以下结论依据截至 2026-10-16 收录的实验和实现。后续修改建议尚未经过新实验验证。": [
+    "These conclusions reflect experiments and implementation collected through October 16, 2026. Proposed changes below have not yet been validated in new experiments.",
+    "結論は2026-10-16までの実験・実装に基づく。以下の変更提案は新実験での検証前である。"
+  ],
+  "9.1 主要结论": [
+    "9.1 Main findings",
+    "9.1 主な知見"
+  ],
+  "目前证据支持保留局部内容保护、Table 优先的依赖路由、同版本投票早停，以及格式修改后的业务核对。前两类主要解决修改范围和依赖，后两类控制评审波动和交付风险；它们不是一种机制的不同名称。": [
+    "Evidence supports local content protection, Table-first dependency routing, same-version voting with early stopping, and business rechecks after formatting. The first two manage edit scope and dependencies; the latter two manage judgment variation and delivery risk. They are distinct mechanisms.",
+    "局所内容保護、Table優先の依存ルーティング、同版投票の早期停止、形式変更後の業務再確認を支持する。前二者は範囲と依存、後二者は審査の揺れと納品リスクを制御する別機構である。"
+  ],
+  "具体业务规则在定向难例中产生过清楚收益，但整组增加约束没有稳定提高 E2E。G/K 中既有设计阶段真实退化，也有共用规则缺陷、执行问题和评审检出差异，不能只凭总分下降定位提示词责任。Verifier 已改善部分检查指标，完整修复仍受问题对象、补丁应用和接纳判断限制，尚不具备整体替代主链路的证据。": [
+    "Specific business rules clearly helped targeted hard cases, but adding constraint bundles did not consistently improve E2E. G/K combines real design regressions, shared-rule defects, execution problems, and detection differences; total score alone cannot locate prompt responsibility. Verifier improved some checking metrics, but full repair remains limited by object identification, patch application, and acceptance, without evidence for wholesale replacement.",
+    "具体業務規則は難例で明確な効果を示したが、制約一括追加はE2Eを安定改善しなかった。G/Kには実設計悪化、共通規則不備、実行問題、検出差が混在し、総得点だけでPrompt責任を特定できない。Verifierは一部確認指標を改善したが、対象特定・パッチ適用・採否に制約され、全置換の根拠はまだない。"
+  ],
+  "9.2 现有实现": [
+    "9.2 Existing implementation",
+    "9.2 現行実装"
+  ],
+  "局部补丁、输出恢复、有界对象替换、候选去重和回退、投票早停、格式恢复及业务回交都有实现。权限规则已包含职责核对，Table Fix 已要求计算结果有生成方式。历史失败需验证这些机制是否在相应入口生效，不再新增同名步骤。": [
+    "Local patches, output recovery, bounded object replacement, deduplication/rollback, vote early stopping, format recovery, and business handback are implemented. Permission rules already check responsibilities; Table Fix already requires mechanisms for computed results. Historical failures require checking whether these mechanisms took effect at the relevant entry, not adding duplicate stages.",
+    "局所パッチ、出力復旧、有界対象置換、重複排除・撤回、投票早停、形式復旧、業務差し戻しは実装済み。権限規則は責務を確認し、Table Fixは計算結果の生成方法を要求する。過去失敗では該当入口で機構が有効だったかを調べ、同名段階を重ねない。"
+  ],
+  "9.3 必须修正的问题": [
+    "9.3 Issues to correct",
+    "9.3 修正すべき問題"
+  ],
+  "位置": [
+    "Location",
+    "箇所"
+  ],
+  "已查到的问题": [
+    "Observed defect",
+    "確認済み問題"
+  ],
+  "修改范围": [
+    "Edit scope",
+    "修正範囲"
+  ],
+  "一处禁止记录筛选沿关联字段下钻，另一处笼统允许“条件/筛选”下钻": [
+    "One passage forbids Link traversal in record filters; another broadly permits traversal in “conditions/filters”",
+    "一箇所でレコードフィルタのLink下位参照を禁じ、別箇所で条件/フィルタの下位参照を広く許す"
+  ],
+  "合并冲突表述，按节点和参数位置判断；记录筛选左右值均禁止下钻，合法的其他引用保持原规则": [
+    "Reconcile wording by node and parameter position; forbid traversal on both filter sides while retaining legal references elsewhere",
+    "ノード・引数位置別に統一。レコードフィルタ両辺の下位参照は禁止し、他の合法参照は維持"
+  ],
+  "空对象或名称相互包含，可能直接被视为同一问题": [
+    "Empty objects or names containing one another may be treated as the same issue",
+    "空対象や名前の包含関係を同じ問題と扱う可能性"
+  ],
+  "优先使用已有表、字段、角色等定位信息；无法唯一确认时标待确认，不依据包含关系直接合并": [
+    "Use existing table/field/role identifiers first; defer ambiguous matches instead of merging by substring",
+    "既存表・フィールド・役割の識別情報を優先。曖昧なら保留し、包含関係だけで統合しない"
+  ],
+  "修后列表中不再报同一问题，就可能被认定目标关闭": [
+    "An issue disappearing from the post-edit list may be treated as target closure",
+    "修正後リストから消えたことだけで目標解消と扱う可能性"
+  ],
+  "读取现有 State/Transition 证据，核对原需求仍被满足；删除、改名、缺少覆盖证据时不能直接关闭": [
+    "Read State/Transition evidence to confirm the original requirement remains met; deletion, renaming, or absent coverage is not closure",
+    "State/Transition証拠で元要求の達成を確認。削除・改名・網羅証拠不足では閉じない"
+  ],
+  "Workflow Judge 负责识别不支持的引用；Non-Table Fix 负责替换写法，且不能改变原需求。建议分别修改如下：": [
+    "Workflow Judge identifies unsupported references; Non-Table Fix replaces them without changing requirements. Proposed changes are:",
+    "Workflow Judgeが非対応参照を識別し、Non-Table Fixが要求を変えず置き換える。提案は次のとおり："
+  ],
+  "Judge 建议：": [
+    "Judge proposal:",
+    "Judgeへの提案："
+  ],
+  "按字段引用所在的节点和参数位置判断能力。查找、修改记录的筛选条件左右值均不得沿关联字段下钻；其他位置的引用按相应能力规则判断。使用 Lookup 等替代时，核对来源、输出类型、单值或集合及比较语义。": [
+    "Check capability by the node and parameter containing the field reference. Neither side of find/update record filters may traverse a Link; other positions follow their own capability rules. For Lookup replacements, verify source, output type, scalar/set behavior, and comparison semantics.",
+    "参照を置くノードと引数で能力を判定する。検索・更新レコードのフィルタ左右値はLink下位参照不可。他位置は各能力規則に従う。Lookup代替では元、出力型、単値/集合、比較意味を確認する。"
+  ],
+  "Fix 建议：": [
+    "Fix proposal:",
+    "Fixへの提案："
+  ],
+  "替换不支持的筛选引用时，保持原比较含义和目标记录范围。明确替代字段的来源、类型、单值或集合；需要补表字段时，反馈具体资源缺口。不用近似字段或文字承诺代替实现。": [
+    "When replacing unsupported filter references, preserve comparison meaning and target record scope. Specify replacement source, type, and scalar/set behavior; report concrete table/field gaps. Do not substitute approximate fields or textual promises for implementation.",
+    "非対応フィルタ参照の置換時は比較意味と対象範囲を保つ。代替元、型、単値/集合を明示し、表・フィールド不足を具体報告する。近似フィールドや文章上の約束で実装を代えない。"
+  ],
+  "Building 38 是检查等义替代的用例。Verifier H003、N02/N04 分别说明对象比较和目标关闭需要验证，但尚未复现证明上述函数是这些历史案例的直接原因。此处修正具体判定，不追加全量 Judge，也不先建立新的全局对象 ID 系统。": [
+    "Building38 tests equivalent replacements. Verifier H003 and N02/N04 motivate object-comparison and target-closure checks, but the named functions have not been reproduced as direct causes of those historical failures. Correct the specific decisions rather than adding full Judge rounds or a new global object-ID system.",
+    "Building38は等義置換の検証例。H003とN02/N04は対象比較・目標解消の確認を促すが、該当関数が過去失敗の直接原因だと再現確認したわけではない。具体判定を直し、全量Judge追加や新全局ID機構を先に作らない。"
+  ],
+  "9.4 验证方案": [
+    "9.4 Validation plan",
+    "9.4 検証計画"
+  ],
+  "路线": [
+    "Track",
+    "系統"
+  ],
+  "先验证的案例和反例": [
+    "First cases and counterexamples",
+    "先に確認する例・反例"
+  ],
+  "再看整体结果": [
+    "Then evaluate globally",
+    "続く全体検証"
+  ],
+  "Judge–Fix 提示词": [
+    "Judge–Fix prompts",
+    "Judge–Fix Prompt"
+  ],
+  "Building 38 的非法筛选与合法引用；2 的计算结果与允许手工记录的反例；14/41 的职责权限与明确只读；50 的配置维护": [
+    "Building38 invalid filters vs. legal references; Case2 computed vs. permitted manual values; 14/41 role duties vs. explicit read-only; 50 configuration maintenance",
+    "38の非法フィルタと合法参照、2の計算結果と許容手入力、14/41の責務権限と明示閲覧専用、50の設定維持"
+  ],
+  "固定原始 Building 50、G 运行时、模型和预算；分别统计准出、原问题、新问题、调用成本，再做同版本 CodeAgent E2E": [
+    "Fix original Building50, G runtime, models, and budget; report releases, old/new issues, calls, then same-version CodeAgent E2E",
+    "元Building50・G実行系・モデル・予算を固定し、出荷・旧新問題・呼び出しを集計後、同版CodeAgent E2E"
+  ],
+  "Verifier 判定": [
+    "Verifier decisions",
+    "Verifier判定"
+  ],
+  "H003 的正确修改应接受，H002 的错误图表应拒绝；N02/N04 不得改变指标或负责人含义": [
+    "Accept H003's correct edit, reject H002's invalid chart; preserve metric/owner meaning in N02/N04",
+    "H003正修正を採用、H002誤図表を却下、N02/N04の指標・責任者意味を保持"
+  ],
+  "固定修前/修后对和修复事务，再测原始输入整链；同时统计误接纳、误拒绝、目标关闭和每份合格文档成本": [
+    "Fix before/after pairs and repair transactions, then run original-input pipelines; count false accept/reject, closure, and cost per qualified document",
+    "前後ペアと修復取引を固定後に元入力全系統を測定。誤採用・誤棄却・解消・合格一件当たりコストを集計"
+  ],
+  "补丁及重复候选": [
+    "Patches and duplicate candidates",
+    "パッチと重複候補"
+  ],
+  "T01 的删除、T05 的锚点失败；核对实际写入、重复哈希和下一轮反馈": [
+    "T01 deletion and T05 anchor failure; check actual writes, duplicate hashes, and next-round feedback",
+    "T01削除、T05アンカー失敗。実書き込み、重複ハッシュ、次回フィードバックを確認"
+  ],
+  "只有当前版本仍出现同类失败，才修改具体恢复分支，不重新加入已有去重机制": [
+    "Modify a recovery branch only if the current version still fails that way; do not add existing deduplication again",
+    "現版で同種失敗が残る場合のみ該当復旧分岐を修正。既存重複排除を再追加しない"
+  ],
+  "稳定对象 ID、全文重写、更多投票、扩大修复预算和替换模型暂不列为默认改动。现有对照没有支持将它们组合启用。下一轮先验证上述明确缺口，再决定是否扩大到完整数据集。": [
+    "Stable object IDs, full rewrites, more votes, larger repair budgets, and model replacement are not default changes for now; comparisons do not support enabling them together. Validate these specific gaps first, then decide whether to expand to the full dataset.",
+    "安定対象ID、全文改稿、票数増、予算増、モデル置換は現時点で標準変更にしない。比較は同時有効化を支持していない。明確な不足を先に検証し、全データへの拡張を判断する。"
+  ],
+  "研究时间线": [
+    "Research timeline",
+    "研究の時系列"
+  ],
+  "跨域修复顺序": [
+    "Cross-domain repair order",
+    "領域間の修復順"
+  ],
+  "E2E 失败归因": [
+    "E2E failure attribution",
+    "E2E失敗の原因分析"
+  ]
+}

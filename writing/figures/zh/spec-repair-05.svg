@@ -1,0 +1,125 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="496.8pt" viewBox="0 0 864 496.8" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="zh">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 496.8  L 864 496.8  L 864 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 207.200391 57.6  Q 234.0008 57.6 259.906783 57.6  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 255.106783 55.2  L 259.906783 57.6  L 255.106783 60  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 437.603357 57.6  Q 467.102069 57.6 495.706354 57.6  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 490.906354 55.2  L 495.706354 57.6  L 490.906354 60  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 349.118372 82.999896  Q 345.599972 169.200692 342.118049 254.507805  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 344.711807 249.809676  L 342.118049 254.507805  L 339.915801 249.613921  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 583.2 82.997314  Q 583.2 113.400116 583.2 142.90849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 585.6 138.10849  L 583.2 142.90849  L 580.8 138.10849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 583.2 194.597314  Q 583.2 225.000116 583.2 254.50849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 585.6 249.70849  L 583.2 254.50849  L 580.8 249.70849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 496.601587 280.8  Q 467.999893 280.8 440.292625 280.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 445.092625 283.2  L 440.292625 280.8  L 445.092625 278.4  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 583.2 304.2  L 583.2 326.16  Q 583.2 334.8 574.56 334.8  L 221.04 334.8  Q 212.4 334.8 212.4 343.44  L 212.4 383.76  Q 212.4 392.4 221.04 392.4  L 252.905573 392.4  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 248.105573 390  L 252.905573 392.4  L 248.105573 394.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 342 306.197314  Q 342 336.600116 342 366.10849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 344.4 361.30849  L 342 366.10849  L 339.6 361.30849  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 432.199731 392.4  Q 464.400863 392.4 495.707567 392.4  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 490.907567 390  L 495.707567 392.4  L 490.907567 394.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 667.8 392.4  L 673.8 392.4  Q 676.8 392.4 676.8 389.4  L 676.8 283.8  Q 676.8 280.8 679.8 280.8  L 684.905573 280.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 680.105573 278.4  L 684.905573 280.8  L 680.105573 283.2  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 770.4 255.402686  Q 770.4 224.999884 770.4 195.49151  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 768 200.29151  L 770.4 195.49151  L 772.8 200.29151  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 669.80061 392.4  Q 681.300879 392.4 691.90672 392.4  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 687.10672 390  L 691.90672 392.4  L 687.10672 394.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 498.6 280.8  L 476.64 280.8  Q 468 280.8 468 272.16  L 468 66.24  Q 468 57.6 476.64 57.6  L 497.705573 57.6  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 492.905573 55.2  L 497.705573 57.6  L 492.905573 60  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 583.2 415.8  L 583.2 459.36  Q 583.2 468 574.56 468  L 152.64 468  Q 144 468 144 459.36  L 144 116.64  Q 144 108 152.64 108  L 459.36 108  Q 468 108 468 99.36  L 468 66.24  Q 468 57.6 476.64 57.6  L 497.705573 57.6  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 492.905573 55.2  L 497.705573 57.6  L 492.905573 60  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 583.2 415.8  L 583.2 431.4  Q 583.2 439.2 575.4 439.2  L 206.64 439.2  Q 198 439.2 198 430.56  L 198 289.44  Q 198 280.8 206.64 280.8  L 245.705573 280.8  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 240.905573 278.4  L 245.705573 280.8  L 240.905573 283.2  " clip-path="url(#pbb9af8949f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 270 34.2  L 428.4 34.2  Q 435.6 34.2 435.6 41.4  L 435.6 73.8  Q 435.6 81 428.4 81  L 270 81  Q 262.8 81 262.8 73.8  L 262.8 41.4  Q 262.8 34.2 270 34.2  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 505.8 34.2  L 660.6 34.2  Q 667.8 34.2 667.8 41.4  L 667.8 73.8  Q 667.8 81 660.6 81  L 505.8 81  Q 498.6 81 498.6 73.8  L 498.6 41.4  Q 498.6 34.2 505.8 34.2  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 505.8 145.8  L 660.6 145.8  Q 667.8 145.8 667.8 153  L 667.8 185.4  Q 667.8 192.6 660.6 192.6  L 505.8 192.6  Q 498.6 192.6 498.6 185.4  L 498.6 153  Q 498.6 145.8 505.8 145.8  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 505.8 257.4  L 660.6 257.4  Q 667.8 257.4 667.8 264.6  L 667.8 297  Q 667.8 304.2 660.6 304.2  L 505.8 304.2  Q 498.6 304.2 498.6 297  L 498.6 264.6  Q 498.6 257.4 505.8 257.4  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 253.8 257.4  L 430.2 257.4  Q 437.4 257.4 437.4 264.6  L 437.4 297  Q 437.4 304.2 430.2 304.2  L 253.8 304.2  Q 246.6 304.2 246.6 297  L 246.6 264.6  Q 246.6 257.4 253.8 257.4  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 261 369  L 423 369  Q 430.2 369 430.2 376.2  L 430.2 408.6  Q 430.2 415.8 423 415.8  L 261 415.8  Q 253.8 415.8 253.8 408.6  L 253.8 376.2  Q 253.8 369 261 369  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 505.8 369  L 660.6 369  Q 667.8 369 667.8 376.2  L 667.8 408.6  Q 667.8 415.8 660.6 415.8  L 505.8 415.8  Q 498.6 415.8 498.6 408.6  L 498.6 376.2  Q 498.6 369 505.8 369  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 693 257.4  L 847.8 257.4  Q 855 257.4 855 264.6  L 855 297  Q 855 304.2 847.8 304.2  L 693 304.2  Q 685.8 304.2 685.8 297  L 685.8 264.6  Q 685.8 257.4 693 257.4  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 718.2 369  L 822.6 369  Q 846 369 846 392.4  L 846 392.4  Q 846 415.8 822.6 415.8  L 718.2 415.8  Q 694.8 415.8 694.8 392.4  L 694.8 392.4  Q 694.8 369 718.2 369  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1"><text x="59.2" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">普通阶段检查结果</text></g>
+   <g id="text_2"><text x="297.33" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">难例入口 Router</text></g>
+   <g id="text_3"><text x="539.058438" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">难例 Table Fix</text></g>
+   <g id="text_4"><text x="545.764219" y="174.036563" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">四域 Judge</text></g>
+   <g id="text_5"><text x="532.093438" y="285.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Table 后 Router</text></g>
+   <g id="text_6"><text x="281.499219" y="285.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">难例 Non-Table Fix</text></g>
+   <g id="text_7"><text x="300" y="388.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">新四域多数票</text></g>
+   <g id="text_8"><text x="531.33" y="397.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">难例多数 Router</text></g>
+   <g id="text_9"><text x="729.604219" y="276.415922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">终末 Rewrite</text></g>
+   <g id="text_10"><text x="733.86" y="173.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Final Result</text></g>
+   <g id="text_11"><text x="742.4" y="397.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">格式准出</text></g>
+   <g id="text_12"><text x="443.1" y="49.379063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">表侧根因</text></g>
+   <g id="text_13"><text x="278.4" y="173.176875" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">其余根因</text></g>
+   <g id="text_14"><text x="399.695625" y="256.187813" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">无表侧根因；可 no-op</text></g>
+   <g id="text_15"><text x="307.8" y="338.819062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">表侧仍失败 · 回退耗尽</text></g>
+   <g id="text_16"><text x="710.76" y="335.177812" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">仍失败 · 预算耗尽</text></g>
+   <g id="text_17"><text x="650.4" y="421.595625" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">准出票通过</text></g>
+   <g id="text_18"><text x="423" y="173.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">表侧 · 剩余预算</text></g>
+   <g id="text_19"><text x="257.4" y="472.019063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">表侧 · 剩余预算</text></g>
+   <g id="text_20"><text x="294.6" y="443.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">非表侧 · 剩余预算</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbb9af8949f">
+   <rect x="0" y="0" width="864" height="496.8"/>
+  </clipPath>
+ </defs>
+</svg>

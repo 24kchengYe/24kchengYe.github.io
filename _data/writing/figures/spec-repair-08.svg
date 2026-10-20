@@ -1,0 +1,97 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="374.4pt" viewBox="0 0 864 374.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 374.4  L 864 374.4  L 864 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 201.797644 57.6  Q 229.498555 57.6 256.305039 57.6  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 251.505039 55.2  L 256.305039 57.6  L 251.505039 60  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 498.79682 57.6  Q 553.497182 57.6 607.303117 57.6  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 602.503117 55.2  L 607.303117 57.6  L 602.503117 60  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 378 83.00127  Q 378 124.199997 378 164.504297  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 159.704297  L 378 164.504297  L 375.6 159.704297  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 712.8 81  L 712.8 117.36  Q 712.8 126 704.16 126  L 541.44 126  Q 532.8 126 532.8 134.64  L 532.8 182.16  Q 532.8 190.8 524.16 190.8  L 479.694427 190.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 484.494427 193.2  L 479.694427 190.8  L 484.494427 188.4  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 712.8 83.00127  Q 712.8 124.199997 712.8 164.504297  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 715.2 159.704297  L 712.8 164.504297  L 710.4 159.704297  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 378 216.196436  Q 378 253.79689 378 290.502917  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 285.702917  L 378 290.502917  L 375.6 285.702917  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 712.8 214.2  L 712.8 243.36  Q 712.8 252 704.16 252  L 386.64 252  Q 378 252 378 260.64  L 378 292.505573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 287.705573  L 378 292.505573  L 375.6 287.705573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 115.2 214.2  L 115.2 243.36  Q 115.2 252 123.84 252  L 369.36 252  Q 378 252 378 260.64  L 378 292.505573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 287.705573  L 378 292.505573  L 375.6 287.705573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 268.001587 316.8  Q 239.399893 316.8 211.692625 316.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 216.492625 319.2  L 211.692625 316.8  L 216.492625 314.4  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 488.000995 316.8  Q 551.69944 316.8 614.503458 316.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 609.703458 314.4  L 614.503458 316.8  L 609.703458 319.2  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 54 34.2  L 176.4 34.2  Q 199.8 34.2 199.8 57.6  L 199.8 57.6  Q 199.8 81 176.4 81  L 54 81  Q 30.6 81 30.6 57.6  L 30.6 57.6  Q 30.6 34.2 54 34.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 266.4 34.2  L 489.6 34.2  Q 496.8 34.2 496.8 41.4  L 496.8 73.8  Q 496.8 81 489.6 81  L 266.4 81  Q 259.2 81 259.2 73.8  L 259.2 41.4  Q 259.2 34.2 266.4 34.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 617.4 34.2  L 808.2 34.2  Q 815.4 34.2 815.4 41.4  L 815.4 73.8  Q 815.4 81 808.2 81  L 617.4 81  Q 610.2 81 610.2 73.8  L 610.2 41.4  Q 610.2 34.2 617.4 34.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 284.4 167.4  L 471.6 167.4  Q 478.8 167.4 478.8 174.6  L 478.8 207  Q 478.8 214.2 471.6 214.2  L 284.4 214.2  Q 277.2 214.2 277.2 207  L 277.2 174.6  Q 277.2 167.4 284.4 167.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 617.4 167.4  L 808.2 167.4  Q 815.4 167.4 815.4 174.6  L 815.4 207  Q 815.4 214.2 808.2 214.2  L 617.4 214.2  Q 610.2 214.2 610.2 207  L 610.2 174.6  Q 610.2 167.4 617.4 167.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 277.2 293.4  L 478.8 293.4  Q 486 293.4 486 300.6  L 486 333  Q 486 340.2 478.8 340.2  L 277.2 340.2  Q 270 340.2 270 333  L 270 300.6  Q 270 293.4 277.2 293.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 624.6 293.4  L 801 293.4  Q 808.2 293.4 808.2 300.6  L 808.2 333  Q 808.2 340.2 801 340.2  L 624.6 340.2  Q 617.4 340.2 617.4 333  L 617.4 300.6  Q 617.4 293.4 624.6 293.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 45 293.4  L 185.4 293.4  Q 208.8 293.4 208.8 316.8  L 208.8 316.8  Q 208.8 340.2 185.4 340.2  L 45 340.2  Q 21.6 340.2 21.6 316.8  L 21.6 316.8  Q 21.6 293.4 45 293.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1"><text x="77.764219" y="62.36" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="74">局部 Judge</text></g>
+   <g id="text_2"><text x="301" y="62.288906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="154">局部全过且有格式回修？</text></g>
+   <g id="text_3"><text x="649.8" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="126">原格式缺口已关闭？</text></g>
+   <g id="text_4"><text x="350" y="195.447344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="56">候选排序</text></g>
+   <g id="text_5"><text x="677.8" y="186.415922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="70">拒绝该候选</text></g>
+   <g id="text_6"><text x="66.2" y="195.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="98">协议失败的候选</text></g>
+   <g id="text_7"><text x="317.491563" y="321.488906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="122">还有候选？ N_fix=3</text></g>
+   <g id="text_8"><text x="670.8" y="321.488906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="84">有可选候选？</text></g>
+   <g id="text_9"><text x="87.2" y="312.254156" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="56">下一候选</text></g>
+   <g id="text_10"><text x="547.5" y="49.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="12">是</text></g>
+   <g id="text_11"><text x="397.2" y="129.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="12">否</text></g>
+   <g id="text_12"><text x="520.8" y="162.37125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="24">关闭</text></g>
+   <g id="text_13"><text x="752.4" y="129.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="36">未关闭</text></g>
+   <g id="text_14"><text x="233.4" y="308.53125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="12">是</text></g>
+   <g id="text_15"><text x="545.7" y="308.53125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="12">否</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p88c59137fd">
+   <rect x="0" y="0" width="864" height="374.4"/>
+  </clipPath>
+ </defs>
+</svg>

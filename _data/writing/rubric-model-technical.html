@@ -1,0 +1,684 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>规则评审模型技术报告 · Yecheng Zhang</title><style id="edition-styles">
+:root{color-scheme:light;--ink:#202123;--muted:#73767b;--line:#e9eaec;--link:#44484d}
+*{box-sizing:border-box}
+html{background:#fff;scroll-behavior:smooth;scroll-padding-top:36px}
+body{margin:0;padding:72px 40px 112px;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:#000}
+a:focus-visible{outline:2px solid #6f747b;outline-offset:4px}
+.skip-link{position:absolute;left:24px;top:-80px;padding:8px 12px;background:#fff;color:#202123;z-index:2}
+.skip-link:focus{top:12px}
+.blog-layout{display:grid;grid-template-columns:180px minmax(0,1040px);gap:44px;max-width:1264px;margin:0 auto;align-items:start}
+.blog-sidebar{position:sticky;top:44px;max-height:calc(100vh - 88px);overflow:auto;padding:2px 0}
+.blog-sidebar nav>p{font-size:12px;font-weight:400;color:#999da2;margin:0 0 16px}
+.blog-sidebar ol{list-style:none;padding:0;margin:0}
+.blog-sidebar li{margin:0 0 10px}
+.blog-sidebar a{display:block;text-decoration:none;font-size:13px;font-weight:400;line-height:1.65;color:#96999e;padding-left:11px;border-left:1px solid transparent;overflow-wrap:anywhere}
+.blog-sidebar a:hover,.blog-sidebar a[aria-current="location"]{color:#27292d;border-left-color:#656970}
+.blog-main,.blog-article{min-width:0;width:100%}
+.blog-article>*{max-width:720px;margin-left:auto;margin-right:auto}
+.blog-article h1{margin-top:0;margin-bottom:40px;font-size:clamp(38px,3.7vw,52px);font-weight:500;line-height:1.2;letter-spacing:-.035em;text-wrap:balance;text-align:center}
+.blog-article h2{margin-top:68px;margin-bottom:22px;font-size:30px;font-weight:500;line-height:1.4;letter-spacing:-.02em;scroll-margin-top:36px}
+.blog-article h3{margin-top:36px;margin-bottom:14px;font-size:23px;font-weight:500;line-height:1.5;letter-spacing:-.01em}
+.blog-article h4{margin-top:28px;margin-bottom:12px;font-size:19px;font-weight:500}
+.blog-article p{margin-top:0;margin-bottom:23px}
+.blog-article strong,.blog-article b{font-weight:500}
+.blog-article ul,.blog-article ol{margin-top:14px;margin-bottom:26px;padding-left:1.4em}
+.blog-article li{margin:7px 0;padding-left:.15em}
+.blog-article li>p{margin:0 0 8px}
+.blog-article blockquote{padding:0 0 0 20px;border-left:2px solid #dedfe2;color:#62666c;margin-top:28px;margin-bottom:30px}
+.blog-article hr{height:1px;border:0;background:var(--line);margin-top:42px;margin-bottom:42px}
+.blog-article code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.86em;overflow-wrap:anywhere}
+.blog-article sub,.blog-article sup{font-size:.75em;line-height:0}
+.blog-article .math-equation{font-family:inherit;line-height:1.9;text-align:center;margin-top:28px;margin-bottom:28px}
+.blog-article>.blog-figure{width:100%;max-width:1040px;margin:42px auto 46px;padding:0;border:0;background:transparent;box-shadow:none;scroll-margin-top:36px}
+.blog-figure img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;border-radius:0;box-shadow:none}
+.blog-figure figcaption{margin:11px 0 0;color:#898c91;font-size:12px;font-weight:400;line-height:1.6}
+.blog-article>.blog-table-scroll{max-width:920px;overflow-x:auto;margin-top:28px;margin-bottom:32px;overscroll-behavior-x:contain}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7;font-variant-numeric:tabular-nums;text-align:left}
+thead{border-top:1px solid #d8dadd;border-bottom:1px solid #d8dadd}
+th{font-weight:500;color:#34373b}
+th,td{padding:11px 13px;vertical-align:top}
+tbody tr{border-bottom:1px solid #edeef0}
+table p:last-child{margin-bottom:0}
+@media(max-width:1199px){body{padding-top:56px}.blog-layout{display:block;max-width:1040px}.blog-sidebar{display:none}}
+@media(max-width:760px){body{padding:36px 24px 76px;font-size:17px;line-height:1.85}.blog-article h1{font-size:36px;line-height:1.3;letter-spacing:-.03em;margin-bottom:30px}.blog-article h2{font-size:27px;margin-top:52px}.blog-article h3{font-size:21px}.blog-article>.blog-figure{margin:30px auto 34px}.blog-figure figcaption{font-size:11px}.blog-article>.blog-table-scroll{margin:24px auto}table{min-width:600px;font-size:13px}th,td{padding:9px 10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{html{scroll-behavior:auto}body{padding:0;font-size:11pt;line-height:1.7;color:#000}.blog-layout{display:block;max-width:none}.blog-sidebar,.skip-link{display:none!important}.blog-article>*{max-width:none}.blog-article h1{font-size:28pt;max-width:none}.blog-article h2{font-size:19pt;margin-top:30pt}.blog-article h3{font-size:15pt}h1,h2,h3,figcaption{break-after:avoid}.blog-article>.blog-figure{max-width:100%;margin:22pt 0;break-inside:avoid}.blog-figure img{break-inside:avoid}.blog-figure figcaption{font-size:8pt}.blog-article>.blog-table-scroll{overflow:visible;max-width:none}table{min-width:0;font-size:9pt}a{color:inherit;text-decoration:none}}
+
+/* Shared reading layout; the evidence library retains its original styles. */
+.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit;margin:0;color:inherit}
+.blog-article h1 span,.blog-article h2 span,.blog-article h3 span{scroll-margin-top:36px}
+.blog-article>.figure-block{width:100%;max-width:1040px;margin:42px auto 46px;transform:none;padding:0;border:0;box-shadow:none}
+.blog-article>.figure-block>figcaption{font-size:12px;font-weight:400;color:#898c91;line-height:1.6;margin:0 0 11px}
+.blog-article>.figure-block>p>img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;box-shadow:none}
+.blog-article>.figure-block>.figure-evidence-v25{margin-top:7px;font-size:14px}
+.blog-article>.figure-block>.figure-evidence-v25>summary{font-size:12px;color:#898c91;font-weight:400}
+.blog-article .figure-block img,.blog-article .vector-preview img,.edition-library img{max-width:100%;height:auto}
+.blog-article .table-scroll,.edition-library .table-scroll{max-width:100%;overflow-x:auto}
+.edition-library{min-width:0;width:100%}
+.edition-library .evidence-library{max-width:780px;margin:76px auto 0}
+.edition-library .document-library>summary{font-size:19px;font-weight:500}
+.edition-library summary{overflow-wrap:anywhere}
+.edition-library pre{max-width:100%;overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap}
+.edition-library details,.blog-article details{min-width:0}
+@media(max-width:760px){.blog-article>.figure-block{margin:30px auto 34px}.edition-library .evidence-library{max-width:100%;margin-top:52px}.blog-article>.figure-block>figcaption{font-size:11px}}
+@media print{.blog-article>.figure-block{max-width:100%;width:100%;margin:22pt 0;transform:none}.edition-library .evidence-library{max-width:none}.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit}.edition-library pre{max-height:none}}
+
+</style><meta name="description" content="规则评审模型技术报告：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/rubric-model/technical/"><meta property="og:title" content="规则评审模型技术报告"><meta property="og:description" content="规则评审模型技术报告：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/rubric-model/technical/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body class="edition-minimal"><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/rubric-model/">实验回顾 →</a><span>Yecheng Zhang · 中文</span></nav><a class="skip-link" href="#edition-start">跳到正文</a><div class="blog-layout"><aside class="blog-sidebar"><nav id="edition-toc" aria-label="文章目录"><p>目录</p><ol><li><a href="#technical-section-1" aria-current="location">摘要（Abstract）</a></li><li><a href="#technical-section-2">1 引言（Introduction）</a></li><li><a href="#technical-section-3">2 任务、数据和评测</a></li><li><a href="#technical-section-4">3 规则及提示词实验</a></li><li><a href="#technical-section-5">4 监督微调（SFT）</a></li><li><a href="#technical-section-6">5 强化学习（RL）</a></li><li><a href="#technical-section-7">6 概率蒸馏（OPD）</a></li><li><a href="#technical-section-8">7 理由监督（CoT）</a></li><li><a href="#technical-section-9">8 实际产物评审及标签生产方法</a></li><li><a href="#technical-section-10">9 讨论与局限</a></li><li><a href="#technical-section-11">10 结论</a></li></ol></nav></aside><main class="blog-main"><article id="edition-article" class="blog-article"><h1 id="edition-start">规则评审模型技术报告</h1>
+<h2 id="technical-section-1">摘要（Abstract）</h2>
+<p>本研究面向多维表格评审：根据用户需求、待评设计和业务规则，识别具体问题并给出依据。2026年7—10月，项目先整理历史数据、修订规则，再比较监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT），研究专用模型能否准确、完整地执行评审。</p>
+<p>后期统一数据包含7,127个训练单元、792个测试单元，按原始需求隔离。三个SFT模型按Sol参考计算的错误类型F1为55.72%—56.97%，主要不足是漏报。后续四组多问题RL实验有三组提高，其中一组在这批792条测试上从56.97%提高到58.91%。OPD对照中，教师同样获得标签提示时，保留完整学生规则比精简规则高16.09个百分点。CoT三组共用输入和裁决，仅学习裁决的方案在两套参考下均优于加入显式理由的方案。</p>
+<p>这些实验支持继续使用完整规则、兼顾正常设计及多问题的数据，并保留仅裁决训练作为理由研究的基线。多个同类问题能否逐一定位、判断依据是否指向正确对象，仍需进一步验证。报告还总结了实际产物评审和DSH数据管线：前者已完成一次模型评测，误报较多；后者已搭建框架并试运行，ATMS支持集合管理及因果配对合成仍处于方案阶段。</p>
+<h2 id="technical-section-2">1　引言（Introduction）</h2>
+<p>多维表格的设计涉及表结构、视图、仪表盘、工作流和权限。一份设计即使覆盖了这些模块，也可能不满足用户需求。例如，“订单逾期后提醒负责人”需要到期时间、逾期判断、提醒对象和触发流程配合；缺少其中一个条件，方案就不能按要求工作。评审因此需要指出具体缺口，让后续修改有据可依。</p>
+<p>项目把业务知识整理成逐条评审规则，称为rubric。每条规则说明适用条件、违规情形和例外，并给错误命名。规则明确以后，仍有两个难点：模型可能误解适用范围，把正常设计判错；也可能发现一处问题后就停止检查，漏掉其他对象。历史标签还来自不同版本的设计和不同轮次的评审，不能直接拼成训练集。</p>
+<p>研究先解决数据及规则问题，再训练专用评审模型。SFT学习完整参考答案；RL根据模型自己生成的答案计分，试图提高问题召回。OPD检验能否把详细规则教进模型，从而缩短使用时的输入。CoT则检验学习教师理由是否有助于裁决。提供答案或指导的模型称为教师，接受训练的模型称为学生。</p>
+<p>本报告围绕四个训练问题展开：SFT能否学会完整评审，以及既有训练经历是否有帮助；RL能否提高多问题召回；OPD能否在缩短学生规则的同时保持判断质量；CoT是否能通过教师理由改善裁决。数据构建和规则修订提供共同基础，实际产物评审及DSH管线则扩展了输入对象和标签生产方式。</p>
+<p>本研究的主要结果是确定了几项可继续采用的设计：对齐精确输入版本、保留完整业务规则、兼顾正常及多问题样本，并为理由训练保留仅裁决基线。以下按任务、方法、实验设置和对照结果组织证据，讨论会改变结果解释的比较条件。</p>
+<figure id="figure-figure_research_timeline" class="blog-figure"><img src="/writing/assets/646239c884a492ee1ee2.svg" alt="研究路线时间线" width="1080" height="792" loading="eager" decoding="async"><figcaption>研究路线时间线</figcaption></figure>
+
+<figure id="figure-technical_training_signals" class="blog-figure"><img src="/writing/assets/56fee8fae1475d39af31.svg" alt="四种训练信号" width="850" height="475" loading="lazy" decoding="async"><figcaption>四种训练信号</figcaption></figure>
+
+<h2 id="technical-section-3">2　任务、数据和评测</h2>
+<h3 id="technical-subsection-1">2.1　评审任务及统计单位</h3>
+<p>模型读入用户需求、一版待评设计，以及一个业务域的完整规则。输出包含是否通过、具体问题、所违反的规则、严重程度及判断依据。业务域限定检查范围，规则进一步说明什么情况下属于错误。</p>
+<figure id="figure-figure_01_task_io" class="blog-figure"><img src="/writing/assets/0c8f03219e746892457f.svg" alt="评审输入输出" width="1008" height="331" loading="lazy" decoding="async"><figcaption>评审输入输出</figcaption></figure>
+
+<p><strong>一个评审样本对应“一条需求 × 一版设计 × 一个业务域”。</strong> 同一需求可以有多个版本、多个评审样本；一条样本也可以包含多个问题。后期统一数据按原始需求整组切分，避免同一需求的不同版本同时进入训练和测试。</p>
+<h3 id="technical-subsection-2">2.2　历史输入的版本对齐</h3>
+<p>最早可追溯的记录是7月21日的数据盘点，涉及6,457条原始需求。一条需求经过“设计、评审、修复、再评审”会留下多个版本。若把最终设计配上早期的问题标签，训练目标就会出错。因此，数据首先按需求、精确设计版本、业务域重新对齐，每个版本分别保留标签。</p>
+<p>修复后的设计也不一定全面变好。配对复查中既有问题消失，也有退步或引入新问题的情况。历史评审可作为找回问题的线索，最终标签仍要回到对应版本重新核对。</p>
+<p>早期训练还试过增加正常设计、扩大独立需求覆盖、调整多问题输出及重采样。在共同200条测试上，扩大需求覆盖的一组细规则F1达到63.67%，高于早期单层规则训练的53.82%；增加正常设计的一组开始能够放行正常样本，但问题召回下降。四组多问题全命中率都为0。这些比较涉及训练规模和输出形式的变化，指向的改进方向是同时控制业务覆盖、正常样本及问题数量。</p>
+<h3 id="technical-subsection-3">2.3　标签生产及统一数据集</h3>
+<p>多次评审不能自动消除漏判。只投票会保留各轮共同的遗漏；让复核模型直接改答案，又可能删掉原本成立的问题。后来的标签流程先合并候选，再核对证据、前提和例外，最后补查遗漏类型。未解决的分歧单独保留。</p>
+<figure id="figure-figure_05_label_pipeline" class="blog-figure"><img src="/writing/assets/213571d6c4a8fb88aa7c.svg" alt="标签生产" width="1008" height="360" loading="lazy" decoding="async"><figcaption>标签生产</figcaption></figure>
+
+<p>后期统一数据来自另一批设计生成、评审、修复轨迹。项目按业务域、历史问题数量和标题分层选样，再由Sol按当前完整规则独立复审；旧问题只用于选样，不进入新标注请求。首轮获得7,638份合法标签，覆盖190种错误类型。随后回捞历史材料，必要时构造或修改设计，再按同一规则复审；464条补充候选中采纳281条，形成7,919条、覆盖249种错误类型的数据池。</p>
+<p>切分按原始需求进行，并保证训练侧每种登记错误至少有3条样本。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>数据部分</th>
+<th align="right">评审样本</th>
+<th align="right">原始需求</th>
+<th align="right">无问题</th>
+<th align="right">单问题</th>
+<th align="right">多问题</th>
+<th align="right">错误类型覆盖</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>训练</td>
+<td align="right">7,127</td>
+<td align="right">2,139</td>
+<td align="right">3,396</td>
+<td align="right">1,897</td>
+<td align="right">1,834</td>
+<td align="right">249 / 249</td>
+</tr>
+<tr>
+<td>外部测试</td>
+<td align="right">792</td>
+<td align="right">229</td>
+<td align="right">391</td>
+<td align="right">192</td>
+<td align="right">209</td>
+<td align="right">116 / 249</td>
+</tr>
+</tbody></table></div>
+
+<p>这条路线建立了可追溯标签、统一训练格式和按需求隔离的比较数据。训练集中每种登记错误都有样本，但稀有错误的测试覆盖、复杂条件组合仍不足。下一步补样需要更关注多问题设计、规则边界和对象定位。</p>
+<h3 id="technical-subsection-4">2.4　评测指标和比较范围</h3>
+<p>主要指标是错误类型F1，综合精确率和召回率：模型报出的问题有多少符合参考，参考问题又找回多少。计分时按业务域、问题大类、规则及错误类型匹配标签，并在每条样本内去重；同一种错误出现在三个对象上，外部F1仍只计一个标签。是否列全这三个对象，还要检查问题数量、严格匹配和具体证据。</p>
+<p>后期统一测试分别使用Sol、DeepSeek生成的两套参考，检查结果是否依赖标签来源。它们衡量参考一致性；对语义争议另做复核。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>比较范围</th>
+<th>测试条件</th>
+<th>主要回答的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>后期SFT、RL及CoT</td>
+<td>792条共同测试；Sol、DeepSeek两套参考</td>
+<td>专用模型能力、继续RL的增益、三种理由目标</td>
+</tr>
+<tr>
+<td>较早两组多问题RL、后三组OPD</td>
+<td>1,056条共同测试；该批冻结参考</td>
+<td>RL相对各自SFT起点的增益；OPD教师线索及学生规则长度</td>
+</tr>
+<tr>
+<td>提示词研究</td>
+<td>固定50条措辞对照、400条扫描对照、100条难例；分别计分</td>
+<td>规则表达、检查步骤、重复评审稳定性</td>
+</tr>
+</tbody></table></div>
+<p>F1按可评分输出计算，有效输出数量同时报告。792条中有50条曾用于提示词开发。不同测试集分别呈现，同一次对照沿用相同输入和参考。</p>
+<h3 id="technical-subsection-5">2.5　通用模型参照</h3>
+<p>专用模型还需要同直接使用通用模型的结果比较。四组直接评审使用相同792条输入及完整业务规则，不提供参考标签。Sol、Luna通过CLI执行；DeepSeek通过API执行，模型及运行配置分别记录。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>直接评审模型</th>
+<th align="right">可评分 / 792</th>
+<th align="right">Sol参考F1</th>
+<th align="right">DeepSeek参考F1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sol High</td>
+<td align="right">792</td>
+<td align="right">68.28%</td>
+<td align="right">64.77%</td>
+</tr>
+<tr>
+<td>Luna Medium</td>
+<td align="right">784</td>
+<td align="right">65.01%</td>
+<td align="right">54.98%</td>
+</tr>
+<tr>
+<td>DeepSeek V4.1 Flash</td>
+<td align="right">756</td>
+<td align="right">60.61%</td>
+<td align="right">68.72%</td>
+</tr>
+<tr>
+<td>DeepSeek V4 Pro</td>
+<td align="right">792</td>
+<td align="right">65.12%</td>
+<td align="right">72.42%</td>
+</tr>
+</tbody></table></div>
+<p>参考变化会改变模型排序：Sol参考下Sol High较高，DeepSeek参考下Pro较高。Sol参考下四组均高于本次专用训练模型，说明专用模型仍有质量差距。Luna的8条异常、Flash的36条截断保留在失败统计中；严格一致按全部792条计分。</p>
+<h2 id="technical-section-4">3　规则及提示词实验</h2>
+<h3 id="technical-subsection-6">3.1　研究问题与比较因素</h3>
+<p>明确的规则和检查步骤能否改善评审？本节分别检查规则措辞、逐项扫描、难例边界修订，以及额外证据字段。各项比较保留其自身的模型、样本和参考条件，按对应测试解释结果。</p>
+<h3 id="technical-subsection-7">3.2　实验设置及对照结果</h3>
+<p>提示词研究分两部分。规则侧补充适用前提、违规条件、例外和归属，减少误读；检查侧要求先列出对象，再逐项扫描，发现问题后继续检查，最后回查遗漏。例如，“缺少循环”要区分处理多条记录的流程，以及只处理唯一记录等例外。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>对照</th>
+<th>实验设置</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单域规则措辞</td>
+<td>相同Flash模型、规则清单、评审流程和50条输入；按固定参考中可明确裁决的样本计分</td>
+<td>错误类型F1：55.38% → 64.62%</td>
+</tr>
+<tr>
+<td>逐项扫描</td>
+<td>同为Seed2起点，比较普通、逐项扫描训练提示；400条测试均使用普通提示</td>
+<td>F1：54.03% → 55.50%；问题存在性召回：72.08% → 78.45%</td>
+</tr>
+<tr>
+<td>难例规则边界修订</td>
+<td>同一模型对100条难例分别评审3次，比较旧、新规则</td>
+<td>三轮裁决一致：62 → 73条；具体问题及条数一致：36 → 59条</td>
+</tr>
+</tbody></table></div>
+
+<p>措辞修改提高了参考一致性；逐项扫描训练带来小幅收益；边界修订提高了重复稳定性。额外要求填写对象、需求证据和设计证据也做过比较，在该轮相同规则下F1从90.32%变为89.43%。证据字段方便复核，但这次没有提高细标签得分。</p>
+<h3 id="technical-subsection-8">3.3　结果解释</h3>
+<p>三类修改分别改善了参考一致性、问题存在性召回和重复评审稳定性。证据字段有助于复核，但其得分没有提高。后续规则设计因此继续明确适用条件及例外，并将检查顺序和证据质量分别验证。</p>
+<h2 id="technical-section-5">4　监督微调（SFT）</h2>
+<h3 id="technical-subsection-9">4.1　研究问题</h3>
+<p>在输入及标签固定后，学生能否学习完整的业务域评审？此前的中间训练，以及先学旧版评审的经历，是否能改善最后一轮微调结果？</p>
+<h3 id="technical-subsection-10">4.2　训练方法</h3>
+<p>SFT用参考答案训练学生：系统消息放完整业务规则，用户消息放需求和设计，目标回答是完整JSON。每类检查都要给状态，每条问题包含规则、错误类型、严重程度和一句话依据。</p>
+<p>训练提高学生生成目标token的概率；评测时只给规则和待评材料。这里的一句话依据已属于普通SFT答案，后面的CoT实验是在此基础上加入整段判断理由。</p>
+<h3 id="technical-subsection-11">4.3　实验设置</h3>
+<p>最后一轮比较三个起点：Seed2 Lite基础模型；先做中间训练、再学旧版评审的模型；做过中间训练、直接学本轮评审的模型。中间训练指本次评审微调之前的额外训练经历。三组最后一轮使用相同7,127条数据、Sol标签和完整规则，从而比较中间训练的作用，以及先学旧规则再学新版的作用。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>共同设置</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>模型系列</td>
+<td>Seed2 Lite 260428</td>
+</tr>
+<tr>
+<td>训练方式</td>
+<td>LoRA：冻结主体参数，训练新增参数；rank 32，alpha 4</td>
+</tr>
+<tr>
+<td>训练量</td>
+<td>2轮；每批16条；学习率0.00001</td>
+</tr>
+<tr>
+<td>长度上限</td>
+<td>32,768 token</td>
+</tr>
+<tr>
+<td>过程验证</td>
+<td>平台从训练文件内部划10%；外部792条用于最终评测</td>
+</tr>
+</tbody></table></div>
+<h3 id="technical-subsection-12">4.4　对照结果及解释</h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>进入本轮训练前的经历</th>
+<th align="right">Sol参考F1</th>
+<th align="right">DeepSeek参考F1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础模型</td>
+<td align="right">55.72%</td>
+<td align="right">52.40%</td>
+</tr>
+<tr>
+<td>中间训练，再学旧版评审</td>
+<td align="right">56.97%</td>
+<td align="right">51.67%</td>
+</tr>
+<tr>
+<td>中间训练</td>
+<td align="right">56.19%</td>
+<td align="right">53.97%</td>
+</tr>
+</tbody></table></div>
+<p>按Sol参考，三个起点相差1.25个百分点；换用DeepSeek参考，排名随之变化。共同问题是召回不足：按Sol参考，精确率为71.28%—76.09%，召回率只有44.54%—47.44%。SFT已建立能生成细粒度评审结果的专用基线，中间训练组比基础组略高，但先学旧版评审的一组并未在两套参考下都领先。后续重点是让模型继续检查并找全问题。</p>
+<h2 id="technical-section-6">5　强化学习（RL）</h2>
+<h3 id="technical-subsection-13">5.1　研究问题</h3>
+<p>SFT的主要不足是召回。RL实验检验：以模型自己生成的答案计算奖励，能否让模型列出更多成立的问题，同时保持正常设计的放行能力？首轮比较数据组成，后续联合调整多问题数据和奖励计数方式。</p>
+<h3 id="technical-subsection-14">5.2　首轮数据组成对照</h3>
+<p>RL从SFT模型继续训练，让模型先生成答案，再按答案质量计算奖励。首轮比较“问题和正常设计混合”及“只用问题样本”两种数据，奖励根据去重后的大类、规则、错误类型计分。两组均训练到200步，在共同500条测试上评估。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>条件</th>
+<th align="right">错误类型F1</th>
+<th align="right">参考无问题样本仍判无问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SFT起点</td>
+<td align="right">46.20%</td>
+<td align="right">64.34%</td>
+</tr>
+<tr>
+<td>混合问题、无问题数据的RL</td>
+<td align="right">42.65%</td>
+<td align="right">78.29%</td>
+</tr>
+<tr>
+<td>只用问题数据的RL</td>
+<td align="right">38.25%</td>
+<td align="right">0.78%</td>
+</tr>
+</tbody></table></div>
+<p>混合数据更容易放行正常设计，却漏掉更多问题；只用问题数据则几乎不再放行正常设计。两组外部F1均下降，促使后续同时修改样本组成和奖励。</p>
+<h3 id="technical-subsection-15">5.3　多问题数据及训练设置</h3>
+<p>后续按错误类型覆盖无问题、1个问题、2—3个问题、4个以上问题。正常样本尽量取同一需求修复后的设计；多问题答案完整保留，不拆成多条单问题训练。同一样本可以覆盖多种错误，训练文件按输入去重。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>批次</th>
+<th align="right">RL训练</th>
+<th align="right">过程验证</th>
+<th align="right">外部测试</th>
+<th>训练中无问题 / 单问题 / 2—3问题 / 4+问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>较早规则，两种SFT起点</td>
+<td align="right">810</td>
+<td align="right">242</td>
+<td align="right">1,056</td>
+<td>245 / 245 / 187 / 133</td>
+</tr>
+<tr>
+<td>统一规则，两种SFT起点</td>
+<td align="right">795</td>
+<td align="right">215</td>
+<td align="right">792</td>
+<td>249 / 247 / 169 / 130</td>
+</tr>
+</tbody></table></div>
+<p>验证数据来自各自SFT训练池中未用于RL训练的部分，外部测试沿用各自SFT测试集。</p>
+<p>四组采用GRPO：每步选32条输入，每条生成8份答案，分别计分，再用同一输入下的相对得分更新模型。共同运行80步，学习率0.000001，KL约束系数0.001，每10步验证；生成温度0.7，单份答案上限10,000 token。参考标签只在奖励侧，学生作答时看不到。</p>
+<h3 id="technical-subsection-16">5.4　计数奖励</h3>
+<p>早期奖励去掉重复标签，三个对象犯同一种错，报告一处或三处可能同分。后续奖励保留出现次数：先检查JSON、标签、严重度和状态是否合法，再计算三层计数F1，并奖励全部错误类型及数量完全匹配。</p>
+<div class="reward-formula">
+<p>综合得分 = 0.2 × 大类F1 + 0.3 × 规则F1 + 0.4 × 错误类型F1 + 0.1 × 完全匹配</p>
+<p>最终奖励 = 2 × 综合得分 − 1</p>
+</div>
+
+<p>计数F1为“2 × 命中条数 ÷（预测条数＋参考条数）”。双方都无问题时奖励为1；只有一方有问题，或答案未通过格式校验时，为−1。</p>
+<figure id="figure-technical_rl_count_reward" class="blog-figure"><img src="/writing/assets/2a78cfaa5c8b1d541369.svg" alt="RL计数奖励算例" width="850" height="346" loading="lazy" decoding="async"><figcaption>RL计数奖励算例</figcaption></figure>
+
+<p><strong>训练奖励保留数量，外部F1则去重计标签。</strong> 因此，外部F1提高说明错误类型更贴近参考，不能单独证明同类问题对应的多个对象全部找齐。奖励还只检查理由是否非空、是否字面重复，不检查依据是否成立、对象是否对应。</p>
+<h3 id="technical-subsection-17">5.5　对照结果及训练诊断</h3>
+<figure id="figure-result_01_sft_rl" class="blog-figure"><img src="/writing/assets/c74430396580fa5c87e9.svg" alt="监督微调后继续强化学习" width="850" height="446" loading="lazy" decoding="async"><figcaption>监督微调后继续强化学习</figcaption></figure>
+
+<p>后续四次多问题训练有三次提高F1。较早规则的两组分别提高约3.45、2.77个百分点；统一数据上，一组56.97% → 58.91%，另一组56.19% → 55.81%。这些结果支持继续研究包含正常设计、多问题样本及计数奖励的训练方案。数据、奖励和设置一起变化，现有实验尚未分别测出每项改进的贡献。</p>
+<p>后期两种起点一升一降，也留下了训练停止位置的检查线索。直接学习新版规则的一组，第50步验证奖励0.4629，最终第80步降至0.4184；当前外部测试使用第80步。中间模型是否更好，需要在同一外部测试上比较。对象及证据的语义核验，则是现有奖励需要补上的能力。</p>
+<h2 id="technical-section-7">6　概率蒸馏（OPD）</h2>
+<h3 id="technical-subsection-18">6.1　研究问题</h3>
+<p>SFT和RL都要求学生阅读完整规则。OPD接着检验：教师保留详细规则，学生能否通过训练学会其中的判断条件，从而缩短使用时的输入？精简提示保留规则大纲、合法标签和输出格式，删除适用前提、排除条件和证据要求。</p>
+<h3 id="technical-subsection-19">6.2　蒸馏方法及共同设置</h3>
+<p>OPD全称On-policy Distillation。当前学生先生成答案，固定教师读自己的上下文，并沿学生已经写出的前缀，计算后续token的概率。学生据此调整概率分配，再用更新后的参数生成下一批答案。</p>
+<p>每个输入生成1份答案，每批32条；选取学生概率最高的64个候选token，在该范围内重新归一化，用反向KL衡量概率差异，按token平均计算。最终裁决的额外奖励关闭。教师获得的标签提示不进入学生输入。</p>
+<h3 id="technical-subsection-20">6.3　精简规则条件下的教师对照</h3>
+<p>首轮固定7,127条训练输入、Seed2 Lite基础学生和精简规则，训练223步。三个基础模型教师分别获得数量和扫描方向、参考理由、逐条标签，按Sol参考计算的792条测试F1分别为20.98%、20.69%、22.01%。改用专用SFT教师的一组为16.09%，657条输出为空问题集合。这一阶段没有达到压缩学生规则的目标。</p>
+<h3 id="technical-subsection-21">6.4　教师线索和学生规则长度对照</h3>
+<p>下一轮改用同一个RL教师、6,580条训练输入，学生都从Seed2 Lite基础模型开始，训练206步。在共同1,056条测试上，比较教师是否额外看到问题标签、学生是否保留完整规则。</p>
+<figure id="figure-technical_opd_design" class="blog-figure"><img src="/writing/assets/8573383b051e4aa43c38.svg" alt="OPD对照设计及结果" width="850" height="367" loading="lazy" decoding="async"><figcaption>OPD对照设计及结果</figcaption></figure>
+
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>教师额外标签提示</th>
+<th>学生规则</th>
+<th align="right">错误类型F1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>不提供</td>
+<td>完整</td>
+<td align="right">52.85%</td>
+</tr>
+<tr>
+<td>提供</td>
+<td>完整</td>
+<td align="right">51.12%</td>
+</tr>
+<tr>
+<td>提供</td>
+<td>精简</td>
+<td align="right">35.03%</td>
+</tr>
+<tr>
+<td>不提供</td>
+<td>精简</td>
+<td align="right">未运行</td>
+</tr>
+</tbody></table></div>
+<p>这是两个因素下完成的三个条件，<strong>无额外教师标签＋精简学生规则</strong>这一格未运行。已有对照给出两个直接结果：教师都有标签时，完整学生规则高16.09个百分点；学生都用完整规则时，增加教师标签没有提高结果。三组仍低于同集SFT的59.49%和RL的62.25%。</p>
+<p>学生提示在训练及评测时同步改变，因此16.09个百分点比较的是两套完整使用方案。当前选择是继续给学生完整规则；精简输入尚未达到完整规则方案的效果。下一步应固定教师及训练设置，逐类删减规则，定位哪些条件必须留在输入中。</p>
+<h2 id="technical-section-8">7　理由监督（CoT）</h2>
+<h3 id="technical-subsection-22">7.1　研究问题</h3>
+<p>学习教师的判断过程，是否能提高学生裁决质量？这轮用DeepSeek生成的同一批标签构造三种目标：理由放在普通回答里；同一段理由放在专用推理字段；只保留裁决。</p>
+<h3 id="technical-subsection-23">7.2　目标构造及实验设置</h3>
+<p>理由取自教师按要求写出的<code>judge_reason</code>，去除置信度字段；它不是接口原生推理文本。前两组共用同一段理由，三组共用7,127条输入、相同裁决及完整业务规则，从同一Seed2 Lite基础模型做2轮LoRA微调。理由属于训练目标，评测输入不含教师理由。</p>
+<p>训练长度上限32,768 token；评测请求上限16,384，temperature为0.01。目标长度、实际训练步数及推理模式的差异如下。</p>
+<figure id="figure-technical_cot_design" class="blog-figure"><img src="/writing/assets/518173faf6bb5f7a6524.svg" alt="CoT对照设计及结果" width="850" height="526" loading="lazy" decoding="async"><figcaption>CoT对照设计及结果</figcaption></figure>
+
+<h3 id="technical-subsection-24">7.3　对照结果及解释</h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>训练目标</th>
+<th align="right">实际步数</th>
+<th>评测推理模式</th>
+<th align="right">可评分 / 792</th>
+<th align="right">Sol参考F1</th>
+<th align="right">DeepSeek参考F1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通回答内的理由＋裁决</td>
+<td align="right">354</td>
+<td>关闭</td>
+<td align="right">786</td>
+<td align="right">41.54%</td>
+<td align="right">47.04%</td>
+</tr>
+<tr>
+<td>推理字段理由＋普通回答裁决</td>
+<td align="right">362</td>
+<td>开启</td>
+<td align="right">792</td>
+<td align="right">42.94%</td>
+<td align="right">46.98%</td>
+</tr>
+<tr>
+<td>仅裁决</td>
+<td align="right">342</td>
+<td>关闭</td>
+<td align="right">784</td>
+<td align="right">51.52%</td>
+<td align="right">56.56%</td>
+</tr>
+</tbody></table></div>
+<p>仅裁决的方案在两套参考下均更好。按DeepSeek参考，它比回答内理由、推理字段理由分别高9.52、9.58个百分点；按Sol参考分别高9.98、8.58个百分点。以原始需求为单位做配对重复抽样，四个差值的95%区间均高于0。</p>
+<p>因此，后续理由研究应保留仅裁决基线。加入理由为何下降仍未确定：本次三组实际训练354、362、342步，推理字段组开启推理模式，其余关闭。理由内容、额外生成负担及推理方式各自的影响，需要进一步拆开验证。</p>
+<h3 id="technical-subsection-25">7.4　理由素材的后续探索</h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>探索</th>
+<th>研究目的</th>
+<th>已得到的结果</th>
+<th>当前状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原生理由整理，50条</td>
+<td>解决原生理由超长</td>
+<td>47条合法裁决、3条截断；原文两格式有12/11条超32k，整理后均能容纳</td>
+<td>复查仍有理由和裁决冲突、整理遗漏条件</td>
+</tr>
+<tr>
+<td>修改原生提示，固定10条</td>
+<td>减少理由和裁决冲突</td>
+<td>修正一条冲突；合法裁决从旧条件9/10变为8/10，另有漏判未修复</td>
+<td>辅助提示词试验已完成，未扩大</td>
+</tr>
+<tr>
+<td>学生短理由筛选</td>
+<td>获得学生可生成的较短目标</td>
+<td>形成7,065条同输入、同裁决的两组配对数据</td>
+<td>数据已备好，后续SFT未提交</td>
+</tr>
+</tbody></table></div>
+
+<p>短理由路线称为筛选后微调（RFT）。学生借助教师分析，对每条输入生成4次；程序检查结构、标签及同类问题次数，每条取最早通过的一份，四次都失败的62条由两组共同排除。随后移除辅助教师分析，得到“短理由＋裁决”和“仅裁决”目标。自动筛选没有检验全部理由证据，模型收益仍待训练后验证。</p>
+<p>另行启动的Pro同次回答采集于10月14日按用户要求停止，留下11套结果；原计划的全量采集和六组训练取消。</p>
+<h2 id="technical-section-9">8　实际产物评审及标签生产方法</h2>
+<h3 id="technical-subsection-26">8.1　实际产物评审</h3>
+<p>研究问题是：以已经建好的对象结构替代设计文档后，专用模型能否识别需求实现中的问题？这一实验单独构建数据和参考，结果不与设计文档测试直接合并。</p>
+<p>这条路线将输入换成用户需求及已经建好的表、视图、仪表盘、工作流、权限结构，去掉设计文档。969条原始需求按需求整体切分：872条用于训练、97条用于测试，每条拆为五个业务域，形成4,360个训练单元、485个测试单元。Seed2 Lite做两轮LoRA训练，以Luna单轮评审结果为冻结参考。</p>
+<p>484条输出可解析，但具体判断误报较多：错误类型精确率32.45%、召回率53.98%、F1为40.53%；参考判定90个业务域失败，学生判定155个。复核发现，模型容易把“管理”“模板”等业务词理解为必须创建自动化、表单或视图，同时漏掉Lookup唯一性、AI节点输入及重复触发等问题。</p>
+<p>训练只覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。该路线已完成数据整理及一次模型评测，下一步应补充需求到实现方式的正反例，以及对象依赖的执行条件。静态结构判断和真实运行是否成功仍需分别验证；具体问题到端到端评审的逐项映射尚未建立。</p>
+<h3 id="technical-subsection-27">8.2　DSH评审数据管线</h3>
+<p>多路评审能暴露分歧，却可能共同依赖一个错误前提。DSH（DeepSeek Harness）提供模型会话、路由和调用记录，项目在其上搭建评审数据管线。有分歧的结果先复核；一致或复核后的结果都进入规则分析，检查事实、产品能力及待确认假设，再交人工确认。规则修改后，可以重新检查受影响的案例。</p>
+<figure id="figure-figure_15_dsh_pipeline" class="blog-figure"><img src="/writing/assets/5af2c39fe8fa60e6a221.svg" alt="双路评审管线" width="1008" height="490" loading="lazy" decoding="async"><figcaption>双路评审管线</figcaption></figure>
+
+<p>首轮只验证了流程的一部分：3条需求分成15个业务域单元，30次请求中21份输出被系统采纳；6个单元获得双路一致结果，9个执行失败，复核及规则分析还没有有效业务输出。接下来应让一小批材料走完人工审核，记录错误类型、复核工作量及最终可用标签，再判断管线是否改善标签生产。</p>
+<h3 id="technical-subsection-28">8.3　基于假设的真值维护</h3>
+<p>研究问题是：一条评审结论依赖哪些前提；当规则或前提改变时，哪些结论仍有依据，哪些需要重新审查？这里提出基于假设的真值维护系统（Assumption-Based Truth Maintenance System，ATMS）的应用方案。</p>
+<p>输入用户Query、待评方案，以及已确认的产品能力和规则。AI提取用户明确表达的需求及方案事实，区分已有依据、待确认假设，建立它们到派生结论的推导关系。系统校验引用和依赖结构，通过支持集合传播，计算每条结论的最小假设支持组合，再依据明确登记的冲突规则排除矛盾组合。输出包括当前前提下的判断、支持依据、待审假设及冲突状态，供人工复核。</p>
+<p>下图是解释机制的示例。事实F已经核验；A、B及C在本案例中是否适用，仍是待审假设。示例中的两项规则都要求限制客户数据访问。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>标记</th>
+<th>示例内容</th>
+<th>在推导中的作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F</td>
+<td>方案未限制客户数据访问</td>
+<td>两条推导共用的已核验事实</td>
+</tr>
+<tr>
+<td>A</td>
+<td>客户归属规则在本案例生效</td>
+<td>接受A时，方案应提供访问限制</td>
+</tr>
+<tr>
+<td>B</td>
+<td>客户保密条款在本案例生效</td>
+<td>接受B时，方案也应提供这一限制</td>
+</tr>
+<tr>
+<td>C</td>
+<td>本案例豁免上述两项要求</td>
+<td>用于检查豁免同要求生效之间的冲突</td>
+</tr>
+<tr>
+<td>V</td>
+<td>方案缺少应有的访问限制</td>
+<td>待维护的评审结论</td>
+</tr>
+</tbody></table></div>
+<p>登记推导<code>F ∧ A ⇒ V</code>、<code>F ∧ B ⇒ V</code>后，V有两组最小假设支持：<code>{{A}, {B}}</code>。集合只列待审假设，共同事实F及已登记推导另行保存。“最小”指一组支持中的假设已不能再删；不是只保留假设数量最少的一条路径。</p>
+<figure id="figure-figure_17_atms_support_sets" class="blog-figure"><img src="/writing/assets/5aa7f3ceea98100373e0.svg" alt="判断依据及前提变化" width="1008" height="504" loading="lazy" decoding="async"><figcaption>判断依据及前提变化</figcaption></figure>
+
+<p><code>{{A}, {B}}</code>表示两条替代路径，接受A或B任意一项即可支持V；<code>{{A,B}}</code>才表示必须同时接受两项。三种前提变化的预期结果如下：</p>
+<ul>
+<li><strong>撤回A，继续接受B</strong>：当前支持变为<code>{{B}}</code>，V仍有依据。</li>
+<li><strong>A、B都撤回</strong>：当前没有可用支持，V需重审。失去支持不构成“V为假”的证明，也不等于整个方案通过。</li>
+<li><strong>接受B及豁免C</strong>：只有在明确登记<code>{A,C}</code>、<code>{B,C}</code>为互斥组合后，系统才将B、C同时成立的情境标为冲突。包含这些组合的更大前提集合也被排除；其他一致情境保留。人工需要核实规则适用性和豁免依据，而不是由系统任意选择其一。</li>
+</ul>
+<p>ATMS维护的是已给定事实、规则及假设之间的条件推导。事实真实性、假设适用性仍需证据和人工核验；若需要概率置信度，应另外引入经过验证、校准的方法。</p>
+<p>目前已实现引用哈希、缺失前提及循环依赖检查；支持集合传播、冲突组合管理、撤回前提后的影响查询仍待实现。后续实现应先用上述情景检验支持变化是否正确，再在真实复核案例中测量需重审的结论范围及人工工作量。</p>
+<h3 id="technical-subsection-29">8.4　因果配对合成方案</h3>
+<p>研究问题是：只改变一个有明确语义的条件，评审模型能否调整受影响的判断，同时保持无关判断？因果配对合成利用ATMS记录的依赖关系，构造这种单因素对照。目标是让模型学习规则的适用边界，并检查它是否把“负责人”等词直接当成必须配置权限的信号。</p>
+<p><strong>示例和唯一改动。</strong> 沿用前节的客户访问场景，构造以下教学样本：</p>
+<ul>
+<li>用户需求：建立客户跟进表，记录客户名称、负责人、联系电话。</li>
+<li>固定方案：已有客户名称及负责人字段，缺少联系电话，未限制客户数据访问。</li>
+<li>固定规则条件：保密条款B明确不适用；其他可能要求访问限制的条款已核对，本例没有此类要求。负责人字段由用户需求直接要求，不依赖归属规则A。</li>
+<li>唯一改动：模型可见的规则上下文中，A的适用性从“适用”变为“明确不适用”。Query、方案、规则正文、主提示词和模型设置保持相同。</li>
+</ul>
+<p>这里改变的是明确的适用性条件，不是把一项要求从输入中删掉。登记的预期判断如下，均待独立复核。</p>
+<figure id="figure-figure_16_causal_synthesis" class="blog-figure"><img src="/writing/assets/7fe3941e7dc1726a52d4.svg" alt="改变前提，检查判断" width="1008" height="504" loading="lazy" decoding="async"><figcaption>改变前提，检查判断</figcaption></figure>
+
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>判断项</th>
+<th>A适用</th>
+<th>A明确不适用</th>
+<th>预期及依据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>访问限制缺失</td>
+<td>应报</td>
+<td>本项不报</td>
+<td>应变化：限制要求不再适用，且没有其他有效要求支持该项</td>
+</tr>
+<tr>
+<td>联系电话字段缺失</td>
+<td>应报</td>
+<td>应报</td>
+<td>应保持：用户仍要求电话，方案仍然缺失</td>
+</tr>
+<tr>
+<td>负责人字段缺失</td>
+<td>不报</td>
+<td>不报</td>
+<td>应保持：用户要求负责人，方案已经配置</td>
+</tr>
+</tbody></table></div>
+<p>第二份样本仍应报告联系电话缺失，不能因一项违规消失就判整个方案通过。访问限制的负标签来自适用性证据及相关规则核对，不由ATMS的“当前无支持”自动推出。</p>
+<p><strong>ATMS如何参与。</strong> 先登记<code>F ∧ A ⇒ V</code>，同时保存两个字段判断的需求、方案依据。ATMS据此标出依赖A的候选受影响结论，并检查是否还存在替代支持；不依赖A的字段判断列为预期不变项。若保密条款B仍适用，V仍有支持，就不应把这一对样本标为相反标签。最终的应变清单、不变清单经人工确认后用于核对，不提供给待测模型；模型只看到各自条件下的需求、方案和规则上下文。</p>
+<p><strong>形成数据及验证。</strong> 每对材料保存原始案例标识、两份输入、唯一变更字段、预期变化、复核标签和逐项支持依据。发现前提冲突、其他内容被连带改写或标签无法确定时，保留为待审材料。按原始案例整体划分训练、测试；同一案例的原版及全部变体不能分到两侧。</p>
+<p>验证分两个阶段。第一阶段在每个条件下重复评审，估计模型自身波动。复核人员先依据输入独立判断，再核对预先登记的变化。分别报告“应变项正确变化的比例”和“不变项被错误改变的比例”，不能只统计两次答案是否不同。第二阶段再检验训练价值：固定初始化、主提示词及优化器，用配对样本替换部分普通样本，对照仅使用普通样本的训练，两组实际训练token量保持相当；在独立案例上比较上述两项指标、误报、漏报及未决率，并记录复核工作量和生成成本。</p>
+<p>这套设计首先检验模型对指定规则条件的响应；配对数据是否带来训练收益，需要第二阶段对照回答。目前尚未取得这项收益，ATMS支持传播及配对合成仍属于待实现、待验证方案。</p>
+<h2 id="technical-section-10">9　讨论与局限</h2>
+<h3 id="technical-subsection-30">9.1　标签一致性、数量和语义正确性</h3>
+<p>本研究将错误类型F1、问题数量和证据复核分开考察。两套参考可以显示结果对标签来源的依赖；重复评审可以测量稳定性。它们不能替代对具体业务争议的核验。统一测试覆盖116种错误，而训练覆盖249种，稀有错误及复杂条件组合仍需要补充测试。</p>
+<p>计数奖励能够区分同类错误出现一次或多次，外部F1则在单条内去重。因而，RL的F1增益支持错误类型判断更贴近参考，尚不能据此判定多个对象全部定位正确。实际产物的误报也说明，需求语义和实现方式之间的对应关系需要独立评测。</p>
+<h3 id="technical-subsection-31">9.2　训练因素的可解释范围</h3>
+<p>后续RL同时改变数据组成、奖励和训练设置，当前结果支持这一组合方案，不能单独归因于某一个因素。OPD完成的是两个因素下的三个条件，未运行的一格限制了完整交互分析；学生提示在训练及评测时同步变化，对照反映的是两种完整使用方案。CoT三组共用输入和裁决，但目标长度、实际步数及推理模式不同，理由内容与生成负担的贡献尚未分离。</p>
+<p>这些区别决定下一轮如何控制变量：RL比较中间检查点及固定数据下的奖励形式；OPD逐类删减规则；CoT分别控制训练步数和推理模式，再比较理由素材。现有实验已给出保留设计的依据，机制解释仍需对应对照。</p>
+<h3 id="technical-subsection-32">9.3　方法状态和后续验证</h3>
+<p>各条路线回答的问题及当前结论如下。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>研究问题</th>
+<th>已得到的结果</th>
+<th>尚未解决的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据和规则能否支持比较</td>
+<td>标签对应精确输入；按需求隔离；训练覆盖249种错误；规则修订改善判断及稳定性</td>
+<td>稀有错误测试不足，复杂条件组合和共同漏检仍需补样</td>
+</tr>
+<tr>
+<td>专用模型能否执行评审</td>
+<td>SFT建立完整JSON评审基线；后续四组多问题RL中三组提高F1</td>
+<td>多问题召回仍不足；不同起点收益不一，中间模型还需外部比较</td>
+</tr>
+<tr>
+<td>学生能否省去详细规则</td>
+<td>OPD三个条件显示保留完整规则更好</td>
+<td>精简输入尚未达到完整规则方案的效果</td>
+</tr>
+<tr>
+<td>教师理由是否帮助裁决</td>
+<td>三种训练目标对照中，仅裁决在两套参考下更好</td>
+<td>理由内容、长度负担和推理模式的影响尚未分离</td>
+</tr>
+<tr>
+<td>评审依据能否可靠维护</td>
+<td>产物评审完成首轮评测；DSH框架和引用依赖检查已搭建</td>
+<td>产物误报、对象证据核验、ATMS传播及配对训练待验证</td>
+</tr>
+</tbody></table></div>
+<p>下一步最值得补的是<strong>对象和证据的正确性</strong>。现有奖励会计标签、计数量，却可能接受指错对象的理由。可以先建立这类错误的独立复核样本，再检验应改奖励、补数据，还是改理由训练。实际产物评审还需要明确需求到实现方式的边界，减少把可选实现误判成必需能力的情况。</p>
+<p>ATMS和配对合成则先验证完整流程：记录前提、形成支持集合、撤回假设、检查受影响结论，再确认配对数据是否提高学生能力。</p>
+<h2 id="technical-section-11">10　结论</h2>
+<p>本研究建立了按精确输入版本对齐、按原始需求隔离的业务评审数据，并在完整规则下比较SFT、RL、OPD及CoT。规则措辞、扫描方式和边界修订分别改善了判断及稳定性；SFT提供了统一基线，后续多问题RL四组中三组提高了错误类型F1。</p>
+<p>OPD对照支持继续保留完整学生规则；三种理由目标的比较支持保留仅裁决训练作为基线。两项结果明确了当前可采用的输入和目标形式，也为进一步控制规则内容、理由长度和推理模式提供了比较起点。</p>
+<p>实际产物评审完成了数据构建及一次模型评测，DSH完成了框架和部分流程试运行。ATMS支持集合管理及因果配对合成提出了检查判断前提的方法，后续需要通过完整流程和训练对照验证。下一步围绕对象定位及证据成立性建立独立测试，使模型的标签判断、问题数量和具体依据能够分别核验。</p>
+</article></main></div><script id="edition-navigation">
+(() => {
+  const links = Array.from(document.querySelectorAll('#edition-toc a'));
+  const sections = links.map(link => document.getElementById(link.hash.slice(1)));
+  let scheduled = false;
+  function update() {
+    scheduled = false;
+    let current = 0;
+    const threshold = Math.min(180, window.innerHeight * 0.23);
+    sections.forEach((section, index) => { if (section && section.getBoundingClientRect().top <= threshold && section.getClientRects().length) current = index; });
+    links.forEach((link, index) => { if (index === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+  }
+  function schedule() { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } }
+  function openTarget(hash, scroll = true) {
+    if (!hash || hash === '#') return;
+    let id; try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    for (let node = target; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
+    if (scroll) requestAnimationFrame(() => { target.scrollIntoView({ block: 'start', behavior: 'auto' }); schedule(); });
+  }
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!document.getElementById(decodeURIComponent(link.hash.slice(1)))) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    openTarget(link.hash);
+  });
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  window.addEventListener('hashchange', () => openTarget(location.hash));
+  window.addEventListener('popstate', () => openTarget(location.hash));
+  openTarget(location.hash);
+  update();
+})();
+</script>
+
+
+
+
+</body></html>

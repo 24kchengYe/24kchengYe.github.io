@@ -1,0 +1,44 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="849.6pt" height="367.2pt" viewBox="0 0 849.6 367.2" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 367.2  L 849.6 367.2  L 849.6 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 263.376 99.144  L 781.632 99.144  " clip-path="url(#pd0108eb837)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 263.376 176.256  L 781.632 176.256  " clip-path="url(#pd0108eb837)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 509.76 260.712  L 509.76 47.736  " clip-path="url(#pd0108eb837)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 373.824 260.712  L 373.824 279.072  L 645.696 279.072  L 645.696 260.712  " clip-path="url(#pd0108eb837)" style="fill: none; stroke: #7a7a7a; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="text_1"><text x="87.47200000000001" y="36.771672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">誤り型F1</text></g>
+   <g id="text_2"><text x="475.776" y="36.771672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">学生規則</text></g>
+   <g id="text_3"><text x="373.824" y="74.168703" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">完全</text></g>
+   <g id="text_4"><text x="645.696" y="74.168703" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">簡略</text></g>
+   <g id="text_5"><text x="81.47200000000001" y="161.619672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="44" lengthAdjust="spacingAndGlyphs">教師ラベル</text></g>
+   <g id="text_6"><text x="195.408" y="132.582187" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">なし</text></g>
+   <g id="text_7"><text x="195.408" y="228.054187" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">あり</text></g>
+   <g id="text_8"><text x="339.507047" y="135.628828" font-size="21" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641">52.85%</text></g>
+   <g id="text_9"><text x="339.507047" y="231.100828" font-size="21" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641">51.12%</text></g>
+   <g id="text_10"><text x="611.379047" y="231.100828" font-size="21" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">35.03%</text></g>
+   <g id="text_11"><text x="645.696" y="132.582187" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">未実行</text></g>
+   <g id="text_12"><text x="509.796953" y="304.827672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Δ 16.09ポイント</text></g>
+   <g id="text_13"><text x="344.055172" y="349.06093" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">SFT  59.49%</text></g>
+   <g id="text_14"><text x="617.881273" y="349.06093" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">RL  62.25%</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd0108eb837">
+   <rect x="0" y="0" width="849.6" height="367.2"/>
+  </clipPath>
+ </defs>
+</svg>

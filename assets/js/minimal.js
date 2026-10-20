@@ -12,6 +12,10 @@
         element.setAttribute(attribute, element.getAttribute(`data-${attribute}-${language}`));
       });
     }
+    document.querySelectorAll('img[data-src-en]').forEach(image => {
+      image.src = image.getAttribute(`data-src-${language}`);
+    });
+    document.querySelectorAll('dialog[open]').forEach(dialog => dialog.close());
     document.querySelectorAll('[data-site-link]').forEach(link => {
       const url = new URL(link.getAttribute('href'), location.href);
       url.searchParams.set('lang', language);
@@ -21,6 +25,8 @@
     if (title) {
       const translation = title.querySelector(`[lang="${language}"]`);
       if (translation) document.title = `${translation.textContent} · Yecheng Zhang`;
+      const openGraphTitle = document.querySelector('meta[property="og:title"]');
+      if (translation && openGraphTitle) openGraphTitle.content = translation.textContent;
     }
     try {
       const url = new URL(location.href);

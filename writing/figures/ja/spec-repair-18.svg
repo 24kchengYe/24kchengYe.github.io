@@ -1,0 +1,65 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="424.8pt" viewBox="0 0 864 424.8" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 424.8  L 864 424.8  L 864 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 100.8 57.6  L 334.8 57.6  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #ededeb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 100.8 57.6  L 241.2 57.6  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #161616; stroke-width: 5"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 100.8 97.2  L 334.8 97.2  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #ededeb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 100.8 97.2  L 227.16 97.2  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #76a943; stroke-width: 5"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 543.6 57.6  L 777.6 57.6  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #ededeb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 543.6 57.6  L 684 57.6  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #161616; stroke-width: 5"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 543.6 97.2  L 777.6 97.2  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #ededeb; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 543.6 97.2  L 665.28 97.2  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #76a943; stroke-width: 5"/>
+   </g>
+   <g id="text_1"><text x="66" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">内部出荷</text></g>
+   <g id="text_2"><text x="36" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">G</text></g>
+   <g id="text_3"><text x="347.76" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">30/50</text></g>
+   <g id="text_4"><text x="36" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">K</text></g>
+   <g id="text_5"><text x="347.76" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">27/50</text></g>
+   <g id="text_6"><text x="97.752656" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">0</text></g>
+   <g id="text_7"><text x="328.705312" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">50</text></g>
+   <g id="text_8"><text x="524.8" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">正式E2E合格</text></g>
+   <g id="text_9"><text x="478.8" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">G</text></g>
+   <g id="text_10"><text x="790.56" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">30/50</text></g>
+   <g id="text_11"><text x="478.8" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">K</text></g>
+   <g id="text_12"><text x="790.56" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">26/50</text></g>
+   <g id="text_13"><text x="540.552656" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">0</text></g>
+   <g id="text_14"><text x="771.505313" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">50</text></g>
+   <g id="text_15"><text x="66" y="220.964063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">逐例変化</text></g>
+   <g id="text_16"><text x="106.607813" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">21</text></g>
+   <g id="text_17"><text x="126" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">両群合格</text></g>
+   <g id="text_18"><text x="328.703906" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">9</text></g>
+   <g id="text_19"><text x="338.55" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="77" lengthAdjust="spacingAndGlyphs">G合格 / K不合格</text></g>
+   <g id="text_20"><text x="541.103906" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">5</text></g>
+   <g id="text_21"><text x="550.95" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="77" lengthAdjust="spacingAndGlyphs">G不合格 / K合格</text></g>
+   <g id="text_22"><text x="743.807813" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">15</text></g>
+   <g id="text_23"><text x="763.2" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="52" lengthAdjust="spacingAndGlyphs">両群不合格</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p89ea2c1ecc">
+   <rect x="0" y="0" width="864" height="424.8"/>
+  </clipPath>
+ </defs>
+</svg>

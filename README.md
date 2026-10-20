@@ -44,21 +44,24 @@ badge service. The earlier AcadHomepage templates remain in the repository.
 ## Selected Writing
 
 Selected writing appears before research, in both page order and navigation.
-All three full blog articles support the homepage's English, Chinese, and
-Japanese switcher. Language choices persist across article and homepage links.
-Figures retain their original Chinese labels, with translated captions and
-explanations. Technical reports remain in Chinese, marked in their page navigation.
+All three blogs and all three technical reports support the homepage's English,
+Chinese, and Japanese switcher. Language choices persist across article,
+technical-report, and homepage links. Figure labels, captions, alt text, tables,
+and article controls follow the same language. Zoom opens the current-language
+figure.
 Each article opens as a Blog, with a prominent Blog / Technical report switch
 above the title. The current edition is underlined. The series title on the
 homepage uses normal-case, dark semibold text, with its description below.
 
 - `_includes/writing.html`: three article entries and their CSS illustrations.
-- `writing/spec-generation/`: full multilingual essay and Chinese technical report.
+- `writing/spec-generation/`: full multilingual essay and technical report.
 - `writing/spec-repair/`: Judge–Fix essay and technical report.
 - `writing/rubric-model/`: rubric-model essay and technical report.
-- `writing/assets/`: shared, content-addressed figures.
+- `writing/figures/{en,zh,ja}/`: generated language-specific SVGs.
+- `writing/assets/`: original content-addressed assets retained for existing links.
 - `_data/writing/`: public Chinese article sources and English/Japanese translations.
 - `_tools/build-writing.cjs`: reproducible static article assembly; no translation API.
+- `_tools/build-figures.cjs`: deterministic localized diagram export.
 - `assets/css/writing*.css`: writing-list and article styles.
 - `assets/css/homepage-marks.css` and `assets/js/homepage-marks.js`: decorative
   marks for research, projects, institutions, and datasets. These are custom
@@ -71,6 +74,29 @@ are not included. Existing homepage prose and destinations remain unchanged.
 After editing an article source or translation, run `npm ci` and `npm run build:writing`.
 The build checks translation coverage. Commit the generated HTML with the sources.
 The old offline exporter is not the public-site build path.
+
+### Editable Figures
+
+The six articles share **55 figures**. The original assets were 25 PNGs and
+30 SVGs with outlined text. All article figures now use localized SVG exports:
+
+- The 25 generation figures retain their original **HTML/CSS layouts**.
+  The exporter places that layout in an SVG `foreignObject`, preserving the
+  dotted backgrounds, spacing, connectors, and typography without rasterization.
+- The other 30 figures retain their **SVG geometry**, with editable `<text>`
+  labels in place of font outlines. Translated labels use the original label
+  widths to avoid colliding with adjacent nodes.
+- `_data/writing/figures/manifest.json` maps original assets to named source files.
+- `_data/writing/figures/translations.json` stores Chinese keys with English and
+  Japanese label pairs. Article prose and figure labels have separate dictionaries.
+
+Edit the `.html` or `.svg` source to change a layout, and its dictionary to change
+wording. Run `npm run build:writing` to regenerate all three languages and all six
+articles. Do not edit `writing/figures/` directly. Each figure has a collapsed
+source link to its editable file and translation dictionary. No runtime diagram
+library, translation service, external font, or extra model call is required.
+SVGs with HTML layouts target web browsers; the original PNGs remain available
+for non-browser tools that do not implement `foreignObject`.
 
 Public reports allow same-origin image, script, and stylesheet files in their
 Content Security Policy. The offline export's `img-src data: blob:` policy

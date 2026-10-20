@@ -1,0 +1,2306 @@
+{
+  "提示词局部搜索": [
+    "Local prompt search",
+    "局所Prompt探索"
+  ],
+  "生成协议重构": [
+    "Generation protocol",
+    "生成規約の再設計"
+  ],
+  "监督数据与模型": [
+    "Data & model training",
+    "教師データとモデル"
+  ],
+  "真实产物验证": [
+    "Built-artifact validation",
+    "実成果物の検証"
+  ],
+  "6月　PE 搜索": [
+    "June · PE search",
+    "6月 · PE探索"
+  ],
+  "7月　信息流": [
+    "July · Information flow",
+    "7月 · 情報フロー"
+  ],
+  "8—9月　SFT": [
+    "Aug–Sep · SFT",
+    "8〜9月 · SFT"
+  ],
+  "10月　E2E": [
+    "October · E2E",
+    "10月 · E2E"
+  ],
+  "精简规则库 → 分层生成": [
+    "Compact rules → layered PE",
+    "簡潔規則 → 階層型PE"
+  ],
+  "自由归因 / 策略记忆": [
+    "Free / strategy memory",
+    "自由分析 / 戦略記憶"
+  ],
+  "格式重写与准出": [
+    "Format rewrite & release",
+    "形式改稿と出荷"
+  ],
+  "独立训练 / 继续训练": [
+    "Fresh / continued training",
+    "独立学習 / 継続学習"
+  ],
+  "逐题归因": [
+    "Case-level attribution",
+    "逐問の原因分析"
+  ],
+  "主线 · PE 自动优化": [
+    "Main track · Automatic PE search",
+    "主系統 · PE自動最適化"
+  ],
+  "Free · 自由归因": [
+    "Free · Failure-led search",
+    "Free · 自由分析"
+  ],
+  "Data · 策略记忆": [
+    "Data · Strategy memory",
+    "Data · 戦略記憶"
+  ],
+  "修改 PE": [
+    "Edit PE",
+    "PEを編集"
+  ],
+  "固定生成协议": [
+    "Fixed generation protocol",
+    "生成条件を固定"
+  ],
+  "Judge 反馈": [
+    "Judge feedback",
+    "Judgeのフィードバック"
+  ],
+  "保留有效修改，进入下一轮": [
+    "Keep effective edits; repeat",
+    "有効な変更を保持し次へ"
+  ],
+  "最终 Lite 交付": [
+    "Final Lite delivery",
+    "最終Lite納品"
+  ],
+  "一次生成": [
+    "One generation",
+    "一回生成"
+  ],
+  "直接输出 SpecDoc": [
+    "Output SpecDoc directly",
+    "SpecDocを直接出力"
+  ],
+  "另做流程对照，结果单列": [
+    "Separate protocol comparisons",
+    "生成方式は別比較"
+  ],
+  "旁支 · 生成流程对照与产物诊断": [
+    "Side studies · Generation & diagnostics",
+    "比較系統 · 生成と診断"
+  ],
+  "额外领域生成": [
+    "Extra domain generation",
+    "領域別生成を追加"
+  ],
+  "同模型自我修订": [
+    "Same-model self-revision",
+    "同モデル自己修正"
+  ],
+  "固定产物检查": [
+    "Check fixed artifacts",
+    "固定成果物を検査"
+  ],
+  "多候选挑选": [
+    "Select from candidates",
+    "複数候補から選択"
+  ],
+  "方法调研与设计参考": [
+    "Method survey & design references",
+    "方法調査と設計参考"
+  ],
+  "提案依据": [
+    "Proposal basis",
+    "提案根拠"
+  ],
+  "修改方式": [
+    "Edit method",
+    "編集方式"
+  ],
+  "评估": [
+    "Evaluation",
+    "評価"
+  ],
+  "反馈": [
+    "Feedback",
+    "フィードバック"
+  ],
+  "失败题 + SP": [
+    "Failures + SP",
+    "失敗例＋SP"
+  ],
+  "定点编辑": [
+    "Targeted edit",
+    "局所編集"
+  ],
+  "评审与目标检查": [
+    "Review & target checks",
+    "審査と対象確認"
+  ],
+  "全量评测": [
+    "Full-set evaluation",
+    "全件評価"
+  ],
+  "写入 lessons": [
+    "Record lessons",
+    "教訓を記録"
+  ],
+  "单域阻塞题": [
+    "Single-domain blockers",
+    "単領域の障害"
+  ],
+  "跨域影响检查": [
+    "Cross-domain checks",
+    "領域間影響を確認"
+  ],
+  "多个候选": [
+    "Multiple candidates",
+    "複数候補"
+  ],
+  "锚点插入": [
+    "Anchor insertion",
+    "アンカー挿入"
+  ],
+  "重复配对评测": [
+    "Repeated paired tests",
+    "反復ペア評価"
+  ],
+  "候选排序": [
+    "Rank candidates",
+    "候補順位付け"
+  ],
+  "自由归因 Free": [
+    "Free attribution",
+    "自由分析 Free"
+  ],
+  "失败归因": [
+    "Analyze failures",
+    "失敗を分析"
+  ],
+  "执行协议": [
+    "Execution protocol",
+    "実行プロトコル"
+  ],
+  "目标检查": [
+    "Target check",
+    "対象確認"
+  ],
+  "100题评测": [
+    "Evaluate 100 cases",
+    "100問を評価"
+  ],
+  "保存实验教训": [
+    "Save experiment lessons",
+    "実験の教訓を保存"
+  ],
+  "策略记忆 Data": [
+    "Data strategy memory",
+    "戦略記憶 Data"
+  ],
+  "动态 SP": [
+    "Dynamic SP",
+    "動的SP"
+  ],
+  "查重 / 查冲突": [
+    "Deduplicate / conflicts",
+    "重複 / 矛盾確認"
+  ],
+  "更新策略状态": [
+    "Update strategy state",
+    "戦略状態を更新"
+  ],
+  "Goal · Agent 调度": [
+    "Goal · Agent-controlled",
+    "Goal · Agent制御"
+  ],
+  "Loop · 程序调度": [
+    "Loop · Code-controlled",
+    "Loop · コード制御"
+  ],
+  "长会话 Agent": [
+    "Long-running agent",
+    "長時間Agent"
+  ],
+  "评测脚本": [
+    "Evaluation scripts",
+    "評価スクリプト"
+  ],
+  "短任务 Agent": [
+    "Short-task agent",
+    "短タスクAgent"
+  ],
+  "提交候选 / 评测": [
+    "Submit / evaluate",
+    "候補提出 / 評価"
+  ],
+  "返回结果": [
+    "Return results",
+    "結果返却"
+  ],
+  "判断 / 回滚": [
+    "Decide / revert",
+    "判定 / 撤回"
+  ],
+  "安排下一轮": [
+    "Schedule next round",
+    "次回を計画"
+  ],
+  "派发单步任务": [
+    "Dispatch one step",
+    "単段タスクを依頼"
+  ],
+  "返回产物": [
+    "Return artifacts",
+    "成果物返却"
+  ],
+  "评测 / 裁决": [
+    "Evaluate / decide",
+    "評価 / 判定"
+  ],
+  "记录状态": [
+    "Record state",
+    "状態記録"
+  ],
+  "由 Agent 决定继续": [
+    "Agent decides to continue",
+    "Agentが継続を決定"
+  ],
+  "按程序转入下一步": [
+    "Code advances the loop",
+    "コードが次段へ進める"
+  ],
+  "线上 · 每道题一次调用": [
+    "Online · One call per query",
+    "オンライン · 一問一呼び出し"
+  ],
+  "下游搭建": [
+    "Downstream builder",
+    "下流の構築"
+  ],
+  "离线 · 改变下一轮使用的 PE": [
+    "Offline · Edit the next PE",
+    "オフライン · 次回PEを編集"
+  ],
+  "失败证据": [
+    "Failure evidence",
+    "失敗証拠"
+  ],
+  "生成 + Judge": [
+    "Generate + Judge",
+    "生成＋Judge"
+  ],
+  "更新基线 / 写入教训": [
+    "Update baseline / lessons",
+    "基準更新 / 教訓記録"
+  ],
+  "主线 · 保留的设计": [
+    "Main track · Retained designs",
+    "主系統 · 維持した設計"
+  ],
+  "旁支 · 未采用的流程": [
+    "Side studies · Not adopted",
+    "比較系統 · 未採用の方式"
+  ],
+  "下一步 · 重复测量": [
+    "Next · Repeat measurements",
+    "次段階 · 反復測定"
+  ],
+  "保护已有规则": [
+    "Protect existing rules",
+    "既存規則を保護"
+  ],
+  "目标与全量分验": [
+    "Target then full-set checks",
+    "対象と全件を分離評価"
+  ],
+  "候选回退，机制保留": [
+    "Revert edits; keep the method",
+    "候補撤回、機構は維持"
+  ],
+  "独立 PE": [
+    "Independent PEs",
+    "独立PE"
+  ],
+  "保存教训与策略状态": [
+    "Save lessons & strategy state",
+    "教訓と戦略状態を保存"
+  ],
+  "后续两对整题均值持平": [
+    "Later pairs: equal joint means",
+    "後続二ペアは全問平均同等"
+  ],
+  "同模型评审与修订": [
+    "Self-review and revision",
+    "同モデル審査と修正"
+  ],
+  "该实现净回退": [
+    "Net regression in this setup",
+    "この実装では純悪化"
+  ],
+  "规则选择未超随机": [
+    "No gain over random selection",
+    "ランダム選択を上回らず"
+  ],
+  "补丁搜索": [
+    "Patch search",
+    "パッチ探索"
+  ],
+  "重复评测候选与基线": [
+    "Repeat candidate / baseline",
+    "候補・基準を反復評価"
+  ],
+  "比较均值与逐题变化": [
+    "Compare means & case flips",
+    "平均と逐問変化を比較"
+  ],
+  "两臂分配相同预算": [
+    "Equal budget for both arms",
+    "両群の予算を統一"
+  ],
+  "重复后比较通过率分布": [
+    "Compare repeated pass rates",
+    "反復後の合格率分布を比較"
+  ],
+  "分层生成PE": [
+    "Layered generation PE",
+    "階層型生成PE"
+  ],
+  "固定 Spec 重复 Judge": [
+    "Fixed Spec, repeat Judge",
+    "Spec固定、Judge反復"
+  ],
+  "固定 PE 重复生成": [
+    "Fixed PE, repeat generation",
+    "PE固定、生成反復"
+  ],
+  "主线判断 PE 修改是否保留；旁支判断额外流程是否值得交付": [
+    "Main: keep or revert PE edits. Side studies: is extra generation worth deploying?",
+    "主系統はPE変更の採否、比較系統は追加生成の採用可否を判定"
+  ],
+  "MASP · 失败归因与定点编辑": [
+    "MASP · Analyze failures, edit locally",
+    "MASP · 失敗分析と局所編集"
+  ],
+  "错题池 + SP": [
+    "Failure pool + SP",
+    "失敗プール＋SP"
+  ],
+  "定点修改": [
+    "Targeted edit",
+    "局所修正"
+  ],
+  "全量 → KEEP": [
+    "Full set → KEEP",
+    "全件 → KEEP"
+  ],
+  "MASPCombine · 目标改善与全局副作用分开验收": [
+    "MASPCombine · Separate gains from collateral regressions",
+    "MASPCombine · 目標改善と全体悪化を分離"
+  ],
+  "编辑 + Review": [
+    "Edit + Review",
+    "編集＋Review"
+  ],
+  "与同窗 pristine 比较，再决定 KEEP": [
+    "Compare with concurrent pristine, then KEEP",
+    "同期pristineと比較してKEEP判定"
+  ],
+  "已有 Prompt": [
+    "Existing Prompt",
+    "既存Prompt"
+  ],
+  "整段重写": [
+    "Full rewrite",
+    "全文改稿"
+  ],
+  "锚点增量 Patch": [
+    "Anchored patch",
+    "アンカーパッチ"
+  ],
+  "规则被意外压缩": [
+    "Rules lost in compression",
+    "圧縮で規則を喪失"
+  ],
+  "评测": [
+    "Evaluate",
+    "評価"
+  ],
+  "零删除 · 占位符 · 章节 · 长度": [
+    "No deletions · Slots · Sections · Length",
+    "削除なし · 変数 · 章 · 長さ"
+  ],
+  "初始 Spec": [
+    "Initial Spec",
+    "初期Spec"
+  ],
+  "独立领域生成": [
+    "Domain generation",
+    "独立領域生成"
+  ],
+  "拼回 Spec": [
+    "Reassemble Spec",
+    "Specへ再結合"
+  ],
+  "增加领域调用": [
+    "Extra domain calls",
+    "領域呼び出し増"
+  ],
+  "同模型评审": [
+    "Same-model review",
+    "同モデル審査"
+  ],
+  "修订 Spec": [
+    "Revise Spec",
+    "Spec修正"
+  ],
+  "增加评审与修订调用": [
+    "Extra review / revision calls",
+    "審査・修正呼び出し増"
+  ],
+  "固定 Spec": [
+    "Fixed Spec",
+    "固定Spec"
+  ],
+  "定向规则检查": [
+    "Targeted rule checks",
+    "対象規則を検査"
+  ],
+  "问题标记": [
+    "Flag issues",
+    "問題を記録"
+  ],
+  "已有产物回放": [
+    "Replay saved artifacts",
+    "既存成果物を再生"
+  ],
+  "候选 Spec × N": [
+    "N candidate Specs",
+    "Spec候補×N"
+  ],
+  "违规计数排序": [
+    "Rank by violations",
+    "違反数で順位付け"
+  ],
+  "选一份 Spec": [
+    "Select one Spec",
+    "Specを一つ選択"
+  ],
+  "多候选选择诊断": [
+    "Candidate-selection study",
+    "複数候補選択の診断"
+  ],
+  "历史 / SDK-local": [
+    "Historical / SDK-local",
+    "過去 / SDK-local"
+  ],
+  "JSON Schema 四域": [
+    "JSON Schema · 4 domains",
+    "JSON Schema四領域"
+  ],
+  "历史 Top KEEP 产物": [
+    "Historical Top KEEP Specs",
+    "過去Top KEEP成果物"
+  ],
+  "当前 Fresh 产物": [
+    "Current fresh Specs",
+    "現行fresh成果物"
+  ],
+  "同份 Spec 换 Judge → 测口径变化": [
+    "Same Spec, different Judge → protocol effect",
+    "同Spec・別Judge → 評価条件差"
+  ],
+  "重生成 + 重评审 → 观察整体波动": [
+    "Regenerate + rejudge → total variation",
+    "再生成＋再審査 → 全体変動"
+  ],
+  "输入压缩 · 同轮10题": [
+    "Input compression · same 10 cases",
+    "入力圧縮 · 同じ10問"
+  ],
+  "Table禁令 · 另一轮10题": [
+    "Table prohibitions · another 10-case run",
+    "Table禁止 · 別の10問比較"
+  ],
+  "旧规则整理版": [
+    "Reorganized legacy PE",
+    "旧規則整理版"
+  ],
+  "30.8k 输入 token": [
+    "30.8k input tokens",
+    "入力30.8k token"
+  ],
+  "精简规则库": [
+    "Compact rule library",
+    "簡潔ルール庫"
+  ],
+  "6.7k 输入 token": [
+    "6.7k input tokens",
+    "入力6.7k token"
+  ],
+  "增加Table禁令": [
+    "More Table prohibitions",
+    "Table禁止を追加"
+  ],
+  "输入缩短，整题通过数下降": [
+    "Shorter input, fewer joint passes",
+    "入力短縮、全問合格減"
+  ],
+  "两次改动均回退": [
+    "Both edits regressed",
+    "二変更とも悪化"
+  ],
+  "同一人工 PE 起点": [
+    "Same human-written PE",
+    "同じ人手PE起点"
+  ],
+  "100 条 Query": [
+    "100 queries",
+    "100 Query"
+  ],
+  "编辑执行协议": [
+    "Edit execution protocol",
+    "実行規約を編集"
+  ],
+  "回写失败证据与教训": [
+    "Record failures & lessons",
+    "失敗と教訓を記録"
+  ],
+  "更新 / 合并 / 冲突检查": [
+    "Update / merge / conflicts",
+    "更新 / 統合 / 矛盾確認"
+  ],
+  "新 200 条": [
+    "New 200",
+    "新200件"
+  ],
+  "动态 Small ≤ 50": [
+    "Dynamic Small ≤ 50",
+    "動的Small ≤ 50"
+  ],
+  "Target + 稳定 / 轮换 Guard": [
+    "Targets + stable / rotating guards",
+    "Target＋固定/輪番Guard"
+  ],
+  "保留切片 · 尚未评测": [
+    "Reserved · not yet evaluated",
+    "保留集合 · 未評価"
+  ],
+  "历史能力回归": [
+    "Historical-capability check",
+    "過去能力の回帰"
+  ],
+  "独立回归结果": [
+    "Separate regression results",
+    "独立回帰結果"
+  ],
+  "薄规则原型": [
+    "Thin-rule prototype",
+    "薄ルール原型"
+  ],
+  "权限预规划": [
+    "Permission preplanning",
+    "権限事前計画"
+  ],
+  "多阶段生成 · 实验分支": [
+    "Multi-stage generation · experiment",
+    "多段生成 · 実験分岐"
+  ],
+  "单次生成": [
+    "Single-call generation",
+    "一回生成"
+  ],
+  "结构草稿 / 封套": [
+    "Draft / envelope",
+    "草案 / Envelope"
+  ],
+  "不进入交付": [
+    "Not shipped",
+    "納品対象外"
+  ],
+  "直接输出 Spec": [
+    "Direct Spec output",
+    "Spec直接出力"
+  ],
+  "语义与规则分层": [
+    "Semantics & rule layers",
+    "意味と規則の階層化"
+  ],
+  "一次调用 · 直接输出 SpecDoc": [
+    "One call · Direct SpecDoc output",
+    "一回呼出 · SpecDoc直接出力"
+  ],
+  "Permission · 固定10题 × 3次": [
+    "Permission · 10 cases × 3 runs",
+    "Permission · 固定10問×3回"
+  ],
+  "单阶段": [
+    "Single stage",
+    "単段階"
+  ],
+  "整题 strict · 同一实验": [
+    "Joint strict · same experiment",
+    "全問strict · 同実験"
+  ],
+  "领域均值提高；整题均值仅小幅变化": [
+    "Domain mean rises; joint mean changes little",
+    "領域平均は改善、全問平均は小幅変化"
+  ],
+  "额外增加调用；最终方案采用单次生成": [
+    "Extra calls; final design keeps one generation",
+    "呼び出し増、最終案は一回生成"
+  ],
+  "一次请求的输入": [
+    "Input to one request",
+    "一要求への入力"
+  ],
+  "本月合计": [
+    "This month's total",
+    "今月の合計"
+  ],
+  "阈值提醒": [
+    "Threshold alert",
+    "閾値通知"
+  ],
+  "指标与自动动作注册": [
+    "Register metrics & actions",
+    "指標と自動動作を登録"
+  ],
+  "记录消费需求": [
+    "Record consumer needs",
+    "利用側の要求を記録"
+  ],
+  "表与字段先定义": [
+    "Define tables & fields first",
+    "表とフィールドを先に定義"
+  ],
+  "聚合 / 判断字段": [
+    "Aggregate / condition fields",
+    "集計 / 判定フィールド"
+  ],
+  "看板 / 工作流": [
+    "Dashboard / Workflow",
+    "Dashboard / Workflow"
+  ],
+  "规划阶段回填依赖，渲染阶段只引用已注册字段": [
+    "Plan dependencies first; render only registered fields",
+    "計画時に依存を補い、描画時は登録済みフィールドのみ参照"
+  ],
+  "策略记忆PE": [
+    "Strategy-memory PE",
+    "戦略記憶PE"
+  ],
+  "旧Lite PE": [
+    "Legacy Lite PE",
+    "旧Lite PE"
+  ],
+  "历史MASP保留PE": [
+    "Historical MASP KEEP PE",
+    "過去MASP KEEP PE"
+  ],
+  "8,799 输入 token": [
+    "8,799 input tokens",
+    "入力8,799 token"
+  ],
+  "19,312 输入 token": [
+    "19,312 input tokens",
+    "入力19,312 token"
+  ],
+  "28,871 输入 token": [
+    "28,871 input tokens",
+    "入力28,871 token"
+  ],
+  "Dev150 · 相对分层生成PE基线 16/150": [
+    "Dev150 · vs. layered baseline 16/150",
+    "Dev150 · 階層型基準16/150比"
+  ],
+  "候选": [
+    "Candidate",
+    "候補"
+  ],
+  "新增 / 丢失通过题": [
+    "Gained / lost passes",
+    "新規 / 喪失合格"
+  ],
+  "全量 strict": [
+    "Full-set strict",
+    "全件strict"
+  ],
+  "目标改善与四域全过分别验收": [
+    "Check target gains and four-domain passes separately",
+    "目標改善と四領域合格を別判定"
+  ],
+  "第一次": [
+    "First run",
+    "初回"
+  ],
+  "共同通过 7": [
+    "Both pass: 7",
+    "共通合格7"
+  ],
+  "仅第一次 9": [
+    "First only: 9",
+    "初回のみ9"
+  ],
+  "仅 Fresh 10": [
+    "Fresh only: 10",
+    "Freshのみ10"
+  ],
+  "PE 相同": [
+    "Same PE",
+    "同じPE"
+  ],
+  "Spec 重新生成": [
+    "Regenerated Specs",
+    "Specを再生成"
+  ],
+  "Judge 重新判分": [
+    "New Judge calls",
+    "Judgeを再実行"
+  ],
+  "本月已交稿件": [
+    "Manuscripts submitted this month",
+    "今月の提出原稿"
+  ],
+  "篇数 + 稿费": [
+    "Count + fees",
+    "件数＋原稿料"
+  ],
+  "只写总篇数 / 总稿费": [
+    "Only total count / fees",
+    "総件数/総額だけ記述"
+  ],
+  "Base 统计全量": [
+    "Base aggregates all rows",
+    "Baseは全件集計"
+  ],
+  "进度 = 已交": [
+    "Status = submitted",
+    "進捗＝提出済み"
+  ],
+  "交稿日 = 本月": [
+    "Submission = this month",
+    "提出日＝今月"
+  ],
+  "Base 保留两项筛选": [
+    "Base retains both filters",
+    "Baseが両フィルタを保持"
+  ],
+  "案例 030：7.8 → 10": [
+    "Case 030: 7.8 → 10",
+    "事例030：7.8→10"
+  ],
+  "3999 条": [
+    "3,999 items",
+    "3,999件"
+  ],
+  "独立 SFT · qh66q": [
+    "Independent SFT · qh66q",
+    "独立SFT · qh66q"
+  ],
+  "1770 条": [
+    "1,770 items",
+    "1,770件"
+  ],
+  "独立 SFT · 2f8v8": [
+    "Independent SFT · 2f8v8",
+    "独立SFT · 2f8v8"
+  ],
+  "合并 5769 条": [
+    "Merged: 5,769 items",
+    "統合5,769件"
+  ],
+  "5669 train + 新100 test": [
+    "5,669 train + new 100 test",
+    "5,669学習＋新100テスト"
+  ],
+  "Q2 继续训练 · nm9gk": [
+    "Q2 continued training · nm9gk",
+    "Q2継続学習 · nm9gk"
+  ],
+  "三套 Test100 分别切分": [
+    "Three independently split Test100s",
+    "Test100は三群で別分割"
+  ],
+  "原始 Q2 + 旧 SP　32 / 50": [
+    "Original Q2 + old SP: 32 / 50",
+    "元Q2＋旧SP：32/50"
+  ],
+  "继续训练 + 规范PE　35 / 50": [
+    "Continued + normalized PE: 35 / 50",
+    "継続学習＋規約PE：35/50"
+  ],
+  "共同通过": [
+    "Both pass",
+    "共通合格"
+  ],
+  "仅 Q2": [
+    "Q2 only",
+    "Q2のみ"
+  ],
+  "仅继续训练": [
+    "Continued only",
+    "継続学習のみ"
+  ],
+  "共同未通过": [
+    "Both fail",
+    "共通不合格"
+  ],
+  "Spec 阶段": [
+    "Spec stage",
+    "Spec段階"
+  ],
+  "外层 CodeAgent": [
+    "Outer CodeAgent",
+    "外側CodeAgent"
+  ],
+  "Q2 + 旧 SP": [
+    "Q2 + old SP",
+    "Q2＋旧SP"
+  ],
+  "继续训练 + 规范PE": [
+    "Continued + normalized PE",
+    "継続学習＋規約PE"
+  ],
+  "只计 Spec + 外层 CodeAgent；不含 SDK 子 Agent 与离线 Judge。": [
+    "Spec + outer CodeAgent only; excludes SDK subagents and offline Judges.",
+    "Spec＋外側CodeAgentのみ。SDK子AgentとオフラインJudgeは除外。"
+  ],
+  "007 · 筛选状态已在 Spec 写错": [
+    "007 · Wrong filter state in Spec",
+    "007 · Spec段階で状態誤り"
+  ],
+  "先修生成": [
+    "Fix generation first",
+    "まず生成を修正"
+  ],
+  "045 · Spec 的时间筛选未落到代码": [
+    "045 · Code loses Spec's time filter",
+    "045 · コードが時間条件を欠落"
+  ],
+  "还要修执行交接": [
+    "Also fix execution handoff",
+    "実行引継ぎも修正"
+  ],
+  "沿 Query → Spec → Code → Base 逐步定位需求在哪里丢失": [
+    "Trace Query → Spec → Code → Base to locate lost requirements",
+    "Query→Spec→Code→Baseで要求喪失箇所を追跡"
+  ],
+  "文档质量": [
+    "Document quality",
+    "文書品質"
+  ],
+  "执行器 → Base": [
+    "Executor → Base",
+    "実行器 → Base"
+  ],
+  "固定最终设计": [
+    "Fixed final design",
+    "最終設計を固定"
+  ],
+  "修复方法": [
+    "Repair methods",
+    "修復方式"
+  ],
+  "检查成本": [
+    "Checking cost",
+    "検査コスト"
+  ],
+  "数据交付": [
+    "Data delivery",
+    "データ納品"
+  ],
+  "6 月 · 局部保护": [
+    "June · Local protection",
+    "6月 · 局所保護"
+  ],
+  "8 月 · 模型 / 历史 / 补丁": [
+    "Aug · Models / history / patches",
+    "8月 · モデル/履歴/パッチ"
+  ],
+  "9 月 · 提示词回归": [
+    "Sep · Prompt regression",
+    "9月 · Prompt回帰"
+  ],
+  "7 月 · 同版本投票": [
+    "July · Same-version voting",
+    "7月 · 同版投票"
+  ],
+  "8 月 · 减少重复调用": [
+    "Aug · Fewer duplicate calls",
+    "8月 · 重複呼出削減"
+  ],
+  "8—9 月 · 混合强度": [
+    "Aug–Sep · Mixed effort",
+    "8〜9月 · 強度混用"
+  ],
+  "7 月 · Spec / Plan": [
+    "July · Spec / Plan",
+    "7月 · Spec / Plan"
+  ],
+  "9 月 · 历史未准出恢复": [
+    "Sep · Recover unreleased cases",
+    "9月 · 未出荷の復旧"
+  ],
+  "7/23 · 比较修前修后": [
+    "Jul 23 · Before/after checks",
+    "7/23 · 前後比較"
+  ],
+  "8/13 · 分阶段评分": [
+    "Aug 13 · Staged scoring",
+    "8/13 · 段階採点"
+  ],
+  "8/14 · 整链对照": [
+    "Aug 14 · Full-pipeline test",
+    "8/14 · 全系統比較"
+  ],
+  "运行预检": [
+    "Preflight",
+    "実行前確認"
+  ],
+  "入口四域 Judge": [
+    "Entry: 4-domain Judge",
+    "入口四領域Judge"
+  ],
+  "入口确认票": [
+    "Entry confirmation votes",
+    "入口確認票"
+  ],
+  "预检失败": [
+    "Preflight failed",
+    "事前確認失敗"
+  ],
+  "入口 Router": [
+    "Entry Router",
+    "入口Router"
+  ],
+  "普通 Table Fix": [
+    "Normal Table Fix",
+    "通常Table Fix"
+  ],
+  "普通 Non-Table Fix": [
+    "Normal Non-Table Fix",
+    "通常Non-Table Fix"
+  ],
+  "格式准出": [
+    "Format release gate",
+    "形式出荷判定"
+  ],
+  "通过": [
+    "Pass",
+    "合格"
+  ],
+  "失败": [
+    "Fail",
+    "失敗"
+  ],
+  "首票全过才补票": [
+    "Extra votes only if first passes",
+    "初票全合格時だけ追加"
+  ],
+  "表侧根因": [
+    "Table root cause",
+    "表側の根因"
+  ],
+  "仅非表侧根因": [
+    "Non-Table only",
+    "非表側のみ"
+  ],
+  "准出票通过": [
+    "Release vote passes",
+    "出荷投票合格"
+  ],
+  "四域 Judge": [
+    "4-domain Judge",
+    "四領域Judge"
+  ],
+  "Table 后 Router": [
+    "Post-Table Router",
+    "Table後Router"
+  ],
+  "普通阶段确认票": [
+    "Normal-stage votes",
+    "通常段階の確認票"
+  ],
+  "普通阶段最终 Router": [
+    "Normal final Router",
+    "通常最終Router"
+  ],
+  "进入难例修复": [
+    "Enter hard-case phase",
+    "難例修復へ"
+  ],
+  "非表格式缺口 / 仅非表失败": [
+    "Non-Table format / failures only",
+    "非表形式不足/非表失敗のみ"
+  ],
+  "全过 / 表侧回退耗尽": [
+    "All pass / Table retries spent",
+    "全合格/表回退予算消費"
+  ],
+  "仍失败且回退耗尽": [
+    "Failed, no retries left",
+    "失敗継続、回退上限"
+  ],
+  "表侧根因 · 剩余预算": [
+    "Table cause · budget left",
+    "表根因 · 残予算あり"
+  ],
+  "仅非表侧根因 · 剩余预算": [
+    "Non-Table cause · budget left",
+    "非表根因 · 残予算あり"
+  ],
+  "普通阶段检查结果": [
+    "Normal-stage results",
+    "通常段階の検査結果"
+  ],
+  "难例入口 Router": [
+    "Hard-case entry Router",
+    "難例入口Router"
+  ],
+  "难例 Table Fix": [
+    "Hard-case Table Fix",
+    "難例Table Fix"
+  ],
+  "难例 Non-Table Fix": [
+    "Hard-case Non-Table Fix",
+    "難例Non-Table Fix"
+  ],
+  "新四域多数票": [
+    "New 4-domain majority vote",
+    "新四領域多数決"
+  ],
+  "难例多数 Router": [
+    "Hard-case majority Router",
+    "難例多数Router"
+  ],
+  "终末 Rewrite": [
+    "Final Rewrite",
+    "終端Rewrite"
+  ],
+  "其余根因": [
+    "Other causes",
+    "その他の根因"
+  ],
+  "无表侧根因；可 no-op": [
+    "No Table cause; may no-op",
+    "表根因なし、no-op可"
+  ],
+  "表侧仍失败 · 回退耗尽": [
+    "Table fails · retries spent",
+    "表失敗 · 回退上限"
+  ],
+  "仍失败 · 预算耗尽": [
+    "Still fails · budget spent",
+    "失敗継続 · 予算消費"
+  ],
+  "表侧 · 剩余预算": [
+    "Table · budget left",
+    "表側 · 残予算"
+  ],
+  "非表侧 · 剩余预算": [
+    "Non-Table · budget left",
+    "非表側 · 残予算"
+  ],
+  "结果 / 全文 / 轨迹": [
+    "Result / document / trace",
+    "結果 / 全文 / 軌跡"
+  ],
+  "通过 / 失败": [
+    "Pass / fail",
+    "合格 / 失敗"
+  ],
+  "含表侧缺口": [
+    "Includes Table gap",
+    "表側不足を含む"
+  ],
+  "仅非表侧缺口": [
+    "Non-Table gap only",
+    "非表側不足のみ"
+  ],
+  "进入一次 Fix": [
+    "Enter Fix",
+    "一回のFixへ"
+  ],
+  "目标全过且无待修？": [
+    "All targets pass, no open issue?",
+    "目標全合格、未解決なし？"
+  ],
+  "no-op → 返回主链路": [
+    "No-op → main pipeline",
+    "no-op → 主系統"
+  ],
+  "冻结本轮输入": [
+    "Freeze round inputs",
+    "今回入力を固定"
+  ],
+  "整理问题，制定计划": [
+    "Organize issues, plan repair",
+    "問題整理、修復計画"
+  ],
+  "Seed2 生成候选": [
+    "Seed2 generates candidate",
+    "Seed2候補生成"
+  ],
+  "解析候选，校验写入": [
+    "Parse, validate application",
+    "解析、適用確認"
+  ],
+  "Luna 输出恢复": [
+    "Luna output recovery",
+    "Luna出力復旧"
+  ],
+  "再次校验输出协议": [
+    "Recheck output protocol",
+    "出力規約を再確認"
+  ],
+  "拒绝候选": [
+    "Reject candidate",
+    "候補却下"
+  ],
+  "局部 Judge": [
+    "Local Judge",
+    "局所Judge"
+  ],
+  "是": [
+    "Yes",
+    "はい"
+  ],
+  "否": [
+    "No",
+    "いいえ"
+  ],
+  "可恢复且预算剩余": [
+    "Recoverable, budget left",
+    "復旧可能、残予算あり"
+  ],
+  "异常 / 不可恢复": [
+    "Error / unrecoverable",
+    "異常 / 復旧不可"
+  ],
+  "有效": [
+    "Valid",
+    "有効"
+  ],
+  "仍失败": [
+    "Still fails",
+    "失敗継続"
+  ],
+  "局部全过且有格式回修？": [
+    "Local pass, format handback?",
+    "局所合格、形式差戻しあり？"
+  ],
+  "原格式缺口已关闭？": [
+    "Original format gap closed?",
+    "元の形式不足は解消？"
+  ],
+  "拒绝该候选": [
+    "Reject this candidate",
+    "この候補を却下"
+  ],
+  "协议失败的候选": [
+    "Protocol-invalid candidates",
+    "規約不正候補"
+  ],
+  "还有候选？ N_fix=3": [
+    "More candidates? N_fix=3",
+    "候補残あり？ N_fix=3"
+  ],
+  "有可选候选？": [
+    "Any eligible candidate?",
+    "選べる候補あり？"
+  ],
+  "下一候选": [
+    "Next candidate",
+    "次の候補"
+  ],
+  "关闭": [
+    "Closed",
+    "解消"
+  ],
+  "未关闭": [
+    "Still open",
+    "未解消"
+  ],
+  "择优，不拼接候选": [
+    "Select one; do not splice",
+    "一つ選択、結合しない"
+  ],
+  "候选可接纳？": [
+    "Acceptable candidate?",
+    "採用可能な候補？"
+  ],
+  "更新文档 / Judge / 账本": [
+    "Update document / Judge / ledger",
+    "文書 / Judge / 台帳更新"
+  ],
+  "保留本轮前文档": [
+    "Keep pre-round document",
+    "今回前の文書を保持"
+  ],
+  "局部全过且格式缺口关闭？": [
+    "Local pass & format gap closed?",
+    "局所合格かつ形式解消？"
+  ],
+  "局部通过": [
+    "Local pass",
+    "局所合格"
+  ],
+  "还可修一轮？ F=5": [
+    "Another round? F=5",
+    "もう一回可能？ F=5"
+  ],
+  "下一轮": [
+    "Next round",
+    "次の回"
+  ],
+  "格式回修缺口仍未关闭？": [
+    "Format gap still open?",
+    "形式差戻し不足が残る？"
+  ],
+  "停止该 case": [
+    "Stop this case",
+    "当該caseを停止"
+  ],
+  "局部未过": [
+    "Local fail",
+    "局所不合格"
+  ],
+  "有": [
+    "Yes",
+    "あり"
+  ],
+  "无": [
+    "None",
+    "なし"
+  ],
+  "下游缺少字段": [
+    "Downstream field missing",
+    "下流フィールド不足"
+  ],
+  "定位表侧依赖": [
+    "Locate Table dependency",
+    "表側依存を特定"
+  ],
+  "仍有表侧缺口": [
+    "Table gap remains",
+    "表側不足が残る"
+  ],
+  "A  限制修改范围 · Fix阶段通过数": [
+    "A  Edit scope · Fix-stage passes",
+    "A  編集範囲 · Fix段階合格"
+  ],
+  "原版": [
+    "Original",
+    "原版"
+  ],
+  "增加能力说明": [
+    "Capability guidance",
+    "能力説明追加"
+  ],
+  "保护合格段落": [
+    "Protect valid content",
+    "合格段落を保護"
+  ],
+  "B  六种修复策略 · 链路准出数": [
+    "B  Six repair strategies · Releases",
+    "B  六修復戦略 · 出荷数"
+  ],
+  "Seed局部补丁": [
+    "Seed local patch",
+    "Seed局所パッチ"
+  ],
+  "末轮Luna": [
+    "Luna last round",
+    "末回Luna"
+  ],
+  "末轮Luna＋历史": [
+    "Luna last + history",
+    "末回Luna＋履歴"
+  ],
+  "全文＋审核": [
+    "Full text + review",
+    "全文＋審査"
+  ],
+  "全文＋审核＋历史": [
+    "Full text + review + history",
+    "全文＋審査＋履歴"
+  ],
+  "局部＋历史＋新规则": [
+    "Local + history + new rules",
+    "局所＋履歴＋新規則"
+  ],
+  "C  工作流难例对照 · 链路准出数": [
+    "C  Hard Workflow cases · Releases",
+    "C  Workflow難例 · 出荷数"
+  ],
+  "原文精确补丁": [
+    "Exact-text patch",
+    "原文完全一致"
+  ],
+  "对象定位": [
+    "Object targeting",
+    "対象定位"
+  ],
+  "对象定位＋回滚": [
+    "Object targeting + rollback",
+    "対象定位＋撤回"
+  ],
+  "原补丁＋业务规则": [
+    "Original patch + rules",
+    "元パッチ＋業務規則"
+  ],
+  "全文候选＋保护": [
+    "Full text + guards",
+    "全文候補＋保護"
+  ],
+  "同一版本": [
+    "Same version",
+    "同じ版"
+  ],
+  "第 1 票": [
+    "Vote 1",
+    "第1票"
+  ],
+  "第 2 票": [
+    "Vote 2",
+    "第2票"
+  ],
+  "第 3 票": [
+    "Vote 3",
+    "第3票"
+  ],
+  "2 / 3 多数结果": [
+    "2 / 3 majority",
+    "2/3多数決"
+  ],
+  "需确认": [
+    "Confirm",
+    "要確認"
+  ],
+  "两票一致 → 早停": [
+    "Two agree → stop",
+    "二票一致 → 停止"
+  ],
+  "不一致": [
+    "Disagree",
+    "不一致"
+  ],
+  "同一 Gemini": [
+    "Same Gemini",
+    "同じGemini"
+  ],
+  "Query + Spec + 规则": [
+    "Query + Spec + rules",
+    "Query＋Spec＋規則"
+  ],
+  "问题分析": [
+    "Issue analysis",
+    "問題分析"
+  ],
+  "评分概率": [
+    "Score probabilities",
+    "採点確率"
+  ],
+  "修前文档": [
+    "Before document",
+    "修正前文書"
+  ],
+  "修后候选": [
+    "After candidate",
+    "修正後候補"
+  ],
+  "保留修前版本": [
+    "Keep original version",
+    "修正前を保持"
+  ],
+  "接纳": [
+    "Accept",
+    "採用"
+  ],
+  "拒绝 / 暂缓": [
+    "Reject / defer",
+    "却下 / 保留"
+  ],
+  "域判断与参考一致 · 10条×四域，未执行Fix": [
+    "Reference agreement · 10 × 4 domains, no Fix",
+    "参照一致 · 10件×四領域、Fixなし"
+  ],
+  "Gemini分析＋评分": [
+    "Gemini analysis + scores",
+    "Gemini分析＋採点"
+  ],
+  "Sol分析＋Gemini评分": [
+    "Sol analysis + Gemini scores",
+    "Sol分析＋Gemini採点"
+  ],
+  "最终文档参考通过 · 另一组10条，相同初始文档": [
+    "Final reference passes · separate 10 cases, same starting docs",
+    "最終参照合格 · 別10件、共通初期文書"
+  ],
+  "原Judge–Fix": [
+    "Original Judge–Fix",
+    "元Judge–Fix"
+  ],
+  "任一语义准出点": [
+    "Any semantic release point",
+    "任意の意味出荷点"
+  ],
+  "保留入口快照": [
+    "Save entry snapshot",
+    "入口版を保存"
+  ],
+  "格式校准": [
+    "Format correction",
+    "形式調整"
+  ],
+  "写入结果": [
+    "Apply output",
+    "結果を書き込み"
+  ],
+  "丢弃失败输出": [
+    "Discard failed output",
+    "失敗出力を破棄"
+  ],
+  "Validator 全文校验": [
+    "Full-document Validator",
+    "Validator全文確認"
+  ],
+  "协议正常且语义等价？": [
+    "Valid protocol & same meaning?",
+    "規約正常かつ意味等価？"
+  ],
+  "待复核问题": [
+    "Issues to review",
+    "再確認する問題"
+  ],
+  "不推进工作文档": [
+    "Do not advance document",
+    "作業文書を進めない"
+  ],
+  "写入失败 / handoff": [
+    "Write failure / handoff",
+    "書込失敗 / handoff"
+  ],
+  "有效 / 未改动": [
+    "Valid / unchanged",
+    "有効 / 変更なし"
+  ],
+  "否，不可豁免": [
+    "No, cannot exempt",
+    "いいえ、免除不可"
+  ],
+  "有未决问题？": [
+    "Unresolved issues?",
+    "未決問題あり？"
+  ],
+  "全文格式接受": [
+    "Accept full-document format",
+    "全文形式を受理"
+  ],
+  "逐项 Reviewer": [
+    "Per-item Reviewer",
+    "逐項Reviewer"
+  ],
+  "逐项复核结果": [
+    "Per-item results",
+    "逐項確認結果"
+  ],
+  "保留有效等价进度": [
+    "Keep valid equivalent progress",
+    "有効・等価な進捗を保持"
+  ],
+  "保留此前有效进度": [
+    "Keep prior valid progress",
+    "以前の有効進捗を保持"
+  ],
+  "进入格式预算检查": [
+    "Check format budget",
+    "形式予算を確認"
+  ],
+  "按入口原文": [
+    "Use entry text",
+    "入口原文に基づく"
+  ],
+  "入口原文确认语义缺口？": [
+    "Semantic gap in entry text?",
+    "入口原文に意味不足？"
+  ],
+  "业务回修检查": [
+    "Business handback check",
+    "業務差戻し確認"
+  ],
+  "全部可豁免，无新增": [
+    "All exempt, no new issues",
+    "全て免除可、新規なし"
+  ],
+  "剩余纯格式问题": [
+    "Format-only issues remain",
+    "純形式問題が残る"
+  ],
+  "不可用 / 协议失败": [
+    "Unavailable / protocol error",
+    "利用不可 / 規約失敗"
+  ],
+  "确认 domain_fix": [
+    "Confirm domain_fix",
+    "domain_fixを確認"
+  ],
+  "否 / 复核不可用": [
+    "No / review unavailable",
+    "いいえ / 再確認不可"
+  ],
+  "相对入口有改动？": [
+    "Changed since entry?",
+    "入口から変更あり？"
+  ],
+  "保留入口文档": [
+    "Keep entry document",
+    "入口文書を保持"
+  ],
+  "新独立四域投票": [
+    "New independent 4-domain vote",
+    "新独立四領域投票"
+  ],
+  "多数通过？": [
+    "Majority passes?",
+    "多数合格？"
+  ],
+  "提交完整候选": [
+    "Commit full candidate",
+    "完全候補を提出"
+  ],
+  "丢弃累计进度": [
+    "Discard accumulated progress",
+    "累積進捗を破棄"
+  ],
+  "校验 / 复核失败": [
+    "Validation / review failed",
+    "検証 / 再確認失敗"
+  ],
+  "格式尝试未满 3 次？": [
+    "Fewer than 3 format tries?",
+    "形式試行は3回未満？"
+  ],
+  "下一批格式校准": [
+    "Next format batch",
+    "次の形式調整"
+  ],
+  "回滚到入口快照": [
+    "Revert to entry snapshot",
+    "入口版へ戻す"
+  ],
+  "所属域有效且预算剩余？": [
+    "Valid domain & budget left?",
+    "該当領域有効、残予算あり？"
+  ],
+  "回滚 → Domain Fix": [
+    "Revert → Domain Fix",
+    "撤回 → Domain Fix"
+  ],
+  "是，最多一次": [
+    "Yes, at most once",
+    "はい、最大一回"
+  ],
+  "链路准出": [
+    "Pipeline release",
+    "内部出荷"
+  ],
+  "正式 E2E 通过": [
+    "Formal E2E pass",
+    "正式E2E合格"
+  ],
+  "逐例变化": [
+    "Case-level changes",
+    "逐例変化"
+  ],
+  "两组通过": [
+    "Both pass",
+    "両群合格"
+  ],
+  "G 过 / K 未过": [
+    "G pass / K fail",
+    "G合格 / K不合格"
+  ],
+  "G 未过 / K 过": [
+    "G fail / K pass",
+    "G不合格 / K合格"
+  ],
+  "两组未过": [
+    "Both fail",
+    "両群不合格"
+  ],
+  "Query + 最终 Spec": [
+    "Query + final Spec",
+    "Query＋最終Spec"
+  ],
+  "生成并执行代码": [
+    "Generate & execute code",
+    "コード生成・実行"
+  ],
+  "实际 Base": [
+    "Built Base",
+    "実際のBase"
+  ],
+  "设计缺口": [
+    "Design gap",
+    "設計不足"
+  ],
+  "实现或运行失败": [
+    "Implementation / runtime failure",
+    "実装・実行失敗"
+  ],
+  "评审证据不一致": [
+    "Inconsistent review evidence",
+    "審査証拠の不一致"
+  ],
+  "数据": [
+    "Data",
+    "データ"
+  ],
+  "7/21 盘点": [
+    "Jul 21 · Inventory",
+    "7/21 棚卸し"
+  ],
+  "历史案例": [
+    "Historical cases",
+    "過去の事例"
+  ],
+  "6,457 个可回溯案例": [
+    "6,457 traceable cases",
+    "追跡可能6,457件"
+  ],
+  "8/6 导出": [
+    "Aug 6 · Export",
+    "8/6 出力"
+  ],
+  "核对证据": [
+    "Check evidence",
+    "証拠を確認"
+  ],
+  "收录 2,566 条数据": [
+    "2,566 items collected",
+    "2,566件収録"
+  ],
+  "9/5–6 冻结": [
+    "Sep 5–6 · Freeze",
+    "9/5〜6 固定"
+  ],
+  "统一数据": [
+    "Unified data",
+    "統一データ"
+  ],
+  "训练 7,127 / 测试 792": [
+    "Train 7,127 / test 792",
+    "学習7,127 / テスト792"
+  ],
+  "提示词": [
+    "Prompts",
+    "Prompt"
+  ],
+  "8/5 比较": [
+    "Aug 5 · Compare",
+    "8/5 比較"
+  ],
+  "规则改写": [
+    "Rewrite rules",
+    "規則を書き換え"
+  ],
+  "8/24 复核": [
+    "Aug 24 · Review",
+    "8/24 再審査"
+  ],
+  "逐项检查": [
+    "Check each item",
+    "逐項確認"
+  ],
+  "9/5 复核": [
+    "Sep 5 · Review",
+    "9/5 再審査"
+  ],
+  "分歧规则修订": [
+    "Revise disputed rules",
+    "不一致規則の改訂"
+  ],
+  "三轮一致 62/100 → 73/100": [
+    "3-run agreement: 62/100 → 73/100",
+    "三回一致62/100→73/100"
+  ],
+  "监督微调": [
+    "SFT",
+    "教師あり微調整"
+  ],
+  "7/24 评测": [
+    "Jul 24 · Evaluate",
+    "7/24 評価"
+  ],
+  "首轮模型": [
+    "First models",
+    "初回モデル"
+  ],
+  "232 条全部判为有问题": [
+    "All 232 labeled defective",
+    "232件全て問題あり判定"
+  ],
+  "8/9 评测": [
+    "Aug 9 · Evaluate",
+    "8/9 評価"
+  ],
+  "训练起点对照": [
+    "Compare training starts",
+    "学習起点比較"
+  ],
+  "9/6–7 提训及评测登记": [
+    "Sep 6–7 · Train / evaluate",
+    "9/6〜7 学習・評価登録"
+  ],
+  "统一数据对照": [
+    "Unified-data comparison",
+    "統一データ比較"
+  ],
+  "强化学习": [
+    "RL",
+    "強化学習"
+  ],
+  "8/27 提交；9/7 评测批次": [
+    "Aug 27 submit; Sep 7 evaluate",
+    "8/27投入、9/7評価"
+  ],
+  "两种样本配比": [
+    "Two data mixtures",
+    "二つの混合比"
+  ],
+  "9/1–7 创建并完成训练": [
+    "Sep 1–7 · Train",
+    "9/1〜7 学習"
+  ],
+  "问题次数奖励": [
+    "Issue-count rewards",
+    "問題件数報酬"
+  ],
+  "F1 +3.45 / +2.77 个百分点": [
+    "F1 +3.45 / +2.77 pp",
+    "F1 +3.45 / +2.77ポイント"
+  ],
+  "9/30–10/9 训练及评测": [
+    "Sep 30–Oct 9 · Train / evaluate",
+    "9/30〜10/9 学習・評価"
+  ],
+  "统一数据复验": [
+    "Unified-data retest",
+    "統一データ再検証"
+  ],
+  "F1 +1.94 / −0.38 个百分点": [
+    "F1 +1.94 / −0.38 pp",
+    "F1 +1.94 / −0.38ポイント"
+  ],
+  "概率蒸馏": [
+    "OPD",
+    "確率蒸留"
+  ],
+  "9/22 验证": [
+    "Sep 22 · Validate",
+    "9/22 検証"
+  ],
+  "接通概率蒸馏": [
+    "Connect distillation",
+    "蒸留経路を接続"
+  ],
+  "教师、学生调用链跑通": [
+    "Teacher–student calls work",
+    "教師・学生呼出を確認"
+  ],
+  "9/28 评测": [
+    "Sep 28 · Evaluate",
+    "9/28 評価"
+  ],
+  "教师提示对照": [
+    "Compare teacher hints",
+    "教師手掛かり比較"
+  ],
+  "学生使用完整规则": [
+    "Full student rules",
+    "学生に完全規則"
+  ],
+  "理由训练": [
+    "Rationale training",
+    "理由学習"
+  ],
+  "9/30–10/13 训练及比较": [
+    "Sep 30–Oct 13 · Train / compare",
+    "9/30〜10/13 学習・比較"
+  ],
+  "同标签理由对照": [
+    "Same-label rationale study",
+    "同ラベルの理由比較"
+  ],
+  "仅裁决 56.56%": [
+    "Verdict only: 56.56%",
+    "裁定のみ56.56%"
+  ],
+  "10/12–13 检查": [
+    "Oct 12–13 · Check",
+    "10/12〜13 確認"
+  ],
+  "原生理由整理": [
+    "Native rationale cleanup",
+    "原生理由の整理"
+  ],
+  "原文超长；整理仍有语义问题": [
+    "Overlong text; semantic errors remain",
+    "原文過長、整理後も意味問題"
+  ],
+  "10/13 数据完成": [
+    "Oct 13 · Data ready",
+    "10/13 データ完了"
+  ],
+  "筛选学生短理由": [
+    "Filter short student rationales",
+    "学生短理由を選別"
+  ],
+  "7,065 条；尚未训练": [
+    "7,065 items; not trained",
+    "7,065件、未学習"
+  ],
+  "评审数据管线": [
+    "Review-data pipeline",
+    "審査データ系統"
+  ],
+  "截至 10/16 试运行": [
+    "Trial through Oct 16",
+    "10/16時点の試行"
+  ],
+  "双路评审": [
+    "Two-route review",
+    "二経路審査"
+  ],
+  "6 个单元一致 / 9 个执行失败": [
+    "6 units agree / 9 execution failures",
+    "一致6単位 / 実行失敗9"
+  ],
+  "10/16 方案": [
+    "Oct 16 · Proposal",
+    "10/16 提案"
+  ],
+  "ATMS 支持集合": [
+    "ATMS support sets",
+    "ATMS支持集合"
+  ],
+  "传播与冲突排除待实现": [
+    "Propagation / conflict handling pending",
+    "伝播・矛盾排除は未実装"
+  ],
+  "因果配对合成": [
+    "Causal-pair synthesis",
+    "因果ペア合成"
+  ],
+  "合成及训练效果待验证": [
+    "Synthesis / training gains untested",
+    "合成・学習効果は未検証"
+  ],
+  "学生预测": [
+    "Student prediction",
+    "学生の予測"
+  ],
+  "逐词误差": [
+    "Token loss",
+    "token誤差"
+  ],
+  "更新学生": [
+    "Update student",
+    "学生を更新"
+  ],
+  "参考答案": [
+    "Reference answer",
+    "参照回答"
+  ],
+  "生成8份答案": [
+    "Generate 8 answers",
+    "8回答を生成"
+  ],
+  "计奖励": [
+    "Score rewards",
+    "報酬を計算"
+  ],
+  "组内比较": [
+    "Within-group comparison",
+    "群内比較"
+  ],
+  "更新": [
+    "Update",
+    "更新"
+  ],
+  "参考标签": [
+    "Reference labels",
+    "参照ラベル"
+  ],
+  "学生生成文本": [
+    "Student-generated text",
+    "学生の生成文"
+  ],
+  "教师沿前缀": [
+    "Teacher follows prefixes",
+    "教師がprefixに沿う"
+  ],
+  "比较师生": [
+    "Compare distributions",
+    "師生を比較"
+  ],
+  "教师上下文": [
+    "Teacher context",
+    "教師の文脈"
+  ],
+  "同一显式理由": [
+    "Same explicit rationale",
+    "同じ明示理由"
+  ],
+  "回答内理由": [
+    "Rationale in answer",
+    "回答内理由"
+  ],
+  "推理字段理由": [
+    "Rationale in reasoning",
+    "推論欄理由"
+  ],
+  "仅裁决": [
+    "Verdict only",
+    "裁定のみ"
+  ],
+  "分别SFT": [
+    "SFT each target",
+    "それぞれSFT"
+  ],
+  "用户需求": [
+    "User requirements",
+    "ユーザー要求"
+  ],
+  "指定版本的设计": [
+    "Exact design version",
+    "指定版の設計"
+  ],
+  "该域完整规则": [
+    "Full domain rules",
+    "領域の完全規則"
+  ],
+  "评审模型": [
+    "Review model",
+    "審査モデル"
+  ],
+  "通过 / 不通过": [
+    "Pass / fail",
+    "合格 / 不合格"
+  ],
+  "问题对象 · 规则 · 依据": [
+    "Object · Rule · Evidence",
+    "対象 · 規則 · 根拠"
+  ],
+  "需求 · 设计 · 规则": [
+    "Query · Design · Rules",
+    "要求 · 設計 · 規則"
+  ],
+  "独立评审": [
+    "Independent reviews",
+    "独立審査"
+  ],
+  "合并候选": [
+    "Merge candidates",
+    "候補統合"
+  ],
+  "核验证据": [
+    "Check evidence",
+    "証拠確認"
+  ],
+  "完整标签 / 无问题": [
+    "Full labels / no issues",
+    "完全ラベル / 問題なし"
+  ],
+  "部分标签": [
+    "Partial labels",
+    "部分ラベル"
+  ],
+  "待处理记录": [
+    "Pending records",
+    "未処理記録"
+  ],
+  "预测问题数（参考：3条同类问题）": [
+    "Predicted count (reference: 3 of one type)",
+    "予測件数（参照：同型3件）"
+  ],
+  "训练奖励": [
+    "Training reward",
+    "学習報酬"
+  ],
+  "去重计分": [
+    "Deduplicated scoring",
+    "重複除去で採点"
+  ],
+  "计数计分": [
+    "Count-aware scoring",
+    "件数で採点"
+  ],
+  "常规SFT": [
+    "Standard SFT",
+    "通常SFT"
+  ],
+  "中间训练后SFT": [
+    "SFT after intermediate training",
+    "中間学習後SFT"
+  ],
+  "Δ 百分点": [
+    "Δ pp",
+    "Δ ポイント"
+  ],
+  "错误类型F1（%）": [
+    "Error-type F1 (%)",
+    "誤り型F1（%）"
+  ],
+  "中间训练后，学过旧版": [
+    "Intermediate + old-task training",
+    "中間学習＋旧版経験"
+  ],
+  "中间训练后，未学旧版": [
+    "Intermediate, no old-task training",
+    "中間学習、旧版未学習"
+  ],
+  "1,056条 · 冻结参考": [
+    "1,056 · frozen reference",
+    "1,056件 · 固定参照"
+  ],
+  "792条 · Sol参考": [
+    "792 · Sol reference",
+    "792件 · Sol参照"
+  ],
+  "继续RL": [
+    "Continued RL",
+    "継続RL"
+  ],
+  "错误类型F1": [
+    "Error-type F1",
+    "誤り型F1"
+  ],
+  "学生规则": [
+    "Student rules",
+    "学生規則"
+  ],
+  "完整": [
+    "Full",
+    "完全"
+  ],
+  "精简": [
+    "Compact",
+    "簡略"
+  ],
+  "教师标签": [
+    "Teacher labels",
+    "教師ラベル"
+  ],
+  "不提供": [
+    "Absent",
+    "なし"
+  ],
+  "提供": [
+    "Present",
+    "あり"
+  ],
+  "未运行": [
+    "Not run",
+    "未実行"
+  ],
+  "Δ 16.09 个百分点": [
+    "Δ 16.09 pp",
+    "Δ 16.09ポイント"
+  ],
+  "训练目标": [
+    "Training target",
+    "学習目標"
+  ],
+  "推理模式": [
+    "Reasoning",
+    "推論モード"
+  ],
+  "训练步": [
+    "Steps",
+    "学習step"
+  ],
+  "可评分 / 792": [
+    "Scoreable / 792",
+    "採点可能 / 792"
+  ],
+  "回答内：理由＋裁决": [
+    "Answer: rationale + verdict",
+    "回答：理由＋裁定"
+  ],
+  "推理字段：理由；回答：裁决": [
+    "Reasoning: rationale; answer: verdict",
+    "推論：理由、回答：裁定"
+  ],
+  "开启": [
+    "On",
+    "有効"
+  ],
+  "Sol参考": [
+    "Sol reference",
+    "Sol参照"
+  ],
+  "DeepSeek参考": [
+    "DeepSeek reference",
+    "DeepSeek参照"
+  ],
+  "需求 · 方案": [
+    "Query · Design",
+    "要求 · 設計"
+  ],
+  "评审 A": [
+    "Review A",
+    "審査A"
+  ],
+  "评审 B": [
+    "Review B",
+    "審査B"
+  ],
+  "结果比较": [
+    "Compare results",
+    "結果比較"
+  ],
+  "复核分歧": [
+    "Review disagreements",
+    "不一致を再確認"
+  ],
+  "分析事实 · 规则": [
+    "Analyze facts · Rules",
+    "事実 · 規則を分析"
+  ],
+  "产品能力 · 已确认规则": [
+    "Capabilities · Confirmed rules",
+    "製品能力 · 確認済み規則"
+  ],
+  "人工确认": [
+    "Human confirmation",
+    "人手確認"
+  ],
+  "训练候选 / 规则修改": [
+    "Training candidates / rule edits",
+    "学習候補 / 規則変更"
+  ],
+  "一致": [
+    "Agree",
+    "一致"
+  ],
+  "分歧": [
+    "Disagree",
+    "不一致"
+  ],
+  "两条支持路径": [
+    "Two support paths",
+    "二つの支持経路"
+  ],
+  "已核验事实 F": [
+    "Verified fact F",
+    "確認済み事実F"
+  ],
+  "方案未限制": [
+    "No restriction in design",
+    "設計に制限なし"
+  ],
+  "最小支持：{A} 或 {B}": [
+    "Minimal support: {A} or {B}",
+    "最小支持：{A}または{B}"
+  ],
+  "A、B 的适用性待确认": [
+    "A/B applicability unconfirmed",
+    "A・Bの適用性は未確認"
+  ],
+  "撤回 A，保留 B": [
+    "Withdraw A, keep B",
+    "A撤回、B維持"
+  ],
+  "{B}  →  V 仍有支持": [
+    "{B} → V still supported",
+    "{B} → Vの支持は残る"
+  ],
+  "撤回 A、B": [
+    "Withdraw A and B",
+    "A・Bを撤回"
+  ],
+  "无支持  →  待复核": [
+    "No support → review",
+    "支持なし → 再確認"
+  ],
+  "接受 B 和豁免 C": [
+    "Accept B and exemption C",
+    "Bと免除Cを受理"
+  ],
+  "{B, C}  →  前提冲突": [
+    "{B, C} → premise conflict",
+    "{B,C} → 前提矛盾"
+  ],
+  "无支持不等于通过": [
+    "No support ≠ pass",
+    "支持なし ≠ 合格"
+  ],
+  "已登记冲突：{A,C}、{B,C}": [
+    "Registered conflicts: {A,C}, {B,C}",
+    "登録矛盾：{A,C}、{B,C}"
+  ],
+  "ATMS · 检查依赖及替代支持": [
+    "ATMS · Dependencies & alternate support",
+    "ATMS · 依存と代替支持を確認"
+  ],
+  "B 不适用": [
+    "B does not apply",
+    "B非適用"
+  ],
+  "固定输入": [
+    "Fixed input",
+    "固定入力"
+  ],
+  "同一需求": [
+    "Same query",
+    "同じ要求"
+  ],
+  "只改 A 的适用性": [
+    "Only A's applicability changes",
+    "Aの適用性だけ変更"
+  ],
+  "预期判断": [
+    "Expected judgments",
+    "期待判断"
+  ],
+  "A 适用": [
+    "A applies",
+    "A適用"
+  ],
+  "A 明确不适用": [
+    "A explicitly inapplicable",
+    "A明示非適用"
+  ],
+  "字段事实": [
+    "Field facts",
+    "フィールドの事実"
+  ],
+  "访问限制缺失": [
+    "Missing access restriction",
+    "アクセス制限欠落"
+  ],
+  "电话缺失：仍报": [
+    "Phone missing: still report",
+    "電話欠落：報告を維持"
+  ],
+  "独立复核": [
+    "Independent review",
+    "独立確認"
+  ],
+  "配对": [
+    "Paired",
+    "ペア"
+  ]
+}

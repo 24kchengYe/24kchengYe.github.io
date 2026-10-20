@@ -1,0 +1,258 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="792pt" viewBox="0 0 1080 792" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 792  L 1080 792  L 1080 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 147.6 25.92  L 147.6 108  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <path d="M 282.96 40.32  L 588.24 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_5">
+    <path d="M 599.76 40.32  L 905.04 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 147.6 134.64  L 147.6 216.72  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 282.96 149.04  L 588.24 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 599.76 149.04  L 905.04 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 147.6 243.36  L 147.6 325.44  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 282.96 257.76  L 588.24 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <path d="M 599.76 257.76  L 905.04 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 147.6 352.08  L 147.6 434.16  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_20">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_21">
+    <path d="M 282.96 366.48  L 588.24 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <path d="M 599.76 366.48  L 905.04 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_24">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <path d="M 147.6 460.8  L 147.6 542.88  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_26">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_27">
+    <path d="M 282.96 475.2  L 588.24 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_28">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_29">
+    <path d="M 599.76 475.2  L 905.04 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_30">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_31">
+    <path d="M 147.6 569.52  L 147.6 651.6  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_32">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_33">
+    <path d="M 282.96 583.92  L 588.24 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_35">
+    <path d="M 599.76 583.92  L 905.04 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_37">
+    <path d="M 147.6 678.24  L 147.6 760.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_38">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="692.64" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_39">
+    <path d="M 282.96 692.64  L 588.24 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_40">
+    
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="594" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="line2d_41">
+    <path d="M 599.76 692.64  L 905.04 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_42">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="910.8" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="text_1"><text x="33" y="64.837734" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Data</text></g>
+   <g id="text_2"><text x="277.474531" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="51" lengthAdjust="spacingAndGlyphs">Jul 21 · Inventory</text></g>
+   <g id="text_3"><text x="277.2" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Historical cases</text></g>
+   <g id="text_4"><text x="277.554492" y="90.045" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="110" lengthAdjust="spacingAndGlyphs">6,457 traceable cases</text></g>
+   <g id="text_5"><text x="594.488094" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="45" lengthAdjust="spacingAndGlyphs">Aug 6 · Export</text></g>
+   <g id="text_6"><text x="594" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Check evidence</text></g>
+   <g id="text_7"><text x="594.041992" y="90.045" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="100" lengthAdjust="spacingAndGlyphs">2,566 items collected</text></g>
+   <g id="text_8"><text x="911.174531" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="57" lengthAdjust="spacingAndGlyphs">Sep 5–6 · Freeze</text></g>
+   <g id="text_9"><text x="910.8" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Unified data</text></g>
+   <g id="text_10"><text x="910.846875" y="90.42" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="120" lengthAdjust="spacingAndGlyphs">Train 7,127 / test 792</text></g>
+   <g id="text_11"><text x="40.5" y="173.557734" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="45" lengthAdjust="spacingAndGlyphs">Prompts</text></g>
+   <g id="text_12"><text x="277.688094" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="45" lengthAdjust="spacingAndGlyphs">Aug 5 · Compare</text></g>
+   <g id="text_13"><text x="277.2" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Rewrite rules</text></g>
+   <g id="text_14"><text x="218.914844" y="198.765" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 55.38% → 64.62%</text></g>
+   <g id="text_15"><text x="594.274531" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="51" lengthAdjust="spacingAndGlyphs">Aug 24 · Review</text></g>
+   <g id="text_16"><text x="594" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Check each item</text></g>
+   <g id="text_17"><text x="535.714844" y="198.765" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 54.03% → 55.50%</text></g>
+   <g id="text_18"><text x="911.288094" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="45" lengthAdjust="spacingAndGlyphs">Sep 5 · Review</text></g>
+   <g id="text_19"><text x="910.8" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Revise disputed rules</text></g>
+   <g id="text_20"><text x="911.270703" y="199.065781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="153" lengthAdjust="spacingAndGlyphs">3-run agreement: 62/100 → 73/100</text></g>
+   <g id="text_21"><text x="48" y="272.167969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">SFT</text></g>
+   <g id="text_22"><text x="277.474531" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="51" lengthAdjust="spacingAndGlyphs">Jul 24 · Evaluate</text></g>
+   <g id="text_23"><text x="277.2" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">First models</text></g>
+   <g id="text_24"><text x="277.248828" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="124" lengthAdjust="spacingAndGlyphs">All 232 labeled defective</text></g>
+   <g id="text_25"><text x="594.488094" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="45" lengthAdjust="spacingAndGlyphs">Aug 9 · Evaluate</text></g>
+   <g id="text_26"><text x="594" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Compare training starts</text></g>
+   <g id="text_27"><text x="535.714844" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 25.70% → 38.83%</text></g>
+   <g id="text_28"><text x="911.174531" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="115" lengthAdjust="spacingAndGlyphs">Sep 6–7 · Train / evaluate</text></g>
+   <g id="text_29"><text x="910.8" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Unified-data comparison</text></g>
+   <g id="text_30"><text x="858.764844" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 55.72%–56.97%</text></g>
+   <g id="text_31"><text x="48" y="380.887969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">RL</text></g>
+   <g id="text_32"><text x="277.562625" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="130" lengthAdjust="spacingAndGlyphs">Aug 27 submit; Sep 7 evaluate</text></g>
+   <g id="text_33"><text x="277.2" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Two data mixtures</text></g>
+   <g id="text_34"><text x="192.631641" y="416.205" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 46.20% → 42.65% / 38.25%</text></g>
+   <g id="text_35"><text x="594.374531" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle">Sep 1–7 · Train</text></g>
+   <g id="text_36"><text x="594" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Issue-count rewards</text></g>
+   <g id="text_37"><text x="594.209961" y="416.568281" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle">F1 +3.45 / +2.77 pp</text></g>
+   <g id="text_38"><text x="911.099062" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="116" lengthAdjust="spacingAndGlyphs">Sep 30–Oct 9 · Train / evaluate</text></g>
+   <g id="text_39"><text x="910.8" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Unified-data retest</text></g>
+   <g id="text_40"><text x="911.009961" y="416.568281" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle">F1 +1.94 / −0.38 pp</text></g>
+   <g id="text_41"><text x="48" y="489.607969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">OPD</text></g>
+   <g id="text_42"><text x="277.474531" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="51" lengthAdjust="spacingAndGlyphs">Sep 22 · Validate</text></g>
+   <g id="text_43"><text x="277.2" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Connect distillation</text></g>
+   <g id="text_44"><text x="277.2" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="125" lengthAdjust="spacingAndGlyphs">Teacher–student calls work</text></g>
+   <g id="text_45"><text x="594.274531" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="51" lengthAdjust="spacingAndGlyphs">Sep 28 · Evaluate</text></g>
+   <g id="text_46"><text x="594" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Compare teacher hints</text></g>
+   <g id="text_47"><text x="541.964844" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 20.69%–22.01%</text></g>
+   <g id="text_48"><text x="911.099062" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="116" lengthAdjust="spacingAndGlyphs">Sep 30–Oct 9 · Train / evaluate</text></g>
+   <g id="text_49"><text x="910.8" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="120" lengthAdjust="spacingAndGlyphs">Full student rules</text></g>
+   <g id="text_50"><text x="852.514844" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 35.03% → 51.12%</text></g>
+   <g id="text_51"><text x="48" y="598.327969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Rationale training</text></g>
+   <g id="text_52"><text x="277.2855" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="122" lengthAdjust="spacingAndGlyphs">Sep 30–Oct 13 · Train / compare</text></g>
+   <g id="text_53"><text x="277.2" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="105" lengthAdjust="spacingAndGlyphs">Same-label rationale study</text></g>
+   <g id="text_54"><text x="275.960742" y="634.195781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="79" lengthAdjust="spacingAndGlyphs">Verdict only: 56.56%</text></g>
+   <g id="text_55"><text x="594.233844" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="76" lengthAdjust="spacingAndGlyphs">Oct 12–13 · Check</text></g>
+   <g id="text_56"><text x="594" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Native rationale cleanup</text></g>
+   <g id="text_57"><text x="594.25" y="633.645" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="163" lengthAdjust="spacingAndGlyphs">Overlong text; semantic errors remain</text></g>
+   <g id="text_58"><text x="911.260969" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="81" lengthAdjust="spacingAndGlyphs">Oct 13 · Data ready</text></g>
+   <g id="text_59"><text x="910.8" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="105" lengthAdjust="spacingAndGlyphs">Filter short student rationales</text></g>
+   <g id="text_60"><text x="911.154492" y="633.645" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="110" lengthAdjust="spacingAndGlyphs">7,065 items; not trained</text></g>
+   <g id="text_61"><text x="63" y="707.063203" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Review-data pipeline</text></g>
+   <g id="text_62"><text x="277.410969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="95" lengthAdjust="spacingAndGlyphs">Trial through Oct 16</text></g>
+   <g id="text_63"><text x="277.2" y="719.220469" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Two-route review</text></g>
+   <g id="text_64"><text x="277.292773" y="742.827891" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="157" lengthAdjust="spacingAndGlyphs">6 units agree / 9 execution failures</text></g>
+   <g id="text_65"><text x="594.060969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="57" lengthAdjust="spacingAndGlyphs">Oct 16 · Proposal</text></g>
+   <g id="text_66"><text x="594.252734" y="719.19" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="103" lengthAdjust="spacingAndGlyphs">ATMS support sets</text></g>
+   <g id="text_67"><text x="594" y="742.415781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="125" lengthAdjust="spacingAndGlyphs">Propagation / conflict handling pending</text></g>
+   <g id="text_68"><text x="910.860969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="57" lengthAdjust="spacingAndGlyphs">Oct 16 · Proposal</text></g>
+   <g id="text_69"><text x="910.8" y="719.19" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Causal-pair synthesis</text></g>
+   <g id="text_70"><text x="910.8" y="742.365" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" text-anchor="middle" textLength="125" lengthAdjust="spacingAndGlyphs">Synthesis / training gains untested</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p50ed8afd8c">
+   <rect x="0" y="0" width="1080" height="792"/>
+  </clipPath>
+ </defs>
+</svg>

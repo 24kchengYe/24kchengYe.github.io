@@ -1,0 +1,112 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="280.8pt" viewBox="0 0 864 280.8" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 280.8  L 864 280.8  L 864 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 169.2 54  L 820.8 54  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #e6e6e3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 169.2 118.8  L 820.8 118.8  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #e6e6e3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 169.2 183.6  L 820.8 183.6  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #e6e6e3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 169.2 248.4  L 820.8 248.4  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #e6e6e3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 252 54  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="252" y="54" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_6">
+    <path d="M 489.6 54  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="489.6" y="54" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 734.4 54  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="734.4" y="54" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_8">
+    <path d="M 252 118.8  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="252" y="118.8" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 489.6 118.8  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="489.6" y="118.8" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <path d="M 734.4 118.8  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="734.4" y="118.8" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 252 183.6  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="252" y="183.6" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 734.4 183.6  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="734.4" y="183.6" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 252 248.4  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="252" y="248.4" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_14">
+    <path d="M 489.6 248.4  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="489.6" y="248.4" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 734.4 248.4  " clip-path="url(#pbd89be55fe)" style="fill: none; stroke: #76a943; stroke-width: 1.5; stroke-linecap: square"/>
+    <g clip-path="url(#pbd89be55fe)">
+     <use xlink:href="#m8094eb55f6" x="734.4" y="248.4" style="fill: #76a943; stroke: #76a943"/>
+    </g>
+   </g>
+   <g id="text_1"><text x="78.4" y="58.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">修復方式</text></g>
+   <g id="text_2"><text x="78.4" y="123.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">検査コスト</text></g>
+   <g id="text_3"><text x="78.4" y="188.239688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">データ納品</text></g>
+   <g id="text_4"><text x="50.4" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Verifier</text></g>
+   <g id="text_5"><text x="252.023594" y="40.328594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">6月 · 局所保護</text></g>
+   <g id="text_6"><text x="489.942188" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="146" lengthAdjust="spacingAndGlyphs">8月 · モデル/履歴/パッチ</text></g>
+   <g id="text_7"><text x="734.423594" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">9月 · Prompt回帰</text></g>
+   <g id="text_8"><text x="252.023594" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">7月 · 同版投票</text></g>
+   <g id="text_9"><text x="489.623594" y="105.114375" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">8月 · 重複呼出削減</text></g>
+   <g id="text_10"><text x="734.822188" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">8〜9月 · 強度混用</text></g>
+   <g id="text_11"><text x="251.779688" y="169.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">7月 · Spec / Plan</text></g>
+   <g id="text_12"><text x="734.423594" y="169.928594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">9月 · 未出荷の復旧</text></g>
+   <g id="text_13"><text x="252.105078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">7/23 · 前後比較</text></g>
+   <g id="text_14"><text x="489.705078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">8/13 · 段階採点</text></g>
+   <g id="text_15"><text x="734.505078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="99" lengthAdjust="spacingAndGlyphs">8/14 · 全系統比較</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbd89be55fe">
+   <rect x="0" y="0" width="864" height="280.8"/>
+  </clipPath>
+ </defs>
+</svg>

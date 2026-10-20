@@ -1,0 +1,258 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="792pt" viewBox="0 0 1080 792" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="zh">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 792  L 1080 792  L 1080 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 147.6 25.92  L 147.6 108  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <path d="M 282.96 40.32  L 588.24 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_5">
+    <path d="M 599.76 40.32  L 905.04 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 147.6 134.64  L 147.6 216.72  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 282.96 149.04  L 588.24 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 599.76 149.04  L 905.04 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 147.6 243.36  L 147.6 325.44  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 282.96 257.76  L 588.24 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <path d="M 599.76 257.76  L 905.04 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 147.6 352.08  L 147.6 434.16  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_20">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_21">
+    <path d="M 282.96 366.48  L 588.24 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <path d="M 599.76 366.48  L 905.04 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_24">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <path d="M 147.6 460.8  L 147.6 542.88  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_26">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_27">
+    <path d="M 282.96 475.2  L 588.24 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_28">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_29">
+    <path d="M 599.76 475.2  L 905.04 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_30">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_31">
+    <path d="M 147.6 569.52  L 147.6 651.6  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_32">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_33">
+    <path d="M 282.96 583.92  L 588.24 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_35">
+    <path d="M 599.76 583.92  L 905.04 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_37">
+    <path d="M 147.6 678.24  L 147.6 760.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_38">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="692.64" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_39">
+    <path d="M 282.96 692.64  L 588.24 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_40">
+    
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="594" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="line2d_41">
+    <path d="M 599.76 692.64  L 905.04 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_42">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="910.8" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="text_1"><text x="18" y="64.837734" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">数据</text></g>
+   <g id="text_2"><text x="251.974531" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">7/21 盘点</text></g>
+   <g id="text_3"><text x="247.2" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">历史案例</text></g>
+   <g id="text_4"><text x="222.554492" y="90.045" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">6,457 个可回溯案例</text></g>
+   <g id="text_5"><text x="571.988094" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">8/6 导出</text></g>
+   <g id="text_6"><text x="564" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">核对证据</text></g>
+   <g id="text_7"><text x="544.041992" y="90.045" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">收录 2,566 条数据</text></g>
+   <g id="text_8"><text x="882.674531" y="25.817563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/5–6 冻结</text></g>
+   <g id="text_9"><text x="880.8" y="66.87" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">统一数据</text></g>
+   <g id="text_10"><text x="850.846875" y="90.42" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">训练 7,127 / 测试 792</text></g>
+   <g id="text_11"><text x="18" y="173.557734" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">提示词</text></g>
+   <g id="text_12"><text x="255.188094" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">8/5 比较</text></g>
+   <g id="text_13"><text x="247.2" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">规则改写</text></g>
+   <g id="text_14"><text x="218.914844" y="198.765" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 55.38% → 64.62%</text></g>
+   <g id="text_15"><text x="568.774531" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">8/24 复核</text></g>
+   <g id="text_16"><text x="564" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">逐项检查</text></g>
+   <g id="text_17"><text x="535.714844" y="198.765" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 54.03% → 55.50%</text></g>
+   <g id="text_18"><text x="888.788094" y="134.537562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/5 复核</text></g>
+   <g id="text_19"><text x="865.8" y="175.59" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">分歧规则修订</text></g>
+   <g id="text_20"><text x="834.770703" y="199.065781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">三轮一致 62/100 → 73/100</text></g>
+   <g id="text_21"><text x="18" y="272.167969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">监督微调</text></g>
+   <g id="text_22"><text x="251.974531" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">7/24 评测</text></g>
+   <g id="text_23"><text x="247.2" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">首轮模型</text></g>
+   <g id="text_24"><text x="215.248828" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">232 条全部判为有问题</text></g>
+   <g id="text_25"><text x="571.988094" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">8/9 评测</text></g>
+   <g id="text_26"><text x="549" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">训练起点对照</text></g>
+   <g id="text_27"><text x="535.714844" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 25.70% → 38.83%</text></g>
+   <g id="text_28"><text x="853.674531" y="243.257562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/6–7 提训及评测登记</text></g>
+   <g id="text_29"><text x="865.8" y="284.31" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">统一数据对照</text></g>
+   <g id="text_30"><text x="858.764844" y="307.485" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 55.72%–56.97%</text></g>
+   <g id="text_31"><text x="18" y="380.887969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">强化学习</text></g>
+   <g id="text_32"><text x="212.562625" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">8/27 提交；9/7 评测批次</text></g>
+   <g id="text_33"><text x="232.2" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">两种样本配比</text></g>
+   <g id="text_34"><text x="192.631641" y="416.205" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 46.20% → 42.65% / 38.25%</text></g>
+   <g id="text_35"><text x="536.874531" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/1–7 创建并完成训练</text></g>
+   <g id="text_36"><text x="549" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">问题次数奖励</text></g>
+   <g id="text_37"><text x="521.709961" y="416.568281" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 +3.45 / +2.77 个百分点</text></g>
+   <g id="text_38"><text x="853.099062" y="351.977562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/30–10/9 训练及评测</text></g>
+   <g id="text_39"><text x="865.8" y="393.03" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">统一数据复验</text></g>
+   <g id="text_40"><text x="838.509961" y="416.568281" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 +1.94 / −0.38 个百分点</text></g>
+   <g id="text_41"><text x="18" y="489.607969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">概率蒸馏</text></g>
+   <g id="text_42"><text x="251.974531" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/22 验证</text></g>
+   <g id="text_43"><text x="232.2" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">接通概率蒸馏</text></g>
+   <g id="text_44"><text x="214.7" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">教师、学生调用链跑通</text></g>
+   <g id="text_45"><text x="568.774531" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/28 评测</text></g>
+   <g id="text_46"><text x="549" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">教师提示对照</text></g>
+   <g id="text_47"><text x="541.964844" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 20.69%–22.01%</text></g>
+   <g id="text_48"><text x="853.099062" y="460.697563" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/30–10/9 训练及评测</text></g>
+   <g id="text_49"><text x="850.8" y="501.75" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">学生使用完整规则</text></g>
+   <g id="text_50"><text x="852.514844" y="524.925" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">F1 35.03% → 51.12%</text></g>
+   <g id="text_51"><text x="18" y="598.327969" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">理由训练</text></g>
+   <g id="text_52"><text x="216.2855" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">9/30–10/13 训练及比较</text></g>
+   <g id="text_53"><text x="224.7" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">同标签理由对照</text></g>
+   <g id="text_54"><text x="236.460742" y="634.195781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">仅裁决 56.56%</text></g>
+   <g id="text_55"><text x="556.233844" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">10/12–13 检查</text></g>
+   <g id="text_56"><text x="549" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">原生理由整理</text></g>
+   <g id="text_57"><text x="512.75" y="633.645" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">原文超长；整理仍有语义问题</text></g>
+   <g id="text_58"><text x="870.760969" y="569.417562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">10/13 数据完成</text></g>
+   <g id="text_59"><text x="858.3" y="610.47" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">筛选学生短理由</text></g>
+   <g id="text_60"><text x="856.154492" y="633.645" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">7,065 条；尚未训练</text></g>
+   <g id="text_61"><text x="18" y="707.063203" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">评审数据管线</text></g>
+   <g id="text_62"><text x="229.910969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">截至 10/16 试运行</text></g>
+   <g id="text_63"><text x="247.2" y="719.220469" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">双路评审</text></g>
+   <g id="text_64"><text x="198.792773" y="742.827891" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">6 个单元一致 / 9 个执行失败</text></g>
+   <g id="text_65"><text x="565.560969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">10/16 方案</text></g>
+   <g id="text_66"><text x="542.752734" y="719.19" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">ATMS 支持集合</text></g>
+   <g id="text_67"><text x="531.5" y="742.415781" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">传播与冲突排除待实现</text></g>
+   <g id="text_68"><text x="882.360969" y="678.137562" font-size="11.600000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">10/16 方案</text></g>
+   <g id="text_69"><text x="865.8" y="719.19" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">因果配对合成</text></g>
+   <g id="text_70"><text x="848.3" y="742.365" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570">合成及训练效果待验证</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p50ed8afd8c">
+   <rect x="0" y="0" width="1080" height="792"/>
+  </clipPath>
+ </defs>
+</svg>

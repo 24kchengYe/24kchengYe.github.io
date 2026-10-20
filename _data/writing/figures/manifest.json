@@ -1,0 +1,332 @@
+{
+  "/writing/assets/5930efdb0f0a6acb35b1.png": {
+    "source": "01-paradigm-map.html",
+    "width": 1440,
+    "height": 540,
+    "format": "html-css"
+  },
+  "/writing/assets/b81e14139103f022d7a8.png": {
+    "source": "22-autoresearch-map.html",
+    "width": 1440,
+    "height": 1130,
+    "format": "html-css"
+  },
+  "/writing/assets/1fcac2613fda6eaaefa5.png": {
+    "source": "23-method-comparison.html",
+    "width": 1440,
+    "height": 945,
+    "format": "html-css"
+  },
+  "/writing/assets/463d2f003571a452c919.png": {
+    "source": "24-loop-control.html",
+    "width": 1440,
+    "height": 730,
+    "format": "html-css"
+  },
+  "/writing/assets/90d1fddc3d5285460aaa.png": {
+    "source": "02-two-loops.html",
+    "width": 1440,
+    "height": 580,
+    "format": "html-css"
+  },
+  "/writing/assets/eadef45645aed260de1b.png": {
+    "source": "25-method-decisions.html",
+    "width": 1440,
+    "height": 880,
+    "format": "html-css"
+  },
+  "/writing/assets/e625a342260e0168cff0.png": {
+    "source": "03-search-operators.html",
+    "width": 1440,
+    "height": 560,
+    "format": "html-css"
+  },
+  "/writing/assets/92461544b8e024270e8a.png": {
+    "source": "04-patch-guard.html",
+    "width": 1440,
+    "height": 490,
+    "format": "html-css"
+  },
+  "/writing/assets/d25bc01cff62334013ac.png": {
+    "source": "05-runtime-branches.html",
+    "width": 1440,
+    "height": 745,
+    "format": "html-css"
+  },
+  "/writing/assets/5c9d544897108830bbd4.png": {
+    "source": "06-judge-cross.html",
+    "width": 1440,
+    "height": 460,
+    "format": "html-css"
+  },
+  "/writing/assets/dc38eb12fbe99560666d.png": {
+    "source": "07-normalization.html",
+    "width": 1440,
+    "height": 580,
+    "format": "html-css"
+  },
+  "/writing/assets/ac5685d294785307cd30.png": {
+    "source": "08-v3-memory.html",
+    "width": 1440,
+    "height": 570,
+    "format": "html-css"
+  },
+  "/writing/assets/07a9094fd9e5f2f6bb6f.png": {
+    "source": "09-data-split.html",
+    "width": 1440,
+    "height": 550,
+    "format": "html-css"
+  },
+  "/writing/assets/3a31a0454de19bf0bf77.png": {
+    "source": "10-initialization-tree.html",
+    "width": 1440,
+    "height": 690,
+    "format": "html-css"
+  },
+  "/writing/assets/13cff1f8983c4148b205.png": {
+    "source": "11-planner-tradeoff.html",
+    "width": 1440,
+    "height": 420,
+    "format": "html-css"
+  },
+  "/writing/assets/a8f7a580b68cf9c9c8f0.png": {
+    "source": "12-core-skills.html",
+    "width": 1440,
+    "height": 630,
+    "format": "html-css"
+  },
+  "/writing/assets/a105ce2d57377fc87975.png": {
+    "source": "13-consumer-closure.html",
+    "width": 1440,
+    "height": 470,
+    "format": "html-css"
+  },
+  "/writing/assets/4d80119d51c4ae944162.png": {
+    "source": "14-pe-comparison.html",
+    "width": 1440,
+    "height": 710,
+    "format": "html-css"
+  },
+  "/writing/assets/e652dd7a4d0c19a3adbd.png": {
+    "source": "15-local-global.html",
+    "width": 1440,
+    "height": 480,
+    "format": "html-css"
+  },
+  "/writing/assets/dc6bc467686cebb179b7.png": {
+    "source": "16-noise.html",
+    "width": 1440,
+    "height": 500,
+    "format": "html-css"
+  },
+  "/writing/assets/95169ef5533d8f0b4548.png": {
+    "source": "17-design-handoff.html",
+    "width": 1440,
+    "height": 500,
+    "format": "html-css"
+  },
+  "/writing/assets/be101ed5c01324480414.png": {
+    "source": "18-training-lineage.html",
+    "width": 1440,
+    "height": 590,
+    "format": "html-css"
+  },
+  "/writing/assets/185843a5d98011461c98.png": {
+    "source": "19-e2e-paired.html",
+    "width": 1440,
+    "height": 440,
+    "format": "html-css"
+  },
+  "/writing/assets/1bebaa35682042427ab1.png": {
+    "source": "20-token-cost.html",
+    "width": 1440,
+    "height": 470,
+    "format": "html-css"
+  },
+  "/writing/assets/5f027d98d4046d5b3961.png": {
+    "source": "21-error-localization.html",
+    "width": 1440,
+    "height": 550,
+    "format": "html-css"
+  },
+  "/writing/assets/e647acae569a0cb3be7a.svg": {
+    "source": "spec-repair-01.svg",
+    "width": 864,
+    "height": 309.6,
+    "format": "svg"
+  },
+  "/writing/assets/98b4c8e30cc7115ed234.svg": {
+    "source": "spec-repair-02.svg",
+    "width": 864,
+    "height": 280.8,
+    "format": "svg"
+  },
+  "/writing/assets/ad8ed4327da8728f89fe.svg": {
+    "source": "spec-repair-03.svg",
+    "width": 864,
+    "height": 316.8,
+    "format": "svg"
+  },
+  "/writing/assets/96bab7319c80cd000e6a.svg": {
+    "source": "spec-repair-04.svg",
+    "width": 864,
+    "height": 468,
+    "format": "svg"
+  },
+  "/writing/assets/532a029e70811a11a29e.svg": {
+    "source": "spec-repair-05.svg",
+    "width": 864,
+    "height": 496.8,
+    "format": "svg"
+  },
+  "/writing/assets/515e12ce143dbbed4959.svg": {
+    "source": "spec-repair-06.svg",
+    "width": 864,
+    "height": 237.6,
+    "format": "svg"
+  },
+  "/writing/assets/5509058bf848fb2ed2f1.svg": {
+    "source": "spec-repair-07.svg",
+    "width": 864,
+    "height": 468,
+    "format": "svg"
+  },
+  "/writing/assets/7dd3aea037815cbb227b.svg": {
+    "source": "spec-repair-08.svg",
+    "width": 864,
+    "height": 374.4,
+    "format": "svg"
+  },
+  "/writing/assets/f8d191d7c6d7be9a37d7.svg": {
+    "source": "spec-repair-09.svg",
+    "width": 864,
+    "height": 561.6,
+    "format": "svg"
+  },
+  "/writing/assets/4e64441bbed74bdd4391.svg": {
+    "source": "spec-repair-10.svg",
+    "width": 864,
+    "height": 216,
+    "format": "svg"
+  },
+  "/writing/assets/52c1e0f3d17bb7fcc6a7.svg": {
+    "source": "spec-repair-11.svg",
+    "width": 864,
+    "height": 777.6,
+    "format": "svg"
+  },
+  "/writing/assets/f0f36a571cc27e5e302c.svg": {
+    "source": "spec-repair-12.svg",
+    "width": 864,
+    "height": 244.8,
+    "format": "svg"
+  },
+  "/writing/assets/36aadf2d60ee62e1f7a4.svg": {
+    "source": "spec-repair-13.svg",
+    "width": 864,
+    "height": 496.8,
+    "format": "svg"
+  },
+  "/writing/assets/e2ea43c24fe2e6402600.svg": {
+    "source": "spec-repair-14.svg",
+    "width": 864,
+    "height": 374.4,
+    "format": "svg"
+  },
+  "/writing/assets/7a0517043f6245c980e2.svg": {
+    "source": "spec-repair-15.svg",
+    "width": 864,
+    "height": 432,
+    "format": "svg"
+  },
+  "/writing/assets/4af7638caa83ecfc7769.svg": {
+    "source": "spec-repair-16.svg",
+    "width": 864,
+    "height": 576,
+    "format": "svg"
+  },
+  "/writing/assets/deadf603ed66de7a47a9.svg": {
+    "source": "spec-repair-17.svg",
+    "width": 864,
+    "height": 576,
+    "format": "svg"
+  },
+  "/writing/assets/d74f771387ca6ecd7601.svg": {
+    "source": "spec-repair-18.svg",
+    "width": 864,
+    "height": 424.8,
+    "format": "svg"
+  },
+  "/writing/assets/f7b1c869606aacb84246.svg": {
+    "source": "spec-repair-19.svg",
+    "width": 864,
+    "height": 252,
+    "format": "svg"
+  },
+  "/writing/assets/646239c884a492ee1ee2.svg": {
+    "source": "rubric-model-01.svg",
+    "width": 1080,
+    "height": 792,
+    "format": "svg"
+  },
+  "/writing/assets/56fee8fae1475d39af31.svg": {
+    "source": "rubric-model-02.svg",
+    "width": 849.6,
+    "height": 475.2,
+    "format": "svg"
+  },
+  "/writing/assets/0c8f03219e746892457f.svg": {
+    "source": "rubric-model-03.svg",
+    "width": 1008,
+    "height": 331.2,
+    "format": "svg"
+  },
+  "/writing/assets/213571d6c4a8fb88aa7c.svg": {
+    "source": "rubric-model-04.svg",
+    "width": 1008,
+    "height": 360,
+    "format": "svg"
+  },
+  "/writing/assets/2a78cfaa5c8b1d541369.svg": {
+    "source": "rubric-model-05.svg",
+    "width": 849.6,
+    "height": 345.6,
+    "format": "svg"
+  },
+  "/writing/assets/c74430396580fa5c87e9.svg": {
+    "source": "rubric-model-06.svg",
+    "width": 849.6,
+    "height": 446.4,
+    "format": "svg"
+  },
+  "/writing/assets/8573383b051e4aa43c38.svg": {
+    "source": "rubric-model-07.svg",
+    "width": 849.6,
+    "height": 367.2,
+    "format": "svg"
+  },
+  "/writing/assets/518173faf6bb5f7a6524.svg": {
+    "source": "rubric-model-08.svg",
+    "width": 849.6,
+    "height": 525.6,
+    "format": "svg"
+  },
+  "/writing/assets/5af2c39fe8fa60e6a221.svg": {
+    "source": "rubric-model-09.svg",
+    "width": 1008,
+    "height": 489.6,
+    "format": "svg"
+  },
+  "/writing/assets/5aa7f3ceea98100373e0.svg": {
+    "source": "rubric-model-10.svg",
+    "width": 1008,
+    "height": 504,
+    "format": "svg"
+  },
+  "/writing/assets/7fe3941e7dc1726a52d4.svg": {
+    "source": "rubric-model-11.svg",
+    "width": 1008,
+    "height": 504,
+    "format": "svg"
+  }
+}

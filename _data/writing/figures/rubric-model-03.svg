@@ -1,0 +1,47 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="331.2pt" viewBox="0 0 1008 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2  L 1008 331.2  L 1008 0  L 0 0  z " style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 141.0984 90  L 244.08 90  Q 252 90 252 97.92  L 252 161.28  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 161.6004 169.2  L 244.08 169.2  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 154.7676 248.4  L 244.08 248.4  Q 252 248.4 252 240.48  L 252 177.12  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 161.28  L 626.4 119.52  Q 626.4 111.6 634.32 111.6  L 787.795068 111.6  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 783.395068 109.4  L 787.795068 111.6  L 783.395068 113.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 177.12  L 626.4 218.88  Q 626.4 226.8 634.32 226.8  L 753.170268 226.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 748.770268 224.6  L 753.170268 226.8  L 748.770268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 403.9416 184.86  L 474.4584 184.86  Q 483.0984 184.86 483.0984 176.22  L 483.0984 162.18  Q 483.0984 153.54 474.4584 153.54  L 403.9416 153.54  Q 395.3016 153.54 395.3016 162.18  L 395.3016 176.22  Q 395.3016 184.86 403.9416 184.86  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1"><text x="80.6" y="94.629102" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="55">用户需求</text></g>
+   <g id="text_2"><text x="60.05" y="173.733844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="96">指定版本的设计</text></g>
+   <g id="text_3"><text x="66.9" y="252.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="83">该域完整规则</text></g>
+   <g id="text_4"><text x="411.8" y="173.768094" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="55">评审模型</text></g>
+   <g id="text_5"><text x="794.531336" y="116.133844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="82">通过 / 不通过</text></g>
+   <g id="text_6"><text x="759.85" y="231.416258" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-original-width="151">问题对象 · 规则 · 依据</text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p00e306ffd5">
+   <rect x="0" y="0" width="1008" height="331.2"/>
+  </clipPath>
+ </defs>
+</svg>

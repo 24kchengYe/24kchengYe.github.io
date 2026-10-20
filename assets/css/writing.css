@@ -1,7 +1,24 @@
 .writing-section { padding-top: 68px; scroll-margin-top: 45px; }
-.series-intro { display: flex; align-items: baseline; gap: 19px; margin-top: 20px; margin-bottom: 18px; }
+.series-intro { display: block; margin-top: 20px; margin-bottom: 18px; }
 .eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; font-weight: 500; color: var(--green); }
-.series-intro p { font-size: 14px; color: var(--muted); }
+.writing-section .series-intro .series-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: balance;
+}
+.writing-section .series-intro .series-description {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .8125rem;
+}
+@media (max-width: 680px) {
+  .writing-section .series-intro .series-title { font-size: 1.0625rem; }
+}
 .writing-row {
   display: grid;
   grid-template-columns: 224px minmax(0, 1fr) 20px;

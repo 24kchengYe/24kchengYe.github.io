@@ -18,21 +18,21 @@ redirect_from:
 
 I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
 
-My research focuses on **building-scale urban analytics and simulation**, **LLM/VLM evaluation and alignment**, and **multi-agent systems**.
+My research focuses on **building-scale urban analytics and simulation**, **LLM/VLM post-training, evaluation and alignment**, and **multi-agent systems**.
 
 </div>
 <div lang="zh" markdown="block">
 
 我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。2023年获[合肥工业大学](https://www.hfut.edu.cn/)城乡规划学士学位。
 
-研究方向包括**建筑尺度城市分析与模拟**、**大模型评测与对齐**和**多智能体系统**。
+研究方向包括**建筑尺度城市分析与模拟**、**大模型后训练、评测与对齐**和**多智能体系统**。
 
 </div>
 <div lang="ja" markdown="block">
 
 [清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。2023年に[合肥工業大学](https://www.hfut.edu.cn/)にて都市計画の学士号を取得しました。
 
-研究分野は**建築スケール都市分析・シミュレーション**、**LLM/VLMの評価とアライメント**、**マルチエージェントシステム**です。
+研究分野は**建築スケール都市分析・シミュレーション**、**LLM/VLMの事後学習・評価・アライメント**、**マルチエージェントシステム**です。
 
 </div>
 
@@ -49,17 +49,17 @@ My research focuses on **building-scale urban analytics and simulation**, **LLM/
 
 <div lang="en" markdown="block">
 
-I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*, with a first/corresponding-author paper in 2nd-round review at *Nature Communications*. See my [Google Scholar profile](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) for current citations; my open-source datasets have received **45,000+** downloads, including **2 ESI Highly Cited Papers**.
+I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*. My data and code have received **79,500** downloads. My first-authored work includes **2 ESI Highly Cited Papers** and **1 ESI Hot Paper**. See my [Google Scholar profile](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) for current citations.
 
 </div>
 <div lang="zh" markdown="block">
 
-致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文，另有第一/通讯作者论文在 *Nature Communications* 二审。当前引用情况见 [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ)；开源数据集累计 **45,000+** 次下载，含 **2篇ESI高被引论文**。
+致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文。数据与代码累计 **79,500** 次下载，一作成果包括 **2篇ESI高被引论文**和 **1篇ESI热点论文**。当前引用情况见 [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ)。
 
 </div>
 <div lang="ja" markdown="block">
 
-大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表し、*Nature Communications* に第2回査読中の筆頭/責任著者論文があります。最新の引用状況は [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) を参照してください。オープンソースデータセットは累計 **45,000回以上** ダウンロードされ、**ESI高被引用論文2本** を含みます。
+大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表しています。データとコードは累計 **79,500回** ダウンロードされ、筆頭著者の成果には **ESI高被引用論文2本**と **ESIホットペーパー1本** があります。最新の引用状況は [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) を参照してください。
 
 </div>
 <div class="profile-detail" id="research-vision" markdown="0">
@@ -117,22 +117,22 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 
 **Yecheng Zhang**, Rong Zhao, Zimu Huang, Xinyu Wang, Yue Ma, Ying Long*
 
-*Nature Communications* (2nd round review). [arXiv](https://arxiv.org/abs/2505.13803) \| [PDF](<cv/aiusv3.pdf>)
+*arXiv*, 2025. [arXiv](https://arxiv.org/abs/2505.13803) \| [PDF](<cv/aiusv3.pdf>)
 
 <details class="paper-abstract" markdown="block">
 <summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
 
 <div lang="en" markdown="block">
-- Designed the **AI4US benchmark** evaluating leading LLMs (GPT, Claude, GLM, DeepSeek, etc.) over **1M+** synthesis trials across symbolic reasoning and multimodal perception, fitting established scientific laws (scaling laws, distance decay, urban vitality, urban perception).
-- Discovered the **"group flattening" effect**, **systematic bias in fitting established scientific laws**, and a **culturally uneven baseline** in LLM urban perception; proposed **multi-paradigm context optimization strategies** (independent/joint sampling, boundary constraints).
+- Developed **AI4US** to evaluate **data synthesis and conditional intervention** across urban scaling, distance decay, neighbourhood vitality, and streetscape perception.
+- Found reproducible directional responses alongside compressed numerical coverage, local variation, and visual diversity. Used **Profile–Probe–Intervene** analysis on **Qwen2.5-VL-72B** to test which urban relationships could be decoded from intermediate representations and influence selected outputs.
 </div>
 <div lang="zh" markdown="block">
-- 设计 **AI4US 评测框架**，系统评估 GPT、Claude、GLM、DeepSeek 等主流大模型在符号推理和多模态感知领域的数据合成能力，累计执行 **100万+** 次实验，拟合已有科学定律（标度律、距离衰减、城市活力、城市感知）。
-- 发现 **"群体扁平化"效应**、**拟合科学定律中的系统性偏差**和城市感知中的**文化基准不均等**现象，提出**多范式上下文优化策略**（独立/联合采样、边界约束）。
+- 提出 **AI4US 多模态评测框架**，围绕**数据合成与条件干预**两条路径，在城市标度、距离衰减、街区活力与街景感知四类任务中评估模型。
+- 发现模型可产生稳定的方向响应，但会压缩数值覆盖、局部波动与视觉多样性；在 **Qwen2.5-VL-72B** 上开展 **Profile–Probe–Intervene** 机制分析，验证部分城市规律可由中间表征解码并影响局部输出。
 </div>
 <div lang="ja" markdown="block">
-- **AI4USベンチマーク**を設計し、主要LLM（GPT、Claude、GLM、DeepSeek等）の**100万回以上**の合成試行を通じて、記号推論とマルチモーダル知覚における科学法則（スケーリング則、距離減衰、都市活力、都市知覚）への適合を評価。
-- **「集団平坦化」効果**、**科学法則適合における系統的バイアス**、都市知覚における**文化的に不均等なベースライン**を発見し、**マルチパラダイム文脈最適化戦略**（独立/共同サンプリング、境界制約）を提案。
+- **AI4US**を開発し、都市スケーリング、距離減衰、近隣の活力、街路景観の知覚の4課題で、**データ合成と条件付き介入**を評価。
+- 再現可能な方向応答と同時に、数値範囲、局所変動、視覚的多様性の縮小を確認。**Qwen2.5-VL-72B**の**Profile–Probe–Intervene**分析により、一部の都市関係が中間表現から解読でき、局所的な出力に影響することを検証。
 </div>
 
 <div class='paper-box-image'><div><img src='images/papers/ai4us.png' alt="AI4US" width="100%"></div></div>
@@ -156,17 +156,17 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 <div lang="en" markdown="block">
 - Proposed a **training-free post-hoc concept bottleneck method** to align frozen VLM outputs with human preferences — no fine-tuning, RLHF, or GPU training required.
 - Designed an **Observer-Debater-Judge multi-agent reasoning chain** for structured scoring, and developed **locally-weighted ridge regression (LWRR)** on a hybrid CLIP+semantic manifold for geometric calibration.
-- Achieved **72.2% accuracy** (+28.8pp over raw VLM, +15.1pp over supervised baselines like Siamese Network) with full **dimension-level interpretability**.
+- Achieved **72.2% accuracy** (κ = 0.45; +16.3pp over the uncalibrated VLM and +15.1pp over the supervised baseline), with **dimension-level interpretability**.
 </div>
 <div lang="zh" markdown="block">
 - 提出**免训练后置概念瓶颈方法**（Post-hoc Concept Bottleneck），无需微调或RLHF即可将冻结VLM的输出与人类偏好对齐。
 - 设计 **Observer-Debater-Judge 多智能体推理链**实现结构化评分，在CLIP+语义混合流形上通过**局部加权岭回归（LWRR）** 进行几何校准。
-- 准确率达到 **72.2%**（比原始VLM提升+28.8pp，比Siamese Network等有监督基线提升+15.1pp），具备完整的**维度级可解释性**。
+- 准确率达到 **72.2%**（κ = 0.45；比未校准VLM提升16.3pp，比有监督基线提升15.1pp），具备**维度级可解释性**。
 </div>
 <div lang="ja" markdown="block">
 - **訓練不要の事後概念ボトルネック手法**を提案し、ファインチューニングやRLHFなしで凍結VLMの出力を人間の選好に整合。
 - **Observer-Debater-Judge マルチエージェント推論チェーン**による構造化スコアリングを設計し、CLIP+意味的ハイブリッド多様体上の**局所重み付きリッジ回帰（LWRR）** による幾何学的キャリブレーションを開発。
-- **精度72.2%** を達成（生のVLMから+28.8pp、Siamese Networkなどの教師あり手法から+15.1pp向上）、完全な**次元レベルの解釈可能性**を提供。
+- **精度72.2%** を達成（κ = 0.45；未校正VLM比+16.3pp、教師ありベースライン比+15.1pp向上）、**次元レベルの解釈可能性**を提供。
 </div>
 
 <div class='paper-box-image'><div><img src='images/papers/urbanalign.png' alt="UrbanAlign" width="100%"></div></div>
@@ -240,9 +240,6 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 </div>
 </div>
 
-<details class="more-items" markdown="block">
-<summary><span lang="en">More publications</span><span lang="zh">更多论文</span><span lang="ja">その他の論文</span></summary>
-
 <div class='paper-box' markdown='block'>
 <div class='paper-box-text' markdown="block">
 
@@ -273,6 +270,9 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 </details>
 </div>
 </div>
+
+<details class="more-items" markdown="block">
+<summary><span lang="en">More publications</span><span lang="zh">更多论文</span><span lang="ja">その他の論文</span></summary>
 
 <div class='paper-box' markdown='block'>
 <div class='paper-box-text' markdown="block">
@@ -407,20 +407,18 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 <div class="experience-entry" markdown="block">
 
-**ByteDance (Lark) · Base AI** \| LLM Algorithm Intern \| 2026.05 – Present
+**ByteDance · PDI–Seed · Lark Base AI** \| LLM Algorithm Intern (ByteIntern) \| 2026.05 – Present
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec–Refine data synthesis**, Judge/Fix Infra Models, Verifier Agent + AutoResearch, and Spec–Verifier–Code co-training to build vertical Agent model capabilities for enterprise-native database ToB scenarios.
+Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data synthesis, Judge/Fix Infra Models, Verifier Agent + AutoResearch, and Coding Agents for Spec–Verifier–SDK and Lark Base CLI.
 
-**[1] Built the Spec–Refine data-synthesis flywheel.** To **break the capability ceiling of multi-dimensional table Spec generation in Base scenarios** and provide dense training signals for **reinforcement learning of a Refine agent based on Judge/Fix models**, built a three-tier **Category–Rubric–Mode** rubric system across Table/Workflow/Dashboard/Permission/View and created the **Judge–Fix–Router** pipeline. Combined multi-candidate generation, domain review/root-cause routing, local verification/long-term repair memory, voting, terminal bypass, format-gated release, and tolerance review/exemption, with Hard-path fallback for difficult chains; early stopping and mixed-precision inference controlled cost, while fault isolation/transaction rollback protected results. E2E machine/human evaluation showed **data accuracy rising from 29% to 70% (+41pp)**; connected data from Doubao Office scenarios, and formed an **Infra Model training data flywheel**.
+**[1] Spec–Refine data synthesis.** Built a **Category–Rubric–Mode** rubric system across Table, Workflow, Dashboard, Permission, and View, with a **Judge–Fix–Router** pipeline for generation, review, and repair. A Verifier Agent extracts dense feedback from local rubric verdicts before and after Fix using token logprobs, multimodal signals, and rollouts. E2E automated and human evaluation showed **data accuracy rising from 29% to 70% (+41pp)**.
 
-**[2] Built Judge/Fix Infra Models.** To address **low accuracy/recall of Seed 2 on multi-issue Base Spec samples**, designed **curriculum RL** for the Spec Rubric Model and **post-trained a Seed 2.0-based Judge model** on 10,000+ synthetic data trajectories from the Judge–Fix pipeline. Cold-started with Strict-SFT, introduced **Category–Rubric–Mode tiered F1 rewards** with **stage-wise dynamic weights**, built a confidence-centered structured reasoning chain, and used GRPO as a teacher model with **On-Policy Context Distillation**, mixing rubric and CoT prompts to strengthen the Seed 2 student model, with accuracy matching GPT-5.6; **vote agreement and rubric coverage exceeded it by 35pp and 45pp**. To improve Fix efficiency, extracted Fix capabilities from the synthesis pipeline using heterogeneous multi-teacher trajectories and trained a **Fix Model** with SFT+RFT+PPO, **exceeding GPT-5.6 accuracy by 20pp**.
+**[2] Judge/Fix Infra Models.** Combined an **Assumption-Based Truth Maintenance System**, DFS set propagation, and the DSH harness to generate 10,000+ training trajectories. Trained a Seed 2.0-based Judge with **Strict-SFT**, curriculum RL, and tiered F1 rewards; used the **GRPO-trained Judge as the teacher** for On-Policy Context Distillation. Accuracy matched **GPT-6.1**; vote agreement and rubric coverage improved by **35pp and 45pp**. Trained the Fix Model on heterogeneous teacher trajectories with **SFT + RFT + PPO**, reaching **20pp higher accuracy than GPT-6.1**.
 
-**[3] Built Verifier Agent + AutoResearch.** To address **the sparse verdicts of traditional LLM-as-Judge**, sampled local Rubric verdicts before and after Fix, collecting **multi-level token probabilities (logprobs)** and extracting dense Fix–Judge feedback through K-way rollout sampling and precise logprob extraction; based on **SkillOpt 1\&2** and the Seed 2.0 Lite base, deeply adapted a self-evolving PE-optimization dynamic harness for Base Spec generation with same-Prompt baselines, multi-rollout sampling, cross-batch adversarial synthesis, root-cause discovery, and evidence/stability/adversarial/net-gain gates for high-leverage, low-regression prompt patches. **Token efficiency improved by 58pp, E2E human–machine consistency by 60pp**, yielding **9,197 effective data**.
-
-**[4] Spec–Verifier–Code co-training + Agentic RL.** To address **online model-unit resource constraints, sparse Code Agent signals, insufficient hard-case coverage, and long-tail failures**, pursued joint training of Spec/Plan, CodeAct, and Judge/Reward models with Agentic RL. Used Spec as the Code Agent chain-of-thought, trained an E2E Judge Model to convert feedback on **requirement coverage, configuration correctness, cross-module dependencies, and overall usability** into dense Code Agent signals, and designed an Auto Thinking mode that jointly considers compilation pass rate, artifact correctness, mode efficiency, and code quality. **Learning-frontier dynamically sampled GRPO checkpoints** to assess real-time data difficulty, while a harness-driven **Self-Distillation Policy Optimization** treated compiler errors, failure logs, and successful rollouts as privileged context. P50 latency fell from **3.1 min to 23 s**, supporting scale-up.
+**[3] Agentic RL for Lark Base CLI.** Trained Coding Agents using Spec, CodeAct, E2E rewards, and the PI harness, with dynamically loaded skills and optimized Specs as reasoning context. An E2E Judge supplies dense feedback; **Auto Thinking** balances compilation, correctness, and code efficiency. **Learning-frontier** sampling evaluates difficulty with GRPO checkpoints, while compiler errors, failure logs, and successful rollouts provide privileged context. A self-evolving harness generates prompt patches through cross-batch adversarial synthesis and validation gates. **Token efficiency improved by 38pp; P50 latency fell from 3.1 min to 23 s.**
 
 </details>
 
@@ -445,16 +443,18 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 
 <div class="experience-entry" markdown="block">
 
-**字节跳动（飞书）· Base AI** \| 大模型算法实习 \| 2026.05 – 至今
+**字节跳动 · PDI–Seed · Lark Base AI** \| 大模型算法实习生（ByteIntern） \| 2026.05 – 至今
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-- 负责 Lark Base AI 场景针对Seed 2的后训练，覆盖 Spec-Refine 数据合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch、Spec-Verifier-Code 协同训练，构建面向企业数据库原生 ToB 场景的垂类 Agent 模型能力。
-- **[1] 构建 Spec-Refine 的数据合成飞轮。** **为突破 Base 场景多维表格生成Spec的能力上限**，并为**基于Judge、Fix 模型的Refine智能体的强化学习**提供**稠密训练信号**，构建覆盖 Table/Workflow/Dashboard/Permission/View 五大域的**Category–Rubric–Mode**三层 Rubric 体系与**Judge–Fix–Router**链路。通过多候选生成、分域评审/根因路由、局部复核/长期修复记忆，结合投票准出、终末旁路、格式准出、容差复核/豁免，难链路Hard兜底；以早停/混合精度控制开销，以异常隔离/事务回滚保护结果。E2E 机评/人评显示**数据准确率由 29% 提升至 70%（+41pp）**，并接入豆包办公场景数据，形成**Infra Model 训练数据飞轮**。
-- **[2] 构建 Judge/Fix Infra Models。** **针对Seed 2在Base Spec多问题样本上准确/召回率低的问题**，为 Spec Rubric Model 设计**课程式强化学习**，基于 Judge–Fix 链路生成的 1万+ 条合成数据轨迹**后训练 Seed 2.0-based Judge模型**。采用 Strict-SFT 冷启动，引入**Category–Rubric–Mode分层 F1 Reward**，以**阶段性动态权重递进**构建置信度结构化思维链，并将 GRPO 作为教师模型，采用 **On-Policy Context Distillation**，混合 rubric 与 Cot 提示强化学生模型 Seed 2，准确率与 GPT-5.6 持平，**Vote 一致率和 Rubric 覆盖率分别提升 35pp 和 45pp**。为提升Fix效率，利用异构多教师轨迹抽取合成链路 Fix 能力，通过 SFT+RFT+PPO 训练 **Fix Model**，**准确率较 GPT-5.6 提升 20pp**。
-- **[3] 构建 Verifier Agent与 AutoResearch。** **针对传统 LLM-as-Judge 仅输出稀疏判定的问题**，构建 Verifier Agent：采样 Judge Infra Model 输出 Fix 前后局部 Rubric 判定的**多档 token 概率（logprob）**，经多路 rollout（K）采样与 logprob 精准提取 Fix–Judge 稠密反馈信号；基于**SkillOpt 1\&2**和 Seed 2.0 Lite 基座，针对 Base Spec 生成场景深度改造自进化 PE 优化动态 Harness，以同一 Prompt 为基线进行多路 rollout，跨批次对抗式综合消除采样噪声、发现共性根因，经证据/稳定性/抗对抗性/净收益门控合成高杠杆、低回归 Prompt patch；**token 利用效率提升 58pp，E2E 人机一致性提升 60pp**，沉淀**9,197 条有效数据**。
-- **[4] Spec–Verifier–Code 联合训练 Agentic RL。** **为突破线上模型单元资源限制、解决 Code Agent 信号稀疏、难例覆盖不足和长尾问题**，推进 Spec/Plan、CodeAct 与 Judge/Reward 多模型联合训练 Agentic RL，将 Spec 作为 Code Agent 思维链，训练 E2E Judge Model 将**需求覆盖、配置正确性、跨模块依赖和整体可用性**等反馈转化为 Code Agent 的稠密信号，并设计 Auto Thinking 模式同时考虑编译通过率、产物正确性、模式效率和代码质量，**Learning-frontier 动态采样 GRPO checkpoint**评估的实时数据难度，并根据 harness 设计 **Self-Distillation Policy Optimization**，将编译器报错、失败日志和成功 rollout 作为 privileged context。P50 延迟由**3.1 分钟降至 23 秒**，支撑规模化上线。
+负责豆包办公 MoA 下 Lark Base AI 的 Seed 2 后训练，覆盖数据合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch，以及 Spec–Verifier–SDK 和 Lark Base CLI 的 Coding Agent。
+
+**[1] Spec–Refine 数据合成。** 构建覆盖 Table、Workflow、Dashboard、Permission、View 的 **Category–Rubric–Mode** 体系与 **Judge–Fix–Router** 生成、评审和修复链路。Verifier Agent 采样 Fix 前后局部 Rubric 判定的 token logprobs，结合多模态信号与 rollout 提取稠密反馈。E2E 机评与人评显示，**数据准确率由 29% 提升至 70%（+41pp）**。
+
+**[2] Judge/Fix Infra Models。** 结合 **Assumption-Based Truth Maintenance System**、DFS 集合传播与 DSH harness 生成 1 万+ 条训练轨迹，以 **Strict-SFT、课程式强化学习、分层 F1 Reward** 后训练 Seed 2.0-based Judge，并以**经 GRPO 训练的 Judge 模型作为教师**进行 On-Policy Context Distillation。准确率与 **GPT-6.1** 持平，Vote 一致率和 Rubric 覆盖率分别提升 **35pp、45pp**。基于异构多教师轨迹，通过 **SFT + RFT + PPO** 训练 Fix Model，准确率较 **GPT-6.1 提升 20pp**。
+
+**[3] Agentic RL / Lark Base CLI。** 结合 Spec、CodeAct、E2E Reward 与 PI harness 训练 Coding Agent，动态加载 skills，将优化后的 Spec 作为推理上下文。E2E Judge 提供稠密反馈，**Auto Thinking** 综合编译通过率、产物正确性和代码效率；**Learning-frontier** 结合 GRPO checkpoint 评估数据难度，以编译错误、失败日志和成功 rollout 作为 privileged context。自进化 harness 通过跨批次对抗式综合与验证门控生成 Prompt patch，**token 利用效率提升 38pp，P50 延迟由 3.1 分钟降至 23 秒**。
 
 </details>
 
@@ -479,16 +479,18 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 
 <div class="experience-entry" markdown="block">
 
-**ByteDance（Lark）· Base AI** \| LLMアルゴリズムインターン \| 2026.05 – 現在
+**ByteDance · PDI–Seed · Lark Base AI** \| LLMアルゴリズムインターン（ByteIntern） \| 2026.05 – 現在
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-- Lark Base AIシナリオにおけるSeed 2のポストトレーニングを担当し、Spec–Refineデータ合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch、Spec–Verifier–Code協調訓練をカバー。企業データベースネイティブToBシナリオ向けの垂直特化Agentモデル能力を構築。
-- **[1] Spec–Refineデータ合成フライホイールを構築。** Baseシナリオの多次元テーブルSpec生成能力の上限を突破し、**Judge/Fixモデルに基づくRefineエージェントの強化学習**へ**稠密な訓練信号**を提供するため、**Category–Rubric–Mode**三層ルーブリック体系と**Judge–Fix–Router**パイプラインを構築。多候補生成、ドメインレビュー/根因ルーティング、局所検証/長期修復メモリ、投票、ターミナルバイパス、フォーマットゲート、許容差レビュー/免除を組み合わせ、難しいチェーンにはHard-path fallbackを適用；早期停止と混合精度推論でコストを制御し、結果を保護。E2E機械/人手評価で**データ精度を29%から70%へ（+41pp）**向上させ、豆包オフィスのシナリオデータを接続し、**Infra Model訓練データフライホイール**を形成。
-- **[2] Judge/Fix Infra Modelを構築。** **Seed 2がBase Specの複数課題サンプルで正確率/再現率が低い問題に対し**、Spec Rubric Model向けに**カリキュラム強化学習**を設計し、Judge–Fixパイプラインの1万+件の合成データ軌跡で**Seed 2.0-based Judgeモデルを後訓練**。Strict-SFTでコールドスタートし、**Category–Rubric–Mode階層F1 Reward**と**段階的動的重み**を導入。GRPOを教師モデルとし、**On-Policy Context Distillation**を用い、rubricとCoTプロンプトを混合してSeed 2学生モデルを強化、精度はGPT-5.6と同等。Vote一致率とRubricカバレッジを**35pp、45pp**向上。Fix効率を高めるため、合成チェーンのFix能力を抽出し、SFT+RFT+PPOで**Fix Model**を訓練、**GPT-5.6比で精度20pp向上**。
-- **[3] Verifier Agent + AutoResearchを構築。** **従来のLLM-as-Judgeが疎な判定しか出力しない問題に対し**、Fix前後の局所Rubric判定から**多段階token確率（logprob）**を収集し、多路rollout（K）でFix–Judgeの稠密フィードバックを抽出。**SkillOpt 1\&2**とSeed 2.0 Liteを基にBase Spec生成向け自己進化PE最適化Harnessを改造し、同一Promptベースライン、多路rollout、クロスバッチ敵対的統合、共通根因発見、各種ゲートによる低回帰Prompt patch合成を実装。**token効率58pp、E2E人間・機械一致率60pp**を向上し、**9,197件の有効データ**を蓄積。
-- **[4] Spec–Verifier–Code共同訓練 Agentic RL。** **オンラインモデルユニットのリソース制限を突破し、Code Agentの信号の疎さ、難例カバレッジ不足、ロングテール問題を解決するため**、Spec/Plan、CodeAct、Judge/Rewardの多モデル共同訓練とAgentic RLを推進。SpecをCode Agentの思考連鎖として用い、E2E Judge Modelを訓練して**要件カバレッジ、設定の正確性、モジュール間依存、全体の利用可能性**に関するフィードバックをCode Agentの稠密な信号へ変換し、コンパイル通過率、成果物の正確性、モード効率、コード品質を同時に考慮するAuto Thinkingモードを設計。**Learning-frontierによるGRPO checkpointの動的サンプリング**でリアルタイムデータ難度を評価し、harnessに基づく **Self-Distillation Policy Optimization** により、コンパイラエラー、失敗ログ、成功rolloutをprivileged contextとして扱う。P50遅延を**3.1分から23秒**へ短縮し、スケール展開を支援。
+豆包オフィスのMoAにおけるLark Base AI向けSeed 2のポストトレーニングを担当。データ合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch、Spec–Verifier–SDKおよびLark Base CLI向けCoding Agentを開発。
+
+**[1] Spec–Refineデータ合成。** Table、Workflow、Dashboard、Permission、Viewを対象に、**Category–Rubric–Mode**体系と**Judge–Fix–Router**による生成・評価・修正パイプラインを構築。Verifier AgentはFix前後の局所ルーブリック判定のtoken logprobsを取得し、マルチモーダル信号とrolloutを組み合わせて稠密なフィードバックを抽出。E2Eの自動・人手評価で、**データ精度が29%から70%へ向上（+41pp）**。
+
+**[2] Judge/Fix Infra Models。** **Assumption-Based Truth Maintenance System**、DFSによる集合伝播、DSH harnessを組み合わせ、1万+件の訓練軌跡を生成。**Strict-SFT、カリキュラム強化学習、階層F1 Reward**でSeed 2.0-based Judgeを後訓練し、**GRPOで訓練したJudgeモデルを教師**としてOn-Policy Context Distillationを実施。精度は**GPT-6.1と同等**、Vote一致率とRubricカバレッジはそれぞれ**35pp、45pp向上**。複数の異種教師モデルの軌跡を用い、**SFT + RFT + PPO**でFix Modelを訓練し、**GPT-6.1比で精度が20pp向上**。
+
+**[3] Agentic RL / Lark Base CLI。** Spec、CodeAct、E2E Reward、PI harnessでCoding Agentを訓練し、skillsの動的読み込みと最適化したSpecを推論コンテキストとして利用。E2E Judgeが稠密なフィードバックを提供し、**Auto Thinking**がコンパイル成功率、成果物の正確性、コード効率を考慮。**Learning-frontier**はGRPO checkpointを用いてデータ難度を評価し、コンパイラエラー、失敗ログ、成功rolloutをprivileged contextとして利用。自己進化harnessがバッチ間の敵対的統合と検証ゲートを通じてPrompt patchを生成し、**token効率が38pp向上、P50遅延が3.1分から23秒へ短縮**。
 
 </details>
 
@@ -537,13 +539,15 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 
 <div lang="en" markdown="block">
 
+- *2026.09*: Received the **National Scholarship** at Tsinghua University.
+- *2026*: Selected for **CAST's doctoral talent development program**.
 - *2026.06*: Paper "UrbanAlign" accepted at **ECCV 2026**.
-- *2026.06*: Paper "Towards building-scale urban analytics and simulation" published in **Building Simulation** (SCI Q1).
-- *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
 
 <details class="more-items" markdown="block">
 <summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
 
+- *2026.06*: Paper "Towards building-scale urban analytics and simulation" published in **Building Simulation** (SCI Q1).
+- *2026.04*: Ghost Cities paper recognized as **ESI Highly Cited Paper** in Social Science, *Habitat International*.
 - *2026.04*: Paper "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" accepted at **CVPR 2026 Findings**. [Project Page](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.01*: Our research on global ghost cities reported by [**Popular Mechanics**](https://www.popularmechanics.com/) (one of the most influential popular science media in the US).
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
@@ -577,13 +581,15 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 </div>
 <div lang="zh" markdown="block">
 
+- *2026.09*: 获**清华大学国家奖学金**。
+- *2026*: 入选**中国科协青年科技人才培育工程博士生专项计划**。
 - *2026.06*: 论文 "UrbanAlign" 被 **ECCV 2026** 录用。
-- *2026.06*: 论文 "Towards building-scale urban analytics and simulation" 发表于 **Building Simulation**（SCI Q1）。
-- *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
 
 <details class="more-items" markdown="block">
 <summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
 
+- *2026.06*: 论文 "Towards building-scale urban analytics and simulation" 发表于 **Building Simulation**（SCI Q1）。
+- *2026.04*: 鬼城论文入选Social Science领域 **ESI高被引论文**，*Habitat International*。
 - *2026.04*: 论文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" 被 **CVPR 2026 Findings** 录用。[项目主页](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.01*: 全球鬼城研究被美国最具影响力的科普媒体之一 [**Popular Mechanics**](https://www.popularmechanics.com/) 报道。
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
@@ -617,13 +623,15 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 </div>
 <div lang="ja" markdown="block">
 
+- *2026.09*: 清華大学で**国家奨学金**を受給。
+- *2026*: **中国科学技術協会（CAST）の博士課程人材育成プログラム**に採択。
 - *2026.06*: 論文 "UrbanAlign" が **ECCV 2026** に採択。
-- *2026.06*: 論文 "Towards building-scale urban analytics and simulation" が **Building Simulation** (SCI Q1) に掲載。
-- *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
 
 <details class="more-items" markdown="block">
 <summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
 
+- *2026.06*: 論文 "Towards building-scale urban analytics and simulation" が **Building Simulation** (SCI Q1) に掲載。
+- *2026.04*: ゴーストシティ論文が社会科学分野の **ESI高被引用論文** に認定、*Habitat International*。
 - *2026.04*: 論文 "DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation" が **CVPR 2026 Findings** に採択。[プロジェクトページ](https://junhaoooxia.github.io/DAPE.github.io/)
 - *2026.01*: グローバルゴーストシティ研究が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。
@@ -665,6 +673,8 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 <summary><span lang="en">Honors & awards</span><span lang="zh">荣誉与奖励</span><span lang="ja">受賞歴</span></summary>
 
 <div lang="en" markdown="block">
+- *2026.09* **National Scholarship**, Tsinghua University.
+- *2026* **CAST Young Science and Technology Talent Development Program (Doctoral Track)**.
 - *2026.04* **ESI Highly Cited Paper** (Social Science), Ghost Cities paper in *Habitat International*.
 - *2025.11* **ESI Highly Cited Paper** (Geoscience), CMAB paper in *Scientific Data*.
 - *2025.11* **"GIS Rising Star"** (2025 13th College GIS Forum, one of 10 nationwide) & Session Chair, Shanghai.
@@ -678,6 +688,8 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 </div>
 
 <div lang="zh" markdown="block">
+- *2026.09* **清华大学国家奖学金**。
+- *2026* **中国科协青年科技人才培育工程博士生专项计划**。
 - *2026.04* **ESI高被引论文**（Social Science领域），鬼城论文，*Habitat International*。
 - *2025.11* **ESI高被引论文**（Geoscience领域），CMAB论文，*Scientific Data*。
 - *2025.11* **2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人）并主持新秀专场论坛，上海。
@@ -691,6 +703,8 @@ Responsible for Seed 2 post-training in Lark Base AI scenarios, covering **Spec�
 </div>
 
 <div lang="ja" markdown="block">
+- *2026.09* **国家奨学金**、清華大学。
+- *2026* **中国科学技術協会（CAST）若手科学技術人材育成プログラム（博士課程特別枠）**。
 - *2026.04* **ESI高被引用論文**（社会科学分野）、ゴーストシティ論文、*Habitat International*。
 - *2025.11* **ESI高被引用論文**（地球科学分野）、CMAB論文、*Scientific Data*。
 - *2025.11* **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにてセッション座長、上海。

@@ -51,7 +51,7 @@ and article controls follow the same language. Zoom opens the current-language
 figure.
 Each article opens as a Blog, with a prominent Blog / Technical report switch
 above the title. The current edition is underlined. The series title on the
-homepage uses normal-case, dark semibold text, with its description below.
+homepage uses normal-case, regular-weight body-sized text, with its description below.
 
 - `_includes/writing.html`: three article entries and their CSS illustrations.
 - `writing/spec-generation/`: full multilingual essay and technical report.

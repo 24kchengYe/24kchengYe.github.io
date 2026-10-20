@@ -4,7 +4,7 @@
   </div>
   <div class="series-intro">
     <p class="series-title">Data Generation &amp; Agentic RL for Seed Models</p>
-    <p class="series-description"><span lang="en">Technical reports and research notes</span><span lang="zh">技术报告与研究笔记</span><span lang="ja">技術レポートと研究ノート</span></p>
+    <p class="series-description"><span lang="en">Spec generation · repair · judge training · agent training</span><span lang="zh">生成 Spec · 修复 Spec · 训练 Judge · 训练 Agent</span><span lang="ja">Spec生成・修復・Judgeの訓練・Agentの訓練</span></p>
   </div>
   <a class="writing-row" href="/writing/spec-generation/" data-site-link="">
     <div class="thumbnail generation" aria-hidden="true">
@@ -15,9 +15,9 @@
       <div class="thumb-sheet final right"><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="writing-copy">
-      <h3><span lang="en">Generating Better Specs</span><span lang="zh">让模型写好设计文档</span><span lang="ja">設計仕様をよりよく生成する</span></h3>
-      <p><span lang="en">From automated prompt search to a structured generation protocol: organizing rules and testing changes.</span><span lang="zh">从提示词自动搜索到生成协议重构，探索规则怎样组织、修改怎样验收。</span><span lang="ja">プロンプトの自動探索から生成手順の再設計へ。ルールを整理し、変更の効果を検証する。</span></p>
-      <div class="writing-meta"><span>Spec generation</span><span aria-hidden="true">·</span><span>2026.10</span><span aria-hidden="true">·</span><span>EN / 中 / 日</span></div>
+      <h3><span lang="en">Generating Better Specs</span><span lang="zh">让模型写好 Spec</span><span lang="ja">よりよいSpecを生成する</span></h3>
+      <p><span lang="en">Turn user requirements into design specifications (Specs), through prompt optimization and structured generation.</span><span lang="zh">从用户需求生成设计文档（Spec），探索提示词优化与结构化生成。</span><span lang="ja">プロンプトの最適化と構造化した生成を通じて、ユーザーの要件を設計仕様（Spec）に変換する。</span></p>
+      <div class="writing-meta"><span>Harness for AutoResearch</span><span aria-hidden="true">·</span><span>2026.10</span><span aria-hidden="true">·</span><span>EN / 中 / 日</span></div>
     </div>
     <span class="row-arrow" aria-hidden="true">→</span>
   </a>
@@ -28,8 +28,8 @@
       <div class="thumb-sheet final right"><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="writing-copy">
-      <h3><span lang="en">Repairing Specs with Feedback</span><span lang="zh">用评审反馈修复设计文档</span><span lang="ja">評価フィードバックで設計仕様を修復する</span></h3>
-      <p><span lang="en">Follow dependencies to fix missing pieces, while preserving the parts that already work.</span><span lang="zh">沿依赖关系定位缺口，在修好当前问题的同时，保留已经正确的设计。</span><span lang="ja">依存関係をたどって不足を補い、すでに正しい設計を保つ。</span></p>
+      <h3><span lang="en">Repairing Specs with Feedback</span><span lang="zh">用评审反馈修复 Spec</span><span lang="ja">評価フィードバックでSpecを修復する</span></h3>
+      <p><span lang="en">Use Judge feedback to repair generated Specs, following dependencies and preserving correct designs.</span><span lang="zh">用 Judge 反馈修复已生成的 Spec，沿依赖关系补齐缺口，保留正确设计。</span><span lang="ja">Judgeのフィードバックで生成済みのSpecを修復し、依存関係に沿って不足を補い、正しい設計を保つ。</span></p>
       <div class="writing-meta"><span>Judge–Fix pipeline</span><span aria-hidden="true">·</span><span>2026.10</span><span aria-hidden="true">·</span><span>EN / 中 / 日</span></div>
     </div>
     <span class="row-arrow" aria-hidden="true">→</span>
@@ -41,10 +41,22 @@
       <div class="verdicts"><i></i><i></i><i></i></div>
     </div>
     <div class="writing-copy">
-      <h3><span lang="en">Training a Rubric Model</span><span lang="zh">训练规则评审模型</span><span lang="ja">ルーブリック評価モデルを育てる</span></h3>
-      <p><span lang="en">Teach models to evaluate against explicit rules, through supervised learning, reinforcement learning, and distillation.</span><span lang="zh">让模型依据明确规则进行评审，比较监督微调、强化学习与蒸馏的训练效果。</span><span lang="ja">明示的なルールに基づく評価を学習させ、教師あり学習・強化学習・蒸留を比較する。</span></p>
-      <div class="writing-meta"><span>Rubric model</span><span aria-hidden="true">·</span><span>2026.10</span><span aria-hidden="true">·</span><span>EN / 中 / 日</span></div>
+      <h3><span lang="en">Training a Rubric Judge for Specs</span><span lang="zh">训练评审 Spec 的 Rubric Judge</span><span lang="ja">Specを評価するRubric Judgeの訓練</span></h3>
+      <p><span lang="en">Train a dedicated Judge to identify rule violations in Specs, comparing SFT, RL, and distillation.</span><span lang="zh">训练专门评审 Spec 的 Judge，定位违反规则的设计，比较 SFT、RL 与蒸馏。</span><span lang="ja">Specのルール違反を特定する専用Judgeを訓練し、SFT・RL・蒸留を比較する。</span></p>
+      <div class="writing-meta"><span>Spec Judge</span><span aria-hidden="true">·</span><span>2026.10</span><span aria-hidden="true">·</span><span>EN / 中 / 日</span></div>
     </div>
     <span class="row-arrow" aria-hidden="true">→</span>
   </a>
+  <article class="writing-row writing-upcoming" aria-labelledby="coding-agent-writing-title">
+    <div class="thumbnail agent-training" aria-hidden="true">
+      <div class="thumb-sheet left"><i></i><i></i><i></i><i></i></div>
+      <div class="thumb-wire first"></div><div class="judge-symbol"><span></span></div><div class="thumb-wire second"></div>
+      <div class="thumb-sheet final right"><span class="code-mark">&lt;/&gt;</span></div>
+    </div>
+    <div class="writing-copy">
+      <h3 id="coding-agent-writing-title"><span lang="en">Training Coding Agents with Specs as CoT</span><span lang="zh">以 Spec 为思维链训练 Coding Agent</span><span lang="ja">SpecをCoTに用いたCoding Agentの訓練</span></h3>
+      <p><span lang="en">Use Specs as an explicit chain of thought when training coding agents to turn requirements into code.</span><span lang="zh">以 Spec 作为显式思维链，训练从需求到代码的 Coding Agent。</span><span lang="ja">Specを明示的な思考過程として用い、要件からコードを生成するCoding Agentを訓練する。</span></p>
+      <div class="writing-meta"><span>Spec as CoT</span><span aria-hidden="true">·</span><span lang="en">Upcoming</span><span lang="zh">预告</span><span lang="ja">予告</span></div>
+    </div>
+  </article>
 </section>

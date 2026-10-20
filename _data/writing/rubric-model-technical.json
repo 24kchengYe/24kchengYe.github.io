@@ -43,9 +43,9 @@
     "10 Conclusion",
     "10 結論"
   ],
-  "规则评审模型技术报告": [
-    "Rubric Review Models: Technical Report",
-    "ルール審査モデル：技術レポート"
+  "Spec 规则评审模型技术报告": [
+    "Rubric Judges for Specs: Technical Report",
+    "Specを評価するRubric Judge：技術レポート"
   ],
   "本研究面向多维表格评审：根据用户需求、待评设计和业务规则，识别具体问题并给出依据。2026年7—10月，项目先整理历史数据、修订规则，再比较监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT），研究专用模型能否准确、完整地执行评审。": [
     "This study addresses table-system review: identifying specific issues and evidence from user requirements, a proposed design, and business rules. From July to October 2026, the project aligned historical data and revised rules, then compared SFT, RL, OPD, and CoT to test whether specialized models can review accurately and completely.",

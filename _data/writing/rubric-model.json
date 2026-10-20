@@ -39,9 +39,9 @@
     "8 Priorities for the next experiments",
     "8 次の実験の優先事項"
   ],
-  "训练规则评审模型": [
-    "Training a Rubric Model",
-    "ルーブリック評価モデルを育てる"
+  "训练评审 Spec 的 Rubric Judge": [
+    "Training a Rubric Judge for Specs",
+    "Specを評価するRubric Judgeの訓練"
   ],
   "给定一份多维表格设计，模型能否准确指出它没有满足哪些需求？这个问题比给方案打分更具体：需要找出遗漏的条件、错误的对象或不成立的实现方式，还要说明依据。": [
     "Given a Bitable design, can a model identify exactly which requirements it fails to meet? This is more specific than scoring a proposal: it must locate missing conditions, incorrect objects, or unsupported implementations, and explain the evidence.",

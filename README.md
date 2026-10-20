@@ -53,7 +53,10 @@ Each article opens as a Blog, with a prominent Blog / Technical report switch
 above the title. The current edition is underlined. The series title on the
 homepage uses normal-case, regular-weight body-sized text, with its description below.
 
-- `_includes/writing.html`: three article entries and their CSS illustrations.
+- `_includes/writing.html`: three published articles and a forthcoming fourth entry,
+  progressing from Spec generation and repair to Rubric Judge training and
+  Spec-as-chain-of-thought coding-agent training. The fourth entry has no article
+  link until its text is ready.
 - `writing/spec-generation/`: full multilingual essay and technical report.
 - `writing/spec-repair/`: Judge–Fix essay and technical report.
 - `writing/rubric-model/`: rubric-model essay and technical report.

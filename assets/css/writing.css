@@ -25,9 +25,9 @@
   color: var(--ink);
   border-bottom: 1px solid var(--line);
 }
-.writing-row:hover { text-decoration: none; }
-.writing-row:hover h3 { color: var(--link); }
-.writing-row:hover .row-arrow { transform: translateX(4px); color: var(--link); }
+a.writing-row:hover { text-decoration: none; }
+a.writing-row:hover h3 { color: var(--link); }
+a.writing-row:hover .row-arrow { transform: translateX(4px); color: var(--link); }
 .writing-copy h3 { font-size: 21px; font-weight: 500; line-height: 1.45; letter-spacing: -.015em; transition: color .15s; }
 .writing-copy p { color: #666e74; margin-top: 9px; font-size: 14px; line-height: 1.75; }
 .writing-meta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 17px; color: #81878c; font-size: 11px; letter-spacing: .01em; }
@@ -80,3 +80,5 @@
 .verdicts i::before { content: ""; width: 7px; height: 7px; border: 1px solid #9eaa96; border-radius: 50%; }
 .verdicts i::after { content: ""; width: 22px; height: 1px; background: #a7afa2; }
 .verdicts i:nth-child(2)::before { background: #9cb780; border-color: #9cb780; }
+.agent-training .thumb-sheet.right { display: grid; place-items: center; padding: 0; }
+.code-mark { color: var(--green); font: 16px/1 Consolas, monospace; }

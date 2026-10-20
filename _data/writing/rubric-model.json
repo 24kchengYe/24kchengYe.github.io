@@ -1,0 +1,546 @@
+{
+  "跳到正文": [
+    "Skip to content",
+    "本文へ"
+  ],
+  "目录": [
+    "Contents",
+    "目次"
+  ],
+  "1 模型要学会怎样评审": [
+    "1 What a model must learn to review",
+    "1 モデルが学ぶべき評価"
+  ],
+  "2 从数据和规则开始": [
+    "2 Start with data and rules",
+    "2 データとルールから始める"
+  ],
+  "3 SFT建立了基线，主要短板是漏报": [
+    "3 SFT establishes a baseline, but misses issues",
+    "3 SFTの基準と見逃し"
+  ],
+  "4 RL怎样奖励模型找全问题": [
+    "4 Rewarding RL for finding every issue",
+    "4 問題を見つけ切るためのRL報酬"
+  ],
+  "5 OPD能否让学生少读一些规则": [
+    "5 Can OPD shorten the student's rules?",
+    "5 OPDで学生のルールを短くできるか"
+  ],
+  "6 学习教师理由，是否更容易判断正确": [
+    "6 Does learning a teacher's rationale help?",
+    "6 教師の理由を学ぶ効果"
+  ],
+  "7 从设计评审到判断依据": [
+    "7 From design reviews to judgment grounds",
+    "7 設計審査から判断根拠へ"
+  ],
+  "8 接下来优先解决什么": [
+    "8 Priorities for the next experiments",
+    "8 次の実験の優先事項"
+  ],
+  "训练规则评审模型": [
+    "Training a Rubric Model",
+    "ルーブリック評価モデルを育てる"
+  ],
+  "给定一份多维表格设计，模型能否准确指出它没有满足哪些需求？这个问题比给方案打分更具体：需要找出遗漏的条件、错误的对象或不成立的实现方式，还要说明依据。": [
+    "Given a Bitable design, can a model identify exactly which requirements it fails to meet? This is more specific than scoring a proposal: it must locate missing conditions, incorrect objects, or unsupported implementations, and explain the evidence.",
+    "多次元テーブルの設計を与えたとき、モデルは満たしていない要求を正確に指摘できるか。点数を付けるより具体的な課題であり、不足する条件、誤った対象、成立しない実装方法を見つけ、根拠を示す必要がある。"
+  ],
+  "2026年7—10月，我们从历史数据和业务规则开始，依次尝试监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT）。后期比较使用按原始需求隔离的7,127条训练样本、792条测试样本。实验逐渐明确了几个选择：完整规则仍有必要；多问题RL在四组实验中有三组提高了错误类型F1；加入教师显式理由的三组对照中，仅学习裁决的方案表现更好。": [
+    "From July to October 2026, we started with historical data and product rules, then tested supervised fine-tuning (SFT), reinforcement learning (RL), on-policy distillation (OPD), and rationale supervision (CoT). Later comparisons used 7,127 training examples and 792 test examples, separated by original requirement. Several choices became clearer: full rules remained useful; multi-issue RL improved error-type F1 in three of four experiments; and in three-way comparisons with explicit teacher rationales, verdict-only training performed better.",
+    "2026年7–10月、過去データと業務ルールから始め、教師あり微調整（SFT）、強化学習（RL）、確率蒸留（OPD）、理由の教師信号（CoT）を順に試した。後半の比較は原始要求ごとに分離した訓練7,127件、テスト792件を使った。完全なルールは引き続き有用で、多問題RLは4群中3群でエラータイプF1を改善し、教師の明示的理由を加えた3条件の比較では裁定だけを学ぶ方式が優れていた。"
+  ],
+  "这些结果还没有解决评审的全部问题。专用模型仍容易漏报，同类问题发生在多个对象上时尤其如此。实际产物评审则暴露出较多误报。研究后半段因此开始关注判断依据：怎样检查一个结论用了哪些事实，哪些前提尚未确认，以及前提改变后需要重审什么。": [
+    "Specialized models still miss issues, especially when the same error occurs on several objects. Reviews of built applications exposed more false positives. The later work therefore focuses on judgment grounds: which facts support a conclusion, which premises remain unconfirmed, and what needs reassessment when a premise changes.",
+    "専用モデルには依然として見逃しがあり、特に同種の誤りが複数の対象で起こると弱い。構築済み成果物の審査では誤報も多く見つかった。後半は、結論が使った事実、未確認の前提、前提変更後の再審査対象という判断根拠に注目した。"
+  ],
+  "研究路线时间线": [
+    "Research timeline",
+    "研究の時系列"
+  ],
+  "1　模型要学会怎样评审": [
+    "1 · What a model must learn to review",
+    "1　モデルが学ぶべき評価"
+  ],
+  "多维表格的设计包括表结构、视图、仪表盘、工作流和权限。例如，“订单逾期后提醒负责人”需要到期时间、逾期判断、提醒对象和触发流程配合。只写了“发送提醒”，并不能说明方案已经满足需求。": [
+    "Bitable designs include tables, views, dashboards, workflows, and permissions. A request to notify an owner when an order is overdue needs a due date, an overdue condition, a recipient, and a trigger to work together. Merely writing “send a notification” does not establish that the requirement is satisfied.",
+    "多次元テーブルの設計には表構造、ビュー、ダッシュボード、ワークフロー、権限がある。「注文が期限超過したら担当者へ通知する」には期限、超過判定、通知先、トリガーの連携が必要で、「通知する」とだけ書いても要求を満たしたとはいえない。"
+  ],
+  "我们把这些检查整理成逐条业务规则，称为rubric。每条规则写清适用条件、违规情形和例外。模型读入用户需求、一版待评设计、一个业务域的完整规则，输出是否通过、具体问题、错误类型、严重程度及判断依据。": [
+    "We organized these checks into explicit rules—a rubric. Each rule specifies applicability, violations, and exceptions. Given the requirements, one design version, and a domain's full rules, the model returns a verdict, specific issues, error types, severity, and supporting grounds.",
+    "検査項目を逐条のルーブリックに整理し、適用条件、違反、例外を明記した。モデルは要求、評価する設計の一つの版、ある業務領域の完全なルールを読み、合否、具体的問題、エラータイプ、重大度、判断根拠を出力する。"
+  ],
+  "评审输入输出": [
+    "Review inputs and outputs",
+    "審査の入力と出力"
+  ],
+  "一条评审样本是“一条需求 × 一版设计 × 一个业务域”。": [
+    "One review example is one requirement × one design version × one domain.",
+    "一つの審査サンプルは「一つの要求 × 一つの設計版 × 一つの業務領域」である。"
+  ],
+  "同一需求可能产生多个设计版本，也会拆成多个业务域样本。训练和测试按原始需求整组切分，避免同一需求的不同版本出现在两侧。": [
+    "A requirement may produce several design versions and multiple domain examples. Training and test sets are split by original requirement so its versions cannot appear on both sides.",
+    "同じ要求から複数の設計版や領域別サンプルが生じる。訓練とテストは原始要求単位で分け、同じ要求の異なる版が両側に入らないようにする。"
+  ],
+  "主要指标是错误类型F1，综合考察误报和漏报。计分按业务域、问题大类、规则及错误类型匹配标签，在每条样本内去重。同一种错误出现在三个对象上，报告其中一处就可能获得这个标签的全部分数。因此，我们同时检查问题数量、完整匹配和具体证据。": [
+    "The main metric is error-type F1, balancing false positives and misses. Labels match on domain, issue category, rule, and error type and are deduplicated within each example. If the same error appears on three objects, reporting one can earn full credit for that label. We therefore also inspect issue counts, exact matches, and specific evidence.",
+    "主指標はエラータイプF1で、誤報と見逃しを合わせて測る。領域、問題大分類、ルール、エラータイプでラベルを照合し、サンプル内では重複排除する。同じ誤りが三つの対象にあっても、一つ報告すればそのラベルの満点を得る可能性があるため、件数、完全一致、具体的根拠も調べる。"
+  ],
+  "后期792条测试使用Sol、DeepSeek生成的两套参考。这里的F1衡量参考一致性，语义争议仍需要复核；其中50条曾用于提示词开发。较早两组多问题RL及后三组OPD使用另一套1,056条共同测试和该批冻结参考，两套测试分别比较。F1按可评分输出计算，异常输出另计，严格一致按全部测试样本计算。": [
+    "The later 792-example test has two references, generated by Sol and DeepSeek. F1 measures agreement with those references; semantic disputes still need review, and 50 examples had been used for prompt development. Two earlier multi-issue RL runs and three later OPD runs use a separate common test of 1,056 examples with its frozen reference. We compare these test sets separately. F1 uses scorable outputs, exceptions are counted separately, and strict agreement uses all test examples.",
+    "後半の792件テストにはSolとDeepSeekによる二つの参照がある。F1は参照との一致を測り、意味上の争点には再審査が必要で、うち50件はプロンプト開発で使用済みである。初期の多問題RL二群と後半のOPD三群は、別の共通1,056件テストと固定参照を使い、二つのテストは別々に比較する。F1は採点可能な出力を対象とし、異常出力は別計上、厳密一致は全テストを分母とする。"
+  ],
+  "四种训练方法提供了不同的学习信号。SFT学习完整答案；RL对模型自己生成的答案计分；OPD让固定教师沿学生的生成过程提供词元概率；CoT比较不同形式的理由目标。提供指导的模型称为教师，接受训练的模型称为学生。": [
+    "The four methods provide different learning signals. SFT learns complete answers. RL scores answers generated by the model. OPD uses a fixed teacher to provide token probabilities along the student's generation. CoT compares different rationale targets. The guiding model is the teacher; the trained model is the student.",
+    "四手法の学習信号は異なる。SFTは完全な回答を学び、RLは自分で生成した回答を採点する。OPDは固定教師が学生の生成過程に沿ってトークン確率を与え、CoTは理由ターゲットの形式を比較する。指導するモデルを教師、訓練されるモデルを学生と呼ぶ。"
+  ],
+  "四种训练信号": [
+    "Four training signals",
+    "四種類の学習信号"
+  ],
+  "2　从数据和规则开始": [
+    "2 · Start with data and rules",
+    "2　データとルールから始める"
+  ],
+  "最早可追溯的数据盘点在7月21日，涉及6,457条原始需求。一条需求经过“设计、评审、修复、再评审”，会留下多个版本。如果把最终设计配上早期的问题标签，模型就会学到错误对应关系。我们的第一步是按需求、精确设计版本、业务域重新对齐。修复也可能引入新问题，因此每一版都需要单独核对。": [
+    "The earliest traceable inventory, on July 21, covered 6,457 original requirements. Design, review, repair, and re-review leave multiple versions. Pairing a final design with earlier issue labels teaches the wrong correspondence. We first realigned requirements, exact design versions, and domains. Since repairs can introduce new errors, every version needs its own check.",
+    "最初に追跡できる7月21日の棚卸しは、原始要求6,457件を対象とした。設計、審査、修復、再審査は複数の版を残す。最終設計に初期の問題ラベルを付けると誤った対応を学ぶため、要求、正確な設計版、領域を再整合した。修復で新しい問題も生じるので、各版の照合が必要になる。"
+  ],
+  "早期数据实验尝试增加正常设计、扩大独立需求覆盖、调整多问题输出及重采样。在共同200条测试上，扩大需求覆盖的一组细规则F1为63.67%，早期单层规则训练为53.82%。增加正常设计后，模型开始能够放行正常样本，但问题召回下降；四组的多问题全命中率都为0。训练规模和输出形式同时变化，这一阶段主要发现了数据需要补足的方向。": [
+    "Early data experiments added valid designs, expanded independent requirement coverage, changed multi-issue outputs, and resampled. On a common 200-example test, broader requirement coverage reached 63.67% fine-rule F1 versus 53.82% for early single-level-rule training. Adding valid designs helped the model pass valid examples but reduced issue recall; all four groups had zero all-issues recall on multi-issue cases. Training size and output format changed together, so this stage mainly identified data gaps.",
+    "初期には正常設計の追加、独立要求の拡充、多問題出力の変更、再標本化を試した。共通200件テストで要求を広げた群の細粒度ルールF1は63.67%、初期の単層ルール訓練は53.82%だった。正常設計を加えると正常例を通せるようになったが問題再現率は下がり、四群とも多問題の全件検出率は0だった。規模と出力形式が同時に変わっており、この段階では主に不足データの方向を把握した。"
+  ],
+  "规则本身也影响模型判断。我们一方面补充适用前提、例外和问题归属，另一方面要求先列出对象，再逐项扫描，发现一处问题后继续检查。": [
+    "Rules themselves shape judgments. We added applicability conditions, exceptions, and issue ownership, and asked the model to enumerate objects, scan each one, and continue after finding an issue.",
+    "ルール自体も判断に影響する。適用前提、例外、問題の帰属を補い、対象を列挙して順に走査し、一つ見つけても確認を続けるよう求めた。"
+  ],
+  "修改": [
+    "Change",
+    "変更"
+  ],
+  "对照方式": [
+    "Comparison",
+    "比較条件"
+  ],
+  "观察结果": [
+    "Observed result",
+    "観測結果"
+  ],
+  "改规则措辞": [
+    "Reword rules",
+    "ルールの表現を変更"
+  ],
+  "同一Flash模型、规则清单、流程及50条输入": [
+    "Same Flash model, rule list, pipeline, and 50 inputs",
+    "同じFlash、ルール一覧、処理、50入力"
+  ],
+  "可明确裁决样本的F1从55.38%到64.62%": [
+    "F1 on clearly adjudicable cases: 55.38% → 64.62%",
+    "明確に裁定可能な例のF1：55.38% → 64.62%"
+  ],
+  "训练时逐项扫描": [
+    "Train with item-by-item scanning",
+    "訓練時に逐項走査"
+  ],
+  "同一Seed2起点；400条测试均用普通提示": [
+    "Same Seed2 starting point; standard prompts on all 400 test cases",
+    "同じSeed2起点、400テストすべて通常プロンプト"
+  ],
+  "F1从54.03%到55.50%，问题存在性召回从72.08%到78.45%": [
+    "F1: 54.03% → 55.50%; issue-presence recall: 72.08% → 78.45%",
+    "F1：54.03% → 55.50%、問題存在の再現率：72.08% → 78.45%"
+  ],
+  "修订规则边界": [
+    "Revise rule boundaries",
+    "ルール境界を改訂"
+  ],
+  "同一模型对100条难例各评审3次": [
+    "Same model, 100 hard cases, three judgments each",
+    "同じモデル、難例100件を各3回審査"
+  ],
+  "裁决三轮一致从62条到73条，具体问题及条数一致从36条到59条": [
+    "Three-run verdict agreement: 62 → 73 cases; issue-and-count agreement: 36 → 59",
+    "三回の裁定一致：62 → 73件、問題と件数の一致：36 → 59件"
+  ],
+  "规则写清楚，判断和重复稳定性都能改善。不过，增加字段并不总有收益：在另一轮相同规则的比较中，要求额外填写对象、需求证据和设计证据，F1从90.32%变为89.43%。这些字段有助于人工复核，本次没有提高细标签得分。": [
+    "Clearer rules improved judgments and repeatability. More output fields did not always help: with the same rules, requiring objects, requirement evidence, and design evidence changed F1 from 90.32% to 89.43%. These fields aid human review but did not improve fine-label scores in that comparison.",
+    "明確なルールは判断と反復安定性を改善した。ただし出力項目を増やせばよいわけではない。同じルールで対象、要求根拠、設計根拠を追加要求すると、F1は90.32%から89.43%になった。人手の再審査には有用でも、この比較の細粒度ラベル得点は上がらなかった。"
+  ],
+  "标签生产也经历了调整。多轮评审投票会保留共同遗漏，直接让复核模型改答案又可能删掉成立的问题。后来的流程先合并候选，再核对证据、前提和例外，最后补查遗漏；未解决的分歧单独保留。": [
+    "Label production also changed. Voting can preserve shared omissions, while letting a review model rewrite answers directly can delete valid issues. The later workflow merges candidates, checks evidence, premises and exceptions, then searches for omissions. Unresolved disagreements remain separate.",
+    "ラベル生成も変えた。投票は共通の見逃しを残し、再審査モデルによる直接書き換えは成立する問題を消す場合がある。後の処理は候補を統合し、根拠、前提、例外を照合し、最後に漏れを探す。未解決の不一致は別に保持する。"
+  ],
+  "标签生产": [
+    "Label production",
+    "ラベル生成"
+  ],
+  "后期数据从另一批设计、评审、修复轨迹中分层选样。历史问题仅用于选样，Sol按当前完整规则独立复审时看不到旧标签。首轮获得7,638份合法标签，覆盖190种错误类型；继续回捞、构造或修改设计并复审后，从464条补充候选中采纳281条，最终得到7,919条数据，覆盖249种错误类型。": [
+    "Later data were stratified from another set of design–review–repair traces. Historical issues guided sampling only; Sol independently reviewed under the current full rules without seeing old labels. The first pass yielded 7,638 valid labels covering 190 error types. After retrieving, constructing, or editing more designs and reviewing them, 281 of 464 supplemental candidates were accepted, yielding 7,919 examples covering 249 error types.",
+    "後期データは別の設計・審査・修復履歴から層別抽出した。過去の問題は選別にだけ使い、Solは旧ラベルを見ずに現行の完全ルールで独立再審査した。初回は190エラータイプを含む7,638件の有効ラベルを得た。追加取得、設計の構成・変更、再審査を経て、補充候補464件から281件を採用し、249タイプを含む7,919件になった。"
+  ],
+  "按需求切分后，训练集为7,127条，覆盖2,139条原始需求；测试集为792条，覆盖229条需求。训练中的无问题、单问题、多问题样本分别为3,396、1,897、1,834条，测试分别为391、192、209条。训练覆盖249种登记错误，每种至少3条；测试只覆盖其中116种。数据已能支持统一比较，稀有错误和复杂条件组合仍需要更充分的测试。": [
+    "The requirement-level split produced 7,127 training examples from 2,139 original requirements and 792 test examples from 229 requirements. Training contains 3,396 no-issue, 1,897 single-issue, and 1,834 multi-issue examples; test contains 391, 192, and 209 respectively. All 249 registered error types have at least three training examples, but test covers only 116. Rare errors and complex condition combinations need broader testing.",
+    "要求単位の分割後、訓練は2,139原始要求に対応する7,127件、テストは229要求に対応する792件となった。訓練の無問題・単問題・多問題は3,396、1,897、1,834件、テストは391、192、209件。訓練は登録249タイプを各3件以上含むが、テストは116タイプのみであり、希少エラーと複雑な条件の組合せには追加検証が必要である。"
+  ],
+  "3　SFT建立了基线，主要短板是漏报": [
+    "3 · SFT establishes a baseline, but misses issues",
+    "3　SFTの基準と見逃し"
+  ],
+  "SFT的训练输入包含完整规则、需求和设计，目标是完整JSON评审答案：每类检查给出状态，每条问题包含规则、错误类型、严重程度及一句话依据。后面的CoT实验是在这个基础上额外加入整段判断理由。": [
+    "SFT inputs contain full rules, requirements, and a design. Targets are complete JSON reviews: a status for each check category, and a rule, error type, severity, and one-sentence justification for each issue. Later CoT experiments add a longer rationale to this baseline.",
+    "SFTの入力は完全ルール、要求、設計で、目標は完全なJSON審査回答である。検査分類ごとの状態と、問題ごとのルール、エラータイプ、重大度、一文の根拠を含む。後のCoT実験はこれに長い判断理由を追加する。"
+  ],
+  "最后一轮比较三个起点：Seed2 Lite基础模型；先做中间训练、再学旧版评审的模型；做过中间训练、直接学本轮评审的模型。中间训练指本次评审微调之前的额外训练经历。三组最终都使用同一批7,127条Sol标签及完整规则。": [
+    "The final SFT round compared three starting points: base Seed2 Lite; a model with intermediate training followed by older review training; and an intermediately trained model learning the current review task directly. Intermediate training means additional training before this review fine-tuning. All three ultimately used the same 7,127 Sol labels and full rules.",
+    "最終SFTはSeed2 Lite基盤モデル、中間訓練後に旧審査を学んだモデル、中間訓練後に今回の審査を直接学ぶモデルを比較した。中間訓練とは今回の審査微調整以前の追加訓練である。三群とも最終的に同じ7,127件のSolラベルと完全ルールを使った。"
+  ],
+  "共同设置为Seed2 Lite 260428、两轮LoRA训练、rank 32、alpha 4、每批16条、学习率0.00001、长度上限32,768 token。LoRA冻结主体参数，只训练新增参数。平台从训练文件内部划10%作过程验证，外部792条用于最终评测。": [
+    "Shared settings were Seed2 Lite 260428, two LoRA epochs, rank 32, alpha 4, batch size 16, learning rate 0.00001, and a 32,768-token limit. LoRA freezes the base parameters and trains added parameters. The platform reserves 10% of the training file for in-process validation; the external 792 examples provide final evaluation.",
+    "共通設定はSeed2 Lite 260428、LoRA 2エポック、rank 32、alpha 4、バッチ16、学習率0.00001、上限32,768トークン。LoRAは本体を固定して追加パラメータだけを学ぶ。プラットフォームは訓練ファイル内の10%を途中検証に取り分け、外部792件を最終評価に使う。"
+  ],
+  "本轮训练前的经历": [
+    "Prior training",
+    "今回以前の訓練"
+  ],
+  "Sol参考F1": [
+    "F1 vs. Sol reference",
+    "Sol参照F1"
+  ],
+  "DeepSeek参考F1": [
+    "F1 vs. DeepSeek reference",
+    "DeepSeek参照F1"
+  ],
+  "基础模型": [
+    "Base model",
+    "基盤モデル"
+  ],
+  "中间训练，再学旧版评审": [
+    "Intermediate training, then older reviews",
+    "中間訓練後に旧審査"
+  ],
+  "中间训练": [
+    "Intermediate training",
+    "中間訓練"
+  ],
+  "Sol参考下三个起点相差1.25个百分点，换用DeepSeek参考后排名变化。中间训练组比基础组略高，先学旧版评审的一组没有在两套参考下都领先。共同短板更明显：Sol参考下精确率为71.28%—76.09%，召回率只有44.54%—47.44%。模型通常能给出格式完整的评审，却没有把问题找全。": [
+    "The three starting points span 1.25 percentage points under the Sol reference, and their ranking changes under DeepSeek. Intermediate training slightly beats the base model, but the older-review starting point does not lead under both references. The shared weakness is clearer: Sol-reference precision is 71.28%–76.09%, while recall is only 44.54%–47.44%. Models usually produce well-formed reviews without finding all issues.",
+    "Sol参照での起点差は1.25ポイントで、DeepSeek参照では順位が変わった。中間訓練群は基盤群より少し良いが、旧審査を学んだ群が両参照で優位なわけではない。共通する弱点は明確で、Sol参照の適合率71.28%–76.09%に対し、再現率は44.54%–47.44%にとどまる。形式は整っていても問題を見つけ切れない。"
+  ],
+  "直接使用通用模型仍更强。在同一792条输入和完整规则下，Sol High、Luna Medium、DeepSeek V4.1 Flash、DeepSeek V4 Pro按Sol参考的F1分别为68.28%、65.01%、60.61%、65.12%，均高于本次专用训练模型；可评分输出分别为792、784、756、792条，Luna有8条异常，Flash有36条截断。DeepSeek参考下Pro的72.42%较高，说明模型排序也受参考来源影响。": [
+    "General-purpose models remained stronger. On the same 792 inputs with full rules, Sol High, Luna Medium, DeepSeek V4.1 Flash, and DeepSeek V4 Pro scored 68.28%, 65.01%, 60.61%, and 65.12% F1 against Sol, all above these specialized models. They produced 792, 784, 756, and 792 scorable outputs; Luna had eight exceptions and Flash 36 truncations. Pro reached 72.42% against DeepSeek, illustrating reference-dependent rankings.",
+    "汎用モデルの直接利用はなお強い。同じ792入力と完全ルールでSol High、Luna Medium、DeepSeek V4.1 Flash、DeepSeek V4 ProのSol参照F1は68.28%、65.01%、60.61%、65.12%と、今回の専用モデルを上回った。採点可能出力は792、784、756、792件で、Lunaは8異常、Flashは36打ち切りだった。DeepSeek参照ではProの72.42%が高く、順位は参照元にも依存する。"
+  ],
+  "4　RL怎样奖励模型找全问题": [
+    "4 · Rewarding RL for finding every issue",
+    "4　問題を見つけ切るためのRL報酬"
+  ],
+  "RL从SFT模型继续训练，让模型先生成答案，再按答案质量更新参数。首轮奖励根据去重后的大类、规则和错误类型计分，分别尝试混合正常设计、只用问题样本。两组训练到200步，在共同500条测试上，F1从SFT起点的46.20%降至42.65%、38.25%。混合数据使参考无问题样本仍判无问题的比例从64.34%升至78.29%，却漏掉更多问题；只用问题数据时，这一比例降到0.78%。": [
+    "RL continues from SFT, generating answers before updating parameters from their quality. Initial rewards scored deduplicated categories, rules, and error types; one arm mixed valid designs, the other used only problematic ones. After 200 steps, common-test F1 on 500 examples fell from the SFT starting point of 46.20% to 42.65% and 38.25%. Mixing valid data increased correct no-issue decisions from 64.34% to 78.29% but missed more issues; problematic-only training reduced that rate to 0.78%.",
+    "RLはSFTから継続し、回答を生成して品質に基づき更新する。初期報酬は重複排除した大分類、ルール、エラータイプで採点し、正常設計を混ぜる群と問題例のみの群を試した。200ステップ後、共通500件F1はSFT起点46.20%から42.65%、38.25%へ低下した。混合群は参照無問題例を無問題とする割合を64.34%から78.29%に上げたが、見逃しが増えた。問題例のみでは同割合が0.78%に落ちた。"
+  ],
+  "后续同时调整数据和奖励。训练按无问题、1个问题、2—3个问题、4个以上问题组织；正常样本尽量取同一需求修复后的设计，多问题答案完整保留。较早规则使用810条训练、242条验证，外部测试1,056条；统一规则使用795条训练、215条验证，外部测试792条。每批数据各从两个SFT起点继续训练，共四组。": [
+    "We then changed data and rewards together. Training examples were grouped into zero, one, two-to-three, and four-or-more issues. Valid examples preferably came from repaired designs for the same requirement, and multi-issue answers were preserved in full. Earlier rules used 810 training, 242 validation, and 1,056 external test examples; unified rules used 795, 215, and 792. Each dataset continued from two SFT starting points, for four runs.",
+    "次にデータと報酬を同時に調整した。無問題、1問題、2–3問題、4問題以上に整理し、正常例は可能な限り同じ要求の修復済み設計を使い、多問題回答を完全に保持した。初期ルールは訓練810、検証242、外部テスト1,056件、統一ルールは795、215、792件を使った。各データで二つのSFT起点から継続し、計四群とした。"
+  ],
+  "四组采用GRPO：每步选32条输入，每条生成8份答案，以同一输入下的相对得分更新模型。共同运行80步，学习率0.000001，KL约束系数0.001，每10步验证；生成温度0.7，答案上限10,000 token。参考标签仅在奖励侧，学生作答时看不到。": [
+    "All four use GRPO: 32 inputs per step, eight answers per input, with updates based on relative scores for the same input. Runs last 80 steps, with learning rate 0.000001, KL coefficient 0.001, validation every 10 steps, temperature 0.7, and at most 10,000 answer tokens. Reference labels are available only to the reward, never to the answering student.",
+    "四群ともGRPOを使い、1ステップ32入力、各8回答を生成し、同じ入力内の相対得点で更新した。80ステップ、学習率0.000001、KL係数0.001、10ステップごとの検証、生成温度0.7、回答上限10,000トークン。参照ラベルは報酬側だけにあり、学生の回答入力には入らない。"
+  ],
+  "奖励的关键变化是保留错误出现次数。三个对象犯同一种错，报告一处和三处应得到不同奖励。答案先通过JSON、标签、严重度和状态校验，再计算三层计数F1：": [
+    "The key reward change preserves error counts. Finding one of three objects with the same error should earn less than finding all three. After JSON, label, severity, and status validation, the answer receives three levels of count-aware F1:",
+    "報酬の主な変更は発生回数を残したことだ。同じ誤りを持つ三対象の一つと三つすべてでは報酬を変える。JSON、ラベル、重大度、状態を検証後、三層の件数F1を計算する。"
+  ],
+  "综合得分 = 0.2 × 大类F1 + 0.3 × 规则F1 + 0.4 × 错误类型F1 + 0.1 × 完全匹配": [
+    "Combined score = 0.2 × category F1 + 0.3 × rule F1 + 0.4 × error-type F1 + 0.1 × exact match",
+    "総合点 = 0.2 × 大分類F1 + 0.3 × ルールF1 + 0.4 × エラータイプF1 + 0.1 × 完全一致"
+  ],
+  "最终奖励 = 2 × 综合得分 − 1": [
+    "Final reward = 2 × combined score − 1",
+    "最終報酬 = 2 × 総合点 − 1"
+  ],
+  "计数F1为“2 × 命中条数 ÷（预测条数＋参考条数）”。完全匹配要求错误类型及数量全部相同。双方都无问题时奖励为1；只有一方有问题，或格式校验失败时为−1。": [
+    "Count-aware F1 is 2 × matched count ÷ (predicted count + reference count). Exact match requires all error types and counts to agree. Both sides having no issues earns 1; only one side having issues, or failed format validation, earns −1.",
+    "件数F1は「2 × 一致件数 ÷（予測件数＋参照件数）」。完全一致は全エラータイプと件数の一致を求める。双方無問題なら1、片方だけ問題あり、または形式検証失敗なら−1となる。"
+  ],
+  "RL计数奖励算例": [
+    "Worked example of count-aware RL rewards",
+    "件数を考慮したRL報酬の例"
+  ],
+  "奖励保留数量，外部F1仍按去重标签计算。奖励还只检查理由非空、没有字面重复，尚未检查依据是否成立、是否指向正确对象。这使得标签、数量、对象正确性成为三个需要分别验证的问题。": [
+    "The reward preserves counts, while external F1 still deduplicates labels. It checks only that justifications are nonempty and not literal duplicates—not that their grounds hold or identify the right object. Labels, counts, and object correctness therefore require separate validation.",
+    "報酬は件数を保つが、外部F1は引き続きラベルを重複排除する。理由は非空で字面の重複がないかだけを確認し、根拠の成立や対象の正しさはまだ検査しない。ラベル、件数、対象の正しさは別々に検証すべき課題となる。"
+  ],
+  "监督微调后继续强化学习": [
+    "Reinforcement learning after supervised fine-tuning",
+    "教師あり微調整後の強化学習"
+  ],
+  "四组多问题训练有三组提高F1。较早规则的两组分别提高约3.45、2.77个百分点；统一数据上，一组从56.97%到58.91%，另一组从56.19%到55.81%。正常设计、多问题数据及计数奖励共同构成了更有希望的方案，但这些因素一起变化，各自贡献还未分离。": [
+    "Three of four multi-issue runs improved F1. The earlier-rule runs gained about 3.45 and 2.77 percentage points. With unified data, one moved from 56.97% to 58.91%, the other from 56.19% to 55.81%. Valid designs, multi-issue data, and count-aware rewards together look more promising, but their individual contributions remain entangled.",
+    "多問題訓練は四群中三群でF1を上げた。初期ルール二群は約3.45、2.77ポイント改善し、統一データでは一群が56.97%から58.91%、他群が56.19%から55.81%だった。正常設計、多問題データ、件数報酬を組み合わせた方式は有望だが、個々の寄与は分離できていない。"
+  ],
+  "训练停止位置也值得复查。直接学习新版规则的一组，第50步验证奖励为0.4629，最终第80步降至0.4184；目前外部测试使用第80步。中间模型是否更好，还需要在同一外部测试上验证。": [
+    "Checkpoint choice also deserves review. In the run learning the new rules directly, validation reward peaked at 0.4629 at step 50 and fell to 0.4184 at the final step 80. External evaluation currently uses step 80; the intermediate model needs evaluation on the same external test.",
+    "停止位置も要検討である。新版ルールを直接学ぶ群は第50ステップの検証報酬0.4629から、最終80ステップで0.4184へ下がった。外部評価は現在80を使っており、中間モデルも同じテストで確認する必要がある。"
+  ],
+  "5　OPD能否让学生少读一些规则": [
+    "5 · Can OPD shorten the student's rules?",
+    "5　OPDで学生のルールを短くできるか"
+  ],
+  "完整规则很长。OPD（On-policy Distillation）尝试让教师保留详细规则，学生只读精简版本：保留规则大纲、合法标签及输出格式，删除适用前提、排除条件和证据要求。": [
+    "Full rules are long. On-policy distillation (OPD) tried keeping detailed rules for the teacher while giving the student an outline, legal labels, and output format, omitting applicability conditions, exclusions, and evidence requirements.",
+    "完全なルールは長い。On-policy Distillation（OPD）では教師に詳細ルールを残し、学生には概要、合法ラベル、出力形式だけを与え、適用前提、除外条件、証拠要件を省くことを試した。"
+  ],
+  "当前学生先生成答案，固定教师沿学生已经写出的前缀计算后续词元概率，学生据此调整概率分配，再生成下一批。每个输入生成1份答案，每批32条；取学生概率最高的64个候选词元，在其中重新归一化，用反向KL衡量概率差异，按词元平均计算。最终裁决的额外奖励关闭，教师获得的标签提示不进入学生输入。": [
+    "The current student generates an answer; a fixed teacher computes next-token probabilities along the student's prefix. The student updates its probability distribution and generates the next batch. Each input produces one answer, with batch size 32. Probabilities are renormalized over the student's top 64 tokens; reverse KL is averaged per token. Extra verdict rewards are disabled, and teacher label hints never enter the student input.",
+    "現学生が回答を生成し、固定教師が学生の接頭列に沿って次トークン確率を計算する。学生は分布を調整して次のバッチを生成する。各入力1回答、バッチ32、学生の確率上位64トークン内で再正規化し、逆KLをトークン平均する。裁定への追加報酬は無効で、教師へのラベルヒントは学生入力に入らない。"
+  ],
+  "首轮固定7,127条输入、Seed2 Lite基础学生和精简规则，训练223步。三个基础模型教师分别得到数量及扫描方向、参考理由、逐条标签，按Sol参考，792条测试F1分别为20.98%、20.69%、22.01%；专用SFT教师的一组为16.09%，其中657条输出为空问题集合。这轮没有达到压缩规则的目标。": [
+    "The first round fixed 7,127 inputs, a base Seed2 Lite student, and shortened rules for 223 steps. Three base-model teachers received count-and-scan guidance, reference rationales, or per-issue labels; Sol-reference F1 on 792 tests was 20.98%, 20.69%, and 22.01%. A specialized SFT teacher scored 16.09%, with 657 empty issue sets. This round did not achieve rule compression.",
+    "初回は7,127入力、Seed2 Lite基盤学生、簡略ルールを固定し223ステップ訓練した。三つの基盤教師には件数と走査方向、参照理由、逐項ラベルをそれぞれ与え、792テストのSol参照F1は20.98%、20.69%、22.01%だった。専用SFT教師群は16.09%で、657出力が空の問題集合となり、ルール圧縮の目標には届かなかった。"
+  ],
+  "下一轮固定同一个RL教师、6,580条训练输入及Seed2 Lite基础学生，训练206步，在共同1,056条测试上比较教师标签提示和学生规则长度。": [
+    "The next round fixed one RL teacher, 6,580 training inputs, and a base Seed2 Lite student for 206 steps, comparing teacher label hints and student rule length on the same 1,056-example test.",
+    "次は同じRL教師、6,580訓練入力、Seed2 Lite基盤学生を固定し206ステップ訓練して、共通1,056件テストで教師のラベルヒントと学生ルール長を比較した。"
+  ],
+  "OPD对照设计及结果": [
+    "OPD comparison design and results",
+    "OPDの比較設計と結果"
+  ],
+  "三个已运行条件的F1分别为：教师不额外看标签、学生用完整规则，52.85%；教师看标签、学生用完整规则，51.12%；教师看标签、学生用精简规则，35.03%。教师不看标签、学生用精简规则的第四格未运行。": [
+    "The three completed conditions scored 52.85% F1 with no teacher label hints and full student rules, 51.12% with teacher hints and full rules, and 35.03% with teacher hints and short rules. The fourth cell—no hints and short rules—was not run.",
+    "実行した三条件のF1は、教師ヒントなし・学生完全ルール52.85%、教師ヒントあり・完全ルール51.12%、教師ヒントあり・簡略ルール35.03%。第四条件の教師ヒントなし・簡略ルールは未実行である。"
+  ],
+  "教师都有标签时，完整学生规则高16.09个百分点；学生都用完整规则时，增加教师标签没有提高结果。三组仍低于同集SFT的59.49%和RL的62.25%。学生提示在训练及评测时同步改变，当前能确认的是完整规则方案更好。若要继续缩短输入，需要逐类删减规则，检查哪些适用条件和例外必须保留。": [
+    "With teacher hints held constant, full student rules gained 16.09 percentage points. With full student rules held constant, teacher hints did not help. All three remained below same-test SFT at 59.49% and RL at 62.25%. Student prompts changed in both training and evaluation; the supported conclusion is that the full-rule configuration worked better. Further compression should remove rule families separately and test which conditions and exceptions must remain.",
+    "教師ヒントあり同士では学生完全ルールが16.09ポイント高く、学生完全ルール同士では教師へのラベル追加に改善はなかった。三群とも同一テストのSFT 59.49%、RL 62.25%を下回る。学生プロンプトは訓練・評価の両方で変えており、確認できるのは完全ルール構成の優位性である。さらに短縮するなら、ルール分類ごとに削り、必要な適用条件と例外を調べる。"
+  ],
+  "6　学习教师理由，是否更容易判断正确": [
+    "6 · Does learning a teacher's rationale help?",
+    "6　教師の理由を学ぶ効果"
+  ],
+  "CoT实验用DeepSeek生成的同一批标签构造三种目标：理由放在普通回答里；同一段理由放在专用推理字段；只保留裁决。理由来自教师按要求输出的": [
+    "The CoT experiment constructed three targets from the same DeepSeek labels: rationales in the regular answer, the same rationales in a dedicated reasoning field, or verdicts only. Rationales came from the teacher's explicitly requested ",
+    "CoT実験は同じDeepSeekラベルから、通常回答内の理由、専用推論欄内の同じ理由、裁定のみという三目標を作った。理由は教師に明示的に要求した "
+  ],
+  "，去掉置信度字段，与接口返回的原生推理文本有区别。": [
+    " field, with confidence removed, rather than the API's native reasoning text.",
+    " 欄から信頼度を除いたもので、APIのネイティブ推論テキストとは異なる。"
+  ],
+  "三组共用7,127条输入、同一裁决和完整规则，从同一Seed2 Lite基础模型做两轮LoRA训练。训练长度上限32,768 token；评测上限16,384，temperature为0.01，评测输入没有教师理由。": [
+    "All three used 7,127 inputs, identical verdicts and full rules, and two LoRA epochs from the same base Seed2 Lite. Training allowed 32,768 tokens; evaluation allowed 16,384 with temperature 0.01. Evaluation inputs contained no teacher rationale.",
+    "三群は7,127入力、同じ裁定、完全ルールを共有し、同じSeed2 Lite基盤からLoRAを2エポック実行した。訓練上限32,768、評価上限16,384トークン、温度0.01で、評価入力には教師理由を入れない。"
+  ],
+  "CoT对照设计及结果": [
+    "CoT comparison design and results",
+    "CoTの比較設計と結果"
+  ],
+  "仅裁决方案在两套参考下都更好。Sol参考下，回答内理由、推理字段理由、仅裁决三组F1为41.54%、42.94%、51.52%；DeepSeek参考下为47.04%、46.98%、56.56%。以原始需求为单位配对重复抽样，仅裁决相对两组理由方案的四个差值，95%区间均高于0。": [
+    "Verdict-only training performed better against both references. For answer-field rationale, reasoning-field rationale, and verdict-only respectively, Sol-reference F1 was 41.54%, 42.94%, and 51.52%; DeepSeek-reference F1 was 47.04%, 46.98%, and 56.56%. Paired resampling by original requirement gave 95% intervals above zero for all four verdict-only advantages over the two rationale variants.",
+    "裁定のみは両参照で優位だった。回答内理由、推論欄理由、裁定のみの順にSol参照F1は41.54%、42.94%、51.52%、DeepSeek参照は47.04%、46.98%、56.56%。原始要求単位の対応付き再標本化では、裁定のみと二理由方式の四つの差すべてで95%区間が0を上回った。"
+  ],
+  "下降的原因尚未分开：三组实际训练354、362、342步，可评分输出为786、792、784条；推理字段组开启推理模式，另外两组关闭。理由内容、目标长度和推理模式都可能影响结果。因此，后续理由研究需要保留仅裁决基线，并分别控制这些差异。": [
+    "The cause of the decline is not isolated. Actual training lasted 354, 362, and 342 steps, with 786, 792, and 784 scorable outputs. Only the reasoning-field group enabled reasoning mode. Rationale content, target length, and reasoning mode may all matter. Future rationale experiments should retain the verdict-only baseline and control these differences separately.",
+    "低下の原因はまだ分離できていない。実際の訓練は354、362、342ステップ、採点可能出力は786、792、784件で、推論モードは推論欄群のみ有効だった。理由内容、目標長、推論モードが影響し得るため、今後も裁定のみ基準を残し、差を個別に制御する。"
+  ],
+  "我们也探索过更适合训练的理由。原生理由50条小试中，47条有合法裁决、3条截断；原文在两种格式下分别有12、11条超32k，整理后都能容纳，但仍有理由和裁决冲突、整理遗漏条件。固定10条修改提示词后修正了一条冲突，合法裁决却从9条变为8条，另有漏判未解决。": [
+    "We also explored more trainable rationales. A 50-example native-rationale pilot produced 47 valid verdicts and three truncations. The originals exceeded 32k on 12 and 11 examples under two formats; editing made all fit, but some rationales contradicted verdicts or lost conditions. A prompt revision on 10 fixed examples corrected one contradiction, while valid verdicts fell from nine to eight and other misses remained.",
+    "訓練しやすい理由も検討した。ネイティブ理由50件の試行は有効裁定47、打ち切り3件で、原文は二形式で12件、11件が32kを超えた。整理後は全件収まったが、理由と裁定の矛盾や条件の欠落は残った。固定10件でプロンプトを変えると一つの矛盾は直った一方、有効裁定は9から8件へ減り、別の見逃しも未解決だった。"
+  ],
+  "另一条路线让学生借助教师分析生成短理由，每条尝试4次，检查结构、标签及同类问题次数，取最早通过的一份。62条均未通过，由两组共同排除，最终形成7,065条“短理由＋裁决”和“仅裁决”配对数据。自动筛选未检查全部理由证据，后续SFT尚未提交。": [
+    "Another route let students use teacher analyses to generate short rationales, trying four times per example and taking the earliest candidate that passed structure, label, and repeated-error-count checks. Both groups excluded 62 examples with no passing candidate, leaving 7,065 paired examples for short-rationale-plus-verdict and verdict-only training. Automated selection did not check every evidential claim, and follow-up SFT has not been submitted.",
+    "別ルートは教師分析を使って学生に短い理由を生成させ、各4回のうち構造、ラベル、同種問題数の検査を最初に通った候補を採用した。全候補が不合格だった62件を両群から除き、「短理由＋裁定」と「裁定のみ」の対応データ7,065件を得た。自動選別は理由の全証拠を検査しておらず、後続SFTも未投入である。"
+  ],
+  "7　从设计评审到判断依据": [
+    "7 · From design reviews to judgment grounds",
+    "7　設計審査から判断根拠へ"
+  ],
+  "实际产物暴露了另一类错误": [
+    "Built applications exposed a different error pattern",
+    "実成果物が示した別の誤り"
+  ],
+  "评审已经建好的对象时，我们用表、视图、仪表盘、工作流和权限结构替代设计文档。969条需求按需求切分为872条训练、97条测试，再拆成五个业务域，得到4,360个训练单元和485个测试单元。Seed2 Lite做两轮LoRA训练，以Luna单轮评审为冻结参考。": [
+    "For built objects, table, view, dashboard, workflow, and permission structures replace the design document. We split 969 requirements into 872 for training and 97 for testing, then into five domains, yielding 4,360 training and 485 test units. Seed2 Lite received two LoRA epochs using single-pass Luna reviews as the frozen reference.",
+    "構築済み対象では設計文書の代わりに表、ビュー、ダッシュボード、ワークフロー、権限構造を使う。969要求を訓練872、テスト97に分け、さらに五領域へ分解して訓練4,360、テスト485単位を得た。Luna単回審査を固定参照としてSeed2 LiteをLoRA 2エポック訓練した。"
+  ],
+  "484条输出可解析，错误类型精确率32.45%、召回率53.98%、F1为40.53%。参考判定90个业务域失败，学生判定155个。模型容易把“管理”“模板”等词解释成必须创建自动化、表单或视图，同时漏掉Lookup唯一性、AI节点输入和重复触发问题。": [
+    "Of 485 outputs, 484 parsed. Error-type precision was 32.45%, recall 53.98%, and F1 40.53%. The reference failed 90 domain units; the student failed 155. The model overinterpreted words such as “management” and “template” as requiring automations, forms, or views, while missing Lookup uniqueness, AI-node inputs, and repeated triggers.",
+    "485出力中484が解析可能で、エラータイプ適合率32.45%、再現率53.98%、F1 40.53%だった。参照は90領域を不合格、学生は155領域を不合格とした。「管理」「テンプレート」を自動化、フォーム、ビュー必須と解釈しやすい一方、Lookupの一意性、AIノード入力、重複トリガーを見逃した。"
+  ],
+  "训练仅覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。下一步需要补足需求到实现方式的正反例，以及对象间的执行条件。静态结构正确、真实运行成功，也需要分别评测。": [
+    "Training covered only 84 of 235 registered error types; multi-issue units made up 4.98%. In test, exact agreement was 4/22 for two-to-three issues and 1/11 for four-or-more. Next data should add positive and negative examples linking requirements to implementations, and execution conditions across objects. Static structural correctness and successful execution also need separate evaluations.",
+    "訓練は登録235タイプ中84だけを含み、多問題単位は4.98%だった。テストの完全一致は2–3問題で4/22、4問題以上で1/11。要求と実装方法をつなぐ正負例、対象間の実行条件を補う必要がある。静的構造の正しさと実際の実行成功も別々に評価する。"
+  ],
+  "DSH记录评审过程，ATMS管理判断前提": [
+    "DSH records reviews; ATMS manages their premises",
+    "DSHで審査を記録し、ATMSで前提を管理する"
+  ],
+  "多路评审可能依赖同一个错误前提。DSH（DeepSeek Harness）提供模型会话、路由及调用记录，我们在其上搭建数据管线：有分歧的先复核，之后所有结果都检查事实、产品能力和待确认假设，交人工确认；规则改变后，重新检查受影响案例。": [
+    "Multiple reviewers may share one mistaken premise. DeepSeek Harness (DSH) provides model sessions, routing, and call logs. Our data pipeline first reviews disagreements, then checks facts, product capabilities, and unconfirmed assumptions for every result before human confirmation. Rule changes trigger reassessment of affected cases.",
+    "複数審査でも同じ誤前提を共有し得る。DeepSeek Harness（DSH）はモデル会話、ルーティング、呼び出し履歴を提供する。その上に、不一致の再審査、全結果の事実・製品機能・未確認仮定の点検、人手確認を行うデータ管線を構築した。ルール変更後は影響例を再審査する。"
+  ],
+  "双路评审管线": [
+    "Dual-review pipeline",
+    "二経路の審査管線"
+  ],
+  "首轮3条需求拆成15个业务域单元，30次请求中21份输出被系统采纳；6个单元获得双路一致结果，9个执行失败，复核和规则分析还没有有效业务输出。当前完成的是框架及部分流程试运行，标签质量和人工复核成本的改善仍待验证。": [
+    "An initial three requirements became 15 domain units. The system accepted 21 outputs from 30 requests; six units obtained agreement from both routes, and nine failed execution. Review and rule analysis have not yet produced valid business outputs. The framework and partial trial flow are in place; label quality and human-review cost remain to be measured.",
+    "初回3要求は15領域単位となり、30リクエスト中21出力をシステムが採用した。6単位は両経路で一致し、9単位は実行失敗。再審査とルール分析にはまだ有効な業務出力がない。枠組みと部分試行はできたが、ラベル品質と人手コストへの効果は未検証である。"
+  ],
+  "同一条“方案有问题”的判断，可能依赖不同依据。某项依据撤回后，判断是否还成立？我们提出用基于假设的真值维护系统（Assumption-Based Truth Maintenance System，ATMS）记录这些依赖。": [
+    "A conclusion that a design is flawed can have several independent grounds. If one is withdrawn, does the judgment still hold? We propose recording these dependencies with an Assumption-Based Truth Maintenance System (ATMS).",
+    "「設計に問題がある」という同じ結論でも根拠は複数あり得る。一つを撤回した後も判断は成立するか。この依存関係を仮定ベースの真理維持システム（ATMS）に記録することを提案した。"
+  ],
+  "输入用户需求、待评方案，以及已确认的产品能力和规则。AI提取明确需求及方案事实，把有依据的内容同待确认假设分开，记录推导关系。系统校验引用和依赖结构，再计算每条结论所需的最小假设组合，按已登记的冲突规则排除矛盾组合。人工复核时，可以同时看到判断、依据、待审假设及冲突状态。": [
+    "Inputs are user requirements, the proposal, and confirmed product capabilities and rules. AI extracts explicit requirements and proposal facts, separates supported content from unconfirmed assumptions, and records derivations. The system checks references and dependencies, computes minimal assumption combinations for each conclusion, and excludes contradictions under registered conflict rules. Human reviewers can inspect judgments, evidence, pending assumptions, and conflicts together.",
+    "入力は要求、評価対象、確認済みの製品機能とルールである。AIは明示要求と設計事実を抽出し、根拠のある内容と未確認仮定を分け、導出関係を記録する。システムは参照と依存構造を検査し、各結論の最小仮定組合せを計算し、登録した競合規則で矛盾を除外する。人は判断、根拠、未審仮定、競合状態を同時に確認できる。"
+  ],
+  "下面用一个示例说明。已核验的事实F是“方案未限制客户数据访问”；待确认的A是“客户归属规则在本案例生效”，B是“客户保密条款在本案例生效”。两项规则都要求这一访问限制，因此登记两条推导：": [
+    "For example, verified fact F says the proposal does not restrict access to customer data. Unconfirmed A says a customer-ownership rule applies; B says a confidentiality clause applies. Both require the restriction, so we register two derivations: ",
+    "例として、確認済み事実Fは「顧客データのアクセス制限がない」、未確認Aは「顧客帰属ルールが適用」、Bは「機密条項が適用」とする。両ルールとも制限を要求するため、二つの導出を登録する："
+  ],
+  "。V表示“方案缺少应有的访问限制”。": [
+    ". V means the proposal lacks a required access restriction.",
+    "。Vは「必要なアクセス制限が不足している」を表す。"
+  ],
+  "判断依据及前提变化": [
+    "Judgment grounds and changing premises",
+    "判断根拠と前提の変化"
+  ],
+  "V的支持集合是": [
+    "V's support set is ",
+    "Vの支持集合は "
+  ],
+  "：接受A或B中的任意一个，都有一条成立的推导路径；共同事实F不再列入假设集合。": [
+    ": accepting either A or B leaves a valid derivation. Shared fact F is not included among the assumptions. ",
+    " で、AかBのどちらかを受け入れれば一つの導出経路が成立する。共通事実Fは仮定集合に含めない。"
+  ],
+  "则表示必须同时接受A、B，含义不同。": [
+    "instead requires both A and B, a different meaning.",
+    " はAとBの両方を必要とし、意味が異なる。"
+  ],
+  "撤回A，保留B": [
+    "Withdraw A, keep B",
+    "Aを撤回しBを残す"
+  ],
+  "：V仍由B这条路径支持。": [
+    ": V remains supported through B.",
+    "：VはBの経路で支持される。"
+  ],
+  "A、B都撤回": [
+    "Withdraw both A and B",
+    "AとBを両方撤回する"
+  ],
+  "：V失去当前依据，需要重审；这不等于方案通过。": [
+    ": V loses its current support and needs review; the proposal has not thereby passed.",
+    "：Vは現在の根拠を失い、再審査が必要となる。設計合格を意味しない。"
+  ],
+  "新增豁免C": [
+    "Add exemption C",
+    "免除Cを追加する"
+  ],
+  "：若C表示本案例豁免上述两项要求，且已明确登记": [
+    ": if C exempts this case from both requirements and we have explicitly registered ",
+    "：Cが両要件の免除を示し、明示的に "
+  ],
+  "不可同时成立，那么接受B和C就产生前提冲突，需人工确认哪项适用。其他不含冲突的前提组合仍可保留。": [
+    "as incompatible combinations, accepting B and C creates a premise conflict. A human must decide which applies. Other nonconflicting premise combinations can remain.",
+    " を同時成立不可と登録していれば、BとCの採用は前提競合となり、人手で適用を確認する。他の競合しない組合せは残せる。"
+  ],
+  "ATMS据此回答“判断依赖什么、前提变化后什么需要重审”。前提是否真实仍需证据核验；支持路径的数量也不代表概率置信度。项目已实现引用哈希、缺失前提和循环依赖检查，支持集合传播、冲突组合管理及撤回查询尚待实现。": [
+    "ATMS tracks what judgments depend on and what needs reassessment after a premise changes. Premise truth still requires evidence, and the number of support paths is not a probability. Reference hashing, missing-premise checks, and cycle detection are implemented; support propagation, conflict-set management, and withdrawal queries remain to be built.",
+    "ATMSは判断の依存先と前提変更後の再審査対象を答える。前提の真偽には証拠確認が必要で、支持経路数は確率信頼度ではない。参照ハッシュ、欠落前提、循環依存の検査は実装済みだが、支持集合伝播、競合集合管理、撤回照会は未実装である。"
+  ],
+  "用配对数据检查决定性条件": [
+    "Use paired examples to test decisive conditions",
+    "対データで決定的な条件を検証する"
+  ],
+  "因果配对合成要检查一件具体的事：": [
+    "Causal paired synthesis tests a specific question: ",
+    "因果的な対データ合成で確かめたいのは、"
+  ],
+  "只改变一条规则的适用条件，模型能否改变相关判断，同时保留其他判断？": [
+    "If only one rule's applicability changes, can the model change the relevant judgment while preserving the others?",
+    "一つのルールの適用条件だけを変えたとき、関連判断だけを変え、他の判断を保てるか、"
+  ],
+  "这样的样本可以帮助模型学习判断边界，例如区分“需求提到了负责人”和“本案例确实要求访问限制”。": [
+    "Such examples can teach judgment boundaries—for example, the difference between mentioning an owner and actually requiring an access restriction.",
+    "という点である。例えば担当者への言及と、この例でアクセス制限が実際に必要なことの違いを学べる。"
+  ],
+  "继续用客户数据访问的教学例子。用户要求建立客户跟进表，记录客户名称、负责人、联系电话。方案已经配置前两项，缺少联系电话，也未限制客户数据访问。这里明确设定：保密条款B不适用，且没有其他访问限制要求；负责人字段仍由用户需求直接要求，不取决于归属规则A。": [
+    "Continue the customer-access example. A user requests a follow-up table with customer name, owner, and phone number. The design includes the first two, omits the phone number, and has no access restriction. Explicitly set B as inapplicable and rule out other access requirements. The owner field remains directly required by the user, independently of A.",
+    "顧客アクセスの例を続ける。ユーザーは顧客名、担当者、電話番号を持つ追跡表を要求する。設計は前二項を含み、電話番号とアクセス制限を欠く。Bは不適用で他のアクセス要件もないと明示する。担当者フィールドは要求が直接必要としており、帰属ルールAには依存しない。"
+  ],
+  "两份样本的需求、方案、规则正文都相同，只改规则上下文中的一个值：": [
+    "The two examples share requirements, proposal, and rule text. Only one rule-context value changes: ",
+    "二例の要求、設計、ルール本文は同一で、ルール文脈の一値だけを変える："
+  ],
+  "A从“适用”改成“明确不适用”": [
+    "A changes from applicable to explicitly inapplicable",
+    "Aを「適用」から「明示的に不適用」へ"
+  ],
+  "。先登记三项预期，再让模型分别评审。": [
+    ". Register three expected outcomes before asking the model to review each example.",
+    "。三つの期待結果を先に登録し、各例をモデルに審査させる。"
+  ],
+  "改变前提，检查判断": [
+    "Change a premise, check the judgment",
+    "前提を変えて判断を検査する"
+  ],
+  "应变化": [
+    "Should change",
+    "変えるべき項目"
+  ],
+  "：访问限制缺失，从“应报”变为“本项不报”。这来自A明确不适用、B及其他相关要求已经排查，而非简单撤回一个待审假设。": [
+    ": missing access restrictions should change from report to do not report this issue. This follows from A being explicitly inapplicable and B and other requirements being ruled out, not simply from withdrawing an unconfirmed assumption.",
+    "：アクセス制限の不足は「報告」から「この項目は報告しない」へ変わる。Aが明示的不適用で、Bと他要件も排除済みだからであり、未確認仮定を撤回しただけではない。"
+  ],
+  "应保持": [
+    "Should remain",
+    "維持すべき項目"
+  ],
+  "：联系电话仍然缺失，两份样本都应报告；负责人字段已经配置，两份样本都不应报告缺失。因此，第二份方案仍有问题。": [
+    ": the phone number is still missing and must be reported in both; the owner field exists and must not be reported missing in either. The second design therefore still has an issue.",
+    "：電話番号は両方で不足として報告し、設定済み担当者フィールドは両方で不足と報告しない。第二設計にも依然問題がある。"
+  ],
+  "ATMS提供这一步的依据：访问限制结论V依赖": [
+    "ATMS supplies the basis: the access-restriction conclusion V depends on ",
+    "ATMSによる根拠は、アクセス制限結論Vが "
+  ],
+  "，字段判断则不依赖A。先检查V是否还有其他支持路径，再登记哪些项应变、哪些应保持；预期答案留给复核人员，不放进待测模型的输入。若B仍适用，V就不应变化，这对样本也不能强行标成相反标签。": [
+    ", while field judgments do not depend on A. Check for alternative support paths before registering what should change and what should remain. Expected answers go to reviewers, not the tested model. If B still applies, V should not change and the pair must not be forced into opposite labels.",
+    " に依存し、フィールド判断はAに依存しないというものだ。別の支持経路を確認してから変更・維持項目を登録する。期待回答は再審査担当に渡し、対象モデルの入力には入れない。Bがなお適用ならVは変わらず、無理に逆ラベルの対にしてはならない。"
+  ],
+  "复核通过后，每对材料保存两份输入、唯一改动、逐项标签及支持依据。同一原始案例的所有变体放在同一个训练或测试分组，避免泄漏。验证分两步：先重复评审，检查应变项是否正确变化、不变项是否被误改；再固定模型起点、训练预算，比较加入配对数据能否减少误报、漏报。当前这是合成及验证方案，尚无配对训练收益。": [
+    "After review, each pair stores both inputs, the sole edit, per-item labels, and supporting grounds. All variants of one original case stay in the same training or test group. Validation first repeats reviews to check intended changes and unintended flips, then fixes the model starting point and training budget to test whether paired data reduce false positives and misses. This remains a synthesis and validation design, with no measured training gain yet.",
+    "再審査後、各対に二入力、唯一の変更、逐項ラベル、支持根拠を保存する。同じ元例の全変種を同じ訓練またはテスト群に置く。まず反復審査で意図した変化と誤変更を検証し、次にモデル起点と訓練予算を固定して対データが誤報・見逃しを減らすかを比べる。現時点では合成・検証設計であり、対データ訓練の利益は未測定である。"
+  ],
+  "8　接下来优先解决什么": [
+    "8 · Priorities for the next experiments",
+    "8　次の実験の優先事項"
+  ],
+  "这组实验建立了可追溯的数据、完整规则下的专用模型基线，以及几条有直接对照支持的选择：继续保留详细规则；兼顾正常设计及多问题样本；理由研究保留仅裁决基线。专用模型的质量差距、不同训练起点的收益差异，都还存在。": [
+    "These experiments established traceable data, specialized-model baselines with full rules, and several directly tested choices: keep detailed rules, include valid and multi-issue designs, and retain verdict-only baselines for rationale research. Specialized models still trail stronger reviewers, and the benefit of training history varies.",
+    "一連の実験で追跡可能なデータ、完全ルール下の専用モデル基準、直接比較で支持された選択を得た。詳細ルールを残すこと、正常設計と多問題例を含めること、理由研究で裁定のみ基準を維持することである。専用モデルの品質差と訓練履歴による利益差は残る。"
+  ],
+  "下一步优先检查": [
+    "The next priority is checking ",
+    "次の優先事項は、"
+  ],
+  "对象和证据是否正确": [
+    "whether objects and evidence are correct",
+    "対象と証拠が正しいか"
+  ],
+  "。模型可能报对标签、数对条数，却把理由指向错误对象。先建立这类错误的独立复核样本，才能判断应当补数据、改奖励，还是调整理由训练。": [
+    ". A model may predict the right label and count but justify it using the wrong object. Independent review examples of these errors will help decide whether to add data, change rewards, or revise rationale training.",
+    " を確認することだ。ラベルと件数が正しくても理由が誤対象を指す場合がある。こうした誤りの独立再審査例を作り、データ追加、報酬変更、理由訓練のどれを改めるか判断する。"
+  ],
+  "数据管线则需要先走完一小批完整流程：确认前提，形成支持集合，撤回假设并检查受影响结论，再验证配对数据能否改善学生判断。框架已经指出了需要记录什么，效果还需要实验回答。": [
+    "The data pipeline should first complete a small batch end to end: confirm premises, form support sets, withdraw assumptions, inspect affected conclusions, then test whether paired examples improve student judgments. The framework identifies what to record; experiments must establish its effect.",
+    "データ管線はまず少数件で全工程を完了させる。前提を確認し、支持集合を作り、仮定を撤回して影響結論を調べ、対データが学生判断を改善するか検証する。枠組みは記録すべき事項を示し、効果は実験で確かめる。"
+  ],
+  "文章目录": [
+    "Article contents",
+    "記事の目次"
+  ]
+}

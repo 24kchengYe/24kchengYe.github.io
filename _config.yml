@@ -94,6 +94,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - package-lock.json
   - tmp
   - vendor
 keep_files:

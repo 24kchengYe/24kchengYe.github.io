@@ -49,6 +49,7 @@ cv/NUL
 
 # Terminal Paste Image folder
 /.cp-images
+node_modules/
 
 # Terminal Paste Image folder
 /.cp-images

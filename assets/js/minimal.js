@@ -7,6 +7,11 @@
     document.querySelectorAll('[data-language]').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.language === language));
     });
+    for (const attribute of ['alt', 'title', 'aria-label']) {
+      document.querySelectorAll(`[data-${attribute}-${language}]`).forEach(element => {
+        element.setAttribute(attribute, element.getAttribute(`data-${attribute}-${language}`));
+      });
+    }
     document.querySelectorAll('[data-site-link]').forEach(link => {
       const url = new URL(link.getAttribute('href'), location.href);
       url.searchParams.set('lang', language);

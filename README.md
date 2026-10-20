@@ -43,16 +43,19 @@ badge service. The earlier AcadHomepage templates remain in the repository.
 
 ## Selected Writing
 
-Selected writing sits between research and projects. Titles, summaries, and the
-generation article introduction support the existing English, Chinese, and
-Japanese switcher. The full essays and technical reports are in Chinese, as
-indicated on their links.
+Selected writing appears before research, in both page order and navigation.
+All three full blog articles support the homepage's English, Chinese, and
+Japanese switcher. Language choices persist across article and homepage links.
+Figures retain their original Chinese labels, with translated captions and
+explanations. Technical reports remain in Chinese, explicitly marked on links.
 
 - `_includes/writing.html`: three article entries and their CSS illustrations.
-- `writing/spec-generation/`: multilingual introduction, essay, and technical report.
+- `writing/spec-generation/`: full multilingual essay and Chinese technical report.
 - `writing/spec-repair/`: Judge–Fix essay and technical report.
 - `writing/rubric-model/`: rubric-model essay and technical report.
 - `writing/assets/`: shared, content-addressed figures.
+- `_data/writing/`: public Chinese article sources and English/Japanese translations.
+- `_tools/build-writing.cjs`: reproducible static article assembly; no translation API.
 - `assets/css/writing*.css`: writing-list and article styles.
 - `assets/css/homepage-marks.css` and `assets/js/homepage-marks.js`: decorative
   marks for research, projects, institutions, and datasets. These are custom
@@ -61,6 +64,14 @@ indicated on their links.
 The public editions omit local source inventories and deployment identifiers.
 Private experiment files, full source archives, and local publication manifests
 are not included. Existing homepage prose and destinations remain unchanged.
+
+After editing an article source or translation, run `npm ci` and `npm run build:writing`.
+The build checks translation coverage. Commit the generated HTML with the sources.
+The old offline exporter is not the public-site build path.
+
+Public reports allow same-origin image, script, and stylesheet files in their
+Content Security Policy. The offline export's `img-src data: blob:` policy
+cannot load the site's separate figure files. External connections remain disabled.
 
 ## Local Development
 

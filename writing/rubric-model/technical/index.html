@@ -76,7 +76,7 @@ table p:last-child{margin-bottom:0}
 <p>研究先解决数据及规则问题，再训练专用评审模型。SFT学习完整参考答案；RL根据模型自己生成的答案计分，试图提高问题召回。OPD检验能否把详细规则教进模型，从而缩短使用时的输入。CoT则检验学习教师理由是否有助于裁决。提供答案或指导的模型称为教师，接受训练的模型称为学生。</p>
 <p>本报告围绕四个训练问题展开：SFT能否学会完整评审，以及既有训练经历是否有帮助；RL能否提高多问题召回；OPD能否在缩短学生规则的同时保持判断质量；CoT是否能通过教师理由改善裁决。数据构建和规则修订提供共同基础，实际产物评审及DSH管线则扩展了输入对象和标签生产方式。</p>
 <p>本研究的主要结果是确定了几项可继续采用的设计：对齐精确输入版本、保留完整业务规则、兼顾正常及多问题样本，并为理由训练保留仅裁决基线。以下按任务、方法、实验设置和对照结果组织证据，讨论会改变结果解释的比较条件。</p>
-<figure id="figure-figure_research_timeline" class="blog-figure"><img src="/writing/assets/646239c884a492ee1ee2.svg" alt="研究路线时间线" width="1080" height="792" loading="lazy" decoding="async"><figcaption>研究路线时间线</figcaption></figure>
+<figure id="figure-figure_research_timeline" class="blog-figure"><img src="/writing/assets/646239c884a492ee1ee2.svg" alt="研究路线时间线" width="1080" height="792" loading="eager" decoding="async"><figcaption>研究路线时间线</figcaption></figure>
 
 <figure id="figure-technical_training_signals" class="blog-figure"><img src="/writing/assets/56fee8fae1475d39af31.svg" alt="四种训练信号" width="850" height="475" loading="lazy" decoding="async"><figcaption>四种训练信号</figcaption></figure>
 
@@ -677,4 +677,7 @@ table p:last-child{margin-bottom:0}
   update();
 })();
 </script>
+
+
+
 </body></html>

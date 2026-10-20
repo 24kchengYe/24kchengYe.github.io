@@ -106,6 +106,8 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 </details>
 
 
+{% include writing.html %}
+
 <section class="section " id="research" markdown="block">
 
 ## <span lang="en">Selected research</span><span lang="zh">研究论文</span><span lang="ja">研究論文</span>
@@ -374,8 +376,6 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 </section>
 
-
-{% include writing.html %}
 
 <section class="section " id="projects" markdown="block">
 

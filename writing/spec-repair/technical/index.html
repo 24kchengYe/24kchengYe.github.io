@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data: blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'"><title>Judge–Fix 技术报告 · Yecheng Zhang</title><style>:root{color-scheme:light;--ink:#30343a;--heading:#20242a;--muted:#71767e;--line:#e2e5e8;--blue:#4f6f8c;--code:#f6f7f8}
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'"><title>Judge–Fix 技术报告 · Yecheng Zhang</title><style>:root{color-scheme:light;--ink:#30343a;--heading:#20242a;--muted:#71767e;--line:#e2e5e8;--blue:#4f6f8c;--code:#f6f7f8}
 *{box-sizing:border-box}
 html{background:#fff;scroll-padding-top:28px}
 body{margin:0;padding:64px 24px 100px;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:18px;line-height:1.85;-webkit-font-smoothing:antialiased}
@@ -275,7 +275,7 @@ body[data-publication-genre=blog] .article-body h2{font-size:28px}
 
 <p>本研究面向多维表格设计文档的自动修复：模型根据用户需求和产品规则发现问题，修改 SpecDoc 或 HostPlan，并检查最终设计能否支持实际建表。2026 年 6—10 月，项目比较了局部修复、模型切换、历史反馈、投票、格式恢复和 Verifier 前后版本验证，形成了四域 Judge–Fix–Router 主链路及独立的修改验证路线。</p>
 <p>实验表明，限制修改范围和澄清具体业务规则能改善部分固定样本上的修复结果：Non-Table 300 条中，保护合格段落使 Fix 阶段通过数从 156 增至 177；8 条工作流难例中，保留补丁方式、只补业务规则使准出数从 3 增至 7。更复杂的审核和更大预算没有稳定带来收益。Verifier 的前置分析在 40 个域判断单元中将参考一致数从 33 提高到 38，但另一组完整修复实验的参考通过数从 4/10 降至 1/10。下一步应先查明 Judge 报出的问题是否真实存在，再检查 Fix 是否修好问题并保留原需求，最后用端到端评测验证建表结果。</p>
-<figure class="figure-block result-figure" data-figure="research_design" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e647acae569a0cb3be7a.svg" alt="研究设计" width="1200" height="430" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 1　研究设计</figcaption></figure>
+<figure class="figure-block result-figure" data-figure="research_design" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e647acae569a0cb3be7a.svg" alt="研究设计" width="1200" height="430" data-natural-width="1200" data-zoom="true" loading="eager" decoding="async"></div><figcaption>图 1　研究设计</figcaption></figure>
 <h2 id="article-1">1. 引言</h2>
 <p>执行器按照多维表格设计文档实现用户需求。它既要说明有哪些表、字段、视图和流程，也要满足字段类型、组件能力和权限规则。设计中只写出一个目标名称，并不等于给出了可执行的方法。例如“培训完成度”可以是手工填报值，也可以是需要按培训记录自动汇总的结果；是否缺少计算方式，要结合用户需求和完整设计判断。</p>
 <p>自动修复的困难有两部分。首先，Judge 必须区分业务缺口、能力限制和允许的表达差异，不能把正常设计误判成错误。其次，Fix 不仅要消除已报问题，还要保留原来的业务含义。将管理员改成只读，可能让一条权限限制通过，却使其无法完成管理职责；把净现金流改成收入，可能消除公式问题，却改变了指标。</p>
@@ -1130,4 +1130,7 @@ function markSection() {
 }
 window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(markSection); } }, {passive:true});
 markSection();
-</script></body></html>
+</script>
+
+
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "build:writing": "node _tools/build-writing.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.0.0"
+  }
+}

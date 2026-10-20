@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>训练规则评审模型 · Yecheng Zhang</title><style id="edition-styles">
+:root{color-scheme:light;--ink:#202123;--muted:#73767b;--line:#e9eaec;--link:#44484d}
+*{box-sizing:border-box}
+html{background:#fff;scroll-behavior:smooth;scroll-padding-top:36px}
+body{margin:0;padding:72px 40px 112px;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:#000}
+a:focus-visible{outline:2px solid #6f747b;outline-offset:4px}
+.skip-link{position:absolute;left:24px;top:-80px;padding:8px 12px;background:#fff;color:#202123;z-index:2}
+.skip-link:focus{top:12px}
+.blog-layout{display:grid;grid-template-columns:180px minmax(0,1040px);gap:44px;max-width:1264px;margin:0 auto;align-items:start}
+.blog-sidebar{position:sticky;top:44px;max-height:calc(100vh - 88px);overflow:auto;padding:2px 0}
+.blog-sidebar nav>p{font-size:12px;font-weight:400;color:#999da2;margin:0 0 16px}
+.blog-sidebar ol{list-style:none;padding:0;margin:0}
+.blog-sidebar li{margin:0 0 10px}
+.blog-sidebar a{display:block;text-decoration:none;font-size:13px;font-weight:400;line-height:1.65;color:#96999e;padding-left:11px;border-left:1px solid transparent;overflow-wrap:anywhere}
+.blog-sidebar a:hover,.blog-sidebar a[aria-current="location"]{color:#27292d;border-left-color:#656970}
+.blog-main,.blog-article{min-width:0;width:100%}
+.blog-article>*{max-width:720px;margin-left:auto;margin-right:auto}
+.blog-article h1{margin-top:0;margin-bottom:40px;font-size:clamp(38px,3.7vw,52px);font-weight:500;line-height:1.2;letter-spacing:-.035em;text-wrap:balance;text-align:center}
+.blog-article h2{margin-top:68px;margin-bottom:22px;font-size:30px;font-weight:500;line-height:1.4;letter-spacing:-.02em;scroll-margin-top:36px}
+.blog-article h3{margin-top:36px;margin-bottom:14px;font-size:23px;font-weight:500;line-height:1.5;letter-spacing:-.01em}
+.blog-article h4{margin-top:28px;margin-bottom:12px;font-size:19px;font-weight:500}
+.blog-article p{margin-top:0;margin-bottom:23px}
+.blog-article strong,.blog-article b{font-weight:500}
+.blog-article ul,.blog-article ol{margin-top:14px;margin-bottom:26px;padding-left:1.4em}
+.blog-article li{margin:7px 0;padding-left:.15em}
+.blog-article li>p{margin:0 0 8px}
+.blog-article blockquote{padding:0 0 0 20px;border-left:2px solid #dedfe2;color:#62666c;margin-top:28px;margin-bottom:30px}
+.blog-article hr{height:1px;border:0;background:var(--line);margin-top:42px;margin-bottom:42px}
+.blog-article code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.86em;overflow-wrap:anywhere}
+.blog-article sub,.blog-article sup{font-size:.75em;line-height:0}
+.blog-article .math-equation{font-family:inherit;line-height:1.9;text-align:center;margin-top:28px;margin-bottom:28px}
+.blog-article>.blog-figure{width:100%;max-width:1040px;margin:42px auto 46px;padding:0;border:0;background:transparent;box-shadow:none;scroll-margin-top:36px}
+.blog-figure img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;border-radius:0;box-shadow:none}
+.blog-figure figcaption{margin:11px 0 0;color:#898c91;font-size:12px;font-weight:400;line-height:1.6}
+.blog-article>.blog-table-scroll{max-width:920px;overflow-x:auto;margin-top:28px;margin-bottom:32px;overscroll-behavior-x:contain}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7;font-variant-numeric:tabular-nums;text-align:left}
+thead{border-top:1px solid #d8dadd;border-bottom:1px solid #d8dadd}
+th{font-weight:500;color:#34373b}
+th,td{padding:11px 13px;vertical-align:top}
+tbody tr{border-bottom:1px solid #edeef0}
+table p:last-child{margin-bottom:0}
+@media(max-width:1199px){body{padding-top:56px}.blog-layout{display:block;max-width:1040px}.blog-sidebar{display:none}}
+@media(max-width:760px){body{padding:36px 24px 76px;font-size:17px;line-height:1.85}.blog-article h1{font-size:36px;line-height:1.3;letter-spacing:-.03em;margin-bottom:30px}.blog-article h2{font-size:27px;margin-top:52px}.blog-article h3{font-size:21px}.blog-article>.blog-figure{margin:30px auto 34px}.blog-figure figcaption{font-size:11px}.blog-article>.blog-table-scroll{margin:24px auto}table{min-width:600px;font-size:13px}th,td{padding:9px 10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{html{scroll-behavior:auto}body{padding:0;font-size:11pt;line-height:1.7;color:#000}.blog-layout{display:block;max-width:none}.blog-sidebar,.skip-link{display:none!important}.blog-article>*{max-width:none}.blog-article h1{font-size:28pt;max-width:none}.blog-article h2{font-size:19pt;margin-top:30pt}.blog-article h3{font-size:15pt}h1,h2,h3,figcaption{break-after:avoid}.blog-article>.blog-figure{max-width:100%;margin:22pt 0;break-inside:avoid}.blog-figure img{break-inside:avoid}.blog-figure figcaption{font-size:8pt}.blog-article>.blog-table-scroll{overflow:visible;max-width:none}table{min-width:0;font-size:9pt}a{color:inherit;text-decoration:none}}
+
+/* Shared reading layout; the evidence library retains its original styles. */
+.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit;margin:0;color:inherit}
+.blog-article h1 span,.blog-article h2 span,.blog-article h3 span{scroll-margin-top:36px}
+.blog-article>.figure-block{width:100%;max-width:1040px;margin:42px auto 46px;transform:none;padding:0;border:0;box-shadow:none}
+.blog-article>.figure-block>figcaption{font-size:12px;font-weight:400;color:#898c91;line-height:1.6;margin:0 0 11px}
+.blog-article>.figure-block>p>img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;box-shadow:none}
+.blog-article>.figure-block>.figure-evidence-v25{margin-top:7px;font-size:14px}
+.blog-article>.figure-block>.figure-evidence-v25>summary{font-size:12px;color:#898c91;font-weight:400}
+.blog-article .figure-block img,.blog-article .vector-preview img,.edition-library img{max-width:100%;height:auto}
+.blog-article .table-scroll,.edition-library .table-scroll{max-width:100%;overflow-x:auto}
+.edition-library{min-width:0;width:100%}
+.edition-library .evidence-library{max-width:780px;margin:76px auto 0}
+.edition-library .document-library>summary{font-size:19px;font-weight:500}
+.edition-library summary{overflow-wrap:anywhere}
+.edition-library pre{max-width:100%;overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap}
+.edition-library details,.blog-article details{min-width:0}
+@media(max-width:760px){.blog-article>.figure-block{margin:30px auto 34px}.edition-library .evidence-library{max-width:100%;margin-top:52px}.blog-article>.figure-block>figcaption{font-size:11px}}
+@media print{.blog-article>.figure-block{max-width:100%;width:100%;margin:22pt 0;transform:none}.edition-library .evidence-library{max-width:none}.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit}.edition-library pre{max-height:none}}
+
+</style><meta name="description" content="训练规则评审模型：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/rubric-model/"><meta property="og:title" content="训练规则评审模型"><meta property="og:description" content="训练规则评审模型：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/rubric-model/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body class="edition-minimal"><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/rubric-model/technical/">技术报告 →</a><span>Yecheng Zhang · 中文</span></nav><a class="skip-link" href="#edition-start">跳到正文</a><div class="blog-layout"><aside class="blog-sidebar"><nav id="edition-toc" aria-label="文章目录"><p>目录</p><ol><li><a href="#blog-section-1" aria-current="location">1 模型要学会怎样评审</a></li><li><a href="#blog-section-2">2 从数据和规则开始</a></li><li><a href="#blog-section-3">3 SFT建立了基线，主要短板是漏报</a></li><li><a href="#blog-section-4">4 RL怎样奖励模型找全问题</a></li><li><a href="#blog-section-5">5 OPD能否让学生少读一些规则</a></li><li><a href="#blog-section-6">6 学习教师理由，是否更容易判断正确</a></li><li><a href="#blog-section-7">7 从设计评审到判断依据</a></li><li><a href="#blog-section-8">8 接下来优先解决什么</a></li></ol></nav></aside><main class="blog-main"><article id="edition-article" class="blog-article"><h1 id="edition-start">训练规则评审模型</h1>
+<p>给定一份多维表格设计，模型能否准确指出它没有满足哪些需求？这个问题比给方案打分更具体：需要找出遗漏的条件、错误的对象或不成立的实现方式，还要说明依据。</p>
+<p>2026年7—10月，我们从历史数据和业务规则开始，依次尝试监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT）。后期比较使用按原始需求隔离的7,127条训练样本、792条测试样本。实验逐渐明确了几个选择：完整规则仍有必要；多问题RL在四组实验中有三组提高了错误类型F1；加入教师显式理由的三组对照中，仅学习裁决的方案表现更好。</p>
+<p>这些结果还没有解决评审的全部问题。专用模型仍容易漏报，同类问题发生在多个对象上时尤其如此。实际产物评审则暴露出较多误报。研究后半段因此开始关注判断依据：怎样检查一个结论用了哪些事实，哪些前提尚未确认，以及前提改变后需要重审什么。</p>
+<figure id="figure-figure_research_timeline" class="blog-figure"><img src="/writing/assets/646239c884a492ee1ee2.svg" alt="研究路线时间线" width="1080" height="792" loading="lazy" decoding="async"><figcaption>研究路线时间线</figcaption></figure>
+
+<h2 id="blog-section-1">1　模型要学会怎样评审</h2>
+<p>多维表格的设计包括表结构、视图、仪表盘、工作流和权限。例如，“订单逾期后提醒负责人”需要到期时间、逾期判断、提醒对象和触发流程配合。只写了“发送提醒”，并不能说明方案已经满足需求。</p>
+<p>我们把这些检查整理成逐条业务规则，称为rubric。每条规则写清适用条件、违规情形和例外。模型读入用户需求、一版待评设计、一个业务域的完整规则，输出是否通过、具体问题、错误类型、严重程度及判断依据。</p>
+<figure id="figure-figure_01_task_io" class="blog-figure"><img src="/writing/assets/0c8f03219e746892457f.svg" alt="评审输入输出" width="1008" height="331" loading="lazy" decoding="async"><figcaption>评审输入输出</figcaption></figure>
+
+<p><strong>一条评审样本是“一条需求 × 一版设计 × 一个业务域”。</strong> 同一需求可能产生多个设计版本，也会拆成多个业务域样本。训练和测试按原始需求整组切分，避免同一需求的不同版本出现在两侧。</p>
+<p>主要指标是错误类型F1，综合考察误报和漏报。计分按业务域、问题大类、规则及错误类型匹配标签，在每条样本内去重。同一种错误出现在三个对象上，报告其中一处就可能获得这个标签的全部分数。因此，我们同时检查问题数量、完整匹配和具体证据。</p>
+<p>后期792条测试使用Sol、DeepSeek生成的两套参考。这里的F1衡量参考一致性，语义争议仍需要复核；其中50条曾用于提示词开发。较早两组多问题RL及后三组OPD使用另一套1,056条共同测试和该批冻结参考，两套测试分别比较。F1按可评分输出计算，异常输出另计，严格一致按全部测试样本计算。</p>
+<p>四种训练方法提供了不同的学习信号。SFT学习完整答案；RL对模型自己生成的答案计分；OPD让固定教师沿学生的生成过程提供词元概率；CoT比较不同形式的理由目标。提供指导的模型称为教师，接受训练的模型称为学生。</p>
+<figure id="figure-technical_training_signals" class="blog-figure"><img src="/writing/assets/56fee8fae1475d39af31.svg" alt="四种训练信号" width="850" height="475" loading="lazy" decoding="async"><figcaption>四种训练信号</figcaption></figure>
+
+<h2 id="blog-section-2">2　从数据和规则开始</h2>
+<p>最早可追溯的数据盘点在7月21日，涉及6,457条原始需求。一条需求经过“设计、评审、修复、再评审”，会留下多个版本。如果把最终设计配上早期的问题标签，模型就会学到错误对应关系。我们的第一步是按需求、精确设计版本、业务域重新对齐。修复也可能引入新问题，因此每一版都需要单独核对。</p>
+<p>早期数据实验尝试增加正常设计、扩大独立需求覆盖、调整多问题输出及重采样。在共同200条测试上，扩大需求覆盖的一组细规则F1为63.67%，早期单层规则训练为53.82%。增加正常设计后，模型开始能够放行正常样本，但问题召回下降；四组的多问题全命中率都为0。训练规模和输出形式同时变化，这一阶段主要发现了数据需要补足的方向。</p>
+<p>规则本身也影响模型判断。我们一方面补充适用前提、例外和问题归属，另一方面要求先列出对象，再逐项扫描，发现一处问题后继续检查。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>修改</th>
+<th>对照方式</th>
+<th>观察结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>改规则措辞</td>
+<td>同一Flash模型、规则清单、流程及50条输入</td>
+<td>可明确裁决样本的F1从55.38%到64.62%</td>
+</tr>
+<tr>
+<td>训练时逐项扫描</td>
+<td>同一Seed2起点；400条测试均用普通提示</td>
+<td>F1从54.03%到55.50%，问题存在性召回从72.08%到78.45%</td>
+</tr>
+<tr>
+<td>修订规则边界</td>
+<td>同一模型对100条难例各评审3次</td>
+<td>裁决三轮一致从62条到73条，具体问题及条数一致从36条到59条</td>
+</tr>
+</tbody></table></div>
+<p>规则写清楚，判断和重复稳定性都能改善。不过，增加字段并不总有收益：在另一轮相同规则的比较中，要求额外填写对象、需求证据和设计证据，F1从90.32%变为89.43%。这些字段有助于人工复核，本次没有提高细标签得分。</p>
+<p>标签生产也经历了调整。多轮评审投票会保留共同遗漏，直接让复核模型改答案又可能删掉成立的问题。后来的流程先合并候选，再核对证据、前提和例外，最后补查遗漏；未解决的分歧单独保留。</p>
+<figure id="figure-figure_05_label_pipeline" class="blog-figure"><img src="/writing/assets/213571d6c4a8fb88aa7c.svg" alt="标签生产" width="1008" height="360" loading="lazy" decoding="async"><figcaption>标签生产</figcaption></figure>
+
+<p>后期数据从另一批设计、评审、修复轨迹中分层选样。历史问题仅用于选样，Sol按当前完整规则独立复审时看不到旧标签。首轮获得7,638份合法标签，覆盖190种错误类型；继续回捞、构造或修改设计并复审后，从464条补充候选中采纳281条，最终得到7,919条数据，覆盖249种错误类型。</p>
+<p>按需求切分后，训练集为7,127条，覆盖2,139条原始需求；测试集为792条，覆盖229条需求。训练中的无问题、单问题、多问题样本分别为3,396、1,897、1,834条，测试分别为391、192、209条。训练覆盖249种登记错误，每种至少3条；测试只覆盖其中116种。数据已能支持统一比较，稀有错误和复杂条件组合仍需要更充分的测试。</p>
+<h2 id="blog-section-3">3　SFT建立了基线，主要短板是漏报</h2>
+<p>SFT的训练输入包含完整规则、需求和设计，目标是完整JSON评审答案：每类检查给出状态，每条问题包含规则、错误类型、严重程度及一句话依据。后面的CoT实验是在这个基础上额外加入整段判断理由。</p>
+<p>最后一轮比较三个起点：Seed2 Lite基础模型；先做中间训练、再学旧版评审的模型；做过中间训练、直接学本轮评审的模型。中间训练指本次评审微调之前的额外训练经历。三组最终都使用同一批7,127条Sol标签及完整规则。</p>
+<p>共同设置为Seed2 Lite 260428、两轮LoRA训练、rank 32、alpha 4、每批16条、学习率0.00001、长度上限32,768 token。LoRA冻结主体参数，只训练新增参数。平台从训练文件内部划10%作过程验证，外部792条用于最终评测。</p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th>本轮训练前的经历</th>
+<th align="right">Sol参考F1</th>
+<th align="right">DeepSeek参考F1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基础模型</td>
+<td align="right">55.72%</td>
+<td align="right">52.40%</td>
+</tr>
+<tr>
+<td>中间训练，再学旧版评审</td>
+<td align="right">56.97%</td>
+<td align="right">51.67%</td>
+</tr>
+<tr>
+<td>中间训练</td>
+<td align="right">56.19%</td>
+<td align="right">53.97%</td>
+</tr>
+</tbody></table></div>
+<p>Sol参考下三个起点相差1.25个百分点，换用DeepSeek参考后排名变化。中间训练组比基础组略高，先学旧版评审的一组没有在两套参考下都领先。共同短板更明显：Sol参考下精确率为71.28%—76.09%，召回率只有44.54%—47.44%。模型通常能给出格式完整的评审，却没有把问题找全。</p>
+<p>直接使用通用模型仍更强。在同一792条输入和完整规则下，Sol High、Luna Medium、DeepSeek V4.1 Flash、DeepSeek V4 Pro按Sol参考的F1分别为68.28%、65.01%、60.61%、65.12%，均高于本次专用训练模型；可评分输出分别为792、784、756、792条，Luna有8条异常，Flash有36条截断。DeepSeek参考下Pro的72.42%较高，说明模型排序也受参考来源影响。</p>
+<h2 id="blog-section-4">4　RL怎样奖励模型找全问题</h2>
+<p>RL从SFT模型继续训练，让模型先生成答案，再按答案质量更新参数。首轮奖励根据去重后的大类、规则和错误类型计分，分别尝试混合正常设计、只用问题样本。两组训练到200步，在共同500条测试上，F1从SFT起点的46.20%降至42.65%、38.25%。混合数据使参考无问题样本仍判无问题的比例从64.34%升至78.29%，却漏掉更多问题；只用问题数据时，这一比例降到0.78%。</p>
+<p>后续同时调整数据和奖励。训练按无问题、1个问题、2—3个问题、4个以上问题组织；正常样本尽量取同一需求修复后的设计，多问题答案完整保留。较早规则使用810条训练、242条验证，外部测试1,056条；统一规则使用795条训练、215条验证，外部测试792条。每批数据各从两个SFT起点继续训练，共四组。</p>
+<p>四组采用GRPO：每步选32条输入，每条生成8份答案，以同一输入下的相对得分更新模型。共同运行80步，学习率0.000001，KL约束系数0.001，每10步验证；生成温度0.7，答案上限10,000 token。参考标签仅在奖励侧，学生作答时看不到。</p>
+<p>奖励的关键变化是保留错误出现次数。三个对象犯同一种错，报告一处和三处应得到不同奖励。答案先通过JSON、标签、严重度和状态校验，再计算三层计数F1：</p>
+<blockquote>
+<p>综合得分 = 0.2 × 大类F1 + 0.3 × 规则F1 + 0.4 × 错误类型F1 + 0.1 × 完全匹配<br>最终奖励 = 2 × 综合得分 − 1</p>
+</blockquote>
+<p>计数F1为“2 × 命中条数 ÷（预测条数＋参考条数）”。完全匹配要求错误类型及数量全部相同。双方都无问题时奖励为1；只有一方有问题，或格式校验失败时为−1。</p>
+<figure id="figure-technical_rl_count_reward" class="blog-figure"><img src="/writing/assets/2a78cfaa5c8b1d541369.svg" alt="RL计数奖励算例" width="850" height="346" loading="lazy" decoding="async"><figcaption>RL计数奖励算例</figcaption></figure>
+
+<p>奖励保留数量，外部F1仍按去重标签计算。奖励还只检查理由非空、没有字面重复，尚未检查依据是否成立、是否指向正确对象。这使得标签、数量、对象正确性成为三个需要分别验证的问题。</p>
+<figure id="figure-result_01_sft_rl" class="blog-figure"><img src="/writing/assets/c74430396580fa5c87e9.svg" alt="监督微调后继续强化学习" width="850" height="446" loading="lazy" decoding="async"><figcaption>监督微调后继续强化学习</figcaption></figure>
+
+<p>四组多问题训练有三组提高F1。较早规则的两组分别提高约3.45、2.77个百分点；统一数据上，一组从56.97%到58.91%，另一组从56.19%到55.81%。正常设计、多问题数据及计数奖励共同构成了更有希望的方案，但这些因素一起变化，各自贡献还未分离。</p>
+<p>训练停止位置也值得复查。直接学习新版规则的一组，第50步验证奖励为0.4629，最终第80步降至0.4184；目前外部测试使用第80步。中间模型是否更好，还需要在同一外部测试上验证。</p>
+<h2 id="blog-section-5">5　OPD能否让学生少读一些规则</h2>
+<p>完整规则很长。OPD（On-policy Distillation）尝试让教师保留详细规则，学生只读精简版本：保留规则大纲、合法标签及输出格式，删除适用前提、排除条件和证据要求。</p>
+<p>当前学生先生成答案，固定教师沿学生已经写出的前缀计算后续词元概率，学生据此调整概率分配，再生成下一批。每个输入生成1份答案，每批32条；取学生概率最高的64个候选词元，在其中重新归一化，用反向KL衡量概率差异，按词元平均计算。最终裁决的额外奖励关闭，教师获得的标签提示不进入学生输入。</p>
+<p>首轮固定7,127条输入、Seed2 Lite基础学生和精简规则，训练223步。三个基础模型教师分别得到数量及扫描方向、参考理由、逐条标签，按Sol参考，792条测试F1分别为20.98%、20.69%、22.01%；专用SFT教师的一组为16.09%，其中657条输出为空问题集合。这轮没有达到压缩规则的目标。</p>
+<p>下一轮固定同一个RL教师、6,580条训练输入及Seed2 Lite基础学生，训练206步，在共同1,056条测试上比较教师标签提示和学生规则长度。</p>
+<figure id="figure-technical_opd_design" class="blog-figure"><img src="/writing/assets/8573383b051e4aa43c38.svg" alt="OPD对照设计及结果" width="850" height="367" loading="lazy" decoding="async"><figcaption>OPD对照设计及结果</figcaption></figure>
+
+<p>三个已运行条件的F1分别为：教师不额外看标签、学生用完整规则，52.85%；教师看标签、学生用完整规则，51.12%；教师看标签、学生用精简规则，35.03%。教师不看标签、学生用精简规则的第四格未运行。</p>
+<p>教师都有标签时，完整学生规则高16.09个百分点；学生都用完整规则时，增加教师标签没有提高结果。三组仍低于同集SFT的59.49%和RL的62.25%。学生提示在训练及评测时同步改变，当前能确认的是完整规则方案更好。若要继续缩短输入，需要逐类删减规则，检查哪些适用条件和例外必须保留。</p>
+<h2 id="blog-section-6">6　学习教师理由，是否更容易判断正确</h2>
+<p>CoT实验用DeepSeek生成的同一批标签构造三种目标：理由放在普通回答里；同一段理由放在专用推理字段；只保留裁决。理由来自教师按要求输出的<code>judge_reason</code>，去掉置信度字段，与接口返回的原生推理文本有区别。</p>
+<p>三组共用7,127条输入、同一裁决和完整规则，从同一Seed2 Lite基础模型做两轮LoRA训练。训练长度上限32,768 token；评测上限16,384，temperature为0.01，评测输入没有教师理由。</p>
+<figure id="figure-technical_cot_design" class="blog-figure"><img src="/writing/assets/518173faf6bb5f7a6524.svg" alt="CoT对照设计及结果" width="850" height="526" loading="lazy" decoding="async"><figcaption>CoT对照设计及结果</figcaption></figure>
+
+<p>仅裁决方案在两套参考下都更好。Sol参考下，回答内理由、推理字段理由、仅裁决三组F1为41.54%、42.94%、51.52%；DeepSeek参考下为47.04%、46.98%、56.56%。以原始需求为单位配对重复抽样，仅裁决相对两组理由方案的四个差值，95%区间均高于0。</p>
+<p>下降的原因尚未分开：三组实际训练354、362、342步，可评分输出为786、792、784条；推理字段组开启推理模式，另外两组关闭。理由内容、目标长度和推理模式都可能影响结果。因此，后续理由研究需要保留仅裁决基线，并分别控制这些差异。</p>
+<p>我们也探索过更适合训练的理由。原生理由50条小试中，47条有合法裁决、3条截断；原文在两种格式下分别有12、11条超32k，整理后都能容纳，但仍有理由和裁决冲突、整理遗漏条件。固定10条修改提示词后修正了一条冲突，合法裁决却从9条变为8条，另有漏判未解决。</p>
+<p>另一条路线让学生借助教师分析生成短理由，每条尝试4次，检查结构、标签及同类问题次数，取最早通过的一份。62条均未通过，由两组共同排除，最终形成7,065条“短理由＋裁决”和“仅裁决”配对数据。自动筛选未检查全部理由证据，后续SFT尚未提交。</p>
+<h2 id="blog-section-7">7　从设计评审到判断依据</h2>
+<h3 id="blog-subsection-1">实际产物暴露了另一类错误</h3>
+<p>评审已经建好的对象时，我们用表、视图、仪表盘、工作流和权限结构替代设计文档。969条需求按需求切分为872条训练、97条测试，再拆成五个业务域，得到4,360个训练单元和485个测试单元。Seed2 Lite做两轮LoRA训练，以Luna单轮评审为冻结参考。</p>
+<p>484条输出可解析，错误类型精确率32.45%、召回率53.98%、F1为40.53%。参考判定90个业务域失败，学生判定155个。模型容易把“管理”“模板”等词解释成必须创建自动化、表单或视图，同时漏掉Lookup唯一性、AI节点输入和重复触发问题。</p>
+<p>训练仅覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。下一步需要补足需求到实现方式的正反例，以及对象间的执行条件。静态结构正确、真实运行成功，也需要分别评测。</p>
+<h3 id="blog-subsection-2">DSH记录评审过程，ATMS管理判断前提</h3>
+<p>多路评审可能依赖同一个错误前提。DSH（DeepSeek Harness）提供模型会话、路由及调用记录，我们在其上搭建数据管线：有分歧的先复核，之后所有结果都检查事实、产品能力和待确认假设，交人工确认；规则改变后，重新检查受影响案例。</p>
+<figure id="figure-figure_15_dsh_pipeline" class="blog-figure"><img src="/writing/assets/5af2c39fe8fa60e6a221.svg" alt="双路评审管线" width="1008" height="490" loading="lazy" decoding="async"><figcaption>双路评审管线</figcaption></figure>
+
+<p>首轮3条需求拆成15个业务域单元，30次请求中21份输出被系统采纳；6个单元获得双路一致结果，9个执行失败，复核和规则分析还没有有效业务输出。当前完成的是框架及部分流程试运行，标签质量和人工复核成本的改善仍待验证。</p>
+<p>同一条“方案有问题”的判断，可能依赖不同依据。某项依据撤回后，判断是否还成立？我们提出用基于假设的真值维护系统（Assumption-Based Truth Maintenance System，ATMS）记录这些依赖。</p>
+<p>输入用户需求、待评方案，以及已确认的产品能力和规则。AI提取明确需求及方案事实，把有依据的内容同待确认假设分开，记录推导关系。系统校验引用和依赖结构，再计算每条结论所需的最小假设组合，按已登记的冲突规则排除矛盾组合。人工复核时，可以同时看到判断、依据、待审假设及冲突状态。</p>
+<p>下面用一个示例说明。已核验的事实F是“方案未限制客户数据访问”；待确认的A是“客户归属规则在本案例生效”，B是“客户保密条款在本案例生效”。两项规则都要求这一访问限制，因此登记两条推导：<code>F ∧ A ⇒ V</code>、<code>F ∧ B ⇒ V</code>。V表示“方案缺少应有的访问限制”。</p>
+<figure id="figure-figure_17_atms_support_sets" class="blog-figure"><img src="/writing/assets/5aa7f3ceea98100373e0.svg" alt="判断依据及前提变化" width="1008" height="504" loading="lazy" decoding="async"><figcaption>判断依据及前提变化</figcaption></figure>
+
+<p>V的支持集合是<code>{{A}, {B}}</code>：接受A或B中的任意一个，都有一条成立的推导路径；共同事实F不再列入假设集合。<code>{{A,B}}</code>则表示必须同时接受A、B，含义不同。</p>
+<ul>
+<li><strong>撤回A，保留B</strong>：V仍由B这条路径支持。</li>
+<li><strong>A、B都撤回</strong>：V失去当前依据，需要重审；这不等于方案通过。</li>
+<li><strong>新增豁免C</strong>：若C表示本案例豁免上述两项要求，且已明确登记<code>{A,C}</code>、<code>{B,C}</code>不可同时成立，那么接受B和C就产生前提冲突，需人工确认哪项适用。其他不含冲突的前提组合仍可保留。</li>
+</ul>
+<p>ATMS据此回答“判断依赖什么、前提变化后什么需要重审”。前提是否真实仍需证据核验；支持路径的数量也不代表概率置信度。项目已实现引用哈希、缺失前提和循环依赖检查，支持集合传播、冲突组合管理及撤回查询尚待实现。</p>
+<h3 id="blog-subsection-3">用配对数据检查决定性条件</h3>
+<p>因果配对合成要检查一件具体的事：<strong>只改变一条规则的适用条件，模型能否改变相关判断，同时保留其他判断？</strong> 这样的样本可以帮助模型学习判断边界，例如区分“需求提到了负责人”和“本案例确实要求访问限制”。</p>
+<p>继续用客户数据访问的教学例子。用户要求建立客户跟进表，记录客户名称、负责人、联系电话。方案已经配置前两项，缺少联系电话，也未限制客户数据访问。这里明确设定：保密条款B不适用，且没有其他访问限制要求；负责人字段仍由用户需求直接要求，不取决于归属规则A。</p>
+<p>两份样本的需求、方案、规则正文都相同，只改规则上下文中的一个值：<strong>A从“适用”改成“明确不适用”</strong>。先登记三项预期，再让模型分别评审。</p>
+<figure id="figure-figure_16_causal_synthesis" class="blog-figure"><img src="/writing/assets/7fe3941e7dc1726a52d4.svg" alt="改变前提，检查判断" width="1008" height="504" loading="lazy" decoding="async"><figcaption>改变前提，检查判断</figcaption></figure>
+
+<ul>
+<li><strong>应变化</strong>：访问限制缺失，从“应报”变为“本项不报”。这来自A明确不适用、B及其他相关要求已经排查，而非简单撤回一个待审假设。</li>
+<li><strong>应保持</strong>：联系电话仍然缺失，两份样本都应报告；负责人字段已经配置，两份样本都不应报告缺失。因此，第二份方案仍有问题。</li>
+</ul>
+<p>ATMS提供这一步的依据：访问限制结论V依赖<code>F ∧ A</code>，字段判断则不依赖A。先检查V是否还有其他支持路径，再登记哪些项应变、哪些应保持；预期答案留给复核人员，不放进待测模型的输入。若B仍适用，V就不应变化，这对样本也不能强行标成相反标签。</p>
+<p>复核通过后，每对材料保存两份输入、唯一改动、逐项标签及支持依据。同一原始案例的所有变体放在同一个训练或测试分组，避免泄漏。验证分两步：先重复评审，检查应变项是否正确变化、不变项是否被误改；再固定模型起点、训练预算，比较加入配对数据能否减少误报、漏报。当前这是合成及验证方案，尚无配对训练收益。</p>
+<h2 id="blog-section-8">8　接下来优先解决什么</h2>
+<p>这组实验建立了可追溯的数据、完整规则下的专用模型基线，以及几条有直接对照支持的选择：继续保留详细规则；兼顾正常设计及多问题样本；理由研究保留仅裁决基线。专用模型的质量差距、不同训练起点的收益差异，都还存在。</p>
+<p>下一步优先检查<strong>对象和证据是否正确</strong>。模型可能报对标签、数对条数，却把理由指向错误对象。先建立这类错误的独立复核样本，才能判断应当补数据、改奖励，还是调整理由训练。</p>
+<p>数据管线则需要先走完一小批完整流程：确认前提，形成支持集合，撤回假设并检查受影响结论，再验证配对数据能否改善学生判断。框架已经指出了需要记录什么，效果还需要实验回答。</p>
+</article></main></div><script id="edition-navigation">
+(() => {
+  const links = Array.from(document.querySelectorAll('#edition-toc a'));
+  const sections = links.map(link => document.getElementById(link.hash.slice(1)));
+  let scheduled = false;
+  function update() {
+    scheduled = false;
+    let current = 0;
+    const threshold = Math.min(180, window.innerHeight * 0.23);
+    sections.forEach((section, index) => { if (section && section.getBoundingClientRect().top <= threshold && section.getClientRects().length) current = index; });
+    links.forEach((link, index) => { if (index === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+  }
+  function schedule() { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } }
+  function openTarget(hash, scroll = true) {
+    if (!hash || hash === '#') return;
+    let id; try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    for (let node = target; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
+    if (scroll) requestAnimationFrame(() => { target.scrollIntoView({ block: 'start', behavior: 'auto' }); schedule(); });
+  }
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!document.getElementById(decodeURIComponent(link.hash.slice(1)))) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    openTarget(link.hash);
+  });
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  window.addEventListener('hashchange', () => openTarget(location.hash));
+  window.addEventListener('popstate', () => openTarget(location.hash));
+  openTarget(location.hash);
+  update();
+})();
+</script>
+</body></html>

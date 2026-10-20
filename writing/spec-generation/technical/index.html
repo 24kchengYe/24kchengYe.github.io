@@ -1,0 +1,1049 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spec 生成优化技术报告 · Yecheng Zhang</title><style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:64px 32px 90px;background:#fff;color:#252925;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:18px;line-height:1.9;font-weight:400}
+.layout{display:grid;grid-template-columns:178px minmax(0,1100px);gap:54px;max-width:1332px;margin:auto}
+aside{position:sticky;top:40px;align-self:start;max-height:calc(100vh - 80px);overflow:auto}
+.series{font-size:12px;color:#607d3e;letter-spacing:.1em;text-decoration:none}
+.toc-toggle{display:none}
+.figure-source{font-size:12px;color:#7c8476;margin-top:6px}.figure-source summary{cursor:pointer;display:inline-block}.figure-source p{margin:4px 0}
+.edition,.eyebrow{font-size:12px;color:#818982;line-height:1.8;margin:18px 0 30px}
+nav ol{list-style:none;padding:0;margin:0}nav li{margin:0 0 17px}nav a{font-size:13px;line-height:1.6;display:block;color:#7b857c;text-decoration:none}
+article{min-width:0;max-width:1100px}article>p,article>h2,article>h3,article>ul,article>ol,article>blockquote{max-width:760px;margin-left:auto;margin-right:auto}
+h1{font-size:46px;font-weight:500;line-height:1.3;letter-spacing:-.03em;text-align:center;margin:0 auto 24px;max-width:960px}
+h1+p{text-align:center;font-size:13px;color:#899188;margin-bottom:64px}
+h2{font-size:28px;font-weight:500;line-height:1.45;margin-top:72px;margin-bottom:26px;scroll-margin-top:28px}
+h3{font-size:22px;font-weight:500;margin-top:38px;line-height:1.5}p{margin:0 0 25px}strong{font-weight:550}
+a{color:#23794f;text-underline-offset:4px}article a[href^="#source"]{font-size:12px;color:#8a948b;text-decoration:none;white-space:nowrap}
+figure{margin:44px 0 50px;width:100%}figure img{width:100%;display:block;cursor:zoom-in}figcaption{font-size:12px;color:#899188;margin:12px 0 0}
+.source.brief{max-width:760px;margin-left:auto;margin-right:auto}
+.name-key{margin:65px 0 20px;border-top:1px solid #dce3d9;padding-top:18px}.name-key>summary{cursor:pointer;font-size:15px;color:#60784c}.name-key>p{font-size:14px;color:#7c8476;margin-top:18px}
+.table-scroll{width:100%;overflow-x:auto;margin:30px 0 34px}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.8}th,td{text-align:left;vertical-align:top;padding:12px 13px;border-bottom:1px solid #e2e8e2}th{font-weight:500;color:#67766a;background:#fafcfb}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.75}
+blockquote{border-left:2px solid #bed4c5;padding-left:20px;color:#657469}
+.references{margin-top:90px}.references>p{font-size:14px;color:#7c897e}.source{margin:18px 0;border-top:1px solid #e5eae5;padding-top:17px;scroll-margin-top:25px}.source summary{font-size:14px;color:#697c6d;cursor:pointer;line-height:1.8}.source-meta{font-size:11px;line-height:1.7;color:#919a92;overflow-wrap:anywhere;margin-top:16px}.source-original{font-family:ui-monospace,SFMono-Regular,Menlo,"PingFang SC",monospace;color:#4f5b52;line-height:1.85;padding:18px;background:#fafcfb;max-height:none}.brief{font-size:13px}.brief>p{margin-bottom:8px}footer{font-size:12px;color:#939c94;border-top:1px solid #e5eae5;margin-top:70px;padding-top:22px}
+dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:auto;background:white}dialog::backdrop{background:#1c2924b3}dialog img{display:block;width:1400px;max-width:90vw;height:auto}dialog button{position:sticky;top:0;display:block;margin:-36px 0 10px auto;background:white;border:1px solid #d8e2da;padding:5px 12px;color:#5f7264;cursor:pointer}
+@media(max-width:1150px){.layout{display:block;max-width:960px}aside{position:relative;top:0;max-height:none;margin-bottom:36px}.toc-toggle{display:block;border:0;background:none;padding:0;color:#697660;font-size:14px;cursor:pointer}aside nav{display:none;margin-top:16px}aside.expanded nav{display:block}nav li{margin:0 0 10px}.edition{margin:8px 0 12px}h1{font-size:38px}}
+@media(max-width:640px){body{padding:25px 18px 50px;font-size:17px}h1{font-size:30px}h2{font-size:24px;margin-top:48px}h3{font-size:20px}h1+p{margin-bottom:38px}figure{margin:28px 0}table{font-size:13px;min-width:600px}.source-original{padding:10px;font-size:12px}}
+@media print{body{padding:0;font-size:11pt}.layout{display:block}aside,dialog{display:none}h1{font-size:28pt}figure{break-inside:avoid}a{color:inherit}h2{break-after:avoid}.references{break-before:page}}
+</style><meta name="description" content="Spec 生成优化技术报告：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/spec-generation/technical/"><meta property="og:title" content="Spec 生成优化技术报告"><meta property="og:description" content="Spec 生成优化技术报告：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/spec-generation/technical/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/spec-generation/essay/">实验回顾 →</a><span>Yecheng Zhang · 中文</span></nav><div class="layout"><aside><a class="series" href="#top">SPEC GENERATION</a><div class="edition">TECHNICAL REPORT<br>极简版</div><button class="toc-toggle" aria-expanded="false">目录</button><nav aria-label="文章目录"><ol><li><a href="#section-1">摘要</a></li><li><a href="#section-2">1　任务与评测范围</a></li><li><a href="#section-3">2　PE优化主线与运行方式</a></li><li><a href="#section-6">3　主线：PE修改的结果与取舍</a></li><li><a href="#section-13">4　旁支：生成流程对照与产物诊断</a></li><li><a href="#section-17">5　Judge迁移与历史基线调查</a></li><li><a href="#section-18">6　旧规则整理与规则库迁移</a></li><li><a href="#section-19">7　人工PE双线：自由归因与动态策略记忆</a></li><li><a href="#section-20">8　主Harness的数据组织</a></li><li><a href="#section-21">9　主Harness初始化的结构实验</a></li><li><a href="#section-25">10　最终PE的输入与职责</a></li><li><a href="#section-26">11　五套PE的同口径质量与成本</a></li><li><a href="#section-27">12　八轮迭代与重复评测</a></li><li><a href="#section-28">13　设计数据与训练协议</a></li><li><a href="#section-32">14　端到端验证与逐题归因</a></li><li><a href="#section-36">15　结论与后续实验</a></li><li></li></ol></nav></aside><article id="top"><h1>Spec 生成优化技术报告</h1>
+<p>技术报告 · 记录窗口 2026-06-01—2026-10-10 · 2026-10-20 修订</p>
+<h2 id="section-1">摘要</h2>
+<p>本报告回溯接手Spec生成任务后，在PE搜索、规则组织、生成架构、评测口径、监督数据和下游执行上的连续实验，必要时引用5月历史基线。核心目标是在一次模型调用中生成符合需求与产品能力的SpecDoc，并验证优化后的准确率和成本。</p>
+<p>主要发现有四点。第一，定点修改改善了部分目标问题，但四域联合通过率仍受其他题退化影响，局部检查与全量验收需要配合使用。第二，呈现规范化和直接搬运高分样本特征出现多组回退，重构由此转向职责分层与字段依赖规划。第三，分层生成PE在七月统一口径下取得Dev150 16/150、Former50 31/50，Dev平均输入约8.8k；后续八轮搜索0 KEEP，同一PE两次全量运行有19题翻转，重复性成为下一阶段重点。第四，人工PE专项的动态策略记忆取得历史KEEP，后期继续训练配置在Building0.7同题对照中由32/50升至35/50。各阶段按题集与Judge分别报告。</p>
+<p>正文按结构或用途命名PE，文末提供历史版本与文件对照。全面版另附完整实验来源。</p>
+<figure><img src="/writing/assets/5930efdb0f0a6acb35b1.png" alt="研究对象" loading="lazy" decoding="async"><figcaption>Spec 生成研究路线</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<h2 id="section-2">1　任务与评测范围</h2>
+<p>输入为用户Query及其澄清Q&amp;A，输出是下一步搭建系统要消费的Lite SpecDoc。七月主线要求一次Seed2调用直接生成，不依赖外部Planner、生成后LLM repair、Contract剥离或best-of。离线Harness可使用多Agent分析和修改下一轮PE，这不改变线上调用次数。</p>
+<p>评测主要有两类：Spec Judge检查设计文档；E2E Judge检查执行器搭建的Base。文档通过后仍需验证实际产物。十月Building Mix与七月四域strict使用不同评测对象和指标。</p>
+<p>Spec主线采用四域联合通过率：Table、Dashboard、Workflow、Permission均通过才计为整题通过。领域分数用于定位问题，全量通过数用于验收PE；E2E结果则按对应Building版本单独报告。</p>
+<h2 id="section-3">2　PE优化主线与运行方式</h2>
+<h3 id="section-4">2.1　主线：自动修改PE</h3>
+<p>主线优化对象是Prompt和Skills：离线Agent提出修改，按各run固定的生成协议产生Spec，再由Judge验收候选。下表列出五种PE搜索方式；生成流程对照见第4节。 </p>
+<figure><img src="/writing/assets/b81e14139103f022d7a8.png" alt="PE优化主线与对照旁支" loading="lazy" decoding="async"><figcaption>PE自动优化主线与对照旁支</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>实际改变什么</th>
+<th>实验状态与主要记录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MASP</td>
+<td>SP选择、Analyzer/Fixer/Reviewer定点修改Prompt或Skill</td>
+<td>多轮KEEP/DISCARD台账；后续用于分层生成PE搜索</td>
+</tr>
+<tr>
+<td>MASPCombine</td>
+<td>优先处理单域阻塞题，分开Target与Collateral验收</td>
+<td>Workflow目标改善而全量回退，首轮DISCARD</td>
+</tr>
+<tr>
+<td>Guarded-Patch</td>
+<td>多个锚点插入候选、机械diff检查、配对排序</td>
+<td>整写／Patch及SP-prior消融；早期自动晋升baseline未完成</td>
+</tr>
+<tr>
+<td>自由归因（Free）</td>
+<td>根据失败直接提出执行协议修改</td>
+<td>100题独立优化线，有KEEP与失败记录</td>
+</tr>
+<tr>
+<td>策略记忆（Data/SP）</td>
+<td>先更新策略状态、查重与查冲突，再选一项修改</td>
+<td>同100题独立优化线，有KEEP和固定PE重复实验</td>
+</tr>
+</tbody></table></div>
+<p>方法调研覆盖DSPy/MIPRO、OPRO、GEPA、ProTeGi/APO、TextGrad、EvoPrompt、APE、Promptbreeder、PromptWizard和AutoPrompt。本项目将搜索实现为四个环节：失败归因、局部编辑、候选评测和反馈记忆。MASP以策略为单位提出修改，Guarded-Patch以受保护的补丁为单位生成候选。实验结果按题集、Judge与调用预算分组。</p>
+<figure><img src="/writing/assets/1fcac2613fda6eaaefa5.png" alt="方法比较" loading="lazy" decoding="async"><figcaption>五条 PE 优化路线</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>五条PE路线的评测粒度不同：MASP和Combine逐项验收修改；Guarded-Patch按候选重复评测后排序；人工PE专项两条线固定修改执行协议，并独立积累历史。策略库由静态SP扩展到Data的动态记录，允许合并、停用和标记冲突。  </p>
+<h3 id="section-5">2.2　Goal 与 Loop</h3>
+<figure><img src="/writing/assets/463d2f003571a452c919.png" alt="两种调度方式" loading="lazy" decoding="async"><figcaption>Goal 与 Loop 的调度方式</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>生成模式、搜索方法和调度方式分别记录：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>选项</th>
+<th>回答的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生成模式</td>
+<td>Lite / Standard / Pro</td>
+<td>模型接收什么PE、采用什么生成协议</td>
+</tr>
+<tr>
+<td>搜索方法</td>
+<td>MASP / MASPCombine / Guarded-Patch</td>
+<td>怎样提出候选、保护旧规则、评估修改</td>
+</tr>
+<tr>
+<td>循环持有者</td>
+<td>长会话Agent / Bash与代码driver</td>
+<td>谁调度、停止、回滚、写状态</td>
+</tr>
+</tbody></table></div>
+<p>早期Goal执行出现策略误标、收尾理由漂移等问题；A1将更多裁决交给代码，统一记录候选、评测与回滚状态。该阶段六轮终局均为DISCARD。 </p>
+<p>A1后续冒烟遇到历史候选占据排序的问题，清理后完成端到端执行，候选仍被DISCARD。Viewer同步统一run schema、发现worktree并修正KEEP统计，使不同运行的状态和裁决可以集中查看。 </p>
+<figure><img src="/writing/assets/90d1fddc3d5285460aaa.png" alt="内外循环" loading="lazy" decoding="async"><figcaption>生成与离线优化</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>Pro策略库包含SP-1a～1i与SP-2～21，共29项；Lite/Standard后续使用SP-1～12。实验配置记录具体策略库与版本，成本按实际请求usage统计。</p>
+<h2 id="section-6">3　主线：PE修改的结果与取舍</h2>
+<p>实验按题集、Judge和生成模式分组，每组列出自己的基线。“取舍”同时记录PE候选的去留，以及从实验中保留下来的编辑和验收机制。</p>
+<h3 id="section-7">六月历史50题：定点编辑与补丁搜索</h3>
+<p><strong>设置：Lite，历史50题，各自run的四域Judge。</strong> 两条线分别建立基线；当期Judge、题集文件与生成服务未完整冻结。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>具体改动</th>
+<th>当期结果</th>
+<th>保留或放弃了什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MASP · 定点编辑</td>
+<td>根据失败选择SP，修改Prompt/Skill；包括Lookup反向关联、看板分组规则冲突修复</td>
+<td>本线25→33/50，台账3次有效KEEP</td>
+<td><strong>保留PE快照与定点编辑。</strong> 当期全量验收通过；后续复测另列</td>
+</tr>
+<tr>
+<td>Guarded-Patch · 受保护补丁</td>
+<td>锚点插入、diff检查、保留章节与占位符，再比较候选</td>
+<td>本线25→29/50，台账2次KEEP</td>
+<td><strong>保留PE快照与修改保护。</strong> 早期driver实现到候选排序，自动晋升尚未接通</td>
+</tr>
+</tbody></table></div>
+<p><strong>后期复测：本地GPT-5.2 low，四域strict-AND，Lite50题。</strong> 此次复测同时涉及题集、生成端点等条件变化，历史配置未完整冻结。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>复测对象</th>
+<th align="right">本次结果</th>
+<th>实验条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>历史MASP Lite保留PE</td>
+<td align="right">24/50</td>
+<td>复用历史PE，在后期生成与Judge配置下重新评测</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-8">六月开发10题：改写算子与策略先验</h3>
+<p><strong>设置：Guarded-Patch当期Judge，Lite开发10题；另10题独立列行。</strong> 重复判定的binary按当期阈值统计。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>实验</th>
+<th>具体改动</th>
+<th>结果及复测</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整文件重写｜开发10题</td>
+<td>模型重写全部Prompt</td>
+<td>基线5/10，四个候选均3/10；Lookup规则覆盖20→7，看板规则3→0</td>
+<td><strong>放弃这批整写候选。</strong> 意外删掉已有规则</td>
+</tr>
+<tr>
+<td>受保护插入｜开发10题</td>
+<td>只提交anchor/insert，保护长度、章节及占位符</td>
+<td>早期最佳7/10；后续候选五次为5/6/6/6/7，基线5/5/6/7/7，均值6.0与6.0</td>
+<td><strong>保留修改保护机制。</strong> 重复均值持平，停止以峰值作为晋升依据</td>
+</tr>
+<tr>
+<td>同一补丁｜另10题</td>
+<td>不改候选，换独立切片</td>
+<td>候选5/10，基线4/10</td>
+<td><strong>保留为补丁的另一组观察。</strong> 10题切片净增1题，取舍结合前述重复评测</td>
+</tr>
+<tr>
+<td>SP-prior开关｜开发10题</td>
+<td>单代各3候选，每候选Judge重复2次</td>
+<td>ON、OFF最佳均6/10；各自基线3/10、4/10</td>
+<td><strong>保持SP可配置。</strong> 本次开关对照的最佳候选得分相同</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-9">六月Lite50题：MASPCombine局部修复</h3>
+<p><strong>设置：6月12日当期生产四域Judge，历史50题，同窗基线。</strong> Judge hash未完整冻结。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>具体改动</th>
+<th>本次对照与后续检查</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MASPCombine · 目标/全量分验</td>
+<td>优先单域阻塞题；增加触发器选型、多节点拆分、聚合承载表规则</td>
+<td>目标题改善，候选29/50；同窗基线39、35/50，均值37。后续删自检清单、删重复约束分别32、31/50</td>
+<td><strong>这些候选回退；保留两段验收。</strong> 全量退化，部分新旧规则冲突；只看目标改善会误KEEP</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-10">七月专项100题：旧JSON Schema Judge</h3>
+<p><strong>口径：旧vendored四域JSON Schema Judge，GPT-5.2；原50＋新增50。</strong> Seed2 low，单次生成、单次Judge；两线只改人工PE的“SpecDoc生成执行协议”。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>实际保留的改动</th>
+<th>历史KEEP与复测</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自由归因（Free）</td>
+<td>普通记录优先View；从下游消费者回推表字段；相对月份表达</td>
+<td>28→30/100</td>
+<td><strong>保留独立PE快照。</strong> 全量验收净增2题</td>
+</tr>
+<tr>
+<td>策略记忆（Data/SP）</td>
+<td>先查重、查冲突再选策略；完善看板口径、Lookup参数、当前记录匹配键</td>
+<td>28→28→29→30→40/100；同PE六次40/36/36/34/34/30，均值35%</td>
+<td><strong>保留独立PE与动态策略记忆。</strong> 40%为历史峰值，报告同时保留35%的复测均值</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-11">七月专项100题：冻结新版四域Judge</h3>
+<p><strong>设置：origin-main-63c9afd，GPT-5.2 medium、native JSON Schema，同一专项100题。</strong> 两线迁移Judge后分别重新建立基线。    </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>本阶段保留的改动</th>
+<th>历史KEEP与复测</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自由归因（Free）</td>
+<td>Lookup规范化；“最高/最低是哪条记录”先路由到源记录</td>
+<td>32→39→41/100；另一个41/100候选曾因目标机制未生效被DISCARD</td>
+<td><strong>保留机制核验通过的两次KEEP。</strong> 验收同时检查全量分数与修改是否生效</td>
+</tr>
+<tr>
+<td>策略记忆（Data/SP）</td>
+<td>删除非法可选辅助视图；为“提醒我”补明确人员字段</td>
+<td>33→35→42/100；同PE为42/100、37/99、36/100，三轮有效率均值38.46%</td>
+<td><strong>保留独立KEEP并补充重复评测。</strong> 第二轮1题Judge空响应；99题共同交集中39题不稳定</td>
+</tr>
+</tbody></table></div>
+<p>两线最新KEEP相差1题。Free基线32、Data基线33，重复评测集中在Data；下一组方法对照需要为两臂安排相同的生成与评审次数。</p>
+<h3 id="section-12">七月主Harness开发150题：分层生成PE后的搜索</h3>
+<p><strong>口径：同一冻结新版四域Judge，清洗后的Dev150，全量150题。</strong> 与专项100题分开；基线为分层生成PE的16/150。前五轮使用简化策略，后三轮恢复原MASP SP-1～SP-12。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法／候选</th>
+<th>具体改动</th>
+<th>结果</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MASP · 八轮合计</td>
+<td>依次改权限激活、Table依赖、指标、收件人、分母、动作能力、时间触发</td>
+<td><strong>0 KEEP</strong>；第6、8轮进入完整Dev150，其余停于Target/Guard</td>
+<td><strong>保留初始化PE，八轮候选回退。</strong> 目标问题改善伴随其他题退化</td>
+</tr>
+<tr>
+<td>Dashboard分母闭环</td>
+<td>显式登记分母字段与聚合依赖</td>
+<td>Dashboard单域97→108/150；strict 16→13/150，新增8、丢失11</td>
+<td><strong>DISCARD候选。</strong> 单域改善仍伴随整题净退化</td>
+</tr>
+<tr>
+<td>Workflow时间路由</td>
+<td>区分亚日级触发能力与时间实现路径</td>
+<td>Workflow单域99→107/150；strict 16→11/150，新增7、丢失12</td>
+<td><strong>DISCARD候选。</strong> 同样未通过全量验收</td>
+</tr>
+<tr>
+<td>标准MASP＋旧Skills参考</td>
+<td>旧Skills作为只读参考，沿原策略继续提出修改</td>
+<td>独立fresh基线17/150，首轮目标检查仍有Guard回退</td>
+<td><strong>停留在局部验证阶段。</strong> 首轮结果记录为PARTIAL</td>
+</tr>
+</tbody></table></div>
+<p>同一初始化PE两次全量为16、17/150，却只共同通过7题。下一步分别测量生成与Judge的波动，再据此设置Guard与KEEP门槛。</p>
+<p><strong>Former50回归：</strong> 分层生成PE为31/50；历史MASP保留PE为27/50。各一次生成与Judge，比较固定PE快照。五套PE的分题集结果与成本见后文；Holdout50尚未运行。</p>
+<figure><img src="/writing/assets/eadef45645aed260de1b.png" alt="方法实验后的取舍" loading="lazy" decoding="async"><figcaption>实验之后保留了什么</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>MASP采用失败池、策略选择、定点编辑、Reviewer、Target与全量裁决；MASPCombine优先处理单域阻塞题，并分别检查目标改善与其他题的退化。</p>
+<figure><img src="/writing/assets/e625a342260e0168cff0.png" alt="MASP与组合" loading="lazy" decoding="async"><figcaption>MASP 与 MASPCombine</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<figure><img src="/writing/assets/92461544b8e024270e8a.png" alt="Guarded Patch" loading="lazy" decoding="async"><figcaption>整段重写与锚点补丁</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<h2 id="section-13">4　旁支：生成流程对照与产物诊断</h2>
+<p>这些实验回答三个问题：增加领域生成是否有效、模型能否修正自己的初稿、确定性检查能否识别或选出更好的Spec。每组同时记录质量变化与额外调用成本。</p>
+<figure><img src="/writing/assets/d25bc01cff62334013ac.png" alt="旁支的四种操作" loading="lazy" decoding="async"><figcaption>旁支：生成流程对照与产物诊断</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>Arch与SelfRefine增加模型调用，Virtual Gate检查固定产物，Selector比较多候选的选择规则。以下分别列出调用变化、结果和交付取舍。</p>
+<h3 id="section-14">六月Lite50题：额外领域生成</h3>
+<p><strong>设置：6月9—10日当期生产四域Judge，历史50题，各自同窗对照。</strong> Judge hash未完整冻结。  </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>具体改动</th>
+<th>本次对照与后续检查</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Arch · 独立权限生成</td>
+<td>初始Spec后，额外生成权限模块并拼回</td>
+<td>两次基线31、33/50；候选33、32/50。均值32→32.5，权限失败均值7.5→4.5</td>
+<td><strong>未采用。</strong> 增加一次调用，整题平均仅多通过0.5题</td>
+</tr>
+<tr>
+<td>Arch · 多领域生成</td>
+<td>Table、Dashboard、Permission各增加一次独立生成</td>
+<td>初跑32→38/50；后续同窗两对34→33、31→32，平均净差0</td>
+<td><strong>未采用。</strong> 额外调用成本持续增加，后续两对复测的整题收益持平</td>
+</tr>
+</tbody></table></div>
+<p>多领域生成增加三次领域调用，初跑平均总token约31k→41k。初跑数据来自run汇总，后续两对复测来自当期会话记录。</p>
+<h3 id="section-15">六月Pro重复切片：同模型自我修订</h3>
+<p><strong>设置：生产bitable-lcp四域Judge，Pro，三轮重复实验。</strong> 统计单位为“题目×轮次”，共72次判定。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>具体改动</th>
+<th>对照结果</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SelfRefine</td>
+<td>同一生成模型对初稿critique，再全文revise</td>
+<td>三轮合计40/72→33/72，即55.6%→45.8%，约−9.7pp；三轮均未超过对应基线</td>
+<td><strong>回退该自修实现，0 KEEP。</strong> 修订引入Table等域的新错误，也有原样返回</td>
+</tr>
+</tbody></table></div>
+<h3 id="section-16">六月固定产物：检查器与选择器</h3>
+<p><strong>口径：历史Judge标签上的回放，生成PE未改变。</strong> 两行分别使用309份Spec/Judge对、50题×4份候选；检查精确率与文档通过率属于不同指标。 </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方法与样本</th>
+<th>具体改动</th>
+<th>结果</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Virtual Gate｜309份产物</td>
+<td>定向检查权限、模糊收件人、公式范围、人员字段类型</td>
+<td>合并检查精确率96.7%、召回33%</td>
+<td><strong>保留为诊断工具。</strong> 命中的错误较准确，但覆盖范围有限</td>
+</tr>
+<tr>
+<td>Selector｜50题×4候选</td>
+<td>每题选违规检查最少的候选</td>
+<td>规则选择期望31.6/50，随机期望32/50，事后Oracle42/50</td>
+<td><strong>未采用。</strong> 仅约14%候选触发检查，规则对多数候选缺少区分度；Oracle用事后Judge选优，作为选择上限参考</td>
+</tr>
+</tbody></table></div>
+<p>这些对照之后，Lite交付继续采用单次调用。额外领域生成的整题收益小，自修出现回退，规则选择器与随机选择接近；Virtual Gate则保留为定位特定错误的工具。</p>
+<h2 id="section-17">5　Judge迁移与历史基线调查</h2>
+<p>历史Pro记录为36/50（72%）。后续运行曾更换题集、Q&amp;A与reasoning；对齐回历史PE、413题集和关闭reasoning后，本地Judge下仍为13/50（26%）。历史逐题Spec与Judge快照缺失，复测中的跨时生成变化和评测变化难以分开。后续实验改为保存固定产物，再交叉更换Judge。 </p>
+<p>7月的固定产物迁移有更明确的实验对象：</p>
+<figure><img src="/writing/assets/5c9d544897108830bbd4.png" alt="Judge交叉" loading="lazy" decoding="async"><figcaption>Judge 与产物的交叉比较</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>实验</th>
+<th>固定／变化项</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>历史Top产物换Judge</td>
+<td>固定50份Spec；旧记录与JSON Schema比较</td>
+<td>28→27；共同过21、共同败16、旧独有7、新独有6</td>
+</tr>
+<tr>
+<td>Fresh当前PE</td>
+<td>当前workspace重新生成</td>
+<td>SDK-local27/50，JSON Schema5/50；两条有wrapper产物缺失</td>
+</tr>
+<tr>
+<td>历史Skills恢复</td>
+<td>6题定向检查</td>
+<td>JSON Schema 0→1/6</td>
+</tr>
+<tr>
+<td>Dify交叉检查</td>
+<td>固定6题当前／历史Spec</td>
+<td>当前Dify/local2/6、JSON0/6；历史Dify5/6、JSON4/6</td>
+</tr>
+<tr>
+<td>同PE三次生成</td>
+<td>每次生成后用两个Judge看同批产物</td>
+<td>SDK-local23/24/26；JSON Schema均6/50</td>
+</tr>
+<tr>
+<td>表达规范化v0</td>
+<td>50题，内部审查与格式闭环</td>
+<td>SDK-local26/50，JSON Schema5/50</td>
+</tr>
+</tbody></table></div>
+<p>三次fresh的JSON通过集合没有共同交集，但通过数均为6/50，持续低于历史产物的27/50。产物变化会改变通过题，新规则又持续压低fresh产物的整体得分；后续规则整理因此同时检查生成约束与Judge要求。</p>
+<p>后续Judge bundle固定为origin-main-63c9afd，使用Table、Dashboard、Workflow、Permission四域，Form文件仅归档。请求格式由json_object加schema文本迁移为native json_schema，版本与请求参数一并冻结。</p>
+<h2 id="section-18">6　旧规则整理与规则库迁移</h2>
+<p>旧规则整理版保留旧PE内容，调整表达与格式；精简规则库尝试薄Core与Shared/Domain/Pattern分层，明显缩短输入。两者构成7月初规范化实验的主要对照。</p>
+<figure><img src="/writing/assets/dc38eb12fbe99560666d.png" alt="规范化" loading="lazy" decoding="async"><figcaption>压缩规则与增加禁令的两次对照</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>样本／主要变量</th>
+<th>结果与决定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>极薄原型</td>
+<td>2题；输入30783→2544</td>
+<td>Lite1/2、精简规则库 0/2，只确认链路</td>
+</tr>
+<tr>
+<td>旧版三臂对照</td>
+<td>前10题；旧Lite / 旧规则整理版 / 原型精简规则库</td>
+<td>4/10、5/10、1/10</td>
+</tr>
+<tr>
+<td>补旧红线</td>
+<td>目标2题后再扩10题</td>
+<td>冒烟2/2；扩测精简规则库 2/10，旧规则整理版 5/10</td>
+</tr>
+<tr>
+<td>三层规则库</td>
+<td>四轮2题冒烟</td>
+<td>0、0、0、1题通过</td>
+</tr>
+<tr>
+<td>结构化精简规则库 A/B</td>
+<td>10题；实际平均输入30791→6707</td>
+<td>旧规则整理版 6/10、精简规则库 4/10；Table8→5，Dashboard8→9</td>
+</tr>
+<tr>
+<td>Table禁令强化</td>
+<td>同10题；类型、Lookup、命名、自检</td>
+<td>同轮旧规则整理版 5/10、精简规则库 3/10；二次修改2/10，回退</td>
+</tr>
+<tr>
+<td>四个P0桶迁移</td>
+<td>注册、字段行模板、权限、周期</td>
+<td>同轮整理版／精简规则库均4/10；Table改善未变成整体收益</td>
+</tr>
+<tr>
+<td>高质量样本特征</td>
+<td>format-density / format-only / time-trigger</td>
+<td>三臂各1/10，对照5/10，均不迁入</td>
+</tr>
+</tbody></table></div>
+<p>各行采用当批PE快照与对应基线。压缩输入、增加禁令、迁移旧规则和提取样本特征，分别检验了四种初始化思路；多次回退促使后续重构聚焦规则职责与依赖关系。      </p>
+<p>规则迁移矩阵按职责分桶，分别决定保留、合并或去除。每桶token估算用于安排迁移优先级，整体输入成本按实际请求usage统计。</p>
+<p>高质量200按参考答案的Judge结果筛选，用于观察设计模式。Pattern Catalog随后按用途分类：生成规则进入Prompt，其他观察进入linter、rewrite、reviewer或诊断工具。后续单文件整理删去“触发信号／Judge风险”等评测术语，改为直接指导设计的正向规则。  </p>
+<h2 id="section-19">7　人工PE双线：自由归因与动态策略记忆</h2>
+<p>为豆包优化的人工PE专项使用同一100题集合，合并原50与新增50。只允许改“SpecDoc生成执行协议”，其余能力和输出边界冻结。两条线无独立运行时Skills目录，能力知识内联在长Prompt；SP策略库供优化Agent选取修改方案，生成模型接收修改后的PE。 </p>
+<figure><img src="/writing/assets/ac5685d294785307cd30.png" alt="人工PE专项方法" loading="lazy" decoding="async"><figcaption>人工PE的两条独立优化线</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>对象</th>
+<th>Free</th>
+<th>Data/SP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>提案依据</td>
+<td>当前失败与跨域信息流</td>
+<td>失败atlas＋动态LV3-SP</td>
+</tr>
+<tr>
+<td>记忆更新</td>
+<td>实验、失败、教训</td>
+<td>状态、目标、改善/回退、兼容性、主导策略</td>
+</tr>
+<tr>
+<td>编辑约束</td>
+<td>一轮一个主要假设</td>
+<td>一项主导SP策略；先与已有策略查重、查冲突</td>
+</tr>
+<tr>
+<td>早期有效变化</td>
+<td>View优先、消费者字段回推、相对月份</td>
+<td>Dashboard口径、完整Lookup、当前记录具体键</td>
+</tr>
+<tr>
+<td>新口径有效变化</td>
+<td>Lookup规范化、源记录极值路由</td>
+<td>去掉非法可选辅助视图、为“提醒我”建立人员字段</td>
+</tr>
+</tbody></table></div>
+<p>困难target10中，baseline、Data候选与Free候选均为0/10。完整100题上的旧口径共同baseline为28/100，Free一次KEEP到30；Data四次KEEP为28、29、30、40。Data最终PE六次生成的平均通过率为35%，峰值40%。 </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Judge口径</th>
+<th>Free历史KEEP</th>
+<th>Data历史KEEP</th>
+<th>重复性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>旧vendored</td>
+<td>28→30/100</td>
+<td>28→28→29→30→40/100</td>
+<td>Data40/36/36/34/34/30，均值35%</td>
+</tr>
+<tr>
+<td>main63c9afd</td>
+<td>32→39→41/100</td>
+<td>33→35→42/100</td>
+<td>Data42/100、37/99、36/100，均值38.46%</td>
+</tr>
+</tbody></table></div>
+<p>新口径Data三次99题交集：21题全过、39题全败、39题不稳定。第二次084为Judge空响应，总提交100题中有效评审99题、通过37题。Free早期有一轮41/100因目标机制未产生而DISCARD；后续实现“最高／最低是哪条记录”的前置路由，以13新增、11回退成为第二次KEEP。   </p>
+<p>Free的41/100与Data的42/100分别是历史KEEP单轮结果；两臂初始基线为32和33，重复评测集中在Data。比较两种搜索方式的稳定表现，需要给两臂相同的生成与评审预算。</p>
+<h2 id="section-20">8　主Harness的数据组织</h2>
+<p>新200由高质量参考样本抽取，Dev150用于开发，Holdout50保留，Former50独立回归。Dynamic Small从Dev150中抽取；Target随假设变化，Guard包括稳定锚点和轮换题。人工PE专项另用原50与新增50组成的100题集。 </p>
+<figure><img src="/writing/assets/07a9094fd9e5f2f6bb6f.png" alt="数据集" loading="lazy" decoding="async"><figcaption>Dev150、Holdout50 与 Former50</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>新200偏长Query、Q&amp;A与多域约束，Former50偏历史短需求。参考答案经过筛选，查询本身仍包含较复杂的设计要求。清洗时用正常业务题替换元指令污染样本hq-000096，并修正两题字面量换行，所有比较PE统一补跑受影响题。</p>
+<p>Holdout50尚未正式运行，其来源200曾用于Pattern抽取。它适合补充这批查询上的表现观察；最终泛化测试需要另取未参与规则设计的查询，并提前封存。</p>
+<h2 id="section-21">9　主Harness初始化的结构实验</h2>
+<p>主Harness初始薄规则原型在Dev150仅3/150，促使工作从自动叠规则退回人工初始化。这一过程包含独立Planner、Contract和直接Spec三条设计分支。</p>
+<figure><img src="/writing/assets/3a31a0454de19bf0bf77.png" alt="初始化全路径" loading="lazy" decoding="async"><figcaption>主Harness的初始化分支</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<h3 id="section-22">9.1　独立Permission Planner</h3>
+<p>权限预规划方案包含权限规划、确定性校验、Core渲染，部分版本允许定向修复。固定10题三次，单阶段对照strict为2/0/1，预规划方案为0/3/1；Permission均值43.3%→73.3%，strict均值10%→13.3%。目标域改善，但其他域没有同步稳定，而且增加生成调用，不符合最终单份PE交付边界。</p>
+<figure><img src="/writing/assets/13cff1f8983c4148b205.png" alt="Planner权衡" loading="lazy" decoding="async"><figcaption>Permission Planner 的重复评测</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<h3 id="section-23">9.2　单次输出Contract</h3>
+<p>单次生成原型回到一次调用，dev10为1/10。结构草稿与封套系列保持一次调用，探索内部Contract或同次显式Envelope，再由本地解析校验。固定3题结果：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>结构变量</th>
+<th align="right">compile</th>
+<th align="right">strict</th>
+<th align="right">Table</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内部结构草稿</td>
+<td>内部需求／字段Contract</td>
+<td align="right">N/A</td>
+<td align="right">0/3</td>
+<td align="right">0/3</td>
+</tr>
+<tr>
+<td>显式结构草稿</td>
+<td>显式Contract＋校验</td>
+<td align="right">3/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+<tr>
+<td>扩展结构草稿</td>
+<td>更多生命周期、R-ID与依赖槽位</td>
+<td align="right">1/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+<tr>
+<td>精简结构封套</td>
+<td>精简Envelope＋对象口径Gate</td>
+<td align="right">3/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+</tbody></table></div>
+<p>均未达到Table≥2/3且无错误的预设扩测门槛。固定显式结构草稿只改reasoning，low/medium的Table都1/3，compile从3/3变2/3，时延55.1→67.8秒。这次3题冒烟未改善Table且增加时延，后续继续使用low。</p>
+<h3 id="section-24">9.3　直接输出SpecDoc</h3>
+<p>产品边界确认后，Contract剥离和额外Planner均退出。完整自然语言协议、短Core、旧表规则摘要在同3题都0/3；Table分别0、1、0。继续摘要式加规则没有恢复旧能力。旧3题反复用于开发，后续另取未参与该系列的冒烟切片。</p>
+<p>后续依次做了五项修改：重划职责、补状态与字段依赖、将失败机制改为正向执行协议、明确六段Core、依据Permission Judge区分Actor及记录操作。最后冻结为分层生成PE。在新3题上短Core／职责分层／依赖闭环 strict都1/3，四域总通过9/12、8/12、10/12；最终同10题三次，正向执行协议为3/3/1，分层生成PE为3/3/2。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>重复指标</th>
+<th align="right">正向执行协议</th>
+<th align="right">分层生成PE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10题×3 strict均值</td>
+<td align="right">23.3%</td>
+<td align="right">26.7%</td>
+</tr>
+<tr>
+<td>最差轮</td>
+<td align="right">10%</td>
+<td align="right">20%</td>
+</tr>
+<tr>
+<td>总体标准差</td>
+<td align="right">约9.4pp</td>
+<td align="right">约4.7pp</td>
+</tr>
+<tr>
+<td>四域通过总数</td>
+<td align="right">78/120</td>
+<td align="right">80/120</td>
+</tr>
+</tbody></table></div>
+<p>该开发切片的均值与最差轮均有小幅改善。分层生成PE据此结束人工初始化，冻结为后续全量对照和自动搜索的起点。</p>
+<h2 id="section-25">10　最终PE的输入与职责</h2>
+<figure><img src="/writing/assets/a8f7a580b68cf9c9c8f0.png" alt="Core与Skills装配" loading="lazy" decoding="async"><figcaption>Core 与 Skills 的装配</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>层</th>
+<th>内容</th>
+<th>不应承载</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Core</td>
+<td>Query理解→要素注册→Table依赖→四域Gate→一致性审计→渲染</td>
+<td>完整SDK教程、实验调度说明</td>
+</tr>
+<tr>
+<td>Shared</td>
+<td>对象、Actor、指标、动作、时间语义、跨域引用与依赖</td>
+<td>行业关键词触发、固定case答案</td>
+</tr>
+<tr>
+<td>Table / View</td>
+<td>字段类型、关系、Lookup、Formula、消费者依赖</td>
+<td>下游首次发明字段</td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td>组件、指标、聚合、维度、筛选</td>
+<td>泛化“查看”自动触发看板</td>
+</tr>
+<tr>
+<td>Workflow</td>
+<td>触发、条件、接收人、回写、时间能力</td>
+<td>系统字段写入、隐含接收人</td>
+</tr>
+<tr>
+<td>Permission</td>
+<td>激活证据、记录／字段／功能权限、最小授权</td>
+<td>裸角色名自动造权限</td>
+</tr>
+<tr>
+<td>输出规范</td>
+<td>综述、需求、模块顺序、行级格式、中性完整样例</td>
+<td>另一个必须被剥离的JSON产物</td>
+</tr>
+</tbody></table></div>
+<p>Skills包含生成时必须遵循的正向机制、能力边界和强制红线。实际装配8份规则Markdown：3 Shared、Table与View、其余三域各1份；README和registry仅用于导航。所有域固定加载，Shared去重，未使用逐题RAG，不增加模型调用次数。 </p>
+<figure><img src="/writing/assets/a105ce2d57377fc87975.png" alt="字段依赖规划" loading="lazy" decoding="async"><figcaption>字段依赖规划</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>Permission仍是重要短板。Dev150有141题描述角色、仅10题明确访问控制，分层生成PE在136题生成权限，Permission通过50/150。这提示下一步应逐题区分业务职责、记录操作与访问控制需求，检查权限规划的激活条件及授权范围。</p>
+<h2 id="section-26">11　五套PE的同口径质量与成本</h2>
+<p>七月对照采用以下冻结配置：生成Seed2 Lite，reasoning low，temperature0.2；Judge gpt-5.2-2025-12-11，medium，origin-main-63c9afd四域native json_schema，workers4、timeout900s、retry5。每题一次生成、一次Judge；任一域不为1即整题不通过。 </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>PE</th>
+<th align="right">Dev150</th>
+<th align="right">Former50</th>
+<th align="right">输入token Dev / Former</th>
+<th align="right">输出token Dev / Former</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>薄规则原型</td>
+<td align="right">3/150（2.00%）</td>
+<td align="right">11/50（22%）</td>
+<td align="right">4,978 / 4,739</td>
+<td align="right">1,570 / 1,215</td>
+</tr>
+<tr>
+<td>分层生成PE</td>
+<td align="right">16/150（10.67%）</td>
+<td align="right">31/50（62%）</td>
+<td align="right">8,799 / 8,560</td>
+<td align="right">1,967 / 1,455</td>
+</tr>
+<tr>
+<td>策略记忆PE（对照快照）</td>
+<td align="right">8/150（5.33%）</td>
+<td align="right">29/50（58%）</td>
+<td align="right">19,312 / 19,073</td>
+<td align="right">1,751 / 1,374</td>
+</tr>
+<tr>
+<td>旧Lite PE</td>
+<td align="right">7/150（4.67%）</td>
+<td align="right">29/50（58%）</td>
+<td align="right">28,871 / 28,632</td>
+<td align="right">1,695 / 1,360</td>
+</tr>
+<tr>
+<td>历史MASP保留PE</td>
+<td align="right">11/150（7.33%）</td>
+<td align="right">27/50（54%）</td>
+<td align="right">29,295 / 29,056</td>
+<td align="right">1,723 / 1,354</td>
+</tr>
+</tbody></table></div>
+<p>Token来自生成接口usage，输入包含Core、实际Skills、Query和包装，输出为completion，不含Judge。旧Lite已经经过历史优化；它与MASP Top的主Prompt相同，但Dashboard/Permission Skills不同。</p>
+<figure><img src="/writing/assets/4d80119d51c4ae944162.png" alt="跨数据集" loading="lazy" decoding="async"><figcaption>五套 PE 的通过率与输入长度</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>相对薄规则原型，分层生成PE补回领域机制，Table17.33%→53.33%、Workflow49.33%→66.00%；相对旧Lite，Dev输入减少约69.5%，单轮通过7→16。该对照同时改变Core、Skills与样例，测量整套PE的效果。它为后续搜索提供了质量与成本更好的单轮起点；Core职责、领域规则和完整样例各自的作用，可通过分项消融进一步分析。</p>
+<h2 id="section-27">12　八轮迭代与重复评测</h2>
+<p>八轮分层生成PE探索中，前五轮使用专用简化策略，后三轮恢复原MASP SP-1～12。各轮先检查目标题与Guard，通过后再进入完整Dev150。 </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th align="right">轮</th>
+<th>修改方向</th>
+<th>局部信号</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Permission激活</td>
+<td>2/13 target增益</td>
+<td>5/8 Guard回退</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Table字段闭包</td>
+<td>8/8目标issue消失，2题strict增益</td>
+<td>5/7 Guard回退</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Table-only收窄</td>
+<td>4/8 issue改善</td>
+<td>0 strict增益，7/7 Guard回退</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Dashboard槽位</td>
+<td>2/2 issue改善</td>
+<td>0 strict增益，4/5 Guard回退</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Workflow接收人</td>
+<td>1/2 target增益</td>
+<td>7/9 Guard回退</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Dashboard分母</td>
+<td>Dashboard97→108</td>
+<td>Dev13/150，新增8、丢失11</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Permission双向Gate</td>
+<td>消除两项overgrant</td>
+<td>变为undergrant，0/3 target增益</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Workflow亚日触发</td>
+<td>Workflow99→107</td>
+<td>Dev11/150，新增7、丢失12</td>
+</tr>
+</tbody></table></div>
+<p>全部DISCARD，分层生成PE初始化基线保持不变。后续旧Skills参考支线只读检索旧规则，每次将一项机制迁入当前Skill；fresh baseline17/150，首轮Target20通过7题，新增5、回退3（均为Guard），结果记录为PARTIAL，停留在局部验证阶段。</p>
+<figure><img src="/writing/assets/e652dd7a4d0c19a3adbd.png" alt="局部全局" loading="lazy" decoding="async"><figcaption>目标题改善与全量回归</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>同一分层生成PE的16/150与17/150只有7题共同通过，9题仅首轮、10题仅fresh；通过集合Jaccard约27%。该比较同时包含生成变化与Judge变化。</p>
+<figure><img src="/writing/assets/dc6bc467686cebb179b7.png" alt="逐题漂移" loading="lazy" decoding="async"><figcaption>固定 PE 的两次全量评测</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>5月的重复实验已观察到类似波动：50题、5次生成、每次2轮Judge，通过数分别为19/18、20/19、19/17、20/18、14/21。验收门槛需要结合这些波动设置，才能判断一两题的变化是否值得保留。</p>
+<p>下一轮先冻结Spec重复Judge，再独立生成并对各产物重复Judge。按重复结果建立Stable Pass、Stable Fail和Unstable题池，报告均值、波动与逐题变化，再配对复核已有候选。</p>
+<h2 id="section-28">13　设计数据与训练协议</h2>
+<h3 id="section-29">13.1　从格式到可执行交接</h3>
+<p>HostPlan45题保持任务次序与Table任务，转换64个非Table任务；CodeAct均45/45成功，E2E20→21/45，失败验收项48→36。HostPlan估算token增加20.55%，CodeAct总token近似不变。两轮使用不同Judge入口、各运行一次，整体结果同时包含格式与评测配置变化；格式如何影响执行，通过逐题产物追踪。</p>
+<p>案例030将“本月＋已交”绑定到COUNT与SUM组件，Base才落下筛选，7.8→10；另有反例：Lookup本身漏筛选时，格式转换无法修复下游语义。</p>
+<figure><img src="/writing/assets/95169ef5533d8f0b4548.png" alt="配置交接" loading="lazy" decoding="async"><figcaption>组件筛选条件的交接</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<h3 id="section-30">13.2　数据血缘</h3>
+<p>2769/3081通过轨迹包保留源输入、最终HostPlan、Judge/Fix/Router轨迹和身份索引，以完整来源身份区分重复case_id。另一组901条领域重写的格式转换状态为875 pass、26 degraded、0 failed；语义质量由后续Judge评测。两个数据包分别登记，与3999训练包的逐条映射尚未完成。 </p>
+<p>3999条以历史自动Judge通过为筛选标准，尚未全面人工复核。训练使用独立的训练规范PE，保留综述、需求、能力边界与中性完整格式示例，使system要求与assistant目标一致。格式示例按训练侧规范编写。  </p>
+<h3 id="section-31">13.3　三组训练</h3>
+<figure><img src="/writing/assets/be101ed5c01324480414.png" alt="训练血缘" loading="lazy" decoding="async"><figcaption>三组 SFT 的数据与模型</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>训练组</th>
+<th>初始化／数据</th>
+<th>训练与测试</th>
+<th>主要超参</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qh66q</td>
+<td>Seed2 Lite260428；3999</td>
+<td>3899 / 100</td>
+<td>LoRA64/alpha8，batch16，2 epochs，lr1e-5</td>
+</tr>
+<tr>
+<td>2f8v8</td>
+<td>同基座；1770</td>
+<td>1670 / 100</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>nm9gk</td>
+<td>Q2 step696；合并5769</td>
+<td>5669 / 新100</td>
+<td>LoRA32/alpha4，batch48，2 epochs，lr8e-6</td>
+</tr>
+</tbody></table></div>
+<p>共同seq_len32768、warmup0.05；继续训练有server validation10%。输入为system=训练规范PE、user=原始Query，target=最终SpecDoc，不将Judge/Fix反馈和质量标签写进生成答案。  </p>
+<p>三套Test100分别抽取：1770组含98个Query group，继续训练组含74个group，独立样本按Query group计数。合并后的新train覆盖部分旧Test100，因此继续训练使用新抽取的Test100。历史Q2语料与测试集的全量重叠检查尚未完成。</p>
+<h2 id="section-32">14　端到端验证与逐题归因</h2>
+<h3 id="section-33">14.1　同题配置对照</h3>
+<p>Building0.7主配对固定50题，Spec temperature0.7、top_p1、max_tokens16000、thinking disabled；下游CodeAgent b82zj、minimal、sft_short_system、四域scope。Judge为gpt-5.5-2026-04-24、high、Mix all dimensions、base/default。主配对固定SDK与Judge版本，每组保留一轮正式产物，执行失败题计入分母，技术重试按预定协议处理。 </p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>配置</th>
+<th align="right">E2E通过</th>
+<th align="right">CodeAgent成功</th>
+<th>对照设置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3999组＋训练规范PE</td>
+<td align="right">32/50</td>
+<td align="right">50/50</td>
+<td>历史同题运行，完整运行版本未统一</td>
+</tr>
+<tr>
+<td>1770组＋训练规范PE</td>
+<td align="right">30/50</td>
+<td align="right">49/50</td>
+<td>历史同题运行，完整运行版本未统一</td>
+</tr>
+<tr>
+<td>原始Q2＋旧SP</td>
+<td align="right">32/50</td>
+<td align="right">47/50</td>
+<td>与继续训练组构成同版本主配对</td>
+</tr>
+<tr>
+<td>继续训练＋训练规范PE</td>
+<td align="right">35/50</td>
+<td align="right">48/50</td>
+<td>模型与SP共同改变</td>
+</tr>
+</tbody></table></div>
+<figure><img src="/writing/assets/185843a5d98011461c98.png" alt="E2E配对" loading="lazy" decoding="async"><figcaption>Building0.7 配对结果</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>主配对共同过27、Q2独有5、继续训练独有8、共同未过10；均分89.26→92.44。继续训练模型与训练规范PE的组合净增3题；下一组对照可固定SP，单独比较模型变化。</p>
+<h3 id="section-34">14.2　成本</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>平均token</th>
+<th align="right">Q2＋旧SP</th>
+<th align="right">继续训练＋训练规范PE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Spec输入 / 输出</td>
+<td align="right">13,245 / 626</td>
+<td align="right">3,619 / 1,017</td>
+</tr>
+<tr>
+<td>外层CodeAgent输入 / 输出</td>
+<td align="right">20,403 / 3,084</td>
+<td align="right">17,169 / 2,630</td>
+</tr>
+<tr>
+<td>两阶段合计</td>
+<td align="right">37,358</td>
+<td align="right">24,435</td>
+</tr>
+</tbody></table></div>
+<figure><img src="/writing/assets/1bebaa35682042427ab1.png" alt="Token来源" loading="lazy" decoding="async"><figcaption>两阶段 Token 用量</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>统计覆盖有usage的Spec与外层CodeAgent请求，排除SDK子Agent、离线Judge及缺失usage的失败请求。两组token差额约74.49%来自Spec输入缩短。平均耗时3.14→3.07分钟，计Spec耗时与CodeAgent墙钟，排除排队、Base前置准备与离线Judge。</p>
+<h3 id="section-35">14.3　各组测试集与Building1.0</h3>
+<p>三个训练组分别使用各自的Test100；Building1.0另在同一继续训练模型上对比两套SP。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>评测组</th>
+<th>测试集／固定项</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3999训练组</td>
+<td>本组Test100</td>
+<td>49/100</td>
+</tr>
+<tr>
+<td>1770训练组</td>
+<td>本组Test100</td>
+<td>54/100</td>
+</tr>
+<tr>
+<td>继续训练组</td>
+<td>新Test100</td>
+<td>49通过、50未过、1题Judge汇总错误</td>
+</tr>
+<tr>
+<td>Building1.0 SP对照</td>
+<td>同一继续训练endpoint、同50题</td>
+<td>训练规范PE 12/50，旧SP 9/50</td>
+</tr>
+</tbody></table></div>
+<figure><img src="/writing/assets/5f027d98d4046d5b3961.png" alt="归因链" loading="lazy" decoding="async"><figcaption>逐题错误定位</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
+<p>007招聘的筛选状态已在Q2 Spec写错，继续训练修正后55→100；045餐饮100→33同时有Spec门店分组变品类、代码丢失已有时间筛选；041两组产物都增加Spec未要求的普通用户角色。逐题对照Query、Spec、代码与Base，可以将修复分别落到生成遗漏、设计错误和执行器偏离上。</p>
+<h2 id="section-36">15　结论与后续实验</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>工作线</th>
+<th>实验发现与取舍</th>
+<th>下一步问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>搜索框架</td>
+<td>保留定点编辑、旧规则保护、目标与全量分验；回退引起整体退化的候选</td>
+<td>同等预算下，哪种提案方式更容易得到可重复的KEEP？</td>
+</tr>
+<tr>
+<td>规则重构</td>
+<td>纯压缩和增加禁令多次回退；分层生成PE改善质量与输入成本</td>
+<td>Core信息流、领域规则和完整样例分别贡献多少？</td>
+</tr>
+<tr>
+<td>人工PE专项</td>
+<td>Free与Data各有KEEP；Data重复均值低于峰值</td>
+<td>两臂相同预算、相同重复次数时，动态记忆有多大收益？</td>
+</tr>
+<tr>
+<td>主Harness</td>
+<td>初始化PE冻结；八轮候选回退，同PE运行有19题翻转</td>
+<td>Judge波动、生成变化和规则副作用各占多少？</td>
+</tr>
+<tr>
+<td>数据与SFT</td>
+<td>继续训练＋规范PE在Building0.7净增3题，token下降</td>
+<td>固定SP后模型变化有多少收益？未见查询上是否保持？</td>
+</tr>
+</tbody></table></div>
+<p>优先完成固定Spec的重复Judge与固定PE的重复生成，用两层实验确定波动范围，再配对复核候选。随后在未参与规则设计的封存查询上验证泛化；动态检索、扩数据和Harness Dropout分别作为独立实验开展。</p>
+<details class="name-key">
+<summary>名称与历史版本对照（溯源）</summary>
+
+<p>报告按PE的结构与用途命名，历史标识用于定位对应文件和实验快照。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>报告名称</th>
+<th>历史标识</th>
+<th>区分依据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>旧 Lite PE</td>
+<td>旧Lite／R81状态；后续回退到此快照</td>
+<td>已历经历史优化，含旧Lite Skills；非未经优化的原始基线</td>
+</tr>
+<tr>
+<td>历史MASP保留PE</td>
+<td>2026-06-22 MASP Lite top KEEP，worktree快照eb11b3cf</td>
+<td>Prompt与旧Lite相同；Dashboard、Permission Skills不同</td>
+</tr>
+<tr>
+<td>旧规则整理版</td>
+<td>规范化V1</td>
+<td>保留旧规则内容，整理表达与格式</td>
+</tr>
+<tr>
+<td>精简规则库</td>
+<td>7月初规范化V2</td>
+<td>薄Core＋Shared/Domain/Pattern；与后来的主Harness重构系列分开</td>
+</tr>
+<tr>
+<td>人工PE双线：自由归因／策略记忆</td>
+<td>Lite V3 Free／Data-SP</td>
+<td>同人工Prompt起点，分别只修改生成执行协议</td>
+</tr>
+<tr>
+<td>策略记忆PE（对照快照）</td>
+<td>五套PE比较中的Data V3，Prompt SHA-256前缀d9d427b3a629</td>
+<td>用于Dev150／Former50比较的固定快照；专项100题的逐轮KEEP另行保存</td>
+</tr>
+<tr>
+<td>薄规则原型</td>
+<td>Main Framework v2.1</td>
+<td>主Harness初始薄Core与少量规则</td>
+</tr>
+<tr>
+<td>权限预规划</td>
+<td>Main v2.2</td>
+<td>外部Permission Planner、校验、渲染</td>
+</tr>
+<tr>
+<td>单次生成原型</td>
+<td>Main v2.3</td>
+<td>回到一次模型调用</td>
+</tr>
+<tr>
+<td>内部结构草稿／显式结构草稿／扩展结构草稿／精简结构封套</td>
+<td>Main v2.4／v2.5／v2.6／v2.7</td>
+<td>同次调用的Contract/Envelope实验</td>
+</tr>
+<tr>
+<td>完整自然语言协议／短Core／旧表规则摘要</td>
+<td>Main v2.8／v2.9／v2.10</td>
+<td>直接输出SpecDoc的三种早期方案</td>
+</tr>
+<tr>
+<td>职责分层／依赖闭环／正向执行协议／六段Core</td>
+<td>Main v2.11／v2.12／v2.13／v2.14</td>
+<td>人工重构中的四次中间修改</td>
+</tr>
+<tr>
+<td>分层生成PE</td>
+<td>Main Framework V2.15；Prompt SHA-256前缀b95ca32dbc2a</td>
+<td>Core＋Shared＋四域Skills，补全Actor与权限判定；本文主要初始化方案</td>
+</tr>
+<tr>
+<td>训练规范PE</td>
+<td>SFT system prompt v05</td>
+<td>训练侧独立提示词，包含能力约束与完整格式示例</td>
+</tr>
+</tbody></table></div>
+<p>主快照、路径与哈希见、；中间实验见、；训练提示词见。</p>
+</details>
+
+
+
+
+
+
+<footer>Spec Generation Research · 2026-10-20<br>离线阅读版</footer></article></div><dialog id="zoom"><button aria-label="关闭大图">关闭 ×</button><img alt=""></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script></body></html>

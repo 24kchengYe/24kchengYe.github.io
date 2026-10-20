@@ -41,6 +41,27 @@ share metadata without sharing their document contents.
 The homepage does not load a framework, external font, visitor map, or citation
 badge service. The earlier AcadHomepage templates remain in the repository.
 
+## Selected Writing
+
+Selected writing sits between research and projects. Titles, summaries, and the
+generation article introduction support the existing English, Chinese, and
+Japanese switcher. The full essays and technical reports are in Chinese, as
+indicated on their links.
+
+- `_includes/writing.html`: three article entries and their CSS illustrations.
+- `writing/spec-generation/`: multilingual introduction, essay, and technical report.
+- `writing/spec-repair/`: Judge–Fix essay and technical report.
+- `writing/rubric-model/`: rubric-model essay and technical report.
+- `writing/assets/`: shared, content-addressed figures.
+- `assets/css/writing*.css`: writing-list and article styles.
+- `assets/css/homepage-marks.css` and `assets/js/homepage-marks.js`: decorative
+  marks for research, projects, institutions, and datasets. These are custom
+  visual cues, not official company logos or university seals.
+
+The public editions omit local source inventories and deployment identifiers.
+Private experiment files, full source archives, and local publication manifests
+are not included. Existing homepage prose and destinations remain unchanged.
+
 ## Local Development
 
 ```bash

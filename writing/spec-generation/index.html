@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Generating Better Specs · Yecheng Zhang</title>
+  <link rel="stylesheet" href="/assets/css/writing-article.css">
+  <script src="/assets/js/minimal.js" defer=""></script>
+<meta name="description" content="Experiments in prompt search, rule organization, and structured specification generation."><link rel="canonical" href="https://24kchengye.github.io/writing/spec-generation/"><meta property="og:title" content="Generating Better Specs"><meta property="og:description" content="Experiments in prompt search, rule organization, and structured specification generation."><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/spec-generation/"></head>
+<body class="article-page" id="top">
+  <a class="skip-link" href="#article-body"><span lang="en">Skip to content</span><span lang="zh">跳到正文</span><span lang="ja">本文へ</span></a>
+  <header class="site-header shell">
+    <div class="nav-row">
+      <nav class="nav-links" aria-label="Sections">
+        <a href="/#research" data-site-link=""><span lang="en">Research</span><span lang="zh">研究</span><span lang="ja">研究</span></a>
+        <a href="/#writing" aria-current="page" data-site-link=""><span lang="en">Writing</span><span lang="zh">写作</span><span lang="ja">記事</span></a>
+        <a href="/#projects" data-site-link=""><span lang="en">Projects</span><span lang="zh">项目</span><span lang="ja">プロジェクト</span></a>
+        <a href="/#experience" data-site-link=""><span lang="en">Experience</span><span lang="zh">经历</span><span lang="ja">経歴</span></a>
+        <a href="https://24kchengye.github.io/reading/"><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></a>
+      </nav>
+      <div class="languages" role="group" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true" aria-label="English">EN</button>
+        <button type="button" data-language="zh" aria-pressed="false" aria-label="中文">中</button>
+        <button type="button" data-language="ja" aria-pressed="false" aria-label="日本語">日</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="article-header reading-shell">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/#writing" data-site-link=""><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+          <span aria-hidden="true">/</span>
+          <span>Spec systems</span>
+        </nav>
+        <p class="eyebrow">Spec generation</p>
+        <h1 data-page-title=""><span lang="en">Generating Better Specs</span><span lang="zh">让模型写好设计文档</span><span lang="ja">設計仕様をよりよく生成する</span></h1>
+        <p class="article-deck"><span lang="en">From automated prompt search to a structured generation protocol: experiments in organizing rules, planning dependencies, and testing changes.</span><span lang="zh">从提示词自动搜索到生成协议重构，几个月的实验逐渐把问题落到了规则组织、依赖规划和修改验收上。</span><span lang="ja">プロンプトの自動探索から生成手順の再設計へ。ルールの整理、依存関係の計画、変更の検証を重ねた実験の記録。</span></p>
+        <div class="article-byline">
+          <a href="https://24kchengye.github.io/">Yecheng Zhang · 张业成</a>
+          <span><span lang="en">Research notes</span><span lang="zh">研究记录</span><span lang="ja">研究記録</span> · 2026.06–10</span>
+        </div>
+        <div class="article-tools">
+          <a href="/writing/spec-generation/essay/"><span lang="en">Full essay · Chinese</span><span lang="zh">阅读全文</span><span lang="ja">全文 · 中国語</span> <span aria-hidden="true">↗</span></a>
+          <a href="/writing/spec-generation/technical/"><span lang="en">Technical report · Chinese</span><span lang="zh">技术报告</span><span lang="ja">技術レポート · 中国語</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <figure class="hero">
+        <div class="hero-diagram" role="img" aria-labelledby="diagram-description">
+          <span id="diagram-description" class="visually-hidden"><span lang="en">User requirements and rules organized as Core, Shared, and Domain Skills form one input. A single model call produces the SpecDoc.</span><span lang="zh">需求与Core、Shared、领域Skills组成同一个输入，通过一次模型调用生成SpecDoc。</span><span lang="ja">要件とCore・Shared・Domain Skillsを一つの入力にまとめ、モデルを一度呼び出してSpecDocを生成する。</span></span>
+          <div class="diagram-lane" aria-hidden="true">
+            <div class="diagram-stage">
+              <p><span lang="en">UNDERSTAND</span><span lang="zh">理解</span><span lang="ja">理解</span></p>
+              <div class="diagram-node"><span lang="en">Requirements</span><span lang="zh">用户需求</span><span lang="ja">ユーザー要件</span></div>
+              <div class="diagram-sub"><span>Query</span><span>Q&amp;A</span></div>
+            </div>
+            <div class="diagram-arrow"></div>
+            <div class="diagram-stage">
+              <p><span lang="en">ORGANIZE</span><span lang="zh">组织</span><span lang="ja">整理</span></p>
+              <div class="diagram-node core"><span lang="en">Generation protocol</span><span lang="zh">生成协议</span><span lang="ja">生成手順</span></div>
+              <div class="diagram-sub"><span>Core</span><span>Shared</span><span>Domain skills</span></div>
+            </div>
+            <div class="diagram-arrow"></div>
+            <div class="diagram-stage">
+              <p><span lang="en">GENERATE</span><span lang="zh">生成</span><span lang="ja">生成</span></p>
+              <div class="diagram-node">SpecDoc</div>
+              <div class="diagram-sub"><span lang="en">Ready to build</span><span lang="zh">交给下一步搭建</span><span lang="ja">構築工程へ</span></div>
+            </div>
+          </div>
+          <p class="diagram-foot"><span lang="en">One model call · Cross-domain dependencies planned before generation</span><span lang="zh">一次模型调用 · 在规划阶段建立跨领域依赖</span><span lang="ja">モデル呼び出しは一度 · 生成前に領域間の依存関係を計画</span></p>
+        </div>
+        <figcaption class="hero-caption"><span lang="en">Requirements, product rules, and output constraints share one input. The result is a design document for the next build step.</span><span lang="zh">把需求、产品规则与输出要求组织进同一个输入，直接生成下一步搭建所需的设计文档。</span><span lang="ja">要件、製品ルール、出力制約を一つの入力に整理し、次の構築工程で使う設計文書を生成する。</span></figcaption>
+      </figure>
+
+      <div id="article-body" class="article-body reading-shell">
+        <h2><span lang="en">Give each rule a clear role</span><span lang="zh">先让规则各司其职</span><span lang="ja">ルールの役割を明確にする</span></h2>
+        <p><span lang="en">“Notify the owner when this month’s orders exceed a threshold.” A useful spec must define the time window, aggregation, condition, and recipient. Fields used by dashboards and workflows need to exist in the tables first.</span><span lang="zh">用户提出“本月订单超过阈值时提醒负责人”，设计文档就需要把时间范围、统计方式、判断条件和接收人写清楚。看板与工作流使用的字段，也要先在数据表中定义。</span><span lang="ja">「今月の注文がしきい値を超えたら担当者に通知する」。この要件には、集計期間、集計方法、判定条件、通知先の定義が必要になる。ダッシュボードやワークフローが使うフィールドも、先にテーブルに定義しなければならない。</span></p>
+        <p><span lang="en">We explored targeted edits, guarded patch search, and strategy memory updated from failures. We then restructured the prompt itself: Core orders understanding and planning, Shared holds cross-domain rules, and Domain Skills define capabilities and design methods.</span><span lang="zh">我们尝试过定点编辑、受保护的补丁搜索，以及从失败中更新策略记忆。随后，工作转向提示词本身的结构：Core安排需求理解和规划顺序，Shared保存跨域规则，各领域Skills负责能力边界和具体设计方法。</span><span lang="ja">局所的な編集、制約付きのパッチ探索、失敗から更新する戦略メモリを試した後、プロンプトの構造を見直した。Coreは理解と計画の順序を、Sharedは領域横断のルールを、Domain Skillsは機能の制約と設計方法を担う。</span></p>
+        <p><span lang="en">The full essay follows these experiments: what each change improved, where regressions appeared, and which designs we kept.</span><span lang="zh">这篇文章沿着实验顺序，回顾每种改动解决了什么、在哪些地方发生回退，以及最后保留了哪些设计。</span><span lang="ja">全文では実験の順に、各変更で改善した点、性能が下がった箇所、最終的に採用した設計を振り返る。</span></p>
+        <a class="continue-link" href="/writing/spec-generation/essay/"><span lang="en">Read the full essay in Chinese</span><span lang="zh">继续阅读完整实验回顾</span><span lang="ja">中国語の全文を読む</span> <span aria-hidden="true">→</span></a>
+
+        <aside class="article-series" aria-labelledby="related-title">
+          <p id="related-title"><span lang="en">Also in Spec systems</span><span lang="zh">同系列文章</span><span lang="ja">同シリーズの記事</span></p>
+          <div class="related-list">
+            <a href="/writing/spec-repair/">
+              <strong><span lang="en">Repairing Specs with Feedback</span><span lang="zh">用评审反馈修复设计文档</span><span lang="ja">評価フィードバックで設計仕様を修復する</span> →</strong>
+              <small><span lang="en">Fixing design gaps after generation. Full essay in Chinese.</span><span lang="zh">生成之后，怎样修好设计中的缺口。</span><span lang="ja">生成後の設計の不足を補う。本文は中国語。</span></small>
+            </a>
+            <a href="/writing/rubric-model/">
+              <strong><span lang="en">Training a Rubric Model</span><span lang="zh">训练规则评审模型</span><span lang="ja">ルーブリック評価モデルを育てる</span> →</strong>
+              <small><span lang="en">Learning rules and their supporting evidence. Full essay in Chinese.</span><span lang="zh">让评审模型学习规则和判断依据。</span><span lang="ja">ルールと判断根拠を学習する。本文は中国語。</span></small>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer shell">
+    <a href="/#writing" data-site-link=""><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+    <span>Yecheng Zhang</span>
+  </footer>
+
+
+</body></html>

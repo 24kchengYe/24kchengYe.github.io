@@ -7,11 +7,27 @@
     document.querySelectorAll('[data-language]').forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.language === language));
     });
+    document.querySelectorAll('[data-site-link]').forEach(link => {
+      const url = new URL(link.getAttribute('href'), location.href);
+      url.searchParams.set('lang', language);
+      link.setAttribute('href', url.pathname + url.search + url.hash);
+    });
+    const title = document.querySelector('[data-page-title]');
+    if (title) {
+      const translation = title.querySelector(`[lang="${language}"]`);
+      if (translation) document.title = `${translation.textContent} · Yecheng Zhang`;
+    }
+    try {
+      const url = new URL(location.href);
+      url.searchParams.set('lang', language);
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch {}
     try { localStorage.setItem('lang', language); } catch { /* Reading works without storage. */ }
   }
   let saved = 'en';
   try { saved = localStorage.getItem('lang') || 'en'; } catch { /* Use English. */ }
-  setLanguage(saved);
+  const requested = new URLSearchParams(location.search).get('lang');
+  setLanguage(languages.includes(requested) ? requested : saved);
   document.querySelectorAll('[data-language]').forEach(button => {
     button.addEventListener('click', () => setLanguage(button.dataset.language));
   });

@@ -375,6 +375,8 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </section>
 
 
+{% include writing.html %}
+
 <section class="section " id="projects" markdown="block">
 
 ## <span lang="en">Open source & projects</span><span lang="zh">开源与项目</span><span lang="ja">オープンソース・プロジェクト</span>

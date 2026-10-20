@@ -1,0 +1,16 @@
+.report-site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 24px;
+  width: min(1100px, calc(100% - 48px));
+  margin: 28px auto 0;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #e6e8eb;
+  font: 13px/1.6 "Helvetica Neue", Helvetica, "PingFang SC", sans-serif;
+}
+.report-site-nav a { color: #245c87; text-decoration: none; }
+.report-site-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.report-site-nav a:focus-visible { outline: 2px solid #245c87; outline-offset: 5px; }
+.report-site-nav span { margin-left: auto; color: #70777d; font-size: 12px; }
+@media print { .report-site-nav { display: none; } }

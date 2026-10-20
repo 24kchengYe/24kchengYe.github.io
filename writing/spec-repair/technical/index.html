@@ -1,0 +1,1133 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data: blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'"><title>Judge–Fix 技术报告 · Yecheng Zhang</title><style>:root{color-scheme:light;--ink:#30343a;--heading:#20242a;--muted:#71767e;--line:#e2e5e8;--blue:#4f6f8c;--code:#f6f7f8}
+*{box-sizing:border-box}
+html{background:#fff;scroll-padding-top:28px}
+body{margin:0;padding:64px 24px 100px;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:18px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.report-layout{display:grid;grid-template-columns:200px minmax(0,960px);gap:48px;max-width:1208px;margin:0 auto;align-items:start}
+.report-content{min-width:0;container-type:inline-size}
+.article-body{max-width:780px;margin:0 auto}
+h1,h2,h3,h4{color:var(--heading);line-height:1.45;font-weight:650;text-wrap:balance}
+#report-start{margin:0 0 28px;font-size:clamp(34px,3.5vw,45px);line-height:1.38;letter-spacing:-.025em;text-align:center}
+.article-body h2{margin:64px 0 24px;font-size:28px;letter-spacing:-.015em}
+.article-body h3{margin:34px 0 16px;font-size:22px}
+.article-body h4{margin:28px 0 14px;font-size:19px}
+p{margin:0 0 22px}
+strong{font-weight:620}
+em{font-style:normal;color:var(--muted)}
+ul,ol{margin:18px 0 26px;padding-left:1.5em}
+li{margin:8px 0}
+a{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}
+a:hover{color:#294c6c}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+blockquote{margin:28px 0;padding:0 0 0 22px;border-left:2px solid #c8d3de;color:#59616a}
+blockquote p:last-child{margin-bottom:0}
+hr{height:0;border:0;border-top:1px solid var(--line);margin:48px 0}
+.article-body>.figure-block{width:960px;max-width:calc(100vw - 48px);max-width:100cqw;margin:36px 0 42px 50%;transform:translateX(-50%)}
+.figure-block{min-width:0;margin:30px 0 36px}
+.figure-block img,.reference-image img{display:block;max-width:100%;height:auto;margin:16px auto}
+.figure-block>figcaption{margin:0 0 14px;color:#535b65;font-size:15px;font-weight:500;line-height:1.7}
+.figure-block>p:not(:has(img)){font-size:15px;line-height:1.8;color:var(--muted)}
+.figure-block>h2{margin:0 0 18px;font-size:24px}
+.figure-block>details{font-size:14px}
+.figure-block>details>summary{font-size:13px;font-weight:400;color:var(--muted)}
+.vector-preview{padding-top:18px}
+.vector-preview img{background:#fff}
+.reference-image{margin:24px 0}
+.reference-image figcaption{font-size:14px;color:var(--muted)}
+.table-scroll{max-width:100%;overflow-x:auto;margin:28px 0 32px}
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7}
+th,td{padding:12px 14px;vertical-align:top;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--heading);font-weight:600;border-top:1px solid #bfc6cd;border-bottom-color:#bfc6cd}
+td:first-child,th:first-child{padding-left:0}
+td:last-child,th:last-child{padding-right:0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--code);padding:.1em .25em;border-radius:3px}
+pre{max-width:100%;max-height:720px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;margin:22px 0;padding:18px 20px;border:1px solid var(--line);background:var(--code);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.7;tab-size:2}
+pre code{padding:0;background:none;font-size:inherit;border:0}
+details{min-width:0;margin:18px 0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent}
+summary{cursor:pointer;padding:12px 0;color:#4e5863;font-size:15px;font-weight:500;line-height:1.7}
+details[open]>summary{margin-bottom:10px}
+details[open]{padding-bottom:16px}
+.evidence-library{max-width:780px;margin:76px auto 0;padding-top:20px;border-top:1px solid #bcc4cc;font-size:16px;line-height:1.85}
+.document-library{margin:0;border-bottom:1px solid #d4d9de}
+.document-library>summary{padding:20px 0;color:var(--heading);font-size:19px;font-weight:600}
+.library-content{padding:4px 0 14px}
+.library-intro{font-size:14px;color:var(--muted)}
+.research-detail{margin:8px 0}
+.research-detail>summary{font-size:16px;font-weight:500}
+.research-detail-content{padding:14px 0 12px}
+.research-detail-content h2,.library-content>h2,#ancillary-files>h2{font-size:23px;margin:34px 0 18px}
+.research-detail-content h3{font-size:19px;margin:28px 0 14px}
+.research-detail-content h4{font-size:17px}
+.legacy-title{font-weight:600;font-size:23px;margin:0 0 16px}
+.report-header{margin:0 0 28px;text-align:left}
+.report-deck,.meta,.footnote{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.moved-figure-link{font-size:14px;margin:24px 0}
+.section-takeaway{margin:28px 0;padding:0;background:none;border:0;border-radius:0}
+.section-takeaway p:last-child,.section-takeaway ul:last-child,.section-takeaway ol:last-child{margin-bottom:0}
+.source-document{margin:14px 0}
+.source-document>summary{font-size:15px;color:#3f4852}
+.source-document summary,.source-context summary{overflow-wrap:anywhere}
+.source-date{margin-left:8px;font-size:12px;font-weight:400;color:var(--muted)}
+.source-times{margin:8px 0 16px;color:var(--muted);font-size:12px;line-height:1.7}
+.source-context>summary,.source-provenance>summary{font-size:13px;font-weight:400}
+.source-context-intro{margin:18px 0;font-size:14px;color:var(--muted)}
+.reference-supplement{margin-top:24px;padding-top:8px;border-top:1px solid var(--line)}
+.reward-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:24px 0}
+.reward-steps li{margin:0;padding:12px 0;border-top:1px solid var(--line)}
+.reward-steps strong,.reward-steps span{display:block}
+.reward-steps strong{margin-bottom:8px;font-size:15px}
+.reward-steps span{font-size:13px;line-height:1.8}
+.reward-formula{margin:24px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+.reward-formula p:last-child{margin-bottom:0}
+.report-sidebar{position:sticky;top:34px;min-width:0}
+.toc-panel{margin:0;padding:0;border:0;max-height:calc(100vh - 68px);overflow-y:auto;overscroll-behavior:contain}
+.toc-panel>summary{padding:0 0 14px;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.05em}
+#report-toc ol{list-style:none;margin:0;padding:0}
+#report-toc li{margin:3px 0}
+#report-toc a{display:block;padding:7px 0 7px 12px;border-left:2px solid transparent;text-decoration:none;font-size:13px;line-height:1.65;color:#767d85}
+#report-toc a:hover{color:var(--heading)}
+#report-toc a[aria-current="location"]{border-left-color:var(--blue);color:#375a7a;font-weight:500}
+[id]{scroll-margin-top:28px}
+.navigation-target{outline:1px solid #96adbf;outline-offset:6px}
+.skip-link{position:fixed;top:-100px;left:20px;z-index:10;padding:10px 18px;background:#fff;border:1px solid var(--blue)}
+.skip-link:focus{top:12px}
+@media(max-width:1279px){body{padding-top:32px}.report-layout{display:block;max-width:960px}.report-sidebar{position:static;max-width:780px;margin:0 auto 32px}.toc-panel{max-height:60vh;border-bottom:1px solid var(--line)}.toc-panel>summary{padding:10px 0;font-size:14px}.toc-panel[open]{padding-bottom:14px}}
+@media(max-width:840px){.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.article-body,.evidence-library{max-width:100%}}
+@media(max-width:640px){body{padding:24px 20px 60px;font-size:17px;line-height:1.85}#report-start{font-size:32px;line-height:1.45;margin-bottom:24px}.article-body h2{font-size:25px;margin:46px 0 20px}.article-body h3{font-size:21px}.article-body p{margin-bottom:20px}.report-sidebar{margin-bottom:26px}.figure-block{margin:28px 0}.table-scroll{margin:22px 0}table{min-width:560px;font-size:13px}th,td{padding:10px}.evidence-library{margin-top:52px}.document-library>summary{font-size:18px}.source-date{display:block;margin-left:0}pre{padding:14px;font-size:12px}.reward-steps{grid-template-columns:1fr}}
+@media print{html{background:#fff}body{padding:0;font-size:11pt;line-height:1.7}.report-layout{display:block;max-width:none}.report-sidebar,.skip-link{display:none!important}.article-body,.evidence-library{max-width:none}.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.article-body h2{margin-top:32px;font-size:21pt}#report-start{font-size:28pt}h1,h2,h3,figcaption,summary{break-after:avoid}.figure-block,img{break-inside:avoid}a{color:inherit;text-decoration:none}.navigation-target{outline:0}.table-scroll,pre{overflow:visible;max-height:none}table{min-width:0}pre{font-size:8pt}.toc-panel{display:none}.evidence-library{margin-top:44px}.document-library{break-before:page}details:not([open])>*:not(summary){display:block!important}}
+
+/* Reader-facing abstract label; body text remains unboxed. */
+.article-body > .abstract-label{margin-top:2.2rem;margin-bottom:.45rem;font-size:1rem;font-weight:600;letter-spacing:.08em;color:var(--ink,#24303e)}
+
+:root{--accent:#4f6f8c;--paper:#fff}
+[hidden]{display:none!important}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;background:white;border:1px solid #c7ced6;border-radius:3px;padding:6px 10px;font-size:12px;line-height:1.5}
+button:hover{background:#f3f6f9}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.report-date{font-size:13px;color:var(--muted);text-align:center;margin-top:-12px;margin-bottom:32px}
+.reference-group{margin:22px 0 32px}
+.reference-group>summary{font-size:14px;color:var(--muted);font-weight:400}
+.evidence-list{padding-left:18px}
+.inline-evidence{margin:0}
+.inline-evidence>summary{display:list-item;font-size:14px;font-weight:400;padding:12px 0}
+.inline-evidence .evidence-date{font-size:12px;color:var(--muted);margin-right:12px}
+.evidence-action{display:none}
+.evidence-content,.source-content,.history-content{font-size:15px;line-height:1.85;overflow-wrap:anywhere;min-width:0}
+.original-tools{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:12px;margin:16px 0}
+.source-provenance>summary,.source-raw>summary{font-size:12px;color:var(--muted)}
+.metadata{padding:12px;background:var(--code);font-size:12px;overflow-wrap:anywhere}
+.evidence-content h1,.source-content h1,.history-content h1{font-size:25px;margin:28px 0 18px;text-align:left}
+.evidence-content h2,.source-content h2,.history-content h2{font-size:23px;margin:32px 0 18px}
+.evidence-content h3,.source-content h3,.history-content h3{font-size:19px;margin:26px 0 14px}
+.evidence-content h4,.source-content h4,.history-content h4{font-size:17px}
+.evidence-content table,.source-content table,.history-content table{display:block;max-width:100%;overflow:auto;font-size:13px}
+.evidence-content img,.source-content img,.history-content img{max-width:100%;height:auto}
+.source-raw pre{font-size:12px}
+.figure-block img[data-zoom]{cursor:zoom-in}
+.historical-figure figcaption,.result-figure figcaption{font-size:14px;color:var(--muted);margin:12px 0 0}
+.full-pipeline-figure{border:1px solid var(--line);background:#fff}
+.diagram-toolbar{padding:14px 18px;border-bottom:1px solid var(--line);background:#f7f9fc}
+.diagram-toolbar>div:first-child{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+.diagram-toolbar span{font-size:11px;color:var(--muted)}
+.diagram-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+.diagram-controls a{font-size:12px;margin-right:auto}
+.diagram-controls button[aria-pressed=true]{background:#e8eff5;border-color:#9aafc3}
+.diagram-controls label{font-size:11px;display:flex;align-items:center;gap:8px}
+.diagram-controls input{width:90px;accent-color:var(--blue)}
+.diagram-viewport{height:auto;overflow-x:auto;overscroll-behavior-x:contain;background:#fff}
+.full-pipeline-figure .diagram-viewport img{width:var(--diagram-width);height:auto;max-width:none;margin:0;display:block}
+.full-pipeline-figure[data-mode=overview] .diagram-viewport img{width:100%;max-width:100%}
+.full-pipeline-figure>figcaption{font-size:13px;margin:0;padding:12px 18px;border-top:1px solid var(--line)}
+.appendix{max-width:780px;margin:76px auto 0;padding-top:20px;border-top:1px solid #bcc4cc;font-size:16px}
+.appendix-heading h2{font-size:25px;margin:12px 0 18px}
+.appendix-heading p{font-size:14px;color:var(--muted)}
+.appendix-heading .eyebrow{display:none}
+.archive-group>summary{font-size:19px;font-weight:600;padding:20px 0;color:var(--heading)}
+.archive-group>summary span{font-size:12px;color:var(--muted);font-weight:400;display:block}
+.archive-note{font-size:13px;color:var(--muted)}
+.archive-note button{margin-left:10px}
+.history-card>summary,.source-card>summary{font-size:15px}
+.history-card>summary small,.source-card>summary small{display:block;font-size:12px;color:var(--muted)}
+.source-card>summary .evidence-date{font-size:12px;color:var(--muted);margin-right:8px}
+.source-content .group,.provenance,.missing,.external-mark{font-size:12px;color:var(--muted)}
+.library-tools{margin:20px 0;background:#f7f9fc;padding:16px}
+.tools-row,.tools-options{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tools-row input,.tools-row select{padding:8px;border:1px solid #cbd2db;background:#fff;font-size:12px;min-width:0}
+.tools-row input{flex:1 1 200px}
+.tools-row select{max-width:220px}
+.tools-options{font-size:12px;margin-top:10px}
+#search-status{font-size:12px;color:var(--muted);margin:10px 0 0}
+.history-content .wide,.source-content .wide,.evidence-content .wide{width:100%;max-width:100%;margin-left:0;transform:none}
+.history-content .full-pipeline-figure img{max-width:none}
+.history-content .full-pipeline-figure[data-mode=overview] img{max-width:100%}
+.reading-detail{font-size:15px}
+.reading-detail>summary{font-size:14px}
+footer{max-width:780px;margin:50px auto 0;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+#image-dialog{border:1px solid #cbd2db;padding:0;max-width:96vw;max-height:94vh;width:96vw;height:94vh;background:#fff}
+#image-dialog::backdrop{background:rgba(18,29,42,.65)}
+.zoom-tools{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.zoom-tools strong{font-size:14px;margin-right:auto}
+.zoom-area{height:calc(100% - 60px);overflow:auto}
+.zoom-area img{display:block;max-width:none;height:auto;margin:0 auto}
+#notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;padding:12px 18px;max-width:90vw;background:#263548;color:#fff;font-size:13px;z-index:10}
+@media(max-width:640px){.evidence-date{display:block}.evidence-list{padding-left:10px}.diagram-controls label{width:100%}.diagram-toolbar{padding:12px}.zoom-tools{gap:6px}.zoom-tools strong{font-size:11px}.zoom-tools button{padding:6px}.source-card>summary .evidence-date{display:block}.report-date{font-size:12px}}
+@media print{.diagram-controls,.library-tools,dialog,#notice{display:none!important}.diagram-viewport{overflow:visible}.full-pipeline-figure .diagram-viewport img{width:100%}.reference-group:not([open]){display:none}.article-body>.figure-block{max-width:100%}}
+
+:root{--ink:#171717;--heading:#111;--muted:#777;--line:#e7e7e4;--blue:#252525;--accent:#76a943;--code:#f6f6f4}
+body{padding:80px 48px 100px;font-size:19px;line-height:1.9;background:white;color:var(--ink)}
+.report-layout{grid-template-columns:220px minmax(0,1200px);max-width:1492px;gap:72px}
+.article-body{max-width:780px}
+#report-start{font-size:clamp(36px,3.4vw,54px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin-bottom:24px}
+.report-date{font-size:13px;line-height:1.7;margin:0 0 48px;color:#818181}
+.article-body h2{font-size:31px;line-height:1.35;font-weight:600;margin:80px 0 28px;letter-spacing:-.02em}
+.article-body h3{font-size:23px;font-weight:550;margin:44px 0 20px}
+.article-body h4{font-size:20px;font-weight:550;margin:30px 0 16px}
+.abstract-label{font-size:16px;font-weight:600;margin-bottom:16px}
+.article-body>p{margin-bottom:26px}
+.article-body strong{font-weight:600}
+.report-sidebar{top:68px;padding:0;border:0}
+.toc-panel{border:0}
+.toc-panel>summary{font-size:13px;color:#888;font-weight:400;padding:0 0 18px}
+#report-toc ol{list-style:none;padding:0;margin:0}
+#report-toc li{margin:0 0 19px}
+#report-toc a{font-size:14px;line-height:1.65;text-decoration:none;display:block;color:#858585;border:0;padding:0;white-space:normal}
+#report-toc a[aria-current=location],#report-toc a:hover{color:#111;font-weight:500;background:none;border:0}
+.article-body>.figure-block{width:1200px;max-width:100cqw;margin:56px 0 60px 50%;background:white;border:0;padding:0}
+.figure-block img{width:100%;max-width:100%;height:auto;margin:0;cursor:zoom-in}
+.figure-block>figcaption{font-size:13px;line-height:1.7;color:#777;font-weight:400;padding:0;margin:18px 0 0;text-align:left;border:0}
+.figure-block .figure-panel{margin:0 0 34px;border:0;padding:0}
+.figure-block .figure-panel+.figure-panel{padding-top:28px;border-top:1px solid #ededeb}
+.figure-panel>.panel-label{font-size:15px;font-weight:500;margin:0 0 8px;color:#333;line-height:1.5}
+.figure-panel img{display:block;width:100%}
+.full-pipeline-figure .figure-panel{margin-bottom:36px}
+.figure-block .figure-detail{font-size:13px;line-height:1.75;margin:14px 0 0;border:0}
+.figure-detail>summary{font-weight:400;font-size:12px;color:#888;padding:4px 0}
+.figure-detail pre{font-size:12px;line-height:1.65;max-height:none;white-space:pre-wrap;overflow-wrap:anywhere;background:#f7f7f5}
+.figure-detail p{font-size:13px;margin:12px 0}
+.figure-downloads{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
+.figure-downloads a{font-size:12px;color:#777}
+.figure-block.result-figure{max-width:100cqw}
+.reference-group{margin:16px 0 40px;border-top:0;border-bottom:1px solid #ededeb;padding:0 0 12px}
+.reference-group>summary{font-size:13px;color:#888;padding:4px 0;font-weight:400}
+.reference-group .inline-evidence{border-bottom:1px solid #efefed}
+.reference-group .inline-evidence>summary{font-weight:400;font-size:14px;line-height:1.65}
+.evidence-content,.source-content,.history-content{font-size:16px;color:#222;line-height:1.85}
+.evidence-content p,.source-content p,.history-content p{margin-bottom:20px}
+.source-content h1,.evidence-content h1,.history-content h1{font-size:26px;line-height:1.4;text-align:left}
+.source-content h2,.evidence-content h2,.history-content h2{font-size:23px;line-height:1.4}
+.source-content h3,.evidence-content h3,.history-content h3{font-size:20px;line-height:1.4}
+.table-scroll{margin:30px 0 34px}
+table{font-size:15px;line-height:1.8;color:#222}
+th,td{padding:13px 12px;border-color:#e7e7e4}
+th{background:none;font-weight:550;border-top:1px solid #b7b7b2;border-bottom:1px solid #b7b7b2}
+tr:nth-child(even) td{background:none}
+button{border:1px solid #d3d3cf;color:#444;background:#fff;border-radius:4px;box-shadow:none}
+button:hover{background:#f6f6f3}
+a{color:#363636;text-decoration-color:#b2b2ac}
+a:hover{color:#000}
+.reward-formula{background:none;border:0;padding:18px 0;font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:2;text-align:center}
+.appendix{margin-top:90px;border-top:1px solid #ddd}
+.appendix-heading h2{font-size:27px;line-height:1.4}
+.library-tools,.metadata{background:#f7f7f5}
+.archive-group>summary{font-size:19px;font-weight:500}
+.diagram-toolbar{background:#fafaf8}
+footer{font-size:12px;color:#888}
+#image-dialog{border:0;box-shadow:0 12px 80px #0003;background:white}
+#image-dialog::backdrop{background:#0009}
+.zoom-tools{background:white}
+.zoom-area{background:white}
+@media(max-width:1399px){body{padding:64px 30px 90px}.report-layout{grid-template-columns:185px minmax(0,1fr);gap:36px}.article-body{max-width:760px}.report-sidebar{top:40px}.article-body>.figure-block{width:1200px;max-width:100cqw}}
+@media(max-width:1279px){body{padding:36px 26px 80px}.report-layout{display:block;max-width:1080px}.report-sidebar{position:static;margin:0 auto 32px;max-width:780px}.toc-panel>summary{padding:0;font-size:14px}.toc-panel[open]{padding:0 0 20px;border-bottom:1px solid #eee}#report-toc ol{padding-top:24px}#report-toc li{margin-bottom:12px}.article-body{max-width:780px}.report-content{width:100%}.article-body>.figure-block{max-width:100cqw}}
+@media(max-width:840px){.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}}
+@media(max-width:640px){body{padding:26px 20px 60px;font-size:17px;line-height:1.85}#report-start{font-size:34px}.article-body h2{font-size:26px;margin-top:60px}.article-body h3{font-size:21px}.article-body>.figure-block{margin-top:36px;margin-bottom:42px}.figure-panel>.panel-label{font-size:13px}.report-date{font-size:12px}.table-scroll table{font-size:13px}.evidence-list{padding-left:8px}.reward-formula{font-size:16px;overflow-wrap:anywhere}}
+@media print{body{padding:0;font-size:11pt}.report-layout{display:block}.report-sidebar,button,.figure-detail,.library-tools,dialog,footer{display:none!important}.article-body{max-width:none}.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.figure-panel{break-inside:avoid}.figure-block>figcaption{font-size:9pt}.reference-group:not([open]){display:none}}
+
+body{font-size:18px;font-weight:400;line-height:1.9;padding:76px 42px 100px;color:#202020}
+.report-layout{grid-template-columns:200px minmax(0,1160px);gap:64px;max-width:1424px}
+.article-body{max-width:760px}
+#report-start{font-size:clamp(36px,3.2vw,50px);font-weight:500;line-height:1.3;letter-spacing:-.035em;text-align:center;margin:0 0 22px}
+.report-date{text-align:center;font-size:13px;color:#8a8a8a;margin-bottom:64px}
+.article-body h2{font-size:29px;font-weight:500;line-height:1.45;margin-top:76px}
+.article-body h3{font-size:22px;font-weight:500;line-height:1.5;margin-top:40px}
+.article-body strong,.abstract-label{font-weight:550}
+.article-body>.figure-block{width:1160px;margin-top:48px;margin-bottom:50px}
+.figure-block .figure-panel{margin-bottom:24px}
+.figure-block .figure-panel+.figure-panel{padding-top:24px;border-top:0}
+.figure-panel>.panel-label{font-size:13px;font-weight:400;color:#6e6e6e}
+.figure-block>figcaption{font-size:12px;color:#888;margin-top:12px}
+.figure-detail>summary,.reference-group>summary{font-size:12px;color:#8a8a8a;font-weight:400}
+#report-toc a{font-size:13px;color:#888;line-height:1.65}
+#report-toc li{margin-bottom:16px}
+.article-body p{margin-bottom:24px}
+.table-scroll{margin-top:28px;margin-bottom:32px}
+th,td{padding:12px 10px}
+th{font-weight:500}
+.appendix-heading>p:not(.eyebrow){font-size:14px;color:#777}
+body[data-publication-genre=blog] .article-body h2{font-size:28px}
+.reference-list{font-size:13px;color:#777}
+@media(max-width:1399px){body{padding:54px 28px 80px}.report-layout{grid-template-columns:175px minmax(0,1fr);gap:34px}}
+@media(max-width:1279px){.report-layout{display:block;max-width:1100px}.report-sidebar{max-width:760px}.article-body>.figure-block{max-width:100cqw}}
+@media(max-width:840px){.article-body>.figure-block{width:100%;margin-left:0;transform:none}}
+@media(max-width:640px){body{padding:26px 20px 60px;font-size:17px}#report-start{font-size:32px}.report-date{margin-bottom:42px}.article-body h2,body[data-publication-genre=blog] .article-body h2{font-size:25px;margin-top:52px}.article-body h3{font-size:20px}}
+@media print{body{padding:0;font-size:11pt}.report-layout{display:block}.article-body{max-width:none}.article-body>.figure-block{width:100%;margin-left:0;transform:none}}
+</style><meta name="description" content="Judge–Fix 技术报告：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/spec-repair/technical/"><meta property="og:title" content="Judge–Fix 技术报告"><meta property="og:description" content="Judge–Fix 技术报告：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/spec-repair/technical/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body data-report-version="V10" data-publication-genre="report" data-publication-edition="minimal"><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/spec-repair/">实验回顾 →</a><span>Yecheng Zhang · 中文</span></nav>
+<a class="skip-link" href="#report-start">跳到正文</a><div class="report-layout" id="top"><aside class="report-sidebar toc"><details class="toc-panel" open=""><summary>目录</summary><nav id="report-toc" aria-label="文章章节"><ol><li><a href="#article-1">引言</a></li><li><a href="#article-2">实验设置</a></li><li><a href="#article-5">Judge–Fix 主链路</a></li><li><a href="#article-9">Fix 策略实验</a></li><li><a href="#article-14">Judge 配置</a></li><li><a href="#article-17">Verifier</a></li><li><a href="#article-23">格式准出</a></li><li><a href="#article-27">提示词回归实验</a></li><li><a href="#article-32">结论</a></li></ol></nav></details></aside><main class="report-content" id="main"><article class="article-body" id="article"><h1 id="report-start">Judge–Fix 技术报告</h1><p class="report-date">2026 年 6—10 月</p><p class="abstract-label">摘要</p>
+
+<p>本研究面向多维表格设计文档的自动修复：模型根据用户需求和产品规则发现问题，修改 SpecDoc 或 HostPlan，并检查最终设计能否支持实际建表。2026 年 6—10 月，项目比较了局部修复、模型切换、历史反馈、投票、格式恢复和 Verifier 前后版本验证，形成了四域 Judge–Fix–Router 主链路及独立的修改验证路线。</p>
+<p>实验表明，限制修改范围和澄清具体业务规则能改善部分固定样本上的修复结果：Non-Table 300 条中，保护合格段落使 Fix 阶段通过数从 156 增至 177；8 条工作流难例中，保留补丁方式、只补业务规则使准出数从 3 增至 7。更复杂的审核和更大预算没有稳定带来收益。Verifier 的前置分析在 40 个域判断单元中将参考一致数从 33 提高到 38，但另一组完整修复实验的参考通过数从 4/10 降至 1/10。下一步应先查明 Judge 报出的问题是否真实存在，再检查 Fix 是否修好问题并保留原需求，最后用端到端评测验证建表结果。</p>
+<figure class="figure-block result-figure" data-figure="research_design" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e647acae569a0cb3be7a.svg" alt="研究设计" width="1200" height="430" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 1　研究设计</figcaption></figure>
+<h2 id="article-1">1. 引言</h2>
+<p>执行器按照多维表格设计文档实现用户需求。它既要说明有哪些表、字段、视图和流程，也要满足字段类型、组件能力和权限规则。设计中只写出一个目标名称，并不等于给出了可执行的方法。例如“培训完成度”可以是手工填报值，也可以是需要按培训记录自动汇总的结果；是否缺少计算方式，要结合用户需求和完整设计判断。</p>
+<p>自动修复的困难有两部分。首先，Judge 必须区分业务缺口、能力限制和允许的表达差异，不能把正常设计误判成错误。其次，Fix 不仅要消除已报问题，还要保留原来的业务含义。将管理员改成只读，可能让一条权限限制通过，却使其无法完成管理职责；把净现金流改成收入，可能消除公式问题，却改变了指标。</p>
+<p>主链路采用“按域检查—按依赖修复—修后重判”的方式处理这些问题。Verifier 则进一步比较修前与修后两份文档，显式判断目标是否关闭、原有需求是否保留。两者的研究目标相同，但检查得更细不代表最终修得更好，必须分别测量。</p>
+<figure class="historical-figure wide figure-block" data-figure="timeline" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/98b4c8e30cc7115ed234.svg" alt="研究时间线" width="1200" height="390" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 2　研究时间线</figcaption></figure>
+<p>主要实验问题如下。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>研究问题</th>
+<th>被比较的方法</th>
+<th>主要评价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>如何让 Fix 修对问题且少改坏已有内容？</td>
+<td>局部保护、末轮换模型、历史反馈、对象定位、全文候选</td>
+<td>原问题关闭数、退化数、准出数、调用成本</td>
+</tr>
+<tr>
+<td>如何减少重复检查，同时保持判断质量？</td>
+<td>Judge 模型、推理强度、同版本投票、早停、有效票复用</td>
+<td>参考一致率、重复判定差异、调用成本</td>
+</tr>
+<tr>
+<td>前后版本验证能否改善修复？</td>
+<td>分离问题分析和评分、结构化修复目标、Transition 接纳</td>
+<td>判断质量、误接纳、误拒绝及最终文档质量</td>
+</tr>
+<tr>
+<td>文档通过能否转化为建表通过？</td>
+<td>格式恢复、提示词对照、固定设计的 E2E</td>
+<td>设计、执行和评审三方面的逐例证据</td>
+</tr>
+</tbody></table></div>
+<p>链路准出、独立参考复核和 E2E 分开统计。历史累计交付率不等于单次实验通过率，模型判定也不等于人工准确率。详细实验记录可在正文中展开。</p>
+
+<h2 id="article-2">2. 实验设置</h2>
+<p>输入是用户需求（Query）和待修设计。设计有两种格式：Markdown 形式的 SpecDoc，以及包含 <code>goal/tasks</code> 的 HostPlan JSON。四个业务域分别是数据表、仪表盘、工作流和权限。Table Fix 可以修表、字段和计算依赖；Non-Table Fix 修改后三域，遇到缺失的表或字段时交回 Table。</p>
+<p>研究使用三类结果：<strong>链路准出</strong>是最终文档通过本次 Judge 和格式检查；<strong>独立参考复核</strong>是另一套模型评审对最终文档或修改前后对的判断；<strong>E2E</strong>是执行器建出 Base 后的业务评测。文中相关参考标签来自模型，未当作人工金标。</p>
+<h3 id="article-3">2.1 指标定义</h3>
+<p>样本级指标以完整 Query＋文档为单位；域级指标以“样本×业务域”为单位；问题级指标还区分规则类型与具体对象。Fix 阶段通过数、最终准出数和 E2E 通过数处于不同阶段，不能相互替换。调用数统计请求，token 统计模型处理的文本量；更高并发只改变同时运行的请求数。</p>
+<p>成本对照报告总量，也检查每份参考合格文档的消耗。未实际推理的限流请求不计作业务失败。历史实验多数为单次或小规模定向对照；若样本被用于提示词开发，结果用于回归诊断，不写成未见样本上的泛化收益。</p>
+<h3 id="article-4">2.2 数据集</h3>
+<p>主要数据及用途如下。不同集合分别统计，后续比较均注明使用哪一批输入。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>数据或实验集合</th>
+<th>用途及结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>早期 7,233 条设计</td>
+<td>建立批量修复基线；首轮四域通过 3,588 条，一轮 Fix 后 6,039 条</td>
+</tr>
+<tr>
+<td>6,457 条 SpecDoc</td>
+<td>研究修后重判和准出稳定性；链内通过 6,291 条，单次独立重判通过 5,315 条</td>
+</tr>
+<tr>
+<td>HostPlan 多批数据</td>
+<td>完成两种文档格式适配；包含 2,106 条原始集合、豆包 45 条及后续抽样集合</td>
+</tr>
+<tr>
+<td>50 条、17 条、8 条策略对照</td>
+<td>比较 Fix 模型、补丁方式、历史信息和修复预算</td>
+</tr>
+<tr>
+<td>Building 50</td>
+<td>从原始需求和设计出发，比较提示词修改及建表结果</td>
+</tr>
+<tr>
+<td>4,480 条历史池</td>
+<td>多轮修复后累计准出 3,999 条；另一个 1,500 条集合准出 1,052 条</td>
+</tr>
+<tr>
+<td>Verifier 的 10 条小样本系列</td>
+<td>分别验证问题分析、修改接纳、单次修复和完整链路；各实验不是同一批结果的连续阶段</td>
+</tr>
+</tbody></table></div>
+<p>8 月策略实验的 G1—G6、困难样本策略 J1—J13，与 9 月提示词 G、J 不是同一套编号。下文先写方法，编号只用于定位原记录。</p>
+
+<h2 id="article-5">3. Judge–Fix 主链路</h2>
+<h3 id="article-6">3.1 调度流程</h3>
+<p>主链路先检查四域，再根据依赖选择修复节点。表和字段是其他域的前置条件，因此缺少资源时优先修 Table；表结构稳定后，再修仪表盘、工作流和权限。每次修改后重新检查，普通阶段仍未解决的样本进入预算有限的难例阶段。</p>
+<p>准出检查针对同一份最终文档。最多检查 V 次，至少 Q 次通过；已能确定多数结果时提前结束。格式模块随后检查文档能否按下游约定读取。格式修改若改变了文档，需要重新确认业务判断。最终导出保存实际文档、投票和失败原因。</p>
+<figure class="full-pipeline-figure wide figure-block" data-figure="main_entry" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label">A · 入口检查</p><img src="/writing/assets/ad8ed4327da8728f89fe.svg" alt="A · 入口检查" width="1200" height="440" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">B · 普通修复 · 共用回退预算 2 次</p><img src="/writing/assets/96bab7319c80cd000e6a.svg" alt="B · 普通修复 · 共用回退预算 2 次" width="1200" height="650" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">C · 难例修复 · 独立回退预算 3 次</p><img src="/writing/assets/532a029e70811a11a29e.svg" alt="C · 难例修复 · 独立回退预算 3 次" width="1200" height="690" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">D · 准出 · 格式回退预算 1 次</p><img src="/writing/assets/515e12ce143dbbed4959.svg" alt="D · 准出 · 格式回退预算 1 次" width="1200" height="330" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 3　主链路</figcaption></figure>
+<h3 id="article-7">3.2 Fix 内部流程</h3>
+<p>Fix 接收 Query、当前文档及待修问题，生成局部补丁或完整 JSON。程序先解析输出，再核对补丁是否真正应用。零匹配、多匹配、截断等错误进入输出恢复；候选写入成功后，才检查目标是否修复、是否允许替换当前版本。被拒绝时保留旧文档和失败原因，后续候选读取这些反馈。</p>
+<p>一次进入 Fix 可以包含多轮，每轮也可以有多个候选。候选分别评估，不把不同候选的修改直接拼在一起。局部 Fix 通过后返回主链路，继续做整体检查。</p>
+<figure class="full-pipeline-figure wide figure-block" data-figure="fix_generate" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label">A · 生成候选</p><img src="/writing/assets/5509058bf848fb2ed2f1.svg" alt="A · 生成候选" width="1200" height="650" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">B · 评估候选</p><img src="/writing/assets/7dd3aea037815cbb227b.svg" alt="B · 评估候选" width="1200" height="520" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">C · 接纳候选</p><img src="/writing/assets/f8d191d7c6d7be9a37d7.svg" alt="C · 接纳候选" width="1200" height="780" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 4　Fix 内部流程</figcaption></figure>
+<div class="configuration"><h4>配置快照（2026-10-16）</h4>
+
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>快照中的配置或实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>执行入口</td>
+<td><code>full_router_final3</code>，Design 0-1，显式选择 SpecDoc / HostPlan</td>
+</tr>
+<tr>
+<td>Judge</td>
+<td>Luna；普通检查和前两票 medium，确需第三票时 high</td>
+</tr>
+<tr>
+<td>Fix / Router</td>
+<td>Seed2 low；每次进入 Fix 最多 F=5，候选数 N_fix=3</td>
+</tr>
+<tr>
+<td>准出票</td>
+<td>V=3、Q=2；同一文档的有效票可复用，结论锁定后早停</td>
+</tr>
+<tr>
+<td>SpecDoc 写回</td>
+<td>有界局部补丁或对象替换，核对是否成功应用</td>
+</tr>
+<tr>
+<td>HostPlan 写回</td>
+<td>完整 JSON，按其自身格式验证</td>
+</tr>
+<tr>
+<td>技术恢复</td>
+<td>处理输出协议、截断、稳定章节丢失等问题，与业务修复次数区分</td>
+</tr>
+<tr>
+<td>终局整篇改写</td>
+<td>默认关闭，实验中显式开启</td>
+</tr>
+<tr>
+<td>Form</td>
+<td>不参与该快照的四域调度；历史内容可能透传</td>
+</tr>
+</tbody></table></div>
+<p>以上是报告收录时的本地状态，不代表所有历史实验配置，也不替代线上部署核验。</p>
+</div>
+
+<h3 id="article-8">3.3 文档格式适配</h3>
+<p>早期 HostPlan 适配分别修改了四域 Judge、两种 Fix、消息模板和文件映射。日期精度、公式输出类型、闭合选项、按月统计来源、跨任务依赖等被整理成业务规则，而不是持续追加具体坏例。</p>
+<p>统一 Design 0-1 Judge 后，曾出现 Markdown SpecDoc 被 Fix 改成 <code>{goal,tasks}</code> JSON 的问题。后续通过显式文档格式和独立输出验证处理；Rewrite 作为单独任务，仅在需要转换格式时调用。业务检查通用，不意味着输入输出格式也必须相同。</p>
+
+<h2 id="article-9">4. Fix 策略实验</h2>
+<h3 id="article-10">4.1 限制修改范围</h3>
+<p>本组分别检验增加能力说明、限制修改范围的效果。固定同一批 Non-Table 输入，比较原版、增加能力说明、再增加合格内容保护三种提示词；指标是 Fix 阶段通过数和已合格域的退化次数。</p>
+<p>6 月首先比较旧版 Fix 与加入能力说明的新版。50 条小试曾显示旧版更好，扩到 300 条后，两版的 Non-Table Fix 阶段通过数分别为 156 和 154，差距很小。继续加入“保留合格段落，只修改问题及必要依赖”的约束后，通过数增至 177，记录中的域退化次数从 76 降至 47。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Non-Table，固定 300 条</th>
+<th align="right">Fix 阶段通过</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原版</td>
+<td align="right">156/300</td>
+</tr>
+<tr>
+<td>增加能力说明</td>
+<td align="right">154/300</td>
+</tr>
+<tr>
+<td>增加合格内容保护</td>
+<td align="right">177/300</td>
+</tr>
+</tbody></table></div>
+<p>另一组 Table 对照中，两版都是 179/300，没有复现这项提升。因此保留下来的是按问题限制修改范围，而不是要求所有已有内容一律不能改。</p>
+
+<p>跨域依赖决定了局部修复的边界。例如仪表盘、工作流同时依赖一个缺失字段，只改下游描述无法解决。Router 先让 Table 补齐字段，再回到相关域，避免各域分别生成互不一致的替代方案。</p>
+<figure class="historical-figure wide figure-block" data-figure="dependency" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/4e64441bbed74bdd4391.svg" alt="跨域修复顺序" width="1200" height="300" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 5　跨域修复顺序</figcaption></figure>
+
+<h3 id="article-11">4.2 50 条样本策略对照</h3>
+<p>这组检验两种替代思路：修不好时换更强模型，或扩大候选的修改范围并增加审核。输入固定为同一批 50 条，记录最终准出、请求总量和输入输出 token。六种条件同时包含模型、历史信息及输出形式的变化，只有相邻条件明确只改一项时，才能单独解释该项影响。</p>
+<p>8 月同一批 50 条比较六种策略。局部补丁的原版使用三轮 Seed；替代方案把末轮换成 Luna，再分别加入历史、全文候选和审核。表中的轮数指每次进入 Fix 的局部预算。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Fix 策略</th>
+<th align="right">准出</th>
+<th align="right">调用数</th>
+<th align="right">token，百万</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Seed 三轮，局部补丁，无历史（G1）</td>
+<td align="right">40/50</td>
+<td align="right">3,517</td>
+<td align="right">84.02</td>
+</tr>
+<tr>
+<td>Seed 两轮→Luna 一轮，局部补丁（G2）</td>
+<td align="right">43/50</td>
+<td align="right">3,386</td>
+<td align="right">79.51</td>
+</tr>
+<tr>
+<td>同上，加入本次 Fix 内的历史（G3）</td>
+<td align="right">43/50</td>
+<td align="right">2,957</td>
+<td align="right">71.18</td>
+</tr>
+<tr>
+<td>全文候选＋程序保护＋模型审核，无历史（G4）</td>
+<td align="right">41/50</td>
+<td align="right">3,700</td>
+<td align="right">79.37</td>
+</tr>
+<tr>
+<td>全文候选＋保护＋审核，再加入历史（G5）</td>
+<td align="right">37/50</td>
+<td align="right">4,289</td>
+<td align="right">93.62</td>
+</tr>
+<tr>
+<td>局部补丁＋历史，同时更新 Judge/Fix（G6）</td>
+<td align="right">41/50</td>
+<td align="right">3,443</td>
+<td align="right">83.49</td>
+</tr>
+</tbody></table></div>
+<p>末轮换 Luna 在该组多准出 3 条；加入局部历史保持 43 条，少调用 429 次。全文方案没有超过局部补丁。全文加历史的一组有 320 次审核、139 次回滚，最终只有 37 条准出，说明更多候选被拦住后，并未生成足够多的有效替代。</p>
+
+<h3 id="article-12">4.3 8 条工作流难例对照</h3>
+<p>针对 8 个工作流难例，另一组实验把“按原文精确替换”改成“对象 ID＋预期文档哈希”。意图是让补丁更稳定地找到修改位置；另外比较了提交后复查并回滚、全文改写，以及只补充业务规则。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>同一批 8 条</th>
+<th align="right">准出</th>
+<th align="right">调用数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原文精确补丁</td>
+<td align="right">3/8</td>
+<td align="right">1,010</td>
+</tr>
+<tr>
+<td>对象 ID＋文档哈希</td>
+<td align="right">1/8</td>
+<td align="right">874</td>
+</tr>
+<tr>
+<td>对象定位＋提交后复查、回滚</td>
+<td align="right">1/8</td>
+<td align="right">864</td>
+</tr>
+<tr>
+<td>原补丁＋工作流业务规则</td>
+<td align="right">7/8</td>
+<td align="right">714</td>
+</tr>
+<tr>
+<td>全文候选＋保护</td>
+<td align="right">2/8</td>
+<td align="right">903</td>
+</tr>
+</tbody></table></div>
+<p>对象定位两组分别拒绝了 348、330 个候选，原补丁为 88 个。新协议降低了候选进入业务检查的数量。效果最好的一组没有更换协议，只明确了 OR 每个分支的范围、Switch 首次命中、完成状态的事实来源等规则。资源限制、AI 结果写回等要求，仅在用户需求确实涉及它们时检查。</p>
+<p>这批已知难例支持先修业务规则。对象定位仍可用于具体的补丁失败，但不能仅凭“定位更稳定”就推断整链质量更高。全文条件的运行参数未完整启用预期 Supervisor，因此 2/8 只用于诊断实际执行方案，不评价未真正运行的完整审核方案。</p>
+<figure class="figure-block result-figure" data-figure="repair_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/52c1e0f3d17bb7fcc6a7.svg" alt="修复策略对照" width="1200" height="1080" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 6　修复策略对照</figcaption></figure>
+<p>上述实验中，保护合格内容、补充具体业务规则取得了收益；更换补丁协议没有提高准出数。三组实验使用不同样本集，图中的绝对通过率不作跨组比较。</p>
+
+<h3 id="article-13">4.4 增加难例修复预算</h3>
+<p>另一个 50 条实验的 CodeAct E2E 为 33/50。从中选取 17 条下游失败，比较增加轮数、历史信息和终局改写。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>17 条难例策略</th>
+<th align="right">链路准出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Seed 五轮，无历史</td>
+<td align="right">13/17</td>
+</tr>
+<tr>
+<td>同预算，加入历史</td>
+<td align="right">12/17</td>
+</tr>
+<tr>
+<td>Seed 四轮＋Luna 一轮，加入历史</td>
+<td align="right">11/17</td>
+</tr>
+<tr>
+<td>上一项再加终局改写</td>
+<td align="right">12/17</td>
+</tr>
+<tr>
+<td>Seed 六轮＋Luna 一轮，加入历史</td>
+<td align="right">13/17</td>
+</tr>
+</tbody></table></div>
+<p>增加到七轮后，通过数回到 13，调用从五轮基线的 1,689 次增加到 1,925 次，token 从 44.57M 增至 53.11M。该集合没有显示扩大预算的净收益。</p>
+<p>后续还比较分支搜索、稳定域复用、末端反馈回传、全 Luna Fix 等小子集方案。全量策略 J10 的链内准出达到 46/50，略高于起点的 45/50，但 CodeAct E2E 从 33/50 降至 26/50，177 个代码子任务却全部执行成功。逐例发现过把人工办理自动写成完成、无依据推算截止日期等设计问题。局部检查通过，仍不代表已经实现业务需求。</p>
+
+
+
+<h2 id="article-14">5. Judge 配置</h2>
+<h3 id="article-15">5.1 同版本多数投票</h3>
+<p>研究问题是：一次“通过”能否代表最终文档已稳定满足规则？早期实验对同一最终版本重新调用相同 Judge，观察通过判定是否翻转；后续才引入同版本多数投票。这里的重判差异反映模型评审波动，不等同于文档在重判时被修改。</p>
+<p>早期 954 条难例修复中，累计曾通过 914 条，最终一次重判却只有 625 条通过。之后的 6,457 条集合也出现链内通过 6,291、单次独立重判通过 5,315 的差异。这推动链路保存文档版本，并用重复判断区分一次通过和多次一致通过。</p>
+<p>对原链路或独立重判至少一次失败的 1,218 条，复用已有失败反馈进入难例 Router；每次完整四域检查算一票，三票至少两票通过。技术异常恢复后，最终准出 1,212 条：864 条三票全过，348 条两票通过。样本 <code>002329</code> 虽投票通过，仍含重复 JSON 尾部；输出验证因此不能由投票替代。</p>
+<figure class="historical-figure wide figure-block" data-figure="vote" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/f0f36a571cc27e5e302c.svg" alt="同版本多数投票" width="1200" height="340" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 7　同版本多数投票</figcaption></figure>
+<p>投票后来覆盖各个准出出口。V 是最多票数，Q 是通过门槛；导出记录保留修复阶段、票数和质量标签。需要第三票时，一票可能包含四个业务域的独立调用，不能将“12 个 case 需要第三票”计作 12 次单域 Judge。</p>
+
+<h3 id="article-16">5.2 降低调用成本</h3>
+<p>同一 43 条上的成本实验使用 GPT-5.5 作外部复核。Luna 并发 22 的方案通过 29/43，GPT-5.2 基线为 30/43；DeepSeek V4 Flash 在自身链路中全过，外部复核只有 10/43。因此模型选择同时看外部复核和调用成本，不采用自身放行数作为质量结论。</p>
+<p>后续 Mixed Judge 采用 Luna：普通检查和前两票 medium，只有需要第三票时切 high。这里的 mixed 指推理强度混用，与 E2E 的 Building Mix 评测模式不同。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>成本改动</th>
+<th>处理方式</th>
+<th>实测结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>多数锁定后早停</td>
+<td>已确定达到或无法达到通过门槛时，不再凑满票数</td>
+<td>与有效首票复用合计，146 个节点回放的调用 2,442→2,190，结论相同</td>
+</tr>
+<tr>
+<td>复用同版本有效首票</td>
+<td>刚完成且对应同一文档的四域全过，计入准出确认</td>
+<td>文档、规则和模型配置必须一致</td>
+</tr>
+<tr>
+<td>提高并发</td>
+<td>分开控制 case 并行数和进程总请求量</td>
+<td>一组并发 8→22，耗时 122.3→74.6 分钟；重试 10→286</td>
+</tr>
+<tr>
+<td>在线验证早停</td>
+<td>交换顺序重跑对照</td>
+<td>一次仅缩短约 90 秒，约 0.66%</td>
+</tr>
+</tbody></table></div>
+<p>离线回放固定了已有票据，证明的是相同判断下可以少调用；在线模型重新采样后，还会受到限流、重试和返回速度影响。因此少调用没有按相同比例缩短总耗时。重复配对实验的三次全过数增量也出现 +3、0、−4，单次差一两条不足以判定配置更优。</p>
+
+<h2 id="article-17">6. Verifier</h2>
+<h3 id="article-18">6.1 验证一次修改</h3>
+<p>主链路主要判断“这份文档是否有问题”。Verifier 增加“这次修改是否值得接受”的判断：需要在相同需求下比较两个版本，不能只看新版本的错误列表是否变短。它同时研究问题覆盖、连续评分和候选接纳，不只是把原 Judge 换一个名字。</p>
+<p>2026-07-23 的研究方案提出：在覆盖旧文档前，明确这次修改解决了哪些问题，是否删除需求或破坏正确功能。具体分成三种检查：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>检查</th>
+<th>输入</th>
+<th>输出及用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>State：当前状态</td>
+<td>Query、当前文档、业务规则</td>
+<td>找出问题、对象和证据，作为 Fix 的目标</td>
+</tr>
+<tr>
+<td>Transition：修改比较</td>
+<td>原问题、修前文档、修后候选</td>
+<td>确认目标是否关闭、需求是否保留、是否产生新问题；决定接受、回退或待确认</td>
+</tr>
+<tr>
+<td>Release：最终检查</td>
+<td>Query、最终全文、业务规则</td>
+<td>判断整份文档是否满足准出要求</td>
+</tr>
+</tbody></table></div>
+<figure class="figure-block result-figure" data-figure="verifier_method" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/36aadf2d60ee62e1f7a4.svg" alt="Verifier 方法" width="1200" height="690" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 8　Verifier 方法</figcaption></figure>
+<p>V12 指南的四域共 79 条 Rubric、181 种错误模式。State/Release 按域调用，一域一次请求，四域并行；不是每条规则调用一次。输出逐条对应选中的规则，缺项或重复项属于无效输出。Transition 检查修复目标、需求保留、可执行性和跨域一致性。</p>
+<p>连续评分用于比较满足硬约束的候选。需求被删除、目标未解决或权限退化时，不能用更高的平均分抵消。最小实现每轮只生成一个候选，同时保留旧版；候选被拒绝时，下一轮读取失败反馈。V12 指南常规最多三次候选生成，难例第二阶段默认关闭。</p>
+<p>概率读取也经历过修改：多个评分位置会遗漏低概率档位，十级量表难以稳定取得完整分布，A—E 又与候选名称混淆。后续 Transition 使用 P—T 五级量表，两版各请求一个评分位置。接口不支持原生概率时，可用独立成对投票，但分别记录。</p>
+<p>连续评分的计算和用途如下。原生概率模式先取齐五个合法评分 token 的 logprob，在这五档内归一化，再按冻结的档位权重计算期望分；比较的是候选与修前版本的分差。</p>
+<div class="reward-formula">p<sub>g</sub>(x) = exp(ℓ<sub>g</sub>(x)) / ∑<sub>h</sub> exp(ℓ<sub>h</sub>(x))<br>s(x) = ∑<sub>g</sub> p<sub>g</sub>(x) · v<sub>g</sub>，　Δs = s(候选) − s(修前)</div>
+
+<p>其中 ℓ 是接口返回的 logprob，v 是由差到好映射到 0—1 的五档权重。任一合法档位缺失，都不能把它的概率补为零；自动模式保留失败回执，改用完整的成对投票。投票交替交换两版的展示顺序，候选支持率为“（候选胜票＋0.5×平票）/有效票数”。这两种量分别记录，均不是经校准的“判断正确概率”。</p>
+<p>接纳先检查硬约束，再看分数：目标未关闭、发生关键业务退化或跨域引用损坏，直接回退；通过这些检查后，才比较目标改善和应保留项的变化；证据不足则暂缓。接受一处修改也不代表整篇准出，仍要由 Release 检查最终全文。这些是已有设计，后文实验检验其实际效果。</p>
+
+<h3 id="article-19">6.2 先分析问题，再评分</h3>
+<p>架构对照固定 10 份文档、四域 V11 规则和 Gemini 评分模型。原方案由 Gemini 2.5 Pro 分析并评分；替代方案由 GPT-5.6 Sol xhigh 先找问题，再由 Gemini 读出评分概率。参考为另行生成的 Sol 三次评审加裁决。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>40 个样本×域单元</th>
+<th align="right">Gemini 分析＋评分</th>
+<th align="right">Sol 分析＋Gemini 评分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>域通过/失败判断与参考一致</td>
+<td align="right">33/40</td>
+<td align="right">38/40</td>
+</tr>
+<tr>
+<td>找回的参考问题</td>
+<td align="right">27/44</td>
+<td align="right">38/44</td>
+</tr>
+<tr>
+<td>误报 / 漏报</td>
+<td align="right">25 / 17</td>
+<td align="right">4 / 6</td>
+</tr>
+<tr>
+<td>问题类型 F1</td>
+<td align="right">56.3%</td>
+<td align="right">88.4%</td>
+</tr>
+<tr>
+<td>分阶段活跃耗时</td>
+<td align="right">439.3 秒</td>
+<td align="right">584.5 秒</td>
+</tr>
+<tr>
+<td>API 等价成本</td>
+<td align="right">$2.6333</td>
+<td align="right">$4.0459</td>
+</tr>
+</tbody></table></div>
+<p>两组评分后端相同，问题识别的收益支持继续验证前置分析。它没有执行 Fix，且分析模型与参考模型同源，不能据此直接切换整链默认配置。两组评分 token 上限在技术补跑时存在 64/256 的差异，概率质量的严格对照需要统一该设置；问题集合指标单独保留。成本包含实际尝试并按 API 单价折算，非实际支付金额。</p>
+
+<h3 id="article-20">6.3 完整链路实验</h3>
+<p>这组实验检验“更好的初始判断能否带来更好的最终设计”。两条链路读取同一组 10 条初始 Query＋Spec，使用相同 Fix v4/Seed2 配置；基线是生产 Judge–Fix，处理组采用 V11 State/Proof、反馈式 Fix、逐目标 Transition 和独立 Release，最多扩至 24 次 Fix。初始和两种最终文档匿名后，由 Sol xhigh 三次独立盲评并另行裁决。</p>
+<p>Verifier 首次域判断的三轮平均参考一致率为 86.7%，原链路为 81.7%；最终文档的独立参考通过却从 4/10 降到 1/10。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>10 条整链结果</th>
+<th align="right">原 Judge–Fix</th>
+<th align="right">Verifier</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内部准出</td>
+<td align="right">10/10</td>
+<td align="right">4/10</td>
+</tr>
+<tr>
+<td>独立参考确认通过</td>
+<td align="right">4/10</td>
+<td align="right">1/10</td>
+</tr>
+<tr>
+<td>已关闭的初始问题</td>
+<td align="right">133/145</td>
+<td align="right">15/145</td>
+</tr>
+<tr>
+<td>最终残余问题</td>
+<td align="right">24</td>
+<td align="right">130</td>
+</tr>
+<tr>
+<td>新增问题</td>
+<td align="right">12</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>总 token</td>
+<td align="right">16,066,280</td>
+<td align="right">7,045,365</td>
+</tr>
+<tr>
+<td>每份参考通过文档的 token</td>
+<td align="right">4,016,570</td>
+<td align="right">7,045,365</td>
+</tr>
+</tbody></table></div>
+<p>153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，32 个候选进入后续接纳比较。最终 6 条保留初始文档，从第 4 轮增加到第 24 轮也没有增加内部准出。新增问题少，主要伴随修改没有被采用；原来的 130 个问题仍在。</p>
+<figure class="figure-block result-figure" data-figure="verifier_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e2ea43c24fe2e6402600.svg" alt="Verifier 两项独立对照" width="1200" height="520" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 9　Verifier 两项独立对照</figcaption></figure>
+<p>这两项实验给出不同层次的结论：前置分析能帮助找问题，但完整链路还受 Fix 候选和接纳判断制约。整链中更少的新增问题伴随大量回退，不能单独作为修复质量提高的证据。预算从第 4 轮增加到第 24 轮不再新增准出，也不支持先增加循环次数。</p>
+
+<h3 id="article-21">6.4 失败案例</h3>
+<p>10 对修前/修后文档做三次独立接纳判断，正确数分别为 8、7、8，多数票仍是 8。H002 的错误图表三次均被接受，H003 的正确日期修改三次均被暂缓。重复投票没有解决这两类系统性误判。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>案例</th>
+<th>修改及判定</th>
+<th>暴露的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H002</td>
+<td>趋势图同时使用时间和处理阶段两个分类维度，三次被接受</td>
+<td>未识别组件能力边界</td>
+</tr>
+<tr>
+<td>H003</td>
+<td>只修改日期格式，三次把未改变的权限问题当作新增问题</td>
+<td>未准确区分旧问题和本次修改引入的问题</td>
+</tr>
+<tr>
+<td>H009</td>
+<td>两次正确拒绝，一次误接受</td>
+<td>多数票纠正了随机翻转</td>
+</tr>
+</tbody></table></div>
+<p>另一组 10 个单次修复事务固定 Luna medium，只把旧 Design Fix 输入改成结构化问题合同。它提供具体对象、证据、修复目标和约束，减少 Fix 需要读取的长提示词。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>单次修复，10 个事务</th>
+<th align="right">旧 Design Fix</th>
+<th align="right">结构化合同</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>结构有效</td>
+<td align="right">9/10</td>
+<td align="right">9/10</td>
+</tr>
+<tr>
+<td>全部原目标关闭</td>
+<td align="right">6/10</td>
+<td align="right">7/10</td>
+</tr>
+<tr>
+<td>有效候选中无新增问题</td>
+<td align="right">9/9</td>
+<td align="right">6/9</td>
+</tr>
+<tr>
+<td>可安全接纳</td>
+<td align="right">6/10</td>
+<td align="right">5/10</td>
+</tr>
+<tr>
+<td>token</td>
+<td align="right">171,682</td>
+<td align="right">127,719</td>
+</tr>
+</tbody></table></div>
+<p>结构化输入减少了约 25.6% token，但发生了业务含义替换：N02 把净现金流改成收入，N04 用创建人替代实际业务负责人。目标问题不再出现在列表中，并不足以证明原需求已满足。T01 的字段删除、T05 的补丁定位失败，则分别属于内容保护和写入问题。</p>
+<p>V12 因此继续保留具体对象、Query/Spec 证据、禁止项、合法能力取值和前一候选失败原因。已有对象匹配、目标关闭和候选去重机制需要检查实际判定，不能仅靠缩短输入或提高接纳率。</p>
+
+<h3 id="article-22">6.5 E2E 预实验</h3>
+<p>后续 V12 的另一组 10 条配对建表实验，正式 Mix 通过从 6/10 变成 5/10，均分从 9.16 增至 9.54。017、033 拉高均分，037、041 丢失全项通过。复核中，033/041 主要关联 CodeAct 和样例数据波动，037 涉及 Mix 对业务闭环的定义及复判次数差异。</p>
+<p>它提供了日期事实、跨域依赖、图表业务含义等反馈，但没有证明 Verifier 全链优于原方案；也不是前述 V11 十条整链实验的 E2E 结果。</p>
+
+<h2 id="article-23">7. 格式准出</h2>
+<h3 id="article-24">7.1 格式模块</h3>
+<p>设计即使在业务层被判通过，仍可能因为补丁无法写入、结构不合规或资源引用含糊而不能交付。格式路线检验的是：能否把表达问题从业务修复中分离，同时不让格式修改改变语义。</p>
+<p>格式模块在业务修复后检查下游要求的表达形式。只涉及表达的错误在本模块处理；需要改变字段来源、授权范围或业务资源的，交回对应 Fix。局部补丁后检查全文，避免修好一处却破坏其他章节。</p>
+<figure class="full-pipeline-figure wide figure-block" data-figure="format_candidate" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label">A · 全文校验</p><img src="/writing/assets/7a0517043f6245c980e2.svg" alt="A · 全文校验" width="1200" height="600" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">B · 复核问题</p><img src="/writing/assets/4af7638caa83ecfc7769.svg" alt="B · 复核问题" width="1200" height="800" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">C · 提交候选</p><img src="/writing/assets/deadf603ed66de7a47a9.svg" alt="C · 提交候选" width="1200" height="800" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 10　格式模块</figcaption></figure>
+<p>失败统计需要区分：补丁未写入、严格格式未过、候选改变业务含义、复核响应无法解析、格式后业务投票失败，以及业务回修仍未完成。它们发生在同一个阶段，但需要改的代码或提示词不同。</p>
+<h3 id="article-25">7.2 1,312 条恢复实验</h3>
+<p>补丁和协议恢复、Workflow/Permission 反馈回传等改动，先后在 398、383、273 条等继续修复集合上验证。这些集合有重叠。最终 1,312 条恢复实验准出 831 条，剩余 481 条的最后失败原因如下。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>最后失败原因，互不重复</th>
+<th align="right">条数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>格式补丁未成功写入</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td>严格格式仍不满足</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td>语义修复或投票预算耗尽</td>
+<td align="right">78</td>
+</tr>
+<tr>
+<td>格式后语义投票失败</td>
+<td align="right">42</td>
+</tr>
+<tr>
+<td>回交业务域后仍未解决</td>
+<td align="right">41</td>
+</tr>
+<tr>
+<td>候选语义不等价</td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td>复核输出协议失败</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td>格式职责内无法安全表达</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td>合计</td>
+<td align="right">481</td>
+</tr>
+</tbody></table></div>
+<p>这不是从原始输入重跑所有数据，而是对历史未准出集合继续修复。831 条与此前 3,168 条合并，形成累计 3,999/4,480（89.26%）的交付版本。前 3,168 条未在该轮全量重判，因此这个比例表示多轮累计交付，不是同一配置的一次通过率。</p>
+
+<h3 id="article-26">7.3 交付后的格式问题</h3>
+<p>“工作流非标准 Key”的 94 条扫描结果中，53 条来自旧准出，41 条来自恢复后准出。88 条是当前规则允许的通知正文 Key；另 6 条确有其他非标准 Key，旧准出 2 条、新恢复 4 条，均是此前已有却未被拦截的问题。</p>
+<p>随后拿到的 874 条索引全部匹配到历史准出 Spec，其中 424 条来自 3,999 集合，450 条来自 1,052 集合。扫描规则也混入了生成模板差异，例如双向关联、原生“新增/修改满足条件”触发不能仅凭字面形式判错。因此先逐项对齐产品规则，再统计确认错误数。</p>
+<p>独立格式后处理另外尝试了“全文检查→局部补丁→程序保护→完整 diff 复核→全文复查”。前两版因分号、权限竖线误改而停止；第三版完成 481 条，在线格式通过 445 条。补保护后离线保留 436 条，其中 432 条有修改，398 条只是移除标题加粗。由于未重新做业务检查和 E2E，新增 Judge–Fix 准出和数据交付均为零。</p>
+
+<h2 id="article-27">8. 提示词回归实验</h2>
+<h3 id="article-28">8.1 A—E 定向回归</h3>
+<p>这一系列检验：把 E2E 坏例归纳成通用规则后，能否减少同类缺口，而不引入无依据的收缩或扩写？早期用相同 checkpoint 检查可修复性，后期用原始 Building 50 同时检查准出和实际 Base。两种起点分别保留，避免把重复修复的效果当作提示词净收益。</p>
+<p>9 月提示词实验首先针对三类问题：应计算的结果被写成普通字段，角色必要权限被缩成只读，以及修复工作流时改变了原来的处理范围。</p>
+<p>计算案例中，Building Case 2 的“资源完成度”“培训完成度”仅有普通进度字段，没有计算或汇总来源。Judge 没指出生成方式缺失，Fix 就没有补；后续版本加入公式/Lookup 后，还需检查分母范围。规则因此要求对计算、汇总或条件判断产生的结果，核对其合法生成方式，而不是只查同名字段是否存在。</p>
+<p>首批比较使用 8 份相同 checkpoint，来自 6 条 Query；Case 2、49 各有两份历史文档。各组均从同一 checkpoint 开始。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>提示词改动</th>
+<th align="right">准出</th>
+<th>逐例结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MR102 对照（A）</td>
+<td align="right">3/8</td>
+<td>起点</td>
+</tr>
+<tr>
+<td>通用计算、权限、流程规则（B）</td>
+<td align="right">5/8</td>
+<td>有改善，仍有计算漏判和权限问题</td>
+</tr>
+<tr>
+<td>强化当前证据等约束（C）</td>
+<td align="right">2/8</td>
+<td>未保持 B 的收益</td>
+</tr>
+<tr>
+<td>B 吸收部分 C 改进（D）</td>
+<td align="right">6/8</td>
+<td>存在权限退化、计算漏判</td>
+</tr>
+<tr>
+<td>补计算链和权限保护（E）</td>
+<td align="right">5/8</td>
+<td>部分计算及可见性改善，仍有权限降级和补丁失败</td>
+</tr>
+</tbody></table></div>
+<p>E 的 <code>mr102-049</code> 保留了历史可见性，却连续遇到原文四处匹配、对象替换长度限制、标题不一致，三次修改均未应用。它需要检查补丁恢复，不能按三次有效修复失败处理。</p>
+
+<h3 id="article-29">8.2 F—J 提示词改动</h3>
+<p>排查完整请求时发现，部分入口传入 OriginalSpecDoc 后会追加“本次不是第一次 Judge，语气、风格、结构变化也算问题”，即使它实际是首轮。该运行时消息与域规则允许等价表达冲突。F/G 阶段明确以当前全文判断，历史仅用于核对真实功能损失。</p>
+<p>G 重点限制几类误改：不能因 Query 没逐字段授权就把角色设为全只读；保留必要关联输入；新增与编辑分别核对；拆流程不得扩大或缩小处理集合；不得删除办理动作、只留通知。14 条原始输入回归准出 9 条。H 增加完整输入、Lookup 类型和事件时序约束后为 8/14，Case 41、43 出现权限退化，未选为全量配置。</p>
+<p>G 扩到原始 Building 50，链内准出 31 条，CodeAgent E2E 通过也为 31 条，但两者交集只有 24 条。I 在 G 上吸收扫描和 E2E 问题，修正过 Judge 中的 Fix 语气、统一用 1/0 AVG 表示完成率等不当规则。I12 仍准出 31/50，却有五条新增、五条减少，调用 6,681→7,463。固定候选的前两票也频繁分歧，变化同时含有规则影响和模型波动。</p>
+<p>J 随后回到 G，明确 Workflow 记录筛选的左右值都不能沿 Link 下钻；同时要求替代写法保留记录身份、字段类型和原比较含义。后续 K/L/M 继续检验这些限制是否真正改善设计。</p>
+
+<h3 id="article-30">8.3 G/K E2E 对照</h3>
+<p>G/K 都从相同原始 50 条 Query＋Spec 开始。K 只修改 Workflow Judge、Table Fix 和 Non-Table Fix，Permission Judge 未变；两组使用 Luna medium（必要第三票 high）判断、Seed2 low 修复和路由。代码执行固定为同一 SFT CodeAgent、同一 SDK，分别创建独立 Base；E2E 固定 GPT-5.5 high、Building Mix、全部维度，不传 before Base，也不使用单 case 专属提示词。</p>
+<p>这样可以比较当次完整方案，但模型生成、辅助布局和 E2E 评审仍有波动。历史 G 的 62% 是另一轮结果；同期重跑的 G 才是 K 的直接对照。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>配置及实验</th>
+<th align="right">Judge–Fix 准出</th>
+<th align="right">CodeAgent E2E 通过</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>历史 G</td>
+<td align="right">31/50</td>
+<td align="right">31/50（62%）</td>
+</tr>
+<tr>
+<td>同期 G 复跑</td>
+<td align="right">30/50</td>
+<td align="right">30/50（60%）</td>
+</tr>
+<tr>
+<td>G 运行时＋筛选、身份、可配置约束（K）</td>
+<td align="right">27/50</td>
+<td align="right">26/50（52%）</td>
+</tr>
+<tr>
+<td>L 定向六例</td>
+<td align="right">1/6；G 同例为 2/6</td>
+<td align="right">未完成整组 E2E，未扩量</td>
+</tr>
+<tr>
+<td>后续 M</td>
+<td align="right">27/50</td>
+<td align="right">18/50（36%）</td>
+</tr>
+</tbody></table></div>
+<figure class="figure-block result-figure" data-figure="e2e_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/d74f771387ca6ecd7601.svg" alt="同期 G / K 对照" width="1200" height="590" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 11　同期 G / K 对照</figcaption></figure>
+<p>G/K 的 E2E 有 9 条由通过变失败、5 条由失败变通过，净少 4 条；K 的 Judge–Fix 调用增加 29.1%。这组结果没有支持整包替换 G。对照原始设计、修改反馈、代码和 Base，可以进一步定位具体退化。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>案例</th>
+<th>可核对的变化</th>
+<th>对修改方案的反馈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Building 41，权限</td>
+<td>原始管理员可编辑；K 的 Judge 建议缩为只读，Fix 接受，生成代码把七张表设成只读</td>
+<td>错误来自设计阶段的建议和修复，不能全部归给 CodeAgent</td>
+</tr>
+<tr>
+<td>Building 14，权限</td>
+<td>G、K 都发生只读退化，只有 K 的 E2E 报出</td>
+<td>共用规则也有缺陷，判定差异不是全部由新增提示词造成</td>
+</tr>
+<tr>
+<td>Building 38，筛选</td>
+<td>用 Lookup 替代关联下钻，却未写清单值/集合和比较语义</td>
+<td>替代必须保留原含义；撤掉能力边界不能解决此问题</td>
+</tr>
+<tr>
+<td>Building 50，可配置流程</td>
+<td>新增配置表并读取，维护权限、状态更新仍不完整</td>
+<td>修复只覆盖了配置载体，未完成使用流程</td>
+</tr>
+<tr>
+<td>L 的 Case 38</td>
+<td>原文重复匹配后已有对象替换兜底，格式检查通过；最终语义投票仅一票通过</td>
+<td>最后阻塞不在定位，重复新增稳定定位机制无助于该次失败</td>
+</tr>
+<tr>
+<td>M 的 Case 12</td>
+<td>格式候选把目标字段名写成字符串</td>
+<td>格式修改改变了赋值含义</td>
+</tr>
+<tr>
+<td>M 的 Case 34</td>
+<td>右值关联下钻、文本 ID 写入关联字段被拦</td>
+<td>Judge 找到真实能力问题，Fix 仍缺合法类型和记录身份替代</td>
+</tr>
+</tbody></table></div>
+<p>M/G 的 E2E 有 15 条通过转失败、3 条失败转通过。执行成功从 45/50 降到 39/50，首次编译成功从 34 降到 28，CodeAgent token 约 5.14M→9.88M。但 E2E Judge 同时从 <code>bc0c10a4</code> 更新到 <code>8aecccfd</code>，涉及 136 个文件，不能把净少的 12 条全部归因于 M 提示词。</p>
+
+<h3 id="article-31">8.4 E2E 失败归因</h3>
+<figure class="historical-figure wide figure-block" data-figure="e2e" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/f7b1c869606aacb84246.svg" alt="E2E 失败归因" width="1200" height="350" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 12　E2E 失败归因</figcaption></figure>
+<p>评测固定输入设计，分别检查代码是否编译、是否执行完成，以及实际 Base 是否满足 Building Mix 的业务要求。出现失败时，按需求、修前/修后文档、代码、Base、Judge 输入逐层核对。一个案例可以同时有设计和执行问题。</p>
+<p>历史评测处理过高级权限 Base 分组错误、旧 Base 复用、空模板表残留、专属 case 提示词索引错位、执行日志截断和 Viewer 绑定错误。这些都可能改变分数，应保留在实验配置和原始证据中。</p>
+<p>10 月又以 G 提示词从原始 50 条重跑，Judge–Fix 准出 28 条，CodeAct E2E 通过 24 条。CodeAgent 组 20 次请求均遇到 429，另 30 条未启动，没有可用于比较的业务分数。它不应被记成 CodeAgent 能力为 0%。</p>
+
+<h2 id="article-32">9. 结论</h2>
+<p>以下结论依据截至 2026-10-16 收录的实验和实现。后续修改建议尚未经过新实验验证。</p>
+<h3 id="article-33">9.1 主要结论</h3>
+<p>目前证据支持保留局部内容保护、Table 优先的依赖路由、同版本投票早停，以及格式修改后的业务核对。前两类主要解决修改范围和依赖，后两类控制评审波动和交付风险；它们不是一种机制的不同名称。</p>
+<p>具体业务规则在定向难例中产生过清楚收益，但整组增加约束没有稳定提高 E2E。G/K 中既有设计阶段真实退化，也有共用规则缺陷、执行问题和评审检出差异，不能只凭总分下降定位提示词责任。Verifier 已改善部分检查指标，完整修复仍受问题对象、补丁应用和接纳判断限制，尚不具备整体替代主链路的证据。</p>
+<h3 id="article-34">9.2 现有实现</h3>
+<p>局部补丁、输出恢复、有界对象替换、候选去重和回退、投票早停、格式恢复及业务回交都有实现。权限规则已包含职责核对，Table Fix 已要求计算结果有生成方式。历史失败需验证这些机制是否在相应入口生效，不再新增同名步骤。</p>
+
+<h3 id="article-35">9.3 必须修正的问题</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>已查到的问题</th>
+<th>修改范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Workflow Judge / Non-Table Fix</td>
+<td>一处禁止记录筛选沿关联字段下钻，另一处笼统允许“条件/筛选”下钻</td>
+<td>合并冲突表述，按节点和参数位置判断；记录筛选左右值均禁止下钻，合法的其他引用保持原规则</td>
+</tr>
+<tr>
+<td>Verifier <code>policy.py::_same_issue_semantics</code></td>
+<td>空对象或名称相互包含，可能直接被视为同一问题</td>
+<td>优先使用已有表、字段、角色等定位信息；无法唯一确认时标待确认，不依据包含关系直接合并</td>
+</tr>
+<tr>
+<td>Verifier <code>policy.py::_target_check</code></td>
+<td>修后列表中不再报同一问题，就可能被认定目标关闭</td>
+<td>读取现有 State/Transition 证据，核对原需求仍被满足；删除、改名、缺少覆盖证据时不能直接关闭</td>
+</tr>
+</tbody></table></div>
+<p>Workflow Judge 负责识别不支持的引用；Non-Table Fix 负责替换写法，且不能改变原需求。建议分别修改如下：</p>
+<p><strong>Judge 建议：</strong></p>
+<blockquote>
+<p>按字段引用所在的节点和参数位置判断能力。查找、修改记录的筛选条件左右值均不得沿关联字段下钻；其他位置的引用按相应能力规则判断。使用 Lookup 等替代时，核对来源、输出类型、单值或集合及比较语义。</p>
+</blockquote>
+<p><strong>Fix 建议：</strong></p>
+<blockquote>
+<p>替换不支持的筛选引用时，保持原比较含义和目标记录范围。明确替代字段的来源、类型、单值或集合；需要补表字段时，反馈具体资源缺口。不用近似字段或文字承诺代替实现。</p>
+</blockquote>
+<p>Building 38 是检查等义替代的用例。Verifier H003、N02/N04 分别说明对象比较和目标关闭需要验证，但尚未复现证明上述函数是这些历史案例的直接原因。此处修正具体判定，不追加全量 Judge，也不先建立新的全局对象 ID 系统。</p>
+
+<h3 id="article-36">9.4 验证方案</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>先验证的案例和反例</th>
+<th>再看整体结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Judge–Fix 提示词</td>
+<td>Building 38 的非法筛选与合法引用；2 的计算结果与允许手工记录的反例；14/41 的职责权限与明确只读；50 的配置维护</td>
+<td>固定原始 Building 50、G 运行时、模型和预算；分别统计准出、原问题、新问题、调用成本，再做同版本 CodeAgent E2E</td>
+</tr>
+<tr>
+<td>Verifier 判定</td>
+<td>H003 的正确修改应接受，H002 的错误图表应拒绝；N02/N04 不得改变指标或负责人含义</td>
+<td>固定修前/修后对和修复事务，再测原始输入整链；同时统计误接纳、误拒绝、目标关闭和每份合格文档成本</td>
+</tr>
+<tr>
+<td>补丁及重复候选</td>
+<td>T01 的删除、T05 的锚点失败；核对实际写入、重复哈希和下一轮反馈</td>
+<td>只有当前版本仍出现同类失败，才修改具体恢复分支，不重新加入已有去重机制</td>
+</tr>
+</tbody></table></div>
+<p>稳定对象 ID、全文重写、更多投票、扩大修复预算和替换模型暂不列为默认改动。现有对照没有支持将它们组合启用。下一轮先验证上述明确缺口，再决定是否扩大到完整数据集。</p>
+
+
+</article>
+</main></div>
+<dialog id="image-dialog" aria-label="放大流程图"><div class="zoom-tools"><strong id="zoom-title">流程图</strong><button id="zoom-fit">适合窗口</button><button id="zoom-natural">原字号</button><button id="zoom-close">关闭</button></div><div class="zoom-area"><img id="zoom-image" alt=""></div></dialog><div id="notice" role="status"></div>
+<script>
+function showImage(image) {
+  const zoom = document.getElementById('zoom-image');
+  zoom.src = image.src;
+  zoom.alt = image.alt;
+  zoom.dataset.naturalWidth = image.dataset.naturalWidth || image.naturalWidth;
+  zoom.style.width = zoom.dataset.naturalWidth + 'px';
+  document.getElementById('zoom-title').textContent = image.alt;
+  document.getElementById('image-dialog').showModal();
+}
+document.addEventListener('click', event => {
+  const image = event.target.closest('img[data-zoom]');
+  if (image) showImage(image);
+});
+document.getElementById('zoom-close').addEventListener('click', () => document.getElementById('image-dialog').close());
+document.getElementById('zoom-natural').addEventListener('click', () => {
+  const image = document.getElementById('zoom-image');
+  image.style.width = image.dataset.naturalWidth + 'px';
+});
+document.getElementById('zoom-fit').addEventListener('click', () => { document.getElementById('zoom-image').style.width = '100%'; });
+const narrow = matchMedia('(max-width:1279px)');
+const updateToc = () => { document.querySelector('.toc-panel').open = !narrow.matches; };
+updateToc();
+narrow.addEventListener('change', updateToc);
+const headings = [...document.querySelectorAll('#article>h2')];
+const links = [...document.querySelectorAll('#report-toc a')];
+let queued = false;
+function markSection() {
+  queued = false;
+  let active = headings[0];
+  for (const heading of headings) if (heading.getBoundingClientRect().top < 160) active = heading;
+  for (const link of links) {
+    if (active && link.getAttribute('href') === '#' + active.id) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
+}
+window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(markSection); } }, {passive:true});
+markSection();
+</script></body></html>

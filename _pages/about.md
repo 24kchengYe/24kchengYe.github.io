@@ -391,6 +391,12 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 </section>
 
 
+<section class="section reading-entry" id="reading">
+<h2><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></h2>
+<a href="{{ '/reading/' | relative_url }}"><span lang="en">Foundation Models →</span><span lang="zh">基模阅读 →</span><span lang="ja">基盤モデル →</span></a>
+<p><span lang="en">Technical reports on architectures, post-training, and agents.</span><span lang="zh">基模技术报告：架构、后训练与智能体。</span><span lang="ja">アーキテクチャ、事後学習、エージェントの技術レポート。</span></p>
+</section>
+
 <section class="section " id="experience" markdown="block">
 
 ## <span lang="en">Experience</span><span lang="zh">经历</span><span lang="ja">経歴</span>

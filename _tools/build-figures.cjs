@@ -168,6 +168,14 @@ function buildFigures() {
       const output = item.format === 'svg' ? localizeVector(source, language) : localizeLayout(source, item, language);
       const validation = new JSDOM(output, { contentType: 'image/svg+xml' });
       if (validation.window.document.querySelector('parsererror,script,image')) throw new Error(`Unsafe or invalid SVG: ${name}`);
+      for (const element of validation.window.document.querySelectorAll('*')) {
+        for (const attribute of element.attributes) {
+          const reference = attribute.value.match(/^#([\w-]+)$|url\(#([\w-]+)\)/);
+          if ((attribute.localName === 'href' || attribute.value.startsWith('url(')) && reference && !validation.window.document.getElementById(reference[1] || reference[2])) {
+            throw new Error(`Missing SVG definition in ${name}: ${attribute.value}`);
+          }
+        }
+      }
       validation.window.close();
       if (language === 'en' && /[\u3400-\u9fff]/u.test(output)) throw new Error(`Untranslated figure: ${name}`);
       fs.writeFileSync(path.join(directory, `${name}.svg`), output + '\n');

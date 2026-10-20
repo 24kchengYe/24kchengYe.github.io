@@ -15,6 +15,17 @@ const navigation = slug => `<nav class="report-site-nav" aria-label="Writing">
   </div>
 </nav>`;
 
+function sizeFigures(document) {
+  for (const image of document.querySelectorAll('img[src^="/writing/assets/"]')) {
+    const source = image.getAttribute('src');
+    if (!source.endsWith('.png')) continue;
+    const bytes = fs.readFileSync(path.join(root, source));
+    if (bytes.subarray(1, 4).toString() !== 'PNG') throw new Error(`Invalid PNG: ${source}`);
+    image.width = bytes.readUInt32BE(16);
+    image.height = bytes.readUInt32BE(20);
+  }
+}
+
 function build(slug) {
   const source = fs.readFileSync(path.join(root, '_data/writing', `${slug}.html`), 'utf8');
   const translations = JSON.parse(fs.readFileSync(path.join(root, '_data/writing', `${slug}.json`), 'utf8'));
@@ -54,6 +65,7 @@ function build(slug) {
   document.querySelector('h1').setAttribute('data-page-title', '');
   document.querySelector('link[rel="canonical"]').href = `https://24kchengye.github.io/writing/${slug}/`;
   document.querySelector('meta[property="og:url"]').content = `https://24kchengye.github.io/writing/${slug}/`;
+  sizeFigures(document);
   document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   document.body.insertAdjacentHTML('afterbegin', navigation(slug));
   const figureNote = document.createElement('p');
@@ -80,6 +92,7 @@ for (const slug of slugs) {
   const dom = new JSDOM(fs.readFileSync(file, 'utf8'));
   dom.window.document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);
   dom.window.document.querySelector('.report-site-nav a:nth-child(2)').href = `/writing/${slug}/`;
+  sizeFigures(dom.window.document);
   dom.window.document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   fs.writeFileSync(file, dom.serialize() + '\n');
   dom.window.close();

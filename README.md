@@ -5,7 +5,7 @@ from [Andrej Karpathy's homepage](https://karpathy.ai/): text, whitespace, and
 ordinary links. English, Chinese, and Japanese are available from the language
 switcher.
 
-The page shows a short introduction, four research entries, three projects, and
+The page shows a short introduction, five research entries, three projects, and
 experience. Additional papers, descriptions, news, and background remain
 available in native expandable sections. Publication status is shown alongside
 each paper.

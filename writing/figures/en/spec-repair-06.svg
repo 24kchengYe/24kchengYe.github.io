@@ -36,14 +36,14 @@
    <g id="patch_9">
     <path d="M 356.4 171  L 507.6 171  Q 531 171 531 194.4  L 531 194.4  Q 531 217.8 507.6 217.8  L 356.4 217.8  Q 333 217.8 333 194.4  L 333 194.4  Q 333 171 356.4 171  z " clip-path="url(#pa4dd84a71f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="144" y="83.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">Format release gate</text></g>
+   <g id="text_1"><text x="144" y="83.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Format release gate</text></g>
    <g id="text_2"><text x="395.46" y="83.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Final Result</text></g>
-   <g id="text_3"><text x="720.381563" y="83.874688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="111" lengthAdjust="spacingAndGlyphs">Result / document / trace</text></g>
-   <g id="text_4"><text x="144.858438" y="199.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="90" lengthAdjust="spacingAndGlyphs">Normal Table Fix</text></g>
-   <g id="text_5"><text x="432.999219" y="199.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="123" lengthAdjust="spacingAndGlyphs">Normal Non-Table Fix</text></g>
+   <g id="text_3"><text x="720.381563" y="83.874688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Result / document / trace</text></g>
+   <g id="text_4"><text x="144.858438" y="199.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">Normal Table Fix</text></g>
+   <g id="text_5"><text x="432.999219" y="199.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">Normal Non-Table Fix</text></g>
    <g id="text_6"><text x="288.377813" y="57.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Pass / fail</text></g>
-   <g id="text_7"><text x="82.8" y="148.054688" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Includes Table gap</text></g>
-   <g id="text_8"><text x="367.2" y="144.419062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="72" lengthAdjust="spacingAndGlyphs">Non-Table gap only</text></g>
+   <g id="text_7"><text x="82.8" y="148.054688" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">Includes Table gap</text></g>
+   <g id="text_8"><text x="367.2" y="144.419062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">Non-Table gap only</text></g>
   </g>
  </g>
  <defs>

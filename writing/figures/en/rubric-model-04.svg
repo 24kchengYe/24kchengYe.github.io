@@ -41,13 +41,13 @@
    <g id="patch_10">
     <path d="M 645.8724 203.85  L 743.7276 203.85  Q 752.3676 203.85 752.3676 195.21  L 752.3676 164.79  Q 752.3676 156.15 743.7276 156.15  L 645.8724 156.15  Q 637.2324 156.15 637.2324 164.79  L 637.2324 195.21  Q 637.2324 203.85 645.8724 203.85  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="115.55" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="124" lengthAdjust="spacingAndGlyphs">Query · Design · Rules</text></g>
-   <g id="text_2"><text x="316.9" y="184.560602" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">Independent reviews</text></g>
-   <g id="text_3"><text x="504.1" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">Merge candidates</text></g>
-   <g id="text_4"><text x="694.9" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">Check evidence</text></g>
-   <g id="text_5"><text x="903.731336" y="76.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="109" lengthAdjust="spacingAndGlyphs">Full labels / no issues</text></g>
-   <g id="text_6"><text x="903.7" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">Partial labels</text></g>
-   <g id="text_7"><text x="903.85" y="292.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="69" lengthAdjust="spacingAndGlyphs">Pending records</text></g>
+   <g id="text_1"><text x="115.55" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Query · Design · Rules</text></g>
+   <g id="text_2"><text x="316.9" y="184.560602" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="71.59680000000003" lengthAdjust="spacingAndGlyphs">Independent reviews</text></g>
+   <g id="text_3"><text x="504.1" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="71.59680000000003" lengthAdjust="spacingAndGlyphs">Merge candidates</text></g>
+   <g id="text_4"><text x="694.9" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Check evidence</text></g>
+   <g id="text_5"><text x="903.731336" y="76.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Full labels / no issues</text></g>
+   <g id="text_6"><text x="903.7" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Partial labels</text></g>
+   <g id="text_7"><text x="903.85" y="292.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">Pending records</text></g>
   </g>
  </g>
  <defs>

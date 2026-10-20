@@ -20,20 +20,20 @@
    <g id="line2d_4">
     <path d="M 50.976 226.008  L 807.12 226.008  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
-   <g id="text_1"><text x="81.47200000000001" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="44" lengthAdjust="spacingAndGlyphs">Training target</text></g>
-   <g id="text_2"><text x="429.808" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="44" lengthAdjust="spacingAndGlyphs">Reasoning</text></g>
+   <g id="text_1"><text x="81.47200000000001" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Training target</text></g>
+   <g id="text_2"><text x="429.808" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Reasoning</text></g>
    <g id="text_3"><text x="585.732" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Steps</text></g>
-   <g id="text_4"><text x="736.168" y="35.458188" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs">Scoreable / 792</text></g>
-   <g id="text_5"><text x="112.97200000000001" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="107" lengthAdjust="spacingAndGlyphs">Answer: rationale + verdict</text></g>
-   <g id="text_6"><text x="419.808" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="25.96" lengthAdjust="spacingAndGlyphs">Closed</text></g>
+   <g id="text_4"><text x="736.168" y="35.458188" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Scoreable / 792</text></g>
+   <g id="text_5"><text x="112.97200000000001" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Answer: rationale + verdict</text></g>
+   <g id="text_6"><text x="419.808" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Closed</text></g>
    <g id="text_7"><text x="569.232" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">354</text></g>
    <g id="text_8"><text x="705.168" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">786</text></g>
-   <g id="text_9"><text x="136.472" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="154" lengthAdjust="spacingAndGlyphs">Reasoning: rationale; answer: verdict</text></g>
+   <g id="text_9"><text x="136.472" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Reasoning: rationale; answer: verdict</text></g>
    <g id="text_10"><text x="419.808" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">On</text></g>
    <g id="text_11"><text x="569.232" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">362</text></g>
    <g id="text_12"><text x="705.168" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">792</text></g>
-   <g id="text_13"><text x="77.47200000000001" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="36" lengthAdjust="spacingAndGlyphs">Verdict only</text></g>
-   <g id="text_14"><text x="419.808" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="25.96" lengthAdjust="spacingAndGlyphs">Closed</text></g>
+   <g id="text_13"><text x="77.47200000000001" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Verdict only</text></g>
+   <g id="text_14"><text x="419.808" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Closed</text></g>
    <g id="text_15"><text x="569.232" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">342</text></g>
    <g id="text_16"><text x="705.168" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">784</text></g>
   </g>
@@ -70,20 +70,20 @@
      <g id="line2d_12"/>
      <g id="text_20"><text x="387.108173" y="468.736" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">60</text></g>
     </g>
-    <g id="text_21"><text x="293.227625" y="492.629125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" text-anchor="middle" textLength="94" lengthAdjust="spacingAndGlyphs">Error-type F1 (%)</text></g>
+    <g id="text_21"><text x="293.227625" y="492.629125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" text-anchor="middle">Error-type F1 (%)</text></g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_13"/>
-     <g id="text_22"><text x="138.668" y="318.322016" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="58" lengthAdjust="spacingAndGlyphs">Rationale in answer</text></g>
+     <g id="text_22"><text x="138.668" y="318.322016" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Rationale in answer</text></g>
     </g>
     <g id="ytick_2">
      <g id="line2d_14"/>
-     <g id="text_23"><text x="132.668" y="372.5775" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="69" lengthAdjust="spacingAndGlyphs">Rationale in reasoning</text></g>
+     <g id="text_23"><text x="132.668" y="372.5775" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Rationale in reasoning</text></g>
     </g>
     <g id="ytick_3">
      <g id="line2d_15"/>
-     <g id="text_24"><text x="150.168" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="35" lengthAdjust="spacingAndGlyphs">Verdict only</text></g>
+     <g id="text_24"><text x="150.168" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Verdict only</text></g>
     </g>
    </g>
    <g id="patch_3">
@@ -101,7 +101,7 @@
     <path d="M 174.168 418.106323  L 362.721689 418.106323  L 362.721689 426.244645  L 174.168 426.244645  z " clip-path="url(#p195b1ce1e1)" style="fill: #78a641"/>
    </g>
    <g id="text_27"><text x="367.84543" y="426.237671" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">51.52</text></g>
-   <g id="text_28"><text x="194.668" y="270.36864" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="41" lengthAdjust="spacingAndGlyphs">Sol reference</text></g>
+   <g id="text_28"><text x="194.668" y="270.36864" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Sol reference</text></g>
   </g>
   <g id="axes_3">
    <g id="patch_7">
@@ -136,20 +136,20 @@
      <g id="line2d_23"/>
      <g id="text_32"><text x="786.420173" y="468.736" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">60</text></g>
     </g>
-    <g id="text_33"><text x="692.539625" y="492.629125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" text-anchor="middle" textLength="94" lengthAdjust="spacingAndGlyphs">Error-type F1 (%)</text></g>
+    <g id="text_33"><text x="692.539625" y="492.629125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" text-anchor="middle">Error-type F1 (%)</text></g>
    </g>
    <g id="matplotlib.axis_4">
     <g id="ytick_4">
      <g id="line2d_24"/>
-     <g id="text_34"><text x="537.98" y="318.322016" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="58" lengthAdjust="spacingAndGlyphs">Rationale in answer</text></g>
+     <g id="text_34"><text x="537.98" y="318.322016" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Rationale in answer</text></g>
     </g>
     <g id="ytick_5">
      <g id="line2d_25"/>
-     <g id="text_35"><text x="531.98" y="372.5775" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="69" lengthAdjust="spacingAndGlyphs">Rationale in reasoning</text></g>
+     <g id="text_35"><text x="531.98" y="372.5775" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Rationale in reasoning</text></g>
     </g>
     <g id="ytick_6">
      <g id="line2d_26"/>
-     <g id="text_36"><text x="549.48" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="35" lengthAdjust="spacingAndGlyphs">Verdict only</text></g>
+     <g id="text_36"><text x="549.48" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">Verdict only</text></g>
     </g>
    </g>
    <g id="patch_8">
@@ -167,7 +167,7 @@
     <path d="M 573.48 418.106323  L 780.479158 418.106323  L 780.479158 426.244645  L 573.48 426.244645  z " clip-path="url(#p911202069f)" style="fill: #78a641"/>
    </g>
    <g id="text_39"><text x="785.6029" y="426.237671" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">56.56</text></g>
-   <g id="text_40"><text x="615.98" y="270.36864" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="85" lengthAdjust="spacingAndGlyphs">DeepSeek reference</text></g>
+   <g id="text_40"><text x="615.98" y="270.36864" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">DeepSeek reference</text></g>
   </g>
  </g>
  <defs>

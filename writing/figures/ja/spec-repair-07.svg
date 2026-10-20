@@ -84,22 +84,22 @@
     <path d="M 509.4 376.2  L 642.6 376.2  Q 666 376.2 666 399.6  L 666 399.6  Q 666 423 642.6 423  L 509.4 423  Q 486 423 486 399.6  L 486 399.6  Q 486 376.2 509.4 376.2  z " clip-path="url(#pa2513c75b8)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_1"><text x="104.995" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">一回のFixへ</text></g>
-   <g id="text_2"><text x="327.6" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="126" lengthAdjust="spacingAndGlyphs">目標全合格、未解決なし？</text></g>
+   <g id="text_2"><text x="327.6" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">目標全合格、未解決なし？</text></g>
    <g id="text_3"><text x="576.4615630000001" y="62.492344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">no-op → 主系統</text></g>
-   <g id="text_4"><text x="327.6" y="170.344688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="84" lengthAdjust="spacingAndGlyphs">今回入力を固定</text></g>
-   <g id="text_5"><text x="576" y="170.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="126" lengthAdjust="spacingAndGlyphs">問題整理、修復計画</text></g>
+   <g id="text_4"><text x="327.6" y="170.344688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">今回入力を固定</text></g>
+   <g id="text_5"><text x="576" y="170.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">問題整理、修復計画</text></g>
    <g id="text_6"><text x="576.490781" y="285.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Seed2候補生成</text></g>
    <g id="text_7"><text x="327.6" y="285.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">解析、適用確認</text></g>
    <g id="text_8"><text x="104.609219" y="276.457484" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Luna出力復旧</text></g>
-   <g id="text_9"><text x="104.4" y="404.282344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="112" lengthAdjust="spacingAndGlyphs">出力規約を再確認</text></g>
-   <g id="text_10"><text x="327.6" y="394.90032" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">候補却下</text></g>
+   <g id="text_9"><text x="104.4" y="404.282344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">出力規約を再確認</text></g>
+   <g id="text_10"><text x="327.6" y="394.90032" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">候補却下</text></g>
    <g id="text_11"><text x="575.564219" y="404.36" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">局所Judge</text></g>
    <g id="text_12"><text x="448.2" y="49.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">はい</text></g>
-   <g id="text_13"><text x="360" y="115.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="26.400000000000002" lengthAdjust="spacingAndGlyphs">いいえ</text></g>
-   <g id="text_14"><text x="216" y="255.994687" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="96" lengthAdjust="spacingAndGlyphs">復旧可能、残予算あり</text></g>
-   <g id="text_15"><text x="392.777813" y="345.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="84" lengthAdjust="spacingAndGlyphs">異常 / 復旧不可</text></g>
+   <g id="text_13"><text x="360" y="115.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">いいえ</text></g>
+   <g id="text_14"><text x="216" y="255.994687" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">復旧可能、残予算あり</text></g>
+   <g id="text_15"><text x="392.777813" y="345.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">異常 / 復旧不可</text></g>
    <g id="text_16"><text x="514.8" y="349.619062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">有効</text></g>
-   <g id="text_17"><text x="213.3" y="391.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="36" lengthAdjust="spacingAndGlyphs">失敗継続</text></g>
+   <g id="text_17"><text x="213.3" y="391.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">失敗継続</text></g>
    <g id="text_18"><text x="342" y="454.019063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">有効</text></g>
   </g>
  </g>

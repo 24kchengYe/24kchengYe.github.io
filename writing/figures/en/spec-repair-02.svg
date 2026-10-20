@@ -87,21 +87,21 @@
      <use xlink:href="#m8094eb55f6" x="734.4" y="248.4" style="fill: #76a943; stroke: #76a943"/>
     </g>
    </g>
-   <g id="text_1"><text x="78.4" y="58.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">Repair methods</text></g>
-   <g id="text_2"><text x="78.4" y="123.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">Checking cost</text></g>
-   <g id="text_3"><text x="78.4" y="188.239688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">Data delivery</text></g>
+   <g id="text_1"><text x="78.4" y="58.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Repair methods</text></g>
+   <g id="text_2"><text x="78.4" y="123.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Checking cost</text></g>
+   <g id="text_3"><text x="78.4" y="188.239688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Data delivery</text></g>
    <g id="text_4"><text x="50.4" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Verifier</text></g>
-   <g id="text_5"><text x="252.023594" y="40.328594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="95" lengthAdjust="spacingAndGlyphs">June · Local protection</text></g>
-   <g id="text_6"><text x="489.942188" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="146" lengthAdjust="spacingAndGlyphs">Aug · Models / history / patches</text></g>
-   <g id="text_7"><text x="734.423594" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="108" lengthAdjust="spacingAndGlyphs">Sep · Prompt regression</text></g>
-   <g id="text_8"><text x="252.023594" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="108" lengthAdjust="spacingAndGlyphs">July · Same-version voting</text></g>
-   <g id="text_9"><text x="489.623594" y="105.114375" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="121" lengthAdjust="spacingAndGlyphs">Aug · Fewer duplicate calls</text></g>
-   <g id="text_10"><text x="734.822188" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="116" lengthAdjust="spacingAndGlyphs">Aug–Sep · Mixed effort</text></g>
+   <g id="text_5"><text x="252.023594" y="40.328594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">June · Local protection</text></g>
+   <g id="text_6"><text x="489.942188" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Aug · Models / history / patches</text></g>
+   <g id="text_7"><text x="734.423594" y="40.302188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Sep · Prompt regression</text></g>
+   <g id="text_8"><text x="252.023594" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">July · Same-version voting</text></g>
+   <g id="text_9"><text x="489.623594" y="105.114375" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Aug · Fewer duplicate calls</text></g>
+   <g id="text_10"><text x="734.822188" y="105.102188" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Aug–Sep · Mixed effort</text></g>
    <g id="text_11"><text x="251.779688" y="169.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">July · Spec / Plan</text></g>
-   <g id="text_12"><text x="734.423594" y="169.928594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="134" lengthAdjust="spacingAndGlyphs">Sep · Recover unreleased cases</text></g>
-   <g id="text_13"><text x="252.105078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="125" lengthAdjust="spacingAndGlyphs">Jul 23 · Before/after checks</text></g>
-   <g id="text_14"><text x="489.705078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="112" lengthAdjust="spacingAndGlyphs">Aug 13 · Staged scoring</text></g>
-   <g id="text_15"><text x="734.505078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="99" lengthAdjust="spacingAndGlyphs">Aug 14 · Full-pipeline test</text></g>
+   <g id="text_12"><text x="734.423594" y="169.928594" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Sep · Recover unreleased cases</text></g>
+   <g id="text_13"><text x="252.105078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Jul 23 · Before/after checks</text></g>
+   <g id="text_14"><text x="489.705078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Aug 13 · Staged scoring</text></g>
+   <g id="text_15"><text x="734.505078" y="234.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Aug 14 · Full-pipeline test</text></g>
   </g>
  </g>
  <defs>

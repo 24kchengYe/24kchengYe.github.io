@@ -32,29 +32,29 @@
    <g id="line2d_8">
     <path d="M 543.6 97.2  L 665.28 97.2  " clip-path="url(#p89ea2c1ecc)" style="fill: none; stroke: #76a943; stroke-width: 5"/>
    </g>
-   <g id="text_1"><text x="66" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Pipeline release</text></g>
+   <g id="text_1"><text x="66" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Pipeline release</text></g>
    <g id="text_2"><text x="36" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">G</text></g>
    <g id="text_3"><text x="347.76" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">30/50</text></g>
    <g id="text_4"><text x="36" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">K</text></g>
    <g id="text_5"><text x="347.76" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">27/50</text></g>
    <g id="text_6"><text x="97.752656" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">0</text></g>
    <g id="text_7"><text x="328.705312" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">50</text></g>
-   <g id="text_8"><text x="524.8" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="92" lengthAdjust="spacingAndGlyphs">Formal E2E pass</text></g>
+   <g id="text_8"><text x="524.8" y="30.164062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Formal E2E pass</text></g>
    <g id="text_9"><text x="478.8" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">G</text></g>
    <g id="text_10"><text x="790.56" y="61.902187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">30/50</text></g>
    <g id="text_11"><text x="478.8" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">K</text></g>
    <g id="text_12"><text x="790.56" y="101.502187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">26/50</text></g>
    <g id="text_13"><text x="540.552656" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">0</text></g>
    <g id="text_14"><text x="771.505313" y="129.640312" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">50</text></g>
-   <g id="text_15"><text x="66" y="220.964063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">Case-level changes</text></g>
+   <g id="text_15"><text x="66" y="220.964063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="116" lengthAdjust="spacingAndGlyphs">Case-level changes</text></g>
    <g id="text_16"><text x="106.607813" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">21</text></g>
-   <g id="text_17"><text x="126" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="52" lengthAdjust="spacingAndGlyphs">Both pass</text></g>
+   <g id="text_17"><text x="126" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Both pass</text></g>
    <g id="text_18"><text x="328.703906" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">9</text></g>
-   <g id="text_19"><text x="338.55" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="77" lengthAdjust="spacingAndGlyphs">G pass / K fail</text></g>
+   <g id="text_19"><text x="338.55" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">G pass / K fail</text></g>
    <g id="text_20"><text x="541.103906" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943">5</text></g>
-   <g id="text_21"><text x="550.95" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="77" lengthAdjust="spacingAndGlyphs">G fail / K pass</text></g>
+   <g id="text_21"><text x="550.95" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">G fail / K pass</text></g>
    <g id="text_22"><text x="743.807813" y="303.182812" font-size="35" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">15</text></g>
-   <g id="text_23"><text x="763.2" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="52" lengthAdjust="spacingAndGlyphs">Both fail</text></g>
+   <g id="text_23"><text x="763.2" y="342.702187" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Both fail</text></g>
   </g>
  </g>
  <defs>

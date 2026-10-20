@@ -65,19 +65,19 @@
    <g id="patch_17">
     <path d="M 603 279  L 829.8 279  Q 837 279 837 286.2  L 837 318.6  Q 837 325.8 829.8 325.8  L 603 325.8  Q 595.8 325.8 595.8 318.6  L 595.8 286.2  Q 595.8 279 603 279  z " clip-path="url(#p5194867287)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="111.6" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="98" lengthAdjust="spacingAndGlyphs">任意の意味出荷点</text></g>
-   <g id="text_2"><text x="370.8" y="53.206406" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="84" lengthAdjust="spacingAndGlyphs">入口版を保存</text></g>
-   <g id="text_3"><text x="716.4" y="52.997008" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">形式調整</text></g>
-   <g id="text_4"><text x="716.4" y="181.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">結果を書き込み</text></g>
-   <g id="text_5"><text x="370.8" y="171.976602" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="84" lengthAdjust="spacingAndGlyphs">失敗出力を破棄</text></g>
+   <g id="text_1"><text x="111.6" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">任意の意味出荷点</text></g>
+   <g id="text_2"><text x="370.8" y="53.206406" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">入口版を保存</text></g>
+   <g id="text_3"><text x="716.4" y="52.997008" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">形式調整</text></g>
+   <g id="text_4"><text x="716.4" y="181.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">結果を書き込み</text></g>
+   <g id="text_5"><text x="370.8" y="171.976602" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">失敗出力を破棄</text></g>
    <g id="text_6"><text x="370.914219" y="298.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Validator全文確認</text></g>
-   <g id="text_7"><text x="716.4" y="307.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="140" lengthAdjust="spacingAndGlyphs">規約正常かつ意味等価？</text></g>
-   <g id="text_8"><text x="716.4" y="389.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="70" lengthAdjust="spacingAndGlyphs">再確認する問題</text></g>
-   <g id="text_9"><text x="111.6" y="297.941602" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="98" lengthAdjust="spacingAndGlyphs">作業文書を進めない</text></g>
+   <g id="text_7"><text x="716.4" y="307.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">規約正常かつ意味等価？</text></g>
+   <g id="text_8"><text x="716.4" y="389.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">再確認する問題</text></g>
+   <g id="text_9"><text x="111.6" y="297.941602" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">作業文書を進めない</text></g>
    <g id="text_10"><text x="550.65125" y="168.13125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">書込失敗 / handoff</text></g>
-   <g id="text_11"><text x="475.577813" y="245.23125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="72" lengthAdjust="spacingAndGlyphs">有効 / 変更なし</text></g>
+   <g id="text_11"><text x="475.577813" y="245.23125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">有効 / 変更なし</text></g>
    <g id="text_12"><text x="748.8" y="349.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">はい</text></g>
-   <g id="text_13"><text x="414" y="353.213438" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="72" lengthAdjust="spacingAndGlyphs">いいえ、免除不可</text></g>
+   <g id="text_13"><text x="414" y="353.213438" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">いいえ、免除不可</text></g>
   </g>
  </g>
  <defs>

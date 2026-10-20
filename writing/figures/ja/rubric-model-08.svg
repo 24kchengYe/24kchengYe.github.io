@@ -21,9 +21,9 @@
     <path d="M 50.976 226.008  L 807.12 226.008  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="text_1"><text x="81.47200000000001" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">学習目標</text></g>
-   <g id="text_2"><text x="429.808" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="44" lengthAdjust="spacingAndGlyphs">推論モード</text></g>
-   <g id="text_3"><text x="585.732" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="33" lengthAdjust="spacingAndGlyphs">学習step</text></g>
-   <g id="text_4"><text x="736.168" y="35.458188" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs">採点可能 / 792</text></g>
+   <g id="text_2"><text x="429.808" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">推論モード</text></g>
+   <g id="text_3"><text x="585.732" y="35.259672" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">学習step</text></g>
+   <g id="text_4"><text x="736.168" y="35.458188" font-size="11" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">採点可能 / 792</text></g>
    <g id="text_5"><text x="112.97200000000001" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">回答：理由＋裁定</text></g>
    <g id="text_6"><text x="419.808" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">解消</text></g>
    <g id="text_7"><text x="569.232" y="93.346484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">354</text></g>
@@ -32,7 +32,7 @@
    <g id="text_10"><text x="419.808" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">有効</text></g>
    <g id="text_11"><text x="569.232" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">362</text></g>
    <g id="text_12"><text x="705.168" y="145.906484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">792</text></g>
-   <g id="text_13"><text x="77.47200000000001" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="36" lengthAdjust="spacingAndGlyphs">裁定のみ</text></g>
+   <g id="text_13"><text x="77.47200000000001" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">裁定のみ</text></g>
    <g id="text_14"><text x="419.808" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">解消</text></g>
    <g id="text_15"><text x="569.232" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">342</text></g>
    <g id="text_16"><text x="705.168" y="198.466484" font-size="11.799999999999999" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">784</text></g>
@@ -83,7 +83,7 @@
     </g>
     <g id="ytick_3">
      <g id="line2d_15"/>
-     <g id="text_24"><text x="150.168" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="35" lengthAdjust="spacingAndGlyphs">裁定のみ</text></g>
+     <g id="text_24"><text x="150.168" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">裁定のみ</text></g>
     </g>
    </g>
    <g id="patch_3">
@@ -149,7 +149,7 @@
     </g>
     <g id="ytick_6">
      <g id="line2d_26"/>
-     <g id="text_36"><text x="549.48" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="35" lengthAdjust="spacingAndGlyphs">裁定のみ</text></g>
+     <g id="text_36"><text x="549.48" y="426.832984" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">裁定のみ</text></g>
     </g>
    </g>
    <g id="patch_8">

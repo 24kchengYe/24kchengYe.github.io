@@ -109,14 +109,14 @@
       <use xlink:href="#m5b2fe3683a" x="594.886" y="21.697139" style="fill: #ffffff; stroke: #7a7a7a"/>
      </g>
     </g>
-    <g id="text_18"><text x="638.586" y="25.722139" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="46" lengthAdjust="spacingAndGlyphs">重複除去で採点</text></g>
+    <g id="text_18"><text x="638.586" y="25.722139" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">重複除去で採点</text></g>
     <g id="line2d_19">
      <path d="M 684.586 21.697139  L 696.086 21.697139  L 707.586 21.697139  " style="fill: none; stroke: #78a641; stroke-width: 1.25; stroke-linecap: square"/>
      <g>
       <use xlink:href="#m87626e0550" x="696.086" y="21.697139" style="fill: #78a641; stroke: #78a641; stroke-linejoin: miter"/>
      </g>
     </g>
-    <g id="text_19"><text x="739.786" y="25.722139" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle" textLength="46" lengthAdjust="spacingAndGlyphs">件数で採点</text></g>
+    <g id="text_19"><text x="739.786" y="25.722139" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">件数で採点</text></g>
    </g>
   </g>
  </g>

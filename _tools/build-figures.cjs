@@ -24,17 +24,45 @@ function estimatedWidth(text, fontSize) {
   ), 0) * fontSize;
 }
 
+function labelWidth(label, labels, boxes, pageWidth) {
+  const fontSize = Number(label.getAttribute('font-size'));
+  const center = Number(label.getAttribute('x')) + Number(label.getAttribute('data-original-width')) / 2;
+  const baseline = Number(label.getAttribute('y'));
+  let available = 2 * Math.min(center - 8, pageWidth - center - 8);
+  for (const other of labels) {
+    if (other === label || Math.abs(Number(other.getAttribute('y')) - baseline) > fontSize * 0.8) continue;
+    const otherCenter = Number(other.getAttribute('x')) + Number(other.getAttribute('data-original-width')) / 2;
+    available = Math.min(available, Math.abs(otherCenter - center) - 12);
+  }
+  for (const box of boxes) {
+    if (center > box.left && center < box.right && baseline > box.top && baseline < box.bottom) {
+      available = Math.min(available, 2 * Math.min(center - box.left, box.right - center) - 16);
+    }
+  }
+  return Math.max(available, Number(label.getAttribute('data-original-width')));
+}
+
 function localizeVector(source, language) {
   const dom = new JSDOM(source, { contentType: 'image/svg+xml' });
   const { document } = dom.window;
   const svg = document.documentElement;
-  for (const label of svg.querySelectorAll('text')) {
+  const labels = [...svg.querySelectorAll('text')];
+  const boxes = [...svg.querySelectorAll('path')].flatMap(shape => {
+    const commands = shape.getAttribute('d') || '';
+    if (!/[zZ]/.test(commands) || !/[qQ]/.test(commands) || /fill:\s*none/.test(shape.getAttribute('style') || '')) return [];
+    const coordinates = commands.match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
+    const horizontal = coordinates.filter((value, index) => index % 2 === 0);
+    const vertical = coordinates.filter((value, index) => index % 2 === 1);
+    return [{ left: Math.min(...horizontal), right: Math.max(...horizontal), top: Math.min(...vertical), bottom: Math.max(...vertical) }];
+  });
+  const widths = labels.map(label => labelWidth(label, labels, boxes, Number(svg.getAttribute('viewBox').split(/\s+/)[2])));
+  for (const [index, label] of labels.entries()) {
     const original = label.textContent.trim();
     const translated = translate(original, language);
     const originalWidth = Number(label.getAttribute('data-original-width'));
     if (translated !== original && originalWidth) {
       const fontSize = Number(label.getAttribute('font-size'));
-      const maxWidth = Math.max(originalWidth, fontSize * 2.2);
+      const maxWidth = widths[index];
       const predictedWidth = estimatedWidth(translated, fontSize);
       label.setAttribute('x', Number(label.getAttribute('x')) + originalWidth / 2);
       label.setAttribute('text-anchor', 'middle');

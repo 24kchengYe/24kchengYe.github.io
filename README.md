@@ -84,8 +84,9 @@ The six articles share **55 figures**. The original assets were 25 PNGs and
   The exporter places that layout in an SVG `foreignObject`, preserving the
   dotted backgrounds, spacing, connectors, and typography without rasterization.
 - The other 30 figures retain their **SVG geometry**, with editable `<text>`
-  labels in place of font outlines. Translated labels use the original label
-  widths to avoid colliding with adjacent nodes.
+  labels in place of font outlines. Translated labels use the space inside
+  their nodes and between neighboring labels, rather than squeezing English
+  into the width of the original Chinese text.
 - `_data/writing/figures/manifest.json` maps original assets to named source files.
 - `_data/writing/figures/translations.json` stores Chinese keys with English and
   Japanese label pairs. Article prose and figure labels have separate dictionaries.

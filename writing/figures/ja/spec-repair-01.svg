@@ -47,10 +47,10 @@
    <g id="text_1"><text x="44.604531" y="152.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Query + Spec / Plan</text></g>
    <g id="text_2"><text x="308.659219" y="76.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Judge–Fix</text></g>
    <g id="text_3"><text x="318.774219" y="227.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Verifier</text></g>
-   <g id="text_4"><text x="579.6" y="76.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">文書品質</text></g>
+   <g id="text_4"><text x="579.6" y="76.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">文書品質</text></g>
    <g id="text_5"><text x="579.035" y="227.868125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">実行器 → Base</text></g>
    <g id="text_6"><text x="766.218438" y="227.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">E2E</text></g>
-   <g id="text_7"><text x="644.4" y="151.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle" textLength="72" lengthAdjust="spacingAndGlyphs">最終設計を固定</text></g>
+   <g id="text_7"><text x="644.4" y="151.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">最終設計を固定</text></g>
   </g>
  </g>
  <defs>

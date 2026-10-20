@@ -45,8 +45,8 @@
    <g id="text_2"><text x="316.9" y="184.560602" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">独立審査</text></g>
    <g id="text_3"><text x="504.1" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">候補統合</text></g>
    <g id="text_4"><text x="694.9" y="176.255084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">証拠確認</text></g>
-   <g id="text_5"><text x="903.731336" y="76.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="109" lengthAdjust="spacingAndGlyphs">完全ラベル / 問題なし</text></g>
-   <g id="text_6"><text x="903.7" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">部分ラベル</text></g>
+   <g id="text_5"><text x="903.731336" y="76.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">完全ラベル / 問題なし</text></g>
+   <g id="text_6"><text x="903.7" y="184.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">部分ラベル</text></g>
    <g id="text_7"><text x="903.85" y="292.533844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">未処理記録</text></g>
   </g>
  </g>

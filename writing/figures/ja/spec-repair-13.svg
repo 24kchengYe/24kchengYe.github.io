@@ -65,16 +65,16 @@
     <path d="M 721.8 336.6  L 804.6 336.6  Q 828 336.6 828 360  L 828 360  Q 828 383.4 804.6 383.4  L 721.8 383.4  Q 698.4 383.4 698.4 360  L 698.4 360  Q 698.4 336.6 721.8 336.6  z " clip-path="url(#pbb9af8949f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_3"><text x="122.817188" y="73.222344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Query＋Spec＋規則</text></g>
-   <g id="text_4"><text x="367.2" y="73.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">問題分析</text></g>
-   <g id="text_5"><text x="612" y="73.088906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">採点確率</text></g>
-   <g id="text_6"><text x="122.4" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">修正前文書</text></g>
+   <g id="text_4"><text x="367.2" y="73.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">問題分析</text></g>
+   <g id="text_5"><text x="612" y="73.088906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">採点確率</text></g>
+   <g id="text_6"><text x="122.4" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">修正前文書</text></g>
    <g id="text_7"><text x="326.645" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Fix</text></g>
-   <g id="text_8"><text x="547.2" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">修正後候補</text></g>
+   <g id="text_8"><text x="547.2" y="253.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">修正後候補</text></g>
    <g id="text_9"><text x="516.316875" y="364.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Transition</text></g>
    <g id="text_10"><text x="736.404219" y="364.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Release</text></g>
-   <g id="text_11"><text x="313.2" y="436.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="84" lengthAdjust="spacingAndGlyphs">修正前を保持</text></g>
+   <g id="text_11"><text x="313.2" y="436.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">修正前を保持</text></g>
    <g id="text_12"><text x="660.6" y="351.73125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">採用</text></g>
-   <g id="text_13"><text x="453.977813" y="418.03125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="60" lengthAdjust="spacingAndGlyphs">却下 / 保留</text></g>
+   <g id="text_13"><text x="453.977813" y="418.03125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">却下 / 保留</text></g>
   </g>
  </g>
  <defs>

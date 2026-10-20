@@ -39,12 +39,12 @@
     <path d="M 687.6 41.4  L 810 41.4  Q 833.4 41.4 833.4 64.8  L 833.4 64.8  Q 833.4 88.2 810 88.2  L 687.6 88.2  Q 664.2 88.2 664.2 64.8  L 664.2 64.8  Q 664.2 41.4 687.6 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="text_1"><text x="114.60875" y="69.56" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Query＋最終Spec</text></g>
-   <g id="text_2"><text x="327.6" y="69.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="98" lengthAdjust="spacingAndGlyphs">コード生成・実行</text></g>
-   <g id="text_3"><text x="536.085" y="69.475781" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="63" lengthAdjust="spacingAndGlyphs">実際のBase</text></g>
+   <g id="text_2"><text x="327.6" y="69.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">コード生成・実行</text></g>
+   <g id="text_3"><text x="536.085" y="69.475781" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">実際のBase</text></g>
    <g id="text_4"><text x="709.606563" y="69.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Building Mix</text></g>
-   <g id="text_5"><text x="115.2" y="182.815922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">設計不足</text></g>
-   <g id="text_6"><text x="327.6" y="182.871703" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="98" lengthAdjust="spacingAndGlyphs">実装・実行失敗</text></g>
-   <g id="text_7"><text x="748.8" y="182.562336" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="98" lengthAdjust="spacingAndGlyphs">審査証拠の不一致</text></g>
+   <g id="text_5"><text x="115.2" y="182.815922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">設計不足</text></g>
+   <g id="text_6"><text x="327.6" y="182.871703" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">実装・実行失敗</text></g>
+   <g id="text_7"><text x="748.8" y="182.562336" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">審査証拠の不一致</text></g>
   </g>
  </g>
  <defs>

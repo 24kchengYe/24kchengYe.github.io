@@ -893,13 +893,13 @@
    <g id="text_3"><text x="164.6185" y="206.15418" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">審査A</text></g>
    <g id="text_4"><text x="356.555172" y="206.15418" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">審査B</text></g>
    <g id="text_5"><text x="261.1" y="324.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">結果比較</text></g>
-   <g id="text_6"><text x="489.7" y="432.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="55" lengthAdjust="spacingAndGlyphs">不一致を再確認</text></g>
-   <g id="text_7"><text x="676.925" y="316.696826" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="103" lengthAdjust="spacingAndGlyphs">事実 · 規則を分析</text></g>
-   <g id="text_8"><text x="676.875" y="79.055084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="144" lengthAdjust="spacingAndGlyphs">製品能力 · 確認済み規則</text></g>
+   <g id="text_6"><text x="489.7" y="432.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="71.59679999999992" lengthAdjust="spacingAndGlyphs">不一致を再確認</text></g>
+   <g id="text_7"><text x="676.925" y="316.696826" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">事実 · 規則を分析</text></g>
+   <g id="text_8"><text x="676.875" y="79.055084" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">製品能力 · 確認済み規則</text></g>
    <g id="text_9"><text x="892.9" y="324.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">人手確認</text></g>
-   <g id="text_10"><text x="875.081336" y="432.941336" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle" textLength="123" lengthAdjust="spacingAndGlyphs">学習候補 / 規則変更</text></g>
+   <g id="text_10"><text x="875.081336" y="432.941336" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" text-anchor="middle">学習候補 / 規則変更</text></g>
    <g id="text_11"><text x="471.1" y="302.539594" font-size="11.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#6b7075">一致</text></g>
-   <g id="text_12"><text x="353" y="414.139594" font-size="11.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#6b7075" text-anchor="middle" textLength="24.860000000000003" lengthAdjust="spacingAndGlyphs">不一致</text></g>
+   <g id="text_12"><text x="353" y="414.139594" font-size="11.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#6b7075" text-anchor="middle">不一致</text></g>
   </g>
  </g>
  <defs>

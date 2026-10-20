@@ -5152,18 +5152,18 @@
     <path d="M 820.8 230.4  L 859.170163 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 855.170163 228.4  L 859.170163 230.4  L 855.170163 232.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
-   <g id="text_1"><text x="374.38" y="63.542773" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="203" lengthAdjust="spacingAndGlyphs">ATMS · 依存と代替支持を確認</text></g>
+   <g id="text_1"><text x="374.38" y="63.542773" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">ATMS · 依存と代替支持を確認</text></g>
    <g id="text_2"><text x="112.082016" y="83.988274" font-size="12.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">B非適用</text></g>
-   <g id="text_3"><text x="111.6" y="159.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">固定入力</text></g>
+   <g id="text_3"><text x="111.6" y="159.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">固定入力</text></g>
    <g id="text_4"><text x="111.6" y="225.511082" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">同じ要求</text></g>
-   <g id="text_5"><text x="342.25" y="102.826523" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle" textLength="91" lengthAdjust="spacingAndGlyphs">Aの適用性だけ変更</text></g>
+   <g id="text_5"><text x="342.25" y="102.826523" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">Aの適用性だけ変更</text></g>
    <g id="text_6"><text x="538.56" y="102.776719" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">期待判断</text></g>
    <g id="text_7"><text x="342.075" y="154.004063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">A適用</text></g>
    <g id="text_8"><text x="342.169" y="254.427422" font-size="13.8" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">A明示非適用</text></g>
-   <g id="text_9"><text x="342" y="367.898578" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="56" lengthAdjust="spacingAndGlyphs">フィールドの事実</text></g>
-   <g id="text_10"><text x="538.56" y="144.499348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="87" lengthAdjust="spacingAndGlyphs">アクセス制限欠落</text></g>
-   <g id="text_11"><text x="538.56" y="245.299348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" text-anchor="middle" textLength="87" lengthAdjust="spacingAndGlyphs">アクセス制限欠落</text></g>
-   <g id="text_12"><text x="538.56" y="368.14109" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="91" lengthAdjust="spacingAndGlyphs">電話欠落：報告を維持</text></g>
+   <g id="text_9"><text x="342" y="367.898578" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">フィールドの事実</text></g>
+   <g id="text_10"><text x="538.56" y="144.499348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">アクセス制限欠落</text></g>
+   <g id="text_11"><text x="538.56" y="245.299348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" text-anchor="middle">アクセス制限欠落</text></g>
+   <g id="text_12"><text x="538.56" y="368.14109" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">電話欠落：報告を維持</text></g>
    <g id="text_13"><text x="759.6" y="235.198594" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">独立確認</text></g>
    <g id="text_14"><text x="918" y="226.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">ペア</text></g>
   </g>

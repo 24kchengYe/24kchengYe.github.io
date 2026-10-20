@@ -80,6 +80,48 @@ function localizeVector(source, language) {
   return output;
 }
 
+function fitLayoutLabels(document, canvas, language) {
+  const segmenter = new Intl.Segmenter(language, { granularity: 'word' });
+  for (const node of canvas.querySelectorAll('.node')) {
+    const lines = node.innerHTML.split(/<br\s*\/?>/i).map(line => {
+      const content = document.createElement('span');
+      content.innerHTML = line;
+      return content.textContent.trim();
+    });
+    const content = document.createElement('span');
+    content.append(...node.childNodes);
+    content.style.minWidth = '0';
+    content.style.overflowWrap = 'anywhere';
+    node.append(content);
+    if (language === 'zh') continue;
+    const width = parseFloat(node.style.width) - 32;
+    const height = parseFloat(node.style.height) - 20;
+    if (!(width > 0 && height > 0)) continue;
+    let fontSize = parseFloat(node.style.fontSize) || (node.classList.contains('small') ? 22 : 26);
+    const lineCount = size => lines.reduce((total, line) => {
+      let count = 1;
+      let used = 0;
+      for (const { segment } of segmenter.segment(line)) {
+        const advance = [...segment].reduce((sum, character) => sum + (/[\u2e80-\uffff]/u.test(character) ? 1 : 0.61), 0) * size;
+        if (used && used + advance > width) {
+          count += 1;
+          used = 0;
+        }
+        if (!used && !segment.trim()) continue;
+        used += advance;
+        while (used > width) {
+          count += 1;
+          used -= width;
+        }
+      }
+      return total + count;
+    }, 0);
+    while (fontSize > 14 && lineCount(fontSize) * fontSize * 1.4 > height) fontSize -= 1;
+    node.style.fontSize = `${fontSize}px`;
+    node.style.lineHeight = '1.4';
+  }
+}
+
 function localizeLayout(source, item, language) {
   const dom = new JSDOM(source);
   const { document, NodeFilter, XMLSerializer } = dom.window;
@@ -91,6 +133,7 @@ function localizeLayout(source, item, language) {
     const original = node.textContent.trim();
     node.textContent = node.textContent.replace(original, translate(original, language));
   }
+  fitLayoutLabels(document, canvas, language);
   const svg = document.createElementNS(svgNamespace, 'svg');
   svg.setAttribute('viewBox', `0 0 ${item.width} ${item.height}`);
   svg.setAttribute('width', item.width);

@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { createHash } = require('node:crypto');
 const { JSDOM } = require('jsdom');
 
 const root = path.join(__dirname, '..');
@@ -170,7 +171,8 @@ function buildFigures() {
       validation.window.close();
       if (language === 'en' && /[\u3400-\u9fff]/u.test(output)) throw new Error(`Untranslated figure: ${name}`);
       fs.writeFileSync(path.join(directory, `${name}.svg`), output + '\n');
-      figures[asset].localized[language] = `/writing/figures/${language}/${name}.svg`;
+      const revision = createHash('sha256').update(output).digest('hex').slice(0, 12);
+      figures[asset].localized[language] = `/writing/figures/${language}/${name}.svg?v=${revision}`;
     }
   }
   return figures;

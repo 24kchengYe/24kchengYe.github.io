@@ -49,3 +49,6 @@ html[lang|="zh"] .figure-language-note { display: none; }
   .edition-switch { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
   .report-site-nav .edition-switch a { padding-inline: 10px; }
 }
+@media print {
+  .report-site-nav { display: none; }
+}

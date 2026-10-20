@@ -15,6 +15,29 @@ each paper.
 - `assets/css/minimal.css`: responsive styling.
 - `assets/js/minimal.js`: language preference and existing section-link support.
 
+The **Reading** link opens `/reading/`, a separate foundation model bibliography
+using the same page width and typography. It starts with the core 20 reports;
+the selected 105 and full 643-entry archive remain available. Three reading
+paths, technology filters and search use shareable query URLs. With JavaScript
+disabled, the complete list of source links is still readable.
+
+- `_pages/reading.html` and `_layouts/reading.html`: the reading page.
+- `_data/reading.json`: public report metadata and existing reading keywords.
+- `assets/css/reading.css` and `assets/js/reading.js`: layout and filtering.
+- `_tools/export_reading.py`: rebuild the public index from a local archive:
+
+  ```bash
+  python _tools/export_reading.py --source /path/to/local/report/archive
+  ```
+
+The exporter uses an explicit field and source-domain allowlist. It includes
+official links, not downloaded reports, machine translations, personal routes
+or internal knowledge-base notes. Years follow the source catalog, not verified
+model release dates. Technology tags exist for the selected reports only.
+The detailed source hashes and audit are kept locally in the ignored `_preview/`
+directory. The public bibliography and the local reading workspace can therefore
+share metadata without sharing their document contents.
+
 The homepage does not load a framework, external font, visitor map, or citation
 badge service. The earlier AcadHomepage templates remain in the repository.
 

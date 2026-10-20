@@ -29,7 +29,7 @@ ul { margin: 0 0 18px; padding-left: 20px; }
 li { margin: 7px 0; }
 .site-shell { width: min(880px, calc(100% - 64px)); margin: 0 auto; }
 .site-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 34px 0 0; font-size: .84rem; }
-.site-nav nav { display: flex; gap: 26px; }
+.site-nav nav { display: flex; flex-wrap: wrap; gap: 8px 26px; }
 .site-nav a { color: var(--muted); }
 .languages { display: flex; gap: 3px; }
 .languages button { color: var(--muted); background: none; border: 0; padding: 8px; cursor: pointer; font-size: .78rem; }
@@ -84,6 +84,8 @@ details p:last-child { margin-bottom: 0; }
 .project-links { font-size: .8rem; margin-top: 4px; }
 .project-group { font-size: .8rem; color: var(--muted); margin: 25px 0 16px; }
 .project-more { font-size: .84rem; color: var(--muted); }
+.reading-entry > a { font-size: .98rem; }
+.reading-entry > p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
 .experience-entry { margin: 0 0 24px; font-size: .94rem; }
 .experience-heading { margin-bottom: 5px; }
 .experience-entry details { margin-top: 8px; font-size: .87rem; }
@@ -107,7 +109,8 @@ details p:last-child { margin-bottom: 0; }
 @media (max-width: 680px) {
   .site-shell { width: calc(100% - 40px); }
   .site-nav { padding-top: 18px; font-size: .8rem; }
-  .site-nav nav { gap: 18px; }
+  .site-nav nav { gap: 8px 18px; }
+  .site-nav .languages { flex-shrink: 0; align-self: flex-start; }
   .languages button { padding: 9px 7px; }
   .profile { margin-top: 38px; grid-template-columns: minmax(0,1fr) 86px; column-gap: 18px; row-gap: 0; }
   .profile-copy { display: contents; }

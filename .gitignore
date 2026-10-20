@@ -6,6 +6,7 @@ __pycache__/
 .idea/
 nul
 _site/
+_preview/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata

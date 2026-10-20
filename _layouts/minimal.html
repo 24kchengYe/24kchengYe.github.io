@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <meta property="og:title" content="{{ site.title | escape }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/minimal.css' | relative_url }}">
+  <script src="{{ '/assets/js/minimal.js' | relative_url }}" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-nav">
+      <nav aria-label="Sections">
+        <a href="#research"><span lang="en">Research</span><span lang="zh">研究</span><span lang="ja">研究</span></a>
+        <a href="#projects"><span lang="en">Projects</span><span lang="zh">项目</span><span lang="ja">プロジェクト</span></a>
+        <a href="#experience"><span lang="en">Experience</span><span lang="zh">经历</span><span lang="ja">経歴</span></a>
+      </nav>
+      <div class="languages" role="group" aria-label="Language">
+        <button type="button" data-language="en" aria-pressed="true" aria-label="English">EN</button>
+        <button type="button" data-language="zh" aria-pressed="false" aria-label="中文">中</button>
+        <button type="button" data-language="ja" aria-pressed="false" aria-label="日本語">日</button>
+      </div>
+    </header>
+    <main id="main">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <span>{{ site.author.name | escape }}</span>
+      <a href="#top"><span lang="en">Back to top ↑</span><span lang="zh">回到顶部 ↑</span><span lang="ja">トップへ ↑</span></a>
+    </footer>
+  </div>
+</body>
+</html>

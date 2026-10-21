@@ -16,8 +16,11 @@
 <p class="caption"><a href="https://arxiv.org/abs/1706.03762">Transformer</a> · <a href="https://arxiv.org/abs/1911.02150">MQA</a> · <a href="https://arxiv.org/abs/2305.13245">GQA</a></p>
 <h2>压缩维度，还是压缩条目</h2>
 <p>MLA 压缩每个 token 的 KV 内容特征。在 DeepSeek-V2 中，缓存保留低维潜向量 cᴷⱽ 和分离的 RoPE 位置键 kᴿ；历史 token 仍逐个保留。恢复 K、V 的投影可以在推理时吸收到其他权重中，无需每次显式重建完整 KV。</p>
-<p>CSA 与 HCA 则沿序列压缩历史条目。DeepSeek-V4 的 CSA 先生成压缩条目，再由查询相关的索引器挑选 Top-k；HCA 使用更高压缩率，并读取全部压缩条目。两者都另保留局部原始 KV。CSA 的索引查询用于选择，不参与决定历史如何压缩。</p>
-<figure><img data-figure="attention-compression" alt="MLA 特征压缩与 CSA、HCA 序列压缩" loading="lazy"><figcaption>方格仅示意压缩方向，不表示实际压缩率。图中省略 CSA / HCA 的局部原始 KV 分支。</figcaption></figure>
+<figure><img data-figure="attention-mla" alt="MLA：内容潜向量、独立位置键与主查询。K / V 投影可在实现中吸收到其他权重。" loading="lazy"><figcaption>MLA：内容潜向量、独立位置键与主查询。K / V 投影可在实现中吸收到其他权重。</figcaption></figure>
+<p>CSA 沿序列压缩历史条目。DeepSeek-V4 中，压缩 KV 和压缩索引键分别构造；主查询 Q 与索引查询 Qᴵ 从共享查询潜向量分别投影。索引器选择 Top-k，主注意力读取选中压缩 KV 与局部原始 KV。</p>
+<figure><img data-figure="attention-csa" alt="CSA：Top-k 只输出位置；选中压缩 KV 与局部原始 KV 并行进入主注意力。" loading="lazy"><figcaption>CSA：Top-k 只输出位置；选中压缩 KV 与局部原始 KV 并行进入主注意力。</figcaption></figure>
+<p>HCA 使用更高压缩率，读取查询之前已完成的全部压缩块，并保留局部原始 KV。它没有查询相关的 Top-k 选择。CSA 与 HCA 压缩的是序列条目数，而非 MLA 的逐 token 内容特征。</p>
+<figure><img data-figure="attention-hca" alt="HCA：更强的序列压缩，不做 Top-k；读取全部已完成压缩块，并保留局部原始 KV。" loading="lazy"><figcaption>HCA：更强的序列压缩，不做 Top-k；读取全部已完成压缩块，并保留局部原始 KV。</figcaption></figure>
 <p class="caption"><a href="https://arxiv.org/html/2405.04434v5">DeepSeek-V2 · MLA</a> · <a href="https://arxiv.org/html/2606.19348">DeepSeek-V4 · CSA / HCA</a></p>
 <h2>允许访问哪些位置</h2>
 <p>完整因果注意力可以读取当前位置及所有过去位置。滑动窗口注意力（SWA）只保留最近 w 个直接可见位置。叠加多层后，信息可以间接传播得更远，但单层查询仍不能直接检索所有历史。</p>
@@ -28,16 +31,21 @@
 </details>
 <p class="caption"><a href="https://arxiv.org/abs/2310.06825">Mistral 7B</a> · <a href="https://arxiv.org/abs/2004.05150">Longformer</a></p>
 <h2>由内容选择历史</h2>
-<p>NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路，最后门控融合。选块依据来自压缩分支的注意力分数：先跨组聚合并映射到原始块，再挑选块。这里用于路由的是分数 P，不是压缩分支已经聚合好的输出向量。</p>
+<p>NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路。三路共享查询 Q，但分别投影 KV，并在各自归一化后门控融合。选块时，先把压缩注意力分数映射到选择块，再对同一 GQA 组内的 query heads 求和，选择 Top-n 块。用于选块的是分数 P，不是压缩分支的输出向量 o。</p>
+<figure><img data-figure="attention-nsa" alt="NSA：Pᶜ 用于选块，oᶜ 用于输出融合。三路分别归一化后门控相加；选块分数在同一 GQA 组内聚合。" loading="lazy"><figcaption>NSA：Pᶜ 用于选块，oᶜ 用于输出融合。三路分别归一化后门控相加；选块分数在同一 GQA 组内聚合。</figcaption></figure>
 <p>DSA 将索引与主注意力分开。DeepSeek-V3.2 的 Lightning Indexer 对历史 token 打分，选择 Top-k 后，主 MLA 才读取对应 KV。索引查询与主查询承担不同职责；索引分数也不是最终注意力权重。</p>
+<figure><img data-figure="attention-dsa" alt="DSA：索引器传递选择位置，KV 由缓存提供。Q 进入主注意力，Qᴵ 进入索引器。" loading="lazy"><figcaption>DSA：索引器传递选择位置，KV 由缓存提供。Q 进入主注意力，Qᴵ 进入索引器。</figcaption></figure>
 <p>MoBA 按历史块的平均 K 选择块。当前块始终保留，并在块内使用因果掩码；原论文的 k 已包含当前块，因此 k = 3 表示最多两个历史块加当前块。选中 token 的注意力统一归一化，不能把各块结果简单平均。</p>
-<figure><img data-figure="attention-selection" alt="NSA、DSA、MoBA 的选择粒度和主注意力路径" loading="lazy"><figcaption>虚线表示选择信号。NSA 融合三路输出；DSA 选择 token；MoBA 选择历史块并保留当前块。</figcaption></figure>
+<figure><img data-figure="attention-moba" alt="MoBA：当前因果块强制保留，与选中历史块联合归一化，不对各块输出取平均。" loading="lazy"><figcaption>MoBA：当前因果块强制保留，与选中历史块联合归一化，不对各块输出取平均。</figcaption></figure>
 <p>稀疏读取减少主注意力实际处理的条目，索引和选块仍有成本。某一步没有选中的历史，后续仍可能用到；Top-k 读取本身不意味着可以删除其余 KV 缓存。</p>
 <p class="caption"><a href="https://arxiv.org/html/2502.11089v1">NSA</a> · <a href="https://arxiv.org/html/2512.02556">DeepSeek-V3.2 · DSA</a> · <a href="https://arxiv.org/html/2502.13189v1">MoBA</a></p>
 <h2>用状态承载历史</h2>
 <p>线性注意力把历史写入固定形状的状态，再用查询读取。核线性注意力通过特征映射 φ 改变相似度核，可以递推累加外积；它通常不等于对原始 Softmax 注意力做精确的乘法重排。</p>
-<p>Gated DeltaNet 在写入前用标量门衰减旧状态，再根据当前值与状态预测值的残差更新。KDA 将遗忘门细化到 key 的各个通道，让不同通道以不同速度保留或遗忘。二者都用 delta 更新，而非只累加新的外积。</p>
-<figure><img data-figure="attention-state" alt="递推状态的读写流程及三种更新规则" loading="lazy"><figcaption>图示核心状态路径；核线性注意力还维护归一化状态 z。归一化、卷积和输出门等实现细节未展开。</figcaption></figure>
+<figure><img data-figure="attention-kernel-linear" alt="核线性注意力：φ 同时作用于 key 和 query；S 保存外积，z 提供归一化分母。" loading="lazy"><figcaption>核线性注意力：φ 同时作用于 key 和 query；S 保存外积，z 提供归一化分母。</figcaption></figure>
+<p>Gated DeltaNet 先用每头标量门 α 衰减旧状态，再计算当前值 v 与状态预测值 S̄k 的残差，用 β 控制残差外积的写入强度。更新后的状态由 q 读取，随后进入归一化和输出门。</p>
+<figure><img data-figure="attention-gdn" alt="Gated DeltaNet：先衰减，再计算残差，最后写入。顶部旁路保留衰减状态作为加法基底；输出门在读取之后。" loading="lazy"><figcaption>Gated DeltaNet：先衰减，再计算残差，最后写入。顶部旁路保留衰减状态作为加法基底；输出门在读取之后。</figcaption></figure>
+<p>KDA 保留预测残差与 delta 写入，把遗忘门 α 细化到 key 的各个通道。不同通道可以有不同的遗忘率；改变的是旧状态如何衰减，而非取消残差更新。</p>
+<figure><img data-figure="attention-kda" alt="KDA：状态方向与上一图一致，行是 value、列是 key；通道门从右侧缩放 key 列，残差更新保持不变。" loading="lazy"><figcaption>KDA：状态方向与上一图一致，行是 value、列是 key；通道门从右侧缩放 key 列，残差更新保持不变。</figcaption></figure>
 <details><summary>三种状态更新</summary>
 <p>采用列向量，状态 S 的行对应 value，列对应 key 或其特征。下式只保留核心递推，门、键和查询视为已按各方法完成预处理。</p>
 <h3>Kernel linear attention</h3><p class="formula">Sₜ = Sₜ₋₁ + vₜ φ(kₜ)ᵀ<br>zₜ = zₜ₋₁ + φ(kₜ)<br>oₜ = Sₜ φ(qₜ) / (zₜᵀ φ(qₜ))</p><h3>Gated DeltaNet</h3><p class="formula">S̄ₜ = αₜ Sₜ₋₁<br>Sₜ = S̄ₜ + βₜ (vₜ − S̄ₜ kₜ) kₜᵀ<br>oₜ = Sₜ qₜ</p><h3>KDA</h3><p class="formula">S̄ₜ = Sₜ₋₁ Diag(αₜ)<br>Sₜ = S̄ₜ + βₜ (vₜ − S̄ₜ kₜ) kₜᵀ<br>oₜ = Sₜ qₜ</p>

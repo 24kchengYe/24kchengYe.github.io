@@ -44,7 +44,7 @@ badge service. The earlier AcadHomepage templates remain in the repository.
 ## Selected Writing
 
 Selected writing appears before research, in both page order and navigation.
-All four blogs and all three technical reports support the homepage's English,
+All five blogs and all three technical reports support the homepage's English,
 Chinese, and Japanese switcher. Language choices persist across article,
 technical-report, and homepage links. Figure labels, captions, alt text, tables,
 and article controls follow the same language. Zoom opens the current-language
@@ -84,9 +84,9 @@ The old offline exporter is not the public-site build path.
 
 ### Editable Figures
 
-The eight article editions share **65 figures**. The first six used 25 PNGs and
+The eight article editions share **71 figures**. The first six used 25 PNGs and
 30 SVGs with outlined text; Nimble / KEV adds four editable HTML/CSS diagrams,
-and the attention guide adds six.
+and the attention guide adds twelve.
 All article figures now use localized SVG exports:
 
 - The 25 generation figures retain their original **HTML/CSS layouts**.

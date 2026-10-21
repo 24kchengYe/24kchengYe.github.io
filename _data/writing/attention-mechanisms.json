@@ -59,10 +59,6 @@
     "MLA compresses the KV content features of each token. DeepSeek-V2 caches a low-dimensional latent cᴷⱽ and a separate RoPE key kᴿ, while retaining individual history tokens. Reconstruction projections can be absorbed into other weights at inference, avoiding explicit reconstruction of full KV at every step.",
     "MLAは各トークンのKV内容特徴を圧縮する。DeepSeek-V2では低次元の潜在ベクトルcᴷⱽと分離したRoPEキーkᴿを保存し、履歴トークン自体は一つずつ残す。推論時には復元の射影を他の重みに吸収でき、毎回完全なKVを明示的に復元する必要はない。"
   ],
-  "CSA 与 HCA 则沿序列压缩历史条目。DeepSeek-V4 的 CSA 先生成压缩条目，再由查询相关的索引器挑选 Top-k；HCA 使用更高压缩率，并读取全部压缩条目。两者都另保留局部原始 KV。CSA 的索引查询用于选择，不参与决定历史如何压缩。": [
-    "CSA and HCA compress entries along the sequence. In DeepSeek-V4, CSA forms compressed entries, then uses a query-dependent indexer to select the top k. HCA compresses more aggressively and attends to all compressed entries. Both also retain local raw KV. CSA’s index query selects entries; it does not decide how history is compressed.",
-    "CSAとHCAは系列方向に履歴エントリを圧縮する。DeepSeek-V4のCSAは圧縮エントリを作り、クエリ依存の索引器でTop-kを選ぶ。HCAはより強く圧縮し、圧縮エントリをすべて参照する。両者とも局所的な元のKVを別に保持する。CSAの索引クエリは選択に使われ、履歴の圧縮方法は決めない。"
-  ],
   "MLA 特征压缩与 CSA、HCA 序列压缩": [
     "Feature compression in MLA and sequence compression in CSA and HCA",
     "MLAの特徴圧縮とCSA・HCAの系列圧縮"
@@ -103,10 +99,6 @@
     "Select history by content",
     "内容に応じて履歴を選ぶ"
   ],
-  "NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路，最后门控融合。选块依据来自压缩分支的注意力分数：先跨组聚合并映射到原始块，再挑选块。这里用于路由的是分数 P，不是压缩分支已经聚合好的输出向量。": [
-    "NSA has three branches: compressed attention, attention over selected raw blocks, and sliding-window attention. Their outputs are fused with gates. Block selection uses attention scores from the compressed branch, aggregated across groups and mapped to raw blocks. The routing signal is the score P, not the branch’s already-aggregated output vector.",
-    "NSAは圧縮注意・選択した元ブロックへの注意・スライディングウィンドウ注意の三分岐を持ち、出力をゲートで融合する。ブロック選択には圧縮分岐の注意スコアを使い、グループ間で集約して元ブロックに対応付ける。ルーティングに使うのはスコアPであり、集約済みの出力ベクトルではない。"
-  ],
   "DSA 将索引与主注意力分开。DeepSeek-V3.2 的 Lightning Indexer 对历史 token 打分，选择 Top-k 后，主 MLA 才读取对应 KV。索引查询与主查询承担不同职责；索引分数也不是最终注意力权重。": [
     "DSA separates indexing from main attention. DeepSeek-V3.2’s Lightning Indexer scores history tokens and selects the top k, then main MLA reads the corresponding KV. The index query and main query have different roles; index scores are not the final attention weights.",
     "DSAは索引と主注意を分離する。DeepSeek-V3.2のLightning Indexerが履歴トークンを採点してTop-kを選び、主MLAが対応するKVを読む。索引クエリと主クエリの役割は異なり、索引スコアも最終的な注意重みとは異なる。"
@@ -134,10 +126,6 @@
   "线性注意力把历史写入固定形状的状态，再用查询读取。核线性注意力通过特征映射 φ 改变相似度核，可以递推累加外积；它通常不等于对原始 Softmax 注意力做精确的乘法重排。": [
     "Linear attention writes history into a fixed-shape state and reads it with a query. Kernel linear attention changes the similarity kernel through a feature map φ, allowing recurrent accumulation of outer products. This is generally not an exact reassociation of the original softmax attention.",
     "線形注意は履歴を固定形状の状態に書き込み、クエリで読み出す。カーネル線形注意は特徴写像φで類似度カーネルを変え、外積を再帰的に蓄積する。通常、元のSoftmax注意を厳密に保ったまま乗算順序を変えているわけではない。"
-  ],
-  "Gated DeltaNet 在写入前用标量门衰减旧状态，再根据当前值与状态预测值的残差更新。KDA 将遗忘门细化到 key 的各个通道，让不同通道以不同速度保留或遗忘。二者都用 delta 更新，而非只累加新的外积。": [
-    "Gated DeltaNet applies scalar decay to the old state, then writes the residual between the current value and the state’s prediction. KDA refines forgetting to individual key channels, so different channels retain or forget at different rates. Both use a delta update rather than merely accumulating new outer products.",
-    "Gated DeltaNetはスカラーゲートで旧状態を減衰させ、現在の値と状態による予測値の残差を書き込む。KDAは忘却をキーの各チャネルに分け、保持や忘却の速度を変える。どちらも外積の単純な加算ではなく、デルタ更新を使う。"
   ],
   "递推状态的读写流程及三种更新规则": [
     "Recurrent state reads and writes with three update rules",
@@ -206,5 +194,61 @@
   "放大的流程图": [
     "Enlarged diagram",
     "拡大した図"
+  ],
+  "CSA 沿序列压缩历史条目。DeepSeek-V4 中，压缩 KV 和压缩索引键分别构造；主查询 Q 与索引查询 Qᴵ 从共享查询潜向量分别投影。索引器选择 Top-k，主注意力读取选中压缩 KV 与局部原始 KV。": [
+    "CSA compresses history along the sequence. In DeepSeek-V4, compressed KV and compressed index keys are constructed separately. Main Q and index Qᴵ use separate projections of a shared query latent. The indexer selects Top-k entries; main attention reads selected compressed KV together with local uncompressed KV.",
+    "CSA は系列方向に履歴を圧縮する。DeepSeek-V4 では圧縮 KV と圧縮索引キーを別々に構成し、共有 query 潜在表現から主 Q と索引 Qᴵ を別々に投影する。索引器が Top-k を選び、主注意力は選択した圧縮 KV と局所の非圧縮 KV を読む。"
+  ],
+  "NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路。三路共享查询 Q，但分别投影 KV，并在各自归一化后门控融合。选块时，先把压缩注意力分数映射到选择块，再对同一 GQA 组内的 query heads 求和，选择 Top-n 块。用于选块的是分数 P，不是压缩分支的输出向量 o。": [
+    "NSA has three branches: compressed attention, selected raw-block attention, and sliding-window attention. They share Q but use independent KV projections, normalize separately, and combine through learned gates. For selection, compressed-attention scores are mapped to selection blocks, then summed across query heads within the same GQA group to choose the Top-n blocks. The routing signal is the score P, not the compressed branch's output vector o.",
+    "NSA は圧縮注意力、選択した非圧縮ブロックの注意力、スライディングウィンドウ注意力の 3 分岐を持つ。Q は共有するが KV は独立に投影し、個別に正規化してからゲートで融合する。選択では圧縮注意力スコアを選択ブロックに対応付け、同一 GQA グループ内の query heads で合計して Top-n を選ぶ。選択に使うのはスコア P であり、圧縮分岐の出力ベクトル o ではない。"
+  ],
+  "Gated DeltaNet 先用每头标量门 α 衰减旧状态，再计算当前值 v 与状态预测值 S̄k 的残差，用 β 控制残差外积的写入强度。更新后的状态由 q 读取，随后进入归一化和输出门。": [
+    "Gated DeltaNet first decays the old state with a scalar gate α per head. It computes the residual between v and the state prediction S̄k, with β controlling the residual outer-product write. The updated state is read by q, followed by normalization and an output gate.",
+    "Gated DeltaNet はまずヘッドごとのスカラーゲート α で旧状態を減衰させる。v と状態の予測値 S̄k の残差を計算し、β で残差外積の書き込み強度を制御する。更新後の状態を q で読み、正規化と出力ゲートを適用する。"
+  ],
+  "MLA：内容潜向量、独立位置键与主查询。K / V 投影可在实现中吸收到其他权重。": [
+    "MLA: content latents, separate positional keys, and the main query. Implementations can absorb K / V projections into other weights.",
+    "MLA：内容の潜在表現、独立した位置キー、主 query。K / V 投影は実装で他の重みに吸収できる。"
+  ],
+  "CSA：Top-k 只输出位置；选中压缩 KV 与局部原始 KV 并行进入主注意力。": [
+    "CSA: Top-k returns positions only; selected compressed KV and local raw KV enter main attention in parallel.",
+    "CSA：Top-k が返すのは位置のみ。選択した圧縮 KV と局所の非圧縮 KV を並列に主注意力へ入力する。"
+  ],
+  "HCA：更强的序列压缩，不做 Top-k；读取全部已完成压缩块，并保留局部原始 KV。": [
+    "HCA: stronger sequence compression without Top-k; read all completed compressed blocks and retain local raw KV.",
+    "HCA：Top-k を使わず、より強く系列を圧縮。完了済み圧縮ブロックをすべて読み、局所の非圧縮 KV も保持する。"
+  ],
+  "NSA：Pᶜ 用于选块，oᶜ 用于输出融合。三路分别归一化后门控相加；选块分数在同一 GQA 组内聚合。": [
+    "NSA: Pᶜ selects blocks; oᶜ contributes to the output. The three branches normalize separately before the gated sum. Selection scores are aggregated within each GQA group.",
+    "NSA：Pᶜ はブロック選択、oᶜ は出力の融合に使う。3 分岐を個別に正規化してからゲート付き加算を行い、選択スコアは同一 GQA グループ内で集約する。"
+  ],
+  "DSA：索引器传递选择位置，KV 由缓存提供。Q 进入主注意力，Qᴵ 进入索引器。": [
+    "DSA: the indexer supplies positions, while the cache supplies KV. Q feeds the main attention; Qᴵ feeds the indexer.",
+    "DSA：索引器は位置、キャッシュは KV を供給する。Q は主注意力へ、Qᴵ は索引器へ入る。"
+  ],
+  "MoBA：当前因果块强制保留，与选中历史块联合归一化，不对各块输出取平均。": [
+    "MoBA: the causal current block is mandatory. Normalize jointly with the selected past blocks; do not average block outputs.",
+    "MoBA：現在の因果ブロックを必ず保持する。選択した過去ブロックと合わせて正規化し、ブロック出力を平均しない。"
+  ],
+  "核线性注意力：φ 同时作用于 key 和 query；S 保存外积，z 提供归一化分母。": [
+    "Kernel linear attention: φ acts on keys and queries; S accumulates outer products and z supplies the normalization denominator.",
+    "核線形注意力：φ は key と query に作用し、S が外積を累積、z が正規化分母を与える。"
+  ],
+  "Gated DeltaNet：先衰减，再计算残差，最后写入。顶部旁路保留衰减状态作为加法基底；输出门在读取之后。": [
+    "Gated DeltaNet: decay, compute the residual, then write. The upper bypass preserves the decayed state for the additive update; the output gate follows the read.",
+    "Gated DeltaNet：減衰、残差の計算、書き込みの順に進む。上側の迂回経路は減衰状態を更新の加算項へ渡し、出力ゲートは読み出し後に作用する。"
+  ],
+  "KDA：状态方向与上一图一致，行是 value、列是 key；通道门从右侧缩放 key 列，残差更新保持不变。": [
+    "KDA: as above, state rows are values and columns are keys. Channel gates scale key columns from the right; the residual update remains.",
+    "KDA：前図と同じく状態の行は value、列は key。チャネルゲートは右から key の列をスケーリングし、残差更新は維持する。"
+  ],
+  "HCA 使用更高压缩率，读取查询之前已完成的全部压缩块，并保留局部原始 KV。它没有查询相关的 Top-k 选择。CSA 与 HCA 压缩的是序列条目数，而非 MLA 的逐 token 内容特征。": [
+    "HCA uses a higher compression ratio, reads all completed compressed blocks preceding the query, and retains local uncompressed KV. It has no query-dependent Top-k selection. CSA and HCA compress the number of sequence entries, rather than per-token content features as in MLA.",
+    "HCA はより高い圧縮率を使い、query より前の完了済み圧縮ブロックをすべて読み、局所の非圧縮 KV も保持する。query 依存の Top-k 選択はない。CSA と HCA が圧縮するのは系列のエントリ数であり、MLA のような token ごとの内容特徴ではない。"
+  ],
+  "KDA 保留预测残差与 delta 写入，把遗忘门 α 细化到 key 的各个通道。不同通道可以有不同的遗忘率；改变的是旧状态如何衰减，而非取消残差更新。": [
+    "KDA retains the prediction residual and delta write, while refining α to individual key channels. Channels can forget at different rates: the change is how the old state decays, while the residual update remains.",
+    "KDA は予測残差と delta 書き込みを維持し、α を key の各チャネルに細分化する。各チャネルが異なる速度で忘却できるようになり、変わるのは旧状態の減衰方法で、残差更新は維持される。"
   ]
 }

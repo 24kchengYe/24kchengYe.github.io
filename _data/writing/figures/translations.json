@@ -2524,8 +2524,8 @@
     "選択分を読む"
   ],
   "更强的序列压缩": [
-    "Stronger compression",
-    "系列をさらに圧縮"
+    "Stronger sequence compression",
+    "より強い系列圧縮"
   ],
   "读取全部压缩条目": [
     "Read all compressed",
@@ -2561,7 +2561,7 @@
   ],
   "压缩注意力": [
     "Compressed attention",
-    "圧縮注意"
+    "圧縮注意力"
   ],
   "选中原始块的注意力": [
     "Selected raw-block attention",
@@ -2569,7 +2569,7 @@
   ],
   "窗口注意力": [
     "Window attention",
-    "ウィンドウ注意"
+    "窓注意力"
   ],
   "分数 P → 选块": [
     "Select via P",
@@ -2662,5 +2662,209 @@
   "不物化完整 N × N 分数矩阵": [
     "No full N × N score matrix materialized",
     "N × Nスコア行列全体を実体化しない"
+  ],
+  "查询投影 + RoPE": [
+    "Query projections + RoPE",
+    "query 投影 + RoPE"
+  ],
+  "实线：张量流": [
+    "Solid: tensor flow",
+    "実線：テンソル"
+  ],
+  "虚线：选择 / 门控": [
+    "Dashed: selection / gates",
+    "破線：選択・ゲート"
+  ],
+  "历史隐状态": [
+    "Historical hidden states",
+    "履歴の隠れ状態"
+  ],
+  "当前隐状态投影": [
+    "Current-state projections",
+    "現在状態の投影"
+  ],
+  "注意力读取": [
+    "Attention read",
+    "注意力による読み出し"
+  ],
+  "内容潜向量缓存": [
+    "Content latent cache",
+    "内容の潜在キャッシュ"
+  ],
+  "独立的位置键缓存": [
+    "Separate positional cache",
+    "独立した位置キーのキャッシュ"
+  ],
+  "内容 K / V 投影": [
+    "Content K / V projections",
+    "内容 K / V の投影"
+  ],
+  "逐 token 保留历史；压缩特征维度。Up K / V 可通过权重吸收实现。": [
+    "Tokens stay separate; feature dimensions shrink. Up K / V can be absorbed into weights.",
+    "履歴は token ごとに保持し、特徴次元を圧縮。Up K / V は重みに吸収可能。"
+  ],
+  "序列压缩 KV": [
+    "Sequence-compressed KV",
+    "系列方向に圧縮した KV"
+  ],
+  "独立投影的压缩索引键": [
+    "Separate compressed index keys",
+    "独立投影した圧縮索引キー"
+  ],
+  "局部原始 KV": [
+    "Local uncompressed KV",
+    "局所の非圧縮 KV"
+  ],
+  "读取选中压缩条目": [
+    "Gather selected entries",
+    "選択した圧縮エントリを取得"
+  ],
+  "索引器只给出位置；压缩 KV 和局部 KV 一起参与主注意力。": [
+    "The indexer returns positions; selected compressed KV and local KV feed the main attention.",
+    "索引器が返すのは位置。選択した圧縮 KV と局所 KV を主注意力で読み出す。"
+  ],
+  "全部已完成压缩块 + 局部 KV": [
+    "All completed compressed blocks + local KV",
+    "完了済みの全圧縮ブロック + 局所 KV"
+  ],
+  "m′ ≫ m；不做 Top-k。压缩分支只读取当前查询之前已完成的块。": [
+    "m′ ≫ m; no Top-k. The compressed branch reads completed blocks preceding the query.",
+    "m′ ≫ m。Top-k は使わず、現在の query より前の完了済み圧縮ブロックを読む。"
+  ],
+  "压缩分支 KV 投影": [
+    "Compressed-branch KV",
+    "圧縮分岐の KV 投影"
+  ],
+  "映射选块分数 → 组内头求和": [
+    "Map block scores → sum heads within group",
+    "ブロックスコアへ対応付け → グループ内でヘッドを合計"
+  ],
+  "选择分支 KV 投影": [
+    "Selection-branch KV",
+    "選択分岐の KV 投影"
+  ],
+  "读取选中原始块": [
+    "Gather selected raw blocks",
+    "選択した非圧縮ブロックを取得"
+  ],
+  "选择注意力": [
+    "Selected attention",
+    "選択注意力"
+  ],
+  "窗口分支 KV 投影": [
+    "Window-branch KV",
+    "窓分岐の KV 投影"
+  ],
+  "从当前隐状态计算门": [
+    "Gates from current state",
+    "現在の隠れ状態からゲート"
+  ],
+  "三路输出门控融合": [
+    "Gated sum of three outputs",
+    "3 分岐の出力をゲート付き加算"
+  ],
+  "三路使用同一个 Q；KV 独立投影。选块在同一 GQA 组内聚合 query heads。": [
+    "All branches share Q, with independent KV projections. Selection sums query heads within each GQA group.",
+    "3 分岐で Q を共有し、KV は独立投影。選択では同一 GQA グループ内の query heads を集約。"
+  ],
+  "MLA 潜向量缓存": [
+    "MLA latent KV cache",
+    "MLA の潜在 KV キャッシュ"
+  ],
+  "独立索引键": [
+    "Separate index keys",
+    "独立した索引キー"
+  ],
+  "读取选中 token 的 KV": [
+    "Gather selected token KV",
+    "選択した token の KV を取得"
+  ],
+  "索引查询 Qᴵ 用于选择；主查询 Q 读取缓存。未选中不等于删除缓存。": [
+    "Qᴵ selects positions; Q reads cached KV. Unselected entries remain in the cache.",
+    "Qᴵ は位置を選び、Q はキャッシュを読む。未選択エントリもキャッシュに残る。"
+  ],
+  "过去块的平均 K": [
+    "Mean K of past blocks",
+    "過去ブロックの平均 K"
+  ],
+  "强制保留当前块": [
+    "Always include current block",
+    "現在ブロックは必須"
+  ],
+  "块内因果掩码": [
+    "Causal mask within block",
+    "ブロック内は因果マスク"
+  ],
+  "只选择过去块": [
+    "Select past blocks only",
+    "過去ブロックのみ選択"
+  ],
+  "读取选中历史块 KV": [
+    "Gather selected past-block KV",
+    "選択した過去ブロックの KV を取得"
+  ],
+  "选中 token 联合归一化": [
+    "Joint softmax over selected tokens",
+    "選択した全 token で softmax"
+  ],
+  "选中历史块 + 当前因果块": [
+    "Selected past + causal current block",
+    "選択した過去 + 現在の因果ブロック"
+  ],
+  "k 包含当前块：k = 3 时，最多两个过去块 + 当前块。": [
+    "k includes the current block: k = 3 allows at most two past blocks plus the current block.",
+    "k は現在のブロックを含む。k = 3 なら過去は最大 2 ブロック。"
+  ],
+  "上一时刻状态": [
+    "Previous state",
+    "前時刻の状態"
+  ],
+  "外积累加 + 归一化状态": [
+    "Outer-product sum + normalizer",
+    "外積の累積 + 正規化状態"
+  ],
+  "读取并归一化": [
+    "Read and normalize",
+    "読み出して正規化"
+  ],
+  "S：value × key 特征；z 负责归一化。S 和 z 一起传递到下一时刻。": [
+    "S: value × key features; z normalizes the read. Both states carry over to the next step.",
+    "S は value × key 特徴、z は読み出しの正規化用。両状態を次時刻へ渡す。"
+  ],
+  "衰减旧状态": [
+    "Decay previous state",
+    "前状態を減衰"
+  ],
+  "值预测残差": [
+    "Value-prediction residual",
+    "値の予測残差"
+  ],
+  "Delta 写入": [
+    "Delta write",
+    "Delta 書き込み"
+  ],
+  "每头标量遗忘门": [
+    "Scalar forget gate per head",
+    "スカラー忘却ゲート"
+  ],
+  "读取 → 归一化 / 输出门": [
+    "Read → norm / output gate",
+    "読出し・正規化・出力門"
+  ],
+  "S 的行对应 value、列对应 key；每头一个 α，β 控制残差写入。": [
+    "S has value rows and key columns; one α per head, with β controlling the delta write.",
+    "S の行は value、列は key。α はヘッドごとに 1 つ、β は残差の書き込みを制御。"
+  ],
+  "通道级遗忘门": [
+    "Per-channel forget gate",
+    "チャネル別の忘却門"
+  ],
+  "S 的列是 key 通道：向量 α 从右侧缩放各列；β 控制残差写入。": [
+    "Columns of S are key channels: vector α scales columns from the right; β controls the delta write.",
+    "S の列は key チャネル。ベクトル α で右から各列をスケーリングし、β で残差の書き込みを制御。"
+  ],
+  "→ 掩码 Softmax": [
+    "→ masked Softmax",
+    "→ マスク付き Softmax"
   ]
 }

@@ -5,8 +5,9 @@ The three-language `/resume/` page is a web adaptation of the owner's
 The original CV remains local and unchanged. Its SHA-256 is
 `fd215284597109d1de131a9cc2b426af2ba704079d0ff248785ffb1120be7406`.
 
-The page condenses the CV's prose while preserving roles, chronology, named methods,
-comparison baselines, values, units, and awards. It does not introduce new experimental
+The page condenses the CV's prose while preserving roles, chronology, comparison
+baselines, values, units, and awards. It retains selected method details rather than
+reproducing the full technical descriptions and author lists. It does not introduce new experimental
 claims. `Guide: no material change`.
 
 | Web section | Primary source | Checks |
@@ -45,3 +46,11 @@ Resume → homepage section → Resume round trip retain the selected language.
 All three print exports contain only their selected language; key values and
 dates survive extraction. The English print layout was also visually inspected.
 The three translations have matching section, entry, and compact-row identities.
+
+Follow-up fidelity audit on 2026-10-21: re-read the unchanged source PDF, its LaTeX,
+and all three language records. Roles, dates, reported metrics and awards map to the
+source. This remains a condensed web adaptation, not a complete transcription.
+Examples of abridgment include the PI harness / Auto Thinking details, individual
+quality gates, and full paper author lists. The page header now explicitly says
+preferred work location (the CV's “意向城市”), and uses the source's broader “Agentic”
+career interest; the internship subsection retains “Agentic RL”.

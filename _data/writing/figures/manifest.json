@@ -1,4 +1,8 @@
 {
+  "nimble-kev-heads": {"source": "nimble-kev-heads.html", "width": 1440, "height": 640, "format": "html-css"},
+  "nimble-kev-confidence": {"source": "nimble-kev-confidence.html", "width": 1440, "height": 640, "format": "html-css"},
+  "nimble-kev-targets": {"source": "nimble-kev-targets.html", "width": 1440, "height": 640, "format": "html-css"},
+  "nimble-kev-grpo": {"source": "nimble-kev-grpo.html", "width": 1440, "height": 640, "format": "html-css"},
   "/writing/assets/5930efdb0f0a6acb35b1.png": {
     "source": "01-paradigm-map.html",
     "width": 1440,

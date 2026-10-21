@@ -1,4 +1,172 @@
 {
+  "相同任务，不同的候选评分头": [
+    "One task, two scoring heads",
+    "同じタスク、異なる採点ヘッド"
+  ],
+  "规则 + 用户需求": [
+    "Rules + query",
+    "ルール + クエリ"
+  ],
+  "候选说明": [
+    "Option descriptions",
+    "選択肢の説明"
+  ],
+  "答案位置的隐藏表示": [
+    "Hidden state at the answer",
+    "回答位置の隠れ状態"
+  ],
+  "冻结词表头": [
+    "Frozen vocabulary head",
+    "固定した語彙ヘッド"
+  ],
+  "读取 A / B / C 分数": [
+    "Read A / B / C scores",
+    "A / B / C のスコア"
+  ],
+  "决定表示 + 选项表示": [
+    "Decision + option states",
+    "決定位置 + 選択肢の状態"
+  ],
+  "可训练选择头": [
+    "Trainable choice head",
+    "学習する選択ヘッド"
+  ],
+  "256 维投影 + 点积": [
+    "256-d projections + dot product",
+    "256 次元射影 + 内積"
+  ],
+  "三类概率": [
+    "Three probabilities",
+    "3 クラスの確率"
+  ],
+  "两者均冻结底座、更新已有 LoRA；KEV 另外更新选择头。": [
+    "Both freeze the backbone and update existing LoRA; KEV also updates its choice head.",
+    "両者とも基盤モデルを固定し、既存 LoRA を更新。KEV は選択ヘッドも更新する。"
+  ],
+  "从基线到硬标签 SFT": [
+    "From baseline to hard-label SFT",
+    "初期モデルからハードラベル SFT へ"
+  ],
+  "训练前": [
+    "Before training",
+    "訓練前"
+  ],
+  "硬标签 SFT": [
+    "Hard-label SFT",
+    "ハードラベル SFT"
+  ],
+  "内部准确率": [
+    "Internal accuracy",
+    "内部正解率"
+  ],
+  "499 · 内部回归集": [
+    "499 · internal regression set",
+    "499 件 · 内部回帰セット"
+  ],
+  "外部标签一致率": [
+    "External label agreement",
+    "外部ラベル一致率"
+  ],
+  "20,000 · 原外部标签": [
+    "20,000 · original external labels",
+    "20,000 件 · 元の外部ラベル"
+  ],
+  "高置信预测占比": [
+    "High-confidence share",
+    "高信頼予測の割合"
+  ],
+  "外部一致率基本不变，高置信预测占比却大幅上升。": [
+    "External agreement stays flat while high-confidence predictions become much more frequent.",
+    "外部の一致率はほぼ不変だが、高信頼予測の割合は大きく上昇した。"
+  ],
+  "同一参考分布，两种监督目标": [
+    "One reference distribution, two targets",
+    "同じ参照分布から、2 種類の教師信号"
+  ],
+  "Agent 参考概率": [
+    "Agent reference probabilities",
+    "Agent の参照確率"
+  ],
+  "Sheet / Base / Others · 示意": [
+    "Sheet / Base / Others · example",
+    "Sheet / Base / Others · 模式例"
+  ],
+  "硬标签": [
+    "Hard labels",
+    "ハードラベル"
+  ],
+  "取最大概率类别": [
+    "Keep the top class",
+    "最大確率のクラスを選択"
+  ],
+  "硬交叉熵": [
+    "Hard cross-entropy",
+    "ハード交差エントロピー"
+  ],
+  "软标签": [
+    "Soft labels",
+    "ソフトラベル"
+  ],
+  "保留完整概率": [
+    "Keep all probabilities",
+    "すべての確率を保持"
+  ],
+  "软交叉熵": [
+    "Soft cross-entropy",
+    "ソフト交差エントロピー"
+  ],
+  "模型输出": [
+    "Model output",
+    "モデル出力"
+  ],
+  "参考分布只进入损失；推理输入仍是规则、用户需求与候选说明。": [
+    "Reference probabilities enter the loss only. Inference uses rules, queries, and option descriptions.",
+    "参照確率は損失にのみ使用。推論の入力はルール、クエリ、選択肢の説明。"
+  ],
+  "在 logits 上探索，在组内比较奖励": [
+    "Explore logits, compare rewards within each group",
+    "logits を探索し、グループ内で報酬を比較"
+  ],
+  "每条 query 一组 · G = 8": [
+    "One group per query · G = 8",
+    "クエリごとに 1 グループ · G = 8"
+  ],
+  "模型分数": [
+    "Model scores",
+    "モデルスコア"
+  ],
+  "8 次高斯扰动": [
+    "8 Gaussian perturbations",
+    "8 個のガウス摂動"
+  ],
+  "计算奖励": [
+    "Compute rewards",
+    "報酬を計算"
+  ],
+  "组内相对优势": [
+    "Group-relative advantages",
+    "グループ内の相対優位度"
+  ],
+  "策略更新": [
+    "Policy update",
+    "方策を更新"
+  ],
+  "+ 稳定项": [
+    "+ stabilizers",
+    "+ 安定化項"
+  ],
+  "参考目标 t": [
+    "Reference target t",
+    "参照ターゲット t"
+  ],
+  "更新 LoRA / 选择头": [
+    "Update LoRA / choice head",
+    "LoRA / 選択ヘッドを更新"
+  ],
+  "候选是概率向量；探索过程不生成推理文本。": [
+    "Candidates are probability vectors; exploration generates no reasoning text.",
+    "候補は確率ベクトル。探索で推論テキストは生成しない。"
+  ],
   "提示词局部搜索": [
     "Local prompt search",
     "局所Prompt探索"

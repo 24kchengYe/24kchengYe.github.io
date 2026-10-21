@@ -1,4 +1,19 @@
 .writing-section { padding-top: 68px; scroll-margin-top: 45px; }
+.writing-more { margin-top: 16px; border: 0; }
+.writing-more > summary { display: flex; align-items: center; gap: 10px; list-style: none; cursor: pointer; padding: 18px 0; color: var(--muted); font-size: 14px; }
+.writing-more > summary::-webkit-details-marker { display: none; }
+.writing-more > summary::before { content: "+"; width: 15px; font-size: 17px; font-weight: 300; }
+.writing-more[open] > summary::before { content: "−"; }
+.writing-more > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.writing-more .more-count { margin-left: auto; color: #969d98; font-size: 11px; }
+.routing-input { position: absolute; left: 23px; top: 57px; width: 30px; height: 30px; border: 1px solid #9ca899; border-radius: 50%; z-index: 1; background: white; }
+.routing-stem { position: absolute; left: 53px; top: 72px; width: 33px; border-top: 1px solid #9ca899; }
+.routing-branches { position: absolute; left: 86px; top: 40px; width: 40px; height: 65px; border-left: 1px solid #9ca899; display: flex; flex-direction: column; justify-content: space-between; }
+.routing-branches i { border-top: 1px solid #9ca899; width: 40px; }
+.routing-probabilities { position: absolute; left: 137px; top: 36px; display: grid; gap: 23px; }
+.routing-probabilities i { height: 9px; width: 19px; background: #c9d1c4; border-radius: 2px; }
+.routing-probabilities i:nth-child(2) { width: 62px; background: #8da873; }
+.routing-probabilities i:nth-child(3) { width: 11px; }
 .series-intro { display: block; margin-top: 20px; margin-bottom: 18px; }
 .eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; font-weight: 500; color: var(--green); }
 .writing-section .series-intro .series-title {

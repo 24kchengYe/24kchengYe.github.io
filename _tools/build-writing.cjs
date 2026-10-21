@@ -5,13 +5,14 @@ const { buildFigures } = require('./build-figures.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
+const blogOnlySlugs = ['nimble-kev'];
 const figures = buildFigures();
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
 const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label="Writing">
   <a class="writing-back" href="/#writing" data-site-link><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
   <div class="edition-switch" aria-label="Article version">
     <a href="/writing/${slug}/" data-site-link${!technical ? ' aria-current="page"' : ''}>Blog</a>
-    <a href="/writing/${slug}/technical/" data-site-link${technical ? ' aria-current="page"' : ''}><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>
+    ${blogOnlySlugs.includes(slug) ? '' : `<a href="/writing/${slug}/technical/" data-site-link${technical ? ' aria-current="page"' : ''}><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>`}
   </div>
   <div class="languages" role="group" aria-label="Language">
     <button type="button" data-language="en" aria-label="English">EN</button>
@@ -21,8 +22,8 @@ const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label
 </nav>`;
 
 function localizeFigures(document) {
-  for (const image of document.querySelectorAll('img[src^="/writing/assets/"]')) {
-    const source = image.getAttribute('src');
+  for (const image of document.querySelectorAll('img[src^="/writing/assets/"], img[data-figure]')) {
+    const source = image.getAttribute('data-figure') || image.getAttribute('src');
     const figure = figures[source];
     if (!figure) throw new Error(`Missing figure source: ${source}`);
     image.width = figure.width;
@@ -98,6 +99,7 @@ function build(slug, technical = false) {
   script.defer = true;
   document.head.append(script);
   const output = dom.serialize() + '\n';
+  fs.mkdirSync(path.join(root, route), { recursive: true });
   fs.writeFileSync(path.join(root, route, 'index.html'), output);
   if (slug === 'spec-generation' && !technical) fs.writeFileSync(path.join(root, 'writing', slug, 'essay/index.html'), output);
   dom.window.close();
@@ -107,3 +109,4 @@ for (const slug of slugs) {
   build(slug);
   build(slug, true);
 }
+for (const slug of blogOnlySlugs) build(slug);

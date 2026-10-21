@@ -47,8 +47,9 @@
   const aliases = {
     '-publications': 'research', '-news': 'news', '-internships': 'experience',
     '-internship-projects': 'experience', '-educations': 'education',
-    '-honors-and-awards': 'honors', '-invited-talks': 'talks',
-    '-invited-talks--conferences': 'talks', '-academic-service': 'service',
+    'honors': 'news', 'talks': 'news',
+    '-honors-and-awards': 'news', '-invited-talks': 'news',
+    '-invited-talks--conferences': 'news', '-academic-service': 'service',
     '-open-source-datasets': 'datasets', '-open-source-systems': 'projects',
     '-research-vision': 'research-vision'
   };
@@ -57,6 +58,9 @@
     try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
     const target = document.getElementById(aliases[id] || id);
     if (!target) return;
+    if (target.id === 'news' && aliases[id] === 'news' && id !== '-news') {
+      document.querySelectorAll('#news details.more-items').forEach(detail => { detail.open = true; });
+    }
     for (let node = target; node; node = node.parentElement) {
       if (node.tagName === 'DETAILS') node.open = true;
     }

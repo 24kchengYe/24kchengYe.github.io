@@ -92,10 +92,7 @@ details p:last-child { margin-bottom: 0; }
 .experience-entry details > summary { font-size: .8rem; }
 .experience-entry details > div { margin-top: 8px; }
 .experience-entry details p { margin-bottom: 16px; }
-.education { font-size: .9rem; border-top: 1px solid var(--line); padding-top: 22px; margin-top: 32px; }
-.education ul { list-style: none; padding: 0; }
-.education li { margin-bottom: 14px; }
-.education em { font-style: normal; color: var(--muted); font-size: .85rem; }
+.resume-entry-link { margin: 6px 0 0; font-size: .86rem; }
 .news-list { font-size: .9rem; }
 .news-list ul { list-style: none; padding: 0; }
 .news-list li { margin: 12px 0; }
@@ -128,7 +125,6 @@ details p:last-child { margin-bottom: 0; }
   .paper-box-text { font-size: .81rem; }
   .project-list > li { grid-template-columns: 1fr; gap: 3px; margin-bottom: 21px; }
   .project-description { font-size: .9rem; }
-  .education { padding-top: 18px; margin-top: 24px; }
   .background-details { margin-top: 34px; }
 }
 @media (max-width: 360px) {

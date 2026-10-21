@@ -49,17 +49,17 @@ My research focuses on **building-scale urban analytics and simulation**, **LLM/
 
 <div lang="en" markdown="block">
 
-I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. I have published papers in SCI/SSCI journals and CCF-A conferences including *ECCV*, *Scientific Data*, *AAAI*, *CVPR*, *Habitat International*, *Building Simulation*, and *iScience*. My data and code have received **79,500** downloads. My first-authored work includes **2 ESI Highly Cited Papers** and **1 ESI Hot Paper**. See my [Google Scholar profile](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) for current citations.
+I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. See my [Google Scholar profile](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) for current citations.
 
 </div>
 <div lang="zh" markdown="block">
 
-致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。已在 *ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* 等SCI/SSCI期刊和CCF-A会议发表论文。数据与代码累计 **79,500** 次下载，一作成果包括 **2篇ESI高被引论文**和 **1篇ESI热点论文**。当前引用情况见 [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ)。
+致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。当前引用情况见 [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ)。
 
 </div>
 <div lang="ja" markdown="block">
 
-大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。*ECCV*、*Scientific Data*、*AAAI*、*CVPR*、*Habitat International*、*Building Simulation*、*iScience* などのSCI/SSCI誌やCCF-A会議に論文を発表しています。データとコードは累計 **79,500回** ダウンロードされ、筆頭著者の成果には **ESI高被引用論文2本**と **ESIホットペーパー1本** があります。最新の引用状況は [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) を参照してください。
+大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。最新の引用状況は [Google Scholar](https://scholar.google.com/citations?user=6vKhpBoAAAAJ) を参照してください。
 
 </div>
 <div class="profile-detail" id="research-vision" markdown="0">
@@ -409,24 +409,13 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 
 **ByteDance · PDI–Seed · Lark Base AI** \| LLM Algorithm Intern (ByteIntern) \| 2026.05 – Present
 
-<details class="experience-detail" markdown="block">
-<summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data synthesis, Judge/Fix Infra Models, Verifier Agent + AutoResearch, and Coding Agents for Spec–Verifier–SDK and Lark Base CLI.
-
-**[1] Spec–Refine data synthesis.** Built a **Category–Rubric–Mode** rubric system across Table, Workflow, Dashboard, Permission, and View, with a **Judge–Fix–Router** pipeline for generation, review, and repair. A Verifier Agent extracts dense feedback from local rubric verdicts before and after Fix using token logprobs, multimodal signals, and rollouts. E2E automated and human evaluation showed **data accuracy rising from 29% to 70% (+41pp)**.
-
-**[2] Judge/Fix Infra Models.** Combined an **Assumption-Based Truth Maintenance System**, DFS set propagation, and the DSH harness to generate 10,000+ training trajectories. Trained a Seed 2.0-based Judge with **Strict-SFT**, curriculum RL, and tiered F1 rewards; used the **GRPO-trained Judge as the teacher** for On-Policy Context Distillation. Accuracy matched **GPT-6.1**; vote agreement and rubric coverage improved by **35pp and 45pp**. Trained the Fix Model on heterogeneous teacher trajectories with **SFT + RFT + PPO**, reaching **20pp higher accuracy than GPT-6.1**.
-
-**[3] Agentic RL for Lark Base CLI.** Trained Coding Agents using Spec, CodeAct, E2E rewards, and the PI harness, with dynamically loaded skills and optimized Specs as reasoning context. An E2E Judge supplies dense feedback; **Auto Thinking** balances compilation, correctness, and code efficiency. **Learning-frontier** sampling evaluates difficulty with GRPO checkpoints, while compiler errors, failure logs, and successful rollouts provide privileged context. A self-evolving harness generates prompt patches through cross-batch adversarial synthesis and validation gates. **Token efficiency improved by 38pp; P50 latency fell from 3.1 min to 23 s.**
-
-</details>
 
 </div>
 
 <div class="experience-entry" markdown="block">
 
-**Nanjing NUIST Meteorological Science & Technology Institute** \| Doctoral Practice (Excellent Evaluation) \| 2025
+**Nanjing Xinda Institute of Meteorological Science and Technology** \| Doctoral Practice (Excellent Evaluation) \| 2025
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
@@ -445,24 +434,13 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 
 **字节跳动 · PDI–Seed · Lark Base AI** \| 大模型算法实习生（ByteIntern） \| 2026.05 – 至今
 
-<details class="experience-detail" markdown="block">
-<summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-负责豆包办公 MoA 下 Lark Base AI 的 Seed 2 后训练，覆盖数据合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch，以及 Spec–Verifier–SDK 和 Lark Base CLI 的 Coding Agent。
-
-**[1] Spec–Refine 数据合成。** 构建覆盖 Table、Workflow、Dashboard、Permission、View 的 **Category–Rubric–Mode** 体系与 **Judge–Fix–Router** 生成、评审和修复链路。Verifier Agent 采样 Fix 前后局部 Rubric 判定的 token logprobs，结合多模态信号与 rollout 提取稠密反馈。E2E 机评与人评显示，**数据准确率由 29% 提升至 70%（+41pp）**。
-
-**[2] Judge/Fix Infra Models。** 结合 **Assumption-Based Truth Maintenance System**、DFS 集合传播与 DSH harness 生成 1 万+ 条训练轨迹，以 **Strict-SFT、课程式强化学习、分层 F1 Reward** 后训练 Seed 2.0-based Judge，并以**经 GRPO 训练的 Judge 模型作为教师**进行 On-Policy Context Distillation。准确率与 **GPT-6.1** 持平，Vote 一致率和 Rubric 覆盖率分别提升 **35pp、45pp**。基于异构多教师轨迹，通过 **SFT + RFT + PPO** 训练 Fix Model，准确率较 **GPT-6.1 提升 20pp**。
-
-**[3] Agentic RL / Lark Base CLI。** 结合 Spec、CodeAct、E2E Reward 与 PI harness 训练 Coding Agent，动态加载 skills，将优化后的 Spec 作为推理上下文。E2E Judge 提供稠密反馈，**Auto Thinking** 综合编译通过率、产物正确性和代码效率；**Learning-frontier** 结合 GRPO checkpoint 评估数据难度，以编译错误、失败日志和成功 rollout 作为 privileged context。自进化 harness 通过跨批次对抗式综合与验证门控生成 Prompt patch，**token 利用效率提升 38pp，P50 延迟由 3.1 分钟降至 23 秒**。
-
-</details>
 
 </div>
 
 <div class="experience-entry" markdown="block">
 
-**南京信息工程大学气象科技研究院** \| 博士实践（优秀评价）\| 2025
+**南京信大气象科学技术研究院** \| 博士实践（优秀评价）\| 2025
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
@@ -481,24 +459,13 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 
 **ByteDance · PDI–Seed · Lark Base AI** \| LLMアルゴリズムインターン（ByteIntern） \| 2026.05 – 現在
 
-<details class="experience-detail" markdown="block">
-<summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
 
-豆包オフィスのMoAにおけるLark Base AI向けSeed 2のポストトレーニングを担当。データ合成、Judge/Fix Infra Models、Verifier Agent + AutoResearch、Spec–Verifier–SDKおよびLark Base CLI向けCoding Agentを開発。
-
-**[1] Spec–Refineデータ合成。** Table、Workflow、Dashboard、Permission、Viewを対象に、**Category–Rubric–Mode**体系と**Judge–Fix–Router**による生成・評価・修正パイプラインを構築。Verifier AgentはFix前後の局所ルーブリック判定のtoken logprobsを取得し、マルチモーダル信号とrolloutを組み合わせて稠密なフィードバックを抽出。E2Eの自動・人手評価で、**データ精度が29%から70%へ向上（+41pp）**。
-
-**[2] Judge/Fix Infra Models。** **Assumption-Based Truth Maintenance System**、DFSによる集合伝播、DSH harnessを組み合わせ、1万+件の訓練軌跡を生成。**Strict-SFT、カリキュラム強化学習、階層F1 Reward**でSeed 2.0-based Judgeを後訓練し、**GRPOで訓練したJudgeモデルを教師**としてOn-Policy Context Distillationを実施。精度は**GPT-6.1と同等**、Vote一致率とRubricカバレッジはそれぞれ**35pp、45pp向上**。複数の異種教師モデルの軌跡を用い、**SFT + RFT + PPO**でFix Modelを訓練し、**GPT-6.1比で精度が20pp向上**。
-
-**[3] Agentic RL / Lark Base CLI。** Spec、CodeAct、E2E Reward、PI harnessでCoding Agentを訓練し、skillsの動的読み込みと最適化したSpecを推論コンテキストとして利用。E2E Judgeが稠密なフィードバックを提供し、**Auto Thinking**がコンパイル成功率、成果物の正確性、コード効率を考慮。**Learning-frontier**はGRPO checkpointを用いてデータ難度を評価し、コンパイラエラー、失敗ログ、成功rolloutをprivileged contextとして利用。自己進化harnessがバッチ間の敵対的統合と検証ゲートを通じてPrompt patchを生成し、**token効率が38pp向上、P50遅延が3.1分から23秒へ短縮**。
-
-</details>
 
 </div>
 
 <div class="experience-entry" markdown="block">
 
-**南京情報工程大学気象科学技術研究院** \| 博士実践（優秀評価）\| 2025
+**南京信大気象科学技術研究院** \| 博士実践（優秀評価）\| 2025
 
 <details class="experience-detail" markdown="block">
 <summary><span lang="en">Work & methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
@@ -511,24 +478,7 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 </div>
 
 </div>
-<div class="education" id="education" markdown="block">
-
-<div lang="en" markdown="block">
-- *2023.09 - present*, Ph.D. in Urban Planning (AI for Urban Science), **Tsinghua University**, Beijing, China. Advisor: Prof. Ying Long.
-- *2018.09 - 2023.06*, B.Eng. in Urban Planning, **Hefei University of Technology**, Hefei, China.
-</div>
-
-<div lang="zh" markdown="block">
-- *2023.09 - 至今*，城市规划博士（AI for Urban Science方向），**清华大学**，北京。导师：龙瀛教授。
-- *2018.09 - 2023.06*，城乡规划学士，**合肥工业大学**，合肥。
-</div>
-
-<div lang="ja" markdown="block">
-- *2023.09 - 現在*，都市計画博士課程（AI for Urban Science），**清華大学**，北京。指導教員：龍瀛教授。
-- *2018.09 - 2023.06*，都市計画学士，**合肥工業大学**，合肥。
-</div>
-
-</div>
+<p class="resume-entry-link" id="education"><a href="{{ '/resume/' | relative_url }}" data-site-link><span lang="en">Full resume →</span><span lang="zh">完整简历 →</span><span lang="ja">履歴書の全文 →</span></a></p>
 
 </section>
 
@@ -553,13 +503,12 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 - *2025.11*: Paper "WaveC2R" accepted at **AAAI 2026** (CCF-A).
 - *2025.11*: CMAB paper recognized as **ESI Highly Cited Paper** in Geoscience.
 - *2025.11*: "新城市科学" paper listed in [**CNKI Top 20 Most-Cited Papers**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025) in *城市规划 CITY PLANNING REVIEW*.
-- *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) & chaired the Rising Star session at The 13th China College GIS Forum, Shanghai.
-- *2025.10*: Our paper "GenAI Models Capture Urban Science..." entered **2nd round review** at **Nature Communications**.
+- *2025.11*: Received **"GIS Rising Star" Award** (10 nationwide) and served as Session Chair & Speaker at the Rising Star Forum, The 13th China College GIS Forum, Shanghai.
 - *2025.10*: Poster at **China Urban Planning Informatization Annual Conference**, Foshan.
 - *2025.10*: Received **Jin Jingchang Outstanding Paper Award** (佳作奖, 22nd edition), Shanghai.
-- *2025.08*: Recognized as **Outstanding Teaching Assistant** (Top 5%) at Tsinghua University.
+- *2025.08*: Recognized as **Outstanding Teaching Assistant** (Top 5%) at Tsinghua University, 2024–2025 Fall.
 - *2025.06*: CMAB research featured on [**Tsinghua University's official Facebook account**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213).
-- *2025.05*: Nominated for **"Academic Rising Star"** (学术新秀) at Tsinghua University (10 university-wide, sole nominee from School of Architecture).
+- *2025.05*: Nominated for Tsinghua University’s 29th Graduate **"Academic Rising Star"** (学术新秀; 10 university-wide, sole nominee from School of Architecture).
 - *2025.05*: Exhibitor at **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
 - *2025.03*: Presented at **AAG 2025**, Detroit, USA.
 - *2025.01*: Paper "CMAB" published in **Scientific Data** — **45,000+ downloads**.
@@ -595,8 +544,7 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 - *2025.11*: 论文 "WaveC2R" 被 **AAAI 2026** (CCF-A) 录用。
 - *2025.11*: CMAB论文入选Geoscience领域 **ESI高被引论文**。
 - *2025.11*: "新城市科学"论文入选 [**中国知网《城市规划》2024-2025年度高被引论文TOP20**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) 榜单。
-- *2025.11*: 获**2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人）并主持新秀专场论坛，上海。
-- *2025.10*: 论文 "GenAI Models Capture Urban Science..." 进入 **Nature Communications** **二审**。
+- *2025.11*: 获**2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人），主持新秀专场论坛并作报告，上海。
 - *2025.10*: 在**中国城市规划信息化年会**展示展板，佛山。
 - *2025.10*: 获第22届**金经昌城市规划优秀论文佳作奖**，上海。
 - *2025.08*: 获清华大学2024-2025学年度秋季学期**优秀研究生助教**（前5%）。
@@ -637,11 +585,10 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 - *2025.11*: 論文 "WaveC2R" が **AAAI 2026** (CCF-A) に採択。
 - *2025.11*: CMAB論文が地球科学分野の **ESI高被引用論文** に認定。
 - *2025.11*: "新城市科学"論文が [**CNKI 被引用数Top20論文**](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）に選出、*城市规划*。
-- *2025.11*: **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにて新星セッション座長、上海。
-- *2025.10*: 論文 "GenAI Models Capture Urban Science..." が **Nature Communications** の**第2回査読**に進出。
+- *2025.11*: **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムの新星セッションで座長・発表者を担当、上海。
 - *2025.10*: **中国都市計画情報化年次会議**にてポスター発表、佛山。
 - *2025.10*: **金経昌都市計画優秀論文賞**（第22回）受賞、上海。
-- *2025.08*: 清華大学 **優秀ティーチングアシスタント**（上位5%）に認定。
+- *2025.08*: 清華大学 **優秀ティーチングアシスタント**（上位5%、2024–2025秋学期）に認定。
 - *2025.06*: CMAB研究が[**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)で紹介。
 - *2025.05*: 清華大学第29回大学院生**「学術新星」候補**に推薦（全学10名、建築学院唯一の推薦）。
 - *2025.05*: **第19回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
@@ -669,80 +616,26 @@ Post-training Seed 2 for Lark Base AI within Doubao Office MoA, covering data sy
 
 <section class="background-details" aria-label="More background" markdown="block">
 
-<details class="background-item" id="honors" markdown="block">
-<summary><span lang="en">Honors & awards</span><span lang="zh">荣誉与奖励</span><span lang="ja">受賞歴</span></summary>
+<details class="background-item" id="service" markdown="block">
+<summary><span lang="en">Review history</span><span lang="zh">审稿记录</span><span lang="ja">査読の記録</span></summary>
 
 <div lang="en" markdown="block">
-- *2026.09* **National Scholarship**, Tsinghua University.
-- *2026* **CAST Young Science and Technology Talent Development Program (Doctoral Track)**.
-- *2026.04* **ESI Highly Cited Paper** (Social Science), Ghost Cities paper in *Habitat International*.
-- *2025.11* **ESI Highly Cited Paper** (Geoscience), CMAB paper in *Scientific Data*.
-- *2025.11* **"GIS Rising Star"** (2025 13th College GIS Forum, one of 10 nationwide) & Session Chair, Shanghai.
-- *2025.11* **"新城市科学" Highly Cited Paper**, [CNKI Top 20 Most-Cited](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw) (2024-2025), *城市规划*.
-- *2025.10* **Jin Jingchang Outstanding Paper Award** (金经昌城市规划优秀论文佳作奖, 22nd edition), Shanghai.
-- *2025.08* **Outstanding Teaching Assistant** (Top 5%), Tsinghua University, 2024-2025 Fall.
-- *2025.05* **"Academic Rising Star" Nominee** (学术新秀, 10 university-wide, sole nominee from School of Architecture), Tsinghua University.
-- *2025.05* Exhibitor, **China Pavilion, 19th Venice Architecture Biennale**, Venice, Italy.
-- *2025.01* **Outstanding Case Award for "AI-Empowered Planning"**, Urban Planning Society of China.
-- *2023.05* Exhibitor, **China Pavilion, 18th Venice Architecture Biennale**, Venice, Italy.
+- *2023–present*: Invited Reviewer, **Cities** and **Computers, Environment and Urban Systems** (Elsevier).
+- *2024–present*: Invited Reviewer, **Nature Cities**, **Scientific Data**, and **npj Urban Sustainability** (Nature Portfolio).
+- *2025–present*: Invited Reviewer, **Verixiv**.
 </div>
 
 <div lang="zh" markdown="block">
-- *2026.09* **清华大学国家奖学金**。
-- *2026* **中国科协青年科技人才培育工程博士生专项计划**。
-- *2026.04* **ESI高被引论文**（Social Science领域），鬼城论文，*Habitat International*。
-- *2025.11* **ESI高被引论文**（Geoscience领域），CMAB论文，*Scientific Data*。
-- *2025.11* **2025年第十三届高校GIS论坛‘高校GIS新秀’**（全国10人）并主持新秀专场论坛，上海。
-- *2025.11* **"新城市科学"高被引论文**，[中国知网《城市规划》2024-2025年度高被引论文TOP20榜单](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)。
-- *2025.10* **金经昌城市规划优秀论文佳作奖**（第22届），上海。
-- *2025.08* **优秀研究生助教**（前5%），清华大学2024-2025学年秋季学期。
-- *2025.05* 清华大学第二十九届研究生 **"学术新秀"候选人**（全校10人，建筑学院唯一推荐）。
-- *2025.05* 参展**第19届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
-- *2025.01* 中国城市规划学会 **"AI赋能规划"优秀案例奖**。
-- *2023.05* 参展**第18届威尼斯国际建筑双年展中国国家馆**，意大利威尼斯。
+- *2023–至今*：受邀担任 **Cities**、**Computers, Environment and Urban Systems**（Elsevier）审稿人。
+- *2024–至今*：受邀担任 **Nature Cities**、**Scientific Data**、**npj Urban Sustainability**（Nature Portfolio）审稿人。
+- *2025–至今*：受邀担任 **Verixiv** 审稿人。
 </div>
 
 <div lang="ja" markdown="block">
-- *2026.09* **国家奨学金**、清華大学。
-- *2026* **中国科学技術協会（CAST）若手科学技術人材育成プログラム（博士課程特別枠）**。
-- *2026.04* **ESI高被引用論文**（社会科学分野）、ゴーストシティ論文、*Habitat International*。
-- *2025.11* **ESI高被引用論文**（地球科学分野）、CMAB論文、*Scientific Data*。
-- *2025.11* **「GIS新星賞」受賞**（全国10名）、第13回中国大学GISフォーラムにてセッション座長、上海。
-- *2025.11* **「新城市科学」高被引用論文**、[CNKI被引用数Top20](https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw)（2024-2025）、*城市规划*。
-- *2025.10* **金経昌都市計画優秀論文賞**（第22回）、上海。
-- *2025.08* **優秀ティーチングアシスタント**（上位5%）、清華大学2024-2025秋学期。
-- *2025.05* 清華大学第29回大学院生 **「学術新星」候補**（全学10名、建築学院唯一の推薦）。
-- *2025.05* **第19回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
-- *2025.01* 中国都市計画学会 **「AI活用計画」優秀事例賞**。
-- *2023.05* **第18回ヴェネチア・ビエンナーレ国際建築展 中国館**に出展、イタリア・ヴェネチア。
+- *2023–現在*：**Cities**、**Computers, Environment and Urban Systems**（Elsevier）の招待査読者。
+- *2024–現在*：**Nature Cities**、**Scientific Data**、**npj Urban Sustainability**（Nature Portfolio）の招待査読者。
+- *2025–現在*：**Verixiv** の招待査読者。
 </div>
-
-</details>
-<details class="background-item" id="talks" markdown="block">
-<summary><span lang="en">Talks & conferences</span><span lang="zh">学术报告与会议</span><span lang="ja">講演・学会発表</span></summary>
-
-- *2025.11*, **The 13th China College GIS Forum — Rising Star Forum**, Shanghai. Session Chair & Speaker.
-- *2025.10*, **China Urban Planning Informatization Annual Conference**, Foshan. Poster.
-- *2025.03*, **AAG 2025** (American Association of Geographers Annual Meeting), Detroit, USA.
-- *2024.11*, **Tsinghua University "Future Urban Construction" Ph.D. Forum**, Beijing.
-- *2024.06*, **Applied Urban Modelling (AUM2024)**, University of Cambridge, UK.
-- *2023.08*, **The First Research Summit of Urban Science**, Beijing.
-- *2023.08*, **Global Smart Cities Summit (GSCS) & ICUI**, Hong Kong.
-- *2023.07*, **UIA World Congress of Architects**, Copenhagen, Denmark.
-- *2023.06*, **Tongji University Architectural DigitalFUTURES** workshop "Emerging Planetarism", Shanghai. Teaching Assistant.
-- *2022.09*, **CUSR Urban Big Data Annual Meeting**, Beijing.
-- *2022.07*, **4th International Conference on Computational Design and Robotic Fabrication**, Shanghai.
-
-</details>
-<details class="background-item" id="service" markdown="block">
-<summary><span lang="en">Academic service</span><span lang="zh">学术服务</span><span lang="ja">学術活動</span></summary>
-
-- Invited Reviewer, **Nature Cities** (Nature Portfolio), 2024–present.
-- Invited Reviewer, **Scientific Data** (Nature Portfolio), 2024–present.
-- Invited Reviewer, **npj Urban Sustainability** (Nature Portfolio), 2024–present.
-- Invited Reviewer, **Cities** (Elsevier), 2023–present.
-- Invited Reviewer, **Computers, Environment and Urban Systems** (Elsevier), 2023–present.
-- Invited Reviewer, **Verixiv**, 2025–present.
 
 </details>
 <details class="background-item" id="datasets" markdown="block">

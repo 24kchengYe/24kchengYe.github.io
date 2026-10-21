@@ -1,4 +1,12 @@
 {
+  "长程轨迹合成、Online 修复与 Offline 准出组合图": [
+    "Combined workflow: long-horizon trajectory synthesis, Online repair, and Offline release",
+    "長期軌跡の合成・Online修復・Offline受け入れの全体図"
+  ],
+  "流程总览：a 记录模型与工具的真实交互；b 在线纠偏与有界重生成；c 沿依赖编辑、清洗并验证轨迹。完整 Offline 准出链路仍在逐步接入。": [
+    "Overview: a records actual model–tool interactions; b provides online correction and bounded regeneration; c edits along dependencies, cleans, and validates trajectories. The complete Offline release pipeline is being integrated.",
+    "全体像：aはモデルとツールの実際のやり取りを記録し、bはオンライン修正と回数制限付きの再生成、cは依存関係に沿った編集・クリーニング・検証を行う。Offlineの受け入れ工程全体は段階的に接続している。"
+  ],
   "为 Coding Agent 构建训练轨迹": [
     "Building Training Trajectories for Coding Agents",
     "Coding Agentの学習軌跡を構築する"

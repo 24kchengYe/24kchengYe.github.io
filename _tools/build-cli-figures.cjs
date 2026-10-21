@@ -41,5 +41,16 @@ function buildCliFigures() {
     const html = '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>' + panel.name + '</title><style>' + css + '</style></head><body><main class="canvas" style="width:' + panel.width + 'px;height:' + panel.height + 'px">' + content + '</main></body></html>\n';
     fs.writeFileSync(path.join(directory, panel.name + '.html'), html);
   }
+  let combined = panels.map(panel => {
+    const [left, top, width, height] = panel.region;
+    return '<div class="region" style="left:' + (left + panel.offsetX) + 'px;top:' + (top + panel.offsetY) + 'px;width:' + width + 'px;height:' + height + 'px"></div><div class="title" style="left:' + (40 + panel.offsetX) + 'px;top:' + (18 + panel.offsetY) + 'px">' + panel.title + '</div>';
+  }).join('');
+  for (const edge of graph.edges) {
+    combined += lineSegments(edge, 0, 0);
+    if (edge.label) combined += '<div class="edge-label" style="left:' + edge.labelAt[0] + 'px;top:' + edge.labelAt[1] + 'px">' + escape(edge.label) + '</div>';
+  }
+  combined += '<div class="query-note" style="left:60px;top:330px">表 · 视图 · 仪表盘<br>工作流 · 权限</div><div style="position:absolute;left:395px;top:65px;padding:0 12px;background:white;font-size:24px;color:#53624b">Harness</div>';
+  combined += graph.nodes.map(node => renderNode(node, 0, 0)).join('\n');
+  fs.writeFileSync(path.join(directory, 'cli-combined.html'), '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>cli-combined</title><style>' + css + '</style></head><body><main class="canvas" style="width:1760px;height:1540px">' + combined + '</main></body></html>\n');
 }
 module.exports = { buildCliFigures };

@@ -1,4 +1,10 @@
 {
+  "cli-combined": {
+    "source": "cli-combined.html",
+    "width": 1760,
+    "height": 1540,
+    "format": "html-css"
+  },
   "nimble-kev-heads": {
     "source": "nimble-kev-heads.html",
     "width": 1440,

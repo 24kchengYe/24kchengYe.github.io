@@ -44,7 +44,7 @@ badge service. The earlier AcadHomepage templates remain in the repository.
 ## Selected Writing
 
 Selected writing appears before research, in both page order and navigation.
-All four blogs and all three technical reports support the homepage's English,
+All five blogs and all three technical reports support the homepage's English,
 Chinese, and Japanese switcher. Language choices persist across article,
 technical-report, and homepage links. Figure labels, captions, alt text, tables,
 and article controls follow the same language. Zoom opens the current-language
@@ -57,18 +57,19 @@ homepage uses normal-case, regular-weight body-sized text, with its description 
   progressing from Spec generation and repair to Rubric Judge training and
   Spec-as-chain-of-thought coding-agent training. The fourth entry has no article
   link until its text is ready. An initially collapsed More writing section holds
-  the separate Nimble / KEV experiment blog.
+  the Nimble / KEV experiment blog and the visual guide to attention.
 - `writing/spec-generation/`: full multilingual essay and technical report.
 - `writing/spec-repair/`: Judge–Fix essay and technical report.
 - `writing/rubric-model/`: rubric-model essay and technical report.
 - `writing/nimble-kev/`: soft-label routing experiments, methods, and matched-data comparisons.
+- `writing/attention-mechanisms/`: six design questions spanning eighteen attention concepts.
 - `writing/figures/{en,zh,ja}/`: generated language-specific SVGs.
 - `writing/assets/`: original content-addressed assets retained for existing links.
 - `_data/writing/`: public Chinese article sources and English/Japanese translations.
 - `_tools/build-writing.cjs`: reproducible static article assembly; no translation API.
 - `_tools/build-figures.cjs`: deterministic localized diagram export.
 - `assets/css/writing*.css`: writing-list and article styles.
-- `assets/css/research-note.css`: the compact Nimble / KEV blog layout.
+- `assets/css/research-note.css`: the shared compact research-note layout.
 - `assets/css/homepage-marks.css` and `assets/js/homepage-marks.js`: decorative
   marks for research, projects, institutions, and datasets. These are custom
   visual cues, not official company logos or university seals.
@@ -83,8 +84,9 @@ The old offline exporter is not the public-site build path.
 
 ### Editable Figures
 
-The seven article editions share **59 figures**. The first six used 25 PNGs and
-30 SVGs with outlined text; Nimble / KEV adds four editable HTML/CSS diagrams.
+The eight article editions share **71 figures**. The first six used 25 PNGs and
+30 SVGs with outlined text; Nimble / KEV adds four editable HTML/CSS diagrams,
+and the attention guide adds twelve.
 All article figures now use localized SVG exports:
 
 - The 25 generation figures retain their original **HTML/CSS layouts**.
@@ -99,7 +101,7 @@ All article figures now use localized SVG exports:
   Japanese label pairs. Article prose and figure labels have separate dictionaries.
 
 Edit the `.html` or `.svg` source to change a layout, and its dictionary to change
-wording. Run `npm run build:writing` to regenerate all three languages and all seven
+wording. Run `npm run build:writing` to regenerate all three languages and all eight
 articles. Do not edit `writing/figures/` directly. Each figure has a collapsed
 source link to its editable file and translation dictionary. No runtime diagram
 library, translation service, external font, or extra model call is required.

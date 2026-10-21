@@ -1,8 +1,28 @@
 {
-  "nimble-kev-heads": {"source": "nimble-kev-heads.html", "width": 1440, "height": 640, "format": "html-css"},
-  "nimble-kev-confidence": {"source": "nimble-kev-confidence.html", "width": 1440, "height": 640, "format": "html-css"},
-  "nimble-kev-targets": {"source": "nimble-kev-targets.html", "width": 1440, "height": 640, "format": "html-css"},
-  "nimble-kev-grpo": {"source": "nimble-kev-grpo.html", "width": 1440, "height": 640, "format": "html-css"},
+  "nimble-kev-heads": {
+    "source": "nimble-kev-heads.html",
+    "width": 1440,
+    "height": 640,
+    "format": "html-css"
+  },
+  "nimble-kev-confidence": {
+    "source": "nimble-kev-confidence.html",
+    "width": 1440,
+    "height": 640,
+    "format": "html-css"
+  },
+  "nimble-kev-targets": {
+    "source": "nimble-kev-targets.html",
+    "width": 1440,
+    "height": 640,
+    "format": "html-css"
+  },
+  "nimble-kev-grpo": {
+    "source": "nimble-kev-grpo.html",
+    "width": 1440,
+    "height": 640,
+    "format": "html-css"
+  },
   "/writing/assets/5930efdb0f0a6acb35b1.png": {
     "source": "01-paradigm-map.html",
     "width": 1440,
@@ -332,5 +352,77 @@
     "width": 1008,
     "height": 504,
     "format": "svg"
+  },
+  "attention-heads": {
+    "source": "attention-heads.html",
+    "width": 1440,
+    "height": 450,
+    "format": "html-css"
+  },
+  "attention-visibility": {
+    "source": "attention-visibility.html",
+    "width": 1440,
+    "height": 520,
+    "format": "html-css"
+  },
+  "attention-execution": {
+    "source": "attention-execution.html",
+    "width": 1440,
+    "height": 750,
+    "format": "html-css"
+  },
+  "attention-mla": {
+    "source": "attention-mla.html",
+    "width": 1440,
+    "height": 720,
+    "format": "html-css"
+  },
+  "attention-csa": {
+    "source": "attention-csa.html",
+    "width": 1440,
+    "height": 850,
+    "format": "html-css"
+  },
+  "attention-hca": {
+    "source": "attention-hca.html",
+    "width": 1440,
+    "height": 590,
+    "format": "html-css"
+  },
+  "attention-nsa": {
+    "source": "attention-nsa.html",
+    "width": 1440,
+    "height": 880,
+    "format": "html-css"
+  },
+  "attention-dsa": {
+    "source": "attention-dsa.html",
+    "width": 1440,
+    "height": 640,
+    "format": "html-css"
+  },
+  "attention-moba": {
+    "source": "attention-moba.html",
+    "width": 1440,
+    "height": 740,
+    "format": "html-css"
+  },
+  "attention-kernel-linear": {
+    "source": "attention-kernel-linear.html",
+    "width": 1440,
+    "height": 630,
+    "format": "html-css"
+  },
+  "attention-gdn": {
+    "source": "attention-gdn.html",
+    "width": 1440,
+    "height": 790,
+    "format": "html-css"
+  },
+  "attention-kda": {
+    "source": "attention-kda.html",
+    "width": 1440,
+    "height": 790,
+    "format": "html-css"
   }
 }

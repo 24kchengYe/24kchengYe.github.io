@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>MLA</title><style>*{box-sizing:border-box}body{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1440px;overflow:hidden;background:#fff}.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border:1.5px solid #a4afa5;background:#fff;border-radius:4px;padding:10px 16px;font-size:24px;line-height:1.4;z-index:2}.node.soft{background:#eff4ec;border-color:#9eaf94}.math{font-size:.86em;color:#56645b}.title{position:absolute;left:40px;top:28px;font-size:29px;font-weight:500}.legend{position:absolute;top:36px;font-size:18px;color:#6a766d}.legend:before{content:"";display:inline-block;width:30px;border-top:1.5px solid #91a08f;vertical-align:middle;margin-right:12px}.legend.control:before{border-top-style:dashed}.edge{position:absolute;height:0;border-top:1.5px solid #91a08f;transform-origin:0 0;z-index:1}.edge.control{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #91a08f;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;width:1360px;font-size:20px;line-height:1.5;color:#68766c;border-top:1px solid #e0e6dc;padding-top:20px}.annotation{position:absolute;font-size:22px;color:#68766c}</style></head><body><main class="canvas" style="height:720px">
+<div class="title">MLA</div><div class="legend" style="left:760px">实线：张量流</div><div class="legend control" style="left:1070px">虚线：选择 / 门控</div>
+<div class="edge" data-from="history" data-to="latent" style="left:260px;top:180px;width:60px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="history" data-to="latent" style="left:320px;top:180px;width:25px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="history" data-to="latent" style="left:320px;top:155px;width:60px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="history" data-to="position" style="left:150px;top:240px;width:135px;transform:rotate(90deg)"></div>
+<div class="edge arrow" data-from="history" data-to="position" style="left:150px;top:375px;width:230px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="latent" data-to="up" style="left:660px;top:155px;width:80px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="up" data-to="attention" style="left:1020px;top:155px;width:230px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="up" data-to="attention" style="left:1250px;top:155px;width:75px;transform:rotate(90deg)"></div>
+<div class="edge arrow" data-from="position" data-to="attention" style="left:660px;top:375px;width:440px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="query" data-to="attention" style="left:1020px;top:525px;width:230px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="query" data-to="attention" style="left:1250px;top:525px;width:105px;transform:rotate(-90deg)"></div>
+<div class="node " id="history" style="left:40px;top:150px;width:220px;height:90px;font-size:24px">历史隐状态<br><span class="math">xₛ</span></div>
+<div class="node soft" id="latent" style="left:380px;top:100px;width:280px;height:110px;font-size:24px">内容潜向量缓存<br><span class="math">cₛᴷⱽ = Wᴰᴷⱽ xₛ</span></div>
+<div class="node soft" id="position" style="left:380px;top:320px;width:280px;height:110px;font-size:24px">独立的位置键缓存<br><span class="math">kₛᴿ = RoPE(Wᴷᴿ xₛ)</span></div>
+<div class="node " id="up" style="left:740px;top:100px;width:280px;height:110px;font-size:24px">内容 K / V 投影<br><span class="math">cᴷⱽ → Kᶜ, V</span></div>
+<div class="node " id="query" style="left:740px;top:470px;width:280px;height:110px;font-size:24px">查询投影 + RoPE<br><span class="math">xₜ → qₜᶜ, qₜᴿ</span></div>
+<div class="node soft" id="attention" style="left:1100px;top:230px;width:300px;height:190px;font-size:24px">注意力读取<br><span class="math">(qᶜ·Kᶜ + qᴿ·Kᴿ) / √dₕ<br>→ 掩码 Softmax<br>→ Σ pₛvₛ → oₜ</span></div>
+
+<div class="note" style="top:625px">逐 token 保留历史；压缩特征维度。Up K / V 可通过权重吸收实现。</div>
+</main></body></html>

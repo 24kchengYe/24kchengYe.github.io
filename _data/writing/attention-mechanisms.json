@@ -1,0 +1,254 @@
+{
+  "注意力机制，按设计拆开看": [
+    "A Visual Guide to Attention",
+    "図で読む注意機構"
+  ],
+  "MHA、MLA、稀疏注意力和线性注意力，分别在改变什么？把十八个常见概念放到六个设计问题里：共享、压缩、可见性、选择、状态，以及执行。": [
+    "What do MHA, MLA, sparse attention, and linear attention actually change? Eighteen familiar concepts become easier to read through six design questions: sharing, compression, visibility, selection, state, and execution.",
+    "MHA、MLA、スパース注意、線形注意は、何を変えているのか。よく使われる十八の概念を、共有・圧縮・可視範囲・選択・状態・実行という六つの設計上の問いから読み解く。"
+  ],
+  "2026 年 10 月 · 图解笔记": [
+    "October 2026 · Visual notes",
+    "2026年10月 · 図解ノート"
+  ],
+  "注意力用查询 Q 与键 K 计算相关性，再加权读取值 V。改动 Q、K、V 的组织方式、允许读取的范围或计算过程，会得到不同的优化路线；它们常常可以组合。": [
+    "Attention compares queries Q with keys K, then reads a weighted mixture of values V. Changing how Q, K, and V are organized, what they may read, or how the computation runs leads to different—and often composable—designs.",
+    "注意機構はクエリQとキーKの関連度を求め、値Vを重み付きで読み出す。Q・K・Vの構成、参照できる範囲、計算の実行方法を変えることで、さまざまな設計が生まれる。これらは組み合わせて使えることも多い。"
+  ],
+  "起点：缩放点积注意力": [
+    "Starting point: scaled dot-product attention",
+    "出発点：スケールド内積注意"
+  ],
+  "M 是掩码：允许访问的位置为 0，禁止的位置为负无穷。Softmax 沿键的位置归一化。下文的“头”指并行注意力子空间，“条目”指缓存中的历史表示。": [
+    "M is the mask: zero at allowed positions and negative infinity elsewhere. Softmax normalizes over key positions. A “head” is a parallel attention subspace; an “entry” is a cached representation of history.",
+    "Mはマスクで、参照可能な位置は0、それ以外は負の無限大となる。Softmaxはキー位置に沿って正規化する。以下では、並列な注意の部分空間を「ヘッド」、キャッシュされた履歴表現を「エントリ」と呼ぶ。"
+  ],
+  "共享多少组 KV": [
+    "How many KV heads?",
+    "KVヘッドをどこまで共有するか"
+  ],
+  "MHA 为每个查询头配一组独立的 K、V。MQA 让所有查询头共享一组 KV。GQA 位于两者之间：查询头分组，同组共享 KV，各组相互独立。三者都可以保留多个查询头；GQA 的每个查询头只读取所属组的 KV，最后拼接各头的输出。": [
+    "MHA gives every query head its own K and V. MQA shares one KV pair across all query heads. GQA groups query heads and shares KV within each group. All three retain multiple query heads. In GQA, each query head reads only its group’s KV; the head outputs are then concatenated.",
+    "MHAでは各クエリヘッドに独立したKとVを用意する。MQAは全クエリヘッドで一組のKVを共有し、GQAはグループ内で共有する。いずれも複数のクエリヘッドを持てる。GQAの各ヘッドは所属グループのKVだけを読み、最後にヘッドの出力を連結する。"
+  ],
+  "MHA、GQA、MQA 的六查询头与 KV 共享关系": [
+    "Six query heads with MHA, GQA, and MQA KV sharing",
+    "六つのクエリヘッドに対するMHA・GQA・MQAのKV共有"
+  ],
+  "六个查询头，分别对应六组、两组和一组 KV。连线表示共享关系。": [
+    "Six query heads, with six, two, or one KV pairs. Lines show which KV pair each head reads.",
+    "六つのクエリヘッドに対して、KVは六組・二組・一組。線は各ヘッドの参照先を示す。"
+  ],
+  "在头维度和精度相同时，32 个查询头采用 8 个 KV 头，KV 张量存储量是 32 个 KV 头的四分之一；采用 1 个则是三十二分之一。历史长度没有缩短，稠密注意力的位置交互仍随序列长度呈平方增长。缓存缩减比例也不等于端到端加速比。": [
+    "With equal head dimensions and precision, 32 query heads using 8 KV heads need one quarter of the KV tensor storage of 32 KV heads; one KV head needs one thirty-second. History is still the same length, and dense position interactions remain quadratic. Cache savings are not an end-to-end speedup ratio.",
+    "ヘッド次元と精度が同じなら、32クエリヘッドに8個のKVヘッドを使うと、KVテンソルの容量は32個の場合の4分の1になる。1個なら32分の1だ。ただし履歴長は変わらず、密な位置間の計算量は二次のまま。キャッシュの削減率がそのまま処理速度の向上率になるわけではない。"
+  ],
+  "KV 张量的存储量": [
+    "KV tensor storage",
+    "KVテンソルの容量"
+  ],
+  "L 为层数，B 为批大小，N 为历史长度，hₖᵥ 为 KV 头数，d 为每头维度，b 为每元素字节数。这里假设 K、V 维度相同，未计入分页、元数据或副本。": [
+    "L is the layer count, B the batch size, N the history length, hₖᵥ the KV head count, d the head dimension, and b the bytes per element. This assumes equal K and V dimensions and excludes paging, metadata, and replicas.",
+    "Lは層数、Bはバッチサイズ、Nは履歴長、hₖᵥはKVヘッド数、dはヘッド次元、bは要素当たりのバイト数。KとVの次元が等しい場合の式で、ページ管理・メタデータ・複製は含まない。"
+  ],
+  "压缩维度，还是压缩条目": [
+    "Compress dimensions or entries?",
+    "次元を圧縮するか、エントリを圧縮するか"
+  ],
+  "MLA 压缩每个 token 的 KV 内容特征。在 DeepSeek-V2 中，缓存保留低维潜向量 cᴷⱽ 和分离的 RoPE 位置键 kᴿ；历史 token 仍逐个保留。恢复 K、V 的投影可以在推理时吸收到其他权重中，无需每次显式重建完整 KV。": [
+    "MLA compresses the KV content features of each token. DeepSeek-V2 caches a low-dimensional latent cᴷⱽ and a separate RoPE key kᴿ, while retaining individual history tokens. Reconstruction projections can be absorbed into other weights at inference, avoiding explicit reconstruction of full KV at every step.",
+    "MLAは各トークンのKV内容特徴を圧縮する。DeepSeek-V2では低次元の潜在ベクトルcᴷⱽと分離したRoPEキーkᴿを保存し、履歴トークン自体は一つずつ残す。推論時には復元の射影を他の重みに吸収でき、毎回完全なKVを明示的に復元する必要はない。"
+  ],
+  "MLA 特征压缩与 CSA、HCA 序列压缩": [
+    "Feature compression in MLA and sequence compression in CSA and HCA",
+    "MLAの特徴圧縮とCSA・HCAの系列圧縮"
+  ],
+  "方格仅示意压缩方向，不表示实际压缩率。图中省略 CSA / HCA 的局部原始 KV 分支。": [
+    "Cells illustrate the compression axis, not actual ratios. The local raw-KV branches of CSA and HCA are omitted.",
+    "マス目は圧縮する軸を示すもので、実際の圧縮率ではない。CSA・HCAの局所的な元のKV分岐は省略。"
+  ],
+  "允许访问哪些位置": [
+    "Which positions are visible?",
+    "どの位置を参照できるか"
+  ],
+  "完整因果注意力可以读取当前位置及所有过去位置。滑动窗口注意力（SWA）只保留最近 w 个直接可见位置。叠加多层后，信息可以间接传播得更远，但单层查询仍不能直接检索所有历史。": [
+    "Full causal attention reads the current position and every earlier position. Sliding-window attention (SWA) restricts direct access to the most recent w positions. Stacking layers lets information travel farther indirectly, while a single layer still cannot directly retrieve the entire history.",
+    "完全な因果注意は現在位置とそれ以前の全位置を参照する。スライディングウィンドウ注意（SWA）は直接参照できる範囲を直近w位置に制限する。層を重ねれば情報は間接的に遠くへ伝わるが、一層で全履歴を直接検索できるようにはならない。"
+  ],
+  "局部 + 全局注意力为少量 token 赋予全局连接。图中的 Longformer 式设计是双向的：普通位置读取邻域和全局位置，全局位置读取所有位置。用于自回归生成时，还需要单独设计因果约束。": [
+    "Local-plus-global attention gives a few tokens global connections. The Longformer-style design below is bidirectional: ordinary positions read neighbors and global tokens; global tokens read every position. Autoregressive generation requires a separately designed causal constraint.",
+    "局所＋大域注意は少数のトークンに大域的な接続を与える。図のLongformer型は双方向で、通常位置は近傍と大域位置を、大域位置は全位置を参照する。自己回帰生成に使う場合は、因果制約を別途設計する必要がある。"
+  ],
+  "完整因果、滑动窗口和双向局部全局注意力的可见矩阵": [
+    "Visibility masks for full causal, sliding-window, and bidirectional local-global attention",
+    "完全因果・スライディングウィンドウ・双方向の局所＋大域注意の可視行列"
+  ],
+  "行是查询，列是键。绿色表示允许访问。前两图是因果掩码；第三图为双向掩码。": [
+    "Rows are queries; columns are keys. Green cells are visible. The first two masks are causal; the third is bidirectional.",
+    "行がクエリ、列がキー。緑のマスが参照可能な位置。最初の二つは因果マスク、三つ目は双方向マスク。"
+  ],
+  "窗口与位置交互量": [
+    "Windows and position interactions",
+    "ウィンドウと位置間の計算量"
+  ],
+  "窗口 w 包含当前位置；g 为全局 token 数。这里固定头数和特征维度，只统计注意力的位置交互，不包含投影、FFN 或内存访问开销。": [
+    "The window w includes the current position; g is the number of global tokens. These counts fix head counts and feature dimensions and cover position interactions only, excluding projections, FFNs, and memory-access overhead.",
+    "wは現在位置を含むウィンドウ幅、gは大域トークン数。ヘッド数と特徴次元を固定した位置間計算の量であり、射影・FFN・メモリアクセスの負荷は含まない。"
+  ],
+  "由内容选择历史": [
+    "Select history by content",
+    "内容に応じて履歴を選ぶ"
+  ],
+  "DSA 将索引与主注意力分开。DeepSeek-V3.2 的 Lightning Indexer 对历史 token 打分，选择 Top-k 后，主 MLA 才读取对应 KV。索引查询与主查询承担不同职责；索引分数也不是最终注意力权重。": [
+    "DSA separates indexing from main attention. DeepSeek-V3.2’s Lightning Indexer scores history tokens and selects the top k, then main MLA reads the corresponding KV. The index query and main query have different roles; index scores are not the final attention weights.",
+    "DSAは索引と主注意を分離する。DeepSeek-V3.2のLightning Indexerが履歴トークンを採点してTop-kを選び、主MLAが対応するKVを読む。索引クエリと主クエリの役割は異なり、索引スコアも最終的な注意重みとは異なる。"
+  ],
+  "MoBA 按历史块的平均 K 选择块。当前块始终保留，并在块内使用因果掩码；原论文的 k 已包含当前块，因此 k = 3 表示最多两个历史块加当前块。选中 token 的注意力统一归一化，不能把各块结果简单平均。": [
+    "MoBA selects history blocks using their mean K. The current block is always included, with an intra-block causal mask. In the paper, k includes that current block: k = 3 means at most two history blocks plus the current block. Attention is normalized jointly over selected tokens, rather than averaging block outputs.",
+    "MoBAは履歴ブロックの平均Kでブロックを選ぶ。現在ブロックは常に含め、内部に因果マスクを適用する。論文のkには現在ブロックも含まれるため、k = 3なら過去は最大二ブロック。選んだトークン全体で注意を正規化し、ブロック出力を単純平均することはしない。"
+  ],
+  "NSA、DSA、MoBA 的选择粒度和主注意力路径": [
+    "Selection granularity and main attention paths in NSA, DSA, and MoBA",
+    "NSA・DSA・MoBAの選択単位と主注意の経路"
+  ],
+  "虚线表示选择信号。NSA 融合三路输出；DSA 选择 token；MoBA 选择历史块并保留当前块。": [
+    "Dashed lines carry selection signals. NSA fuses three outputs; DSA selects tokens; MoBA selects history blocks and keeps the current block.",
+    "破線は選択信号。NSAは三分岐の出力を融合し、DSAはトークンを選び、MoBAは履歴ブロックを選んで現在ブロックを残す。"
+  ],
+  "稀疏读取减少主注意力实际处理的条目，索引和选块仍有成本。某一步没有选中的历史，后续仍可能用到；Top-k 读取本身不意味着可以删除其余 KV 缓存。": [
+    "Sparse reads reduce the entries processed by main attention, but indexing and selection still cost work. History skipped now may be needed later; top-k reading alone does not imply that the remaining KV cache can be deleted.",
+    "疎な読み出しは主注意が処理するエントリを減らすが、索引や選択にもコストがかかる。今選ばれなかった履歴が後で必要になることもあり、Top-kで読むだけで残りのKVキャッシュを削除できるとは限らない。"
+  ],
+  "用状态承载历史": [
+    "Carry history in a state",
+    "履歴を状態として保持する"
+  ],
+  "线性注意力把历史写入固定形状的状态，再用查询读取。核线性注意力通过特征映射 φ 改变相似度核，可以递推累加外积；它通常不等于对原始 Softmax 注意力做精确的乘法重排。": [
+    "Linear attention writes history into a fixed-shape state and reads it with a query. Kernel linear attention changes the similarity kernel through a feature map φ, allowing recurrent accumulation of outer products. This is generally not an exact reassociation of the original softmax attention.",
+    "線形注意は履歴を固定形状の状態に書き込み、クエリで読み出す。カーネル線形注意は特徴写像φで類似度カーネルを変え、外積を再帰的に蓄積する。通常、元のSoftmax注意を厳密に保ったまま乗算順序を変えているわけではない。"
+  ],
+  "递推状态的读写流程及三种更新规则": [
+    "Recurrent state reads and writes with three update rules",
+    "再帰状態の読み書きと三種類の更新規則"
+  ],
+  "图示核心状态路径；核线性注意力还维护归一化状态 z。归一化、卷积和输出门等实现细节未展开。": [
+    "The core state path is shown. Kernel linear attention also tracks a normalizer z. Normalization, convolutions, and output gates are not expanded.",
+    "状態の中心的な経路を示す。カーネル線形注意は正規化用のzも保持する。正規化・畳み込み・出力ゲートなどの実装詳細は省略。"
+  ],
+  "三种状态更新": [
+    "Three state updates",
+    "三種類の状態更新"
+  ],
+  "采用列向量，状态 S 的行对应 value，列对应 key 或其特征。下式只保留核心递推，门、键和查询视为已按各方法完成预处理。": [
+    "Vectors are columns; state S has value rows and key or feature columns. These equations isolate the core recurrence, treating gates, keys, and queries as already preprocessed for each method.",
+    "ベクトルは列ベクトルとし、状態Sの行をvalue、列をkeyまたはその特徴とする。式は中心的な再帰のみを示し、ゲート・キー・クエリは各方式に応じて前処理済みとする。"
+  ],
+  "核线性注意力的分母需数值稳定处理。Gated DeltaNet 的 α 是每头标量，KDA 的 α 是 key 通道向量；β 控制 delta 写入强度。": [
+    "The kernel-linear denominator needs numerical stabilization. Gated DeltaNet uses a per-head scalar α; KDA uses a key-channel vector α. β controls the strength of the delta write.",
+    "カーネル線形注意の分母には数値安定化が必要となる。Gated DeltaNetのαはヘッドごとのスカラー、KDAのαはキーチャネルのベクトル。βはデルタ書き込みの強さを制御する。"
+  ],
+  "固定形状描述的是固定维度下单个递推层的状态，不代表任意长历史都能无损保存，也不代表整个混合模型的内存恒定。Kimi Linear 每三层 KDA 搭配一层完整 MLA，用全注意力层补充检索能力。": [
+    "Fixed shape describes a recurrent layer’s state at fixed dimensions. It does not promise lossless storage of unlimited history or constant memory for an entire hybrid model. Kimi Linear interleaves three KDA layers with one full MLA layer, using full attention to complement retrieval.",
+    "固定形状とは、次元を固定した再帰層の状態についての性質だ。無限の履歴を無損失で保存できることや、混合モデル全体のメモリ量が一定であることは意味しない。Kimi Linearは三層のKDAに一層の完全MLAを組み合わせ、全注意の層で検索能力を補う。"
+  ],
+  "信息来源与执行方式": [
+    "Sources and execution",
+    "情報源と実行方法"
+  ],
+  "Self-attention 的 Q、K、V 来自同一序列；cross-attention 的 Q 来自一侧，K、V 来自另一侧。它们描述信息从哪里来，可与不同的共享方式和掩码组合。Self-attention 本身没有规定必须因果或必须双向。": [
+    "Self-attention draws Q, K, and V from one sequence. Cross-attention draws Q from one side and K, V from another. They describe information sources and can combine with different sharing schemes and masks. Self-attention alone specifies neither causal nor bidirectional visibility.",
+    "Self-attentionはQ・K・Vを同じ系列から取り、cross-attentionはQとKVを別の系列から取る。情報源の関係を表す区別であり、共有方式やマスクと組み合わせられる。Self-attentionという名称だけでは、因果か双方向かは決まらない。"
+  ],
+  "FlashAttention 优化的是执行：将 Q、K、V 分块放入片上存储，通过在线 Softmax 合并结果，避免在显存中物化完整的 N × N 分数矩阵。它保留精确注意力的数学结果，允许浮点舍入差异；稠密注意力的算术量仍是平方级。": [
+    "FlashAttention changes execution: it tiles Q, K, and V into on-chip memory and combines results with online softmax, avoiding a full N × N score matrix in GPU memory. It preserves the mathematical result of exact attention, up to floating-point rounding; dense arithmetic remains quadratic.",
+    "FlashAttentionが変えるのは実行方法だ。Q・K・Vをタイルに分けてオンチップメモリで処理し、オンラインSoftmaxで結果を統合するため、GPUメモリにN × Nのスコア行列全体を置かずに済む。浮動小数点の丸め差を除いて厳密な注意計算を保ち、密な計算の演算量は二次のままだ。"
+  ],
+  "Self 与 cross 的信息来源，以及独立的 FlashAttention 执行层": [
+    "Information sources for self and cross attention, and the separate FlashAttention execution layer",
+    "Self・cross注意の情報源と、別の層にあるFlashAttentionの実行方式"
+  ],
+  "上半部分决定 Q、K、V 来自哪里；下半部分展示注意力如何分块执行。这是两个可组合的设计维度。": [
+    "The upper half defines the sources of Q, K, and V; the lower half shows tiled execution. These are composable design dimensions.",
+    "上段はQ・K・Vの情報源、下段はタイル単位の実行。組み合わせられる二つの設計軸を示す。"
+  ],
+  "读架构时，沿着数据走": [
+    "Read the data path",
+    "データの流れで読む"
+  ],
+  "先看一个 token 被存成什么，再看查询能读哪些位置、由谁选中，最后看结果怎样归一化和执行。Mistral 7B 的 GQA + SWA 同时减少 KV 头数和直接可见范围；Kimi Linear 的 KDA + MLA 则在状态记忆与显式历史之间分配层。沿着这些路径，名字相近的方法也能分清，互补的设计也更容易组合。": [
+    "Start with what is stored for a token. Then ask which positions a query can read, who selects them, and how the result is normalized and executed. Mistral 7B combines GQA and SWA to reduce KV heads and the directly visible range. Kimi Linear distributes layers between state memory and explicit history through KDA and MLA. Following these paths makes similar names easier to distinguish and complementary designs easier to combine.",
+    "まずトークンがどの形で保存されるかを見る。次にクエリの参照範囲、選択する仕組み、正規化と実行方法を追う。Mistral 7BはGQAとSWAでKVヘッド数と直接の参照範囲を減らす。Kimi LinearはKDAとMLAで状態記憶と明示的な履歴に層を配分する。この流れで読むと、似た名前の方式を区別し、相補的な設計を組み合わせやすくなる。"
+  ],
+  "本文按原论文中的机制绘图；示意单元数与颜色用于说明结构，不代表模型配置或性能测量。": [
+    "Diagrams follow the mechanisms in the cited papers. Cell counts and colors illustrate structure, not model configurations or measured performance.",
+    "図は引用論文の機構に沿って作成した。セル数や色は構造の説明用であり、モデルの設定や性能測定値ではない。"
+  ],
+  "关闭大图": [
+    "Close enlarged figure",
+    "拡大図を閉じる"
+  ],
+  "关闭 ×": [
+    "Close ×",
+    "閉じる ×"
+  ],
+  "放大的流程图": [
+    "Enlarged diagram",
+    "拡大した図"
+  ],
+  "CSA 沿序列压缩历史条目。DeepSeek-V4 中，压缩 KV 和压缩索引键分别构造；主查询 Q 与索引查询 Qᴵ 从共享查询潜向量分别投影。索引器选择 Top-k，主注意力读取选中压缩 KV 与局部原始 KV。": [
+    "CSA compresses history along the sequence. In DeepSeek-V4, compressed KV and compressed index keys are constructed separately. Main Q and index Qᴵ use separate projections of a shared query latent. The indexer selects Top-k entries; main attention reads selected compressed KV together with local uncompressed KV.",
+    "CSA は系列方向に履歴を圧縮する。DeepSeek-V4 では圧縮 KV と圧縮索引キーを別々に構成し、共有 query 潜在表現から主 Q と索引 Qᴵ を別々に投影する。索引器が Top-k を選び、主注意力は選択した圧縮 KV と局所の非圧縮 KV を読む。"
+  ],
+  "NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路。三路共享查询 Q，但分别投影 KV，并在各自归一化后门控融合。选块时，先把压缩注意力分数映射到选择块，再对同一 GQA 组内的 query heads 求和，选择 Top-n 块。用于选块的是分数 P，不是压缩分支的输出向量 o。": [
+    "NSA has three branches: compressed attention, selected raw-block attention, and sliding-window attention. They share Q but use independent KV projections, normalize separately, and combine through learned gates. For selection, compressed-attention scores are mapped to selection blocks, then summed across query heads within the same GQA group to choose the Top-n blocks. The routing signal is the score P, not the compressed branch's output vector o.",
+    "NSA は圧縮注意力、選択した非圧縮ブロックの注意力、スライディングウィンドウ注意力の 3 分岐を持つ。Q は共有するが KV は独立に投影し、個別に正規化してからゲートで融合する。選択では圧縮注意力スコアを選択ブロックに対応付け、同一 GQA グループ内の query heads で合計して Top-n を選ぶ。選択に使うのはスコア P であり、圧縮分岐の出力ベクトル o ではない。"
+  ],
+  "Gated DeltaNet 先用每头标量门 α 衰减旧状态，再计算当前值 v 与状态预测值 S̄k 的残差，用 β 控制残差外积的写入强度。更新后的状态由 q 读取，随后进入归一化和输出门。": [
+    "Gated DeltaNet first decays the old state with a scalar gate α per head. It computes the residual between v and the state prediction S̄k, with β controlling the residual outer-product write. The updated state is read by q, followed by normalization and an output gate.",
+    "Gated DeltaNet はまずヘッドごとのスカラーゲート α で旧状態を減衰させる。v と状態の予測値 S̄k の残差を計算し、β で残差外積の書き込み強度を制御する。更新後の状態を q で読み、正規化と出力ゲートを適用する。"
+  ],
+  "MLA：内容潜向量、独立位置键与主查询。K / V 投影可在实现中吸收到其他权重。": [
+    "MLA: content latents, separate positional keys, and the main query. Implementations can absorb K / V projections into other weights.",
+    "MLA：内容の潜在表現、独立した位置キー、主 query。K / V 投影は実装で他の重みに吸収できる。"
+  ],
+  "CSA：Top-k 只输出位置；选中压缩 KV 与局部原始 KV 并行进入主注意力。": [
+    "CSA: Top-k returns positions only; selected compressed KV and local raw KV enter main attention in parallel.",
+    "CSA：Top-k が返すのは位置のみ。選択した圧縮 KV と局所の非圧縮 KV を並列に主注意力へ入力する。"
+  ],
+  "HCA：更强的序列压缩，不做 Top-k；读取全部已完成压缩块，并保留局部原始 KV。": [
+    "HCA: stronger sequence compression without Top-k; read all completed compressed blocks and retain local raw KV.",
+    "HCA：Top-k を使わず、より強く系列を圧縮。完了済み圧縮ブロックをすべて読み、局所の非圧縮 KV も保持する。"
+  ],
+  "NSA：Pᶜ 用于选块，oᶜ 用于输出融合。三路分别归一化后门控相加；选块分数在同一 GQA 组内聚合。": [
+    "NSA: Pᶜ selects blocks; oᶜ contributes to the output. The three branches normalize separately before the gated sum. Selection scores are aggregated within each GQA group.",
+    "NSA：Pᶜ はブロック選択、oᶜ は出力の融合に使う。3 分岐を個別に正規化してからゲート付き加算を行い、選択スコアは同一 GQA グループ内で集約する。"
+  ],
+  "DSA：索引器传递选择位置，KV 由缓存提供。Q 进入主注意力，Qᴵ 进入索引器。": [
+    "DSA: the indexer supplies positions, while the cache supplies KV. Q feeds the main attention; Qᴵ feeds the indexer.",
+    "DSA：索引器は位置、キャッシュは KV を供給する。Q は主注意力へ、Qᴵ は索引器へ入る。"
+  ],
+  "MoBA：当前因果块强制保留，与选中历史块联合归一化，不对各块输出取平均。": [
+    "MoBA: the causal current block is mandatory. Normalize jointly with the selected past blocks; do not average block outputs.",
+    "MoBA：現在の因果ブロックを必ず保持する。選択した過去ブロックと合わせて正規化し、ブロック出力を平均しない。"
+  ],
+  "核线性注意力：φ 同时作用于 key 和 query；S 保存外积，z 提供归一化分母。": [
+    "Kernel linear attention: φ acts on keys and queries; S accumulates outer products and z supplies the normalization denominator.",
+    "核線形注意力：φ は key と query に作用し、S が外積を累積、z が正規化分母を与える。"
+  ],
+  "Gated DeltaNet：先衰减，再计算残差，最后写入。顶部旁路保留衰减状态作为加法基底；输出门在读取之后。": [
+    "Gated DeltaNet: decay, compute the residual, then write. The upper bypass preserves the decayed state for the additive update; the output gate follows the read.",
+    "Gated DeltaNet：減衰、残差の計算、書き込みの順に進む。上側の迂回経路は減衰状態を更新の加算項へ渡し、出力ゲートは読み出し後に作用する。"
+  ],
+  "KDA：状态方向与上一图一致，行是 value、列是 key；通道门从右侧缩放 key 列，残差更新保持不变。": [
+    "KDA: as above, state rows are values and columns are keys. Channel gates scale key columns from the right; the residual update remains.",
+    "KDA：前図と同じく状態の行は value、列は key。チャネルゲートは右から key の列をスケーリングし、残差更新は維持する。"
+  ],
+  "HCA 使用更高压缩率，读取查询之前已完成的全部压缩块，并保留局部原始 KV。它没有查询相关的 Top-k 选择。CSA 与 HCA 压缩的是序列条目数，而非 MLA 的逐 token 内容特征。": [
+    "HCA uses a higher compression ratio, reads all completed compressed blocks preceding the query, and retains local uncompressed KV. It has no query-dependent Top-k selection. CSA and HCA compress the number of sequence entries, rather than per-token content features as in MLA.",
+    "HCA はより高い圧縮率を使い、query より前の完了済み圧縮ブロックをすべて読み、局所の非圧縮 KV も保持する。query 依存の Top-k 選択はない。CSA と HCA が圧縮するのは系列のエントリ数であり、MLA のような token ごとの内容特徴ではない。"
+  ],
+  "KDA 保留预测残差与 delta 写入，把遗忘门 α 细化到 key 的各个通道。不同通道可以有不同的遗忘率；改变的是旧状态如何衰减，而非取消残差更新。": [
+    "KDA retains the prediction residual and delta write, while refining α to individual key channels. Channels can forget at different rates: the change is how the old state decays, while the residual update remains.",
+    "KDA は予測残差と delta 書き込みを維持し、α を key の各チャネルに細分化する。各チャネルが異なる速度で忘却できるようになり、変わるのは旧状態の減衰方法で、残差更新は維持される。"
+  ]
+}

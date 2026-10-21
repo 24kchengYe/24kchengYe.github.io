@@ -5,7 +5,7 @@ const { buildFigures } = require('./build-figures.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
-const blogOnlySlugs = ['nimble-kev'];
+const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms'];
 const figures = buildFigures();
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
 const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label="Writing">

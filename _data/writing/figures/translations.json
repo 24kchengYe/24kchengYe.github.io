@@ -2529,7 +2529,7 @@
   ],
   "读取全部压缩条目": [
     "Read all compressed",
-    "圧縮分をすべて読む"
+    "圧縮分を全参照"
   ],
   "完整因果": [
     "Full causal",
@@ -2565,7 +2565,7 @@
   ],
   "选中原始块的注意力": [
     "Selected raw-block attention",
-    "選んだ元ブロックへの注意"
+    "選択ブロックの注意"
   ],
   "窗口注意力": [
     "Window attention",
@@ -2654,6 +2654,10 @@
   "注意力输出": [
     "Attention output",
     "注意の出力"
+  ],
+  "Top-k 词元": [
+    "Top-k tokens",
+    "Top-kトークン"
   ],
   "不物化完整 N × N 分数矩阵": [
     "No full N × N score matrix materialized",

@@ -95,3 +95,6 @@ a.writing-row:hover .row-arrow { transform: translateX(4px); color: var(--link);
 .verdicts i:nth-child(2)::before { background: #9cb780; border-color: #9cb780; }
 .agent-training .thumb-sheet.right { display: grid; place-items: center; padding: 0; }
 .code-mark { color: var(--green); font: 16px/1 Consolas, monospace; }
+.attention-grid { display: grid; grid-template-columns: repeat(6, 12px); grid-auto-rows: 12px; gap: 3px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.attention-grid i { display: block; background: #f1f4ee; border: 1px solid #dce4d6; }
+.attention-grid i:nth-child(1), .attention-grid i:nth-child(n+7):nth-child(-n+8), .attention-grid i:nth-child(n+13):nth-child(-n+15), .attention-grid i:nth-child(n+20):nth-child(-n+22), .attention-grid i:nth-child(n+27):nth-child(-n+29), .attention-grid i:nth-child(n+34):nth-child(-n+36) { background: #c8d9bc; border-color: #b2c5a4; }

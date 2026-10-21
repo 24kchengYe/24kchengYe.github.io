@@ -2470,5 +2470,193 @@
   "配对": [
     "Paired",
     "ペア"
+  ],
+  "六个查询头": [
+    "Six query heads",
+    "六つのクエリヘッド"
+  ],
+  "6 组 KV": [
+    "6 KV pairs",
+    "KV 6組"
+  ],
+  "2 组 KV": [
+    "2 KV pairs",
+    "KV 2組"
+  ],
+  "1 组 KV": [
+    "1 KV pair",
+    "KV 1組"
+  ],
+  "保留什么，压缩什么": [
+    "What is retained, what is compressed",
+    "何を残し、何を圧縮するか"
+  ],
+  "历史条目": [
+    "History entries",
+    "履歴エントリ"
+  ],
+  "内容潜向量": [
+    "Content latent",
+    "内容の潜在表現"
+  ],
+  "压缩特征维度": [
+    "Compress features",
+    "特徴次元を圧縮"
+  ],
+  "逐 token 保留": [
+    "Retain every token",
+    "各トークンを保持"
+  ],
+  "压缩序列 + 选择": [
+    "Compress + select",
+    "系列圧縮＋選択"
+  ],
+  "索引器 · Top-k": [
+    "Indexer · Top-k",
+    "索引器 · Top-k"
+  ],
+  "索引查询 Qᴵ": [
+    "Index query Qᴵ",
+    "索引クエリ Qᴵ"
+  ],
+  "读选中条目": [
+    "Read selected",
+    "選択分を読む"
+  ],
+  "更强的序列压缩": [
+    "Stronger compression",
+    "系列をさらに圧縮"
+  ],
+  "读取全部压缩条目": [
+    "Read all compressed",
+    "圧縮分をすべて読む"
+  ],
+  "完整因果": [
+    "Full causal",
+    "完全因果"
+  ],
+  "当前及全部过去": [
+    "Current and all past",
+    "現在とすべての過去"
+  ],
+  "滑动窗口": [
+    "Sliding window",
+    "スライディングウィンドウ"
+  ],
+  "w = 3，含当前位置": [
+    "w = 3, including current",
+    "w = 3、現在位置を含む"
+  ],
+  "局部 + 全局": [
+    "Local + global",
+    "局所＋大域"
+  ],
+  "双向 · 首位置为全局": [
+    "Bidirectional · first token global",
+    "双方向 · 先頭が大域位置"
+  ],
+  "同一查询，三路注意力": [
+    "One query, three attention branches",
+    "同じクエリ、三つの注意分岐"
+  ],
+  "压缩注意力": [
+    "Compressed attention",
+    "圧縮注意"
+  ],
+  "选中原始块的注意力": [
+    "Selected raw-block attention",
+    "選んだ元ブロックへの注意"
+  ],
+  "窗口注意力": [
+    "Window attention",
+    "ウィンドウ注意"
+  ],
+  "分数 P → 选块": [
+    "Select via P",
+    "Pで選択"
+  ],
+  "门控融合三路输出": [
+    "Gated fusion of outputs",
+    "三つの出力をゲート融合"
+  ],
+  "索引查询 Qᴵ + 索引 K": [
+    "Index Qᴵ + index K",
+    "索引Qᴵ ＋ 索引K"
+  ],
+  "选中的 KV": [
+    "Selected KV",
+    "選んだKV"
+  ],
+  "主 MLA · 查询 Q": [
+    "Main MLA · query Q",
+    "主MLA · クエリQ"
+  ],
+  "Q + 历史块平均 K": [
+    "Q + past-block mean K",
+    "Q ＋ 過去ブロックの平均K"
+  ],
+  "最多 k−1 个历史块": [
+    "At most k−1 past blocks",
+    "過去は最大k−1ブロック"
+  ],
+  "加上当前因果块": [
+    "Add current causal block",
+    "因果マスク付き現在ブロックを追加"
+  ],
+  "逐 token 注意力": [
+    "Token-level attention",
+    "トークン単位の注意"
+  ],
+  "统一 Softmax 归一化": [
+    "Joint softmax normalization",
+    "全体でSoftmax正規化"
+  ],
+  "写入状态，再按查询读取": [
+    "Write to state, then read by query",
+    "状態へ書き込み、クエリで読む"
+  ],
+  "状态更新": [
+    "State update",
+    "状態の更新"
+  ],
+  "按查询读取": [
+    "Query readout",
+    "クエリで読み出す"
+  ],
+  "累加外积": [
+    "Add outer products",
+    "外積を加算"
+  ],
+  "标量遗忘 + delta 写入": [
+    "Scalar decay + delta write",
+    "スカラー忘却＋デルタ書込"
+  ],
+  "通道遗忘 + delta 写入": [
+    "Channel decay + delta write",
+    "チャネル忘却＋デルタ書込"
+  ],
+  "信息来源": [
+    "Information sources",
+    "情報源"
+  ],
+  "执行方式 · FlashAttention": [
+    "Execution · FlashAttention",
+    "実行方法 · FlashAttention"
+  ],
+  "显存中的 Q、K、V": [
+    "Q, K, V in GPU memory",
+    "GPUメモリ上のQ・K・V"
+  ],
+  "片上分块计算 + 在线 Softmax": [
+    "On-chip tiles + online softmax",
+    "オンチップのタイル計算＋オンラインSoftmax"
+  ],
+  "注意力输出": [
+    "Attention output",
+    "注意の出力"
+  ],
+  "不物化完整 N × N 分数矩阵": [
+    "No full N × N score matrix materialized",
+    "N × Nスコア行列全体を実体化しない"
   ]
 }

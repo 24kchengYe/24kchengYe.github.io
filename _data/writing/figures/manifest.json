@@ -332,5 +332,41 @@
     "width": 1008,
     "height": 504,
     "format": "svg"
+  },
+  "attention-heads": {
+    "source": "attention-heads.html",
+    "width": 1440,
+    "height": 450,
+    "format": "html-css"
+  },
+  "attention-compression": {
+    "source": "attention-compression.html",
+    "width": 1440,
+    "height": 790,
+    "format": "html-css"
+  },
+  "attention-visibility": {
+    "source": "attention-visibility.html",
+    "width": 1440,
+    "height": 520,
+    "format": "html-css"
+  },
+  "attention-selection": {
+    "source": "attention-selection.html",
+    "width": 1440,
+    "height": 944,
+    "format": "html-css"
+  },
+  "attention-state": {
+    "source": "attention-state.html",
+    "width": 1440,
+    "height": 590,
+    "format": "html-css"
+  },
+  "attention-execution": {
+    "source": "attention-execution.html",
+    "width": 1440,
+    "height": 750,
+    "format": "html-css"
   }
 }

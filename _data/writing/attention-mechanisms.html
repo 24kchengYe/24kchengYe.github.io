@@ -1,0 +1,74 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'"><title>注意力机制，按设计拆开看 · Yecheng Zhang</title><link rel="canonical" href="https://24kchengye.github.io/writing/attention-mechanisms/"><meta property="og:url" content="https://24kchengye.github.io/writing/attention-mechanisms/"><meta property="og:title" content="A Visual Guide to Attention"><link rel="stylesheet" href="/assets/css/research-note.css?v=1"><style>.attention-note details{border-top:1px solid var(--line);margin:28px 0;padding:16px 0}.attention-note summary{cursor:pointer;font-size:15px;color:var(--muted)}.attention-note details p:first-of-type{margin-top:20px}.attention-note .formula{overflow-x:auto;white-space:nowrap;text-align:left;font-size:15px;line-height:2}.attention-note .figure-source-link{border:0;padding:0;margin:12px 0 0}.attention-note .figure-source-link summary{font-size:12px}</style></head><body><main class="note attention-note"><header class="note-header"><p class="note-kicker">Architecture notes / Attention</p><h1>注意力机制，按设计拆开看</h1>
+<p class="lead">MHA、MLA、稀疏注意力和线性注意力，分别在改变什么？把十八个常见概念放到六个设计问题里：共享、压缩、可见性、选择、状态，以及执行。</p>
+<p class="note-date">2026 年 10 月 · 图解笔记</p>
+</header>
+<p>注意力用查询 Q 与键 K 计算相关性，再加权读取值 V。改动 Q、K、V 的组织方式、允许读取的范围或计算过程，会得到不同的优化路线；它们常常可以组合。</p>
+<details><summary>起点：缩放点积注意力</summary><p class="formula">Attention(Q, K, V) = Softmax(QKᵀ / √d + M)V</p>
+<p>M 是掩码：允许访问的位置为 0，禁止的位置为负无穷。Softmax 沿键的位置归一化。下文的“头”指并行注意力子空间，“条目”指缓存中的历史表示。</p>
+</details>
+<h2>共享多少组 KV</h2>
+<p>MHA 为每个查询头配一组独立的 K、V。MQA 让所有查询头共享一组 KV。GQA 位于两者之间：查询头分组，同组共享 KV，各组相互独立。三者都可以保留多个查询头；GQA 的每个查询头只读取所属组的 KV，最后拼接各头的输出。</p>
+<figure><img data-figure="attention-heads" alt="MHA、GQA、MQA 的六查询头与 KV 共享关系" loading="lazy"><figcaption>六个查询头，分别对应六组、两组和一组 KV。连线表示共享关系。</figcaption></figure>
+<p>在头维度和精度相同时，32 个查询头采用 8 个 KV 头，KV 张量存储量是 32 个 KV 头的四分之一；采用 1 个则是三十二分之一。历史长度没有缩短，稠密注意力的位置交互仍随序列长度呈平方增长。缓存缩减比例也不等于端到端加速比。</p>
+<details><summary>KV 张量的存储量</summary><p class="formula">KV bytes ≈ 2 × L × B × N × hₖᵥ × d × b</p>
+<p>L 为层数，B 为批大小，N 为历史长度，hₖᵥ 为 KV 头数，d 为每头维度，b 为每元素字节数。这里假设 K、V 维度相同，未计入分页、元数据或副本。</p>
+</details>
+<p class="caption"><a href="https://arxiv.org/abs/1706.03762">Transformer</a> · <a href="https://arxiv.org/abs/1911.02150">MQA</a> · <a href="https://arxiv.org/abs/2305.13245">GQA</a></p>
+<h2>压缩维度，还是压缩条目</h2>
+<p>MLA 压缩每个 token 的 KV 内容特征。在 DeepSeek-V2 中，缓存保留低维潜向量 cᴷⱽ 和分离的 RoPE 位置键 kᴿ；历史 token 仍逐个保留。恢复 K、V 的投影可以在推理时吸收到其他权重中，无需每次显式重建完整 KV。</p>
+<p>CSA 与 HCA 则沿序列压缩历史条目。DeepSeek-V4 的 CSA 先生成压缩条目，再由查询相关的索引器挑选 Top-k；HCA 使用更高压缩率，并读取全部压缩条目。两者都另保留局部原始 KV。CSA 的索引查询用于选择，不参与决定历史如何压缩。</p>
+<figure><img data-figure="attention-compression" alt="MLA 特征压缩与 CSA、HCA 序列压缩" loading="lazy"><figcaption>方格仅示意压缩方向，不表示实际压缩率。图中省略 CSA / HCA 的局部原始 KV 分支。</figcaption></figure>
+<p class="caption"><a href="https://arxiv.org/html/2405.04434v5">DeepSeek-V2 · MLA</a> · <a href="https://arxiv.org/html/2606.19348">DeepSeek-V4 · CSA / HCA</a></p>
+<h2>允许访问哪些位置</h2>
+<p>完整因果注意力可以读取当前位置及所有过去位置。滑动窗口注意力（SWA）只保留最近 w 个直接可见位置。叠加多层后，信息可以间接传播得更远，但单层查询仍不能直接检索所有历史。</p>
+<p>局部 + 全局注意力为少量 token 赋予全局连接。图中的 Longformer 式设计是双向的：普通位置读取邻域和全局位置，全局位置读取所有位置。用于自回归生成时，还需要单独设计因果约束。</p>
+<figure><img data-figure="attention-visibility" alt="完整因果、滑动窗口和双向局部全局注意力的可见矩阵" loading="lazy"><figcaption>行是查询，列是键。绿色表示允许访问。前两图是因果掩码；第三图为双向掩码。</figcaption></figure>
+<details><summary>窗口与位置交互量</summary><p class="formula">SWA: max(0, t − w + 1) ≤ s ≤ t<br>Full: O(N²)　·　SWA: O(Nw)　·　Local + global: O(Nw + Ng)</p>
+<p>窗口 w 包含当前位置；g 为全局 token 数。这里固定头数和特征维度，只统计注意力的位置交互，不包含投影、FFN 或内存访问开销。</p>
+</details>
+<p class="caption"><a href="https://arxiv.org/abs/2310.06825">Mistral 7B</a> · <a href="https://arxiv.org/abs/2004.05150">Longformer</a></p>
+<h2>由内容选择历史</h2>
+<p>NSA 将压缩注意力、选块后的原始注意力、滑动窗口注意力分成三路，最后门控融合。选块依据来自压缩分支的注意力分数：先跨组聚合并映射到原始块，再挑选块。这里用于路由的是分数 P，不是压缩分支已经聚合好的输出向量。</p>
+<p>DSA 将索引与主注意力分开。DeepSeek-V3.2 的 Lightning Indexer 对历史 token 打分，选择 Top-k 后，主 MLA 才读取对应 KV。索引查询与主查询承担不同职责；索引分数也不是最终注意力权重。</p>
+<p>MoBA 按历史块的平均 K 选择块。当前块始终保留，并在块内使用因果掩码；原论文的 k 已包含当前块，因此 k = 3 表示最多两个历史块加当前块。选中 token 的注意力统一归一化，不能把各块结果简单平均。</p>
+<figure><img data-figure="attention-selection" alt="NSA、DSA、MoBA 的选择粒度和主注意力路径" loading="lazy"><figcaption>虚线表示选择信号。NSA 融合三路输出；DSA 选择 token；MoBA 选择历史块并保留当前块。</figcaption></figure>
+<p>稀疏读取减少主注意力实际处理的条目，索引和选块仍有成本。某一步没有选中的历史，后续仍可能用到；Top-k 读取本身不意味着可以删除其余 KV 缓存。</p>
+<p class="caption"><a href="https://arxiv.org/html/2502.11089v1">NSA</a> · <a href="https://arxiv.org/html/2512.02556">DeepSeek-V3.2 · DSA</a> · <a href="https://arxiv.org/html/2502.13189v1">MoBA</a></p>
+<h2>用状态承载历史</h2>
+<p>线性注意力把历史写入固定形状的状态，再用查询读取。核线性注意力通过特征映射 φ 改变相似度核，可以递推累加外积；它通常不等于对原始 Softmax 注意力做精确的乘法重排。</p>
+<p>Gated DeltaNet 在写入前用标量门衰减旧状态，再根据当前值与状态预测值的残差更新。KDA 将遗忘门细化到 key 的各个通道，让不同通道以不同速度保留或遗忘。二者都用 delta 更新，而非只累加新的外积。</p>
+<figure><img data-figure="attention-state" alt="递推状态的读写流程及三种更新规则" loading="lazy"><figcaption>图示核心状态路径；核线性注意力还维护归一化状态 z。归一化、卷积和输出门等实现细节未展开。</figcaption></figure>
+<details><summary>三种状态更新</summary>
+<p>采用列向量，状态 S 的行对应 value，列对应 key 或其特征。下式只保留核心递推，门、键和查询视为已按各方法完成预处理。</p>
+<h3>Kernel linear attention</h3><p class="formula">Sₜ = Sₜ₋₁ + vₜ φ(kₜ)ᵀ<br>zₜ = zₜ₋₁ + φ(kₜ)<br>oₜ = Sₜ φ(qₜ) / (zₜᵀ φ(qₜ))</p><h3>Gated DeltaNet</h3><p class="formula">S̄ₜ = αₜ Sₜ₋₁<br>Sₜ = S̄ₜ + βₜ (vₜ − S̄ₜ kₜ) kₜᵀ<br>oₜ = Sₜ qₜ</p><h3>KDA</h3><p class="formula">S̄ₜ = Sₜ₋₁ Diag(αₜ)<br>Sₜ = S̄ₜ + βₜ (vₜ − S̄ₜ kₜ) kₜᵀ<br>oₜ = Sₜ qₜ</p>
+<p>核线性注意力的分母需数值稳定处理。Gated DeltaNet 的 α 是每头标量，KDA 的 α 是 key 通道向量；β 控制 delta 写入强度。</p>
+</details>
+<p>固定形状描述的是固定维度下单个递推层的状态，不代表任意长历史都能无损保存，也不代表整个混合模型的内存恒定。Kimi Linear 每三层 KDA 搭配一层完整 MLA，用全注意力层补充检索能力。</p>
+<p class="caption"><a href="https://arxiv.org/abs/2006.16236">Linear Transformer</a> · <a href="https://arxiv.org/html/2412.06464v1">Gated DeltaNet</a> · <a href="https://arxiv.org/html/2510.26692">Kimi Linear · KDA</a></p>
+<h2>信息来源与执行方式</h2>
+<p>Self-attention 的 Q、K、V 来自同一序列；cross-attention 的 Q 来自一侧，K、V 来自另一侧。它们描述信息从哪里来，可与不同的共享方式和掩码组合。Self-attention 本身没有规定必须因果或必须双向。</p>
+<p>FlashAttention 优化的是执行：将 Q、K、V 分块放入片上存储，通过在线 Softmax 合并结果，避免在显存中物化完整的 N × N 分数矩阵。它保留精确注意力的数学结果，允许浮点舍入差异；稠密注意力的算术量仍是平方级。</p>
+<figure><img data-figure="attention-execution" alt="Self 与 cross 的信息来源，以及独立的 FlashAttention 执行层" loading="lazy"><figcaption>上半部分决定 Q、K、V 来自哪里；下半部分展示注意力如何分块执行。这是两个可组合的设计维度。</figcaption></figure>
+<p class="caption"><a href="https://arxiv.org/abs/1706.03762">Transformer</a> · <a href="https://arxiv.org/abs/2205.14135">FlashAttention</a></p>
+<h2>读架构时，沿着数据走</h2>
+<p>先看一个 token 被存成什么，再看查询能读哪些位置、由谁选中，最后看结果怎样归一化和执行。Mistral 7B 的 GQA + SWA 同时减少 KV 头数和直接可见范围；Kimi Linear 的 KDA + MLA 则在状态记忆与显式历史之间分配层。沿着这些路径，名字相近的方法也能分清，互补的设计也更容易组合。</p>
+<p class="source-note">本文按原论文中的机制绘图；示意单元数与颜色用于说明结构，不代表模型配置或性能测量。</p>
+</main><dialog id="figure-zoom"><button type="button" aria-label="关闭大图">关闭 ×</button><img alt="放大的流程图"></dialog>
+<script>
+const zoom = document.getElementById('figure-zoom');
+for (const figure of document.querySelectorAll('figure img')) {
+  figure.tabIndex = 0;
+  figure.setAttribute('role', 'button');
+  const showFigure = () => {
+    zoom.querySelector('img').src = figure.src;
+    zoom.querySelector('img').alt = figure.alt;
+    zoom.showModal();
+  };
+  figure.addEventListener('click', showFigure);
+  figure.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showFigure(); }
+  });
+}
+zoom.querySelector('button').addEventListener('click', () => zoom.close());
+</script></body></html>
+

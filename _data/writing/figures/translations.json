@@ -13,7 +13,7 @@
   ],
   "答案位置的隐藏表示": [
     "Hidden state at the answer",
-    "回答位置の隠れ状態"
+    "回答位置の状態"
   ],
   "冻结词表头": [
     "Frozen vocabulary head",
@@ -137,7 +137,7 @@
   ],
   "8 次高斯扰动": [
     "8 Gaussian perturbations",
-    "8 個のガウス摂動"
+    "ガウス摂動 × 8"
   ],
   "计算奖励": [
     "Compute rewards",

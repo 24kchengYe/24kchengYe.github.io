@@ -6,7 +6,7 @@
 <div class="arrow" style="left:296px;top:306px;width:36px"></div><div class="vertical" style="left:332px;top:192px;height:228px"></div>
 <div class="arrow" style="left:332px;top:192px;width:46px"></div><div class="arrow" style="left:332px;top:420px;width:46px"></div>
 <div class="label" style="left:378px;top:101px">Nimble · 9B</div>
-<div class="node" style="left: 378px; top: 140px; width: 266px; height: 104px; font-size: 26px; line-height: 1.4;"><span style="min-width: 0; overflow-wrap: anywhere;">回答位置の隠れ状態</span></div>
+<div class="node" style="left: 378px; top: 140px; width: 266px; height: 104px; font-size: 26px; line-height: 1.4;"><span style="min-width: 0; overflow-wrap: anywhere;">回答位置の状態</span></div>
 <div class="arrow" style="left:644px;top:192px;width:52px"></div>
 <div class="node dotted" style="left: 696px; top: 140px; width: 294px; height: 104px; font-size: 25px; line-height: 1.4;"><span style="min-width: 0; overflow-wrap: anywhere;">固定した語彙ヘッド<br />A / B / C のスコア</span></div>
 <div class="label" style="left:378px;top:329px">KEV · 0.8B</div>

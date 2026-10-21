@@ -5,10 +5,12 @@ The three-language `/resume/` page is a web adaptation of the owner's
 The original CV remains local and unchanged. Its SHA-256 is
 `fd215284597109d1de131a9cc2b426af2ba704079d0ff248785ffb1120be7406`.
 
-The page condenses the CV's prose while preserving roles, chronology, comparison
-baselines, values, units, and awards. It retains selected method details rather than
-reproducing the full technical descriptions and author lists. It does not introduce new experimental
-claims. `Guide: no material change`.
+The owner explicitly requires the Resume to remain unabridged. The Chinese body is
+extracted from the source, retaining all prose, original headings and numbering,
+inline emphasis, seven complete paper citations, honors/awards grouping, and source
+links. English and Japanese translate each field in full, without summarizing it.
+This replaces the earlier condensed preview; do not reintroduce abridgment to make
+the page shorter. No new experimental claims are introduced. `Guide: no material change`.
 
 | Web section | Primary source | Checks |
 | --- | --- | --- |
@@ -32,8 +34,10 @@ The English and Japanese versions translate the same entries and comparisons.
 Institution and award names use descriptive translations where the source supplies
 only Chinese. Publication titles and technical model names remain in their original
 form. Downloads and GitHub stars are the October 2026 CV snapshot, not live statistics.
-Email, GitHub, and Google Scholar follow the existing public homepage; the source
-phone/WeChat field is not added to the site. Print/PDF uses the selected page language.
+Contact details, including the phone/WeChat field, follow the CV. The location is
+explicitly a preferred work location, and the career-interest field uses the source's
+broader “Agentic”; the internship subsection retains “Agentic RL”. Print/PDF uses
+the selected page language. The source photograph is not duplicated on this text page.
 
 Implementation: `_data/resume.yml` → `_pages/resume.html` → `_layouts/minimal.html`.
 Local build evidence, source extraction, browser checks, and screenshots live in
@@ -44,13 +48,24 @@ Validation on 2026-10-21: English, Chinese, and Japanese each pass browser check
 at 1440, 390, and 320 px with no horizontal overflow. Language switching and the
 Resume → homepage section → Resume round trip retain the selected language.
 All three print exports contain only their selected language; key values and
-dates survive extraction. The English print layout was also visually inspected.
-The three translations have matching section, entry, and compact-row identities.
+dates survive extraction. The restored Chinese print layout was visually inspected.
+The translations have matching sections, entries, nested projects, groups, and rows.
+Browser checks also confirm that every localized data field actually renders.
 
-Follow-up fidelity audit on 2026-10-21: re-read the unchanged source PDF, its LaTeX,
-and all three language records. Roles, dates, reported metrics and awards map to the
-source. This remains a condensed web adaptation, not a complete transcription.
-Examples of abridgment include the PI harness / Auto Thinking details, individual
-quality gates, and full paper author lists. The page header now explicitly says
-preferred work location (the CV's “意向城市”), and uses the source's broader “Agentic”
-career interest; the internship subsection retains “Agentic RL”.
+Full-text audit on 2026-10-21:
+
+- All 67 Chinese body text fields match the actual PDF after ignoring layout
+  whitespace and typographic punctuation. Values, units, and methods are checked too.
+- Reverse coverage of the PDF finds no omitted text other than the explicitly
+  excluded Nature Communications review status. The scholarship's month is the
+  owner's explicit refinement of the source's year.
+- All 67 translatable fields have English and Japanese counterparts. Seven complete
+  author/title/venue citations and all source links are identical across languages.
+- Previously omitted PI harness, Auto Thinking, quality gates, data-processing
+  details, and three-tier MemoMind model responsibilities are restored.
+
+Reproduction aids and evidence: `_preview/restore_resume_full.py`,
+`_preview/resume-{en,ja}-full.json`, `_preview/audit_full_resume.py`,
+`_preview/resume-full-audit.json`, and `_preview/resume-verification.json`.
+They operate on the unchanged source PDF/TeX and write only the web data or preview.
+The earlier condensed implementation remains in git history, not as the current contract.

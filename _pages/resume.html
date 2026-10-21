@@ -12,13 +12,14 @@ resume: true
       <button class="resume-print" type="button" hidden><span lang="en">Print / PDF</span><span lang="zh">打印 / PDF</span><span lang="ja">印刷 / PDF</span><span aria-hidden="true"> ↗</span></button>
     </div>
     <h1>Yecheng Zhang <span class="name-cn">张业成</span></h1>
-    <p class="resume-focus"><span lang="en">LLM post-training · Multimodal understanding · Agentic</span><span lang="zh">大模型后训练 · 多模态理解 · Agentic</span><span lang="ja">LLMの事後学習 · マルチモーダル理解 · Agentic</span></p>
+    <p class="resume-focus">{% for language in site.data.resume.languages %}<span lang="{{ language.code }}">{{ language.header.focus | escape }}</span>{% endfor %}</p>
     <nav class="resume-contact" aria-label="Contact" data-aria-label-zh="联系方式" data-aria-label-ja="連絡先" data-aria-label-en="Contact">
       <a href="mailto:zhangyec23@mails.tsinghua.edu.cn">zhangyec23@mails.tsinghua.edu.cn</a>
+      <span>{% for language in site.data.resume.languages %}<span lang="{{ language.code }}">{{ language.header.phone_label | escape }}: </span>{% endfor %}<a href="tel:{{ site.data.resume.contact_phone }}">{{ site.data.resume.contact_phone }}</a></span>
       <a href="https://github.com/24kchengYe">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar</a>
+      <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ&amp;hl=en">Google Scholar</a>
     </nav>
-    <p class="resume-meta"><span lang="en">Preferred work location: Beijing · Updated October 2026</span><span lang="zh">意向城市：北京 · 更新于 2026 年 10 月</span><span lang="ja">希望勤務地：北京 · 2026年10月更新</span></p>
+    <p class="resume-meta">{% for language in site.data.resume.languages %}<span lang="{{ language.code }}">{{ language.header.location | escape }} · {{ language.header.updated | escape }}</span>{% endfor %}</p>
   </header>
 
   {% for language in site.data.resume.languages %}
@@ -35,18 +36,23 @@ resume: true
             {% if entry.date %}<span class="resume-date">{{ entry.date | escape }}</span>{% endif %}
           </div>
           {% if entry.role %}<p class="resume-role">{{ entry.role }}</p>{% endif %}
-          {% if entry.points %}<ul>{% for point in entry.points %}<li>{{ point }}</li>{% endfor %}</ul>{% endif %}
-          {% if entry.text %}<p{% if entry.points %} class="resume-references"{% endif %}>{{ entry.text }}</p>{% endif %}
-          {% if entry.link %}<p class="resume-entry-link"><a href="{{ entry.link.url | escape }}">{{ entry.link.label | escape }} ↗</a></p>{% endif %}
+          {% for paragraph in entry.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          {% if entry.papers.size > 0 %}<div class="resume-references">{% for paper in entry.papers %}<p>{{ paper }}</p>{% endfor %}</div>{% endif %}
           {% for project in entry.projects %}
-          <div class="resume-project">
+          <div class="resume-project" data-resume-project="{{ project.id }}">
             <h4>{{ project.title | escape }}</h4>
-            <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+            {% for paragraph in project.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
           </div>
           {% endfor %}
         </div>
         {% endfor %}
-        {% if section.rows %}<ul class="resume-compact-list">{% for row in section.rows %}<li><span class="resume-date">{{ row.date | escape }}</span><span>{{ row.text }}</span></li>{% endfor %}</ul>{% endif %}
+        {% if section.footer %}<p class="resume-section-footer">{{ section.footer }}</p>{% endif %}
+        {% for group in section.groups %}
+        <div class="resume-group" data-resume-group="{{ group.id }}">
+          <h3>{{ group.title | escape }}</h3>
+          <ul class="resume-compact-list">{% for row in group.rows %}<li><span class="resume-date">{{ row.date | escape }}</span><span>{{ row.text }}</span></li>{% endfor %}</ul>
+        </div>
+        {% endfor %}
       </div>
     </section>
     {% endfor %}

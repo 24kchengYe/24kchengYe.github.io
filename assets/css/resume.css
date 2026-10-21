@@ -7,12 +7,11 @@
 .resume-print:hover { text-decoration: underline; text-underline-offset: .2em; }
 .resume h1 { margin-bottom: 12px; }
 .resume-focus { font-size: 1rem; margin-bottom: 14px; }
-.resume-nowrap { white-space: nowrap; }
 .resume-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: .86rem; }
 .resume-meta { color: var(--muted); font-size: .78rem; margin: 12px 0 0; }
 .resume-section { display: grid; grid-template-columns: 132px minmax(0,1fr); gap: 36px; padding: 28px 0 32px; border-top: 1px solid var(--line); }
 .resume-section h2 { font-size: .9rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin: 3px 0 0; }
-.resume-section-body { min-width: 0; font-size: .9rem; line-height: 1.7; }
+.resume-section-body { min-width: 0; font-size: .9rem; line-height: 1.8; overflow-wrap: anywhere; }
 .resume-section-intro { margin-bottom: 24px; }
 .resume-entry + .resume-entry { margin-top: 28px; }
 .resume-entry-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 3px 18px; margin-bottom: 3px; }
@@ -21,13 +20,13 @@
 .resume-date { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .resume-role { color: var(--muted); margin-bottom: 12px; }
 .resume-entry p:last-child { margin-bottom: 0; }
-.resume-entry ul { padding-left: 18px; margin: 8px 0 0; }
-.resume-entry li { padding-left: 2px; margin: 6px 0; }
 .resume-project { margin-top: 20px; }
 .resume-project h4 { font-size: .9rem; font-weight: 600; margin: 0 0 6px; }
-.resume-entry-link { font-size: .8rem; margin-top: 8px; }
 .resume-references { font-size: .82rem; margin-top: 12px; }
-.resume-entry + .resume-compact-list { margin-top: 20px; }
+.resume-references p { margin-bottom: 10px; }
+.resume-section-footer { margin: 24px 0 0; }
+.resume-group + .resume-group { margin-top: 26px; }
+.resume-group h3 { font-size: .9rem; font-weight: 600; margin: 0 0 12px; }
 .resume-compact-list { list-style: none; margin: 0; padding: 0; }
 .resume-compact-list li { display: grid; grid-template-columns: 78px minmax(0,1fr); gap: 14px; margin: 0 0 11px; }
 .resume-compact-list li:last-child { margin-bottom: 0; }

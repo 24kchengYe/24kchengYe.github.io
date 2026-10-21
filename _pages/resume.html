@@ -1,0 +1,55 @@
+---
+permalink: /resume/
+layout: minimal
+title: Resume
+description: Yecheng Zhang's education, experience, research, and honors. Available in English, Chinese, and Japanese.
+resume: true
+---
+<article class="resume">
+  <header class="resume-header">
+    <div class="resume-heading-row">
+      <p class="resume-kicker" data-page-title><span lang="en">Resume</span><span lang="zh">简历</span><span lang="ja">履歴書</span></p>
+      <button class="resume-print" type="button" hidden><span lang="en">Print / PDF</span><span lang="zh">打印 / PDF</span><span lang="ja">印刷 / PDF</span><span aria-hidden="true"> ↗</span></button>
+    </div>
+    <h1>Yecheng Zhang <span class="name-cn">张业成</span></h1>
+    <p class="resume-focus"><span lang="en">LLM post-training · Multimodal understanding · <span class="resume-nowrap">Agentic RL</span></span><span lang="zh">大模型后训练 · 多模态理解 · <span class="resume-nowrap">Agentic RL</span></span><span lang="ja">LLMの事後学習 · マルチモーダル理解 · <span class="resume-nowrap">Agentic RL</span></span></p>
+    <nav class="resume-contact" aria-label="Contact" data-aria-label-zh="联系方式" data-aria-label-ja="連絡先" data-aria-label-en="Contact">
+      <a href="mailto:zhangyec23@mails.tsinghua.edu.cn">zhangyec23@mails.tsinghua.edu.cn</a>
+      <a href="https://github.com/24kchengYe">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar</a>
+    </nav>
+    <p class="resume-meta"><span lang="en">Beijing · Updated October 2026</span><span lang="zh">北京 · 更新于 2026 年 10 月</span><span lang="ja">北京 · 2026年10月更新</span></p>
+  </header>
+
+  {% for language in site.data.resume.languages %}
+  <div class="resume-language" lang="{{ language.code }}">
+    {% for section in language.sections %}
+    <section class="resume-section" aria-labelledby="resume-{{ section.id }}-{{ language.code }}">
+      <h2 id="resume-{{ section.id }}-{{ language.code }}">{{ section.title | escape }}</h2>
+      <div class="resume-section-body">
+        {% if section.intro %}<p class="resume-section-intro">{{ section.intro }}</p>{% endif %}
+        {% for entry in section.entries %}
+        <div class="resume-entry" data-resume-entry="{{ entry.id }}">
+          <div class="resume-entry-heading">
+            <h3>{% if entry.url %}<a href="{{ entry.url | escape }}">{{ entry.title | escape }}</a>{% else %}{{ entry.title | escape }}{% endif %}</h3>
+            {% if entry.date %}<span class="resume-date">{{ entry.date | escape }}</span>{% endif %}
+          </div>
+          {% if entry.role %}<p class="resume-role">{{ entry.role }}</p>{% endif %}
+          {% if entry.points %}<ul>{% for point in entry.points %}<li>{{ point }}</li>{% endfor %}</ul>{% endif %}
+          {% if entry.text %}<p{% if entry.points %} class="resume-references"{% endif %}>{{ entry.text }}</p>{% endif %}
+          {% if entry.link %}<p class="resume-entry-link"><a href="{{ entry.link.url | escape }}">{{ entry.link.label | escape }} ↗</a></p>{% endif %}
+          {% for project in entry.projects %}
+          <div class="resume-project">
+            <h4>{{ project.title | escape }}</h4>
+            <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+        {% if section.rows %}<ul class="resume-compact-list">{% for row in section.rows %}<li><span class="resume-date">{{ row.date | escape }}</span><span>{{ row.text }}</span></li>{% endfor %}</ul>{% endif %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</article>

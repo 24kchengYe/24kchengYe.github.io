@@ -1,0 +1,336 @@
+# Content snapshot: Yecheng_CV.pdf, 2026-10-17. Dates and results are shared in meaning
+# across languages. Source mapping and translation review live in docs/resume-source.md.
+languages:
+  - code: en
+    sections:
+      - id: education
+        title: Education
+        entries:
+          - id: tsinghua
+            title: Tsinghua University
+            date: 2023.09 – Present
+            role: Ph.D. student in Urban Planning
+            text: LLM post-training, multimodal understanding, and AI4Science.
+          - id: hfut
+            title: Hefei University of Technology
+            date: 2018.09 – 2023.06
+            role: Bachelor's degree in Urban Planning
+            text: Urban data mining and computer vision.
+      - id: experience
+        title: Experience
+        entries:
+          - id: bytedance
+            title: ByteDance · PDI–Seed · Lark Base AI
+            date: 2026.05 – Present
+            role: LLM Algorithm Intern · ByteIntern
+            text: Post-training Seed 2 for Lark Base AI within Doubao Office's MoA system, spanning synthetic data, Judge/Fix infrastructure models, Verifier Agent and AutoResearch, and coding agents with the Spec–Verifier–SDK and Lark Base CLI.
+            projects:
+              - title: Spec-Refine data generation
+                points:
+                  - Built a Category–Rubric–Mode hierarchy across Table, Workflow, Dashboard, Permission, and View, with a Judge–Fix–Router pipeline for candidate generation, root-cause routing, local review, and repair memory. Used voting and format gates, early stopping, and transactional rollback to control quality and cost.
+                  - Built a Verifier Agent that combines token log-probabilities, multimodal evidence, and rollouts into dense RL signals. Data accuracy increased from <strong>29% to 70% (+41 pp)</strong> in end-to-end automated and human evaluation.
+              - title: Judge/Fix model training
+                points:
+                  - Built an Assumption-Based Truth Maintenance System with DFS-based set propagation to identify minimal and contradictory assumption sets. Used <strong>10,000+</strong> synthetic trajectories from the DSH harness for Seed 2 Judge post-training, combining Strict-SFT, hierarchical F1 rewards, curriculum RL, and on-policy context distillation.
+                  - Used a GRPO-trained Judge as the teacher for Seed 2. Accuracy matched GPT-6.1; vote agreement and rubric coverage improved by <strong>35 pp</strong> and <strong>45 pp</strong>. Trained a Fix model with multi-teacher trajectories and SFT + RFT + PPO, achieving accuracy <strong>20 pp above GPT-6.1</strong>.
+              - title: Agentic RL for Lark Base CLI
+                points:
+                  - Used refined Specs as the reasoning chain for coding agents, with CodeAct, long-horizon end-to-end rewards, and dynamically loaded skills. Converted requirement coverage, configuration correctness, dependencies, and usability into dense feedback; used learning-frontier sampling and compiler errors, failure logs, and successful rollouts as privileged context.
+                  - Built an evolving prompt-optimization harness with cross-batch adversarial analysis and evidence, stability, and net-benefit gates. Token utilization efficiency improved by <strong>38 pp</strong>; <strong>P50 latency fell from 3.1 minutes to 23 seconds</strong>.
+      - id: research
+        title: Research
+        intro: Six first-authored papers, including ECCV/CVPR and four SCI Q1 journal papers; two first-authored ESI Highly Cited Papers and one ESI Hot Paper.
+        entries:
+          - id: urbanalign
+            title: UrbanAlign · VLM–human preference alignment
+            date: 2025.10 – 2026.02
+            role: First and corresponding author · ECCV 2026
+            points:
+              - Developed post-hoc concept bottleneck alignment for visual RAG. An Observer–Debater–Judge chain extracts interpretable concept scores from frozen VLMs; locally weighted ridge regression calibrates scores to human ratings on a visual–semantic manifold.
+              - Achieved <strong>72.2% accuracy (κ = 0.45)</strong> for urban scene perception, <strong>15.1 pp</strong> above the supervised baseline and <strong>16.3 pp</strong> above the uncalibrated VLM.
+            link:
+              label: UrbanAlign
+              url: https://doi.org/10.1007/978-3-032-37132-4_18
+          - id: urban-data
+            title: Multimodal urban data mining
+            date: 2021.09 – 2025.10
+            role: GloPPRUA · GloGCI · CMAB
+            points:
+              - Developed multi-temporal visual interpretation and spatial matching. Resolution-matched HRNet-W48 + U-Net improved strong-blur Dice from <strong>0.684 to 0.756</strong>; an RGB–mask GAN improved building-outline right-angle ratio from <strong>0.398 to 0.624</strong>. Combined 1 m DP vectorization, morphology routing, offset calibration, and contextual matching.
+              - Built approximately <strong>14.78 million two-period building observations across 1,000 cities</strong>. CMAB and GloGCI became ESI Highly Cited Papers; data and code received <strong>79,500 downloads</strong>.
+            text: '<a href="https://doi.org/10.1038/s41597-025-04730-5">CMAB · Scientific Data, 2025</a><br><a href="https://doi.org/10.1016/j.habitatint.2025.103350">GloGCI / Ghost Cities · Habitat International, 2025</a><br><a href="https://doi.org/10.1016/j.jag.2022.102942">Urban spatial risk prediction · JAG, 2022</a><br><a href="https://doi.org/10.1007/s12273-026-1461-9">Building-scale urban analytics and simulation · Building Simulation, 2026</a>'
+          - id: ai4us
+            title: Scientific data synthesis and controlled experiments
+            date: 2024.09 – Present
+            role: First / corresponding author · arXiv
+            points:
+              - Developed AI4US to evaluate data synthesis and conditional intervention across urban scaling, distance decay, neighborhood vitality, and streetscape perception, comparing reproduced relationships, empirical parameters and distributions, and responses to controlled conditions.
+              - Found that GenAI reproduces recognizable urban patterns and directional responses, while compressing numerical range, local variation, and visual diversity. Profile–Probe–Intervene analysis on <strong>Qwen2.5-VL-72B</strong> showed that some patterns can be decoded from intermediate representations and influence local outputs.
+            text: '<a href="https://arxiv.org/abs/2505.13803">GenAI Models Capture Urban Science but Oversimplify Complexity</a> · arXiv, 2025.<br>Large Language Models Perceive Cities through a Culturally Uneven Baseline · arXiv, 2026 (corresponding author).'
+      - id: projects
+        title: Projects
+        intro: Participated in NSFC projects No. 62394335 and No. 52178044, and Energy Foundation project No. G-2306-34815.
+        entries:
+          - id: weather
+            title: Nanjing Xinda Institute of Meteorological Science and Technology
+            date: '2025'
+            role: Doctoral practice placement · Outstanding internship evaluation
+            text: Built satellite-to-radar reflectivity retrieval from FY-4B multichannel observations, using conditional flow matching for zero-shot transfer to regions without radar coverage.
+          - id: memomind
+            title: MemoMind
+            url: https://github.com/24kchengYe/MemoMind
+            date: 2025 – 2026
+            role: AI memory and personal knowledge system · 600+ GitHub stars
+            text: Built a PostgreSQL + pgvector knowledge graph service with four retrieval routes—semantic vectors, BM25, graph traversal, and temporal constraints—combined with RRF and cross-encoder reranking. Connected agents through MCP; managed <strong>43,000+ nodes and 2.49 million+ knowledge links</strong> across multiple banks.
+          - id: tools
+            title: Research tools and agent infrastructure
+            date: 2025 – 2026
+            role: 20+ independently developed open-source projects · 1,300+ total GitHub stars
+            text: '<a href="https://github.com/24kchengYe/human-skill-tree">Human Skill Tree</a> (514 stars) for AI-assisted learning; <a href="https://github.com/24kchengYe/InfoHub">InfoHub</a> for information aggregation; <a href="https://github.com/24kchengYe/Zync">Zync</a> for multi-agent orchestration; and <a href="https://github.com/24kchengYe/ai-api-gateway">AI API Gateway</a> for model routing, authentication, quotas, and cross-device access.'
+      - id: honors
+        title: Honors & awards
+        rows:
+          - {date: '2026.09', text: 'National Scholarship, Tsinghua University'}
+          - {date: '2026', text: 'Doctoral Student Program, Young Science and Technology Talent Development Project, China Association for Science and Technology (CAST)'}
+          - {date: '2025', text: 'GIS Rising Star, 13th China University GIS Forum'}
+          - {date: '2025', text: 'Nominee, Academic Rising Star Award for Graduate Students, Tsinghua University'}
+          - {date: '2025', text: 'Jin Jingchang Outstanding Paper Award'}
+          - {date: '2024', text: 'First-class Comprehensive Excellence Scholarship, Tsinghua University'}
+          - {date: '2023', text: 'Creativity Award, 1st Global Urban Science Conference'}
+          - {date: '2022', text: 'Top Ten Students, Hefei University of Technology'}
+          - {date: '2022', text: 'Gold Award, 10th Challenge Cup Anhui University Student Entrepreneurship Competition'}
+          - {date: '2021', text: 'National Bronze Award, 7th China International Internet+ College Students Innovation and Entrepreneurship Competition'}
+      - id: service
+        title: Service & talks
+        entries:
+          - id: reviewing
+            title: Peer review
+            text: Nature Communications, Nature Cities, Scientific Data, npj Urban Sustainability, Cities, Computers, Environment and Urban Systems (CEUS), and Verixiv.
+        rows:
+          - {date: '2025', text: 'Chaired the GIS Rising Star session at the China University GIS Forum; AAG Annual Meeting, Detroit.'}
+          - {date: '2024', text: 'Applied Urban Modelling (AUM), University of Cambridge.'}
+          - {date: '2023', text: 'Global Smart Cities Summit (GSCS), Hong Kong.'}
+          - {date: '2022', text: 'Urban Big Data Committee Annual Meeting, Beijing; International Conference on Computational Design and Robotic Fabrication, Shanghai.'}
+          - {date: '2024–2025', text: 'Deputy Head, Sports Department, Tsinghua University Graduate Student Union (2024.09–2025.07).'}
+  - code: zh
+    sections:
+      - id: education
+        title: 教育背景
+        entries:
+          - id: tsinghua
+            title: 清华大学
+            date: 2023.09 – 至今
+            role: 城市规划博士生
+            text: LLM 后训练、多模态理解、AI4Science。
+          - id: hfut
+            title: 合肥工业大学
+            date: 2018.09 – 2023.06
+            role: 城乡规划学士
+            text: 城市数据挖掘、计算机视觉。
+      - id: experience
+        title: 实习经历
+        entries:
+          - id: bytedance
+            title: 字节跳动 · PDI–Seed · Lark Base AI
+            date: 2026.05 – 至今
+            role: 大模型算法实习生 · ByteIntern
+            text: 负责豆包办公 MoA 体系下 Lark Base AI 面向 Seed 2 的后训练，覆盖数据合成、Judge/Fix Infra Models、Verifier Agent 与 AutoResearch，以及 Spec–Verifier–SDK Coding Agent 和 Lark Base CLI。
+            projects:
+              - title: Spec-Refine 数据合成
+                points:
+                  - 构建覆盖 Table、Workflow、Dashboard、Permission、View 五大域的 Category–Rubric–Mode 三层体系与 Judge–Fix–Router 链路，结合多候选生成、根因路由、局部复核和修复记忆，通过投票、格式准出、早停及事务回滚控制质量与开销。
+                  - 构建 Verifier Agent，将 token logprobs、多模态证据与 rollout 转化为稠密强化学习信号。E2E 机评和人评中，数据准确率由 <strong>29% 提升至 70%（+41 pp）</strong>。
+              - title: Judge/Fix 模型训练
+                points:
+                  - 构建 Assumption-Based Truth Maintenance System，通过 DFS 集合传播计算最小假设组合和矛盾假设组合；基于 DSH harness 的 <strong>1 万余条</strong>合成轨迹，结合 Strict-SFT、分层 F1 Reward、课程式强化学习和在策略上下文蒸馏，对 Seed 2 Judge 进行后训练。
+                  - 以 GRPO 训练的 Judge 为教师强化 Seed 2，准确率与 GPT-6.1 持平，Vote 一致率和 Rubric 覆盖率分别提升 <strong>35 pp、45 pp</strong>；使用多教师轨迹与 SFT + RFT + PPO 训练 Fix Model，准确率较 GPT-6.1 提升 <strong>20 pp</strong>。
+              - title: Lark Base CLI 的 Agentic RL
+                points:
+                  - 将优化后的 Spec 作为 Coding Agent 的思维链，结合 CodeAct、E2E Reward 长轨迹与动态加载的 skills 训练。把需求覆盖、配置正确性、跨模块依赖和整体可用性转化为稠密反馈，结合 Learning-frontier 动态采样，并使用编译器报错、失败日志和成功 rollout 作为 privileged context。
+                  - 构建自进化提示词优化 harness，结合跨批次对抗分析，以及证据、稳定性和净收益门控。token 利用效率提升 <strong>38 pp</strong>，<strong>P50 延迟从 3.1 分钟降至 23 秒</strong>。
+      - id: research
+        title: 研究经历
+        intro: 以第一作者发表论文 6 篇，包括 ECCV/CVPR 和 4 篇 SCI Q1 论文；包含 2 篇一作 ESI 高被引论文、1 篇一作 ESI 热点论文。
+        entries:
+          - id: urbanalign
+            title: UrbanAlign · 人类视觉偏好语义对齐
+            date: 2025.10 – 2026.02
+            role: 第一作者、通讯作者 · ECCV 2026
+            points:
+              - 提出用于视觉 RAG 的后置概念瓶颈对齐方法，通过 Observer–Debater–Judge 多智能体链，从冻结 VLM 提取可解释概念分数，再在视觉—语义混合流形上以局部加权岭回归校准至人类评分。
+              - 城市场景感知准确率达到 <strong>72.2%（κ = 0.45）</strong>，较有监督基线提升 <strong>15.1 pp</strong>，较未校准 VLM 提升 <strong>16.3 pp</strong>。
+            link:
+              label: UrbanAlign
+              url: https://doi.org/10.1007/978-3-032-37132-4_18
+          - id: urban-data
+            title: 多模态城市数据挖掘
+            date: 2021.09 – 2025.10
+            role: GloPPRUA · GloGCI · CMAB
+            points:
+              - 提出多时相视觉解译与空间匹配方法。分辨率分布匹配增强的 HRNet-W48 + U-Net 将强模糊 Dice 从 <strong>0.684 提升至 0.756</strong>；RGB–Mask GAN 将建筑轮廓直角率从 <strong>0.398 提升至 0.624</strong>，并结合 1 m DP 矢量化、形态路由、偏移校准和上下文匹配。
+              - 在 <strong>1,000 个城市</strong>构建约 <strong>1,478 万个双期建筑观测实例</strong>。CMAB 与 GloGCI 均入选 ESI 高被引论文，数据与代码累计 <strong>79,500 次下载</strong>。
+            text: '<a href="https://doi.org/10.1038/s41597-025-04730-5">CMAB · Scientific Data, 2025</a><br><a href="https://doi.org/10.1016/j.habitatint.2025.103350">GloGCI / 全球鬼城识别 · Habitat International, 2025</a><br><a href="https://doi.org/10.1016/j.jag.2022.102942">城市空间风险预测 · JAG, 2022</a><br><a href="https://doi.org/10.1007/s12273-026-1461-9">建筑尺度城市分析与模拟 · Building Simulation, 2026</a>'
+          - id: ai4us
+            title: 大模型科学数据合成与受控实验
+            date: 2024.09 – 至今
+            role: 第一／通讯作者 · arXiv
+            points:
+              - 提出 AI4US 多模态评测框架，围绕数据合成与条件干预，在城市标度、距离衰减、街区活力和街景感知四类任务中，评估关系复现、实证参数与分布一致性，以及受控条件响应。
+              - 发现 GenAI 可以复现可识别的城市规律和方向响应，但会压缩数值覆盖、局部波动与视觉多样性；在 <strong>Qwen2.5-VL-72B</strong> 上进行 Profile–Probe–Intervene 分析，验证部分规律可从中间表征解码并影响局部输出。
+            text: '<a href="https://arxiv.org/abs/2505.13803">GenAI Models Capture Urban Science but Oversimplify Complexity</a> · arXiv, 2025。<br>Large Language Models Perceive Cities through a Culturally Uneven Baseline · arXiv, 2026（通讯作者）。'
+      - id: projects
+        title: 项目经历
+        intro: 参与国家自然科学基金重大项目（62394335）、面上项目（52178044）及能源基金会项目（G-2306-34815）。
+        entries:
+          - id: weather
+            title: 南京信大气象科学技术研究院
+            date: '2025'
+            role: 博士生实践 · 实习考评优秀
+            text: 基于 FY-4B 多通道数据构建卫星到雷达反射率反演模型，利用条件流匹配实现向无雷达覆盖区域的零样本跨域迁移。
+          - id: memomind
+            title: MemoMind
+            url: https://github.com/24kchengYe/MemoMind
+            date: 2025 – 2026
+            role: AI 记忆与个人知识库 · 600+ GitHub Stars
+            text: 基于 PostgreSQL + pgvector 构建知识图谱服务，融合语义向量、BM25、图谱遍历和时序约束四路检索，通过 RRF 与 Cross-Encoder 重排序提升检索质量。通过 MCP 接入 Agent，以多 Bank 架构管理 <strong>4.3 万余节点、249 万余知识链接</strong>。
+          - id: tools
+            title: 科研工具与 Agent 基础设施
+            date: 2025 – 2026
+            role: 独立开发 20+ 开源项目 · 累计 1,300+ GitHub Stars
+            text: '<a href="https://github.com/24kchengYe/human-skill-tree">Human Skill Tree</a>（514 Stars）用于 AI 辅助学习；<a href="https://github.com/24kchengYe/InfoHub">InfoHub</a> 聚合热点信息；<a href="https://github.com/24kchengYe/Zync">Zync</a> 提供多 Agent 编排；<a href="https://github.com/24kchengYe/ai-api-gateway">AI API Gateway</a> 统一模型路由、鉴权、配额和跨设备接入。'
+      - id: honors
+        title: 荣誉奖励
+        rows:
+          - {date: '2026.09', text: '清华大学国家奖学金'}
+          - {date: '2026', text: '中国科协青年科技人才培育工程博士生专项计划'}
+          - {date: '2025', text: '第十三届中国高校 GIS 论坛“高校 GIS 新秀”'}
+          - {date: '2025', text: '清华大学研究生“学术新秀”提名'}
+          - {date: '2025', text: '金经昌佳作论文奖'}
+          - {date: '2024', text: '清华大学综合优秀奖学金一等奖'}
+          - {date: '2023', text: '全球第一届城市科学大会 Creativity Award'}
+          - {date: '2022', text: '合肥工业大学十佳大学生'}
+          - {date: '2022', text: '第十届“挑战杯”安徽省大学生创业计划竞赛金奖'}
+          - {date: '2021', text: '第七届中国国际“互联网+”大学生创新创业大赛国家级铜奖'}
+      - id: service
+        title: 学术与社会活动
+        entries:
+          - id: reviewing
+            title: 学术审稿
+            text: Nature Communications、Nature Cities、Scientific Data、npj Urban Sustainability、Cities、Computers, Environment and Urban Systems（CEUS）、Verixiv。
+        rows:
+          - {date: '2025', text: '主持中国高校 GIS 论坛“高校 GIS 新秀”专场；美国地理学家协会年会 AAG（底特律）。'}
+          - {date: '2024', text: '剑桥大学应用城市建模会议 AUM。'}
+          - {date: '2023', text: '全球智慧城市峰会 GSCS（香港）。'}
+          - {date: '2022', text: '城市大数据专委会年会（北京）；国际计算设计与机器人制造会议（上海）。'}
+          - {date: '2024–2025', text: '清华大学研究生会体育部副部长（2024.09–2025.07）。'}
+  - code: ja
+    sections:
+      - id: education
+        title: 学歴
+        entries:
+          - id: tsinghua
+            title: 清華大学
+            date: 2023.09 – 現在
+            role: 都市計画・博士課程
+            text: LLMの事後学習、マルチモーダル理解、AI4Science。
+          - id: hfut
+            title: 合肥工業大学
+            date: 2018.09 – 2023.06
+            role: 都市・農村計画・学士
+            text: 都市データマイニング、コンピュータビジョン。
+      - id: experience
+        title: インターンシップ
+        entries:
+          - id: bytedance
+            title: ByteDance · PDI–Seed · Lark Base AI
+            date: 2026.05 – 現在
+            role: LLMアルゴリズムインターン · ByteIntern
+            text: Doubao OfficeのMoAシステムにおいて、Lark Base AI向けSeed 2の事後学習を担当。合成データ、Judge/Fix基盤モデル、Verifier AgentとAutoResearch、Spec–Verifier–SDKを用いるコーディングエージェント、Lark Base CLIを開発。
+            projects:
+              - title: Spec-Refineのデータ生成
+                points:
+                  - Table、Workflow、Dashboard、Permission、Viewの5領域を対象に、Category–Rubric–Modeの3階層体系とJudge–Fix–Routerパイプラインを構築。複数候補の生成、原因別ルーティング、局所的な再評価、修復履歴を組み合わせ、投票・形式検証・早期停止・トランザクションのロールバックで品質とコストを管理。
+                  - tokenの対数確率、マルチモーダルな証拠、rolloutを密な強化学習信号へ変換するVerifier Agentを構築。E2Eの自動評価と人手評価で、データ正解率が<strong>29%から70%へ向上（+41ポイント）</strong>。
+              - title: Judge/Fixモデルの学習
+                points:
+                  - Assumption-Based Truth Maintenance Systemを構築し、DFSによる集合伝播で最小仮定集合と矛盾する仮定集合を算出。DSH harnessによる<strong>1万件超</strong>の合成軌跡を用い、Strict-SFT、階層的F1報酬、カリキュラム強化学習、オンポリシー文脈蒸留でSeed 2 Judgeを事後学習。
+                  - GRPOで学習したJudgeを教師としてSeed 2を強化。正解率はGPT-6.1と同等で、投票一致率とRubricカバレッジはそれぞれ<strong>35ポイント、45ポイント向上</strong>。複数教師の軌跡とSFT + RFT + PPOでFixモデルを学習し、正解率はGPT-6.1を<strong>20ポイント上回った</strong>。
+              - title: Lark Base CLIのAgentic RL
+                points:
+                  - 改善したSpecをコーディングエージェントの推論過程として使用し、CodeAct、長い軌跡に対するE2E報酬、動的に読み込むskillsで学習。要件充足、設定の正確さ、モジュール間依存、全体の利用可能性を密なフィードバックに変換。Learning-frontierに基づく動的サンプリングと、コンパイラエラー・失敗ログ・成功rolloutによるprivileged contextを導入。
+                  - バッチ間の敵対的分析と、証拠・安定性・純便益のゲートを備えた自己改善型プロンプト最適化harnessを構築。token利用効率が<strong>38ポイント向上</strong>し、<strong>P50レイテンシは3.1分から23秒に短縮</strong>。
+      - id: research
+        title: 研究
+        intro: 筆頭著者論文6本（ECCV/CVPRおよびSCI Q1誌4本）。筆頭著者の成果にESI高被引用論文2本、ESIホットペーパー1本。
+        entries:
+          - id: urbanalign
+            title: UrbanAlign · VLMと人間の視覚的選好の整合
+            date: 2025.10 – 2026.02
+            role: 筆頭著者・責任著者 · ECCV 2026
+            points:
+              - 視覚RAG向けの事後的概念ボトルネックによるアライメントを提案。Observer–Debater–Judgeのエージェント連鎖が凍結VLMから解釈可能な概念スコアを抽出し、視覚・意味の複合多様体上で局所重み付きリッジ回帰により人間の評点へ較正。
+              - 都市景観の知覚評価で<strong>正解率72.2%（κ = 0.45）</strong>を達成。教師ありベースラインを<strong>15.1ポイント</strong>、未較正VLMを<strong>16.3ポイント</strong>上回った。
+            link:
+              label: UrbanAlign
+              url: https://doi.org/10.1007/978-3-032-37132-4_18
+          - id: urban-data
+            title: マルチモーダル都市データマイニング
+            date: 2021.09 – 2025.10
+            role: GloPPRUA · GloGCI · CMAB
+            points:
+              - 複数時点の画像解釈と空間マッチングを開発。解像度分布を合わせたHRNet-W48 + U-Netにより、強いぼけ条件のDiceが<strong>0.684から0.756</strong>へ向上。RGB–Mask GANで建物輪郭の直角率が<strong>0.398から0.624</strong>へ向上し、1 mのDPベクトル化、形態別ルーティング、位置ずれ較正、文脈マッチングを統合。
+              - <strong>1,000都市で約1,478万件の2時点建物観測</strong>を構築。CMABとGloGCIはESI高被引用論文に選出され、データとコードは累計<strong>79,500回</strong>ダウンロードされた。
+            text: '<a href="https://doi.org/10.1038/s41597-025-04730-5">CMAB · Scientific Data, 2025</a><br><a href="https://doi.org/10.1016/j.habitatint.2025.103350">GloGCI / ゴーストシティの推定 · Habitat International, 2025</a><br><a href="https://doi.org/10.1016/j.jag.2022.102942">都市空間リスクの予測 · JAG, 2022</a><br><a href="https://doi.org/10.1007/s12273-026-1461-9">建築スケール都市分析・シミュレーション · Building Simulation, 2026</a>'
+          - id: ai4us
+            title: 科学データの合成と制御実験
+            date: 2024.09 – 現在
+            role: 筆頭著者／責任著者 · arXiv
+            points:
+              - AI4USを提案し、データ合成と条件付き介入の2経路で、都市スケーリング、距離減衰、街区の活力、街路景観の知覚を評価。関係の再現、実証パラメータ・分布との整合、制御条件に対する応答を比較。
+              - GenAIは識別可能な都市の規則性と方向性のある応答を再現する一方、数値の範囲、局所的な変動、視覚的な多様性を圧縮することを確認。<strong>Qwen2.5-VL-72B</strong>のProfile–Probe–Intervene分析では、一部の規則性が中間表現から読み出され、局所的な出力に影響することを示した。
+            text: '<a href="https://arxiv.org/abs/2505.13803">GenAI Models Capture Urban Science but Oversimplify Complexity</a> · arXiv, 2025。<br>Large Language Models Perceive Cities through a Culturally Uneven Baseline · arXiv, 2026（責任著者）。'
+      - id: projects
+        title: プロジェクト
+        intro: 中国国家自然科学基金の研究課題（62394335、52178044）およびEnergy Foundationの研究課題（G-2306-34815）に参加。
+        entries:
+          - id: weather
+            title: 南京信大気象科学技術研究院
+            date: '2025'
+            role: 博士課程実習 · 実習評価「優秀」
+            text: FY-4Bの多チャネル観測から衛星・レーダー反射率変換モデルを構築。条件付きフローマッチングにより、レーダー未整備地域へのゼロショット転移を実現。
+          - id: memomind
+            title: MemoMind
+            url: https://github.com/24kchengYe/MemoMind
+            date: 2025 – 2026
+            role: AIメモリ・個人ナレッジシステム · GitHubスター600+
+            text: PostgreSQL + pgvectorによる知識グラフサービスを開発。意味ベクトル、BM25、グラフ探索、時間制約の4経路をRRFとCross-Encoderの再ランキングで統合。MCPでエージェントに接続し、複数Bankで<strong>4.3万超のノードと249万超の知識リンク</strong>を管理。
+          - id: tools
+            title: 研究支援ツールとエージェント基盤
+            date: 2025 – 2026
+            role: 20+のオープンソースプロジェクトを独立開発 · GitHubスター累計1,300+
+            text: 'AI学習支援の<a href="https://github.com/24kchengYe/human-skill-tree">Human Skill Tree</a>（514スター）、情報集約の<a href="https://github.com/24kchengYe/InfoHub">InfoHub</a>、複数エージェントを編成する<a href="https://github.com/24kchengYe/Zync">Zync</a>を開発。<a href="https://github.com/24kchengYe/ai-api-gateway">AI API Gateway</a>では、モデルのルーティング、認証、利用枠、デバイス間アクセスを統合。'
+      - id: honors
+        title: 表彰・奨学金
+        rows:
+          - {date: '2026.09', text: '清華大学・国家奨学金'}
+          - {date: '2026', text: '中国科学技術協会・若手科学技術人材育成事業（博士課程学生向けプログラム）'}
+          - {date: '2025', text: '第13回中国大学GISフォーラム「GIS新秀」'}
+          - {date: '2025', text: '清華大学大学院生「学術新秀」候補'}
+          - {date: '2025', text: '金経昌佳作論文賞'}
+          - {date: '2024', text: '清華大学総合優秀奨学金・一等'}
+          - {date: '2023', text: '第1回Global Urban Science Conference・Creativity Award'}
+          - {date: '2022', text: '合肥工業大学・十佳大学生'}
+          - {date: '2022', text: '第10回「挑戦杯」安徽省大学生起業計画コンテスト・金賞'}
+          - {date: '2021', text: '第7回中国国際「インターネット+」大学生イノベーション・起業コンテスト・全国銅賞'}
+      - id: service
+        title: 学術・社会活動
+        entries:
+          - id: reviewing
+            title: 査読
+            text: Nature Communications、Nature Cities、Scientific Data、npj Urban Sustainability、Cities、Computers, Environment and Urban Systems（CEUS）、Verixiv。
+        rows:
+          - {date: '2025', text: '中国大学GISフォーラム「GIS新秀」セッションの司会；AAG年次大会（デトロイト）。'}
+          - {date: '2024', text: 'ケンブリッジ大学・Applied Urban Modelling（AUM）。'}
+          - {date: '2023', text: 'Global Smart Cities Summit（GSCS、香港）。'}
+          - {date: '2022', text: '都市ビッグデータ専門委員会年次大会（北京）；計算設計・ロボット製造国際会議（上海）。'}
+          - {date: '2024–2025', text: '清華大学大学院生会・体育部副部長（2024.09–2025.07）。'}

@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
+<title>为 Coding Agent 构建训练轨迹 · Yecheng Zhang</title>
+<link rel="canonical" href="https://24kchengye.github.io/writing/coding-agent-trajectories/">
+<meta property="og:url" content="https://24kchengye.github.io/writing/coding-agent-trajectories/">
+<meta property="og:title" content="Building Training Trajectories for Coding Agents">
+<meta name="description" content="Experiments in Spec-guided planning, online correction, and dependency-aware editing for coding-agent training trajectories.">
+<link rel="stylesheet" href="/assets/css/research-note.css?v=1">
+<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}@media(max-width:640px){.tall-figure{width:100%}}</style>
+<link rel="stylesheet" href="/assets/css/writing-language.css?v=figure-i18n-1"><script src="/assets/js/minimal.js?v=writing-i18n-3" defer=""></script></head>
+<body><nav class="report-site-nav" aria-label="Writing">
+  <a class="writing-back" href="/#writing" data-site-link=""><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+  <div class="edition-switch" aria-label="Article version">
+    <a href="/writing/coding-agent-trajectories/" data-site-link="" aria-current="page">Blog</a>
+  </div>
+  <div class="languages" role="group" aria-label="Language">
+    <button type="button" data-language="en" aria-label="English">EN</button>
+    <button type="button" data-language="zh" aria-label="中文">中</button>
+    <button type="button" data-language="ja" aria-label="日本語">日</button>
+  </div>
+</nav>
+<main class="note">
+<header class="note-header">
+<p class="note-kicker">Data Generation &amp; Agentic RL for Seed Models</p>
+<h1 data-page-title=""><span lang="zh">为 Coding Agent 构建训练轨迹</span><span lang="en">Building Training Trajectories for Coding Agents</span><span lang="ja">Coding Agentの学習軌跡を構築する</span></h1>
+<p class="lead"><span lang="zh">一个能用的产物，未必对应一条适合训练的轨迹。围绕多维表格搭建任务，我们把模型决策、工具调用和真实返回一起记录，比较 Spec 规划、在线纠偏与离线编辑，寻找质量与生成成本之间的取舍。</span><span lang="en">A usable artifact does not always come from a trajectory worth training on. In tasks that build database applications, we record model decisions, tool calls, and actual results together, then compare Spec-guided planning, online correction, and offline editing to understand their quality–cost trade-offs.</span><span lang="ja">使える成果物が得られても、その軌跡が学習に適しているとは限らない。データベースアプリの構築を題材に、モデルの判断・ツール呼び出し・実際の返り値を記録し、Specによる計画、オンライン修正、オフライン編集の品質と生成コストを比較する。</span></p>
+<p class="note-date"><span lang="zh">2026 年 10 月 · 实验笔记</span><span lang="en">October 2026 · Research note</span><span lang="ja">2026年10月 · 実験ノート</span></p>
+</header>
+<p><span lang="zh">任务从用户需求开始，涉及表、视图、仪表盘、工作流和权限。Seed 在 Harness 中读取技能、编写参数或脚本、调用 CLI；工具返回进入下一轮上下文。训练数据需要保留这条决策与执行的因果链。</span><span lang="en">Tasks begin with a user request and span tables, views, dashboards, workflows, and permissions. Inside the harness, Seed reads skills, writes parameters or scripts, and invokes the CLI. Tool results become context for the next turn. Training data needs to preserve this causal chain of decisions and execution.</span><span lang="ja">ユーザーの要件から始め、テーブル、ビュー、ダッシュボード、ワークフロー、権限を構築する。Harness内でSeedがスキルを読み、引数やスクリプトを書き、CLIを実行する。ツールの返り値は次のターンの文脈となる。この判断と実行の因果関係を学習データに残す。</span></p>
+<figure>
+<img data-figure="cli-harness" alt="需求、Harness 循环与轨迹包" loading="eager" data-alt-zh="需求、Harness 循环与轨迹包" data-alt-en="Request, harness loop, and trajectory bundle" data-alt-ja="要件、Harnessのループ、軌跡パッケージ" width="1760" height="500" data-src-en="/writing/figures/en/cli-harness.svg?v=0403ec2ef968" data-src-zh="/writing/figures/zh/cli-harness.svg?v=e0674625e5e1" data-src-ja="/writing/figures/ja/cli-harness.svg?v=750ed0655895" src="/writing/figures/zh/cli-harness.svg?v=e0674625e5e1">
+<figcaption><span lang="zh">一次模型响应构成一个 turn，可包含零个或多个工具调用。轨迹包保存完整消息、调用与真实回执、运行状态和产物引用。</span><span lang="en">A turn is one model response, with zero or more tool calls. The bundle retains the full messages, calls and actual results, execution status, and artifact references.</span><span lang="ja">1回のモデル応答を1ターンとし、ツール呼び出しは0回以上含まれる。パッケージには全メッセージ、呼び出しと実際の返り値、実行状態、成果物の参照を保存する。</span></figcaption>
+<details class="figure-source-link"><summary><span lang="en">Figure source</span><span lang="zh">图源</span><span lang="ja">図のソース</span></summary>
+        <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/cli-harness.html">HTML + CSS</a>
+        · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json">EN / 中 / 日</a></details></figure>
+<h2><span lang="zh">Spec 如何参与规划</span><span lang="en">How Specs guide planning</span><span lang="ja">Specを計画にどう使うか</span></h2>
+<p><span lang="zh">我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</span><span lang="en">We first compared three inputs on the same ten requests: Query only, a Spec in the user message, and a Spec as a non-binding reminder. Seed 2.0 Lite generated all three arms. Final artifacts were evaluated against the original request, without the Spec in the evaluation input.</span><span lang="ja">同じ10件の要件で、Queryのみ、userメッセージにSpecを追加、任意参照のreminderとしてSpecを追加、の3条件を比較した。生成はすべてSeed 2.0 Lite。最終成果物は元の要件で評価し、評価入力にSpecは含めない。</span></p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th><span lang="zh">生成输入</span><span lang="en">Generation input</span><span lang="ja">生成入力</span></th>
+<th><span lang="zh">产物均分 / 10</span><span lang="en">Artifact score / 10</span><span lang="ja">成果物の平均点 / 10</span></th>
+<th><span lang="zh">通过 / 10</span><span lang="en">Passed / 10</span><span lang="ja">合格 / 10</span></th>
+<th><span lang="zh">生成 token · 百万</span><span lang="en">Generation tokens · M</span><span lang="ja">生成token · 百万</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="zh">仅 Query</span><span lang="en">Query only</span><span lang="ja">Queryのみ</span></td>
+<td>8.29</td>
+<td>2 / 10</td>
+<td>23.12</td>
+</tr>
+<tr>
+<td><span lang="zh">Spec 放 user</span><span lang="en">Spec in user</span><span lang="ja">user内のSpec</span></td>
+<td>8.72</td>
+<td>4 / 10</td>
+<td>41.92</td>
+</tr>
+<tr>
+<td><span lang="zh">Spec 放 reminder</span><span lang="en">Spec in reminder</span><span lang="ja">reminder内のSpec</span></td>
+<td>7.80</td>
+<td>2 / 10</td>
+<td>33.84</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption"><span lang="zh">产物评审：GPT-5.5 high / Building Mix。同一批 10 题，三组各生成一次；失败 rollout 也保留在分母。token 是整组生成请求累计输入与输出，包含重复上下文，不含 Judge。</span><span lang="en">Artifact evaluation: GPT-5.5 high / Building Mix. One rollout per arm for each of ten requests; failed rollouts remain in the denominator. Tokens sum generation inputs and outputs, including repeated context, but exclude judging.</span><span lang="ja">成果物評価：GPT-5.5 high / Building Mix。同じ10件で各条件1回ずつ生成し、失敗したrolloutも分母に残す。token数は生成リクエストの入出力累計で、繰り返し渡す文脈を含み、Judgeは含まない。</span></p>
+<p><span lang="zh">Spec 放 user 时，平均分增加 0.43，生成 token 增加 81.3%；逐题为 5 条升分、2 条持平、3 条降分。reminder 的成本低于 user 方案，但产物均分也更低。显式规划增加了可执行细节，也增加了执行长度与约束。</span><span lang="en">Putting the Spec in the user message raised the mean score by 0.43 and generation tokens by 81.3%: five requests improved, two tied, and three declined. The reminder cost less than the user-message variant, but also scored lower. Explicit planning added executable detail alongside a longer execution and more constraints.</span><span lang="ja">userにSpecを置くと平均点は0.43上昇し、生成tokenは81.3%増えた。5件で改善、2件で同点、3件で低下した。reminderはuser条件より低コストだが、成果物の平均点も低い。明示的な計画は実行可能な詳細とともに、実行の長さと制約も増やした。</span></p>
+<p><span lang="zh">这组实验还暴露了两种质量的差别：部分产物通过验收，但轨迹在当时的过程评审中仍因严重问题得到 2 分。最终功能是否满足需求、执行过程是否适合模仿，需要分别测量。这里的历史轨迹评分不与后文的新评审协议合并。</span><span lang="en">The experiment also separated two kinds of quality: some artifacts passed acceptance, while their trajectories still received 2 under the process rubric used at the time. Task completion and whether the execution is worth imitating need separate measurements. Those historical trajectory scores are kept separate from the later evaluation protocol.</span><span lang="ja">この実験では品質の違いも見えた。成果物が合格しても、当時の過程評価では重大な問題により軌跡が2点となる例があった。要求の達成と、模倣に適した実行過程は別々に測る。過去の軌跡スコアは、後述する新しい評価方式と合算しない。</span></p>
+<h2><span lang="zh">Online：在错误发生处修复</span><span lang="en">Online: repair where the error occurs</span><span lang="ja">Online：誤りが生じた位置で修復する</span></h2>
+<p><span lang="zh">执行中的代码或参数错误，由教师提供指导，回退到错误动作前重新选择。任务结束后，完整轨迹再接受三轮独立评审：同一问题至少两票才纳入归因。语义错误保留原 Query，从错误决策前恢复状态并重新生成后缀。</span><span lang="en">For code or argument errors during execution, a teacher provides guidance and the agent rolls back to choose again before the faulty action. After the task ends, three independent judge passes assess the complete trajectory; an issue needs at least two votes before attribution. Semantic errors keep the original Query and regenerate the suffix from the state preceding the faulty decision.</span><span lang="ja">実行中のコードや引数の誤りには教師が助言し、誤った操作の直前に戻って選び直す。タスク終了後は軌跡全体を3回独立に評価し、同じ問題に2票以上あれば原因を分析する。意味上の誤りは元のQueryを維持し、誤判断の直前の状態から後半を再生成する。</span></p>
+<figure class="tall-figure">
+<img data-figure="cli-online" alt="在线执行纠偏与有界重生成" loading="lazy" data-alt-zh="在线执行纠偏与有界重生成" data-alt-en="Online execution correction and bounded regeneration" data-alt-ja="オンライン修正と回数制限付き再生成" width="900" height="1020" data-src-en="/writing/figures/en/cli-online.svg?v=ba380a5b2566" data-src-zh="/writing/figures/zh/cli-online.svg?v=235e0fd2be81" data-src-ja="/writing/figures/ja/cli-online.svg?v=de61149e8b8b" src="/writing/figures/zh/cli-online.svg?v=235e0fd2be81">
+<figcaption><span lang="zh">运行时纠偏与后验修复各有预算。N 表示完整轨迹评审后的修复次数；每次修复都重新三评。无法等价满足的需求、耗尽预算的分支进入 Pending。</span><span lang="en">Runtime correction and post-trajectory repair have separate budgets. N counts repair attempts after full-trajectory evaluation; each repair is judged three times again. Infeasible equivalent requests and exhausted branches go to Pending.</span><span lang="ja">実行時修正と軌跡完成後の修復は別の予算を持つ。Nは全体評価後の修復試行数で、修復後は毎回3回評価する。等価な要求を実現できない場合や予算を使い切った分岐はPendingに入る。</span></figcaption>
+<details class="figure-source-link"><summary><span lang="en">Figure source</span><span lang="zh">图源</span><span lang="ja">図のソース</span></summary>
+        <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/cli-online.html">HTML + CSS</a>
+        · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json">EN / 中 / 日</a></details></figure>
+<p><span lang="zh">能力边界问题先检查是否存在保留全部明确要求的等价改写，通过后才从头生成，并继续按原始需求评审。网络、认证等环境故障单独记录。交接给 Offline 的是无需继续重生成的轨迹，以及原 Query、真实回执、评审和修复记录。</span><span lang="en">Capability limits first require an independent check that an equivalent rewrite preserves every explicit requirement. Only then does generation restart, with evaluation still anchored to the original request. Network and authentication failures are recorded separately. Offline receives trajectories that need no further regeneration, together with the original Query, real results, evaluations, and repair history.</span><span lang="ja">能力の限界に関わる問題は、すべての明示的な要求を保つ等価な書き換えがあるかを独立に確認する。確認後に最初から生成し、元の要求に基づいて評価する。ネットワークや認証の障害は別に記録する。Offlineには再生成が不要な軌跡と、元のQuery、実際の返り値、評価、修復履歴を渡す。</span></p>
+<h2><span lang="zh">定向续跑，省下了什么</span><span lang="en">What guided continuation saves</span><span lang="ja">指示付きの再実行は何を削減するか</span></h2>
+<p><span lang="zh">在 10 条问题定向抽样的轨迹中，我们分别从同一错误位置前恢复两个独立环境：一组无指导续跑，一组接收定向指导后续跑。代码与语义各 5 条，使用 GPT-5.6 Luna xhigh，每个条件独立评审三次。</span><span lang="en">For ten trajectories sampled around specific problems, we restored two independent environments immediately before the same error: one continued without guidance, the other with targeted guidance. There were five code cases and five semantic cases. GPT-5.6 Luna xhigh judged every condition independently three times.</span><span lang="ja">特定の問題を持つ10軌跡について、同じ誤りの直前から独立した2環境を復元した。一方は指示なし、もう一方は対象を絞った指示付きで再実行した。コード5件、意味上の問題5件で、各条件をGPT-5.6 Luna xhighが独立に3回評価した。</span></p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th><span lang="zh">类别 · n</span><span lang="en">Category · n</span><span lang="ja">分類 · n</span></th>
+<th><span lang="zh">原轨迹均分</span><span lang="en">Original score</span><span lang="ja">元の平均点</span></th>
+<th><span lang="zh">无指导 → 定向</span><span lang="en">Unguided → guided</span><span lang="ja">指示なし → 指示あり</span></th>
+<th><span lang="zh">新增轮数变化</span><span lang="en">New turns</span><span lang="ja">追加ターンの変化</span></th>
+<th><span lang="zh">新增 token 变化</span><span lang="en">New tokens</span><span lang="ja">追加tokenの変化</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="zh">代码 · 5</span><span lang="en">Code · 5</span><span lang="ja">コード · 5</span></td>
+<td>2.00</td>
+<td>2.40 → 2.60</td>
+<td>−27.3%</td>
+<td>−30.2%</td>
+</tr>
+<tr>
+<td><span lang="zh">语义 · 5</span><span lang="en">Semantics · 5</span><span lang="ja">意味 · 5</span></td>
+<td>2.20</td>
+<td>2.00 → 2.20</td>
+<td>−20.8%</td>
+<td>−25.4%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption"><span lang="zh">分数为冻结的 1–5 分档聚合结果；成本变化比较定向与无指导后缀生成，不是整条教师与 Judge 链路成本。20 个新分支中 5 个预算失败，均保留在统计内；共完成 90 次有效评审。</span><span lang="en">Scores are frozen aggregates on the 1–5 rubric. Cost changes compare guided and unguided suffix generation, not the full teacher-and-judge pipeline. Five of twenty new branches hit their budgets and remain included; all 90 valid evaluations were completed.</span><span lang="ja">スコアは確定済みの1–5段階評価。コストは後半の生成における指示あり・なしの比較で、教師とJudgeを含む全工程の費用ではない。新しい20分岐中5つは予算上限に達したが、統計に含めた。有効な評価は90回完了した。</span></p>
+<p><span lang="zh">定向指导减少了重复尝试，但收益要沿具体行为核验：代码组的 5 个目标错误，在原轨迹后段都已经自行修复；指导避免了重犯，其中 4 条仍出现其他参数错误。语义组补好了部分公式和字段，也留下了筛选与余额口径问题。</span><span lang="en">Guidance reduced repeated attempts, but its effect needs to be checked against actual behavior. All five targeted code errors had already self-corrected later in the original trajectories. Guidance avoided repeating them, while four cases still encountered other argument errors. Semantic repairs restored some formulas and fields, but left filtering and balance-definition problems.</span><span lang="ja">指示は試行の繰り返しを減らしたが、効果は実際の行動で確かめる必要がある。コードの対象エラー5件は、元の軌跡でも後続で自己修正されていた。指示により再発を防げた一方、4件では別の引数エラーが発生した。意味上の修復では一部の式やフィールドを補えたが、絞り込みと残高定義の問題が残った。</span></p>
+<p><span lang="zh">另一个影响读数的因素是问题匹配：同一缺陷可能被三轮 Judge 写成不同描述，拆成单票后漏计。因此表中的小幅分差不作为稳定提质的证据；更少的生成 token 也需与功能保留一起检查。</span><span lang="en">Issue matching also affected the readings: the same defect could receive different descriptions across judges, split into single-vote clusters, and be missed. The small score differences therefore do not establish a stable quality gain. Lower generation tokens also need to be checked alongside preservation of functionality.</span><span lang="ja">問題の対応付けも測定に影響した。同じ欠陥がJudgeごとに異なる表現となり、1票ずつの別クラスタに分かれて計上されないことがあった。このため小さな点差から安定した品質向上とは判断しない。生成tokenの削減も、機能が維持されたかと併せて確認する。</span></p>
+<h2><span lang="zh">Offline：沿依赖关系编辑</span><span lang="en">Offline: edit along dependencies</span><span lang="ja">Offline：依存関係に沿って編集する</span></h2>
+<p><span lang="zh">Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；超出可验证范围、必须重新生成的情况进入 Pending。</span><span lang="en">Offline starts from an existing complete trajectory. It identifies which resource states, returned values, control conditions, and textual context an edit affects, then chooses a single-turn edit, a bounded segment edit, or no edit. The four dependency types can overlap. Changes beyond a verifiable scope or requiring regeneration go to Pending.</span><span lang="ja">Offlineは既存の完全な軌跡を対象とする。編集が影響するリソース状態、返り値、制御条件、文脈を確認し、単一ターン、限定された区間、編集なしを選ぶ。4種類の依存関係は重なり得る。検証可能な範囲を超える場合や再生成が必要な場合はPendingに入る。</span></p>
+<figure class="tall-figure">
+<img data-figure="cli-offline" alt="离线编辑、依赖核验与训练数据准出" loading="lazy" data-alt-zh="离线编辑、依赖核验与训练数据准出" data-alt-en="Offline editing, dependency validation, and training-data release" data-alt-ja="オフライン編集、依存関係の検証、学習データの受け入れ" width="840" height="1020" data-src-en="/writing/figures/en/cli-offline.svg?v=d13f28d70cc2" data-src-zh="/writing/figures/zh/cli-offline.svg?v=448873418a57" data-src-ja="/writing/figures/ja/cli-offline.svg?v=b52fbd20083d" src="/writing/figures/zh/cli-offline.svg?v=448873418a57">
+<figcaption><span lang="zh">完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出仍在逐步接入。Offline 的 Pending 保留原轨迹、补丁与原因，不在此流程中自动回跳 Online。</span><span lang="en">The full release design: local-edit pilots are complete; cleaning, handoff, and formal export are being integrated. Offline Pending retains the original trajectory, patch, and reason, without automatically returning to Online.</span><span lang="ja">受け入れまでの全体設計。局所編集の予備実験は完了し、クリーニング、受け渡し、正式な出力は段階的に接続している。OfflineのPendingは元の軌跡、差分、理由を残し、このフローではOnlineへ自動的に戻さない。</span></figcaption>
+<details class="figure-source-link"><summary><span lang="en">Figure source</span><span lang="zh">图源</span><span lang="ja">図のソース</span></summary>
+        <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/cli-offline.html">HTML + CSS</a>
+        · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json">EN / 中 / 日</a></details></figure>
+<p><span lang="zh">例如，删除一个无副作用的失败调用后，后文的“刚才失败，所以重试”也需要重写；若修改字段创建参数，后续使用的字段 ID、公式和视图也可能受影响。动作变化必须有相应的真实执行证据，不能把失败回执改成成功。清洗同样保留信息时序，不把事后知道的结论提前写入决策。</span><span lang="en">For example, deleting a failed call with no side effects also requires rewriting later statements such as “that failed, so retry.” Changing field-creation arguments may affect field IDs, formulas, and views downstream. Action changes require matching real execution evidence; a failed result cannot simply be rewritten as success. Cleaning preserves information order rather than inserting later knowledge into earlier decisions.</span><span lang="ja">例えば副作用のない失敗呼び出しを削除した場合、後の「失敗したので再試行する」という記述も直す必要がある。フィールド作成の引数を変えれば、後続のID、数式、ビューにも影響し得る。操作の変更には対応する実行証拠が必要で、失敗結果を成功に書き換えることはできない。クリーニングでも情報の順序を保ち、後から得た知識を過去の判断に挿入しない。</span></p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th><span lang="zh">局部编辑预实验</span><span lang="en">Local-edit pilot</span><span lang="ja">局所編集の予備実験</span></th>
+<th><span lang="zh">分数变化</span><span lang="en">Score</span><span lang="ja">スコア</span></th>
+<th><span lang="zh">轮数变化</span><span lang="en">Turns</span><span lang="ja">ターン数</span></th>
+<th><span lang="zh">观察</span><span lang="en">Observation</span><span lang="ja">観察</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="zh">修改最终回复</span><span lang="en">Edit final reply</span><span lang="ja">最終回答を編集</span></td>
+<td>2 → 2</td>
+<td>31 → 31</td>
+<td><span lang="zh">严重问题计数 4 → 3</span><span lang="en">Severe count 4 → 3</span><span lang="ja">重大な問題の計数 4 → 3</span></td>
+</tr>
+<tr>
+<td><span lang="zh">删除失败调用并改写后文</span><span lang="en">Remove failed call; revise later text</span><span lang="ja">失敗呼び出しを削除し後続文を修正</span></td>
+<td>2 → 2</td>
+<td>21 → 20</td>
+<td><span lang="zh">严重 1 → 1；轻微 0 → 1</span><span lang="en">Severe 1 → 1; minor 0 → 1</span><span lang="ja">重大 1 → 1、軽微 0 → 1</span></td>
+</tr>
+<tr>
+<td><span lang="zh">能力缺口，保留原轨迹</span><span lang="en">Capability gap; keep original</span><span lang="ja">能力不足により元の軌跡を維持</span></td>
+<td>2</td>
+<td>50</td>
+<td><span lang="zh">不做局部修改</span><span lang="en">No local edit</span><span lang="ja">局所編集なし</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption"><span lang="zh">GPT-5.6 Luna xhigh：两个修前 / 修后配对，加一个未修改原轨迹，共 15 次有效评审。问题计数的变化涉及未修改事实的票数波动，不能直接解释为修好或引入了问题。</span><span lang="en">GPT-5.6 Luna xhigh: two before/after pairs and one unchanged original, totaling 15 valid evaluations. Issue-count changes involved vote variation on unchanged facts; they do not directly measure defects fixed or introduced.</span><span lang="ja">GPT-5.6 Luna xhighで、修正前後2組と未変更の1軌跡を合わせて15回の有効評価を得た。問題数の変化には、変更していない事実への投票変動が含まれるため、そのまま修正や新たな欠陥の数とはみなせない。</span></p>
+<p><span lang="zh">当前样本主要覆盖文字与简单控制依赖。构造反例进一步发现，换一种说法引用已删除的失败、提前声称未来操作成功，仍可能绕过校验。资源状态和返回值传播将是后续测试的重点。</span><span lang="en">The current samples mainly exercise text and simple control dependencies. Constructed counterexamples showed that paraphrased references to a deleted failure and premature claims of future success could still pass validation. Resource state and propagation of returned values are the next testing priorities.</span><span lang="ja">現在のサンプルは主に文章と単純な制御依存を扱う。反例を作ると、削除済みの失敗への言い換えた参照や、将来の操作を先に成功と述べる記述が検証を通る場合があった。今後はリソース状態と返り値の伝播を重点的に試す。</span></p>
+<h2><span lang="zh">从轨迹到训练样本</span><span lang="en">From trajectories to training examples</span><span lang="ja">軌跡から学習サンプルへ</span></h2>
+<p><span lang="zh">当前准出规则按问题多数票计算分档：有严重问题为 2 分，仅轻微问题为 3 分，无问题为 4 分；无问题且至少两轮效率评审为 high 时为 5 分。4/5 分轨迹再通过真实性与格式检查。评分、产物验收和训练格式承担不同检查职责。</span><span lang="en">The current release rubric aggregates issue-level majority votes: severe issues yield 2, minor-only issues yield 3, and no issues yield 4. An issue-free trajectory earns 5 when at least two efficiency reviews rate it high. Scores 4/5 then require authenticity and format checks. Scoring, artifact acceptance, and training-format validation serve different purposes.</span><span lang="ja">現在の受け入れ基準は問題単位の多数決で段階を決める。重大な問題があれば2、軽微のみなら3、問題がなければ4。問題がなく、効率評価が2回以上highなら5となる。4/5点の軌跡にも真正性と形式の確認を行う。スコア、成果物の検収、学習形式の検証はそれぞれ役割が異なる。</span></p>
+<p><span lang="zh">一批已提交训练的数据包含 207 条轨迹、206 个 Query 组，按 Query 分组拆为 186 条训练与 21 条独立测试。训练侧展开为 5,458 个 assistant 目标：每个目标保留完整、未截断的历史上下文，原生思考只保留当前目标轮。测试数据不提交训练或选 checkpoint。</span><span lang="en">One submitted training dataset contains 207 trajectories across 206 Query groups, split by Query into 186 training and 21 independent test trajectories. Training expands into 5,458 assistant targets. Each target retains the complete, untruncated conversation history, with native reasoning kept only for the target turn. Test data is not submitted for training or checkpoint selection.</span><span lang="ja">提出済みの学習データは207軌跡、206のQueryグループを含む。Query単位で186軌跡を学習、21軌跡を独立テストに分けた。学習側は5,458のassistantターゲットに展開し、各ターゲットには切り詰めていない全履歴を保持する。ネイティブの推論は対象ターンのみ残し、テストデータを学習やcheckpoint選択に提出しない。</span></p>
+<p><span lang="zh">新一轮在线对照从同一 Query 各自 fresh 生成：普通生成，对比教师纠偏及后验修复，先检查 10 对再扩到 100 对。这样可以把重新生成本身的收益，与修复机制的收益分开。接下来的判断标准是：同一需求上的功能保留、可用轨迹比例，以及包含教师和 Judge 的完整成本。</span><span lang="en">The next online comparison starts fresh from the same Query in each arm: ordinary generation versus teacher correction and post-trajectory repair, checking ten pairs before expanding to one hundred. This separates the benefit of regeneration itself from the repair mechanism. The next measures are retained functionality on the same requests, the share of usable trajectories, and full cost including teacher and judge calls.</span><span lang="ja">次のオンライン比較では、同じQueryから各条件を新規生成する。通常生成と、教師による修正および全体評価後の修復を比較し、10組を確認してから100組へ広げる。再生成自体の効果と修復機構の効果を分けるためである。今後は同じ要求での機能維持、利用可能な軌跡の割合、教師とJudgeを含む全コストを測る。</span></p>
+<p class="source-note"><span lang="zh">本文整理自 2026 年 10 月的 CLI 轨迹合成与修复实验。三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。</span><span lang="en">Based on CLI trajectory synthesis and repair experiments from October 2026. The Spec-input comparison, guided continuation, and local editing use their own fixed samples and evaluation protocols and are reported separately.</span><span lang="ja">2026年10月のCLI軌跡合成・修復実験を整理した。Spec入力の比較、指示付き再実行、局所編集は、それぞれ固定したサンプルと評価方式で個別に報告している。</span></p>
+</main>
+<dialog id="figure-zoom">
+<button type="button" aria-label="关闭大图" data-aria-label-zh="关闭大图" data-aria-label-en="Close expanded figure" data-aria-label-ja="拡大図を閉じる"><span lang="zh">关闭 ×</span><span lang="en">Close ×</span><span lang="ja">閉じる ×</span></button>
+<img alt="放大的流程图" data-alt-zh="放大的流程图" data-alt-en="Expanded workflow diagram" data-alt-ja="拡大したフロー図">
+</dialog>
+<script>const zoom=document.getElementById("figure-zoom");for(const figure of document.querySelectorAll("figure img")){figure.tabIndex=0;figure.setAttribute("role","button");const showFigure=()=>{zoom.querySelector("img").src=figure.src;zoom.querySelector("img").alt=figure.alt;zoom.showModal();};figure.addEventListener("click",showFigure);figure.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();showFigure();}});}zoom.querySelector("button").addEventListener("click",()=>zoom.close());</script>
+
+</body></html>

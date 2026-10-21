@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'">
+<title>为 Coding Agent 构建训练轨迹 · Yecheng Zhang</title>
+<link rel="canonical" href="https://24kchengye.github.io/writing/coding-agent-trajectories/">
+<meta property="og:url" content="https://24kchengye.github.io/writing/coding-agent-trajectories/">
+<meta property="og:title" content="Building Training Trajectories for Coding Agents">
+<meta name="description" content="Experiments in Spec-guided planning, online correction, and dependency-aware editing for coding-agent training trajectories.">
+<link rel="stylesheet" href="/assets/css/research-note.css?v=1">
+<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}@media(max-width:640px){.tall-figure{width:100%}}</style>
+</head>
+<body>
+<main class="note">
+<header class="note-header">
+<p class="note-kicker">Data Generation &amp; Agentic RL for Seed Models</p>
+<h1>为 Coding Agent 构建训练轨迹</h1>
+<p class="lead">一个能用的产物，未必对应一条适合训练的轨迹。围绕多维表格搭建任务，我们把模型决策、工具调用和真实返回一起记录，比较 Spec 规划、在线纠偏与离线编辑，寻找质量与生成成本之间的取舍。</p>
+<p class="note-date">2026 年 10 月 · 实验笔记</p>
+</header>
+<p>任务从用户需求开始，涉及表、视图、仪表盘、工作流和权限。Seed 在 Harness 中读取技能、编写参数或脚本、调用 CLI；工具返回进入下一轮上下文。训练数据需要保留这条决策与执行的因果链。</p>
+<figure>
+<img data-figure="cli-harness" alt="需求、Harness 循环与轨迹包" loading="lazy">
+<figcaption>一次模型响应构成一个 turn，可包含零个或多个工具调用。轨迹包保存完整消息、调用与真实回执、运行状态和产物引用。</figcaption>
+</figure>
+<h2>Spec 如何参与规划</h2>
+<p>我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th>生成输入</th>
+<th>产物均分 / 10</th>
+<th>通过 / 10</th>
+<th>生成 token · 百万</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅 Query</td>
+<td>8.29</td>
+<td>2 / 10</td>
+<td>23.12</td>
+</tr>
+<tr>
+<td>Spec 放 user</td>
+<td>8.72</td>
+<td>4 / 10</td>
+<td>41.92</td>
+</tr>
+<tr>
+<td>Spec 放 reminder</td>
+<td>7.80</td>
+<td>2 / 10</td>
+<td>33.84</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption">产物评审：GPT-5.5 high / Building Mix。同一批 10 题，三组各生成一次；失败 rollout 也保留在分母。token 是整组生成请求累计输入与输出，包含重复上下文，不含 Judge。</p>
+<p>Spec 放 user 时，平均分增加 0.43，生成 token 增加 81.3%；逐题为 5 条升分、2 条持平、3 条降分。reminder 的成本低于 user 方案，但产物均分也更低。显式规划增加了可执行细节，也增加了执行长度与约束。</p>
+<p>这组实验还暴露了两种质量的差别：部分产物通过验收，但轨迹在当时的过程评审中仍因严重问题得到 2 分。最终功能是否满足需求、执行过程是否适合模仿，需要分别测量。这里的历史轨迹评分不与后文的新评审协议合并。</p>
+<h2>Online：在错误发生处修复</h2>
+<p>执行中的代码或参数错误，由教师提供指导，回退到错误动作前重新选择。任务结束后，完整轨迹再接受三轮独立评审：同一问题至少两票才纳入归因。语义错误保留原 Query，从错误决策前恢复状态并重新生成后缀。</p>
+<figure class="tall-figure">
+<img data-figure="cli-online" alt="在线执行纠偏与有界重生成" loading="lazy">
+<figcaption>运行时纠偏与后验修复各有预算。N 表示完整轨迹评审后的修复次数；每次修复都重新三评。无法等价满足的需求、耗尽预算的分支进入 Pending。</figcaption>
+</figure>
+<p>能力边界问题先检查是否存在保留全部明确要求的等价改写，通过后才从头生成，并继续按原始需求评审。网络、认证等环境故障单独记录。交接给 Offline 的是无需继续重生成的轨迹，以及原 Query、真实回执、评审和修复记录。</p>
+<h2>定向续跑，省下了什么</h2>
+<p>在 10 条问题定向抽样的轨迹中，我们分别从同一错误位置前恢复两个独立环境：一组无指导续跑，一组接收定向指导后续跑。代码与语义各 5 条，使用 GPT-5.6 Luna xhigh，每个条件独立评审三次。</p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th>类别 · n</th>
+<th>原轨迹均分</th>
+<th>无指导 → 定向</th>
+<th>新增轮数变化</th>
+<th>新增 token 变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码 · 5</td>
+<td>2.00</td>
+<td>2.40 → 2.60</td>
+<td>−27.3%</td>
+<td>−30.2%</td>
+</tr>
+<tr>
+<td>语义 · 5</td>
+<td>2.20</td>
+<td>2.00 → 2.20</td>
+<td>−20.8%</td>
+<td>−25.4%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption">分数为冻结的 1–5 分档聚合结果；成本变化比较定向与无指导后缀生成，不是整条教师与 Judge 链路成本。20 个新分支中 5 个预算失败，均保留在统计内；共完成 90 次有效评审。</p>
+<p>定向指导减少了重复尝试，但收益要沿具体行为核验：代码组的 5 个目标错误，在原轨迹后段都已经自行修复；指导避免了重犯，其中 4 条仍出现其他参数错误。语义组补好了部分公式和字段，也留下了筛选与余额口径问题。</p>
+<p>另一个影响读数的因素是问题匹配：同一缺陷可能被三轮 Judge 写成不同描述，拆成单票后漏计。因此表中的小幅分差不作为稳定提质的证据；更少的生成 token 也需与功能保留一起检查。</p>
+<h2>Offline：沿依赖关系编辑</h2>
+<p>Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；超出可验证范围、必须重新生成的情况进入 Pending。</p>
+<figure class="tall-figure">
+<img data-figure="cli-offline" alt="离线编辑、依赖核验与训练数据准出" loading="lazy">
+<figcaption>完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出仍在逐步接入。Offline 的 Pending 保留原轨迹、补丁与原因，不在此流程中自动回跳 Online。</figcaption>
+</figure>
+<p>例如，删除一个无副作用的失败调用后，后文的“刚才失败，所以重试”也需要重写；若修改字段创建参数，后续使用的字段 ID、公式和视图也可能受影响。动作变化必须有相应的真实执行证据，不能把失败回执改成成功。清洗同样保留信息时序，不把事后知道的结论提前写入决策。</p>
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th>局部编辑预实验</th>
+<th>分数变化</th>
+<th>轮数变化</th>
+<th>观察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修改最终回复</td>
+<td>2 → 2</td>
+<td>31 → 31</td>
+<td>严重问题计数 4 → 3</td>
+</tr>
+<tr>
+<td>删除失败调用并改写后文</td>
+<td>2 → 2</td>
+<td>21 → 20</td>
+<td>严重 1 → 1；轻微 0 → 1</td>
+</tr>
+<tr>
+<td>能力缺口，保留原轨迹</td>
+<td>2</td>
+<td>50</td>
+<td>不做局部修改</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="caption">GPT-5.6 Luna xhigh：两个修前 / 修后配对，加一个未修改原轨迹，共 15 次有效评审。问题计数的变化涉及未修改事实的票数波动，不能直接解释为修好或引入了问题。</p>
+<p>当前样本主要覆盖文字与简单控制依赖。构造反例进一步发现，换一种说法引用已删除的失败、提前声称未来操作成功，仍可能绕过校验。资源状态和返回值传播将是后续测试的重点。</p>
+<h2>从轨迹到训练样本</h2>
+<p>当前准出规则按问题多数票计算分档：有严重问题为 2 分，仅轻微问题为 3 分，无问题为 4 分；无问题且至少两轮效率评审为 high 时为 5 分。4/5 分轨迹再通过真实性与格式检查。评分、产物验收和训练格式承担不同检查职责。</p>
+<p>一批已提交训练的数据包含 207 条轨迹、206 个 Query 组，按 Query 分组拆为 186 条训练与 21 条独立测试。训练侧展开为 5,458 个 assistant 目标：每个目标保留完整、未截断的历史上下文，原生思考只保留当前目标轮。测试数据不提交训练或选 checkpoint。</p>
+<p>新一轮在线对照从同一 Query 各自 fresh 生成：普通生成，对比教师纠偏及后验修复，先检查 10 对再扩到 100 对。这样可以把重新生成本身的收益，与修复机制的收益分开。接下来的判断标准是：同一需求上的功能保留、可用轨迹比例，以及包含教师和 Judge 的完整成本。</p>
+<p class="source-note">本文整理自 2026 年 10 月的 CLI 轨迹合成与修复实验。三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。</p>
+</main>
+<dialog id="figure-zoom">
+<button type="button" aria-label="关闭大图">关闭 ×</button>
+<img alt="放大的流程图">
+</dialog>
+<script>const zoom=document.getElementById("figure-zoom");for(const figure of document.querySelectorAll("figure img")){figure.tabIndex=0;figure.setAttribute("role","button");const showFigure=()=>{zoom.querySelector("img").src=figure.src;zoom.querySelector("img").alt=figure.alt;zoom.showModal();};figure.addEventListener("click",showFigure);figure.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();showFigure();}});}zoom.querySelector("button").addEventListener("click",()=>zoom.close());</script>
+</body>
+</html>

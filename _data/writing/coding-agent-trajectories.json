@@ -1,0 +1,242 @@
+{
+  "为 Coding Agent 构建训练轨迹": [
+    "Building Training Trajectories for Coding Agents",
+    "Coding Agentの学習軌跡を構築する"
+  ],
+  "一个能用的产物，未必对应一条适合训练的轨迹。围绕多维表格搭建任务，我们把模型决策、工具调用和真实返回一起记录，比较 Spec 规划、在线纠偏与离线编辑，寻找质量与生成成本之间的取舍。": [
+    "A usable artifact does not always come from a trajectory worth training on. In tasks that build database applications, we record model decisions, tool calls, and actual results together, then compare Spec-guided planning, online correction, and offline editing to understand their quality–cost trade-offs.",
+    "使える成果物が得られても、その軌跡が学習に適しているとは限らない。データベースアプリの構築を題材に、モデルの判断・ツール呼び出し・実際の返り値を記録し、Specによる計画、オンライン修正、オフライン編集の品質と生成コストを比較する。"
+  ],
+  "2026 年 10 月 · 实验笔记": [
+    "October 2026 · Research note",
+    "2026年10月 · 実験ノート"
+  ],
+  "任务从用户需求开始，涉及表、视图、仪表盘、工作流和权限。Seed 在 Harness 中读取技能、编写参数或脚本、调用 CLI；工具返回进入下一轮上下文。训练数据需要保留这条决策与执行的因果链。": [
+    "Tasks begin with a user request and span tables, views, dashboards, workflows, and permissions. Inside the harness, Seed reads skills, writes parameters or scripts, and invokes the CLI. Tool results become context for the next turn. Training data needs to preserve this causal chain of decisions and execution.",
+    "ユーザーの要件から始め、テーブル、ビュー、ダッシュボード、ワークフロー、権限を構築する。Harness内でSeedがスキルを読み、引数やスクリプトを書き、CLIを実行する。ツールの返り値は次のターンの文脈となる。この判断と実行の因果関係を学習データに残す。"
+  ],
+  "需求、Harness 循环与轨迹包": [
+    "Request, harness loop, and trajectory bundle",
+    "要件、Harnessのループ、軌跡パッケージ"
+  ],
+  "一次模型响应构成一个 turn，可包含零个或多个工具调用。轨迹包保存完整消息、调用与真实回执、运行状态和产物引用。": [
+    "A turn is one model response, with zero or more tool calls. The bundle retains the full messages, calls and actual results, execution status, and artifact references.",
+    "1回のモデル応答を1ターンとし、ツール呼び出しは0回以上含まれる。パッケージには全メッセージ、呼び出しと実際の返り値、実行状態、成果物の参照を保存する。"
+  ],
+  "Spec 如何参与规划": [
+    "How Specs guide planning",
+    "Specを計画にどう使うか"
+  ],
+  "我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。": [
+    "We first compared three inputs on the same ten requests: Query only, a Spec in the user message, and a Spec as a non-binding reminder. Seed 2.0 Lite generated all three arms. Final artifacts were evaluated against the original request, without the Spec in the evaluation input.",
+    "同じ10件の要件で、Queryのみ、userメッセージにSpecを追加、任意参照のreminderとしてSpecを追加、の3条件を比較した。生成はすべてSeed 2.0 Lite。最終成果物は元の要件で評価し、評価入力にSpecは含めない。"
+  ],
+  "生成输入": [
+    "Generation input",
+    "生成入力"
+  ],
+  "产物均分 / 10": [
+    "Artifact score / 10",
+    "成果物の平均点 / 10"
+  ],
+  "通过 / 10": [
+    "Passed / 10",
+    "合格 / 10"
+  ],
+  "生成 token · 百万": [
+    "Generation tokens · M",
+    "生成token · 百万"
+  ],
+  "仅 Query": [
+    "Query only",
+    "Queryのみ"
+  ],
+  "Spec 放 user": [
+    "Spec in user",
+    "user内のSpec"
+  ],
+  "Spec 放 reminder": [
+    "Spec in reminder",
+    "reminder内のSpec"
+  ],
+  "产物评审：GPT-5.5 high / Building Mix。同一批 10 题，三组各生成一次；失败 rollout 也保留在分母。token 是整组生成请求累计输入与输出，包含重复上下文，不含 Judge。": [
+    "Artifact evaluation: GPT-5.5 high / Building Mix. One rollout per arm for each of ten requests; failed rollouts remain in the denominator. Tokens sum generation inputs and outputs, including repeated context, but exclude judging.",
+    "成果物評価：GPT-5.5 high / Building Mix。同じ10件で各条件1回ずつ生成し、失敗したrolloutも分母に残す。token数は生成リクエストの入出力累計で、繰り返し渡す文脈を含み、Judgeは含まない。"
+  ],
+  "Spec 放 user 时，平均分增加 0.43，生成 token 增加 81.3%；逐题为 5 条升分、2 条持平、3 条降分。reminder 的成本低于 user 方案，但产物均分也更低。显式规划增加了可执行细节，也增加了执行长度与约束。": [
+    "Putting the Spec in the user message raised the mean score by 0.43 and generation tokens by 81.3%: five requests improved, two tied, and three declined. The reminder cost less than the user-message variant, but also scored lower. Explicit planning added executable detail alongside a longer execution and more constraints.",
+    "userにSpecを置くと平均点は0.43上昇し、生成tokenは81.3%増えた。5件で改善、2件で同点、3件で低下した。reminderはuser条件より低コストだが、成果物の平均点も低い。明示的な計画は実行可能な詳細とともに、実行の長さと制約も増やした。"
+  ],
+  "这组实验还暴露了两种质量的差别：部分产物通过验收，但轨迹在当时的过程评审中仍因严重问题得到 2 分。最终功能是否满足需求、执行过程是否适合模仿，需要分别测量。这里的历史轨迹评分不与后文的新评审协议合并。": [
+    "The experiment also separated two kinds of quality: some artifacts passed acceptance, while their trajectories still received 2 under the process rubric used at the time. Task completion and whether the execution is worth imitating need separate measurements. Those historical trajectory scores are kept separate from the later evaluation protocol.",
+    "この実験では品質の違いも見えた。成果物が合格しても、当時の過程評価では重大な問題により軌跡が2点となる例があった。要求の達成と、模倣に適した実行過程は別々に測る。過去の軌跡スコアは、後述する新しい評価方式と合算しない。"
+  ],
+  "Online：在错误发生处修复": [
+    "Online: repair where the error occurs",
+    "Online：誤りが生じた位置で修復する"
+  ],
+  "执行中的代码或参数错误，由教师提供指导，回退到错误动作前重新选择。任务结束后，完整轨迹再接受三轮独立评审：同一问题至少两票才纳入归因。语义错误保留原 Query，从错误决策前恢复状态并重新生成后缀。": [
+    "For code or argument errors during execution, a teacher provides guidance and the agent rolls back to choose again before the faulty action. After the task ends, three independent judge passes assess the complete trajectory; an issue needs at least two votes before attribution. Semantic errors keep the original Query and regenerate the suffix from the state preceding the faulty decision.",
+    "実行中のコードや引数の誤りには教師が助言し、誤った操作の直前に戻って選び直す。タスク終了後は軌跡全体を3回独立に評価し、同じ問題に2票以上あれば原因を分析する。意味上の誤りは元のQueryを維持し、誤判断の直前の状態から後半を再生成する。"
+  ],
+  "在线执行纠偏与有界重生成": [
+    "Online execution correction and bounded regeneration",
+    "オンライン修正と回数制限付き再生成"
+  ],
+  "运行时纠偏与后验修复各有预算。N 表示完整轨迹评审后的修复次数；每次修复都重新三评。无法等价满足的需求、耗尽预算的分支进入 Pending。": [
+    "Runtime correction and post-trajectory repair have separate budgets. N counts repair attempts after full-trajectory evaluation; each repair is judged three times again. Infeasible equivalent requests and exhausted branches go to Pending.",
+    "実行時修正と軌跡完成後の修復は別の予算を持つ。Nは全体評価後の修復試行数で、修復後は毎回3回評価する。等価な要求を実現できない場合や予算を使い切った分岐はPendingに入る。"
+  ],
+  "能力边界问题先检查是否存在保留全部明确要求的等价改写，通过后才从头生成，并继续按原始需求评审。网络、认证等环境故障单独记录。交接给 Offline 的是无需继续重生成的轨迹，以及原 Query、真实回执、评审和修复记录。": [
+    "Capability limits first require an independent check that an equivalent rewrite preserves every explicit requirement. Only then does generation restart, with evaluation still anchored to the original request. Network and authentication failures are recorded separately. Offline receives trajectories that need no further regeneration, together with the original Query, real results, evaluations, and repair history.",
+    "能力の限界に関わる問題は、すべての明示的な要求を保つ等価な書き換えがあるかを独立に確認する。確認後に最初から生成し、元の要求に基づいて評価する。ネットワークや認証の障害は別に記録する。Offlineには再生成が不要な軌跡と、元のQuery、実際の返り値、評価、修復履歴を渡す。"
+  ],
+  "定向续跑，省下了什么": [
+    "What guided continuation saves",
+    "指示付きの再実行は何を削減するか"
+  ],
+  "在 10 条问题定向抽样的轨迹中，我们分别从同一错误位置前恢复两个独立环境：一组无指导续跑，一组接收定向指导后续跑。代码与语义各 5 条，使用 GPT-5.6 Luna xhigh，每个条件独立评审三次。": [
+    "For ten trajectories sampled around specific problems, we restored two independent environments immediately before the same error: one continued without guidance, the other with targeted guidance. There were five code cases and five semantic cases. GPT-5.6 Luna xhigh judged every condition independently three times.",
+    "特定の問題を持つ10軌跡について、同じ誤りの直前から独立した2環境を復元した。一方は指示なし、もう一方は対象を絞った指示付きで再実行した。コード5件、意味上の問題5件で、各条件をGPT-5.6 Luna xhighが独立に3回評価した。"
+  ],
+  "类别 · n": [
+    "Category · n",
+    "分類 · n"
+  ],
+  "原轨迹均分": [
+    "Original score",
+    "元の平均点"
+  ],
+  "无指导 → 定向": [
+    "Unguided → guided",
+    "指示なし → 指示あり"
+  ],
+  "新增轮数变化": [
+    "New turns",
+    "追加ターンの変化"
+  ],
+  "新增 token 变化": [
+    "New tokens",
+    "追加tokenの変化"
+  ],
+  "代码 · 5": [
+    "Code · 5",
+    "コード · 5"
+  ],
+  "语义 · 5": [
+    "Semantics · 5",
+    "意味 · 5"
+  ],
+  "分数为冻结的 1–5 分档聚合结果；成本变化比较定向与无指导后缀生成，不是整条教师与 Judge 链路成本。20 个新分支中 5 个预算失败，均保留在统计内；共完成 90 次有效评审。": [
+    "Scores are frozen aggregates on the 1–5 rubric. Cost changes compare guided and unguided suffix generation, not the full teacher-and-judge pipeline. Five of twenty new branches hit their budgets and remain included; all 90 valid evaluations were completed.",
+    "スコアは確定済みの1–5段階評価。コストは後半の生成における指示あり・なしの比較で、教師とJudgeを含む全工程の費用ではない。新しい20分岐中5つは予算上限に達したが、統計に含めた。有効な評価は90回完了した。"
+  ],
+  "定向指导减少了重复尝试，但收益要沿具体行为核验：代码组的 5 个目标错误，在原轨迹后段都已经自行修复；指导避免了重犯，其中 4 条仍出现其他参数错误。语义组补好了部分公式和字段，也留下了筛选与余额口径问题。": [
+    "Guidance reduced repeated attempts, but its effect needs to be checked against actual behavior. All five targeted code errors had already self-corrected later in the original trajectories. Guidance avoided repeating them, while four cases still encountered other argument errors. Semantic repairs restored some formulas and fields, but left filtering and balance-definition problems.",
+    "指示は試行の繰り返しを減らしたが、効果は実際の行動で確かめる必要がある。コードの対象エラー5件は、元の軌跡でも後続で自己修正されていた。指示により再発を防げた一方、4件では別の引数エラーが発生した。意味上の修復では一部の式やフィールドを補えたが、絞り込みと残高定義の問題が残った。"
+  ],
+  "另一个影响读数的因素是问题匹配：同一缺陷可能被三轮 Judge 写成不同描述，拆成单票后漏计。因此表中的小幅分差不作为稳定提质的证据；更少的生成 token 也需与功能保留一起检查。": [
+    "Issue matching also affected the readings: the same defect could receive different descriptions across judges, split into single-vote clusters, and be missed. The small score differences therefore do not establish a stable quality gain. Lower generation tokens also need to be checked alongside preservation of functionality.",
+    "問題の対応付けも測定に影響した。同じ欠陥がJudgeごとに異なる表現となり、1票ずつの別クラスタに分かれて計上されないことがあった。このため小さな点差から安定した品質向上とは判断しない。生成tokenの削減も、機能が維持されたかと併せて確認する。"
+  ],
+  "Offline：沿依赖关系编辑": [
+    "Offline: edit along dependencies",
+    "Offline：依存関係に沿って編集する"
+  ],
+  "Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；超出可验证范围、必须重新生成的情况进入 Pending。": [
+    "Offline starts from an existing complete trajectory. It identifies which resource states, returned values, control conditions, and textual context an edit affects, then chooses a single-turn edit, a bounded segment edit, or no edit. The four dependency types can overlap. Changes beyond a verifiable scope or requiring regeneration go to Pending.",
+    "Offlineは既存の完全な軌跡を対象とする。編集が影響するリソース状態、返り値、制御条件、文脈を確認し、単一ターン、限定された区間、編集なしを選ぶ。4種類の依存関係は重なり得る。検証可能な範囲を超える場合や再生成が必要な場合はPendingに入る。"
+  ],
+  "离线编辑、依赖核验与训练数据准出": [
+    "Offline editing, dependency validation, and training-data release",
+    "オフライン編集、依存関係の検証、学習データの受け入れ"
+  ],
+  "完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出仍在逐步接入。Offline 的 Pending 保留原轨迹、补丁与原因，不在此流程中自动回跳 Online。": [
+    "The full release design: local-edit pilots are complete; cleaning, handoff, and formal export are being integrated. Offline Pending retains the original trajectory, patch, and reason, without automatically returning to Online.",
+    "受け入れまでの全体設計。局所編集の予備実験は完了し、クリーニング、受け渡し、正式な出力は段階的に接続している。OfflineのPendingは元の軌跡、差分、理由を残し、このフローではOnlineへ自動的に戻さない。"
+  ],
+  "例如，删除一个无副作用的失败调用后，后文的“刚才失败，所以重试”也需要重写；若修改字段创建参数，后续使用的字段 ID、公式和视图也可能受影响。动作变化必须有相应的真实执行证据，不能把失败回执改成成功。清洗同样保留信息时序，不把事后知道的结论提前写入决策。": [
+    "For example, deleting a failed call with no side effects also requires rewriting later statements such as “that failed, so retry.” Changing field-creation arguments may affect field IDs, formulas, and views downstream. Action changes require matching real execution evidence; a failed result cannot simply be rewritten as success. Cleaning preserves information order rather than inserting later knowledge into earlier decisions.",
+    "例えば副作用のない失敗呼び出しを削除した場合、後の「失敗したので再試行する」という記述も直す必要がある。フィールド作成の引数を変えれば、後続のID、数式、ビューにも影響し得る。操作の変更には対応する実行証拠が必要で、失敗結果を成功に書き換えることはできない。クリーニングでも情報の順序を保ち、後から得た知識を過去の判断に挿入しない。"
+  ],
+  "局部编辑预实验": [
+    "Local-edit pilot",
+    "局所編集の予備実験"
+  ],
+  "分数变化": [
+    "Score",
+    "スコア"
+  ],
+  "轮数变化": [
+    "Turns",
+    "ターン数"
+  ],
+  "观察": [
+    "Observation",
+    "観察"
+  ],
+  "修改最终回复": [
+    "Edit final reply",
+    "最終回答を編集"
+  ],
+  "严重问题计数 4 → 3": [
+    "Severe count 4 → 3",
+    "重大な問題の計数 4 → 3"
+  ],
+  "删除失败调用并改写后文": [
+    "Remove failed call; revise later text",
+    "失敗呼び出しを削除し後続文を修正"
+  ],
+  "严重 1 → 1；轻微 0 → 1": [
+    "Severe 1 → 1; minor 0 → 1",
+    "重大 1 → 1、軽微 0 → 1"
+  ],
+  "能力缺口，保留原轨迹": [
+    "Capability gap; keep original",
+    "能力不足により元の軌跡を維持"
+  ],
+  "不做局部修改": [
+    "No local edit",
+    "局所編集なし"
+  ],
+  "GPT-5.6 Luna xhigh：两个修前 / 修后配对，加一个未修改原轨迹，共 15 次有效评审。问题计数的变化涉及未修改事实的票数波动，不能直接解释为修好或引入了问题。": [
+    "GPT-5.6 Luna xhigh: two before/after pairs and one unchanged original, totaling 15 valid evaluations. Issue-count changes involved vote variation on unchanged facts; they do not directly measure defects fixed or introduced.",
+    "GPT-5.6 Luna xhighで、修正前後2組と未変更の1軌跡を合わせて15回の有効評価を得た。問題数の変化には、変更していない事実への投票変動が含まれるため、そのまま修正や新たな欠陥の数とはみなせない。"
+  ],
+  "当前样本主要覆盖文字与简单控制依赖。构造反例进一步发现，换一种说法引用已删除的失败、提前声称未来操作成功，仍可能绕过校验。资源状态和返回值传播将是后续测试的重点。": [
+    "The current samples mainly exercise text and simple control dependencies. Constructed counterexamples showed that paraphrased references to a deleted failure and premature claims of future success could still pass validation. Resource state and propagation of returned values are the next testing priorities.",
+    "現在のサンプルは主に文章と単純な制御依存を扱う。反例を作ると、削除済みの失敗への言い換えた参照や、将来の操作を先に成功と述べる記述が検証を通る場合があった。今後はリソース状態と返り値の伝播を重点的に試す。"
+  ],
+  "从轨迹到训练样本": [
+    "From trajectories to training examples",
+    "軌跡から学習サンプルへ"
+  ],
+  "当前准出规则按问题多数票计算分档：有严重问题为 2 分，仅轻微问题为 3 分，无问题为 4 分；无问题且至少两轮效率评审为 high 时为 5 分。4/5 分轨迹再通过真实性与格式检查。评分、产物验收和训练格式承担不同检查职责。": [
+    "The current release rubric aggregates issue-level majority votes: severe issues yield 2, minor-only issues yield 3, and no issues yield 4. An issue-free trajectory earns 5 when at least two efficiency reviews rate it high. Scores 4/5 then require authenticity and format checks. Scoring, artifact acceptance, and training-format validation serve different purposes.",
+    "現在の受け入れ基準は問題単位の多数決で段階を決める。重大な問題があれば2、軽微のみなら3、問題がなければ4。問題がなく、効率評価が2回以上highなら5となる。4/5点の軌跡にも真正性と形式の確認を行う。スコア、成果物の検収、学習形式の検証はそれぞれ役割が異なる。"
+  ],
+  "一批已提交训练的数据包含 207 条轨迹、206 个 Query 组，按 Query 分组拆为 186 条训练与 21 条独立测试。训练侧展开为 5,458 个 assistant 目标：每个目标保留完整、未截断的历史上下文，原生思考只保留当前目标轮。测试数据不提交训练或选 checkpoint。": [
+    "One submitted training dataset contains 207 trajectories across 206 Query groups, split by Query into 186 training and 21 independent test trajectories. Training expands into 5,458 assistant targets. Each target retains the complete, untruncated conversation history, with native reasoning kept only for the target turn. Test data is not submitted for training or checkpoint selection.",
+    "提出済みの学習データは207軌跡、206のQueryグループを含む。Query単位で186軌跡を学習、21軌跡を独立テストに分けた。学習側は5,458のassistantターゲットに展開し、各ターゲットには切り詰めていない全履歴を保持する。ネイティブの推論は対象ターンのみ残し、テストデータを学習やcheckpoint選択に提出しない。"
+  ],
+  "新一轮在线对照从同一 Query 各自 fresh 生成：普通生成，对比教师纠偏及后验修复，先检查 10 对再扩到 100 对。这样可以把重新生成本身的收益，与修复机制的收益分开。接下来的判断标准是：同一需求上的功能保留、可用轨迹比例，以及包含教师和 Judge 的完整成本。": [
+    "The next online comparison starts fresh from the same Query in each arm: ordinary generation versus teacher correction and post-trajectory repair, checking ten pairs before expanding to one hundred. This separates the benefit of regeneration itself from the repair mechanism. The next measures are retained functionality on the same requests, the share of usable trajectories, and full cost including teacher and judge calls.",
+    "次のオンライン比較では、同じQueryから各条件を新規生成する。通常生成と、教師による修正および全体評価後の修復を比較し、10組を確認してから100組へ広げる。再生成自体の効果と修復機構の効果を分けるためである。今後は同じ要求での機能維持、利用可能な軌跡の割合、教師とJudgeを含む全コストを測る。"
+  ],
+  "本文整理自 2026 年 10 月的 CLI 轨迹合成与修复实验。三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。": [
+    "Based on CLI trajectory synthesis and repair experiments from October 2026. The Spec-input comparison, guided continuation, and local editing use their own fixed samples and evaluation protocols and are reported separately.",
+    "2026年10月のCLI軌跡合成・修復実験を整理した。Spec入力の比較、指示付き再実行、局所編集は、それぞれ固定したサンプルと評価方式で個別に報告している。"
+  ],
+  "关闭大图": [
+    "Close expanded figure",
+    "拡大図を閉じる"
+  ],
+  "关闭 ×": [
+    "Close ×",
+    "閉じる ×"
+  ],
+  "放大的流程图": [
+    "Expanded workflow diagram",
+    "拡大したフロー図"
+  ]
+}

@@ -44,7 +44,7 @@ badge service. The earlier AcadHomepage templates remain in the repository.
 ## Selected Writing
 
 Selected writing appears before research, in both page order and navigation.
-All five blogs and all three technical reports support the homepage's English,
+All six blogs and all three technical reports support the homepage's English,
 Chinese, and Japanese switcher. Language choices persist across article,
 technical-report, and homepage links. Figure labels, captions, alt text, tables,
 and article controls follow the same language. Zoom opens the current-language
@@ -84,9 +84,9 @@ The old offline exporter is not the public-site build path.
 
 ### Editable Figures
 
-The eight article editions share **71 figures**. The first six used 25 PNGs and
+The nine article editions share **74 figures**. The first six used 25 PNGs and
 30 SVGs with outlined text; Nimble / KEV adds four editable HTML/CSS diagrams,
-and the attention guide adds twelve.
+the attention guide adds twelve, and the coding-agent article adds three.
 All article figures now use localized SVG exports:
 
 - The 25 generation figures retain their original **HTML/CSS layouts**.
@@ -101,12 +101,19 @@ All article figures now use localized SVG exports:
   Japanese label pairs. Article prose and figure labels have separate dictionaries.
 
 Edit the `.html` or `.svg` source to change a layout, and its dictionary to change
-wording. Run `npm run build:writing` to regenerate all three languages and all eight
+wording. Run `npm run build:writing` to regenerate all three languages and all nine
 articles. Do not edit `writing/figures/` directly. Each figure has a collapsed
 source link to its editable file and translation dictionary. No runtime diagram
 library, translation service, external font, or extra model call is required.
 SVGs with HTML layouts target web browsers; the original PNGs remain available
 for non-browser tools that do not implement `foreignObject`.
+
+The fourth selected blog is `/writing/coding-agent-trajectories/`. Its three
+panels preserve 28 workflow nodes and 37 unique connections; the Online–Offline
+handoff appears at both panel boundaries. Edit `cli-trajectory-flow.json` for
+topology and `_tools/build-cli-figures.cjs` for layout. The writing build regenerates
+the HTML/CSS figure sources before exporting localized SVGs. Experiment tables
+separate artifact evaluation, guided continuation, and local editing.
 
 Public reports allow same-origin image, script, and stylesheet files in their
 Content Security Policy. The offline export's `img-src data: blob:` policy

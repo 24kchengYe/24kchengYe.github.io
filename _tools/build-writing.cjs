@@ -2,17 +2,19 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
 const { buildFigures } = require('./build-figures.cjs');
+const { buildCliFigures } = require('./build-cli-figures.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
-const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms'];
+const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms', 'coding-agent-trajectories'];
+buildCliFigures();
 const figures = buildFigures();
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
 const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label="Writing">
   <a class="writing-back" href="/#writing" data-site-link><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
   <div class="edition-switch" aria-label="Article version">
-    <a href="/writing/${slug}/" data-site-link${!technical ? ' aria-current="page"' : ''}>Blog</a>
-    ${blogOnlySlugs.includes(slug) ? '' : `<a href="/writing/${slug}/technical/" data-site-link${technical ? ' aria-current="page"' : ''}><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>`}
+    <a href="/writing/${slug}/" data-site-link${!technical ? ' aria-current="page"' : ''}>Blog</a>${blogOnlySlugs.includes(slug) ? '' : `
+    <a href="/writing/${slug}/technical/" data-site-link${technical ? ' aria-current="page"' : ''}><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>`}
   </div>
   <div class="languages" role="group" aria-label="Language">
     <button type="button" data-language="en" aria-label="English">EN</button>

@@ -424,5 +424,23 @@
     "width": 1440,
     "height": 790,
     "format": "html-css"
+  },
+  "cli-harness": {
+    "source": "cli-harness.html",
+    "width": 1760,
+    "height": 500,
+    "format": "html-css"
+  },
+  "cli-online": {
+    "source": "cli-online.html",
+    "width": 900,
+    "height": 1020,
+    "format": "html-css"
+  },
+  "cli-offline": {
+    "source": "cli-offline.html",
+    "width": 840,
+    "height": 1020,
+    "format": "html-css"
   }
 }

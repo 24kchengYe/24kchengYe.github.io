@@ -13,23 +13,23 @@
     <path d="M 231.705753 66  L 236.505753 68.4  L 231.705753 70.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
-    <path d="M 410.597644 68.4  Q 434.698391 68.4 457.90471 68.4  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 453.10471 66  L 457.90471 68.4  L 453.10471 70.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 410.59764400000006 68.4  Q 434.698391 68.4 457.90470999999997 68.4  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 453.10470999999995 66  L 457.90470999999997 68.4  L 453.10470999999995 70.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
     <path d="M 324 93.797974  Q 324 129.599448 324 164.506494  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 326.4 159.706494  L 324 164.506494  L 321.6 159.706494  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
-    <path d="M 621.198413 68.4  Q 649.800107 68.4 677.507375 68.4  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 621.1984129999998 68.4  Q 649.800107 68.4 677.507375 68.4  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 672.707375 66  L 677.507375 68.4  L 672.707375 70.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 759.6 93.797974  Q 759.6 129.599448 759.6 164.506494  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 759.6 110.797974  Q 759.6 129.599448 759.6 164.506494  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 762 159.706494  L 759.6 164.506494  L 757.2 159.706494  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 678.402356 190.8  Q 654.301609 190.8 631.09529 190.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 678.4023560000002 190.8  Q 654.301609 190.8 631.09529 190.8  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 635.89529 193.2  L 631.09529 190.8  L 635.89529 188.4  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
@@ -37,17 +37,17 @@
     <path d="M 642.894427 272.4  L 638.094427 270  L 642.894427 267.6  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
-    <path d="M 759.6 216.199731  Q 759.6 231.299503 759.6 245.504848  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 762 240.704848  L 759.6 245.504848  L 757.2 240.704848  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 759.6 216.19973099999999  Q 759.6 231.299503 759.6 237.504848  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 762 232.704848  L 759.6 237.504848  L 757.2 232.704848  " clip-path="url(#p1e5ddd5570)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
     <path d="M 246.6 45  L 401.4 45  Q 408.6 45 408.6 52.2  L 408.6 84.6  Q 408.6 91.8 401.4 91.8  L 246.6 91.8  Q 239.4 91.8 239.4 84.6  L 239.4 52.2  Q 239.4 45 246.6 45  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
-    <path d="M 468 45  L 612 45  Q 619.2 45 619.2 52.2  L 619.2 84.6  Q 619.2 91.8 612 91.8  L 468 91.8  Q 460.8 91.8 460.8 84.6  L 460.8 52.2  Q 460.8 45 468 45  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 468 38.8  L 612 38.8  Q 619.2 38.8 619.2 47.90769230769231  L 619.2 88.8923076923077  Q 619.2 98 612 98  L 468 98  Q 460.8 98 460.8 88.8923076923077  L 460.8 47.90769230769231  Q 460.8 38.8 468 38.8  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
-    <path d="M 687.6 45  L 831.6 45  Q 838.8 45 838.8 52.2  L 838.8 84.6  Q 838.8 91.8 831.6 91.8  L 687.6 91.8  Q 680.4 91.8 680.4 84.6  L 680.4 52.2  Q 680.4 45 687.6 45  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 687.6 28  L 831.6 28  Q 838.8 28 838.8 40.430769230769236  L 838.8 96.36923076923075  Q 838.8 108.8 831.6 108.8  L 687.6 108.8  Q 680.4 108.8 680.4 96.36923076923075  L 680.4 40.430769230769236  Q 680.4 28 687.6 28  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_13">
     <path d="M 687.6 167.4  L 831.6 167.4  Q 838.8 167.4 838.8 174.6  L 838.8 207  Q 838.8 214.2 831.6 214.2  L 687.6 214.2  Q 680.4 214.2 680.4 207  L 680.4 174.6  Q 680.4 167.4 687.6 167.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
@@ -56,26 +56,26 @@
     <path d="M 489.6 167.4  L 604.8 167.4  Q 628.2 167.4 628.2 190.8  L 628.2 190.8  Q 628.2 214.2 604.8 214.2  L 489.6 214.2  Q 466.2 214.2 466.2 190.8  L 466.2 190.8  Q 466.2 167.4 489.6 167.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
-    <path d="M 478.8 248.4  L 615.6 248.4  Q 637.2 248.4 637.2 270  L 637.2 270  Q 637.2 291.6 615.6 291.6  L 478.8 291.6  Q 457.2 291.6 457.2 270  L 457.2 270  Q 457.2 248.4 478.8 248.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 478.8 240.4  L 615.6 240.4  Q 637.2 240.4 637.2 270  L 637.2 270  Q 637.2 299.6 615.6 299.6  L 478.8 299.6  Q 457.2 299.6 457.2 270  L 457.2 270  Q 457.2 240.4 478.8 240.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
-    <path d="M 702 248.4  L 817.2 248.4  Q 838.8 248.4 838.8 270  L 838.8 270  Q 838.8 291.6 817.2 291.6  L 702 291.6  Q 680.4 291.6 680.4 270  L 680.4 270  Q 680.4 248.4 702 248.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 702 240.4  L 817.2 240.4  Q 838.8 240.4 838.8 270  L 838.8 270  Q 838.8 299.6 817.2 299.6  L 702 299.6  Q 680.4 299.6 680.4 270  L 680.4 270  Q 680.4 240.4 702 240.4  z " clip-path="url(#p1e5ddd5570)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="37.404531" y="73.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Query + Spec / Plan</text></g>
-   <g id="text_2"><text x="324" y="73.068125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Preflight</text></g>
-   <g id="text_3"><text x="539.564219" y="73.236562" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="141.52843799999994" lengthAdjust="spacingAndGlyphs">Entry: 4-domain Judge</text></g>
-   <g id="text_4"><text x="759.6" y="73.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="142.39999999999986" lengthAdjust="spacingAndGlyphs">Entry confirmation votes</text></g>
-   <g id="text_5"><text x="324" y="186.344555" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Preflight failed</text></g>
-   <g id="text_6"><text x="761.73" y="195.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Entry Router</text></g>
-   <g id="text_7"><text x="548.058438" y="195.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Normal Table Fix</text></g>
-   <g id="text_8"><text x="548.1992190000001" y="274.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Normal Non-Table Fix</text></g>
-   <g id="text_9"><text x="759.6" y="274.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">Format release gate</text></g>
-   <g id="text_10"><text x="434.7" y="60.13125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Pass</text></g>
-   <g id="text_11"><text x="356.4" y="133.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Fail</text></g>
-   <g id="text_12"><text x="653.04" y="43.594688" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Extra votes only if first passes</text></g>
-   <g id="text_13"><text x="654.3" y="182.579062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Table root cause</text></g>
-   <g id="text_14"><text x="576" y="234.419062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">Non-Table only</text></g>
-   <g id="text_15"><text x="800.64" y="236.555625" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle" textLength="110.72000000000003" lengthAdjust="spacingAndGlyphs">Release vote passes</text></g>
+   <g id="text_1"><text x="104.40453099999999" y="74.233125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query + Spec / Plan" data-type-role="primary" text-anchor="middle"><tspan x="104.40453099999999" dy="0">Query + Spec / Plan</tspan></text></g>
+   <g id="text_2"><text x="324" y="74.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Preflight" data-type-role="primary" text-anchor="middle"><tspan x="324" dy="0">Preflight</tspan></text></g>
+   <g id="text_3"><text x="540" y="63.900000000000006" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Entry: 4-domain Judge" data-type-role="primary" text-anchor="middle"><tspan x="540" dy="0">Entry: 4-domain </tspan><tspan x="540" dy="21.599999999999998">Judge</tspan></text></g>
+   <g id="text_4"><text x="759.5999999999999" y="53.10000000000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Entry confirmation votes" data-type-role="primary" text-anchor="middle"><tspan x="759.5999999999999" dy="0">Entry </tspan><tspan x="759.5999999999999" dy="21.599999999999998">confirmation </tspan><tspan x="759.5999999999999" dy="21.599999999999998">votes</tspan></text></g>
+   <g id="text_5"><text x="324" y="187.544555" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Preflight failed" data-type-role="primary" text-anchor="middle"><tspan x="324" dy="0">Preflight failed</tspan></text></g>
+   <g id="text_6"><text x="759.5999999999999" y="197.10000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Entry Router" data-type-role="primary" text-anchor="middle"><tspan x="759.5999999999999" dy="0">Entry Router</tspan></text></g>
+   <g id="text_7"><text x="547.2" y="197.10000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Normal Table Fix" data-type-role="primary" text-anchor="middle"><tspan x="547.2" dy="0">Normal Table Fix</tspan></text></g>
+   <g id="text_8"><text x="547.2" y="265.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Normal Non-Table Fix" data-type-role="primary" text-anchor="middle"><tspan x="547.2" dy="0">Normal Non-Table </tspan><tspan x="547.2" dy="21.599999999999998">Fix</tspan></text></g>
+   <g id="text_9"><text x="759.5999999999999" y="265.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="Format release gate" data-type-role="primary" text-anchor="middle"><tspan x="759.5999999999999" dy="0">Format release </tspan><tspan x="759.5999999999999" dy="21.599999999999998">gate</tspan></text></g>
+   <g id="text_10"><text x="434.7" y="61.03125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Pass" data-type-role="secondary" text-anchor="middle"><tspan x="434.7" dy="0">Pass</tspan></text></g>
+   <g id="text_11"><text x="356.4" y="134.47125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Fail" data-type-role="secondary" text-anchor="middle"><tspan x="356.4" dy="0">Fail</tspan></text></g>
+   <g id="text_12"><text x="653.04" y="25.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Extra votes only if first passes" data-type-role="secondary" text-anchor="middle"><tspan x="653.04" dy="0">Extra votes only if first passes</tspan></text></g>
+   <g id="text_13"><text x="654.3" y="159.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Table root cause" data-type-role="secondary" text-anchor="middle"><tspan x="654.3" dy="0">Table root cause</tspan></text></g>
+   <g id="text_14"><text x="576" y="235.319062" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Non-Table only" data-type-role="secondary" text-anchor="middle"><tspan x="576" dy="0">Non-Table only</tspan></text></g>
+   <g id="text_15"><text x="750" y="237.455625" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="Release vote passes" data-type-role="secondary" text-anchor="middle"><tspan x="750" dy="0">Release vote passes</tspan></text></g>
   </g>
  </g>
  <defs>

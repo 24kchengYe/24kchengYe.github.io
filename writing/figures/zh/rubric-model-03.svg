@@ -29,14 +29,14 @@
     <path d="M 748.770268 224.6  L 753.170268 226.8  L 748.770268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 403.9416 184.86  L 474.4584 184.86  Q 483.0984 184.86 483.0984 176.22  L 483.0984 162.18  Q 483.0984 153.54 474.4584 153.54  L 403.9416 153.54  Q 395.3016 153.54 395.3016 162.18  L 395.3016 176.22  Q 395.3016 184.86 403.9416 184.86  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter"/>
+    <path d="M 403.9416 198.8  L 474.4584 198.8  Q 483.0984 198.8 483.0984 182.46896551724137  L 483.0984 155.93103448275863  Q 483.0984 139.6 474.4584 139.6  L 403.9416 139.6  Q 395.3016 139.6 395.3016 155.93103448275863  L 395.3016 182.46896551724137  Q 395.3016 198.8 403.9416 198.8  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="80.6" y="94.629102" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">用户需求</text></g>
-   <g id="text_2"><text x="60.05" y="173.733844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">指定版本的设计</text></g>
-   <g id="text_3"><text x="66.9" y="252.933844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">该域完整规则</text></g>
-   <g id="text_4"><text x="411.8" y="173.768094" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">评审模型</text></g>
-   <g id="text_5"><text x="794.531336" y="116.133844" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">通过 / 不通过</text></g>
-   <g id="text_6"><text x="759.85" y="231.416258" font-size="13.700000000000001" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124">问题对象 · 规则 · 依据</text></g>
+   <g id="text_1"><text x="108.1" y="95.91910200000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="用户需求" data-type-role="primary" text-anchor="middle"><tspan x="108.1" dy="0">用户需求</tspan></text></g>
+   <g id="text_2"><text x="108.05" y="175.023844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="指定版本的设计" data-type-role="primary" text-anchor="middle"><tspan x="108.05" dy="0">指定版本的设计</tspan></text></g>
+   <g id="text_3"><text x="108.4" y="254.22384399999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="该域完整规则" data-type-role="primary" text-anchor="middle"><tspan x="108.4" dy="0">该域完整规则</tspan></text></g>
+   <g id="text_4"><text x="439.20000000000005" y="164.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="评审模型" data-type-role="primary" text-anchor="middle"><tspan x="439.20000000000005" dy="0">评审 </tspan><tspan x="439.20000000000005" dy="21.599999999999998">模型</tspan></text></g>
+   <g id="text_5"><text x="835.531336" y="117.423844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="通过 / 不通过" data-type-role="primary" text-anchor="middle"><tspan x="835.531336" dy="0">通过 / 不通过</tspan></text></g>
+   <g id="text_6"><text x="835.35" y="232.706258" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="问题对象 · 规则 · 依据" data-type-role="primary" text-anchor="middle"><tspan x="835.35" dy="0">问题对象 · 规则 · 依据</tspan></text></g>
   </g>
  </g>
  <defs>

@@ -94,8 +94,8 @@
    <g id="text_9"><text x="742.4" y="364.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="56">格式准出</text></g>
    <g id="text_10"><text x="259.577813" y="162.394687" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="144">非表格式缺口 / 仅非表失败</text></g>
    <g id="text_11"><text x="669.977813" y="151.619063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="108">全过 / 表侧回退耗尽</text></g>
-   <g id="text_12"><text x="404.16" y="399.977813" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="96">仍失败且回退耗尽</text></g>
-   <g id="text_13"><text x="657.6" y="338.795625" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="60">准出票通过</text></g>
+   <g id="text_12"><text x="404.16" y="425" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="96">仍失败且回退耗尽</text></g>
+   <g id="text_13"><text x="657.6" y="312" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="60">准出票通过</text></g>
    <g id="text_14"><text x="292.2" y="29.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="114">表侧根因 · 剩余预算</text></g>
    <g id="text_15"><text x="303" y="443.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="114">表侧根因 · 剩余预算</text></g>
    <g id="text_16"><text x="222.6" y="306.419062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="138">仅非表侧根因 · 剩余预算</text></g>

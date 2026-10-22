@@ -1,4 +1,10 @@
 {
+  "cli-rollout-environment": {
+    "source": "cli-rollout-environment.html",
+    "width": 1440,
+    "height": 1290,
+    "format": "html-css"
+  },
   "cli-combined": {
     "source": "cli-combined.html",
     "width": 1848,

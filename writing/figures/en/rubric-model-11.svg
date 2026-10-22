@@ -11,7 +11,7 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6 439.2 651.6 426.24  L 651.6 45.36  Q 651.6 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
+    <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6000000000001 439.2 651.6000000000001 426.24  L 651.6000000000001 45.36  Q 651.6000000000001 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="PathCollection_1">
     
@@ -4495,7 +4495,7 @@
     <path d="M 305.28 403.92  L 378.72 403.92  Q 410.4 403.92 410.4 372.24  L 410.4 372.24  Q 410.4 340.56 378.72 340.56  L 305.28 340.56  Q 273.6 340.56 273.6 372.24  L 273.6 372.24  Q 273.6 403.92 305.28 403.92  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
-    <path d="M 731.52 263.52  L 787.68 263.52  Q 820.8 263.52 820.8 230.4  L 820.8 230.4  Q 820.8 197.28 787.68 197.28  L 731.52 197.28  Q 698.4 197.28 698.4 230.4  L 698.4 230.4  Q 698.4 263.52 731.52 263.52  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
+    <path d="M 731.1437647058823 263.52  L 788.0562352941176 263.52  Q 821.62 263.52 821.62 230.4  L 821.62 230.4  Q 821.62 197.28 788.0562352941176 197.28  L 731.1437647058823 197.28  Q 697.5799999999999 197.28 697.5799999999999 230.4  L 697.5799999999999 230.4  Q 697.5799999999999 263.52 731.1437647058823 263.52  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 873.36 270  L 962.64 270  Q 975.6 270 975.6 257.04  L 975.6 203.76  Q 975.6 190.8 962.64 190.8  L 873.36 190.8  Q 860.4 190.8 860.4 203.76  L 860.4 257.04  Q 860.4 270 873.36 270  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #7eaf43; stroke-width: 1.15; stroke-linejoin: miter"/>
@@ -5115,16 +5115,16 @@
     <path d="M 194.4 230.4  L 221.76 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
-    <path d="M 221.76 230.4  L 221.76 160.56  Q 221.76 149.04 233.28 149.04  L 272.370163 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 147.04  L 272.370163 149.04  L 268.370163 151.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 221.76 230.4  L 221.76 160.56  Q 221.76 149.04 233.28 149.04  L 272.37016299999993 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 147.04  L 272.37016299999993 149.04  L 268.37016299999993 151.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
-    <path d="M 221.76 230.4  L 221.76 240.12  Q 221.76 249.84 231.48 249.84  L 272.370163 249.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 247.84  L 272.370163 249.84  L 268.370163 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 221.76 230.4  L 221.76 240.12  Q 221.76 249.84 231.48 249.84  L 272.37016299999993 249.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 247.84  L 272.37016299999993 249.84  L 268.37016299999993 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
-    <path d="M 111.6 270  L 111.6 360.72  Q 111.6 372.24 123.12 372.24  L 272.370163 372.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 370.24  L 272.370163 372.24  L 268.370163 374.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 111.6 270  L 111.6 360.72  Q 111.6 372.24 123.12 372.24  L 272.37016299999993 372.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 370.24  L 272.37016299999993 372.24  L 268.37016299999993 374.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
     <path d="M 410.4 149.04  L 461.010163 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
@@ -5147,27 +5147,27 @@
     <path d="M 699.650163 247.84  L 703.650163 249.84  L 699.650163 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #7eaf43; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_18">
-    <path d="M 624.24 372.24  L 748.08 372.24  Q 759.6 372.24 759.6 360.72  L 759.6 264.749837  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 757.6 268.749837  L 759.6 264.749837  L 761.6 268.749837  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 624.24 372.24  L 748.08 372.24  Q 759.6 372.24 759.6 360.72  L 759.6 264.74983700000007  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 757.6 268.74983700000007  L 759.6 264.74983700000007  L 761.6 268.74983700000007  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_19">
-    <path d="M 820.8 230.4  L 859.170163 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 855.170163 228.4  L 859.170163 230.4  L 855.170163 232.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 821.6200000000001 230.4  L 859.1701629999999 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 855.1701629999999 228.4  L 859.1701629999999 230.4  L 855.1701629999999 232.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
-   <g id="text_1"><text x="374.38" y="63.542773" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="235.95999999999998" lengthAdjust="spacingAndGlyphs">ATMS · Dependencies &amp; alternate support</text></g>
-   <g id="text_2"><text x="112.082016" y="83.988274" font-size="12.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">B does not apply</text></g>
-   <g id="text_3"><text x="111.6" y="159.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">Fixed input</text></g>
-   <g id="text_4"><text x="111.6" y="225.511082" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Same query</text></g>
-   <g id="text_5"><text x="342.25" y="102.826523" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle" textLength="171.7" lengthAdjust="spacingAndGlyphs">Only A's applicability changes</text></g>
-   <g id="text_6"><text x="538.56" y="102.776719" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" text-anchor="middle">Expected judgments</text></g>
-   <g id="text_7"><text x="342.075" y="154.004063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">A applies</text></g>
-   <g id="text_8"><text x="342.169" y="254.427422" font-size="13.8" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="120.46199999999999" lengthAdjust="spacingAndGlyphs">A explicitly inapplicable</text></g>
-   <g id="text_9"><text x="342" y="367.898578" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Field facts</text></g>
-   <g id="text_10"><text x="538.56" y="144.499348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="184.48499999999996" lengthAdjust="spacingAndGlyphs">Missing access restriction</text></g>
-   <g id="text_11"><text x="538.56" y="245.299348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" text-anchor="middle" textLength="184.39099999999996" lengthAdjust="spacingAndGlyphs">Missing access restriction</text></g>
-   <g id="text_12"><text x="538.56" y="368.14109" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Phone missing: still report</text></g>
-   <g id="text_13"><text x="759.6" y="235.198594" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="106.39999999999986" lengthAdjust="spacingAndGlyphs">Independent review</text></g>
-   <g id="text_14"><text x="918" y="226.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Paired</text></g>
+   <g id="text_1"><text x="374.38" y="53.492773" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="ATMS · Dependencies &amp; alternate support" data-type-role="primary" text-anchor="middle"><tspan x="374.38" dy="0">ATMS · Dependencies &amp; </tspan><tspan x="374.38" dy="21.599999999999998">alternate support</tspan></text></g>
+   <g id="text_2"><text x="112.082016" y="84.798274" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="B does not apply" data-type-role="secondary" text-anchor="middle"><tspan x="112.082016" dy="0">B does not apply</tspan></text></g>
+   <g id="text_3"><text x="111.6" y="159.774688" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="Fixed input" data-type-role="secondary" text-anchor="middle"><tspan x="111.6" dy="0">Fixed input</tspan></text></g>
+   <g id="text_4"><text x="111.60000000000001" y="236.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Same query" data-type-role="primary" text-anchor="middle"><tspan x="111.60000000000001" dy="0">Same query</tspan></text></g>
+   <g id="text_5"><text x="342.25" y="94.576523" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="Only A's applicability changes" data-type-role="secondary" text-anchor="middle"><tspan x="342.25" dy="0">Only A's applicability </tspan><tspan x="342.25" dy="18">changes</tspan></text></g>
+   <g id="text_6"><text x="538.56" y="103.526719" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="Expected judgments" data-type-role="secondary" text-anchor="middle"><tspan x="538.56" dy="0">Expected judgments</tspan></text></g>
+   <g id="text_7"><text x="342" y="155.34" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A applies" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">A applies</tspan></text></g>
+   <g id="text_8"><text x="342" y="245.33999999999997" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A explicitly inapplicable" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">A explicitly </tspan><tspan x="342" dy="21.599999999999998">inapplicable</tspan></text></g>
+   <g id="text_9"><text x="342" y="378.54" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Field facts" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">Field facts</tspan></text></g>
+   <g id="text_10"><text x="538.56" y="134.749348" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Missing access restriction" data-type-role="primary" text-anchor="middle"><tspan x="538.56" dy="0">Missing access </tspan><tspan x="538.56" dy="21.599999999999998">restriction</tspan></text></g>
+   <g id="text_11"><text x="538.56" y="235.549348" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" aria-label="Missing access restriction" data-type-role="primary" text-anchor="middle"><tspan x="538.56" dy="0">Missing access </tspan><tspan x="538.56" dy="21.599999999999998">restriction</tspan></text></g>
+   <g id="text_12"><text x="538.56" y="359.74109000000004" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Phone missing: still report" data-type-role="secondary" text-anchor="middle"><tspan x="538.56" dy="0">Phone missing: still </tspan><tspan x="538.56" dy="18">report</tspan></text></g>
+   <g id="text_13"><text x="759.5999999999999" y="225.89999999999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Independent review" data-type-role="primary" text-anchor="middle"><tspan x="759.5999999999999" dy="0">Independent </tspan><tspan x="759.5999999999999" dy="21.599999999999998">review</tspan></text></g>
+   <g id="text_14"><text x="918" y="236.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Paired" data-type-role="primary" text-anchor="middle"><tspan x="918" dy="0">Paired</tspan></text></g>
   </g>
  </g>
  <defs>
@@ -5175,7 +5175,7 @@
    <rect x="0" y="0" width="1008" height="504"/>
   </clipPath>
   <clipPath id="pb5a366f6a9">
-   <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6 439.2 651.6 426.24  L 651.6 45.36  Q 651.6 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z "/>
+   <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6000000000001 439.2 651.6000000000001 426.24  L 651.6000000000001 45.36  Q 651.6000000000001 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z "/>
   </clipPath>
   <clipPath id="p3b7634e77d">
    <path d="M 41.76 270  L 181.44 270  Q 194.4 270 194.4 257.04  L 194.4 203.76  Q 194.4 190.8 181.44 190.8  L 41.76 190.8  Q 28.8 190.8 28.8 203.76  L 28.8 257.04  Q 28.8 270 41.76 270  z "/>

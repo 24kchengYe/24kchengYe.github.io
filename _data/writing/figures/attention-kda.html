@@ -11,14 +11,14 @@
 <div class="edge" data-from="kv" data-to="write" style="left:1060px;top:525px;width:20px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="kv" data-to="write" style="left:1080px;top:525px;width:255px;transform:rotate(-90deg)"></div>
 <div class="edge arrow" data-from="kv" data-to="write" style="left:1080px;top:270px;width:20px;transform:rotate(0deg)"></div>
-<div class="edge arrow" data-from="write" data-to="read" style="left:1250px;top:310px;width:160px;transform:rotate(90deg)"></div>
+<div class="edge arrow" data-from="write" data-to="read" style="left: 1250px; top: 310px; width: 150px; transform: rotate(90deg);"></div>
 <div class="node soft" id="previous" style="left:40px;top:170px;width:230px;height:100px;font-size:24px">上一时刻状态<br><span class="math">Sₜ₋₁</span></div>
 <div class="node soft" id="decay" style="left:360px;top:160px;width:300px;height:120px;font-size:24px">衰减旧状态<br><span class="math">S̄ₜ = Sₜ₋₁ Diag(αₜ)</span></div>
 <div class="node " id="residual" style="left:760px;top:160px;width:300px;height:120px;font-size:24px">值预测残差<br><span class="math">rₜ = vₜ − S̄ₜ kₜ</span></div>
 <div class="node soft" id="write" style="left:1100px;top:160px;width:300px;height:150px;font-size:24px">Delta 写入<br><span class="math">Sₜ = S̄ₜ + βₜ rₜ kₜᵀ</span></div>
 <div class="node " id="alpha" style="left:360px;top:470px;width:300px;height:130px;font-size:24px">通道级遗忘门<br><span class="math">xₜ → αₜ</span></div>
 <div class="node " id="kv" style="left:760px;top:470px;width:300px;height:130px;font-size:24px">当前隐状态投影<br><span class="math">xₜ → kₜ, vₜ, βₜ</span></div>
-<div class="node " id="read" style="left:1100px;top:470px;width:300px;height:130px;font-size:22px">读取 → 归一化 / 输出门<br><span class="math">xₜ → qₜ<br>oₜ = Sₜ qₜ</span></div>
+<div class="node " id="read" style="left: 1100px; top: 460px; width: 300px; height: 150px; font-size: 22px;">读取 → 归一化 / 输出门<br><span class="math">xₜ → qₜ<br>oₜ = Sₜ qₜ</span></div>
 
 <div class="annotation" style="left:1050px;top:355px;background:white;padding:4px">kₜ, βₜ</div>
 <div class="note" style="top:695px">S 的列是 key 通道：向量 α 从右侧缩放各列；β 控制残差写入。</div>

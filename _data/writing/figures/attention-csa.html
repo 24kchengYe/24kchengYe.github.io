@@ -6,12 +6,12 @@
 <div class="edge" data-from="history" data-to="index-key" style="left:260px;top:370px;width:40px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="history" data-to="index-key" style="left:300px;top:370px;width:35px;transform:rotate(90deg)"></div>
 <div class="edge arrow" data-from="history" data-to="index-key" style="left:300px;top:405px;width:60px;transform:rotate(0deg)"></div>
-<div class="edge" data-from="history" data-to="local" style="left:150px;top:400px;width:210px;transform:rotate(90deg)"></div>
+<div class="edge" data-from="history" data-to="local" style="left: 150px; top: 410px; width: 200px; transform: rotate(90deg);"></div>
 <div class="edge arrow" data-from="history" data-to="local" style="left:150px;top:610px;width:210px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="compressed" data-to="gather" style="left:650px;top:195px;width:90px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="index-key" data-to="indexer" style="left:650px;top:405px;width:90px;transform:rotate(0deg)"></div>
 <div class="edge control arrow" data-from="indexer" data-to="gather" style="left:880px;top:350px;width:100px;transform:rotate(-90deg)"></div>
-<div class="edge arrow" data-from="query" data-to="indexer" style="left:880px;top:560px;width:100px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="query" data-to="indexer" style="left: 880px; top: 550px; width: 90px; transform: rotate(-90deg);"></div>
 <div class="edge" data-from="query" data-to="attention" style="left:1020px;top:610px;width:40px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="query" data-to="attention" style="left:1060px;top:610px;width:310px;transform:rotate(-90deg)"></div>
 <div class="edge arrow" data-from="query" data-to="attention" style="left:1060px;top:300px;width:40px;transform:rotate(0deg)"></div>
@@ -20,13 +20,13 @@
 <div class="edge" data-from="local" data-to="attention" style="left:690px;top:610px;width:130px;transform:rotate(90deg)"></div>
 <div class="edge" data-from="local" data-to="attention" style="left:690px;top:740px;width:560px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="local" data-to="attention" style="left:1250px;top:740px;width:400px;transform:rotate(-90deg)"></div>
-<div class="node " id="history" style="left:40px;top:300px;width:220px;height:100px;font-size:24px">历史隐状态<br><span class="math">X</span></div>
+<div class="node " id="history" style="left: 40px; top: 290px; width: 220px; height: 120px; font-size: 24px;">历史隐状态<br><span class="math">X</span></div>
 <div class="node soft" id="compressed" style="left:360px;top:140px;width:290px;height:110px;font-size:24px">序列压缩 KV<br><span class="math">N × c → ≈ (N/m) × c</span></div>
-<div class="node " id="index-key" style="left:360px;top:350px;width:290px;height:110px;font-size:24px">独立投影的压缩索引键<br><span class="math">X → Kᴵ</span></div>
-<div class="node soft" id="local" style="left:360px;top:560px;width:290px;height:100px;font-size:24px">局部原始 KV<br><span class="math">X → Kʷⁱⁿ, Vʷⁱⁿ</span></div>
+<div class="node " id="index-key" style="left: 360px; top: 330px; width: 290px; height: 150px; font-size: 24px;">独立投影的压缩索引键<br><span class="math">X → Kᴵ</span></div>
+<div class="node soft" id="local" style="left: 360px; top: 550px; width: 290px; height: 120px; font-size: 24px;">局部原始 KV<br><span class="math">X → Kʷⁱⁿ, Vʷⁱⁿ</span></div>
 <div class="node soft" id="gather" style="left:740px;top:140px;width:280px;height:110px;font-size:24px">读取选中压缩条目<br><span class="math">C[selected]</span></div>
 <div class="node " id="indexer" style="left:740px;top:350px;width:280px;height:110px;font-size:24px">Lightning Indexer<br><span class="math">score(Qᴵ, Kᴵ) → Top-k</span></div>
-<div class="node " id="query" style="left:740px;top:560px;width:280px;height:100px;font-size:24px">当前隐状态投影<br><span class="math">xₜ → cQ → Q, Qᴵ</span></div>
+<div class="node " id="query" style="left: 740px; top: 550px; width: 280px; height: 120px; font-size: 24px;">当前隐状态投影<br><span class="math">xₜ → cQ → Q, Qᴵ</span></div>
 <div class="node soft" id="attention" style="left:1100px;top:140px;width:300px;height:200px;font-size:24px">注意力读取<br><span class="math">KV ← [C[selected]; KVʷⁱⁿ]<br>Attention(Q, KV) → oₜ</span></div>
 
 <div class="note" style="top:755px">索引器只给出位置；压缩 KV 和局部 KV 一起参与主注意力。</div>

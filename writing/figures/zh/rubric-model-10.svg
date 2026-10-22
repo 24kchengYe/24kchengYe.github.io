@@ -2024,10 +2024,10 @@
     <path d="M 43.56 207  L 201.24 207  Q 214.2 207 214.2 194.04  L 214.2 137.16  Q 214.2 124.2 201.24 124.2  L 43.56 124.2  Q 30.6 124.2 30.6 137.16  L 30.6 194.04  Q 30.6 207 43.56 207  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 355.68 161.28  L 493.92 161.28  Q 529.2 161.28 529.2 126  L 529.2 126  Q 529.2 90.72 493.92 90.72  L 355.68 90.72  Q 320.4 90.72 320.4 126  L 320.4 126  Q 320.4 161.28 355.68 161.28  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
+    <path d="M 355.68 161.28  L 493.91999999999996 161.28  Q 529.2 161.28 529.2 126  L 529.2 126  Q 529.2 90.72 493.91999999999996 90.72  L 355.68 90.72  Q 320.4 90.72 320.4 126  L 320.4 126  Q 320.4 161.28 355.68 161.28  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 355.68 254.88  L 493.92 254.88  Q 529.2 254.88 529.2 219.6  L 529.2 219.6  Q 529.2 184.32 493.92 184.32  L 355.68 184.32  Q 320.4 184.32 320.4 219.6  L 320.4 219.6  Q 320.4 254.88 355.68 254.88  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
+    <path d="M 355.68 254.88  L 493.91999999999996 254.88  Q 529.2 254.88 529.2 219.6  L 529.2 219.6  Q 529.2 184.32 493.91999999999996 184.32  L 355.68 184.32  Q 320.4 184.32 320.4 219.6  L 320.4 219.6  Q 320.4 254.88 355.68 254.88  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 696.96 207  L 894.24 207  Q 907.2 207 907.2 194.04  L 907.2 137.16  Q 907.2 124.2 894.24 124.2  L 696.96 124.2  Q 684 124.2 684 137.16  L 684 194.04  Q 684 207 696.96 207  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #7eaf43; stroke-width: 1.15; stroke-linejoin: miter"/>
@@ -2997,8 +2997,8 @@
     <path d="M 529.2 219.6  L 618.48 219.6  Q 630 219.6 630 208.08  L 630 165.6  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
-    <path d="M 630 165.6  L 682.770163 165.6  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 678.770163 163.6  L 682.770163 165.6  L 678.770163 167.6  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 630 165.6  L 682.7701630000001 165.6  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 678.7701630000001 163.6  L 682.7701630000001 165.6  L 678.7701630000001 167.6  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
     <path d="M 165.6 392.4  L 165.6 417.810163  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #7eaf43; stroke-width: 1.1; stroke-linecap: round"/>
@@ -3012,22 +3012,22 @@
     <path d="M 831.6 392.4  L 831.6 417.810163  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 833.6 413.810163  L 831.6 417.810163  L 829.6 413.810163  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
-   <g id="text_1"><text x="301.68" y="63.449531" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">两条支持路径</text></g>
-   <g id="text_2"><text x="82.255" y="98.275781" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">已核验事实 F</text></g>
-   <g id="text_3"><text x="83.65" y="160.670334" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">方案未限制</text></g>
-   <g id="text_4"><text x="407.317969" y="121.260293" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">F + A</text></g>
-   <g id="text_5"><text x="408.5625" y="214.816113" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">F + B</text></g>
-   <g id="text_6"><text x="790.159258" y="160.646115" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">V</text></g>
-   <g id="text_7"><text x="731.075312" y="245.89" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">最小支持：{A} 或 {B}</text></g>
-   <g id="text_8"><text x="363.59" y="305.215" font-size="12.8" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">A、B 的适用性待确认</text></g>
-   <g id="text_9"><text x="117.901562" y="374.713125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">撤回 A，保留 B</text></g>
-   <g id="text_10"><text x="105.947227" y="446.987344" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43">{B}  →  V 仍有支持</text></g>
-   <g id="text_11"><text x="472.051562" y="374.713125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">撤回 A、B</text></g>
-   <g id="text_12"><text x="446" y="446.878594" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">无支持  →  待复核</text></g>
-   <g id="text_13"><text x="781.640781" y="374.762344" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">接受 B 和豁免 C</text></g>
-   <g id="text_14"><text x="769.134453" y="446.957891" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">{B, C}  →  前提冲突</text></g>
-   <g id="text_15"><text x="456" y="479.17125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">无支持不等于通过</text></g>
-   <g id="text_16"><text x="763.187578" y="476.897891" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">已登记冲突：{A,C}、{B,C}</text></g>
+   <g id="text_1"><text x="348.18" y="64.19953100000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="两条支持路径" data-type-role="primary" text-anchor="middle"><tspan x="348.18" dy="0">两条支持路径</tspan></text></g>
+   <g id="text_2"><text x="123.255" y="98.57578099999999" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="已核验事实 F" data-type-role="secondary" text-anchor="middle"><tspan x="123.255" dy="0">已核验事实 F</tspan></text></g>
+   <g id="text_3"><text x="122.39999999999999" y="171.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="方案未限制" data-type-role="primary" text-anchor="middle"><tspan x="122.39999999999999" dy="0">方案未限制</tspan></text></g>
+   <g id="text_4"><text x="424.8" y="132.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="F + A" data-type-role="primary" text-anchor="middle"><tspan x="424.8" dy="0">F + A</tspan></text></g>
+   <g id="text_5"><text x="424.8" y="225.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="F + B" data-type-role="primary" text-anchor="middle"><tspan x="424.8" dy="0">F + B</tspan></text></g>
+   <g id="text_6"><text x="795.6" y="171.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="V" data-type-role="primary" text-anchor="middle"><tspan x="795.6" dy="0">V</tspan></text></g>
+   <g id="text_7"><text x="797.075312" y="247.08999999999997" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="最小支持：{A} 或 {B}" data-type-role="primary" text-anchor="middle"><tspan x="797.075312" dy="0">最小支持：{A} 或 {B}</tspan></text></g>
+   <g id="text_8"><text x="425.09" y="305.875" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="A、B 的适用性待确认" data-type-role="secondary" text-anchor="middle"><tspan x="425.09" dy="0">A、B 的适用性待确认</tspan></text></g>
+   <g id="text_9"><text x="165.901562" y="375.913125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="撤回 A，保留 B" data-type-role="primary" text-anchor="middle"><tspan x="165.901562" dy="0">撤回 A，保留 B</tspan></text></g>
+   <g id="text_10"><text x="165.947227" y="448.037344" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" aria-label="{B}  →  V 仍有支持" data-type-role="primary" text-anchor="middle"><tspan x="165.947227" dy="0">{B}  →  V 仍有支持</tspan></text></g>
+   <g id="text_11"><text x="504.051562" y="375.913125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="撤回 A、B" data-type-role="primary" text-anchor="middle"><tspan x="504.051562" dy="0">撤回 A、B</tspan></text></g>
+   <g id="text_12"><text x="504" y="447.92859400000003" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="无支持  →  待复核" data-type-role="primary" text-anchor="middle"><tspan x="504" dy="0">无支持  →  待复核</tspan></text></g>
+   <g id="text_13"><text x="830.140781" y="375.962344" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="接受 B 和豁免 C" data-type-role="primary" text-anchor="middle"><tspan x="830.140781" dy="0">接受 B 和豁免 C</tspan></text></g>
+   <g id="text_14"><text x="831.634453" y="448.00789100000003" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="{B, C}  →  前提冲突" data-type-role="primary" text-anchor="middle"><tspan x="831.634453" dy="0">{B, C}  →  前提冲突</tspan></text></g>
+   <g id="text_15"><text x="504" y="480.07124999999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="无支持不等于通过" data-type-role="secondary" text-anchor="middle"><tspan x="504" dy="0">无支持不等于通过</tspan></text></g>
+   <g id="text_16"><text x="833.187578" y="477.947891" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="已登记冲突：{A,C}、{B,C}" data-type-role="secondary" text-anchor="middle"><tspan x="833.187578" dy="0">已登记冲突：{A,C}、{B,C}</tspan></text></g>
   </g>
  </g>
  <defs>

@@ -25,7 +25,7 @@
     <path d="M 117.6 156.106494  L 115.2 160.906494  L 112.8 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 327.6 90.197974  Q 327.6 125.999448 327.6 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 327.6 96.39797400000002  Q 327.6 125.999448 327.6 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 330 156.106494  L 327.6 160.906494  L 325.2 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
@@ -33,18 +33,18 @@
     <path d="M 751.2 156.106494  L 748.8 160.906494  L 746.4 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
-    <path d="M 250.2 41.4  L 405 41.4  Q 412.2 41.4 412.2 48.6  L 412.2 81  Q 412.2 88.2 405 88.2  L 250.2 88.2  Q 243 88.2 243 81  L 243 48.6  Q 243 41.4 250.2 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 250.2 35.2  L 405 35.2  Q 412.2 35.2 412.2 44.307692307692314  L 412.2 85.2923076923077  Q 412.2 94.4 405 94.4  L 250.2 94.4  Q 243 94.4 243 85.2923076923077  L 243 44.307692307692314  Q 243 35.2 250.2 35.2  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
     <path d="M 687.6 41.4  L 810 41.4  Q 833.4 41.4 833.4 64.8  L 833.4 64.8  Q 833.4 88.2 810 88.2  L 687.6 88.2  Q 664.2 88.2 664.2 64.8  L 664.2 64.8  Q 664.2 41.4 687.6 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="114.60875" y="69.56" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Query + final Spec</text></g>
-   <g id="text_2"><text x="327.6" y="69.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="153.19999999999993" lengthAdjust="spacingAndGlyphs">Generate &amp; execute code</text></g>
-   <g id="text_3"><text x="536.085" y="69.475781" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Built Base</text></g>
-   <g id="text_4"><text x="709.606563" y="69.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Building Mix</text></g>
-   <g id="text_5"><text x="115.2" y="182.815922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Design gap</text></g>
-   <g id="text_6"><text x="327.6" y="182.871703" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle" textLength="200.40000000000003" lengthAdjust="spacingAndGlyphs">Implementation / runtime failure</text></g>
-   <g id="text_7"><text x="748.8" y="182.562336" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">Inconsistent review evidence</text></g>
+   <g id="text_1"><text x="114.60875" y="70.76" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query + final Spec" data-type-role="primary" text-anchor="middle"><tspan x="114.60875" dy="0">Query + final Spec</tspan></text></g>
+   <g id="text_2"><text x="327.6" y="60.30000000000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Generate &amp; execute code" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">Generate &amp; </tspan><tspan x="327.6" dy="21.599999999999998">execute code</tspan></text></g>
+   <g id="text_3"><text x="536.085" y="70.675781" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Built Base" data-type-role="primary" text-anchor="middle"><tspan x="536.085" dy="0">Built Base</tspan></text></g>
+   <g id="text_4"><text x="748.8" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Building Mix" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">Building Mix</tspan></text></g>
+   <g id="text_5"><text x="115.2" y="184.015922" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Design gap" data-type-role="primary" text-anchor="middle"><tspan x="115.2" dy="0">Design gap</tspan></text></g>
+   <g id="text_6"><text x="327.6" y="173.27170299999997" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Implementation / runtime failure" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">Implementation / </tspan><tspan x="327.6" dy="21.599999999999998">runtime failure</tspan></text></g>
+   <g id="text_7"><text x="748.8" y="172.96233599999996" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Inconsistent review evidence" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">Inconsistent review </tspan><tspan x="748.8" dy="21.599999999999998">evidence</tspan></text></g>
   </g>
  </g>
  <defs>

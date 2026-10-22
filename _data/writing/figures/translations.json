@@ -1,4 +1,132 @@
 {
+  "一次 Rollout：模型、Harness 与工具环境": [
+    "One rollout: model, Harness and tool environment",
+    "1回の rollout：モデル・Harness・ツール環境"
+  ],
+  "系统指令 + Reminder": [
+    "System instructions + Reminder",
+    "システム指示 + Reminder"
+  ],
+  "工具定义": [
+    "Tool schemas",
+    "ツール定義"
+  ],
+  "Harness · 上下文、调度与记录": [
+    "Harness · Context, dispatch and records",
+    "Harness · 文脈・実行制御・記録"
+  ],
+  "工具执行环境": [
+    "Tool environment",
+    "ツール実行環境"
+  ],
+  "当前消息上下文": [
+    "Current message context",
+    "現在のメッセージ文脈"
+  ],
+  "Seed 模型响应": [
+    "Seed response",
+    "Seed の応答"
+  ],
+  "思考 · 正文 · 工具调用": [
+    "Reasoning · Text · Tool calls",
+    "思考・本文・ツール呼び出し"
+  ],
+  "响应分派": [
+    "Response dispatch",
+    "応答の振り分け"
+  ],
+  "结束检查与终态": [
+    "End checks and status",
+    "終了確認と最終状態"
+  ],
+  "完成 / 失败 / 预算终止": [
+    "Completed / Failed / Budget stop",
+    "完了 / 失敗 / 予算上限"
+  ],
+  "真实工具执行": [
+    "Actual tool execution",
+    "実際のツール実行"
+  ],
+  "追加真实观察": [
+    "Append actual observations",
+    "実際の観測を追記"
+  ],
+  "tool_call_id 对齐调用": [
+    "Pair calls by tool_call_id",
+    "tool_call_id で対応付け"
+  ],
+  "Skills 与工作区文件": [
+    "Skills and workspace files",
+    "Skills と作業ファイル"
+  ],
+  "lark-cli ↔ 云端 Base": [
+    "lark-cli ↔ Cloud Base",
+    "lark-cli ↔ クラウド Base"
+  ],
+  "模型输入": [
+    "Model input",
+    "モデル入力"
+  ],
+  "最终文本": [
+    "Final text",
+    "最終テキスト"
+  ],
+  "原生调用": [
+    "Native calls",
+    "ネイティブ呼び出し"
+  ],
+  "进入下一轮": [
+    "Next turn",
+    "次のターンへ"
+  ],
+  "预算耗尽 / 运行故障": [
+    "Budget / Runtime failure",
+    "予算上限 / 実行障害"
+  ],
+  "技能正文按需 Read；文件与 Base 状态随执行保留。": [
+    "Read loads Skills on demand. Files and Base state persist across actions.",
+    "Skills は必要時に Read で取得。ファイルと Base の状態は実行を通じて保持。"
+  ],
+  "一个 Case：从原始执行到评审输入": [
+    "One case: from execution to review input",
+    "1つの Case：実行から評価入力へ"
+  ],
+  "原始执行包": [
+    "Original execution bundle",
+    "元の実行パッケージ"
+  ],
+  "工具账本 · 版本 · 终态": [
+    "Tool ledger · Versions · Status",
+    "ツール台帳・版・最終状態"
+  ],
+  "标准化 Case": [
+    "Normalized case",
+    "標準化された Case"
+  ],
+  "有序 events · artifacts": [
+    "Ordered events · Artifacts",
+    "順序付き events・artifacts"
+  ],
+  "规则快照 · 可见时序": [
+    "Rule snapshots · Visibility",
+    "ルールのスナップショット・可視時点"
+  ],
+  "Judge / 修复 / 准出": [
+    "Judge / Repair / Release",
+    "Judge / 修復 / リリース"
+  ],
+  "原始需求与完整证据": [
+    "Original query and full evidence",
+    "元の要件と全証拠"
+  ],
+  "保留结果和版本关联": [
+    "Link results to source versions",
+    "結果と元の版を紐付け"
+  ],
+  "模型看到的观察与归档审计证据分别保存；标准化保留消息、调用和返回的对应关系。": [
+    "Model-visible observations and audit evidence are stored separately. Normalization preserves message–call–result links.",
+    "モデルが見た観測と監査証拠を分けて保存。標準化後もメッセージ・呼び出し・結果の対応を保持。"
+  ],
   "相同任务，不同的候选评分头": [
     "One task, two scoring heads",
     "同じタスク、異なる採点ヘッド"
@@ -2212,7 +2340,7 @@
     "重複除去で採点"
   ],
   "计数计分": [
-    "Count-aware scoring",
+    "Count scoring",
     "件数で採点"
   ],
   "常规SFT": [

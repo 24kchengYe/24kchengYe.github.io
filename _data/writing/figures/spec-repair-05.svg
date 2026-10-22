@@ -106,13 +106,13 @@
    <g id="text_9"><text x="729.604219" y="276.415922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="81">终末 Rewrite</text></g>
    <g id="text_10"><text x="733.86" y="173.833125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="77">Final Result</text></g>
    <g id="text_11"><text x="742.4" y="397.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="56">格式准出</text></g>
-   <g id="text_12"><text x="443.1" y="49.379063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="48">表侧根因</text></g>
+   <g id="text_12"><text x="443.1" y="22" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="48">表侧根因</text></g>
    <g id="text_13"><text x="278.4" y="173.176875" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="48">其余根因</text></g>
-   <g id="text_14"><text x="399.695625" y="256.187813" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="121">无表侧根因；可 no-op</text></g>
+   <g id="text_14"><text x="399.695625" y="225" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="121">无表侧根因；可 no-op</text></g>
    <g id="text_15"><text x="307.8" y="338.819062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="126">表侧仍失败 · 回退耗尽</text></g>
    <g id="text_16"><text x="710.76" y="335.177812" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="102">仍失败 · 预算耗尽</text></g>
-   <g id="text_17"><text x="650.4" y="421.595625" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="60">准出票通过</text></g>
-   <g id="text_18"><text x="423" y="173.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="90">表侧 · 剩余预算</text></g>
+   <g id="text_17"><text x="650.4" y="453" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="60">准出票通过</text></g>
+   <g id="text_18"><text x="380" y="173.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="90">表侧 · 剩余预算</text></g>
    <g id="text_19"><text x="257.4" y="472.019063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="90">表侧 · 剩余预算</text></g>
    <g id="text_20"><text x="294.6" y="443.219063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-original-width="102">非表侧 · 剩余预算</text></g>
   </g>

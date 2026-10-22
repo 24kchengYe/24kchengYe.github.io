@@ -21,38 +21,38 @@
       <path d="M 267.624 196.416  L 267.624 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_2"/>
-     <g id="text_1"><text x="260.97525" y="213.136" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">50</text></g>
+     <g id="text_1"><text x="267.97525" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="50" data-type-role="secondary" text-anchor="middle"><tspan x="267.97525" dy="0">50</tspan></text></g>
     </g>
     <g id="xtick_2">
      <g id="line2d_3">
       <path d="M 406.392 196.416  L 406.392 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_4"/>
-     <g id="text_2"><text x="399.74325" y="213.136" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">55</text></g>
+     <g id="text_2"><text x="406.74325" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="55" data-type-role="secondary" text-anchor="middle"><tspan x="406.74325" dy="0">55</tspan></text></g>
     </g>
     <g id="xtick_3">
      <g id="line2d_5">
       <path d="M 545.16 196.416  L 545.16 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_6"/>
-     <g id="text_3"><text x="538.51125" y="213.136" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">60</text></g>
+     <g id="text_3"><text x="545.51125" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle"><tspan x="545.51125" dy="0">60</tspan></text></g>
     </g>
     <g id="xtick_4">
      <g id="line2d_7">
       <path d="M 683.928 196.416  L 683.928 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_8"/>
-     <g id="text_4"><text x="677.27925" y="213.136" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">65</text></g>
+     <g id="text_4"><text x="684.27925" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="65" data-type-role="secondary" text-anchor="middle"><tspan x="684.27925" dy="0">65</tspan></text></g>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_9"/>
-     <g id="text_5"><text x="241.217125" y="118.904571" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">通常SFT</text></g>
+     <g id="text_5"><text x="241.217125" y="119.80457100000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="通常SFT" data-type-role="secondary" text-anchor="middle"><tspan x="241.217125" dy="0">通常SFT</tspan></text></g>
     </g>
     <g id="ytick_2">
      <g id="line2d_10"/>
-     <g id="text_6"><text x="223.217125" y="172.047429" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">中間学習後SFT</text></g>
+     <g id="text_6"><text x="223.217125" y="172.947429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="中間学習後SFT" data-type-role="secondary" text-anchor="middle"><tspan x="223.217125" dy="0">中間学習後SFT</tspan></text></g>
     </g>
    </g>
    <g id="line2d_11">
@@ -64,13 +64,13 @@
    <g id="patch_3">
     <path d="M 267.624 196.416  L 683.928 196.416  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="text_7"><text x="447.007761" y="103.044571" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">56.98</text></g>
-   <g id="text_8"><text x="542.757681" y="136.044571" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">60.43</text></g>
-   <g id="text_9"><text x="721.39536" y="118.106759" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641">+3.45</text></g>
-   <g id="text_10"><text x="516.669297" y="156.187429" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">59.49</text></g>
-   <g id="text_11"><text x="593.269233" y="189.187429" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">62.25</text></g>
-   <g id="text_12"><text x="721.39536" y="171.249616" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641">+2.77</text></g>
-   <g id="text_13"><text x="743.89536" y="73.656" font-size="10.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">Δ ポイント</text></g>
+   <g id="text_7"><text x="461.507761" y="104.094571" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.98" data-type-role="secondary" text-anchor="middle"><tspan x="461.507761" dy="0">56.98</tspan></text></g>
+   <g id="text_8"><text x="557.257681" y="137.094571" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="60.43" data-type-role="secondary" text-anchor="middle"><tspan x="557.257681" dy="0">60.43</tspan></text></g>
+   <g id="text_9"><text x="736.89536" y="119.006759" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+3.45" data-type-role="secondary" text-anchor="middle"><tspan x="736.89536" dy="0">+3.45</tspan></text></g>
+   <g id="text_10"><text x="531.169297" y="157.23742900000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="59.49" data-type-role="secondary" text-anchor="middle"><tspan x="531.169297" dy="0">59.49</tspan></text></g>
+   <g id="text_11"><text x="607.769233" y="190.23742900000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="62.25" data-type-role="secondary" text-anchor="middle"><tspan x="607.769233" dy="0">62.25</tspan></text></g>
+   <g id="text_12"><text x="736.89536" y="172.149616" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+2.77" data-type-role="secondary" text-anchor="middle"><tspan x="736.89536" dy="0">+2.77</tspan></text></g>
+   <g id="text_13"><text x="743.89536" y="75.006" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="Δ ポイント" data-type-role="secondary" text-anchor="middle"><tspan x="743.89536" dy="0">Δ ポイント</tspan></text></g>
    <g id="PathCollection_1">
     
     <g clip-path="url(#p03cc6fe949)">
@@ -104,39 +104,39 @@
       <path d="M 267.624 374.976  L 267.624 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_14"/>
-     <g id="text_14"><text x="260.97525" y="391.696" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">50</text></g>
+     <g id="text_14"><text x="267.97525" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="50" data-type-role="secondary" text-anchor="middle"><tspan x="267.97525" dy="0">50</tspan></text></g>
     </g>
     <g id="xtick_6">
      <g id="line2d_15">
       <path d="M 406.392 374.976  L 406.392 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_16"/>
-     <g id="text_15"><text x="399.74325" y="391.696" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">55</text></g>
+     <g id="text_15"><text x="406.74325" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="55" data-type-role="secondary" text-anchor="middle"><tspan x="406.74325" dy="0">55</tspan></text></g>
     </g>
     <g id="xtick_7">
      <g id="line2d_17">
       <path d="M 545.16 374.976  L 545.16 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_18"/>
-     <g id="text_16"><text x="538.51125" y="391.696" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">60</text></g>
+     <g id="text_16"><text x="545.51125" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle"><tspan x="545.51125" dy="0">60</tspan></text></g>
     </g>
     <g id="xtick_8">
      <g id="line2d_19">
       <path d="M 683.928 374.976  L 683.928 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_20"/>
-     <g id="text_17"><text x="677.27925" y="391.696" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666">65</text></g>
+     <g id="text_17"><text x="684.27925" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="65" data-type-role="secondary" text-anchor="middle"><tspan x="684.27925" dy="0">65</tspan></text></g>
     </g>
-    <g id="text_18"><text x="475.891625" y="415.589125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" text-anchor="middle">誤り型F1（%）</text></g>
+    <g id="text_18"><text x="475.891625" y="416.489125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" aria-label="誤り型F1（%）" data-type-role="secondary" text-anchor="middle"><tspan x="475.891625" dy="0">誤り型F1（%）</tspan></text></g>
    </g>
    <g id="matplotlib.axis_4">
     <g id="ytick_3">
      <g id="line2d_21"/>
-     <g id="text_19"><text x="200.624" y="297.464571" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">中間学習＋旧版経験</text></g>
+     <g id="text_19"><text x="200.624" y="298.36457099999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="中間学習＋旧版経験" data-type-role="secondary" text-anchor="middle"><tspan x="200.624" dy="0">中間学習＋旧版経験</tspan></text></g>
     </g>
     <g id="ytick_4">
      <g id="line2d_22"/>
-     <g id="text_20"><text x="200.624" y="350.607429" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">中間学習、旧版未学習</text></g>
+     <g id="text_20"><text x="200.624" y="351.507429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="中間学習、旧版未学習" data-type-role="secondary" text-anchor="middle"><tspan x="200.624" dy="0">中間学習、旧版未学習</tspan></text></g>
     </g>
    </g>
    <g id="line2d_23">
@@ -148,12 +148,12 @@
    <g id="patch_5">
     <path d="M 267.624 374.976  L 683.928 374.976  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="text_21"><text x="446.730225" y="281.604571" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">56.97</text></g>
-   <g id="text_22"><text x="500.572209" y="314.604571" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">58.91</text></g>
-   <g id="text_23"><text x="721.39536" y="296.666759" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641">+1.94</text></g>
-   <g id="text_24"><text x="425.082417" y="334.747429" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a">56.19</text></g>
-   <g id="text_25"><text x="414.536049" y="367.747429" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">55.81</text></g>
-   <g id="text_26"><text x="721.39536" y="349.809616" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">-0.38</text></g>
+   <g id="text_21"><text x="461.230225" y="282.65457100000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.97" data-type-role="secondary" text-anchor="middle"><tspan x="461.230225" dy="0">56.97</tspan></text></g>
+   <g id="text_22"><text x="515.0722089999999" y="315.65457100000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="58.91" data-type-role="secondary" text-anchor="middle"><tspan x="515.0722089999999" dy="0">58.91</tspan></text></g>
+   <g id="text_23"><text x="736.89536" y="297.566759" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+1.94" data-type-role="secondary" text-anchor="middle"><tspan x="736.89536" dy="0">+1.94</tspan></text></g>
+   <g id="text_24"><text x="439.582417" y="335.797429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.19" data-type-role="secondary" text-anchor="middle"><tspan x="439.582417" dy="0">56.19</tspan></text></g>
+   <g id="text_25"><text x="429.036049" y="368.797429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="55.81" data-type-role="secondary" text-anchor="middle"><tspan x="429.036049" dy="0">55.81</tspan></text></g>
+   <g id="text_26"><text x="735.39536" y="350.709616" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="-0.38" data-type-role="secondary" text-anchor="middle"><tspan x="735.39536" dy="0">-0.38</tspan></text></g>
    <g id="PathCollection_5">
     <g clip-path="url(#p1d5e304a33)">
      <use xlink:href="#m2893a7d686" x="461.066592" y="292.604571" style="fill: #ffffff; stroke: #7a7a7a; stroke-width: 0.95"/>
@@ -175,8 +175,8 @@
     </g>
    </g>
   </g>
-  <g id="text_27"><text x="98.72800000000001" y="66.96" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">1,056件 · 固定参照</text></g>
-  <g id="text_28"><text x="90.22800000000001" y="245.52" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" text-anchor="middle">792件 · Sol参照</text></g>
+  <g id="text_27"><text x="98.72800000000001" y="68.00999999999999" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="1,056件 · 固定参照" data-type-role="secondary" text-anchor="middle"><tspan x="98.72800000000001" dy="0">1,056件 · 固定参照</tspan></text></g>
+  <g id="text_28"><text x="90.22800000000001" y="246.57000000000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="792件 · Sol参照" data-type-role="secondary" text-anchor="middle"><tspan x="90.22800000000001" dy="0">792件 · Sol参照</tspan></text></g>
   <g id="legend_1">
    <g id="line2d_25">
     <path d="M 623.889359 20.104  L 635.389359 20.104  L 646.889359 20.104  " style="fill: none"/>
@@ -185,7 +185,7 @@
      <use xlink:href="#mf33e520728" x="635.389359" y="20.104" style="fill: #ffffff; stroke: #7a7a7a"/>
     </g>
    </g>
-   <g id="text_29"><text x="656.089359" y="24.129" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717">SFT</text></g>
+   <g id="text_29"><text x="665.089359" y="25.179000000000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="SFT" data-type-role="secondary" text-anchor="middle"><tspan x="665.089359" dy="0">SFT</tspan></text></g>
    <g id="line2d_26">
     <path d="M 695.291781 20.104  L 706.791781 20.104  L 718.291781 20.104  " style="fill: none"/>
     
@@ -193,7 +193,7 @@
      <use xlink:href="#m023504b794" x="706.791781" y="20.104" style="fill: #78a641; stroke: #78a641; stroke-linejoin: miter"/>
     </g>
    </g>
-   <g id="text_30"><text x="745.991781" y="24.129" font-size="11.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" text-anchor="middle">継続RL</text></g>
+   <g id="text_30"><text x="745.991781" y="25.179000000000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="継続RL" data-type-role="secondary" text-anchor="middle"><tspan x="745.991781" dy="0">継続RL</tspan></text></g>
   </g>
  </g>
  <defs>

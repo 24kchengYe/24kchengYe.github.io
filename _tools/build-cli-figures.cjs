@@ -107,7 +107,7 @@ function buildCliFigures() {
         style.transform = 'rotate(' + Math.atan2(end[1] - start[1], end[0] - start[0]) * 180 / Math.PI + 'deg)';
       }
     }
-    document.querySelector('style').textContent += '\n.title{font-size:30px}.node,.environment,.dependencies,.bundle,.bundle h3{font-size:26px;line-height:1.25}.node{padding:6px 12px}.sub,.dependency-row,.query-note{font-size:20px;line-height:1.25}.edge-label{font-size:19px;line-height:1.25}.bundle h3{font-weight:500}.bundle p{font-size:20px}.dependency-row{gap:10px}.turns b{padding:7px 12px}';
+    document.querySelector('style').textContent += '\n.title{font-size:30px;line-height:1.2;transform:translateY(-6px)}.node,.environment,.dependencies,.bundle,.bundle h3{font-size:26px;line-height:1.25}.node{padding:6px 12px}.sub,.dependency-row,.query-note{font-size:20px;line-height:1.25}.edge-label{font-size:19px;line-height:1.25}.bundle h3{font-weight:500}.bundle p{font-size:20px}.dependency-row{gap:10px}.turns b{padding:7px 12px}';
     fs.writeFileSync(target, dom.serialize() + '\n');
     dom.window.close();
   }

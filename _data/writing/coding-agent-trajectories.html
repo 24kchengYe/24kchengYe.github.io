@@ -35,6 +35,22 @@
 </ul>
 </figcaption>
 </figure>
+<h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
+<p>一次 rollout 中，模型负责选择动作；Harness 负责组装上下文、分派原生工具调用、回填真实观察，并管理预算、检查点与执行账本。工具环境保存 Skills、脚本和参数文件，Bash 中的 lark-cli 连接云端 Base。下一轮决策同时依赖消息历史和此前已经改变的环境状态。</p>
+<figure>
+<img data-figure="cli-rollout-environment" alt="Rollout Harness、工具环境与标准化 Case 的详细流程" loading="lazy">
+<figcaption>上半图是实际生成循环，下半图是 Case 的归档与评审交接。绿色虚线回填观察；灰色点线表示终止检查与归档。最终文本先经过结束检查；工具失败可以作为观察进入后续决策，预算耗尽或不可安全继续的故障则记录失败终态。rollout 完成与业务需求验收分别记录。</figcaption>
+</figure>
+<p>初始输入包含 ThinkSP、FunctionSP、MainSP、Reminder、原始 Query 和工具 Schema；Skills 正文通过 Read 按需进入上下文。模型能看到的是工具 observation，完整 ToolResponse 和运行元数据另作审计证据。后台任务的完成通知也会补回消息。续跑时，已完成调用按 call ID 和参数哈希复用真实回执；结果不明的写操作停止执行，交给新环境重试。</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Case 层次</th><th>保存内容</th><th>作用</th></tr></thead>
+<tbody>
+<tr><td>原始轨迹</td><td><code>messages</code>、<code>tools</code>、<code>modelTurns</code>、模型与提示词版本</td><td>保留当时的系统输入、原生思考、正文，以及调用 ID 与工具返回。</td></tr>
+<tr><td>执行证据</td><td>工具账本、逐轮响应、终态、Base / 文件引用；本地生成还保存原始请求与响应</td><td>区分模型当时看到的信息和 Harness 额外保存的审计证据。</td></tr>
+<tr><td>评审 Case</td><td><code>query</code>、<code>execution_contract</code>、<code>trace_completeness</code>、<code>events</code>、<code>artifacts</code>、<code>rule_snapshots</code></td><td>用事件序号和可见时序组织原始内容，支撑逐问题归因与修复定位。</td></tr>
+</tbody></table></div>
+<p>Case 是任务及其执行证据的单位，turn 是一次模型响应的单位，event 是评审输入中的有序记录。一次响应含多个调用时，会展开为多个关联事件；训练样本还可以按 assistant 目标轮次展开。三者的数量不应混用。当前导入的轨迹包保留原生消息和工具配对，但部分批次不含原始 HTTP/SSE 或工作区文件；评审保留这些来源差异，不把产物引用当作完整环境快照。</p>
+<p>这也决定了轨迹修复的边界：仅靠一份对话 JSON，无法恢复所有工具状态。Online 续跑需要恢复或重建对应环境；Offline 编辑需要沿调用、返回值与状态依赖核验。下文的 Spec→TodoList 方案把规划纳入同一条“计划—动作—观察—更新”链，Judge–Fix 再据此定位计划与执行之间的偏差。</p>
 <h2>已做实验：Spec 如何参与规划</h2>
 <p>我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</p>
 <div class="table-scroll">

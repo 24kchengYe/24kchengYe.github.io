@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1290" width="1440" height="1290" lang="en"><foreignObject width="1440" height="1290"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+*{box-sizing:border-box}.diagram-root{margin:0;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif;color:#303c38;background:#fff}.canvas{position:relative;width:1440px;height:1290px;background:white;overflow:hidden}.region{position:absolute;border:1px solid #c7d2c3;border-radius:5px}.region.soft{background:radial-gradient(#92a38526 .7px,transparent .8px);background-size:6px 6px}.region-title{position:absolute;top:-20px;left:22px;padding:0 12px;background:white;font-size:28px;line-height:38px}.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 18px;border:1.3px solid #9aaa96;border-radius:4px;background:white;font-size:28px;line-height:1.3;z-index:2}.node.soft{background:#eff4e9}.sub{display:block;margin-top:6px;font-size:23px;color:#677462;line-height:1.3}.label{position:absolute;z-index:3;background:white;padding:3px 8px;font-size:22px;line-height:1.3;color:#68766b;text-align:center}.heading{position:absolute;font-size:30px;left:42px}.small-note{position:absolute;font-size:23px;color:#68766b;line-height:1.5}.edges{position:absolute;inset:0;z-index:1}.edges path{fill:none;stroke:#8a9983;stroke-width:1.5;marker-end:url(#rollout-arrow)}.edges .feedback{stroke:#749452;stroke-dasharray:6 5}.edges .record{stroke:#a4ada0;stroke-dasharray:3 5}
+</style><main class="canvas" data-fixed-type="">
+<div class="heading" style="top:22px">One rollout: model, Harness and tool environment</div>
+<div class="node" id="query" style="left:80px;top:95px;width:280px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">Original Query</span></div>
+<div class="node" id="instructions" style="left:490px;top:95px;width:400px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">System instructions + Reminder</span></div>
+<div class="node" id="schema" style="left:1030px;top:95px;width:340px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">Tool schemas</span></div>
+<div class="region soft" style="left:40px;top:245px;width:900px;height:570px"><div class="region-title">Harness · Context, dispatch and records</div></div>
+<div class="region" style="left:990px;top:245px;width:410px;height:570px"><div class="region-title">Tool environment</div></div>
+<div class="node" id="context" style="left:80px;top:295px;width:280px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">Current message context<span></span></span></div>
+<div class="node soft" id="model" style="left:550px;top:295px;width:340px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">Seed response<br /><span class="sub">Reasoning · Text · Tool calls</span></span></div>
+<div class="node" id="dispatch" style="left:550px;top:475px;width:340px;height:100px"><span style="min-width: 0; overflow-wrap: anywhere;">Response dispatch</span></div>
+<div class="node" id="terminal" style="left:80px;top:465px;width:280px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">End checks and status<br /><span class="sub">Completed / Failed / Budget stop</span></span></div>
+<div class="node soft" id="tools" style="left:1030px;top:455px;width:340px;height:140px"><span style="min-width: 0; overflow-wrap: anywhere;">Actual tool execution<br /><span class="sub">Read · Write · Edit<br />Bash · present_files</span></span></div>
+<div class="node" id="observation" style="left:550px;top:665px;width:340px;height:120px"><span style="min-width: 0; overflow-wrap: anywhere;">Append actual observations<br /><span class="sub">Pair calls by tool_call_id</span></span></div>
+<div class="node" id="resources" style="left:1030px;top:665px;width:340px;height:120px"><span style="min-width: 0; overflow-wrap: anywhere;">Skills and workspace files<br /><span class="sub">lark-cli ↔ Cloud Base</span></span></div>
+<div class="label" style="left:388px;top:313px;width:132px">Model input</div>
+<div class="label" style="left:364px;top:495px;width:180px">Final text</div>
+<div class="label" style="left:896px;top:459px;width:132px">Native calls</div>
+<div class="label" style="left:366px;top:686px;width:176px">Next turn</div>
+<div class="label" style="left:71px;top:417px;width:300px">Budget / Runtime failure</div>
+<div class="small-note" style="left:1040px;top:295px;width:325px">Read loads Skills on demand. Files and Base state persist across actions.</div>
+<div class="heading" style="top:875px">One case: from execution to review input</div>
+<div class="node" id="archive" style="left:80px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">Original execution bundle<br /><span class="sub">messages · modelTurns<br />Tool ledger · Versions · Status</span></span></div>
+<div class="node soft" id="normalized" style="left:540px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">Normalized case<br /><span class="sub">Ordered events · Artifacts<br />Rule snapshots · Visibility</span></span></div>
+<div class="node" id="review" style="left:1000px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">Judge / Repair / Release<br /><span class="sub">Original query and full evidence<br />Link results to source versions</span></span></div>
+<div class="small-note" style="left:80px;top:1160px;width:1280px">Model-visible observations and audit evidence are stored separately. Normalization preserves message–call–result links.</div>
+<svg class="edges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1290"><defs><marker id="rollout-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" style="fill:#8a9983;stroke:none;marker-end:none"/></marker></defs>
+<path data-from="query" data-to="context" d="M220 177 V295"/>
+<path data-from="instructions" data-to="context" d="M690 177 V210 H330 V295"/>
+<path data-from="schema" data-to="model" d="M1200 177 V210 H820 V295"/>
+<path data-from="context" data-to="model" d="M360 350 H550"/>
+<path data-from="model" data-to="dispatch" d="M720 405 V475"/>
+<path data-from="dispatch" data-to="tools" d="M890 525 H1030"/>
+<path data-from="dispatch" data-to="terminal" d="M550 525 H360"/>
+<path data-from="context" data-to="terminal" class="record" d="M220 405 V465"/>
+<path data-from="tools" data-to="resources" d="M1200 595 V665"/>
+<path data-from="tools" data-to="observation" d="M1030 560 H968 V725 H890"/>
+<path data-from="observation" data-to="context" class="feedback" d="M550 725 H420 V650 H55 V350 H80"/>
+<path data-from="terminal" data-to="archive" class="record" d="M220 615 V840 H20 V1040 H80"/>
+<path data-from="archive" data-to="normalized" d="M440 1040 H540"/>
+<path data-from="normalized" data-to="review" d="M900 1040 H1000"/>
+</svg>
+</main></div></foreignObject></svg>

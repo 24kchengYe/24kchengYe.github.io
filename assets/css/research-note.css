@@ -31,7 +31,7 @@ tbody tr.emphasis { color: #4d6e2b; }
 .source-note { margin-top: 54px; padding-top: 20px; border-top: 1px solid var(--line); }
 dialog { border: 0; padding: 48px 20px 20px; width: min(1440px, 96vw); max-width: 96vw; max-height: 94vh; background: white; }
 dialog::backdrop { background: #202820b0; }
-dialog img { display: block; max-width: 100%; max-height: 80vh; margin: auto; }
+dialog img { display: block; width: 100%; max-width: 100%; max-height: none; margin: auto; }
 dialog button { position: absolute; right: 18px; top: 12px; background: white; border: 1px solid var(--line); padding: 5px 10px; font-size: 13px; line-height: 1.5; font-family: inherit; cursor: pointer; }
 @media (max-width: 640px) { body { padding: 24px 20px 60px; font-size: 17px; } .note-header { margin-top: 42px; } h2 { margin-top: 46px; font-size: 25px; } .lead { font-size: 18px; } figure { width: 100%; margin-left: 0; transform: none; } table { min-width: 540px; font-size: 13px; } }
 @media print { body { padding: 0; font-size: 11pt; } .note-header { margin-top: 0; } figure { width: 100%; margin-left: 0; transform: none; break-inside: avoid; } .table-scroll { overflow: visible; } .figure-source-link, dialog { display: none; } }

@@ -11,7 +11,7 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6 439.2 651.6 426.24  L 651.6 45.36  Q 651.6 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
+    <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6000000000001 439.2 651.6000000000001 426.24  L 651.6000000000001 45.36  Q 651.6000000000001 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z " clip-path="url(#p25ef0f7472)" style="fill: #ffffff; stroke: #161616; stroke-width: 1.15; stroke-linejoin: miter"/>
    </g>
    <g id="PathCollection_1">
     
@@ -5115,16 +5115,16 @@
     <path d="M 194.4 230.4  L 221.76 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
-    <path d="M 221.76 230.4  L 221.76 160.56  Q 221.76 149.04 233.28 149.04  L 272.370163 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 147.04  L 272.370163 149.04  L 268.370163 151.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 221.76 230.4  L 221.76 160.56  Q 221.76 149.04 233.28 149.04  L 272.37016299999993 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 147.04  L 272.37016299999993 149.04  L 268.37016299999993 151.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
-    <path d="M 221.76 230.4  L 221.76 240.12  Q 221.76 249.84 231.48 249.84  L 272.370163 249.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 247.84  L 272.370163 249.84  L 268.370163 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 221.76 230.4  L 221.76 240.12  Q 221.76 249.84 231.48 249.84  L 272.37016299999993 249.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 247.84  L 272.37016299999993 249.84  L 268.37016299999993 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
-    <path d="M 111.6 270  L 111.6 360.72  Q 111.6 372.24 123.12 372.24  L 272.370163 372.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 268.370163 370.24  L 272.370163 372.24  L 268.370163 374.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 111.6 270  L 111.6 360.72  Q 111.6 372.24 123.12 372.24  L 272.37016299999993 372.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 268.37016299999993 370.24  L 272.37016299999993 372.24  L 268.37016299999993 374.24  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
     <path d="M 410.4 149.04  L 461.010163 149.04  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
@@ -5147,27 +5147,27 @@
     <path d="M 699.650163 247.84  L 703.650163 249.84  L 699.650163 251.84  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #7eaf43; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_18">
-    <path d="M 624.24 372.24  L 748.08 372.24  Q 759.6 372.24 759.6 360.72  L 759.6 264.749837  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 757.6 268.749837  L 759.6 264.749837  L 761.6 268.749837  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 624.24 372.24  L 748.08 372.24  Q 759.6 372.24 759.6 360.72  L 759.6 264.74983700000007  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 757.6 268.74983700000007  L 759.6 264.74983700000007  L 761.6 268.74983700000007  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_19">
-    <path d="M 820.8 230.4  L 859.170163 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
-    <path d="M 855.170163 228.4  L 859.170163 230.4  L 855.170163 232.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 820.8 230.4  L 859.1701629999999 230.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
+    <path d="M 855.1701629999999 228.4  L 859.1701629999999 230.4  L 855.1701629999999 232.4  " clip-path="url(#p25ef0f7472)" style="fill: none; stroke: #161616; stroke-width: 1.1; stroke-linecap: round"/>
    </g>
-   <g id="text_1"><text x="272.88" y="63.542773" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">ATMS · 检查依赖及替代支持</text></g>
-   <g id="text_2"><text x="88.082016" y="83.988274" font-size="12.3" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">B 不适用</text></g>
-   <g id="text_3"><text x="83.6" y="159.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">固定输入</text></g>
-   <g id="text_4"><text x="80.6" y="225.511082" font-size="15.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">同一需求</text></g>
-   <g id="text_5"><text x="296.75" y="102.826523" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">只改 A 的适用性</text></g>
-   <g id="text_6"><text x="513.56" y="102.776719" font-size="12.5" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262">预期判断</text></g>
-   <g id="text_7"><text x="319.575" y="154.004063" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">A 适用</text></g>
-   <g id="text_8"><text x="300.669" y="254.427422" font-size="13.8" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">A 明确不适用</text></g>
-   <g id="text_9"><text x="314" y="367.898578" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">字段事实</text></g>
-   <g id="text_10"><text x="495.06" y="144.499348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">访问限制缺失</text></g>
-   <g id="text_11"><text x="495.06" y="245.299348" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43">访问限制缺失</text></g>
-   <g id="text_12"><text x="493.06" y="368.14109" font-size="13" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">电话缺失：仍报</text></g>
-   <g id="text_13"><text x="730.6" y="235.198594" font-size="14.499999999999998" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">独立复核</text></g>
-   <g id="text_14"><text x="904" y="226.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">配对</text></g>
+   <g id="text_1"><text x="374.38" y="64.292773" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="ATMS · 检查依赖及替代支持" data-type-role="primary" text-anchor="middle"><tspan x="374.38" dy="0">ATMS · 检查依赖及替代支持</tspan></text></g>
+   <g id="text_2"><text x="112.082016" y="84.798274" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="B 不适用" data-type-role="secondary" text-anchor="middle"><tspan x="112.082016" dy="0">B 不适用</tspan></text></g>
+   <g id="text_3"><text x="111.6" y="159.774688" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="固定输入" data-type-role="secondary" text-anchor="middle"><tspan x="111.6" dy="0">固定输入</tspan></text></g>
+   <g id="text_4"><text x="111.60000000000001" y="236.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="同一需求" data-type-role="primary" text-anchor="middle"><tspan x="111.60000000000001" dy="0">同一需求</tspan></text></g>
+   <g id="text_5"><text x="342.25" y="103.576523" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="只改 A 的适用性" data-type-role="secondary" text-anchor="middle"><tspan x="342.25" dy="0">只改 A 的适用性</tspan></text></g>
+   <g id="text_6"><text x="538.56" y="103.526719" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#626262" aria-label="预期判断" data-type-role="secondary" text-anchor="middle"><tspan x="538.56" dy="0">预期判断</tspan></text></g>
+   <g id="text_7"><text x="342" y="155.34" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A 适用" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">A 适用</tspan></text></g>
+   <g id="text_8"><text x="342" y="256.14" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A 明确不适用" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">A 明确不适用</tspan></text></g>
+   <g id="text_9"><text x="342" y="378.54" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="字段事实" data-type-role="primary" text-anchor="middle"><tspan x="342" dy="0">字段事实</tspan></text></g>
+   <g id="text_10"><text x="538.56" y="145.549348" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="访问限制缺失" data-type-role="primary" text-anchor="middle"><tspan x="538.56" dy="0">访问限制缺失</tspan></text></g>
+   <g id="text_11"><text x="538.56" y="246.34934800000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7eaf43" aria-label="访问限制缺失" data-type-role="primary" text-anchor="middle"><tspan x="538.56" dy="0">访问限制缺失</tspan></text></g>
+   <g id="text_12"><text x="538.56" y="368.74109000000004" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="电话缺失：仍报" data-type-role="secondary" text-anchor="middle"><tspan x="538.56" dy="0">电话缺失：仍报</tspan></text></g>
+   <g id="text_13"><text x="759.5999999999999" y="236.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="独立复核" data-type-role="primary" text-anchor="middle"><tspan x="759.5999999999999" dy="0">独立复核</tspan></text></g>
+   <g id="text_14"><text x="918" y="236.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="配对" data-type-role="primary" text-anchor="middle"><tspan x="918" dy="0">配对</tspan></text></g>
   </g>
  </g>
  <defs>
@@ -5175,7 +5175,7 @@
    <rect x="0" y="0" width="1008" height="504"/>
   </clipPath>
   <clipPath id="pb5a366f6a9">
-   <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6 439.2 651.6 426.24  L 651.6 45.36  Q 651.6 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z "/>
+   <path d="M 261.36 439.2  L 638.64 439.2  Q 651.6000000000001 439.2 651.6000000000001 426.24  L 651.6000000000001 45.36  Q 651.6000000000001 32.4 638.64 32.4  L 261.36 32.4  Q 248.4 32.4 248.4 45.36  L 248.4 426.24  Q 248.4 439.2 261.36 439.2  z "/>
   </clipPath>
   <clipPath id="p3b7634e77d">
    <path d="M 41.76 270  L 181.44 270  Q 194.4 270 194.4 257.04  L 194.4 203.76  Q 194.4 190.8 181.44 190.8  L 41.76 190.8  Q 28.8 190.8 28.8 203.76  L 28.8 257.04  Q 28.8 270 41.76 270  z "/>

@@ -3,21 +3,21 @@
 <div class="edge" data-from="history" data-to="cache" style="left:260px;top:240px;width:40px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="history" data-to="cache" style="left:300px;top:240px;width:85px;transform:rotate(-90deg)"></div>
 <div class="edge arrow" data-from="history" data-to="cache" style="left:300px;top:155px;width:60px;transform:rotate(0deg)"></div>
-<div class="edge" data-from="history" data-to="index-key" style="left:150px;top:310px;width:85px;transform:rotate(90deg)"></div>
+<div class="edge" data-from="history" data-to="index-key" style="left: 150px; top: 320px; width: 75px; transform: rotate(90deg);"></div>
 <div class="edge arrow" data-from="history" data-to="index-key" style="left:150px;top:395px;width:210px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="cache" data-to="gather" style="left:650px;top:155px;width:90px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="index-key" data-to="indexer" style="left:650px;top:395px;width:90px;transform:rotate(0deg)"></div>
 <div class="edge control arrow" data-from="indexer" data-to="gather" style="left:880px;top:340px;width:130px;transform:rotate(-90deg)"></div>
 <div class="edge arrow" data-from="query" data-to="indexer" style="left:1100px;top:395px;width:80px;transform:rotate(180deg)"></div>
-<div class="edge arrow" data-from="query" data-to="attention" style="left:1250px;top:340px;width:130px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="query" data-to="attention" style="left: 1250px; top: 340px; width: 110px; transform: rotate(-90deg);"></div>
 <div class="edge arrow" data-from="gather" data-to="attention" style="left:1020px;top:155px;width:80px;transform:rotate(0deg)"></div>
-<div class="node " id="history" style="left:40px;top:210px;width:220px;height:100px;font-size:24px">历史隐状态<br><span class="math">X</span></div>
+<div class="node " id="history" style="left: 40px; top: 200px; width: 220px; height: 120px; font-size: 24px;">历史隐状态<br><span class="math">X</span></div>
 <div class="node soft" id="cache" style="left:360px;top:100px;width:290px;height:110px;font-size:24px">MLA 潜向量缓存<br><span class="math">X → cᴷⱽ, kᴿ</span></div>
 <div class="node " id="index-key" style="left:360px;top:340px;width:290px;height:110px;font-size:24px">独立索引键<br><span class="math">X → Kᴵ</span></div>
 <div class="node soft" id="gather" style="left:740px;top:100px;width:280px;height:110px;font-size:24px">读取选中 token 的 KV<br><span class="math">KV[selected]</span></div>
 <div class="node " id="indexer" style="left:740px;top:340px;width:280px;height:110px;font-size:24px">Lightning Indexer<br><span class="math">score(Qᴵ, Kᴵ) → Top-k</span></div>
 <div class="node " id="query" style="left:1100px;top:340px;width:300px;height:110px;font-size:24px">当前隐状态投影<br><span class="math">xₜ → Q, Qᴵ</span></div>
-<div class="node soft" id="attention" style="left:1100px;top:100px;width:300px;height:110px;font-size:24px">Sparse MLA<br><span class="math">Attention(Q, KV[selected])<br>→ oₜ</span></div>
+<div class="node soft" id="attention" style="left: 1100px; top: 80px; width: 300px; height: 150px; font-size: 24px;">Sparse MLA<br><span class="math">Attention(Q, KV[selected])<br>→ oₜ</span></div>
 
 <div class="note" style="top:545px">索引查询 Qᴵ 用于选择；主查询 Q 读取缓存。未选中不等于删除缓存。</div>
 </main></body></html>

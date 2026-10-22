@@ -8,19 +8,19 @@
 <div class="edge" data-from="history" data-to="gather" style="left:690px;top:310px;width:60px;transform:rotate(90deg)"></div>
 <div class="edge arrow" data-from="history" data-to="gather" style="left:690px;top:370px;width:50px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="past" data-to="router" style="left:650px;top:170px;width:90px;transform:rotate(0deg)"></div>
-<div class="edge control arrow" data-from="router" data-to="gather" style="left:885px;top:220px;width:100px;transform:rotate(90deg)"></div>
+<div class="edge control arrow" data-from="router" data-to="gather" style="left: 885px; top: 245px; width: 65px; transform: rotate(90deg);"></div>
 <div class="edge arrow" data-from="query" data-to="router" style="left:1100px;top:145px;width:70px;transform:rotate(180deg)"></div>
 <div class="edge arrow" data-from="query" data-to="attention" style="left:1250px;top:220px;width:100px;transform:rotate(90deg)"></div>
 <div class="edge arrow" data-from="gather" data-to="attention" style="left:1030px;top:370px;width:70px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="current" data-to="attention" style="left:650px;top:575px;width:600px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="current" data-to="attention" style="left:1250px;top:575px;width:45px;transform:rotate(-90deg)"></div>
 <div class="node soft" id="history" style="left:40px;top:260px;width:230px;height:100px;font-size:24px">KV blocks<br><span class="math">K, V</span></div>
-<div class="node " id="past" style="left:360px;top:120px;width:290px;height:100px;font-size:24px">过去块的平均 K<br><span class="math">mean(Kᵇ)</span></div>
-<div class="node soft" id="current" style="left:360px;top:520px;width:290px;height:110px;font-size:24px">强制保留当前块<br><span class="math">块内因果掩码</span></div>
-<div class="node " id="router" style="left:740px;top:120px;width:290px;height:100px;font-size:24px">只选择过去块<br><span class="math">Q · mean(Kᵇ) → Top-(k−1)</span></div>
-<div class="node soft" id="gather" style="left:740px;top:320px;width:290px;height:100px;font-size:24px">读取选中历史块 KV<br><span class="math">KV[past selected]</span></div>
+<div class="node " id="past" style="left: 360px; top: 110px; width: 290px; height: 120px; font-size: 24px;">过去块的平均 K<br><span class="math">mean(Kᵇ)</span></div>
+<div class="node soft" id="current" style="left: 360px; top: 500px; width: 290px; height: 150px; font-size: 24px;">强制保留当前块<br><span class="math">块内因果掩码</span></div>
+<div class="node " id="router" style="left: 740px; top: 95px; width: 290px; height: 150px; font-size: 24px;">只选择过去块<br><span class="math">Q · mean(Kᵇ) → Top-(k−1)</span></div>
+<div class="node soft" id="gather" style="left: 740px; top: 310px; width: 290px; height: 120px; font-size: 24px;">读取选中历史块 KV<br><span class="math">KV[past selected]</span></div>
 <div class="node " id="query" style="left:1100px;top:100px;width:300px;height:120px;font-size:24px">当前隐状态投影<br><span class="math">xₜ → Q</span></div>
 <div class="node soft" id="attention" style="left:1100px;top:320px;width:300px;height:210px;font-size:24px">选中 token 联合归一化<br><span class="math">选中历史块 + 当前因果块<br>→ Attention → oₜ</span></div>
 
-<div class="note" style="top:645px">k 包含当前块：k = 3 时，最多两个过去块 + 当前块。</div>
+<div class="note" style="top:670px">k 包含当前块：k = 3 时，最多两个过去块 + 当前块。</div>
 </main></body></html>

@@ -96,10 +96,10 @@
    <g id="text_11"><text x="538.564219" y="404.36" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-original-width="74">局部 Judge</text></g>
    <g id="text_12"><text x="442.2" y="49.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="12">是</text></g>
    <g id="text_13"><text x="354" y="115.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="12">否</text></g>
-   <g id="text_14"><text x="168" y="255.994687" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="96">可恢复且预算剩余</text></g>
+   <g id="text_14"><text x="168" y="230" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="96">可恢复且预算剩余</text></g>
    <g id="text_15"><text x="350.777813" y="345.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="84">异常 / 不可恢复</text></g>
    <g id="text_16"><text x="502.8" y="349.619062" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="24">有效</text></g>
-   <g id="text_17"><text x="195.3" y="391.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="36">仍失败</text></g>
+   <g id="text_17"><text x="195.3" y="363" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="36">仍失败</text></g>
    <g id="text_18"><text x="330" y="454.019063" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-original-width="24">有效</text></g>
   </g>
  </g>

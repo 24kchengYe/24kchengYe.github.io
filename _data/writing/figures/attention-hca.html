@@ -3,7 +3,7 @@
 <div class="edge" data-from="history" data-to="compressed" style="left:260px;top:260px;width:60px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="history" data-to="compressed" style="left:320px;top:260px;width:75px;transform:rotate(-90deg)"></div>
 <div class="edge arrow" data-from="history" data-to="compressed" style="left:320px;top:185px;width:60px;transform:rotate(0deg)"></div>
-<div class="edge" data-from="history" data-to="local" style="left:150px;top:330px;width:70px;transform:rotate(90deg)"></div>
+<div class="edge" data-from="history" data-to="local" style="left: 150px; top: 340px; width: 60px; transform: rotate(90deg);"></div>
 <div class="edge arrow" data-from="history" data-to="local" style="left:150px;top:400px;width:230px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="compressed" data-to="attention" style="left:680px;top:185px;width:60px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="compressed" data-to="attention" style="left:740px;top:185px;width:80px;transform:rotate(90deg)"></div>
@@ -11,10 +11,10 @@
 <div class="edge arrow" data-from="local" data-to="attention" style="left:680px;top:400px;width:420px;transform:rotate(0deg)"></div>
 <div class="edge" data-from="query" data-to="attention" style="left:1060px;top:125px;width:190px;transform:rotate(0deg)"></div>
 <div class="edge arrow" data-from="query" data-to="attention" style="left:1250px;top:125px;width:95px;transform:rotate(90deg)"></div>
-<div class="node " id="history" style="left:40px;top:230px;width:220px;height:100px;font-size:24px">历史隐状态<br><span class="math">X</span></div>
+<div class="node " id="history" style="left: 40px; top: 220px; width: 220px; height: 120px; font-size: 24px;">历史隐状态<br><span class="math">X</span></div>
 <div class="node soft" id="compressed" style="left:380px;top:130px;width:300px;height:110px;font-size:24px">更强的序列压缩<br><span class="math">N × c → ≈ (N/m′) × c</span></div>
-<div class="node soft" id="local" style="left:380px;top:350px;width:300px;height:100px;font-size:24px">局部原始 KV<br><span class="math">X → Kʷⁱⁿ, Vʷⁱⁿ</span></div>
-<div class="node " id="query" style="left:780px;top:80px;width:280px;height:90px;font-size:24px">当前隐状态投影<br><span class="math">xₜ → Q</span></div>
+<div class="node soft" id="local" style="left: 380px; top: 340px; width: 300px; height: 120px; font-size: 24px;">局部原始 KV<br><span class="math">X → Kʷⁱⁿ, Vʷⁱⁿ</span></div>
+<div class="node " id="query" style="left: 780px; top: 65px; width: 280px; height: 120px; font-size: 24px;">当前隐状态投影<br><span class="math">xₜ → Q</span></div>
 <div class="node soft" id="attention" style="left:1100px;top:220px;width:300px;height:200px;font-size:24px">注意力读取<br><span class="math">全部已完成压缩块 + 局部 KV<br>→ Softmax → oₜ</span></div>
 
 <div class="note" style="top:495px">m′ ≫ m；不做 Top-k。压缩分支只读取当前查询之前已完成的块。</div>

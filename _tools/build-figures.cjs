@@ -54,26 +54,98 @@ function localizeVector(source, language) {
     const coordinates = commands.match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
     const horizontal = coordinates.filter((value, index) => index % 2 === 0);
     const vertical = coordinates.filter((value, index) => index % 2 === 1);
-    return [{ left: Math.min(...horizontal), right: Math.max(...horizontal), top: Math.min(...vertical), bottom: Math.max(...vertical) }];
+    return [{ element: shape, left: Math.min(...horizontal), right: Math.max(...horizontal), top: Math.min(...vertical), bottom: Math.max(...vertical) }];
+  });
+  const originalBoxes = boxes.map(box => ({ ...box }));
+  const labelBoxes = labels.map(label => {
+    const center = Number(label.getAttribute('x')) + Number(label.getAttribute('data-original-width')) / 2;
+    const baseline = Number(label.getAttribute('y'));
+    return boxes.filter(box => center > box.left && center < box.right && baseline > box.top && baseline < box.bottom && box.bottom - box.top < 160).sort((first, second) => (first.right - first.left) * (first.bottom - first.top) - (second.right - second.left) * (second.bottom - second.top))[0];
   });
   const widths = labels.map(label => labelWidth(label, labels, boxes, Number(svg.getAttribute('viewBox').split(/\s+/)[2])));
   for (const [index, label] of labels.entries()) {
     const original = label.textContent.trim();
     const translated = translate(original, language);
     const originalWidth = Number(label.getAttribute('data-original-width'));
-    if (translated !== original && originalWidth) {
-      const fontSize = Number(label.getAttribute('font-size'));
-      const maxWidth = widths[index];
-      const predictedWidth = estimatedWidth(translated, fontSize);
-      label.setAttribute('x', Number(label.getAttribute('x')) + originalWidth / 2);
-      label.setAttribute('text-anchor', 'middle');
-      if (predictedWidth > maxWidth) {
-        label.setAttribute('textLength', maxWidth);
-        label.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+    const oldSize = Number(label.getAttribute('font-size'));
+    const muted = ['#707070', '#707570', '#666666', '#777777', '#647067', '#666', '#737373', '#626262'].includes(label.getAttribute('fill'));
+    const fontSize = oldSize >= 20 ? (oldSize > 30 ? 36 : 26) : muted || oldSize < 13.5 ? 15 : 18;
+    const leftAligned = Number(label.getAttribute('x')) === 36;
+    let center = Number(label.getAttribute('x')) + originalWidth / 2;
+    const box = labelBoxes[index];
+    if (box) {
+      const wordWidth = Math.max(...[...new Intl.Segmenter(language, { granularity: 'word' }).segment(translated)].map(part => estimatedWidth(part.segment, fontSize)));
+      const extra = Math.max(0, wordWidth + 20 - (box.right - box.left));
+      box.left -= extra / 2;
+      box.right += extra / 2;
+      center = (box.left + box.right) / 2;
+      widths[index] = box.right - box.left - 16;
+    }
+    if (leftAligned) {
+      widths[index] = oldSize >= 15 ? 790 : 180;
+      center = 36;
+    }
+    const lines = [''];
+    for (const { segment } of new Intl.Segmenter(language, { granularity: 'word' }).segment(translated)) {
+      const previous = lines.at(-1);
+      if (previous && estimatedWidth(previous + segment, fontSize) > widths[index]) lines.push(segment.trimStart());
+      else lines[lines.length - 1] += segment;
+    }
+    label.textContent = '';
+    label.setAttribute('aria-label', translated);
+    label.setAttribute('font-size', fontSize);
+    label.setAttribute('data-type-role', fontSize === 15 ? 'secondary' : fontSize >= 26 ? 'metric' : 'primary');
+    label.setAttribute('x', center);
+    label.setAttribute('text-anchor', leftAligned ? 'start' : 'middle');
+    let baseline = Number(label.getAttribute('y')) + (fontSize - oldSize) * 0.3;
+    if (box && labelBoxes.filter(candidate => candidate === box).length === 1) {
+      const extra = Math.max(0, lines.length * fontSize * 1.2 + 16 - (box.bottom - box.top));
+      box.top -= extra / 2;
+      box.bottom += extra / 2;
+      baseline = (box.top + box.bottom) / 2 + fontSize * 0.35;
+    }
+    label.setAttribute('y', baseline - (lines.length - 1) * fontSize * 0.6);
+    for (const [lineIndex, line] of lines.entries()) {
+      const span = document.createElementNS(svgNamespace, 'tspan');
+      span.setAttribute('x', center);
+      span.setAttribute('dy', lineIndex ? fontSize * 1.2 : 0);
+      span.textContent = line.trim() + (lineIndex < lines.length - 1 ? ' ' : '');
+      label.append(span);
+    }
+    label.removeAttribute('data-original-width');
+  }
+  const movedPoint = (horizontal, vertical) => {
+    for (const [index, before] of originalBoxes.entries()) {
+      const after = boxes[index];
+      if (vertical > before.top - 3 && vertical < before.bottom + 3) {
+        if (Math.abs(horizontal - before.left) < 4) return [horizontal + after.left - before.left, vertical];
+        if (Math.abs(horizontal - before.right) < 4) return [horizontal + after.right - before.right, vertical];
+      }
+      if (horizontal > before.left - 3 && horizontal < before.right + 3) {
+        if (Math.abs(vertical - before.top) < 4) return [horizontal, vertical + after.top - before.top];
+        if (Math.abs(vertical - before.bottom) < 4) return [horizontal, vertical + after.bottom - before.bottom];
       }
     }
-    label.textContent = translated;
-    label.removeAttribute('data-original-width');
+    return [horizontal, vertical];
+  };
+  const rewriteCoordinates = (shape, transform) => {
+    let index = 0;
+    shape.setAttribute('d', shape.getAttribute('d').replace(/-?\d+(?:\.\d+)?/g, value => String(transform(Number(value), index++))));
+  };
+  for (const group of svg.querySelectorAll('g')) {
+    const paths = [...group.children].filter(child => child.localName === 'path');
+    const line = paths[0];
+    if (!line || /[zZhHvVcCsSaAtT]/.test(line.getAttribute('d'))) continue;
+    const points = line.getAttribute('d').match(/-?\d+(?:\.\d+)?/g)?.map(Number);
+    if (!points || points.length < 4) continue;
+    const start = movedPoint(points[0], points[1]);
+    const end = movedPoint(points.at(-2), points.at(-1));
+    rewriteCoordinates(line, (value, index) => index < 2 ? start[index] : index >= points.length - 2 ? end[index - points.length + 2] : value);
+    if (paths.length === 2) rewriteCoordinates(paths[1], (value, index) => value + (index % 2 ? end[1] - points.at(-1) : end[0] - points.at(-2)));
+  }
+  for (const [index, box] of boxes.entries()) {
+    const before = originalBoxes[index];
+    rewriteCoordinates(box.element, (value, coordinate) => coordinate % 2 ? box.top + (value - before.top) * (box.bottom - box.top) / (before.bottom - before.top) : box.left + (value - before.left) * (box.right - box.left) / (before.right - before.left));
   }
   svg.setAttribute('lang', language);
   const output = svg.outerHTML;
@@ -82,46 +154,19 @@ function localizeVector(source, language) {
 }
 
 function fitLayoutLabels(document, canvas, language) {
-  const segmenter = new Intl.Segmenter(language, { granularity: 'word' });
   for (const node of canvas.querySelectorAll('.node')) {
-    const lines = node.innerHTML.split(/<br\s*\/?>/i).map(line => {
-      const content = document.createElement('span');
-      content.innerHTML = line;
-      return content.textContent.trim();
-    });
     const content = document.createElement('span');
     content.append(...node.childNodes);
     content.style.minWidth = '0';
     content.style.overflowWrap = 'anywhere';
     node.append(content);
     if (canvas.hasAttribute('data-fixed-type')) continue;
-    if (language === 'zh') continue;
-    const width = parseFloat(node.style.width) - 32;
-    const height = parseFloat(node.style.height) - 20;
-    if (!(width > 0 && height > 0)) continue;
-    let fontSize = parseFloat(node.style.fontSize) || (node.classList.contains('small') ? 22 : 26);
-    const lineCount = size => lines.reduce((total, line) => {
-      let count = 1;
-      let used = 0;
-      for (const { segment } of segmenter.segment(line)) {
-        const advance = [...segment].reduce((sum, character) => sum + (/[\u2e80-\uffff]/u.test(character) ? 1 : 0.61), 0) * size;
-        if (used && used + advance > width) {
-          count += 1;
-          used = 0;
-        }
-        if (!used && !segment.trim()) continue;
-        used += advance;
-        while (used > width) {
-          count += 1;
-          used -= width;
-        }
-      }
-      return total + count;
-    }, 0);
-    while (fontSize > 14 && lineCount(fontSize) * fontSize * 1.4 > height) fontSize -= 1;
-    node.style.fontSize = `${fontSize}px`;
-    node.style.lineHeight = '1.4';
+    const secondary = node.classList.contains('small') && !node.classList.contains('box');
+    node.style.fontSize = secondary ? '24px' : '28px';
+    node.style.lineHeight = '1.25';
+    node.setAttribute('data-type-role', secondary ? 'secondary' : 'primary');
   }
+  if (!canvas.hasAttribute('data-fixed-type')) document.querySelector('style').textContent += '\nbody{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix>div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}';
 }
 
 function localizeLayout(source, item, language) {

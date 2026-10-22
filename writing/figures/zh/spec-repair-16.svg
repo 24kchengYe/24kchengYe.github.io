@@ -9,27 +9,27 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 226.997644 57.6  Q 251.098391 57.6 274.30471 57.6  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 269.50471 55.2  L 274.30471 57.6  L 269.50471 60  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 226.997644 57.6  Q 251.098391 57.6 274.30470999999994 57.6  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 269.50470999999993 55.2  L 274.30470999999994 57.6  L 269.50470999999993 60  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
     <path d="M 480.799731 57.6  Q 547.198161 57.6 612.702163 57.6  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 607.902163 55.2  L 612.702163 57.6  L 607.902163 60  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
-    <path d="M 378 82.999512  Q 378 116.997857 378 150.101775  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 380.4 145.301775  L 378 150.101775  L 375.6 145.301775  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 378 82.99951199999998  Q 378 116.997857 378 150.10177499999998  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 145.30177499999996  L 378 150.10177499999998  L 375.6 145.30177499999996  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
-    <path d="M 378 201.796436  Q 378 239.39689 378 276.102917  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 380.4 271.302917  L 378 276.102917  L 375.6 271.302917  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 378 201.79643600000003  Q 378 239.39689 378 276.10291699999993  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 380.4 271.3029169999999  L 378 276.10291699999993  L 375.6 271.3029169999999  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
     <path d="M 477 302.4  L 538.56 302.4  Q 547.2 302.4 547.2 293.76  L 547.2 127.44  Q 547.2 118.8 555.84 118.8  L 707.76 118.8  Q 716.4 118.8 716.4 110.16  L 716.4 81.894427  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 714 86.694427  L 716.4 81.894427  L 718.8 86.694427  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 276.99939 302.4  Q 252.001026 302.4 227.897089 302.4  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 276.99938999999995 302.4  Q 252.001026 302.4 227.897089 302.4  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 232.697089 304.8  L 227.897089 302.4  L 232.697089 300  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
@@ -45,19 +45,19 @@
     <path d="M 380.4 415.303887  L 378 420.103887  L 375.6 415.303887  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
-    <path d="M 487.997644 446.4  Q 538.200362 446.4 587.508652 446.4  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 582.708652 444  L 587.508652 446.4  L 582.708652 448.8  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 487.99764400000004 446.4  Q 538.200362 446.4 587.5086520000001 446.4  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 582.7086520000001 444  L 587.5086520000001 446.4  L 582.7086520000001 448.8  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
     <path d="M 716.4 423  L 716.4 393.84  Q 716.4 385.2 725.04 385.2  L 830.16 385.2  Q 838.8 385.2 838.8 376.56  L 838.8 249.84  Q 838.8 241.2 830.16 241.2  L 725.04 241.2  Q 716.4 241.2 716.4 249.84  L 716.4 278.105573  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 718.8 273.305573  L 716.4 278.105573  L 714 273.305573  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
-    <path d="M 716.4 471.796436  Q 716.4 489.599832 716.4 506.508802  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 718.8 501.708802  L 716.4 506.508802  L 714 501.708802  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 716.4 471.796436  Q 716.4 489.599832 716.4 506.50880199999995  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 718.8 501.70880199999993  L 716.4 506.50880199999995  L 714 501.70880199999993  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_14">
-    <path d="M 284.4 34.2  L 471.6 34.2  Q 478.8 34.2 478.8 41.4  L 478.8 73.8  Q 478.8 81 471.6 81  L 284.4 81  Q 277.2 81 277.2 73.8  L 277.2 41.4  Q 277.2 34.2 284.4 34.2  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 284.4 34.2  L 471.6 34.2  Q 478.80000000000007 34.2 478.80000000000007 41.4  L 478.80000000000007 73.8  Q 478.80000000000007 81 471.6 81  L 284.4 81  Q 277.2 81 277.2 73.8  L 277.2 41.4  Q 277.2 34.2 284.4 34.2  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
     <path d="M 277.2 153  L 478.8 153  Q 486 153 486 160.2  L 486 192.6  Q 486 199.8 478.8 199.8  L 277.2 199.8  Q 270 199.8 270 192.6  L 270 160.2  Q 270 153 277.2 153  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
@@ -80,25 +80,25 @@
    <g id="patch_21">
     <path d="M 621 509.4  L 811.8 509.4  Q 835.2 509.4 835.2 532.8  L 835.2 532.8  Q 835.2 556.2 811.8 556.2  L 621 556.2  Q 597.6 556.2 597.6 532.8  L 597.6 532.8  Q 597.6 509.4 621 509.4  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="87.4" y="62.233125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">待复核问题</text></g>
-   <g id="text_2"><text x="336" y="62.288906" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">有未决问题？</text></g>
-   <g id="text_3"><text x="674.4" y="62.239688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">全文格式接受</text></g>
-   <g id="text_4"><text x="331.149219" y="171.925523" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">逐项 Reviewer</text></g>
-   <g id="text_5"><text x="336" y="307.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">逐项复核结果</text></g>
-   <g id="text_6"><text x="66.4" y="298.057648" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">保留有效等价进度</text></g>
-   <g id="text_7"><text x="660.4" y="298.071703" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">保留此前有效进度</text></g>
-   <g id="text_8"><text x="66.4" y="451.039688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">进入格式预算检查</text></g>
-   <g id="text_9"><text x="343" y="442.015922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">按入口原文</text></g>
-   <g id="text_10"><text x="639.4" y="451.033125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">入口原文确认语义缺口？</text></g>
-   <g id="text_11"><text x="674.4" y="537.439687" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">业务回修检查</text></g>
-   <g id="text_12"><text x="541.2" y="49.33125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">否</text></g>
-   <g id="text_13"><text x="400.8" y="122.77125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">是</text></g>
-   <g id="text_14"><text x="576" y="180.413437" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">全部可豁免，无新增</text></g>
-   <g id="text_15"><text x="210" y="277.57125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">剩余纯格式问题</text></g>
-   <g id="text_16"><text x="513.977813" y="335.17125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">不可用 / 协议失败</text></g>
-   <g id="text_17"><text x="404.91" y="381.97125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">确认 domain_fix</text></g>
-   <g id="text_18"><text x="743.177813" y="389.20125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">否 / 复核不可用</text></g>
-   <g id="text_19"><text x="742.8" y="486.37125" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070">是</text></g>
+   <g id="text_1"><text x="122.4" y="63.433125000000004" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="待复核问题" data-type-role="primary" text-anchor="middle"><tspan x="122.4" dy="0">待复核问题</tspan></text></g>
+   <g id="text_2"><text x="378" y="63.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="有未决问题？" data-type-role="primary" text-anchor="middle"><tspan x="378" dy="0">有未决问题？</tspan></text></g>
+   <g id="text_3"><text x="716.4" y="63.439688000000004" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="全文格式接受" data-type-role="primary" text-anchor="middle"><tspan x="716.4" dy="0">全文格式接受</tspan></text></g>
+   <g id="text_4"><text x="378" y="182.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="逐项 Reviewer" data-type-role="primary" text-anchor="middle"><tspan x="378" dy="0">逐项 Reviewer</tspan></text></g>
+   <g id="text_5"><text x="378" y="308.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="逐项复核结果" data-type-role="primary" text-anchor="middle"><tspan x="378" dy="0">逐项复核结果</tspan></text></g>
+   <g id="text_6"><text x="122.4" y="308.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="保留有效等价进度" data-type-role="primary" text-anchor="middle"><tspan x="122.4" dy="0">保留有效等价进度</tspan></text></g>
+   <g id="text_7"><text x="716.4" y="299.271703" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="保留此前有效进度" data-type-role="primary" text-anchor="middle"><tspan x="716.4" dy="0">保留此前有效进度</tspan></text></g>
+   <g id="text_8"><text x="122.4" y="452.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="进入格式预算检查" data-type-role="primary" text-anchor="middle"><tspan x="122.4" dy="0">进入格式预算检查</tspan></text></g>
+   <g id="text_9"><text x="378" y="452.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="按入口原文" data-type-role="primary" text-anchor="middle"><tspan x="378" dy="0">按入口原文</tspan></text></g>
+   <g id="text_10"><text x="716.4" y="452.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="入口原文确认语义缺口？" data-type-role="primary" text-anchor="middle"><tspan x="716.4" dy="0">入口原文确认语义缺口？</tspan></text></g>
+   <g id="text_11"><text x="716.4000000000001" y="539.0999999999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="业务回修检查" data-type-role="primary" text-anchor="middle"><tspan x="716.4000000000001" dy="0">业务回修检查</tspan></text></g>
+   <g id="text_12"><text x="547.2" y="50.231249999999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="否" data-type-role="secondary" text-anchor="middle"><tspan x="547.2" dy="0">否</tspan></text></g>
+   <g id="text_13"><text x="406.8" y="123.67125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="是" data-type-role="secondary" text-anchor="middle"><tspan x="406.8" dy="0">是</tspan></text></g>
+   <g id="text_14"><text x="630" y="181.313437" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="全部可豁免，无新增" data-type-role="secondary" text-anchor="middle"><tspan x="630" dy="0">全部可豁免，无新增</tspan></text></g>
+   <g id="text_15"><text x="252" y="245.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="剩余纯格式问题" data-type-role="secondary" text-anchor="middle"><tspan x="252" dy="0">剩余纯格式问题</tspan></text></g>
+   <g id="text_16"><text x="561.977813" y="355.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="不可用 / 协议失败" data-type-role="secondary" text-anchor="middle"><tspan x="561.977813" dy="0">不可用 / 协议失败</tspan></text></g>
+   <g id="text_17"><text x="450.91" y="382.87125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="确认 domain_fix" data-type-role="secondary" text-anchor="middle"><tspan x="450.91" dy="0">确认 domain_fix</tspan></text></g>
+   <g id="text_18"><text x="785.177813" y="390.10125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="否 / 复核不可用" data-type-role="secondary" text-anchor="middle"><tspan x="785.177813" dy="0">否 / 复核不可用</tspan></text></g>
+   <g id="text_19"><text x="748.8" y="505.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="是" data-type-role="secondary" text-anchor="middle"><tspan x="748.8" dy="0">是</tspan></text></g>
   </g>
  </g>
  <defs>

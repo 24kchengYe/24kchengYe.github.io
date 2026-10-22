@@ -9,20 +9,20 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 181.999512 90  Q 215.997857 90 249.101775 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 244.301775 87.6  L 249.101775 90  L 244.301775 92.4  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 181.999512 90  Q 215.997857 90 249.10177499999998 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 244.30177499999996 87.6  L 249.10177499999998 90  L 244.30177499999996 92.4  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
-    <path d="M 405.197314 90  Q 435.600116 90 465.10849 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 460.30849 87.6  L 465.10849 90  L 460.30849 92.4  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 405.19731400000006 90  Q 435.600116 90 465.1084900000001 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 460.30849000000006 87.6  L 465.1084900000001 90  L 460.30849000000006 92.4  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
-    <path d="M 621.203357 90  Q 650.702069 90 679.306354 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 621.2033570000001 90  Q 650.702069 90 679.306354 90  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
     <path d="M 674.506354 87.6  L 679.306354 90  L 674.506354 92.4  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
-    <path d="M 759.6 113.4  L 759.6 167.76  Q 759.6 176.4 750.96 176.4  L 336.24 176.4  Q 327.6 176.4 327.6 167.76  L 327.6 114.294427  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 325.2 119.094427  L 327.6 114.294427  L 330 119.094427  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 759.6 113.4  L 759.6 167.76  Q 759.6 176.4 750.96 176.4  L 336.24 176.4  Q 327.6 176.4 327.6 167.76  L 327.6 114.29442700000001  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 325.2 119.09442700000001  L 327.6 114.29442700000001  L 330 119.09442700000001  " clip-path="url(#pcbf0a4f99d)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
     <path d="M 259.2 66.6  L 396 66.6  Q 403.2 66.6 403.2 73.8  L 403.2 106.2  Q 403.2 113.4 396 113.4  L 259.2 113.4  Q 252 113.4 252 106.2  L 252 73.8  Q 252 66.6 259.2 66.6  z " clip-path="url(#pcbf0a4f99d)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
@@ -33,12 +33,12 @@
    <g id="patch_8">
     <path d="M 689.4 66.6  L 829.8 66.6  Q 837 66.6 837 73.8  L 837 106.2  Q 837 113.4 829.8 113.4  L 689.4 113.4  Q 682.2 113.4 682.2 106.2  L 682.2 73.8  Q 682.2 66.6 689.4 66.6  z " clip-path="url(#pcbf0a4f99d)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="104.4" y="94.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">下流フィールド不足</text></g>
-   <g id="text_2"><text x="299.208438" y="94.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Table Fix</text></g>
-   <g id="text_3"><text x="543.164219" y="94.836563" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" text-anchor="middle">四領域Judge</text></g>
-   <g id="text_4"><text x="714.849219" y="94.633125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Non-Table Fix</text></g>
-   <g id="text_5"><text x="216" y="81.803438" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" text-anchor="middle">表側依存を特定</text></g>
-   <g id="text_6"><text x="543.6" y="180.4425" font-size="12" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" text-anchor="middle">表側不足が残る</text></g>
+   <g id="text_1"><text x="104.4" y="95.83312500000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="下流フィールド不足" data-type-role="primary" text-anchor="middle"><tspan x="104.4" dy="0">下流フィールド不足</tspan></text></g>
+   <g id="text_2"><text x="327.6" y="96.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Table Fix" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">Table Fix</tspan></text></g>
+   <g id="text_3"><text x="543.6" y="96.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="四領域Judge" data-type-role="primary" text-anchor="middle"><tspan x="543.6" dy="0">四領域Judge</tspan></text></g>
+   <g id="text_4"><text x="759.6" y="96.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Non-Table Fix" data-type-role="primary" text-anchor="middle"><tspan x="759.6" dy="0">Non-Table Fix</tspan></text></g>
+   <g id="text_5"><text x="216" y="44.9" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="表側依存を特定" data-type-role="secondary" text-anchor="middle"><tspan x="216" dy="0">表側依存を特定</tspan></text></g>
+   <g id="text_6"><text x="543.6" y="181.3425" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="表側不足が残る" data-type-role="secondary" text-anchor="middle"><tspan x="543.6" dy="0">表側不足が残る</tspan></text></g>
   </g>
  </g>
  <defs>

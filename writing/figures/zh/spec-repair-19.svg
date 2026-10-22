@@ -38,13 +38,13 @@
    <g id="patch_9">
     <path d="M 687.6 41.4  L 810 41.4  Q 833.4 41.4 833.4 64.8  L 833.4 64.8  Q 833.4 88.2 810 88.2  L 687.6 88.2  Q 664.2 88.2 664.2 64.8  L 664.2 64.8  Q 664.2 41.4 687.6 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="53.60875" y="69.56" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Query + 最终 Spec</text></g>
-   <g id="text_2"><text x="278.6" y="69.474688" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">生成并执行代码</text></g>
-   <g id="text_3"><text x="504.585" y="69.475781" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">实际 Base</text></g>
-   <g id="text_4"><text x="709.606563" y="69.433125" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">Building Mix</text></g>
-   <g id="text_5"><text x="87.2" y="182.815922" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">设计缺口</text></g>
-   <g id="text_6"><text x="278.6" y="182.871703" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">实现或运行失败</text></g>
-   <g id="text_7"><text x="699.8" y="182.562336" font-size="14.000000000000002" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616">评审证据不一致</text></g>
+   <g id="text_1"><text x="114.60875" y="70.76" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query + 最终 Spec" data-type-role="primary" text-anchor="middle"><tspan x="114.60875" dy="0">Query + 最终 Spec</tspan></text></g>
+   <g id="text_2"><text x="327.6" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="生成并执行代码" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">生成并执行代码</tspan></text></g>
+   <g id="text_3"><text x="536.085" y="70.675781" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="实际 Base" data-type-role="primary" text-anchor="middle"><tspan x="536.085" dy="0">实际 Base</tspan></text></g>
+   <g id="text_4"><text x="748.8" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Building Mix" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">Building Mix</tspan></text></g>
+   <g id="text_5"><text x="115.2" y="184.015922" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="设计缺口" data-type-role="primary" text-anchor="middle"><tspan x="115.2" dy="0">设计缺口</tspan></text></g>
+   <g id="text_6"><text x="327.6" y="184.07170299999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="实现或运行失败" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">实现或运行失败</tspan></text></g>
+   <g id="text_7"><text x="748.8" y="183.76233599999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="评审证据不一致" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">评审证据不一致</tspan></text></g>
   </g>
  </g>
  <defs>

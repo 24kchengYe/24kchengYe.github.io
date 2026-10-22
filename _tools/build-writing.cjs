@@ -1,6 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
+const { buildResearchDiagrams, attachResearchDiagrams, researchTranslations } = require('./build-research-diagrams.cjs');
+buildResearchDiagrams();
 const { buildFigures } = require('./build-figures.cjs');
 const { buildCliFigures } = require('./build-cli-figures.cjs');
 const { buildAutomationBlueprint } = require('./build-automation-blueprint.cjs');
@@ -56,11 +58,13 @@ function build(slug, technical = false) {
   const sourceName = `${slug}${technical ? '-technical' : ''}`;
   const source = fs.readFileSync(path.join(root, '_data/writing', `${sourceName}.html`), 'utf8');
   const translations = {
+    ...researchTranslations(slug),
     ...JSON.parse(fs.readFileSync(path.join(root, '_data/writing', `${slug}.json`), 'utf8')),
     ...(technical ? JSON.parse(fs.readFileSync(path.join(root, '_data/writing', `${sourceName}.json`), 'utf8')) : {}),
   };
   const dom = new JSDOM(source.trimEnd());
   const { document, NodeFilter } = dom.window;
+  attachResearchDiagrams(document, slug, technical);
   document.querySelector('.report-site-nav')?.remove();
   document.querySelectorAll('.figure-source').forEach(element => element.remove());
   document.querySelector('meta[http-equiv="Content-Security-Policy"]')?.setAttribute('content', policy);

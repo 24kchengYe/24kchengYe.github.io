@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 969" width="1440" height="969" lang="en"><foreignObject width="1440" height="969"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:969px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-generation-recorded-case"><div class="edge arrow" data-from="query" data-to="q2-spec" style="left:345px;top:233px;width:67px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="query" data-to="sft-spec" style="left:1095px;top:233px;width:67px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="q2-spec" data-to="q2-code" style="left:345px;top:445px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft-spec" data-to="sft-code" style="left:1095px;top:445px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="q2-code" data-to="q2-result" style="left:345px;top:665px;width:59px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft-code" data-to="sft-result" style="left:1095px;top:665px;width:59px;transform:rotate(90deg)"></div><div class="node " id="query" style="left:60px;top:88px;width:1320px;height:145px"><strong>Recruitment · link50_007</strong><span>Same request, independent generation and execution</span><span data-node-detail="true" hidden="">Building 0.7 · link50_007: candidate management
+Resumes, interview schedules, feedback, hiring status and progress by role</span></div><div class="node issue" id="q2-spec" style="left:60px;top:300px;width:570px;height:145px"><strong>Q2: Spec mismatch</strong><span>Awaiting interview ≠ Interviewed</span><span data-node-detail="true" hidden="">Q2 configuration: Spec mismatch
+View / metric: candidates awaiting interview
+Filter: resume status = Interviewed</span></div><div class="node soft" id="sft-spec" style="left:810px;top:300px;width:570px;height:145px"><strong>Continued training: aligned Spec</strong><span>Name and filter: Interview scheduled</span><span data-node-detail="true" hidden="">Continued-training configuration: aligned
+View / metric: interview scheduled
+Filter: resume status = Interview scheduled</span></div><div class="node " id="q2-code" style="left:60px;top:520px;width:570px;height:145px"><strong>Code → Base</strong><span>Filters Interviewed · execution succeeds</span><span data-node-detail="true" hidden="">Code implements the filter
+grid(Awaiting interview)
+where(resume status, eq, Interviewed)
+Execution succeeds</span></div><div class="node " id="sft-code" style="left:810px;top:520px;width:570px;height:145px"><strong>Code → Base</strong><span>Filters Interview scheduled · executes</span><span data-node-detail="true" hidden="">Code implements consistent state
+View and metric both use Interview scheduled
+Execution succeeds</span></div><div class="node issue" id="q2-result" style="left:60px;top:724px;width:570px;height:145px"><strong>55 / 100 · Fail</strong><span>Filter mismatch; two empty tables</span><span data-node-detail="true" hidden="">Native E2E: 55 / 100, fail
+Filter mismatch persists; two tables are also empty
+55 is the overall case score</span></div><div class="node result" id="sft-result" style="left:810px;top:724px;width:570px;height:145px"><strong>100 / 100 · Pass</strong><span>All evaluated requirements pass</span><span data-node-detail="true" hidden="">Native E2E: 100 / 100, pass
+All evaluated requirements pass in this run</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Recorded case · recruitment filters</div></div></div></foreignObject></svg>

@@ -1,0 +1,130 @@
+{
+  "输入预检": [
+    "Input checks",
+    "入力検査"
+  ],
+  "Query + Spec 对齐": [
+    "Align Query + Spec",
+    "Query + Spec を整合"
+  ],
+  "输入与预检\nQuery + Spec\n校验输入与提示词对齐": [
+    "Input & preflight\nQuery + Spec\nValidate input and prompt alignment",
+    "入力と事前検査\nQuery + Spec\n入力とプロンプトの整合を検査"
+  ],
+  "四域 Judge → Router": [
+    "Four-domain Judge → Router",
+    "4領域 Judge → Router"
+  ],
+  "同一版本确认票 · 按根因路由": [
+    "Same-version votes · root-cause routing",
+    "同一版の確認票・根本原因で分岐"
+  ],
+  "四域 Judge → 入口 Router\n首票全过才补确认票；按根因决定修复入口": [
+    "Four-domain Judge → entry router\nAdd confirmation votes only after an all-pass first vote; route by root cause",
+    "4領域 Judge → 入口ルーター\n初回が全領域合格なら確認票を追加。根本原因に応じて修復先を選ぶ"
+  ],
+  "停止": [
+    "Stop",
+    "停止"
+  ],
+  "不调用模型": [
+    "No model calls",
+    "モデル呼び出しなし"
+  ],
+  "预检失败\n输出错误报告\n不启动模型": [
+    "Preflight failure\nReport the error\nNo model calls",
+    "事前検査の失敗\nエラーを記録\nモデルは呼び出さない"
+  ],
+  "普通修复": [
+    "Regular repair",
+    "通常修復"
+  ],
+  "Table 优先 · 回退预算 2": [
+    "Table first · retry budget 2",
+    "Table 優先・差し戻し予算2"
+  ],
+  "普通修复与复评\nTable 根因优先\n修后重评四域、确认票\n共用回退预算：2 次": [
+    "Regular repair & review\nTable causes first\nFour-domain recheck + votes\nShared rollback budget: 2",
+    "通常修復と再評価\nTable の根本原因を優先\n修復後に4領域再評価・確認票\n共有差し戻し予算：2回"
+  ],
+  "难例修复": [
+    "Hard repair",
+    "難例修復"
+  ],
+  "2/3 投票 · 回退预算 3": [
+    "2/3 votes · retry budget 3",
+    "2/3 投票・差し戻し予算3"
+  ],
+  "难例修复与复评\n汇总失败上下文，再按根因修\n新版本四域投票：2/3\n独立回退预算：3 次": [
+    "Hard repair & review\nCarry failure context; route again\nNew-version domain votes: 2/3\nSeparate rollback budget: 3",
+    "難例修復と再評価\n失敗文脈を集約し再ルーティング\n新バージョンの4領域投票：2/3\n独立差し戻し予算：3回"
+  ],
+  "准出检查": [
+    "Release gate",
+    "リリース判定"
+  ],
+  "格式 + 业务复核": [
+    "Format + semantic recheck",
+    "形式＋業務の再評価"
+  ],
+  "格式准出\n全文格式检查\n改文后重新做业务确认\n格式差错可回修一次": [
+    "Format release gate\nCheck the complete document\nReconfirm semantics after edits\nOne format-driven repair return",
+    "形式のリリース判定\n文書全体の形式を検査\n編集後は業務判断を再確認\n形式不備による差し戻しは1回"
+  ],
+  "通过 / 失败": [
+    "Pass / Fail",
+    "合格 / 不合格"
+  ],
+  "保存 Spec、投票与轨迹": [
+    "Save Spec, votes & trace",
+    "Spec・投票・軌跡を保存"
+  ],
+  "记录最终结果\n通过 / 失败分别保存\nSpec、投票、调用与轨迹\n终末 Rewrite 默认关闭": [
+    "Record final outcome\nSave pass or failure explicitly\nSpec, votes, calls and trace\nTerminal rewrite off by default",
+    "最終結果を記録\n合否を区別して保存\nSpec・投票・呼び出し・軌跡\n終末 Rewrite は既定で無効"
+  ],
+  "Judge–Fix · 完整流程": [
+    "Judge–Fix · Full workflow",
+    "Judge–Fix · 全体フロー"
+  ],
+  "通过": [
+    "Valid",
+    "正常"
+  ],
+  "预检错误": [
+    "Invalid input",
+    "入力エラー"
+  ],
+  "需要修复": [
+    "Repair needed",
+    "修復が必要"
+  ],
+  "入口准出票通过": [
+    "Entry votes pass",
+    "入口確認票が合格"
+  ],
+  "仍失败\n且耗尽": [
+    "Fail,\nbudget\nused",
+    "不合格\n予算消尽"
+  ],
+  "普通阶段通过": [
+    "Regular votes pass",
+    "通常段階で合格"
+  ],
+  "难例阶段通过": [
+    "Hard votes pass",
+    "難例段階で合格"
+  ],
+  "仍失败": [
+    "Still fails",
+    "不合格"
+  ],
+  "合格或终止": [
+    "Pass /\nstop",
+    "合格 /\n終了"
+  ],
+  "格式回退 ×1": [
+    "Format return ×1",
+    "形式の差し戻し ×1"
+  ]
+}

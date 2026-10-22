@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 881" width="1440" height="881" lang="en"><foreignObject width="1440" height="881"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:881px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="rubric-model-recorded-case"><div class="edge arrow" data-from="input" data-to="reference" style="left:260px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="sft" style="left:720px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="rl" style="left:1180px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="reference" data-to="count" style="left:260px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft" data-to="sft-score" style="left:720px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="rl" data-to="rl-score" style="left:1180px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="node " id="input" style="left:60px;top:88px;width:1320px;height:145px"><strong>Budget review dashboard</strong><span>Two filters reference nonexistent option names</span><span data-node-detail="true" hidden="">Test792 · dashboard unit 04911949…: budget review dashboard
+Two component filters use option names absent from the table
+Example: Pending department review → Pending [department] review</span></div><div class="node soft" id="reference" style="left:60px;top:336px;width:400px;height:165px"><strong>Sol reference</strong><span>Invalid source reference</span><span data-node-detail="true" hidden="">Frozen Sol reference
+2 issues, one repeated error mode
+Component data dependency
+invalid_dashboard_source_reference</span></div><div class="node issue" id="sft" style="left:520px;top:336px;width:400px;height:165px"><strong>SFT</strong><span>Classifies a business-filter mismatch</span><span data-node-detail="true" hidden="">SFT: finds locations, wrong type
+2 issues, verdict fail
+Classifies business-filter semantics
+dashboard_business_filter_mismatch</span></div><div class="node result" id="rl" style="left:980px;top:336px;width:400px;height:165px"><strong>RL</strong><span>Classifies an invalid source reference</span><span data-node-detail="true" hidden="">RL: matches reference error type
+2 issues, verdict fail
+Classifies component dependency
+invalid_dashboard_source_reference</span></div><div class="node " id="count" style="left:60px;top:616px;width:400px;height:165px"><strong>2 issues · fail</strong><span>Reference and both models agree on count</span><span data-node-detail="true" hidden="">Issue count &amp; verdict
+Reference / SFT / RL all return:
+2 issues, fail
+Count alone cannot distinguish them</span></div><div class="node issue" id="sft-score" style="left:520px;top:616px;width:400px;height:165px"><strong>Mode F1 = 0</strong><span>TP 0 · FP 1 · FN 1</span><span data-node-detail="true" hidden="">Unique Mode labels: F1 = 0
+TP 0 · FP 1 · FN 1
+Correct location ≠ correct rule</span></div><div class="node result" id="rl-score" style="left:980px;top:616px;width:400px;height:165px"><strong>Mode F1 = 1</strong><span>TP 1 · FP 0 · FN 0</span><span data-node-detail="true" hidden="">Unique Mode labels: F1 = 1
+TP 1 · FP 0 · FN 0
+Two instances count as one label</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Recorded case · find the issue, assign the rule</div></div></div></foreignObject></svg>

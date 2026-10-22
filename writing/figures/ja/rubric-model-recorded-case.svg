@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 881" width="1440" height="881" lang="ja"><foreignObject width="1440" height="881"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:881px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="rubric-model-recorded-case"><div class="edge arrow" data-from="input" data-to="reference" style="left:260px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="sft" style="left:720px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="rl" style="left:1180px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="reference" data-to="count" style="left:260px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft" data-to="sft-score" style="left:720px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="rl" data-to="rl-score" style="left:1180px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="node " id="input" style="left:60px;top:88px;width:1320px;height:145px"><strong>予算審査ダッシュボード</strong><span>2つの条件が存在しない選択肢名を参照</span><span data-node-detail="true" hidden="">Test792 · dashboard 単位 04911949…：予算審査ダッシュボード
+2つの部品の絞り込みで、テーブルにない選択肢名を使用
+例：部門審査待ち → 「部門」審査待ち</span></div><div class="node soft" id="reference" style="left:60px;top:336px;width:400px;height:165px"><strong>Sol 参照</strong><span>無効なデータソース参照</span><span data-node-detail="true" hidden="">固定済み Sol 参照
+2件の問題、同じエラーモード
+部品のデータ依存の不整合
+invalid_dashboard_source_reference</span></div><div class="node issue" id="sft" style="left:520px;top:336px;width:400px;height:165px"><strong>SFT</strong><span>業務上の絞り込み不一致と分類</span><span data-node-detail="true" hidden="">SFT：位置は検出、分類が相違
+2件の問題、判定は fail
+業務上の絞り込みの不一致と分類
+dashboard_business_filter_mismatch</span></div><div class="node result" id="rl" style="left:980px;top:336px;width:400px;height:165px"><strong>RL</strong><span>無効なデータソース参照と分類</span><span data-node-detail="true" hidden="">RL：参照と同じエラー分類
+2件の問題、判定は fail
+部品のデータ依存の不整合と分類
+invalid_dashboard_source_reference</span></div><div class="node " id="count" style="left:60px;top:616px;width:400px;height:165px"><strong>2件の問題 · fail</strong><span>参照と両モデルで件数・判定は一致</span><span data-node-detail="true" hidden="">問題件数と判定
+参照・SFT・RL はすべて：
+2件の問題、fail
+件数だけでは区別できない</span></div><div class="node issue" id="sft-score" style="left:520px;top:616px;width:400px;height:165px"><strong>Mode F1 = 0</strong><span>TP 0 · FP 1 · FN 1</span><span data-node-detail="true" hidden="">重複除去 Mode：F1 = 0
+TP 0 · FP 1 · FN 1
+正しい位置と正しいルールは別</span></div><div class="node result" id="rl-score" style="left:980px;top:616px;width:400px;height:165px"><strong>Mode F1 = 1</strong><span>TP 1 · FP 0 · FN 0</span><span data-node-detail="true" hidden="">重複除去 Mode：F1 = 1
+TP 1 · FP 0 · FN 0
+同一モードの2件を1ラベルとして集計</span></div><div class="label title" style="left:54px;top:24px;width:1320px">実例 · 問題の検出とルールの分類</div></div></div></foreignObject></svg>

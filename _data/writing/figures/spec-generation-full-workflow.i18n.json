@@ -1,0 +1,102 @@
+{
+  "PE + Skills": [
+    "PE + Skills",
+    "PE + Skills"
+  ],
+  "Core + Shared + 四域": [
+    "Core + Shared + four domains",
+    "Core + Shared + 4領域"
+  ],
+  "冻结当前 PE 与配置\nCore + Shared + 四域 Skills\n生成模型 / Judge / 数据集版本": [
+    "Freeze PE & configuration\nCore + Shared + four-domain Skills\nGenerator / Judge / dataset versions",
+    "PE と設定を固定\nCore + Shared + 4領域 Skills\n生成モデル・Judge・データセットの版"
+  ],
+  "一次生成 SpecDoc": [
+    "Generate SpecDoc · one call",
+    "SpecDoc を1回で生成"
+  ],
+  "Query → 规划 → 审计 → 渲染": [
+    "Query → plan → audit → render",
+    "Query → 計画 → 監査 → 出力"
+  ],
+  "UserQuery → 一次模型调用 → SpecDoc\n理解 → 要素注册 → 四域规划 → 一致性审计 → 渲染\n全部在同次调用中完成；每个候选按相同配置逐题生成": [
+    "UserQuery → one model call → SpecDoc\nUnderstand → register entities → plan domains → audit → render\nAll inside one call; generate each case under matched settings",
+    "UserQuery → 1回のモデル呼び出し → SpecDoc\n理解 → 要素登録 → 領域計画 → 整合性監査 → 出力\nすべて同じ呼び出し内で実施。候補間で設定を揃えて各問を生成"
+  ],
+  "评审 Spec": [
+    "Review the Spec",
+    "Spec を評価"
+  ],
+  "保存裁决与失败证据": [
+    "Save verdicts & failure evidence",
+    "判定と失敗証拠を保存"
+  ],
+  "Judge 评估生成的 Spec\n保存四域裁决、失败原因与产物\n冻结评测口径": [
+    "Judge the generated Spec\nSave domain verdicts, failures and artifacts\nKeep evaluation criteria fixed",
+    "生成 Spec を Judge で評価\n領域判定・失敗理由・成果物を保存\n評価基準を固定"
+  ],
+  "失败归因": [
+    "Attribute failures",
+    "失敗を分析"
+  ],
+  "每轮采用一条搜索路线": [
+    "One search route per run",
+    "実験ごとに1つの探索方式"
+  ],
+  "失败归因\n选一条搜索路线\n规则 / 补丁 / 自由归因 / 记忆": [
+    "Attribute failures\nChoose one search route\nRules / patch / free / memory",
+    "失敗を分析\n探索方式を1つ選ぶ\nルール・パッチ・自由分析・記憶"
+  ],
+  "修改 PE / Skills": [
+    "Edit PE / Skills",
+    "PE / Skills を変更"
+  ],
+  "限定范围 · 通用性审查": [
+    "Bounded scope · generality review",
+    "範囲限定・汎用性を審査"
+  ],
+  "提出候选 PE / Skills\n只改本轮允许范围\n审查通用性与产品红线": [
+    "Propose PE / Skills edits\nEdit only the permitted scope\nReview generality and product limits",
+    "PE / Skills の変更を提案\n許可範囲だけを変更\n汎用性と製品制約を確認"
+  ],
+  "配对评测": [
+    "Paired evaluation",
+    "対応する条件で評価"
+  ],
+  "相同题目与模型配置": [
+    "Same cases & model settings",
+    "同じ問題・モデル設定"
+  ],
+  "配对生成与评测\n候选与基线用相同题目、配置\n局部筛选后进入回归": [
+    "Paired generation & eval\nCandidate and baseline: same cases and settings\nScreen, then run regression",
+    "対になる生成・評価\n候補と基準は同じ問題・設定\n局所選別後に回帰評価"
+  ],
+  "全量回归": [
+    "Full regression",
+    "全件の回帰評価"
+  ],
+  "同时看收益与退化": [
+    "Check gains & regressions",
+    "改善と退行を確認"
+  ],
+  "全量回归与 KEEP 判定\n使用本实验登记的接受规则\n同时看收益与退化": [
+    "Full regression & KEEP gate\nUse the run’s registered acceptance rule\nCheck gains and regressions together",
+    "全件回帰と KEEP 判定\n実験で定めた採用基準を使う\n改善と退行を併せて確認"
+  ],
+  "KEEP / DISCARD": [
+    "KEEP / DISCARD",
+    "KEEP / DISCARD"
+  ],
+  "更新或恢复基线": [
+    "Update or restore baseline",
+    "基準を更新・復元"
+  ],
+  "保存或丢弃候选\nKEEP：更新基线\nDISCARD：恢复基线、记录归因": [
+    "Keep or discard candidate\nKEEP: update baseline\nDISCARD: restore it, log failures",
+    "候補を採用・破棄\nKEEP：基準を更新\nDISCARD：基準を復元し原因を記録"
+  ],
+  "Spec 生成 · 完整流程": [
+    "Spec generation · Full workflow",
+    "Spec 生成 · 全体フロー"
+  ]
+}

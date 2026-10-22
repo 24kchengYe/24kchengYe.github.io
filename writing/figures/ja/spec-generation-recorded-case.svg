@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 969" width="1440" height="969" lang="ja"><foreignObject width="1440" height="969"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:969px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-generation-recorded-case"><div class="edge arrow" data-from="query" data-to="q2-spec" style="left:345px;top:233px;width:67px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="query" data-to="sft-spec" style="left:1095px;top:233px;width:67px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="q2-spec" data-to="q2-code" style="left:345px;top:445px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft-spec" data-to="sft-code" style="left:1095px;top:445px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="q2-code" data-to="q2-result" style="left:345px;top:665px;width:59px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft-code" data-to="sft-result" style="left:1095px;top:665px;width:59px;transform:rotate(90deg)"></div><div class="node " id="query" style="left:60px;top:88px;width:1320px;height:145px"><strong>採用管理 · link50_007</strong><span>同じ要求を独立に生成・実行</span><span data-node-detail="true" hidden="">Building 0.7 · link50_007：採用候補者管理
+履歴書・面接日程・評価・採用状況・職種別の採用進捗</span></div><div class="node issue" id="q2-spec" style="left:60px;top:300px;width:570px;height:145px"><strong>Q2：Spec の条件が不一致</strong><span>面接待ち ≠ 面接済み</span><span data-node-detail="true" hidden="">Q2 設定：Spec の名称と条件が矛盾
+ビュー・指標名：面接待ちの候補者
+条件：履歴書状態 = 面接済み</span></div><div class="node soft" id="sft-spec" style="left:810px;top:300px;width:570px;height:145px"><strong>継続学習：Spec が整合</strong><span>名称も条件も「面接設定済み」</span><span data-node-detail="true" hidden="">継続学習設定：名称と条件が一致
+ビュー・指標名：面接設定済みの候補者
+条件：履歴書状態 = 面接設定済み</span></div><div class="node " id="q2-code" style="left:60px;top:520px;width:570px;height:145px"><strong>コード → Base</strong><span>「面接済み」で絞り込み・実行成功</span><span data-node-detail="true" hidden="">コードが条件をそのまま実装
+grid(面接待ち候補者)
+where(履歴書状態, eq, 面接済み)
+実行成功</span></div><div class="node " id="sft-code" style="left:810px;top:520px;width:570px;height:145px"><strong>コード → Base</strong><span>「面接設定済み」で絞り込み・実行成功</span><span data-node-detail="true" hidden="">コードも整合した状態を実装
+ビューと指標がともに「面接設定済み」を使用
+実行成功</span></div><div class="node issue" id="q2-result" style="left:60px;top:724px;width:570px;height:145px"><strong>55 / 100 · 不合格</strong><span>条件不一致と2つの空テーブル</span><span data-node-detail="true" hidden="">ネイティブ E2E：55 / 100、不合格
+成果物でも条件が矛盾。空テーブルも2つ存在
+55点はケース全体の評価</span></div><div class="node result" id="sft-result" style="left:810px;top:724px;width:570px;height:145px"><strong>100 / 100 · 合格</strong><span>この実行では評価対象の全要件に合格</span><span data-node-detail="true" hidden="">ネイティブ E2E：100 / 100、合格
+この実行では評価対象の全要件に合格</span></div><div class="label title" style="left:54px;top:24px;width:1320px">実例 · 採用の絞り込み条件</div></div></div></foreignObject></svg>

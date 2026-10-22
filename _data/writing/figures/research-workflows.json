@@ -1,0 +1,2097 @@
+[
+  {
+    "id": "spec-repair-full-workflow",
+    "width": 1440,
+    "height": 945,
+    "anchors": [
+      "blog-1",
+      "article-5"
+    ],
+    "caption": [
+      "完整流程保留入口确认、普通 / 难例修复与格式回退。点击修复模块可展开候选接纳、拒绝和重评路径。",
+      "The full workflow retains entry confirmation, regular and hard repair, and format-driven returns. Select a repair module to inspect candidate acceptance, rejection and re-evaluation.",
+      "全体フローは入口確認、通常・難例修復、形式による差し戻しを保持。修復モジュールから候補の採否と再評価経路を確認できる。"
+    ],
+    "title": [
+      "Judge–Fix · 完整流程",
+      "Judge–Fix · Full workflow",
+      "Judge–Fix · 全体フロー"
+    ],
+    "links": {
+      "regular": "spec-repair-04",
+      "hard": "spec-repair-05",
+      "format": "spec-repair-06",
+      "entry": "spec-repair-03"
+    },
+    "nodes": {
+      "input": [
+        60,
+        88,
+        330,
+        165,
+        [
+          "输入预检",
+          "Input checks",
+          "入力検査"
+        ],
+        [
+          "Query + Spec 对齐",
+          "Align Query + Spec",
+          "Query + Spec を整合"
+        ]
+      ],
+      "entry": [
+        550,
+        88,
+        790,
+        145,
+        [
+          "四域 Judge → Router",
+          "Four-domain Judge → Router",
+          "4領域 Judge → Router"
+        ],
+        [
+          "同一版本确认票 · 按根因路由",
+          "Same-version votes · root-cause routing",
+          "同一版の確認票・根本原因で分岐"
+        ]
+      ],
+      "preflight-error": [
+        60,
+        310,
+        330,
+        165,
+        [
+          "停止",
+          "Stop",
+          "停止"
+        ],
+        [
+          "不调用模型",
+          "No model calls",
+          "モデル呼び出しなし"
+        ],
+        "issue"
+      ],
+      "regular": [
+        550,
+        312,
+        360,
+        165,
+        [
+          "普通修复",
+          "Regular repair",
+          "通常修復"
+        ],
+        [
+          "Table 优先 · 回退预算 2",
+          "Table first · retry budget 2",
+          "Table 優先・差し戻し予算2"
+        ],
+        "soft"
+      ],
+      "hard": [
+        1010,
+        312,
+        360,
+        165,
+        [
+          "难例修复",
+          "Hard repair",
+          "難例修復"
+        ],
+        [
+          "2/3 投票 · 回退预算 3",
+          "2/3 votes · retry budget 3",
+          "2/3 投票・差し戻し予算3"
+        ],
+        "soft"
+      ],
+      "format": [
+        550,
+        680,
+        360,
+        165,
+        [
+          "准出检查",
+          "Release gate",
+          "リリース判定"
+        ],
+        [
+          "格式 + 业务复核",
+          "Format + semantic recheck",
+          "形式＋業務の再評価"
+        ]
+      ],
+      "result": [
+        1010,
+        680,
+        360,
+        165,
+        [
+          "通过 / 失败",
+          "Pass / Fail",
+          "合格 / 不合格"
+        ],
+        [
+          "保存 Spec、投票与轨迹",
+          "Save Spec, votes & trace",
+          "Spec・投票・軌跡を保存"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "input",
+        "entry",
+        [
+          [
+            390,
+            156
+          ],
+          [
+            550,
+            156
+          ]
+        ]
+      ],
+      [
+        "input",
+        "preflight-error",
+        [
+          [
+            225,
+            253
+          ],
+          [
+            225,
+            310
+          ]
+        ]
+      ],
+      [
+        "entry",
+        "regular",
+        [
+          [
+            730,
+            233
+          ],
+          [
+            730,
+            312
+          ]
+        ]
+      ],
+      [
+        "entry",
+        "format",
+        [
+          [
+            550,
+            192
+          ],
+          [
+            460,
+            192
+          ],
+          [
+            460,
+            624
+          ],
+          [
+            620,
+            624
+          ],
+          [
+            620,
+            680
+          ]
+        ]
+      ],
+      [
+        "regular",
+        "hard",
+        [
+          [
+            910,
+            391
+          ],
+          [
+            1010,
+            391
+          ]
+        ]
+      ],
+      [
+        "regular",
+        "format",
+        [
+          [
+            730,
+            477
+          ],
+          [
+            730,
+            680
+          ]
+        ]
+      ],
+      [
+        "hard",
+        "format",
+        [
+          [
+            1120,
+            477
+          ],
+          [
+            1120,
+            584
+          ],
+          [
+            840,
+            584
+          ],
+          [
+            840,
+            680
+          ]
+        ]
+      ],
+      [
+        "hard",
+        "result",
+        [
+          [
+            1280,
+            477
+          ],
+          [
+            1280,
+            680
+          ]
+        ]
+      ],
+      [
+        "format",
+        "result",
+        [
+          [
+            910,
+            763
+          ],
+          [
+            1010,
+            763
+          ]
+        ]
+      ],
+      [
+        "format",
+        "regular",
+        [
+          [
+            550,
+            768
+          ],
+          [
+            410,
+            768
+          ],
+          [
+            410,
+            422
+          ],
+          [
+            550,
+            422
+          ]
+        ],
+        true
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1250,
+        [
+          "Judge–Fix · 完整流程",
+          "Judge–Fix · Full workflow",
+          "Judge–Fix · 全体フロー"
+        ],
+        "title"
+      ],
+      [
+        390,
+        112,
+        150,
+        [
+          "通过",
+          "Valid",
+          "正常"
+        ]
+      ],
+      [
+        90,
+        264,
+        240,
+        [
+          "预检错误",
+          "Invalid input",
+          "入力エラー"
+        ]
+      ],
+      [
+        740,
+        236,
+        220,
+        [
+          "需要修复",
+          "Repair needed",
+          "修復が必要"
+        ]
+      ],
+      [
+        470,
+        552,
+        220,
+        [
+          "入口准出票通过",
+          "Entry votes pass",
+          "入口確認票が合格"
+        ]
+      ],
+      [
+        920,
+        324,
+        86,
+        [
+          "仍失败\n且耗尽",
+          "Fail,\nbudget\nused",
+          "不合格\n予算消尽"
+        ]
+      ],
+      [
+        740,
+        532,
+        210,
+        [
+          "普通阶段通过",
+          "Regular votes pass",
+          "通常段階で合格"
+        ]
+      ],
+      [
+        1000,
+        548,
+        210,
+        [
+          "难例阶段通过",
+          "Hard votes pass",
+          "難例段階で合格"
+        ]
+      ],
+      [
+        1288,
+        532,
+        130,
+        [
+          "仍失败",
+          "Still fails",
+          "不合格"
+        ]
+      ],
+      [
+        920,
+        704,
+        86,
+        [
+          "合格或终止",
+          "Pass /\nstop",
+          "合格 /\n終了"
+        ]
+      ],
+      [
+        65,
+        560,
+        330,
+        [
+          "格式回退 ×1",
+          "Format return ×1",
+          "形式の差し戻し ×1"
+        ]
+      ]
+    ],
+    "nodeDetails": {
+      "input": [
+        "输入与预检\nQuery + Spec\n校验输入与提示词对齐",
+        "Input & preflight\nQuery + Spec\nValidate input and prompt alignment",
+        "入力と事前検査\nQuery + Spec\n入力とプロンプトの整合を検査"
+      ],
+      "entry": [
+        "四域 Judge → 入口 Router\n首票全过才补确认票；按根因决定修复入口",
+        "Four-domain Judge → entry router\nAdd confirmation votes only after an all-pass first vote; route by root cause",
+        "4領域 Judge → 入口ルーター\n初回が全領域合格なら確認票を追加。根本原因に応じて修復先を選ぶ"
+      ],
+      "preflight-error": [
+        "预检失败\n输出错误报告\n不启动模型",
+        "Preflight failure\nReport the error\nNo model calls",
+        "事前検査の失敗\nエラーを記録\nモデルは呼び出さない"
+      ],
+      "regular": [
+        "普通修复与复评\nTable 根因优先\n修后重评四域、确认票\n共用回退预算：2 次",
+        "Regular repair & review\nTable causes first\nFour-domain recheck + votes\nShared rollback budget: 2",
+        "通常修復と再評価\nTable の根本原因を優先\n修復後に4領域再評価・確認票\n共有差し戻し予算：2回"
+      ],
+      "hard": [
+        "难例修复与复评\n汇总失败上下文，再按根因修\n新版本四域投票：2/3\n独立回退预算：3 次",
+        "Hard repair & review\nCarry failure context; route again\nNew-version domain votes: 2/3\nSeparate rollback budget: 3",
+        "難例修復と再評価\n失敗文脈を集約し再ルーティング\n新バージョンの4領域投票：2/3\n独立差し戻し予算：3回"
+      ],
+      "format": [
+        "格式准出\n全文格式检查\n改文后重新做业务确认\n格式差错可回修一次",
+        "Format release gate\nCheck the complete document\nReconfirm semantics after edits\nOne format-driven repair return",
+        "形式のリリース判定\n文書全体の形式を検査\n編集後は業務判断を再確認\n形式不備による差し戻しは1回"
+      ],
+      "result": [
+        "记录最终结果\n通过 / 失败分别保存\nSpec、投票、调用与轨迹\n终末 Rewrite 默认关闭",
+        "Record final outcome\nSave pass or failure explicitly\nSpec, votes, calls and trace\nTerminal rewrite off by default",
+        "最終結果を記録\n合否を区別して保存\nSpec・投票・呼び出し・軌跡\n終末 Rewrite は既定で無効"
+      ]
+    },
+    "notes": [
+      [
+        "修复块内保留候选接纳 / 拒绝与按根因回退；点击模块可展开完整内部路径。投票只累计同一 Spec 版本。",
+        "Repair blocks retain candidate acceptance/rejection and root-cause retries; select a module to inspect its internal paths. Votes accumulate only for the same Spec version.",
+        "各修復ブロックは候補の採否と根本原因別の再試行を保持。選択すると内部経路を表示。投票は同一 Spec バージョン内で集計する。"
+      ],
+      [
+        "格式缺口 → 对应领域回修\n共用格式回退预算：1 次",
+        "Format gap → domain repair\nShared format return budget: 1",
+        "形式不備 → 該当領域へ差し戻し\n形式用の共有予算：1回"
+      ]
+    ]
+  },
+  {
+    "id": "spec-repair-recorded-case",
+    "width": 1440,
+    "height": 957,
+    "anchors": [
+      "blog-7",
+      "article-27"
+    ],
+    "caption": [
+      "Case 41：两组 CodeAgent 均执行成功，但 K 将管理员降为只读，E2E 因无法完成管理职责而失败。两组文档都未获准出，这里展示诊断执行。",
+      "Case 41: both CodeAgent runs succeed, but K reduces the administrator to read-only and fails E2E on required duties. Neither document was released; these are diagnostic executions.",
+      "Case 41：CodeAgent は両方実行成功だが、K は管理者を読み取り専用にして業務責務の E2E に失敗。両文書ともリリース不合格であり、ここでは診断用実行を示す。"
+    ],
+    "title": [
+      "真实案例 · 管理员权限退化",
+      "Recorded case · administrator access regression",
+      "実例 · 管理者権限の退行"
+    ],
+    "nodes": {
+      "request": [
+        60,
+        92,
+        1320,
+        145,
+        [
+          "门店巡检 · Case 41",
+          "Store inspections · Case 41",
+          "店舗巡回 · Case 41"
+        ],
+        [
+          "共同输入：管理员可编辑七表",
+          "Shared input: administrator can edit seven tables",
+          "共通入力：管理者は7テーブルを編集可能"
+        ]
+      ],
+      "g-spec": [
+        60,
+        312,
+        570,
+        145,
+        [
+          "G：保留编辑",
+          "G: retains edits",
+          "G：編集を維持"
+        ],
+        [
+          "Spec 保留管理职责",
+          "Spec retains administrator duties",
+          "Spec が管理責務を維持"
+        ]
+      ],
+      "k-judge": [
+        810,
+        280,
+        570,
+        145,
+        [
+          "K：建议只读",
+          "K: recommends read-only",
+          "K：読み取り専用を提案"
+        ],
+        [
+          "Judge：写入职责未明确",
+          "Judge: write duties not explicit",
+          "Judge：書き込み責務が不明"
+        ],
+        "issue"
+      ],
+      "k-fix": [
+        810,
+        464,
+        570,
+        145,
+        [
+          "Fix 接纳候选",
+          "Fix accepts candidate",
+          "Fix が候補を採用"
+        ],
+        [
+          "七表：可编辑 → 只读",
+          "Seven tables: edit → read-only",
+          "7テーブル：編集 → 読み取り"
+        ],
+        "issue"
+      ],
+      "g-code": [
+        60,
+        520,
+        570,
+        145,
+        [
+          "代码 → Base",
+          "Code → Base",
+          "コード → Base"
+        ],
+        [
+          "可编辑 · 执行成功",
+          "Editable · execution succeeds",
+          "編集可能・実行成功"
+        ]
+      ],
+      "k-code": [
+        810,
+        672,
+        570,
+        145,
+        [
+          "代码 → Base",
+          "Code → Base",
+          "コード → Base"
+        ],
+        [
+          "只读 · 执行成功 · E2E 失败",
+          "Read-only · executes · E2E fails",
+          "読み取り専用・実行成功・E2E 失敗"
+        ],
+        "issue"
+      ],
+      "g-e2e": [
+        60,
+        712,
+        570,
+        145,
+        [
+          "E2E 通过",
+          "E2E passes",
+          "E2E 合格"
+        ],
+        [
+          "管理员可以维护记录",
+          "Administrator can maintain records",
+          "管理者がレコードを管理可能"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "request",
+        "g-spec",
+        [
+          [
+            345,
+            237
+          ],
+          [
+            345,
+            312
+          ]
+        ]
+      ],
+      [
+        "request",
+        "k-judge",
+        [
+          [
+            1095,
+            237
+          ],
+          [
+            1095,
+            280
+          ]
+        ]
+      ],
+      [
+        "g-spec",
+        "g-code",
+        [
+          [
+            345,
+            457
+          ],
+          [
+            345,
+            520
+          ]
+        ]
+      ],
+      [
+        "g-code",
+        "g-e2e",
+        [
+          [
+            345,
+            665
+          ],
+          [
+            345,
+            712
+          ]
+        ]
+      ],
+      [
+        "k-judge",
+        "k-fix",
+        [
+          [
+            1095,
+            425
+          ],
+          [
+            1095,
+            464
+          ]
+        ]
+      ],
+      [
+        "k-fix",
+        "k-code",
+        [
+          [
+            1095,
+            609
+          ],
+          [
+            1095,
+            672
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1300,
+        [
+          "真实案例 · 管理员权限退化",
+          "Recorded case · administrator access regression",
+          "実例 · 管理者権限の退行"
+        ],
+        "title"
+      ]
+    ],
+    "nodeDetails": {
+      "request": [
+        "Building 50 · Case 41：门店巡检管理\n需求包含管理员角色；共同输入 Spec 允许管理员编辑七张业务表",
+        "Building 50 · Case 41: store inspection management\nThe request includes an administrator role; the shared input Spec grants edit access to seven business tables",
+        "Building 50 · Case 41：店舗巡回管理\n管理者ロールを含む要求。共通の入力 Spec では管理者が7つの業務テーブルを編集できる"
+      ],
+      "g-spec": [
+        "G：保留编辑权限\n最终 Spec 仍允许管理员编辑\n文档准出失败：业务复核未过",
+        "G: edit access retained\nFinal Spec retains administrator edits\nDocument release fails semantic recheck",
+        "G：編集権限を維持\n最終 Spec でも管理者は編集可能\n文書のリリースは業務再評価で失敗"
+      ],
+      "k-judge": [
+        "K：Judge 建议只读\n以“未说明业务写入职责”为由缩权\nPermission Judge 为 G/K 共用版本",
+        "K: Judge recommends read-only\nAccess reduced because write duties were not explicit\nG and K share the Permission Judge version",
+        "K：Judge が読み取り専用を提案\n書き込み責務が明記されていないとして縮小\nPermission Judge の版は G/K 共通"
+      ],
+      "k-fix": [
+        "Fix 接纳缩权候选\nNon-Table 第 2 次访问，第 1 轮\n七表：可编辑 → 只读\n最终文档仍未准出",
+        "Fix accepts reduced access\nNon-Table visit 2, round 1\nSeven tables: edit → read-only\nFinal document still not released",
+        "Fix が権限縮小候補を採用\nNon-Table の2回目の訪問・第1ラウンド\n7テーブル：編集可能 → 読み取り専用\n最終文書はリリース不合格"
+      ],
+      "g-code": [
+        "CodeAgent：执行成功\n代码保留管理员编辑权\n下游 Base 可维护业务记录",
+        "CodeAgent: execution succeeds\nCode retains administrator edit access\nThe Base supports record maintenance",
+        "CodeAgent：実行成功\nコードも管理者の編集権限を維持\nBase で業務レコードを管理できる"
+      ],
+      "k-code": [
+        "CodeAgent：执行成功，权限退化\n七表配置为 read\nE2E：管理员不能维护业务 → 失败",
+        "CodeAgent: runs, but access regresses\nSeven tables configured as read\nE2E: administrator cannot maintain records → fail",
+        "CodeAgent：実行成功・権限は退行\n7テーブルを read に設定\nE2E：管理者が業務を管理できず不合格"
+      ],
+      "g-e2e": [
+        "E2E：通过\n文档评审与实际产物评审分别报告",
+        "E2E: pass\nDocument and built-artifact verdicts reported separately",
+        "E2E：合格\n文書判定と実際の成果物判定は別々に報告"
+      ]
+    },
+    "notes": [
+      [
+        "这是下游退化诊断：两组都未获文档准出，实验仍执行 CodeAgent 对照。图保留 G/K 状态差异，不把 K 的产物画成已发布结果。",
+        "This is a downstream regression diagnosis: neither document was released, but the experiment executed both with CodeAgent. K’s artifact is not a released result.",
+        "下流の退行を診断する実験。両文書ともリリース不合格だが、比較のため CodeAgent を実行した。K の成果物をリリース済みとは扱わない。"
+      ]
+    ]
+  },
+  {
+    "id": "spec-generation-full-workflow",
+    "width": 1440,
+    "height": 857,
+    "anchors": [
+      "section-1",
+      "section-3"
+    ],
+    "caption": [
+      "内层一次生成 Spec，外层修改 PE 与 Skills。历史搜索方法采用不同归因与候选策略，评测口径和 KEEP 规则随实验分别冻结。",
+      "A single inner call generates the Spec; the outer loop edits PE and Skills. Search methods differ in attribution and candidate strategy, with evaluation settings and KEEP rules frozen per experiment.",
+      "内側で1回の Spec 生成、外側で PE と Skills を変更。探索方式の分析・候補戦略は異なり、評価設定と KEEP 基準は実験ごとに固定する。"
+    ],
+    "title": [
+      "Spec 生成 · 完整流程",
+      "Spec generation · Full workflow",
+      "Spec 生成 · 全体フロー"
+    ],
+    "links": {
+      "generate": "12-core-skills",
+      "attribute": "08-v3-memory",
+      "patch": "03-search-operators",
+      "confirm": "25-method-decisions"
+    },
+    "nodes": {
+      "pe": [
+        60,
+        104,
+        410,
+        165,
+        [
+          "PE + Skills",
+          "PE + Skills",
+          "PE + Skills"
+        ],
+        [
+          "Core + Shared + 四域",
+          "Core + Shared + four domains",
+          "Core + Shared + 4領域"
+        ]
+      ],
+      "generate": [
+        570,
+        104,
+        800,
+        145,
+        [
+          "一次生成 SpecDoc",
+          "Generate SpecDoc · one call",
+          "SpecDoc を1回で生成"
+        ],
+        [
+          "Query → 规划 → 审计 → 渲染",
+          "Query → plan → audit → render",
+          "Query → 計画 → 監査 → 出力"
+        ],
+        "soft"
+      ],
+      "judge": [
+        940,
+        336,
+        430,
+        165,
+        [
+          "评审 Spec",
+          "Review the Spec",
+          "Spec を評価"
+        ],
+        [
+          "保存裁决与失败证据",
+          "Save verdicts & failure evidence",
+          "判定と失敗証拠を保存"
+        ]
+      ],
+      "attribute": [
+        500,
+        336,
+        340,
+        165,
+        [
+          "失败归因",
+          "Attribute failures",
+          "失敗を分析"
+        ],
+        [
+          "每轮采用一条搜索路线",
+          "One search route per run",
+          "実験ごとに1つの探索方式"
+        ]
+      ],
+      "patch": [
+        60,
+        336,
+        340,
+        165,
+        [
+          "修改 PE / Skills",
+          "Edit PE / Skills",
+          "PE / Skills を変更"
+        ],
+        [
+          "限定范围 · 通用性审查",
+          "Bounded scope · generality review",
+          "範囲限定・汎用性を審査"
+        ]
+      ],
+      "paired": [
+        60,
+        592,
+        340,
+        165,
+        [
+          "配对评测",
+          "Paired evaluation",
+          "対応する条件で評価"
+        ],
+        [
+          "相同题目与模型配置",
+          "Same cases & model settings",
+          "同じ問題・モデル設定"
+        ]
+      ],
+      "confirm": [
+        520,
+        592,
+        380,
+        165,
+        [
+          "全量回归",
+          "Full regression",
+          "全件の回帰評価"
+        ],
+        [
+          "同时看收益与退化",
+          "Check gains & regressions",
+          "改善と退行を確認"
+        ]
+      ],
+      "decision": [
+        1030,
+        592,
+        340,
+        165,
+        [
+          "KEEP / DISCARD",
+          "KEEP / DISCARD",
+          "KEEP / DISCARD"
+        ],
+        [
+          "更新或恢复基线",
+          "Update or restore baseline",
+          "基準を更新・復元"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "pe",
+        "generate",
+        [
+          [
+            470,
+            177
+          ],
+          [
+            570,
+            177
+          ]
+        ]
+      ],
+      [
+        "generate",
+        "judge",
+        [
+          [
+            1155,
+            249
+          ],
+          [
+            1155,
+            336
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "attribute",
+        [
+          [
+            940,
+            410
+          ],
+          [
+            840,
+            410
+          ]
+        ]
+      ],
+      [
+        "attribute",
+        "patch",
+        [
+          [
+            500,
+            390
+          ],
+          [
+            400,
+            390
+          ]
+        ]
+      ],
+      [
+        "patch",
+        "paired",
+        [
+          [
+            230,
+            501
+          ],
+          [
+            230,
+            592
+          ]
+        ]
+      ],
+      [
+        "paired",
+        "confirm",
+        [
+          [
+            400,
+            643
+          ],
+          [
+            520,
+            643
+          ]
+        ]
+      ],
+      [
+        "confirm",
+        "decision",
+        [
+          [
+            900,
+            652
+          ],
+          [
+            1030,
+            652
+          ]
+        ]
+      ],
+      [
+        "decision",
+        "pe",
+        [
+          [
+            1200,
+            757
+          ],
+          [
+            1200,
+            816
+          ],
+          [
+            25,
+            816
+          ],
+          [
+            25,
+            168
+          ],
+          [
+            60,
+            168
+          ]
+        ],
+        true
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1320,
+        [
+          "Spec 生成 · 完整流程",
+          "Spec generation · Full workflow",
+          "Spec 生成 · 全体フロー"
+        ],
+        "title"
+      ]
+    ],
+    "nodeDetails": {
+      "pe": [
+        "冻结当前 PE 与配置\nCore + Shared + 四域 Skills\n生成模型 / Judge / 数据集版本",
+        "Freeze PE & configuration\nCore + Shared + four-domain Skills\nGenerator / Judge / dataset versions",
+        "PE と設定を固定\nCore + Shared + 4領域 Skills\n生成モデル・Judge・データセットの版"
+      ],
+      "generate": [
+        "UserQuery → 一次模型调用 → SpecDoc\n理解 → 要素注册 → 四域规划 → 一致性审计 → 渲染\n全部在同次调用中完成；每个候选按相同配置逐题生成",
+        "UserQuery → one model call → SpecDoc\nUnderstand → register entities → plan domains → audit → render\nAll inside one call; generate each case under matched settings",
+        "UserQuery → 1回のモデル呼び出し → SpecDoc\n理解 → 要素登録 → 領域計画 → 整合性監査 → 出力\nすべて同じ呼び出し内で実施。候補間で設定を揃えて各問を生成"
+      ],
+      "judge": [
+        "Judge 评估生成的 Spec\n保存四域裁决、失败原因与产物\n冻结评测口径",
+        "Judge the generated Spec\nSave domain verdicts, failures and artifacts\nKeep evaluation criteria fixed",
+        "生成 Spec を Judge で評価\n領域判定・失敗理由・成果物を保存\n評価基準を固定"
+      ],
+      "attribute": [
+        "失败归因\n选一条搜索路线\n规则 / 补丁 / 自由归因 / 记忆",
+        "Attribute failures\nChoose one search route\nRules / patch / free / memory",
+        "失敗を分析\n探索方式を1つ選ぶ\nルール・パッチ・自由分析・記憶"
+      ],
+      "patch": [
+        "提出候选 PE / Skills\n只改本轮允许范围\n审查通用性与产品红线",
+        "Propose PE / Skills edits\nEdit only the permitted scope\nReview generality and product limits",
+        "PE / Skills の変更を提案\n許可範囲だけを変更\n汎用性と製品制約を確認"
+      ],
+      "paired": [
+        "配对生成与评测\n候选与基线用相同题目、配置\n局部筛选后进入回归",
+        "Paired generation & eval\nCandidate and baseline: same cases and settings\nScreen, then run regression",
+        "対になる生成・評価\n候補と基準は同じ問題・設定\n局所選別後に回帰評価"
+      ],
+      "confirm": [
+        "全量回归与 KEEP 判定\n使用本实验登记的接受规则\n同时看收益与退化",
+        "Full regression & KEEP gate\nUse the run’s registered acceptance rule\nCheck gains and regressions together",
+        "全件回帰と KEEP 判定\n実験で定めた採用基準を使う\n改善と退行を併せて確認"
+      ],
+      "decision": [
+        "保存或丢弃候选\nKEEP：更新基线\nDISCARD：恢复基线、记录归因",
+        "Keep or discard candidate\nKEEP: update baseline\nDISCARD: restore it, log failures",
+        "候補を採用・破棄\nKEEP：基準を更新\nDISCARD：基準を復元し原因を記録"
+      ]
+    },
+    "notes": [
+      [
+        "MASP、MASPCombine、自由归因与动态记忆是不同实验路线。图展示共用迭代闭环；子集大小、SP 策略和 KEEP 门槛按各实验分别记录。",
+        "MASP, MASPCombine, free attribution and dynamic memory are separate experiment routes. This is their shared loop; subset sizes, SP strategies and KEEP thresholds remain run-specific.",
+        "MASP・MASPCombine・自由分析・動的記憶は別々の実験方式。図は共通ループを示し、部分集合の規模・SP 戦略・KEEP 基準は実験ごとに記録する。"
+      ]
+    ]
+  },
+  {
+    "id": "spec-generation-recorded-case",
+    "width": 1440,
+    "height": 969,
+    "anchors": [
+      "section-20",
+      "section-32"
+    ],
+    "caption": [
+      "同一招聘需求的两条原始轨迹：Q2 的名称 / 筛选矛盾从 Spec 传入代码和 Base，继续训练配置使用一致状态。55 与 100 是两套模型 + 提示词配置的整条 E2E 分数。",
+      "Two original traces for the same recruitment request: Q2 carries a name/filter mismatch from Spec into code and Base; the continued-training configuration uses consistent states. Scores of 55 and 100 compare complete model + prompt configurations.",
+      "同じ採用要求に対する原軌跡。Q2 の名称と条件の矛盾が Spec からコード・Base に伝わり、継続学習設定では状態が整合。55点と100点はモデル＋プロンプト設定全体の E2E 比較。"
+    ],
+    "title": [
+      "真实案例 · 招聘筛选条件",
+      "Recorded case · recruitment filters",
+      "実例 · 採用の絞り込み条件"
+    ],
+    "nodes": {
+      "query": [
+        60,
+        88,
+        1320,
+        145,
+        [
+          "招聘管理 · link50_007",
+          "Recruitment · link50_007",
+          "採用管理 · link50_007"
+        ],
+        [
+          "同一需求，分别生成并执行",
+          "Same request, independent generation and execution",
+          "同じ要求を独立に生成・実行"
+        ]
+      ],
+      "q2-spec": [
+        60,
+        300,
+        570,
+        145,
+        [
+          "Q2：Spec 条件错配",
+          "Q2: Spec mismatch",
+          "Q2：Spec の条件が不一致"
+        ],
+        [
+          "待面试 ≠ 已面试",
+          "Awaiting interview ≠ Interviewed",
+          "面接待ち ≠ 面接済み"
+        ],
+        "issue"
+      ],
+      "sft-spec": [
+        810,
+        300,
+        570,
+        145,
+        [
+          "继续训练：Spec 一致",
+          "Continued training: aligned Spec",
+          "継続学習：Spec が整合"
+        ],
+        [
+          "名称与筛选均为“已安排面试”",
+          "Name and filter: Interview scheduled",
+          "名称も条件も「面接設定済み」"
+        ],
+        "soft"
+      ],
+      "q2-code": [
+        60,
+        520,
+        570,
+        145,
+        [
+          "代码 → Base",
+          "Code → Base",
+          "コード → Base"
+        ],
+        [
+          "筛选“已面试” · 执行成功",
+          "Filters Interviewed · execution succeeds",
+          "「面接済み」で絞り込み・実行成功"
+        ]
+      ],
+      "sft-code": [
+        810,
+        520,
+        570,
+        145,
+        [
+          "代码 → Base",
+          "Code → Base",
+          "コード → Base"
+        ],
+        [
+          "筛选“已安排面试” · 执行成功",
+          "Filters Interview scheduled · executes",
+          "「面接設定済み」で絞り込み・実行成功"
+        ]
+      ],
+      "q2-result": [
+        60,
+        724,
+        570,
+        145,
+        [
+          "55 / 100 · 未通过",
+          "55 / 100 · Fail",
+          "55 / 100 · 不合格"
+        ],
+        [
+          "口径错配，另有两张空表",
+          "Filter mismatch; two empty tables",
+          "条件不一致と2つの空テーブル"
+        ],
+        "issue"
+      ],
+      "sft-result": [
+        810,
+        724,
+        570,
+        145,
+        [
+          "100 / 100 · 通过",
+          "100 / 100 · Pass",
+          "100 / 100 · 合格"
+        ],
+        [
+          "本次满足全部被评需求",
+          "All evaluated requirements pass",
+          "この実行では評価対象の全要件に合格"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "query",
+        "q2-spec",
+        [
+          [
+            345,
+            233
+          ],
+          [
+            345,
+            300
+          ]
+        ]
+      ],
+      [
+        "query",
+        "sft-spec",
+        [
+          [
+            1095,
+            233
+          ],
+          [
+            1095,
+            300
+          ]
+        ]
+      ],
+      [
+        "q2-spec",
+        "q2-code",
+        [
+          [
+            345,
+            445
+          ],
+          [
+            345,
+            520
+          ]
+        ]
+      ],
+      [
+        "sft-spec",
+        "sft-code",
+        [
+          [
+            1095,
+            445
+          ],
+          [
+            1095,
+            520
+          ]
+        ]
+      ],
+      [
+        "q2-code",
+        "q2-result",
+        [
+          [
+            345,
+            665
+          ],
+          [
+            345,
+            724
+          ]
+        ]
+      ],
+      [
+        "sft-code",
+        "sft-result",
+        [
+          [
+            1095,
+            665
+          ],
+          [
+            1095,
+            724
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1320,
+        [
+          "真实案例 · 招聘筛选条件",
+          "Recorded case · recruitment filters",
+          "実例 · 採用の絞り込み条件"
+        ],
+        "title"
+      ]
+    ],
+    "nodeDetails": {
+      "query": [
+        "Building 0.7 · link50_007：候选人管理\n简历、面试安排、评价、录用状态与岗位招聘进度",
+        "Building 0.7 · link50_007: candidate management\nResumes, interview schedules, feedback, hiring status and progress by role",
+        "Building 0.7 · link50_007：採用候補者管理\n履歴書・面接日程・評価・採用状況・職種別の採用進捗"
+      ],
+      "q2-spec": [
+        "Q2 配置：Spec 名称与条件矛盾\n视图 / 指标名：待面试候选人\n筛选：简历状态 = 已面试",
+        "Q2 configuration: Spec mismatch\nView / metric: candidates awaiting interview\nFilter: resume status = Interviewed",
+        "Q2 設定：Spec の名称と条件が矛盾\nビュー・指標名：面接待ちの候補者\n条件：履歴書状態 = 面接済み"
+      ],
+      "sft-spec": [
+        "继续训练配置：名称与条件对齐\n视图 / 指标名：已安排面试候选人\n筛选：简历状态 = 已安排面试",
+        "Continued-training configuration: aligned\nView / metric: interview scheduled\nFilter: resume status = Interview scheduled",
+        "継続学習設定：名称と条件が一致\nビュー・指標名：面接設定済みの候補者\n条件：履歴書状態 = 面接設定済み"
+      ],
+      "q2-code": [
+        "代码原样落实筛选\ngrid(待面试候选人视图)\nwhere(简历状态, eq, 已面试)\n执行成功",
+        "Code implements the filter\ngrid(Awaiting interview)\nwhere(resume status, eq, Interviewed)\nExecution succeeds",
+        "コードが条件をそのまま実装\ngrid(面接待ち候補者)\nwhere(履歴書状態, eq, 面接済み)\n実行成功"
+      ],
+      "sft-code": [
+        "代码落实一致的状态\n视图与指标卡都用“已安排面试”\n执行成功",
+        "Code implements consistent state\nView and metric both use Interview scheduled\nExecution succeeds",
+        "コードも整合した状態を実装\nビューと指標がともに「面接設定済み」を使用\n実行成功"
+      ],
+      "q2-result": [
+        "原生 E2E：55 / 100，未通过\n产物保留筛选矛盾；另有两张空表\n55 分是整条案例总分",
+        "Native E2E: 55 / 100, fail\nFilter mismatch persists; two tables are also empty\n55 is the overall case score",
+        "ネイティブ E2E：55 / 100、不合格\n成果物でも条件が矛盾。空テーブルも2つ存在\n55点はケース全体の評価"
+      ],
+      "sft-result": [
+        "原生 E2E：100 / 100，通过\n本次运行满足全部被评需求",
+        "Native E2E: 100 / 100, pass\nAll evaluated requirements pass in this run",
+        "ネイティブ E2E：100 / 100、合格\nこの実行では評価対象の全要件に合格"
+      ]
+    },
+    "notes": [
+      [
+        "两条独立运行比较模型 + 系统提示词的联合配置，并非同一 PE 的前后修复。状态值与代码为语义节选；原始轨迹和评审报告保留核对记录。",
+        "These independent runs compare model + system-prompt configurations, not a before/after PE-only repair. State values and code are translated excerpts; original trajectories and verdicts were checked.",
+        "独立した2実行でモデル＋システムプロンプトの設定を比較。単一 PE の修復前後ではない。状態値とコードは意味を保った抜粋・翻訳で、原軌跡と判定を照合済み。"
+      ]
+    ]
+  },
+  {
+    "id": "rubric-model-full-workflow",
+    "width": 1440,
+    "height": 1077,
+    "anchors": [
+      "blog-section-2",
+      "technical-section-3"
+    ],
+    "caption": [
+      "精确对齐输入与标签，按需求整组切分。SFT→RL 是继承关系；OPD、理由监督分别作为独立对照，参考标签只进入监督或评分侧。",
+      "Align exact inputs and labels, then split by request group. SFT→RL is a lineage; OPD and rationale supervision are separate controls. Reference labels enter only supervision or scoring.",
+      "入力とラベルを正確に対応させ、要求グループで分割。SFT→RL は継承関係、OPD と理由監督は独立の対照。参照ラベルは監督・採点側だけに渡す。"
+    ],
+    "title": [
+      "规则评审模型 · 完整流程",
+      "Rubric model · Full workflow",
+      "ルール評価モデル · 全体フロー"
+    ],
+    "links": {
+      "input": "rubric-model-03",
+      "split": "rubric-model-04",
+      "sft": "rubric-model-05",
+      "rl": "rubric-model-06",
+      "opd": "rubric-model-07",
+      "cot": "rubric-model-08"
+    },
+    "nodes": {
+      "input": [
+        60,
+        96,
+        360,
+        165,
+        [
+          "评审单元",
+          "Review unit",
+          "評価単位"
+        ],
+        [
+          "Query + Spec 版本 + Domain",
+          "Query + Spec version + Domain",
+          "Query + Spec の版 + Domain"
+        ]
+      ],
+      "labels": [
+        540,
+        96,
+        360,
+        165,
+        [
+          "参考标签",
+          "Reference labels",
+          "参照ラベル"
+        ],
+        [
+          "生成 → 复核 → 冻结",
+          "Generate → review → freeze",
+          "生成 → 確認 → 固定"
+        ]
+      ],
+      "split": [
+        1020,
+        96,
+        360,
+        165,
+        [
+          "按 Query 切分",
+          "Split by Query",
+          "Query で分割"
+        ],
+        [
+          "Train / Dev / Test 整组隔离",
+          "Keep groups within Train / Dev / Test",
+          "Train / Dev / Test をグループで分離"
+        ]
+      ],
+      "sft": [
+        60,
+        368,
+        360,
+        165,
+        [
+          "SFT",
+          "SFT",
+          "SFT"
+        ],
+        [
+          "规则 + Query + Spec → 裁决",
+          "Rules + Query + Spec → verdict",
+          "ルール + Query + Spec → 判定"
+        ],
+        "soft"
+      ],
+      "opd": [
+        540,
+        368,
+        360,
+        165,
+        [
+          "OPD",
+          "OPD",
+          "OPD"
+        ],
+        [
+          "学生采样 · 教师概率监督",
+          "Student samples · teacher distributions",
+          "学生が生成・教師が確率分布を提供"
+        ],
+        "soft"
+      ],
+      "cot": [
+        1020,
+        368,
+        360,
+        165,
+        [
+          "理由监督 A / B / C",
+          "Rationale A / B / C",
+          "理由監督 A / B / C"
+        ],
+        [
+          "正文 / 推理字段 / 仅裁决",
+          "Visible / reasoning field / verdict only",
+          "本文 / 推論フィールド / 判定のみ"
+        ],
+        "soft"
+      ],
+      "rl": [
+        60,
+        608,
+        360,
+        165,
+        [
+          "RL",
+          "RL",
+          "RL"
+        ],
+        [
+          "SFT 初始化 · 组内采样与奖励",
+          "SFT initialization · group sampling & reward",
+          "SFT 初期化・グループ内生成と報酬"
+        ],
+        "soft"
+      ],
+      "eval": [
+        540,
+        832,
+        840,
+        145,
+        [
+          "固定测试集评测",
+          "Fixed-test evaluation",
+          "固定テストで評価"
+        ],
+        [
+          "合法率 · 严格一致 · F1 · 成本",
+          "Validity · exact match · F1 · cost",
+          "妥当率・完全一致・F1・コスト"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "input",
+        "labels",
+        [
+          [
+            420,
+            160
+          ],
+          [
+            540,
+            160
+          ]
+        ]
+      ],
+      [
+        "labels",
+        "split",
+        [
+          [
+            900,
+            150
+          ],
+          [
+            1020,
+            150
+          ]
+        ]
+      ],
+      [
+        "split",
+        "sft",
+        [
+          [
+            1200,
+            261
+          ],
+          [
+            1200,
+            320
+          ],
+          [
+            240,
+            320
+          ],
+          [
+            240,
+            368
+          ]
+        ]
+      ],
+      [
+        "split",
+        "opd",
+        [
+          [
+            1200,
+            261
+          ],
+          [
+            1200,
+            320
+          ],
+          [
+            720,
+            320
+          ],
+          [
+            720,
+            368
+          ]
+        ]
+      ],
+      [
+        "split",
+        "cot",
+        [
+          [
+            1200,
+            261
+          ],
+          [
+            1200,
+            368
+          ]
+        ]
+      ],
+      [
+        "sft",
+        "rl",
+        [
+          [
+            240,
+            533
+          ],
+          [
+            240,
+            608
+          ]
+        ]
+      ],
+      [
+        "sft",
+        "eval",
+        [
+          [
+            420,
+            472
+          ],
+          [
+            470,
+            472
+          ],
+          [
+            470,
+            880
+          ],
+          [
+            540,
+            880
+          ]
+        ]
+      ],
+      [
+        "rl",
+        "eval",
+        [
+          [
+            240,
+            773
+          ],
+          [
+            240,
+            937
+          ],
+          [
+            540,
+            937
+          ]
+        ]
+      ],
+      [
+        "opd",
+        "eval",
+        [
+          [
+            720,
+            533
+          ],
+          [
+            720,
+            832
+          ]
+        ]
+      ],
+      [
+        "cot",
+        "eval",
+        [
+          [
+            1200,
+            533
+          ],
+          [
+            1200,
+            832
+          ]
+        ]
+      ],
+      [
+        "split",
+        "eval",
+        [
+          [
+            1380,
+            150
+          ],
+          [
+            1410,
+            150
+          ],
+          [
+            1410,
+            905
+          ],
+          [
+            1380,
+            905
+          ]
+        ],
+        true
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1320,
+        [
+          "规则评审模型 · 完整流程",
+          "Rubric model · Full workflow",
+          "ルール評価モデル · 全体フロー"
+        ],
+        "title"
+      ],
+      [
+        54,
+        282,
+        900,
+        [
+          "仅 Train 进入训练分支",
+          "Train only → training branches",
+          "学習分岐には Train のみ"
+        ]
+      ]
+    ],
+    "nodeDetails": {
+      "input": [
+        "对齐评审单元\n原始 Query + 精确 Spec 版本\nDomain + Rubric 版本",
+        "Align review units\nOriginal Query + exact Spec version\nDomain + Rubric version",
+        "評価単位を揃える\n元 Query + 正確な Spec バージョン\nDomain + Rubric の版"
+      ],
+      "labels": [
+        "生成与复核标签\n模型标注 → 审核 / 冻结\n保留问题、规则、裁决",
+        "Produce & review labels\nModel annotation → review / freeze\nKeep issues, rules and verdicts",
+        "ラベルの生成・再確認\nモデル注釈 → 確認・固定\n問題・ルール・判定を保存"
+      ],
+      "split": [
+        "按 Query 整组切分\n同需求的版本与领域不跨集合\n冻结训练 / 验证 / 测试清单",
+        "Split by Query group\nKeep versions and domains together\nFreeze train / dev / test manifests",
+        "Query 単位でグループ分割\n同じ要求の版・領域は同一集合へ\n訓練・検証・テスト一覧を固定"
+      ],
+      "sft": [
+        "SFT：学习裁决\n输入：规则 + Query + Spec\n目标：结构化评审 JSON",
+        "SFT: learn verdicts\nInput: rules + Query + Spec\nTarget: structured review JSON",
+        "SFT：判定を学習\n入力：ルール + Query + Spec\n目標：構造化評価 JSON"
+      ],
+      "opd": [
+        "OPD：教师概率监督\n学生在线采样，教师给分布\n按各条件隔离特权上下文",
+        "OPD: teacher distributions\nStudent samples; teacher supplies distributions\nIsolate privileged context by condition",
+        "OPD：教師の確率分布\n学生がサンプル生成、教師が分布を提供\n条件ごとに特権コンテキストを分離"
+      ],
+      "cot": [
+        "理由监督：三种对照\nA：正文理由；B：独立推理字段\nC：同一标签，仅裁决",
+        "Rationale: three controls\nA: visible rationale; B: reasoning field\nC: same labels, verdict only",
+        "理由監督：3種類の対照\nA：本文の理由、B：推論フィールド\nC：同じラベルで判定のみ"
+      ],
+      "rl": [
+        "RL：从 SFT 继续训练\n组内采样 → 对标签计算奖励\n标签在评分侧，不发给学生",
+        "RL: continue from SFT\nGroup sampling → reward against labels\nLabels stay on the scoring side",
+        "RL：SFT から継続学習\nグループ内生成 → ラベルで報酬計算\nラベルは採点側だけで使用"
+      ],
+      "eval": [
+        "固定测试输入，分参考标签报告\n合法输出率 / 严格一致 / Category–Rubric–Mode F1 / 成本\nSol 与 DeepSeek 分表；Test792 与其他测试集分开",
+        "Fixed test inputs, separate reference reports\nValid-output rate / exact match / Category–Rubric–Mode F1 / cost\nSeparate Sol and DeepSeek references; keep Test792 apart from other sets",
+        "テスト入力を固定し、参照ラベル別に報告\n出力妥当率・完全一致・Category–Rubric–Mode F1・コスト\nSol と DeepSeek を別表にし、Test792 と他の集合も分ける"
+      ]
+    },
+    "notes": [
+      [
+        "路线按各实验配置取数和初始化；SFT → RL 有继承关系，OPD 与理由监督不接在 RL 之后。",
+        "Each route uses its registered data and initialization. SFT → RL is a lineage; OPD and rationale supervision do not follow RL as later stages.",
+        "各方式は実験で定めたデータと初期化を使用。SFT → RL は継承関係だが、OPD と理由監督は RL の後続段階ではない。"
+      ]
+    ]
+  },
+  {
+    "id": "rubric-model-recorded-case",
+    "width": 1440,
+    "height": 881,
+    "anchors": [
+      "blog-section-3",
+      "technical-section-5"
+    ],
+    "caption": [
+      "这个固定测试单元中，SFT 与 RL 都找到两处错误并判 fail，只有 RL 与冻结 Sol 参考的错误类型一致。去重 Mode 标签 F1 分别为 0 和 1；问题数量均为 2。",
+      "On this fixed test unit, SFT and RL both find two errors and return fail, but only RL matches the frozen Sol reference’s error type. Unique-Mode-label F1 is 0 and 1 respectively; both report two issue instances.",
+      "この固定テスト単位で SFT と RL はともに2件を検出して fail と判定するが、固定 Sol 参照と同じ分類は RL のみ。重複除去 Mode ラベル F1 は0と1、問題件数はいずれも2。"
+    ],
+    "title": [
+      "真实案例 · 找到问题，分对规则",
+      "Recorded case · find the issue, assign the rule",
+      "実例 · 問題の検出とルールの分類"
+    ],
+    "nodes": {
+      "input": [
+        60,
+        88,
+        1320,
+        145,
+        [
+          "预算审核看板",
+          "Budget review dashboard",
+          "予算審査ダッシュボード"
+        ],
+        [
+          "两个筛选引用了不存在的选项名",
+          "Two filters reference nonexistent option names",
+          "2つの条件が存在しない選択肢名を参照"
+        ]
+      ],
+      "reference": [
+        60,
+        336,
+        400,
+        165,
+        [
+          "Sol 参考",
+          "Sol reference",
+          "Sol 参照"
+        ],
+        [
+          "数据源引用错误",
+          "Invalid source reference",
+          "無効なデータソース参照"
+        ],
+        "soft"
+      ],
+      "sft": [
+        520,
+        336,
+        400,
+        165,
+        [
+          "SFT",
+          "SFT",
+          "SFT"
+        ],
+        [
+          "分为业务筛选口径错误",
+          "Classifies a business-filter mismatch",
+          "業務上の絞り込み不一致と分類"
+        ],
+        "issue"
+      ],
+      "rl": [
+        980,
+        336,
+        400,
+        165,
+        [
+          "RL",
+          "RL",
+          "RL"
+        ],
+        [
+          "分为数据源引用错误",
+          "Classifies an invalid source reference",
+          "無効なデータソース参照と分類"
+        ],
+        "result"
+      ],
+      "count": [
+        60,
+        616,
+        400,
+        165,
+        [
+          "2 条问题 · fail",
+          "2 issues · fail",
+          "2件の問題 · fail"
+        ],
+        [
+          "参考与两模型数量、裁决相同",
+          "Reference and both models agree on count",
+          "参照と両モデルで件数・判定は一致"
+        ]
+      ],
+      "sft-score": [
+        520,
+        616,
+        400,
+        165,
+        [
+          "Mode F1 = 0",
+          "Mode F1 = 0",
+          "Mode F1 = 0"
+        ],
+        [
+          "命中 0 · 误报 1 · 漏报 1",
+          "TP 0 · FP 1 · FN 1",
+          "TP 0 · FP 1 · FN 1"
+        ],
+        "issue"
+      ],
+      "rl-score": [
+        980,
+        616,
+        400,
+        165,
+        [
+          "Mode F1 = 1",
+          "Mode F1 = 1",
+          "Mode F1 = 1"
+        ],
+        [
+          "命中 1 · 误报 0 · 漏报 0",
+          "TP 1 · FP 0 · FN 0",
+          "TP 1 · FP 0 · FN 0"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "input",
+        "reference",
+        [
+          [
+            260,
+            233
+          ],
+          [
+            260,
+            336
+          ]
+        ]
+      ],
+      [
+        "input",
+        "sft",
+        [
+          [
+            720,
+            233
+          ],
+          [
+            720,
+            336
+          ]
+        ]
+      ],
+      [
+        "input",
+        "rl",
+        [
+          [
+            1180,
+            233
+          ],
+          [
+            1180,
+            336
+          ]
+        ]
+      ],
+      [
+        "reference",
+        "count",
+        [
+          [
+            260,
+            501
+          ],
+          [
+            260,
+            616
+          ]
+        ]
+      ],
+      [
+        "sft",
+        "sft-score",
+        [
+          [
+            720,
+            501
+          ],
+          [
+            720,
+            616
+          ]
+        ]
+      ],
+      [
+        "rl",
+        "rl-score",
+        [
+          [
+            1180,
+            501
+          ],
+          [
+            1180,
+            616
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        54,
+        24,
+        1320,
+        [
+          "真实案例 · 找到问题，分对规则",
+          "Recorded case · find the issue, assign the rule",
+          "実例 · 問題の検出とルールの分類"
+        ],
+        "title"
+      ]
+    ],
+    "nodeDetails": {
+      "input": [
+        "Test792 · 仪表盘单元 04911949…：预算审核看板\n两个组件的筛选选项与表定义不一致\n例：真实选项“待部门审核” → 组件使用“待「部门」审核”",
+        "Test792 · dashboard unit 04911949…: budget review dashboard\nTwo component filters use option names absent from the table\nExample: Pending department review → Pending [department] review",
+        "Test792 · dashboard 単位 04911949…：予算審査ダッシュボード\n2つの部品の絞り込みで、テーブルにない選択肢名を使用\n例：部門審査待ち → 「部門」審査待ち"
+      ],
+      "reference": [
+        "冻结 Sol 参考\n2 条问题，同一错误模式\n组件数据依赖不完整\ninvalid_dashboard_source_reference",
+        "Frozen Sol reference\n2 issues, one repeated error mode\nComponent data dependency\ninvalid_dashboard_source_reference",
+        "固定済み Sol 参照\n2件の問題、同じエラーモード\n部品のデータ依存の不整合\ninvalid_dashboard_source_reference"
+      ],
+      "sft": [
+        "SFT：找到位置，分错类型\n2 条问题，裁决 fail\n归为业务筛选口径错误\ndashboard_business_filter_mismatch",
+        "SFT: finds locations, wrong type\n2 issues, verdict fail\nClassifies business-filter semantics\ndashboard_business_filter_mismatch",
+        "SFT：位置は検出、分類が相違\n2件の問題、判定は fail\n業務上の絞り込みの不一致と分類\ndashboard_business_filter_mismatch"
+      ],
+      "rl": [
+        "RL：与参考错误类型一致\n2 条问题，裁决 fail\n归为组件数据依赖错误\ninvalid_dashboard_source_reference",
+        "RL: matches reference error type\n2 issues, verdict fail\nClassifies component dependency\ninvalid_dashboard_source_reference",
+        "RL：参照と同じエラー分類\n2件の問題、判定は fail\n部品のデータ依存の不整合と分類\ninvalid_dashboard_source_reference"
+      ],
+      "count": [
+        "问题数量与裁决\n参考 / SFT / RL 均为：\n2 条问题，fail\n仅看数量无法区分",
+        "Issue count & verdict\nReference / SFT / RL all return:\n2 issues, fail\nCount alone cannot distinguish them",
+        "問題件数と判定\n参照・SFT・RL はすべて：\n2件の問題、fail\n件数だけでは区別できない"
+      ],
+      "sft-score": [
+        "去重 Mode 标签：F1 = 0\n命中 0 · 误报 1 · 漏报 1\n位置正确不代表规则分类正确",
+        "Unique Mode labels: F1 = 0\nTP 0 · FP 1 · FN 1\nCorrect location ≠ correct rule",
+        "重複除去 Mode：F1 = 0\nTP 0 · FP 1 · FN 1\n正しい位置と正しいルールは別"
+      ],
+      "rl-score": [
+        "去重 Mode 标签：F1 = 1\n命中 1 · 误报 0 · 漏报 0\n同模式的两处问题只计一个标签",
+        "Unique Mode labels: F1 = 1\nTP 1 · FP 0 · FN 0\nTwo instances count as one label",
+        "重複除去 Mode：F1 = 1\nTP 1 · FP 0 · FN 0\n同一モードの2件を1ラベルとして集計"
+      ]
+    },
+    "notes": [
+      [
+        "SFT-v48 与其继续训练的 RL-v48（step 80），复用已保存预测。参考只用于离线计分，不在学生输入中。",
+        "SFT-v48 and its continued RL-v48 (step 80), using saved predictions. The reference is used only for offline scoring, never as student input.",
+        "SFT-v48 とその継続学習版 RL-v48（step 80）の保存済み予測を使用。参照はオフライン採点にのみ使い、学生の入力には含めない。"
+      ],
+      [
+        "图中 F1 为这个单元的去重标签集合计算；整套模型的 Test792 结果仍在正文按参考分别报告。",
+        "The displayed F1 is computed from this unit’s unique label set; full Test792 model results remain reported separately by reference in the article.",
+        "図の F1 はこの単位の重複除去ラベル集合から計算。モデル全体の Test792 結果は本文で参照別に報告する。"
+      ]
+    ]
+  }
+]

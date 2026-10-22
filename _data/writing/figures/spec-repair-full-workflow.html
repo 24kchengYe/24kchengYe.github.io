@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>Judge–Fix · 完整流程</title><style>
+body{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:945px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-repair-full-workflow"><div class="edge arrow" data-from="input" data-to="entry" style="left:390px;top:156px;width:160px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="input" data-to="preflight-error" style="left:225px;top:253px;width:57px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="entry" data-to="regular" style="left:730px;top:233px;width:79px;transform:rotate(90deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:550px;top:192px;width:90px;transform:rotate(180deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:460px;top:192px;width:432px;transform:rotate(90deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:460px;top:624px;width:160px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="entry" data-to="format" style="left:620px;top:624px;width:56px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="regular" data-to="hard" style="left:910px;top:391px;width:100px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="regular" data-to="format" style="left:730px;top:477px;width:203px;transform:rotate(90deg)"></div><div class="edge" data-from="hard" data-to="format" style="left:1120px;top:477px;width:107px;transform:rotate(90deg)"></div><div class="edge" data-from="hard" data-to="format" style="left:1120px;top:584px;width:280px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="hard" data-to="format" style="left:840px;top:584px;width:96px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="hard" data-to="result" style="left:1280px;top:477px;width:203px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="format" data-to="result" style="left:910px;top:763px;width:100px;transform:rotate(0deg)"></div><div class="edge feedback" data-from="format" data-to="regular" style="left:550px;top:768px;width:140px;transform:rotate(180deg)"></div><div class="edge feedback" data-from="format" data-to="regular" style="left:410px;top:768px;width:346px;transform:rotate(-90deg)"></div><div class="edge arrow feedback" data-from="format" data-to="regular" style="left:410px;top:422px;width:140px;transform:rotate(0deg)"></div><div class="node " id="input" style="left:60px;top:88px;width:330px;height:165px"><strong>输入预检</strong><span>Query + Spec 对齐</span><span data-node-detail="true" hidden>输入与预检
+Query + Spec
+校验输入与提示词对齐</span></div><div class="node " id="entry" style="left:550px;top:88px;width:790px;height:145px"><strong>四域 Judge → Router</strong><span>同一版本确认票 · 按根因路由</span><span data-node-detail="true" hidden>四域 Judge → 入口 Router
+首票全过才补确认票；按根因决定修复入口</span></div><div class="node issue" id="preflight-error" style="left:60px;top:310px;width:330px;height:165px"><strong>停止</strong><span>不调用模型</span><span data-node-detail="true" hidden>预检失败
+输出错误报告
+不启动模型</span></div><div class="node soft" id="regular" style="left:550px;top:312px;width:360px;height:165px"><strong>普通修复</strong><span>Table 优先 · 回退预算 2</span><span data-node-detail="true" hidden>普通修复与复评
+Table 根因优先
+修后重评四域、确认票
+共用回退预算：2 次</span></div><div class="node soft" id="hard" style="left:1010px;top:312px;width:360px;height:165px"><strong>难例修复</strong><span>2/3 投票 · 回退预算 3</span><span data-node-detail="true" hidden>难例修复与复评
+汇总失败上下文，再按根因修
+新版本四域投票：2/3
+独立回退预算：3 次</span></div><div class="node " id="format" style="left:550px;top:680px;width:360px;height:165px"><strong>准出检查</strong><span>格式 + 业务复核</span><span data-node-detail="true" hidden>格式准出
+全文格式检查
+改文后重新做业务确认
+格式差错可回修一次</span></div><div class="node result" id="result" style="left:1010px;top:680px;width:360px;height:165px"><strong>通过 / 失败</strong><span>保存 Spec、投票与轨迹</span><span data-node-detail="true" hidden>记录最终结果
+通过 / 失败分别保存
+Spec、投票、调用与轨迹
+终末 Rewrite 默认关闭</span></div><div class="label title" style="left:54px;top:24px;width:1250px">Judge–Fix · 完整流程</div><div class="label " style="left:390px;top:112px;width:150px">通过</div><div class="label " style="left:90px;top:264px;width:240px">预检错误</div><div class="label " style="left:740px;top:236px;width:220px">需要修复</div><div class="label " style="left:470px;top:552px;width:220px">入口准出票通过</div><div class="label " style="left:920px;top:324px;width:86px">仍失败
+且耗尽</div><div class="label " style="left:740px;top:532px;width:210px">普通阶段通过</div><div class="label " style="left:1000px;top:548px;width:210px">难例阶段通过</div><div class="label " style="left:1288px;top:532px;width:130px">仍失败</div><div class="label " style="left:920px;top:704px;width:86px">合格或终止</div><div class="label " style="left:65px;top:560px;width:330px">格式回退 ×1</div></div></html>

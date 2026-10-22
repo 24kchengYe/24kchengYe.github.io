@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 957" width="1440" height="957" lang="zh"><foreignObject width="1440" height="957"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:957px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-repair-recorded-case"><div class="edge arrow" data-from="request" data-to="g-spec" style="left:345px;top:237px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="request" data-to="k-judge" style="left:1095px;top:237px;width:43px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-spec" data-to="g-code" style="left:345px;top:457px;width:63px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-code" data-to="g-e2e" style="left:345px;top:665px;width:47px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-judge" data-to="k-fix" style="left:1095px;top:425px;width:39px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-fix" data-to="k-code" style="left:1095px;top:609px;width:63px;transform:rotate(90deg)"></div><div class="node " id="request" style="left:60px;top:92px;width:1320px;height:145px"><strong>门店巡检 · Case 41</strong><span>共同输入：管理员可编辑七表</span><span data-node-detail="true" hidden="">Building 50 · Case 41：门店巡检管理
+需求包含管理员角色；共同输入 Spec 允许管理员编辑七张业务表</span></div><div class="node " id="g-spec" style="left:60px;top:312px;width:570px;height:145px"><strong>G：保留编辑</strong><span>Spec 保留管理职责</span><span data-node-detail="true" hidden="">G：保留编辑权限
+最终 Spec 仍允许管理员编辑
+文档准出失败：业务复核未过</span></div><div class="node issue" id="k-judge" style="left:810px;top:280px;width:570px;height:145px"><strong>K：建议只读</strong><span>Judge：写入职责未明确</span><span data-node-detail="true" hidden="">K：Judge 建议只读
+以“未说明业务写入职责”为由缩权
+Permission Judge 为 G/K 共用版本</span></div><div class="node issue" id="k-fix" style="left:810px;top:464px;width:570px;height:145px"><strong>Fix 接纳候选</strong><span>七表：可编辑 → 只读</span><span data-node-detail="true" hidden="">Fix 接纳缩权候选
+Non-Table 第 2 次访问，第 1 轮
+七表：可编辑 → 只读
+最终文档仍未准出</span></div><div class="node " id="g-code" style="left:60px;top:520px;width:570px;height:145px"><strong>代码 → Base</strong><span>可编辑 · 执行成功</span><span data-node-detail="true" hidden="">CodeAgent：执行成功
+代码保留管理员编辑权
+下游 Base 可维护业务记录</span></div><div class="node issue" id="k-code" style="left:810px;top:672px;width:570px;height:145px"><strong>代码 → Base</strong><span>只读 · 执行成功 · E2E 失败</span><span data-node-detail="true" hidden="">CodeAgent：执行成功，权限退化
+七表配置为 read
+E2E：管理员不能维护业务 → 失败</span></div><div class="node result" id="g-e2e" style="left:60px;top:712px;width:570px;height:145px"><strong>E2E 通过</strong><span>管理员可以维护记录</span><span data-node-detail="true" hidden="">E2E：通过
+文档评审与实际产物评审分别报告</span></div><div class="label title" style="left:54px;top:24px;width:1300px">真实案例 · 管理员权限退化</div></div></div></foreignObject></svg>

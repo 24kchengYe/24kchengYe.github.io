@@ -189,7 +189,8 @@
         }
         aside.append(element('p','',translate(node.dataset.disposition === 'discarded' ? '失败尝试 · 保留审计与成本' : '最终保留轮次')));
       } else {
-        aside.append(element('p','',node.textContent.trim()));
+        const detail = node.querySelector('[data-node-detail]');
+        aside.append(element('p',detail ? 'tm-node-detail' : '',(detail?.textContent || node.textContent).trim()));
         if (node.matches('.checkpoint,.restore')) aside.append(element('small','',translate('Harness 控制事件')));
       }
       aside.append(fields);
@@ -272,11 +273,12 @@
     const bindCanvas = () => {
       for (const node of canvas.querySelectorAll(nodeSelector)) {
         const target = view().links[node.id];
+        const hasDetails = !!node.querySelector('[data-node-detail]');
         if (target) node.dataset.drill = target;
-        node.setAttribute('aria-label', `${nodeName(node.id)} · ${translate(target ? '查看内部流程' : '查看详情')}`);
+        node.setAttribute('aria-label', `${nodeName(node.id)} · ${translate(target && !hasDetails ? '查看内部流程' : '查看详情')}`);
         activate(node, () => {
           pause();
-          if (target) navigate(target);
+          if (target && !hasDetails) navigate(target);
           else selectNode(node.id);
         });
         node.addEventListener('pointerenter', () => { if (!timer) highlight(node.id); });

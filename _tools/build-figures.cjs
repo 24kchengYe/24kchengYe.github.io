@@ -10,9 +10,9 @@ const translations = JSON.parse(fs.readFileSync(path.join(sourceDirectory, 'tran
 const svgNamespace = 'http://www.w3.org/2000/svg';
 const htmlNamespace = 'http://www.w3.org/1999/xhtml';
 
-function translate(original, language) {
+function translate(original, language, localTranslations = {}) {
   if (language === 'zh' || !/[\u3400-\u9fff]/u.test(original)) return original;
-  const pair = translations[original];
+  const pair = localTranslations[original] || translations[original];
   if (!pair?.[language === 'en' ? 0 : 1]) throw new Error(`Missing figure translation: ${original}`);
   return pair[language === 'en' ? 0 : 1];
 }
@@ -180,9 +180,10 @@ function localizeLayout(source, item, language) {
   const walker = document.createTreeWalker(canvas, NodeFilter.SHOW_TEXT);
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);
+  const localTranslations = item.translations ? JSON.parse(fs.readFileSync(path.join(sourceDirectory, item.translations), 'utf8')) : {};
   for (const node of nodes) {
     const original = node.textContent.trim();
-    node.textContent = node.textContent.replace(original, translate(original, language));
+    node.textContent = node.textContent.replace(original, translate(original, language, localTranslations));
   }
   fitLayoutLabels(document, canvas, language);
   const svg = document.createElementNS(svgNamespace, 'svg');

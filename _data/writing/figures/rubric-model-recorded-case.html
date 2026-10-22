@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>真实案例 · 找到问题，分对规则</title><style>
+body{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:881px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="rubric-model-recorded-case"><div class="edge arrow" data-from="input" data-to="reference" style="left:260px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="sft" style="left:720px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="input" data-to="rl" style="left:1180px;top:233px;width:103px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="reference" data-to="count" style="left:260px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="sft" data-to="sft-score" style="left:720px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="rl" data-to="rl-score" style="left:1180px;top:501px;width:115px;transform:rotate(90deg)"></div><div class="node " id="input" style="left:60px;top:88px;width:1320px;height:145px"><strong>预算审核看板</strong><span>两个筛选引用了不存在的选项名</span><span data-node-detail="true" hidden>Test792 · 仪表盘单元 04911949…：预算审核看板
+两个组件的筛选选项与表定义不一致
+例：真实选项“待部门审核” → 组件使用“待「部门」审核”</span></div><div class="node soft" id="reference" style="left:60px;top:336px;width:400px;height:165px"><strong>Sol 参考</strong><span>数据源引用错误</span><span data-node-detail="true" hidden>冻结 Sol 参考
+2 条问题，同一错误模式
+组件数据依赖不完整
+invalid_dashboard_source_reference</span></div><div class="node issue" id="sft" style="left:520px;top:336px;width:400px;height:165px"><strong>SFT</strong><span>分为业务筛选口径错误</span><span data-node-detail="true" hidden>SFT：找到位置，分错类型
+2 条问题，裁决 fail
+归为业务筛选口径错误
+dashboard_business_filter_mismatch</span></div><div class="node result" id="rl" style="left:980px;top:336px;width:400px;height:165px"><strong>RL</strong><span>分为数据源引用错误</span><span data-node-detail="true" hidden>RL：与参考错误类型一致
+2 条问题，裁决 fail
+归为组件数据依赖错误
+invalid_dashboard_source_reference</span></div><div class="node " id="count" style="left:60px;top:616px;width:400px;height:165px"><strong>2 条问题 · fail</strong><span>参考与两模型数量、裁决相同</span><span data-node-detail="true" hidden>问题数量与裁决
+参考 / SFT / RL 均为：
+2 条问题，fail
+仅看数量无法区分</span></div><div class="node issue" id="sft-score" style="left:520px;top:616px;width:400px;height:165px"><strong>Mode F1 = 0</strong><span>命中 0 · 误报 1 · 漏报 1</span><span data-node-detail="true" hidden>去重 Mode 标签：F1 = 0
+命中 0 · 误报 1 · 漏报 1
+位置正确不代表规则分类正确</span></div><div class="node result" id="rl-score" style="left:980px;top:616px;width:400px;height:165px"><strong>Mode F1 = 1</strong><span>命中 1 · 误报 0 · 漏报 0</span><span data-node-detail="true" hidden>去重 Mode 标签：F1 = 1
+命中 1 · 误报 0 · 漏报 0
+同模式的两处问题只计一个标签</span></div><div class="label title" style="left:54px;top:24px;width:1320px">真实案例 · 找到问题，分对规则</div></div></html>

@@ -33,6 +33,21 @@ function inspect(host) {
     const box = range.getBoundingClientRect();
     if (!box.width || !box.height) continue;
     if (box.left < bounds.left - scale * 2 || box.top < bounds.top - scale * 2 || box.right > bounds.right + scale * 2 || box.bottom > bounds.bottom + scale * 2) errors.push(`Text outside canvas: ${node.textContent}`);
+    if (canvas.hasAttribute('data-research-diagram')) {
+      const owner = node.parentElement.closest('.node');
+      if (owner) {
+        const frame = owner.getBoundingClientRect();
+        if (box.left < frame.left + scale * 8 || box.right > frame.right - scale * 8 || box.top < frame.top + scale * 8 || box.bottom > frame.bottom - scale * 8) errors.push(`Text outside node ${owner.id}: ${node.textContent}`);
+      }
+    }
+  }
+  if (canvas.hasAttribute('data-research-diagram')) {
+    const blocks = [...canvas.querySelectorAll('.node,.label')];
+    for (let first = 0; first < blocks.length; first += 1) for (let second = first + 1; second < blocks.length; second += 1) {
+      const left = blocks[first].getBoundingClientRect();
+      const right = blocks[second].getBoundingClientRect();
+      if (Math.min(left.right, right.right) - Math.max(left.left, right.left) > scale * 2 && Math.min(left.bottom, right.bottom) - Math.max(left.top, right.top) > scale * 2) errors.push(`Overlapping blocks: ${blocks[first].id || blocks[first].textContent} / ${blocks[second].id || blocks[second].textContent}`);
+    }
   }
   return errors;
 }
@@ -74,6 +89,27 @@ async function main() {
           if (issues.length) console.error('Runtime errors:',errors);
           assert.deepEqual(issues,[],`${route}/${id}/${language}`);
           if (language === 'en' && !route.includes('/')) await map.screenshot({ path:path.join(output,`${id}-en.png`) });
+          const detailNode = map.locator('.node:has([data-node-detail])').first();
+          if (await detailNode.count()) {
+            const expectedDetail = await detailNode.locator('[data-node-detail]').textContent();
+            await detailNode.focus();
+            await page.keyboard.press('Enter');
+            assert.equal(await map.getAttribute('data-view'), id, 'Brief nodes open details before drill-down');
+            assert.equal((await map.locator('.tm-aside .tm-node-detail').textContent()).trim(), expectedDetail.trim());
+            const linked = map.locator('.node[data-drill]:has([data-node-detail])').first();
+            if (await linked.count()) {
+              const target = await linked.getAttribute('data-drill');
+              await linked.focus();
+              await page.keyboard.press('Enter');
+              const title = await page.evaluate(({ target, language }) => {
+                const data = window.WritingDiagramData;
+                return language === 'zh' ? data.views[target].title : data.strings[data.views[target].title][language === 'en' ? 0 : 1];
+              }, { target, language });
+              await map.locator('.tm-aside').getByRole('button', { name:title, exact:true }).first().click();
+              assert.equal(await map.getAttribute('data-view'), target);
+            }
+            await map.locator('select').selectOption(id);
+          }
         }
       }
       await page.locator('[data-language="en"]').click();
@@ -106,22 +142,24 @@ async function main() {
       await page.setViewportSize({ width:390,height:844 });
       for (const language of ['zh','en','ja']) {
         await page.locator(`[data-language="${language}"]`).click();
-        await map.locator('select').selectOption(views[0]);
-        await settle();
-        assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`${route} horizontal overflow`);
-        await map.locator('[data-expand]').click();
-        await map.getByRole('button',{ name:language === 'en' ? 'Fit all' : language === 'zh' ? '全图' : '全体表示',exact:true }).click();
-        await settle();
-        const fits = await map.evaluate(host => {
-          const shadow = host.shadowRoot;
-          const canvas = shadow.querySelector('.canvas').getBoundingClientRect();
-          const viewport = shadow.querySelector('.tm-viewport').getBoundingClientRect();
-          return canvas.left >= viewport.left - 1 && canvas.top >= viewport.top - 1 && canvas.right <= viewport.right + 1 && canvas.bottom <= viewport.bottom + 1;
-        });
-        assert(fits,'Fit all preserves all canvas edges');
-        if (language === 'en') await page.screenshot({ path:path.join(output,`${route.replaceAll('/','-')}-mobile.png`) });
-        await page.keyboard.press('Escape');
-        await page.locator('dialog.trajectory-dialog').waitFor({ state:'detached' });
+        for (const mobileView of [views[0], ...views.filter(id => id.endsWith('-full-workflow') || id.endsWith('-recorded-case'))]) {
+          await map.locator('select').selectOption(mobileView);
+          await settle();
+          assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`${route} horizontal overflow`);
+          await map.locator('[data-expand]').click();
+          await map.getByRole('button',{ name:language === 'en' ? 'Fit all' : language === 'zh' ? '全图' : '全体表示',exact:true }).click();
+          await settle();
+          const fits = await map.evaluate(host => {
+            const shadow = host.shadowRoot;
+            const canvas = shadow.querySelector('.canvas').getBoundingClientRect();
+            const viewport = shadow.querySelector('.tm-viewport').getBoundingClientRect();
+            return canvas.left >= viewport.left - 1 && canvas.top >= viewport.top - 1 && canvas.right <= viewport.right + 1 && canvas.bottom <= viewport.bottom + 1;
+          });
+          assert(fits,'Fit all preserves all canvas edges');
+          if (language === 'en') await page.screenshot({ path:path.join(output,`${route.replaceAll('/','-')}-${mobileView}-mobile.png`) });
+          await page.keyboard.press('Escape');
+          await page.locator('dialog.trajectory-dialog').waitFor({ state:'detached' });
+        }
       }
       assert.deepEqual(errors,[],route);
       await page.close();

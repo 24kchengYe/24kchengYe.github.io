@@ -1,0 +1,90 @@
+{
+  "预算审核看板": [
+    "Budget review dashboard",
+    "予算審査ダッシュボード"
+  ],
+  "两个筛选引用了不存在的选项名": [
+    "Two filters reference nonexistent option names",
+    "2つの条件が存在しない選択肢名を参照"
+  ],
+  "Test792 · 仪表盘单元 04911949…：预算审核看板\n两个组件的筛选选项与表定义不一致\n例：真实选项“待部门审核” → 组件使用“待「部门」审核”": [
+    "Test792 · dashboard unit 04911949…: budget review dashboard\nTwo component filters use option names absent from the table\nExample: Pending department review → Pending [department] review",
+    "Test792 · dashboard 単位 04911949…：予算審査ダッシュボード\n2つの部品の絞り込みで、テーブルにない選択肢名を使用\n例：部門審査待ち → 「部門」審査待ち"
+  ],
+  "Sol 参考": [
+    "Sol reference",
+    "Sol 参照"
+  ],
+  "数据源引用错误": [
+    "Invalid source reference",
+    "無効なデータソース参照"
+  ],
+  "冻结 Sol 参考\n2 条问题，同一错误模式\n组件数据依赖不完整\ninvalid_dashboard_source_reference": [
+    "Frozen Sol reference\n2 issues, one repeated error mode\nComponent data dependency\ninvalid_dashboard_source_reference",
+    "固定済み Sol 参照\n2件の問題、同じエラーモード\n部品のデータ依存の不整合\ninvalid_dashboard_source_reference"
+  ],
+  "SFT": [
+    "SFT",
+    "SFT"
+  ],
+  "分为业务筛选口径错误": [
+    "Classifies a business-filter mismatch",
+    "業務上の絞り込み不一致と分類"
+  ],
+  "SFT：找到位置，分错类型\n2 条问题，裁决 fail\n归为业务筛选口径错误\ndashboard_business_filter_mismatch": [
+    "SFT: finds locations, wrong type\n2 issues, verdict fail\nClassifies business-filter semantics\ndashboard_business_filter_mismatch",
+    "SFT：位置は検出、分類が相違\n2件の問題、判定は fail\n業務上の絞り込みの不一致と分類\ndashboard_business_filter_mismatch"
+  ],
+  "RL": [
+    "RL",
+    "RL"
+  ],
+  "分为数据源引用错误": [
+    "Classifies an invalid source reference",
+    "無効なデータソース参照と分類"
+  ],
+  "RL：与参考错误类型一致\n2 条问题，裁决 fail\n归为组件数据依赖错误\ninvalid_dashboard_source_reference": [
+    "RL: matches reference error type\n2 issues, verdict fail\nClassifies component dependency\ninvalid_dashboard_source_reference",
+    "RL：参照と同じエラー分類\n2件の問題、判定は fail\n部品のデータ依存の不整合と分類\ninvalid_dashboard_source_reference"
+  ],
+  "2 条问题 · fail": [
+    "2 issues · fail",
+    "2件の問題 · fail"
+  ],
+  "参考与两模型数量、裁决相同": [
+    "Reference and both models agree on count",
+    "参照と両モデルで件数・判定は一致"
+  ],
+  "问题数量与裁决\n参考 / SFT / RL 均为：\n2 条问题，fail\n仅看数量无法区分": [
+    "Issue count & verdict\nReference / SFT / RL all return:\n2 issues, fail\nCount alone cannot distinguish them",
+    "問題件数と判定\n参照・SFT・RL はすべて：\n2件の問題、fail\n件数だけでは区別できない"
+  ],
+  "Mode F1 = 0": [
+    "Mode F1 = 0",
+    "Mode F1 = 0"
+  ],
+  "命中 0 · 误报 1 · 漏报 1": [
+    "TP 0 · FP 1 · FN 1",
+    "TP 0 · FP 1 · FN 1"
+  ],
+  "去重 Mode 标签：F1 = 0\n命中 0 · 误报 1 · 漏报 1\n位置正确不代表规则分类正确": [
+    "Unique Mode labels: F1 = 0\nTP 0 · FP 1 · FN 1\nCorrect location ≠ correct rule",
+    "重複除去 Mode：F1 = 0\nTP 0 · FP 1 · FN 1\n正しい位置と正しいルールは別"
+  ],
+  "Mode F1 = 1": [
+    "Mode F1 = 1",
+    "Mode F1 = 1"
+  ],
+  "命中 1 · 误报 0 · 漏报 0": [
+    "TP 1 · FP 0 · FN 0",
+    "TP 1 · FP 0 · FN 0"
+  ],
+  "去重 Mode 标签：F1 = 1\n命中 1 · 误报 0 · 漏报 0\n同模式的两处问题只计一个标签": [
+    "Unique Mode labels: F1 = 1\nTP 1 · FP 0 · FN 0\nTwo instances count as one label",
+    "重複除去 Mode：F1 = 1\nTP 1 · FP 0 · FN 0\n同一モードの2件を1ラベルとして集計"
+  ],
+  "真实案例 · 找到问题，分对规则": [
+    "Recorded case · find the issue, assign the rule",
+    "実例 · 問題の検出とルールの分類"
+  ]
+}

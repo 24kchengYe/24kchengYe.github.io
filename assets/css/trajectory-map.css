@@ -45,6 +45,7 @@ select { max-width:260px; }
 .tm-aside h3 { margin:0 0 12px; font-size:16px; font-weight:500; line-height:1.5; }
 .tm-aside h3:not(:first-child) { margin-top:24px; }
 .tm-aside p { margin:8px 0 18px; font-size:13px; line-height:1.7; }
+.tm-aside .tm-node-detail { font-size:14px; white-space:pre-line; overflow-wrap:anywhere; }
 .tm-aside dl { margin:14px 0; }
 .tm-aside dt { color:#71767e; font-size:12px; margin:12px 0 3px; }
 .tm-aside dd { margin:0; font-size:14px; line-height:1.65; overflow-wrap:anywhere; }

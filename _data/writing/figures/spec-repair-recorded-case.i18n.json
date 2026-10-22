@@ -1,0 +1,86 @@
+{
+  "门店巡检 · Case 41": [
+    "Store inspections · Case 41",
+    "店舗巡回 · Case 41"
+  ],
+  "共同输入：管理员可编辑七表": [
+    "Shared input: administrator can edit seven tables",
+    "共通入力：管理者は7テーブルを編集可能"
+  ],
+  "Building 50 · Case 41：门店巡检管理\n需求包含管理员角色；共同输入 Spec 允许管理员编辑七张业务表": [
+    "Building 50 · Case 41: store inspection management\nThe request includes an administrator role; the shared input Spec grants edit access to seven business tables",
+    "Building 50 · Case 41：店舗巡回管理\n管理者ロールを含む要求。共通の入力 Spec では管理者が7つの業務テーブルを編集できる"
+  ],
+  "G：保留编辑": [
+    "G: retains edits",
+    "G：編集を維持"
+  ],
+  "Spec 保留管理职责": [
+    "Spec retains administrator duties",
+    "Spec が管理責務を維持"
+  ],
+  "G：保留编辑权限\n最终 Spec 仍允许管理员编辑\n文档准出失败：业务复核未过": [
+    "G: edit access retained\nFinal Spec retains administrator edits\nDocument release fails semantic recheck",
+    "G：編集権限を維持\n最終 Spec でも管理者は編集可能\n文書のリリースは業務再評価で失敗"
+  ],
+  "K：建议只读": [
+    "K: recommends read-only",
+    "K：読み取り専用を提案"
+  ],
+  "Judge：写入职责未明确": [
+    "Judge: write duties not explicit",
+    "Judge：書き込み責務が不明"
+  ],
+  "K：Judge 建议只读\n以“未说明业务写入职责”为由缩权\nPermission Judge 为 G/K 共用版本": [
+    "K: Judge recommends read-only\nAccess reduced because write duties were not explicit\nG and K share the Permission Judge version",
+    "K：Judge が読み取り専用を提案\n書き込み責務が明記されていないとして縮小\nPermission Judge の版は G/K 共通"
+  ],
+  "Fix 接纳候选": [
+    "Fix accepts candidate",
+    "Fix が候補を採用"
+  ],
+  "七表：可编辑 → 只读": [
+    "Seven tables: edit → read-only",
+    "7テーブル：編集 → 読み取り"
+  ],
+  "Fix 接纳缩权候选\nNon-Table 第 2 次访问，第 1 轮\n七表：可编辑 → 只读\n最终文档仍未准出": [
+    "Fix accepts reduced access\nNon-Table visit 2, round 1\nSeven tables: edit → read-only\nFinal document still not released",
+    "Fix が権限縮小候補を採用\nNon-Table の2回目の訪問・第1ラウンド\n7テーブル：編集可能 → 読み取り専用\n最終文書はリリース不合格"
+  ],
+  "代码 → Base": [
+    "Code → Base",
+    "コード → Base"
+  ],
+  "可编辑 · 执行成功": [
+    "Editable · execution succeeds",
+    "編集可能・実行成功"
+  ],
+  "CodeAgent：执行成功\n代码保留管理员编辑权\n下游 Base 可维护业务记录": [
+    "CodeAgent: execution succeeds\nCode retains administrator edit access\nThe Base supports record maintenance",
+    "CodeAgent：実行成功\nコードも管理者の編集権限を維持\nBase で業務レコードを管理できる"
+  ],
+  "只读 · 执行成功 · E2E 失败": [
+    "Read-only · executes · E2E fails",
+    "読み取り専用・実行成功・E2E 失敗"
+  ],
+  "CodeAgent：执行成功，权限退化\n七表配置为 read\nE2E：管理员不能维护业务 → 失败": [
+    "CodeAgent: runs, but access regresses\nSeven tables configured as read\nE2E: administrator cannot maintain records → fail",
+    "CodeAgent：実行成功・権限は退行\n7テーブルを read に設定\nE2E：管理者が業務を管理できず不合格"
+  ],
+  "E2E 通过": [
+    "E2E passes",
+    "E2E 合格"
+  ],
+  "管理员可以维护记录": [
+    "Administrator can maintain records",
+    "管理者がレコードを管理可能"
+  ],
+  "E2E：通过\n文档评审与实际产物评审分别报告": [
+    "E2E: pass\nDocument and built-artifact verdicts reported separately",
+    "E2E：合格\n文書判定と実際の成果物判定は別々に報告"
+  ],
+  "真实案例 · 管理员权限退化": [
+    "Recorded case · administrator access regression",
+    "実例 · 管理者権限の退行"
+  ]
+}

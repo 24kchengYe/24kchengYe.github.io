@@ -478,5 +478,47 @@
     "width": 1200,
     "height": 860,
     "format": "html-css"
+  },
+  "spec-repair-full-workflow": {
+    "source": "spec-repair-full-workflow.html",
+    "width": 1440,
+    "height": 945,
+    "format": "html-css",
+    "translations": "spec-repair-full-workflow.i18n.json"
+  },
+  "spec-repair-recorded-case": {
+    "source": "spec-repair-recorded-case.html",
+    "width": 1440,
+    "height": 957,
+    "format": "html-css",
+    "translations": "spec-repair-recorded-case.i18n.json"
+  },
+  "spec-generation-full-workflow": {
+    "source": "spec-generation-full-workflow.html",
+    "width": 1440,
+    "height": 857,
+    "format": "html-css",
+    "translations": "spec-generation-full-workflow.i18n.json"
+  },
+  "spec-generation-recorded-case": {
+    "source": "spec-generation-recorded-case.html",
+    "width": 1440,
+    "height": 969,
+    "format": "html-css",
+    "translations": "spec-generation-recorded-case.i18n.json"
+  },
+  "rubric-model-full-workflow": {
+    "source": "rubric-model-full-workflow.html",
+    "width": 1440,
+    "height": 1077,
+    "format": "html-css",
+    "translations": "rubric-model-full-workflow.i18n.json"
+  },
+  "rubric-model-recorded-case": {
+    "source": "rubric-model-recorded-case.html",
+    "width": 1440,
+    "height": 881,
+    "format": "html-css",
+    "translations": "rubric-model-recorded-case.i18n.json"
   }
 }

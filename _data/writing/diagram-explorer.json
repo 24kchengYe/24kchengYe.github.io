@@ -51,5 +51,11 @@
   "rubric-model-04": {"kind":"flow", "links":{"text_2":"rubric-model-03","text_4":"rubric-model-09"}, "vectorEdges":[["text_1","text_2",["patch_2"]],["text_2","text_3",["patch_3"]],["text_3","text_4",["patch_4"]],["text_4","text_5",["patch_5"]],["text_4","text_6",["patch_6"]],["text_4","text_7",["patch_7"]]]},
   "rubric-model-09": {"kind":"flow", "nodeCount":10, "links":{"text_7":"rubric-model-10","text_10":"rubric-model-11"}, "vectorEdges":[["text_2","text_3",["patch_3"]],["text_2","text_4",["patch_4"]],["text_3","text_5",["patch_5"]],["text_4","text_5",["patch_6"]],["text_5","text_7",["patch_7"]],["text_5","text_6",["patch_8"]],["text_6","text_7",["patch_9"]],["text_8","text_7",["patch_10"]],["text_7","text_9",["patch_11"]],["text_9","text_10",["patch_12"]]]},
   "rubric-model-10": {"kind":"flow"},
-  "rubric-model-11": {"kind":"flow"}
+  "rubric-model-11": {"kind":"flow"},
+  "spec-repair-full-workflow": {"kind":"flow","title":["Judge–Fix · 完整流程","Judge–Fix · Full workflow","Judge–Fix · 全体フロー"],"links":{"regular":"spec-repair-04","hard":"spec-repair-05","format":"spec-repair-06","entry":"spec-repair-03"}},
+  "spec-repair-recorded-case": {"kind":"flow","title":["真实案例 · 管理员权限退化","Recorded case · administrator access regression","実例 · 管理者権限の退行"],"links":{}},
+  "spec-generation-full-workflow": {"kind":"flow","title":["Spec 生成 · 完整流程","Spec generation · Full workflow","Spec 生成 · 全体フロー"],"links":{"generate":"12-core-skills","attribute":"08-v3-memory","patch":"03-search-operators","confirm":"25-method-decisions"}},
+  "spec-generation-recorded-case": {"kind":"flow","title":["真实案例 · 招聘筛选条件","Recorded case · recruitment filters","実例 · 採用の絞り込み条件"],"links":{}},
+  "rubric-model-full-workflow": {"kind":"flow","title":["规则评审模型 · 完整流程","Rubric model · Full workflow","ルール評価モデル · 全体フロー"],"links":{"input":"rubric-model-03","split":"rubric-model-04","sft":"rubric-model-05","rl":"rubric-model-06","opd":"rubric-model-07","cot":"rubric-model-08"}},
+  "rubric-model-recorded-case": {"kind":"flow","title":["真实案例 · 找到问题，分对规则","Recorded case · find the issue, assign the rule","実例 · 問題の検出とルールの分類"],"links":{}}
 }

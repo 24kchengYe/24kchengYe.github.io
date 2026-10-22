@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 857" width="1440" height="857" lang="zh"><foreignObject width="1440" height="857"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:857px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-generation-full-workflow"><div class="edge arrow" data-from="pe" data-to="generate" style="left:470px;top:177px;width:100px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="generate" data-to="judge" style="left:1155px;top:249px;width:87px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="judge" data-to="attribute" style="left:940px;top:410px;width:100px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="attribute" data-to="patch" style="left:500px;top:390px;width:100px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="patch" data-to="paired" style="left:230px;top:501px;width:91px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="paired" data-to="confirm" style="left:400px;top:643px;width:120px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="confirm" data-to="decision" style="left:900px;top:652px;width:130px;transform:rotate(0deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:1200px;top:757px;width:59px;transform:rotate(90deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:1200px;top:816px;width:1175px;transform:rotate(180deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:25px;top:816px;width:648px;transform:rotate(-90deg)"></div><div class="edge arrow feedback" data-from="decision" data-to="pe" style="left:25px;top:168px;width:35px;transform:rotate(0deg)"></div><div class="node " id="pe" style="left:60px;top:104px;width:410px;height:165px"><strong>PE + Skills</strong><span>Core + Shared + 四域</span><span data-node-detail="true" hidden="">冻结当前 PE 与配置
+Core + Shared + 四域 Skills
+生成模型 / Judge / 数据集版本</span></div><div class="node soft" id="generate" style="left:570px;top:104px;width:800px;height:145px"><strong>一次生成 SpecDoc</strong><span>Query → 规划 → 审计 → 渲染</span><span data-node-detail="true" hidden="">UserQuery → 一次模型调用 → SpecDoc
+理解 → 要素注册 → 四域规划 → 一致性审计 → 渲染
+全部在同次调用中完成；每个候选按相同配置逐题生成</span></div><div class="node " id="judge" style="left:940px;top:336px;width:430px;height:165px"><strong>评审 Spec</strong><span>保存裁决与失败证据</span><span data-node-detail="true" hidden="">Judge 评估生成的 Spec
+保存四域裁决、失败原因与产物
+冻结评测口径</span></div><div class="node " id="attribute" style="left:500px;top:336px;width:340px;height:165px"><strong>失败归因</strong><span>每轮采用一条搜索路线</span><span data-node-detail="true" hidden="">失败归因
+选一条搜索路线
+规则 / 补丁 / 自由归因 / 记忆</span></div><div class="node " id="patch" style="left:60px;top:336px;width:340px;height:165px"><strong>修改 PE / Skills</strong><span>限定范围 · 通用性审查</span><span data-node-detail="true" hidden="">提出候选 PE / Skills
+只改本轮允许范围
+审查通用性与产品红线</span></div><div class="node " id="paired" style="left:60px;top:592px;width:340px;height:165px"><strong>配对评测</strong><span>相同题目与模型配置</span><span data-node-detail="true" hidden="">配对生成与评测
+候选与基线用相同题目、配置
+局部筛选后进入回归</span></div><div class="node " id="confirm" style="left:520px;top:592px;width:380px;height:165px"><strong>全量回归</strong><span>同时看收益与退化</span><span data-node-detail="true" hidden="">全量回归与 KEEP 判定
+使用本实验登记的接受规则
+同时看收益与退化</span></div><div class="node result" id="decision" style="left:1030px;top:592px;width:340px;height:165px"><strong>KEEP / DISCARD</strong><span>更新或恢复基线</span><span data-node-detail="true" hidden="">保存或丢弃候选
+KEEP：更新基线
+DISCARD：恢复基线、记录归因</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Spec 生成 · 完整流程</div></div></div></foreignObject></svg>

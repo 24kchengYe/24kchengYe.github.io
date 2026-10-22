@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 957" width="1440" height="957" lang="en"><foreignObject width="1440" height="957"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:957px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:left;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-repair-recorded-case"><div class="edge arrow" data-from="request" data-to="g-spec" style="left:345px;top:237px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="request" data-to="k-judge" style="left:1095px;top:237px;width:43px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-spec" data-to="g-code" style="left:345px;top:457px;width:63px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-code" data-to="g-e2e" style="left:345px;top:665px;width:47px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-judge" data-to="k-fix" style="left:1095px;top:425px;width:39px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-fix" data-to="k-code" style="left:1095px;top:609px;width:63px;transform:rotate(90deg)"></div><div class="node " id="request" style="left:60px;top:92px;width:1320px;height:145px"><strong>Store inspections · Case 41</strong><span>Shared input: administrator can edit seven tables</span><span data-node-detail="true" hidden="">Building 50 · Case 41: store inspection management
+The request includes an administrator role; the shared input Spec grants edit access to seven business tables</span></div><div class="node " id="g-spec" style="left:60px;top:312px;width:570px;height:145px"><strong>G: retains edits</strong><span>Spec retains administrator duties</span><span data-node-detail="true" hidden="">G: edit access retained
+Final Spec retains administrator edits
+Document release fails semantic recheck</span></div><div class="node issue" id="k-judge" style="left:810px;top:280px;width:570px;height:145px"><strong>K: recommends read-only</strong><span>Judge: write duties not explicit</span><span data-node-detail="true" hidden="">K: Judge recommends read-only
+Access reduced because write duties were not explicit
+G and K share the Permission Judge version</span></div><div class="node issue" id="k-fix" style="left:810px;top:464px;width:570px;height:145px"><strong>Fix accepts candidate</strong><span>Seven tables: edit → read-only</span><span data-node-detail="true" hidden="">Fix accepts reduced access
+Non-Table visit 2, round 1
+Seven tables: edit → read-only
+Final document still not released</span></div><div class="node " id="g-code" style="left:60px;top:520px;width:570px;height:145px"><strong>Code → Base</strong><span>Editable · execution succeeds</span><span data-node-detail="true" hidden="">CodeAgent: execution succeeds
+Code retains administrator edit access
+The Base supports record maintenance</span></div><div class="node issue" id="k-code" style="left:810px;top:672px;width:570px;height:145px"><strong>Code → Base</strong><span>Read-only · executes · E2E fails</span><span data-node-detail="true" hidden="">CodeAgent: runs, but access regresses
+Seven tables configured as read
+E2E: administrator cannot maintain records → fail</span></div><div class="node result" id="g-e2e" style="left:60px;top:712px;width:570px;height:145px"><strong>E2E passes</strong><span>Administrator can maintain records</span><span data-node-detail="true" hidden="">E2E: pass
+Document and built-artifact verdicts reported separately</span></div><div class="label title" style="left:54px;top:24px;width:1300px">Recorded case · administrator access regression</div></div></div></foreignObject></svg>

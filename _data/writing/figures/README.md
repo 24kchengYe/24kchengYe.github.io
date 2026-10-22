@@ -2,6 +2,22 @@
 
 `manifest.json` maps article assets to editable HTML/CSS or SVG sources. `translations.json` contains English and Japanese labels; Chinese stays in each source. Run `npm run build:writing` to rebuild all three languages and refresh article asset hashes.
 
+## Research workflows and recorded cases
+
+`research-workflows.json` is the editable source for the six workflow/case diagrams in Spec generation, Judge–Fix and Rubric model, shared by Blog and Technical editions. It stores all three languages, node geometry, directed connections, article anchors and captions. `_tools/build-research-diagrams.cjs` generates HTML/CSS, per-figure translation dictionaries and explorer annotations before the ordinary figure build.
+
+Keep the canvas brief: one action and one state per node. `nodeDetails` holds the checked explanation shown on selection; `notes` holds expandable figure notes. Linked nodes open their details first and offer the internal workflow from that panel. Primary text is 27px, secondary text 23px, annotations 21px; never shrink one label to fit a translation.
+
+Recorded evidence, verified without model calls:
+
+- **Judge–Fix / Case 41:** Non-Table visit 2, round 1 selected candidate 2 and committed it. G kept seven-table administrator edits; K wrote seven `read` permissions. Both CodeAgent executions succeeded. Both documents failed release; downstream E2E passed G and failed K. This is a diagnostic execution, not publication of a failed document. The Permission Judge version was shared by G/K.
+- **Spec / link50_007:** read the actual input Spec and tool calls in both saved trajectories, then each native E2E report. Q2’s pending/interviewed mismatch propagated into code. The continued-training configuration used scheduled-interview consistently. Native scores 5.5/10 and 10/10 are displayed as 55/100 and 100/100. Model and system prompt change together; this is not a PE-only causal comparison.
+- **Rubric / unit `sft-v46-sample-dashboard-04911949078c8c229bc5`:** SFT-v48 and RL-v48 step80 have identical saved request messages and frozen Sol labels. Both identify two locations and fail the case. SFT uses `dashboard_business_filter_mismatch`; the reference and RL use `invalid_dashboard_source_reference`. The unique rubric/mode sets give per-unit F1 0 and 1. Repeated issue instances are not two distinct labels. Reference labels were not student inputs.
+
+Run `node _tools/check-research-evidence.cjs /path/to/projectTest_1103` to recheck these claims against the twelve original artifacts. The local `_preview/research-evidence-audit.json` records source hashes and selectors; raw traces, Base tokens and service credentials are not copied to the site. Judge–Fix workflow uses the 2026-10-16 frozen pipeline map; its older case is a separate example. Rubric training branches use Train only; frozen Test enters evaluation, with Sol and DeepSeek results reported separately.
+
+`npm run check:writing-maps` checks all translated interactive views, new node/label bounds, connections, drill-down, mobile layout, fullscreen and static fallbacks. Existing experiment tables and earlier diagrams remain unchanged.
+
 ## Typography
 
 - `_tools/build-figures.cjs` defines fixed semantic type levels. HTML diagrams use 28px nodes, 24px secondary text, 22px annotations and 30px titles on a 1440px canvas. Existing CLI panels declare their own fixed scale with `data-fixed-type`.

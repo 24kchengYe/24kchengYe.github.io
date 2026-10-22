@@ -25,7 +25,7 @@ function annotate(document, canvas, config, vector) {
     if (config.nodeCount && index >= config.nodeCount) continue;
     if (!node.id) node.id = `n${index + 1}`;
     node.setAttribute('data-map-node','');
-    node.setAttribute('data-map-label',node.textContent.trim().replace(/\s+/g,' '));
+    node.setAttribute('data-map-label',(canvas.hasAttribute('data-research-diagram') ? node.querySelector('strong')?.textContent || node.textContent : node.textContent).trim().replace(/\s+/g,' '));
   }
   const existing = [...canvas.querySelectorAll('.edge[data-from][data-to]')];
   const groups = new Map();

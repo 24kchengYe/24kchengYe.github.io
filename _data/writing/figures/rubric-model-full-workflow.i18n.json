@@ -1,0 +1,106 @@
+{
+  "评审单元": [
+    "Review unit",
+    "評価単位"
+  ],
+  "Query + Spec 版本 + Domain": [
+    "Query + Spec version + Domain",
+    "Query + Spec の版 + Domain"
+  ],
+  "对齐评审单元\n原始 Query + 精确 Spec 版本\nDomain + Rubric 版本": [
+    "Align review units\nOriginal Query + exact Spec version\nDomain + Rubric version",
+    "評価単位を揃える\n元 Query + 正確な Spec バージョン\nDomain + Rubric の版"
+  ],
+  "参考标签": [
+    "Reference labels",
+    "参照ラベル"
+  ],
+  "生成 → 复核 → 冻结": [
+    "Generate → review → freeze",
+    "生成 → 確認 → 固定"
+  ],
+  "生成与复核标签\n模型标注 → 审核 / 冻结\n保留问题、规则、裁决": [
+    "Produce & review labels\nModel annotation → review / freeze\nKeep issues, rules and verdicts",
+    "ラベルの生成・再確認\nモデル注釈 → 確認・固定\n問題・ルール・判定を保存"
+  ],
+  "按 Query 切分": [
+    "Split by Query",
+    "Query で分割"
+  ],
+  "Train / Dev / Test 整组隔离": [
+    "Keep groups within Train / Dev / Test",
+    "Train / Dev / Test をグループで分離"
+  ],
+  "按 Query 整组切分\n同需求的版本与领域不跨集合\n冻结训练 / 验证 / 测试清单": [
+    "Split by Query group\nKeep versions and domains together\nFreeze train / dev / test manifests",
+    "Query 単位でグループ分割\n同じ要求の版・領域は同一集合へ\n訓練・検証・テスト一覧を固定"
+  ],
+  "SFT": [
+    "SFT",
+    "SFT"
+  ],
+  "规则 + Query + Spec → 裁决": [
+    "Rules + Query + Spec → verdict",
+    "ルール + Query + Spec → 判定"
+  ],
+  "SFT：学习裁决\n输入：规则 + Query + Spec\n目标：结构化评审 JSON": [
+    "SFT: learn verdicts\nInput: rules + Query + Spec\nTarget: structured review JSON",
+    "SFT：判定を学習\n入力：ルール + Query + Spec\n目標：構造化評価 JSON"
+  ],
+  "OPD": [
+    "OPD",
+    "OPD"
+  ],
+  "学生采样 · 教师概率监督": [
+    "Student samples · teacher distributions",
+    "学生が生成・教師が確率分布を提供"
+  ],
+  "OPD：教师概率监督\n学生在线采样，教师给分布\n按各条件隔离特权上下文": [
+    "OPD: teacher distributions\nStudent samples; teacher supplies distributions\nIsolate privileged context by condition",
+    "OPD：教師の確率分布\n学生がサンプル生成、教師が分布を提供\n条件ごとに特権コンテキストを分離"
+  ],
+  "理由监督 A / B / C": [
+    "Rationale A / B / C",
+    "理由監督 A / B / C"
+  ],
+  "正文 / 推理字段 / 仅裁决": [
+    "Visible / reasoning field / verdict only",
+    "本文 / 推論フィールド / 判定のみ"
+  ],
+  "理由监督：三种对照\nA：正文理由；B：独立推理字段\nC：同一标签，仅裁决": [
+    "Rationale: three controls\nA: visible rationale; B: reasoning field\nC: same labels, verdict only",
+    "理由監督：3種類の対照\nA：本文の理由、B：推論フィールド\nC：同じラベルで判定のみ"
+  ],
+  "RL": [
+    "RL",
+    "RL"
+  ],
+  "SFT 初始化 · 组内采样与奖励": [
+    "SFT initialization · group sampling & reward",
+    "SFT 初期化・グループ内生成と報酬"
+  ],
+  "RL：从 SFT 继续训练\n组内采样 → 对标签计算奖励\n标签在评分侧，不发给学生": [
+    "RL: continue from SFT\nGroup sampling → reward against labels\nLabels stay on the scoring side",
+    "RL：SFT から継続学習\nグループ内生成 → ラベルで報酬計算\nラベルは採点側だけで使用"
+  ],
+  "固定测试集评测": [
+    "Fixed-test evaluation",
+    "固定テストで評価"
+  ],
+  "合法率 · 严格一致 · F1 · 成本": [
+    "Validity · exact match · F1 · cost",
+    "妥当率・完全一致・F1・コスト"
+  ],
+  "固定测试输入，分参考标签报告\n合法输出率 / 严格一致 / Category–Rubric–Mode F1 / 成本\nSol 与 DeepSeek 分表；Test792 与其他测试集分开": [
+    "Fixed test inputs, separate reference reports\nValid-output rate / exact match / Category–Rubric–Mode F1 / cost\nSeparate Sol and DeepSeek references; keep Test792 apart from other sets",
+    "テスト入力を固定し、参照ラベル別に報告\n出力妥当率・完全一致・Category–Rubric–Mode F1・コスト\nSol と DeepSeek を別表にし、Test792 と他の集合も分ける"
+  ],
+  "规则评审模型 · 完整流程": [
+    "Rubric model · Full workflow",
+    "ルール評価モデル · 全体フロー"
+  ],
+  "仅 Train 进入训练分支": [
+    "Train only → training branches",
+    "学習分岐には Train のみ"
+  ]
+}

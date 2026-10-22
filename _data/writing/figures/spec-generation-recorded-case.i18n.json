@@ -1,0 +1,86 @@
+{
+  "招聘管理 · link50_007": [
+    "Recruitment · link50_007",
+    "採用管理 · link50_007"
+  ],
+  "同一需求，分别生成并执行": [
+    "Same request, independent generation and execution",
+    "同じ要求を独立に生成・実行"
+  ],
+  "Building 0.7 · link50_007：候选人管理\n简历、面试安排、评价、录用状态与岗位招聘进度": [
+    "Building 0.7 · link50_007: candidate management\nResumes, interview schedules, feedback, hiring status and progress by role",
+    "Building 0.7 · link50_007：採用候補者管理\n履歴書・面接日程・評価・採用状況・職種別の採用進捗"
+  ],
+  "Q2：Spec 条件错配": [
+    "Q2: Spec mismatch",
+    "Q2：Spec の条件が不一致"
+  ],
+  "待面试 ≠ 已面试": [
+    "Awaiting interview ≠ Interviewed",
+    "面接待ち ≠ 面接済み"
+  ],
+  "Q2 配置：Spec 名称与条件矛盾\n视图 / 指标名：待面试候选人\n筛选：简历状态 = 已面试": [
+    "Q2 configuration: Spec mismatch\nView / metric: candidates awaiting interview\nFilter: resume status = Interviewed",
+    "Q2 設定：Spec の名称と条件が矛盾\nビュー・指標名：面接待ちの候補者\n条件：履歴書状態 = 面接済み"
+  ],
+  "继续训练：Spec 一致": [
+    "Continued training: aligned Spec",
+    "継続学習：Spec が整合"
+  ],
+  "名称与筛选均为“已安排面试”": [
+    "Name and filter: Interview scheduled",
+    "名称も条件も「面接設定済み」"
+  ],
+  "继续训练配置：名称与条件对齐\n视图 / 指标名：已安排面试候选人\n筛选：简历状态 = 已安排面试": [
+    "Continued-training configuration: aligned\nView / metric: interview scheduled\nFilter: resume status = Interview scheduled",
+    "継続学習設定：名称と条件が一致\nビュー・指標名：面接設定済みの候補者\n条件：履歴書状態 = 面接設定済み"
+  ],
+  "代码 → Base": [
+    "Code → Base",
+    "コード → Base"
+  ],
+  "筛选“已面试” · 执行成功": [
+    "Filters Interviewed · execution succeeds",
+    "「面接済み」で絞り込み・実行成功"
+  ],
+  "代码原样落实筛选\ngrid(待面试候选人视图)\nwhere(简历状态, eq, 已面试)\n执行成功": [
+    "Code implements the filter\ngrid(Awaiting interview)\nwhere(resume status, eq, Interviewed)\nExecution succeeds",
+    "コードが条件をそのまま実装\ngrid(面接待ち候補者)\nwhere(履歴書状態, eq, 面接済み)\n実行成功"
+  ],
+  "筛选“已安排面试” · 执行成功": [
+    "Filters Interview scheduled · executes",
+    "「面接設定済み」で絞り込み・実行成功"
+  ],
+  "代码落实一致的状态\n视图与指标卡都用“已安排面试”\n执行成功": [
+    "Code implements consistent state\nView and metric both use Interview scheduled\nExecution succeeds",
+    "コードも整合した状態を実装\nビューと指標がともに「面接設定済み」を使用\n実行成功"
+  ],
+  "55 / 100 · 未通过": [
+    "55 / 100 · Fail",
+    "55 / 100 · 不合格"
+  ],
+  "口径错配，另有两张空表": [
+    "Filter mismatch; two empty tables",
+    "条件不一致と2つの空テーブル"
+  ],
+  "原生 E2E：55 / 100，未通过\n产物保留筛选矛盾；另有两张空表\n55 分是整条案例总分": [
+    "Native E2E: 55 / 100, fail\nFilter mismatch persists; two tables are also empty\n55 is the overall case score",
+    "ネイティブ E2E：55 / 100、不合格\n成果物でも条件が矛盾。空テーブルも2つ存在\n55点はケース全体の評価"
+  ],
+  "100 / 100 · 通过": [
+    "100 / 100 · Pass",
+    "100 / 100 · 合格"
+  ],
+  "本次满足全部被评需求": [
+    "All evaluated requirements pass",
+    "この実行では評価対象の全要件に合格"
+  ],
+  "原生 E2E：100 / 100，通过\n本次运行满足全部被评需求": [
+    "Native E2E: 100 / 100, pass\nAll evaluated requirements pass in this run",
+    "ネイティブ E2E：100 / 100、合格\nこの実行では評価対象の全要件に合格"
+  ],
+  "真实案例 · 招聘筛选条件": [
+    "Recorded case · recruitment filters",
+    "実例 · 採用の絞り込み条件"
+  ]
+}

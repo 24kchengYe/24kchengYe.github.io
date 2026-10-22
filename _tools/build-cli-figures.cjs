@@ -26,7 +26,9 @@ function segments(edge, panel) {
     const vertical=(end[1]-start[1])*scaleY;
     return '<div class="edge '+edge.kind+(arrow && index===edge.points.length-2?' arrow':'')+'" style="left:'+((start[0]-panel.x)*scaleX)+'px;top:'+((start[1]-panel.y)*scaleY)+'px;width:'+Math.hypot(horizontal,vertical)+'px;transform:rotate('+(Math.atan2(vertical,horizontal)*180/Math.PI)+'deg)"></div>';
   }).join('');
-  return '<div class="connection" data-from="'+edge.from+'" data-to="'+edge.to+'" data-logical-edge="'+escape(edge.logicalEdge||'')+'">'+output+'</div>'+(edge.label?label(edge.label,...edge.labelAt,panel):'');
+  const labelPositions = { 'BN>BG': [255, 1180], 'CJ>CP': [1080, 1430], 'CS>CR': [1590, 925] };
+  const labelAt = labelPositions[edge.logicalEdge] || edge.labelAt;
+  return '<div class="connection" data-from="'+edge.from+'" data-to="'+edge.to+'" data-logical-edge="'+escape(edge.logicalEdge||'')+'">'+output+'</div>'+(edge.label?label(edge.label,...labelAt,panel):'');
 }
 function nodeMarkup(node, panel) {
   const box=position(node.x-node.w/2,node.y-node.h/2,node.w,node.h,panel);
@@ -47,7 +49,7 @@ function panelDecorations(panel, destination) {
   } else {
     output+='<div class="region" style="'+position(panel.x+25,660,panel.prefix==='B'?825:790,1090,destination)+'"></div>';
     if(panel.prefix==='B') {
-      output+=label('教师覆盖每次执行',80,770,destination,'note');
+      output+=label('教师覆盖每次执行',80,740,destination,'note supervision-note');
       output+=label('① 回到执行环 · ② 沿用累计预算',75,1710,destination,'note');
     }
   }
@@ -67,7 +69,7 @@ function render(panel, combined=false) {
   for(const port of graph.connectors.filter(port=>selected.some(item=>port.node.startsWith(item.prefix)))) {
     content+='<div class="port" data-target="'+port.node+'" data-port="'+port.label+'" data-role="'+port.role+'" style="left:'+((port.x-panel.x)*scaleX-18)+'px;top:'+((port.y-panel.y)*scaleY-18)+'px">'+port.label+'</div>';
   }
-  return '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>'+panel.name+'</title><style>'+css+'</style></head><body><main class="canvas" data-fixed-type style="width:'+Math.ceil(panel.width*scaleX)+'px;height:'+Math.ceil(panel.height*scaleY)+'px">'+content+'</main></body></html>\n';
+  return '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>'+panel.name+'</title><style>'+css+'.supervision-note{width:270px}.node>div{flex-shrink:0;max-width:100%}</style></head><body><main class="canvas" data-fixed-type style="width:'+Math.ceil(panel.width*scaleX)+'px;height:'+Math.ceil(panel.height*scaleY)+'px">'+content+'</main></body></html>\n';
 }
 function buildCliFigures() {
   for(const panel of panels) fs.writeFileSync(path.join(directory,panel.name+'.html'),render(panel));

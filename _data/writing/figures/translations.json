@@ -3638,7 +3638,7 @@
   ],
   "修复余量？": [
     "Repair budget?",
-    "修復の残り回数？"
+    "修復枠は？"
   ],
   "最多 N 次": [
     "At most N attempts",
@@ -3646,7 +3646,7 @@
   ],
   "恢复前态 · 续写后缀": [
     "Restore state · Regenerate suffix",
-    "状態を復元 · 後半を再生成"
+    "状態復元 · 後半を再生成"
   ],
   "原 Query 不变": [
     "Keep original Query",
@@ -3658,7 +3658,7 @@
   ],
   "保留全部明确要求": [
     "Preserve all explicit requirements",
-    "明示された全要件を保つ"
+    "明示的な全要件を保持"
   ],
   "从头生成": [
     "Generate from scratch",
@@ -3882,7 +3882,7 @@
   ],
   "计划 · 调用 · 回执": [
     "Plans · Calls · Results",
-    "計画 · 呼び出し · 結果"
+    "計画・呼出し・結果"
   ],
   "拆分为任务": [
     "Decompose into tasks",
@@ -4106,7 +4106,7 @@
   ],
   "教师覆盖每次执行": [
     "Teacher supervision covers each execution",
-    "教師の監督が各実行をカバー"
+    "教師が毎回の実行を監督"
   ],
   "① 回到执行环 · ② 沿用累计预算": [
     "① Return to execution · ② Keep cumulative budget",

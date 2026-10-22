@@ -10,7 +10,8 @@
 <meta property="og:title" content="Building Training Trajectories for Coding Agents">
 <meta name="description" content="Experiments in Spec-guided planning, online correction, and dependency-aware editing for coding-agent training trajectories.">
 <link rel="stylesheet" href="/assets/css/research-note.css?v=1">
-<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}.case-figure img{width:100%}dialog{overflow:auto}dialog img{width:auto;max-width:100%;max-height:calc(94vh - 100px);object-fit:contain}@media(max-width:640px){.tall-figure{width:100%}}</style>
+<link rel="stylesheet" href="/assets/css/figure-viewer.css?v=1">
+<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}.case-figure img{width:100%}@media(max-width:640px){.tall-figure{width:100%}}</style>
 </head>
 <body>
 <main class="note">
@@ -199,10 +200,19 @@
 <p>验收仍以原始 Query 为准。模型生成的 Spec 和 TodoList 保留为可修订的计划及过程证据，不新增用户要求；完成标记需要对应实际执行。对照实验将比较有无 TodoList 时的任务完成率、依赖与顺序错误、可用轨迹比例及完整成本。这条设计的收益待后续实验验证。</p>
 <p class="source-note">本文整理自 2026 年 10 月的 CLI 轨迹合成与修复实验。三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。</p>
 </main>
-<dialog id="figure-zoom">
-<button type="button" aria-label="关闭大图">关闭 ×</button>
-<img alt="放大的流程图">
+<dialog id="figure-zoom" aria-label="图片查看器">
+<div class="figure-toolbar">
+<button type="button" data-viewer="fit">全图</button>
+<button type="button" data-viewer="width">适合宽度</button>
+<button type="button" data-viewer="out" aria-label="缩小">−</button>
+<output class="figure-scale" aria-live="polite"></output>
+<button type="button" data-viewer="in" aria-label="放大">+</button>
+<button type="button" data-viewer="close" aria-label="关闭大图">关闭 ×</button>
+</div>
+<div class="figure-viewport" tabindex="0" aria-label="可滚动的流程图">
+<div class="figure-surface"><img alt="放大的流程图" draggable="false"></div>
+</div>
 </dialog>
-<script>const zoom=document.getElementById("figure-zoom");for(const figure of document.querySelectorAll("figure img")){figure.tabIndex=0;figure.setAttribute("role","button");const showFigure=()=>{zoom.querySelector("img").src=figure.src;zoom.querySelector("img").alt=figure.alt;zoom.showModal();};figure.addEventListener("click",showFigure);figure.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();showFigure();}});}zoom.querySelector("button").addEventListener("click",()=>zoom.close());</script>
+<script src="/assets/js/figure-viewer.js?v=1" defer></script>
 </body>
 </html>

@@ -154,13 +154,13 @@ function localizeVector(source, language) {
 }
 
 function fitLayoutLabels(document, canvas, language) {
+  if (canvas.hasAttribute('data-fixed-type')) return;
   for (const node of canvas.querySelectorAll('.node')) {
     const content = document.createElement('span');
     content.append(...node.childNodes);
     content.style.minWidth = '0';
     content.style.overflowWrap = 'anywhere';
     node.append(content);
-    if (canvas.hasAttribute('data-fixed-type')) continue;
     const secondary = node.classList.contains('small') && !node.classList.contains('box');
     node.style.fontSize = secondary ? '24px' : '28px';
     node.style.lineHeight = '1.25';
@@ -173,6 +173,10 @@ function localizeLayout(source, item, language) {
   const dom = new JSDOM(source);
   const { document, NodeFilter, XMLSerializer } = dom.window;
   const canvas = document.querySelector('.canvas');
+  const canvasStyle = dom.window.getComputedStyle(canvas);
+  if (parseFloat(canvasStyle.width) !== item.width || parseFloat(canvasStyle.height) !== item.height) {
+    throw new Error(`Canvas / manifest mismatch: ${item.source}: ${canvasStyle.width} × ${canvasStyle.height}, expected ${item.width} × ${item.height}`);
+  }
   const walker = document.createTreeWalker(canvas, NodeFilter.SHOW_TEXT);
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);

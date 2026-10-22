@@ -2,7 +2,7 @@
   "cli-harness-links": {
     "source": "cli-harness-links.html",
     "width": 1200,
-    "height": 1080,
+    "height": 1340,
     "format": "html-css"
   },
   "cli-case-format": {
@@ -469,14 +469,14 @@
   },
   "cli-spec-todolist": {
     "source": "cli-spec-todolist.html",
-    "width": 960,
+    "width": 1200,
     "height": 900,
     "format": "html-css"
   },
   "cli-trajectory-model": {
     "source": "cli-trajectory-model.html",
     "width": 1200,
-    "height": 760,
+    "height": 860,
     "format": "html-css"
   }
 }

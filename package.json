@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build:writing": "node _tools/build-writing.cjs"
+    "build:writing": "node _tools/build-writing.cjs",
+    "check:cli-figures": "node _tools/check-cli-figures.cjs"
   },
   "devDependencies": {
-    "jsdom": "26.0.0"
+    "jsdom": "26.0.0",
+    "playwright": "1.62.1"
   }
 }

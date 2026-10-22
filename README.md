@@ -109,11 +109,33 @@ SVGs with HTML layouts target web browsers; the original PNGs remain available
 for non-browser tools that do not implement `foreignObject`.
 
 The fourth selected blog is `/writing/coding-agent-trajectories/`. Its three
-panels preserve 28 workflow nodes and 37 unique connections; the Online–Offline
+panels preserve 34 workflow nodes and 45 logical connections; the Online–Offline
 handoff appears at both panel boundaries. Edit `cli-trajectory-flow.json` for
 topology and `_tools/build-cli-figures.cjs` for layout. The writing build regenerates
 the HTML/CSS figure sources before exporting localized SVGs. Experiment tables
 separate artifact evaluation, guided continuation, and local editing.
+
+### Trajectory Figure Review
+
+The trajectory article has eight inline diagrams; the separately exported Harness
+panel brings its figure set to nine. Keep HTML canvas sizes, manifest dimensions,
+and exported SVG viewBoxes identical. The build rejects a mismatch. Layouts marked
+`data-fixed-type` own their typography and child structure; the exporter must not
+wrap their children or change their font sizes.
+
+After `npm ci` and rebuilding, install the review browser with
+`npx playwright install chromium`, then run `npm run check:cli-figures`.
+Alternatively, `CHROME_PATH` may point to an installed Chrome executable;
+`FIGURE_REVIEW_DIR` can override the default ignored `_preview/figure-review/`.
+The check serves the local files, renders all 27 language-specific SVGs as XML,
+checks text bounds and overlaps, then tests the article at desktop and mobile widths.
+It also checks language switching, image proportions, fit/zoom/scroll/drag,
+viewport resizing, keyboard opening, closing and focus restoration. Review the
+saved screenshots as well: geometry checks do not establish semantic correctness.
+
+The article's image viewer opens with the whole figure visible. Fit width, zoom
+buttons and scrolling/dragging reveal details without cropping the source image.
+Viewer controls and figure text follow the article's language selection.
 
 Public reports allow same-origin image, script, and stylesheet files in their
 Content Security Policy. The offline export's `img-src data: blob:` policy

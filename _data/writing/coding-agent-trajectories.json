@@ -1,4 +1,10 @@
 {
+  "图片查看器": ["Figure viewer", "図のビューア"],
+  "全图": ["Fit", "全体"],
+  "适合宽度": ["Fit width", "幅に合わせる"],
+  "缩小": ["Zoom out", "縮小"],
+  "放大": ["Zoom in", "拡大"],
+  "可滚动的流程图": ["Scrollable diagram", "スクロール可能な図"],
   "选取在线纠偏实验中的一条库存搭建轨迹：模型读取技能，创建产品表与出入库记录表，写入样例，再创建表单、仪表盘并回读交付。实际产生 15 次模型响应，最终保留 13 轮。图中主线是保留轨迹，两次失败在对应检查点旁展开；回退后，模型重新选择动作并继续执行。": [
     "This inventory-building case comes from the online-correction experiment. The model reads skills, creates product and stock-movement tables, writes examples, adds a form and dashboard, then reads back and delivers the result. Fifteen actual model responses yield thirteen retained turns. The main line shows the retained trace; the two failures branch off at their checkpoints. After rewinding, the model chooses a new action and continues.",
     "オンライン修正実験の在庫システム構築を例にする。モデルはスキルを読み、商品・入出庫テーブルを作り、サンプルを登録する。その後フォームとダッシュボードを作成し、読み返して納品する。実際のモデル応答は15回で、最終的に13ターンを保持した。主線は保持された軌跡、2つの側枝は各チェックポイントでの失敗を示す。復元後、モデルは動作を選び直して実行を続ける。"

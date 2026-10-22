@@ -1,4 +1,52 @@
 {
+  "t₁ … tᵢ … tT 表示连续的模型响应轮次。一个 turn 可包含思考、正文及零个或多个工具调用，每次调用对应真实返回；纯文本或最终回复也可以独立成一轮。": [
+    "t₁ … tᵢ … tT denote successive model-response turns. A turn can contain reasoning, text, and zero or more tool calls, each paired with its actual result. A text-only or final response can also form a turn.",
+    "t₁ … tᵢ … tTは、連続するモデル応答のターンを表す。1ターンには推論、本文、0回以上のツール呼び出しが含まれ、各呼び出しに実際の返り値が対応する。テキストのみの応答や最終回答も1ターンとなる。"
+  ],
+  "c 中的四项表示 turn 之间的依赖，可以重叠，共同决定编辑范围：": [
+    "The four categories in c describe dependencies between turns. They can overlap and together determine the scope of an edit:",
+    "cの4項目はターン間の依存関係を表す。互いに重なることもあり、これらを合わせて編集範囲を判断する。"
+  ],
+  "资源状态：前面修改字段类型，可能影响后面的公式或视图。": [
+    "Resource state: changing a field type can affect formulas or views used later.",
+    "リソースの状態：前のターンでフィールド型を変えると、後続の数式やビューに影響することがある。"
+  ],
+  "数值返回：创建对象返回的 ID，被后续命令用作参数。": [
+    "Returned values: an ID returned when an object is created becomes an argument in a later command.",
+    "返り値：オブジェクト作成時に返されたIDを、後続のコマンドが引数として使う。"
+  ],
+  "控制条件：前面的成功、失败或查询结果，决定后面是否重试或进入某个分支。": [
+    "Control conditions: an earlier success, failure, or query result determines whether a later step retries or takes a branch.",
+    "制御条件：前の成功・失敗・検索結果によって、後続の再試行や分岐が決まる。"
+  ],
+  "文字上下文：删除失败调用后，后文“刚才失败，所以重试”的说明也需要调整。": [
+    "Textual context: after removing a failed call, a later explanation such as “that failed, so I will retry” also needs to change.",
+    "文章の文脈：失敗した呼び出しを削除したら、後続の「先ほど失敗したので再試行する」という説明も修正する。"
+  ],
+  "已做实验：Spec 如何参与规划": [
+    "Experiment: how Specs guide planning",
+    "実施済みの実験：Specを計画にどう使うか"
+  ],
+  "下一步设计：Spec → TodoList": [
+    "Next design: Spec → TodoList",
+    "次の設計：Spec → TodoList"
+  ],
+  "前面的三组实验比较 Spec 放在哪里。下一步拟把 Spec 中的业务对象、约束和依赖转成可更新的 TodoList，由规划工具维护任务顺序、完成状态和执行依据，让计划随真实工具返回更新。": [
+    "The three-arm experiment compared where to place the Spec. Next, we plan to turn its business objects, constraints, and dependencies into an editable TodoList. A planning tool would track task order, completion status, and execution evidence, updating the plan as actual tool results arrive.",
+    "先の3条件の実験では、Specをどこに置くかを比較した。次は、Specの業務オブジェクト・制約・依存関係を、更新可能なTodoListに変換する設計を検討する。計画ツールでタスクの順序、完了状態、実行の根拠を管理し、実際のツールの返り値に応じて計画を更新する。"
+  ],
+  "Query → Spec → TodoList → CLI 执行与计划更新 → Judge–Fix → 训练轨迹": [
+    "Query → Spec → TodoList → CLI execution & plan updates → Judge–Fix → Training trajectories",
+    "Query → Spec → TodoList → CLI実行と計画更新 → Judge–Fix → 学習軌跡"
+  ],
+  "Judge–Fix 将同时检查计划、实际动作及二者的一致性。例如，工作流依赖的字段尚未建立，就修正 TodoList 的前置任务和执行顺序，并重新生成受影响的执行片段。保留计划修订、工具调用与真实回执，经核验后形成显式规划与执行的训练数据。": [
+    "Judge–Fix would assess the plan, actual actions, and their consistency. If a workflow needs a field that has not yet been created, for example, the repair would revise the TodoList’s prerequisites and task order, then regenerate the affected execution segment. Plan revisions, tool calls, and actual results would be retained and verified as training data for explicit planning and execution.",
+    "Judge–Fixは計画、実際の操作、両者の整合性を評価する設計とする。例えば、ワークフローが依存するフィールドがまだ作られていなければ、TodoListの前提タスクと実行順序を修正し、影響を受ける実行区間を再生成する。計画の修訂、ツール呼び出し、実際の返り値を保存・検証し、明示的な計画と実行の学習データにする。"
+  ],
+  "验收仍以原始 Query 为准。模型生成的 Spec 和 TodoList 保留为可修订的计划及过程证据，不新增用户要求；完成标记需要对应实际执行。对照实验将比较有无 TodoList 时的任务完成率、依赖与顺序错误、可用轨迹比例及完整成本。这条设计的收益待后续实验验证。": [
+    "Acceptance would remain anchored to the original Query. Model-generated Specs and TodoLists would be revisable plans and process evidence, without adding user requirements; completion marks would need to reflect actual execution. A controlled comparison with and without a TodoList would measure task completion, dependency and ordering errors, usable-trajectory yield, and full cost. The benefits of this design remain to be tested.",
+    "受け入れ基準は引き続き元のQueryとする。モデルが生成したSpecとTodoListは修正可能な計画および過程の証拠として残し、ユーザー要件を追加しない。完了の印には実際の実行が対応する必要がある。TodoListの有無を比較し、タスク完了率、依存関係や順序の誤り、利用可能な軌跡の割合、全コストを測る。この設計の効果は今後の実験で検証する。"
+  ],
   "长程轨迹合成、Online 修复与 Offline 准出组合图": [
     "Combined workflow: long-horizon trajectory synthesis, Online repair, and Offline release",
     "長期軌跡の合成・Online修復・Offline受け入れの全体図"

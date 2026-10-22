@@ -1,4 +1,56 @@
 {
+  "沿主线读保留轨迹；失败进入右侧分支，回退到检查点后重新执行。": [
+    "Follow the retained trace downward; failed attempts branch right, rewind, then re-execute.",
+    "主線は保持された軌跡。失敗は右へ分岐し、チェックポイントに戻って再実行する。"
+  ],
+  "浅橙：失败尝试　虚线箭头：回退　浅绿：重新执行": [
+    "Amber: failed attempt · Dashed arrow: rewind · Green: re-execution",
+    "薄橙：失敗試行 · 破線矢印：復元 · 薄緑：再実行"
+  ],
+  "返回": [
+    "Result",
+    "返却"
+  ],
+  "状态": [
+    "State",
+    "状態"
+  ],
+  "T3 前 · 保留 T1–2，尚无 Base": [
+    "Before T3 · keep T1–2; no Base yet",
+    "T3直前 · T1–2を保持、Baseは未作成"
+  ],
+  "T5 前 · 保留 T1–4，两表均为空": [
+    "Before T5 · keep T1–4; both tables empty",
+    "T5直前 · T1–4を保持、両テーブルは空"
+  ],
+  "教师指导 · Harness 回退": [
+    "Teacher guidance · Harness rewind",
+    "教師の助言 · Harnessが復元"
+  ],
+  "恢复 T1–2；按字段 Schema 重新选择动作。": [
+    "Restore T1–2; choose a new action using the field schema.",
+    "T1–2を復元し、フィールドSchemaに従って動作を再選択する。"
+  ],
+  "恢复 T1–4；Base A 复制为 B，映射资源 ID，再重新选择动作。": [
+    "Restore T1–4; copy Base A to B, map resource IDs, then choose a new action.",
+    "T1–4を復元。Base AをBへ複製し、リソースIDを対応付けて動作を再選択する。"
+  ],
+  "先尝试 P03": [
+    "First attempt: P03",
+    "最初の試行：P03"
+  ],
+  "先尝试 P06": [
+    "First attempt: P06",
+    "最初の試行：P06"
+  ],
+  "回退后 → P04": [
+    "After rewind → P04",
+    "復元後 → P04"
+  ],
+  "回退后 → P07，再由 P08 写入": [
+    "After rewind → P07, then write at P08",
+    "復元後 → P07、P08で書き込み"
+  ],
   "真实库存 Case · 15 次尝试，13 轮保留": [
     "A real inventory case · 15 attempts, 13 retained turns",
     "実際の在庫 Case · 試行15回、保持13ターン"

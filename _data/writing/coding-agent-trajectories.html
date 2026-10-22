@@ -24,7 +24,7 @@
 <figure>
 <img data-figure="cli-combined" alt="长程轨迹合成、Online 修复与 Offline 准出组合图" loading="lazy">
 <figcaption>
-<p>流程总览：a 记录模型与工具的真实交互；b 在线纠偏与有界重生成；c 沿依赖编辑、清洗并验证轨迹。完整 Offline 准出链路仍在逐步接入。</p>
+<p>流程总览：a 记录模型与工具的真实交互；b 在线纠偏与有界重生成；c 沿依赖编辑、清洗并验证轨迹。需要真实执行的问题带证据回流 Online；未知依赖或其他准出失败进入 Pending。</p>
 <p>t₁ … tᵢ … tT 表示连续的模型响应轮次。一个 turn 可包含思考、正文及零个或多个工具调用，每次调用对应真实返回；纯文本或最终回复也可以独立成一轮。</p>
 <p>c 中的四项表示 turn 之间的依赖，可以重叠，共同决定编辑范围：</p>
 <ul>
@@ -37,10 +37,10 @@
 </figure>
 <h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
 <h3>Online 生成与修复共用执行底座</h3>
-<p>Online 包含首次生成、运行时纠偏和评审后的有界重生成，这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验。</p>
+<p>Online 包含首次生成、运行时纠偏和评审后的有界重生成；教师监督覆盖每一次执行。这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验；发现当前问题需要真实执行时，携问题与证据回流 Online。</p>
 <figure>
 <img data-figure="cli-harness-links" alt="Online 内的共享 Harness、规划反馈与 Offline 交接" loading="lazy">
-<figcaption>框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口，Offline 不自动回跳 Online。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。</figcaption>
+<figcaption>框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口；Offline 在发现需要真实执行的问题时，携证据回流 Online，并沿用同一 Case 的累计预算。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。</figcaption>
 </figure>
 <p>例如，一条工作流依赖尚未创建的字段：TodoList 应先安排字段创建，再安排工作流；Harness 执行后把真实字段 ID 和返回写入轨迹；Online 在错误决策前恢复可继续执行的上下文与环境，再生成受影响后缀。若只需删除一次无副作用的失败调用并调整后文，Offline 可在核验依赖后局部编辑。涉及状态或返回值变化时，必须有对应的真实执行证据。</p>
 <h3>一次 Rollout 的执行循环</h3>
@@ -51,6 +51,12 @@
 </figure>
 <p>初始输入包含 ThinkSP、FunctionSP、MainSP、Reminder、原始 Query 和工具 Schema；Skills 正文通过 Read 按需进入上下文。模型能看到的是工具 observation，完整 ToolResponse 和运行元数据另作审计证据。后台任务的完成通知也会补回消息。续跑时，已完成调用按 call ID 和参数哈希复用真实回执；结果不明的写操作停止执行，交给新环境重试。</p>
 <p>本批 Rollout 实际开放 5 个工具：Bash、Read、Write、Edit、present_files。本例调用了 Read、Bash、present_files，未调用 Write 或 Edit。更完整的线上工具定义还包含 Glob、Grep、TaskOutput、TaskStop、TodoWrite 等，但它们没有启用在这批轨迹的 tools[] 中。</p>
+<h3>抽象轨迹模型</h3>
+<p>抽象地看，每一轮都把历史消息与当前环境交给模型，由模型选择动作；Harness 执行工具并回填真实返回，形成下一轮状态。失败时保留回执与成本，在检查点恢复上下文和环境，再选择新的动作。</p>
+<figure>
+<img data-figure="cli-trajectory-model" alt="一轮轨迹的动作、工具返回、状态更新与失败回退" loading="lazy">
+<figcaption>抽象图将真实 Case 压缩为一轮状态转换：H 表示消息上下文，E 表示可见环境，A 表示动作，O 表示真实观察；带撇号的动作表示回退后的重新选择。符号用于说明依赖关系，不表示归档保存了完整环境快照。</figcaption>
+</figure>
 <h3 id="case-format">真实 Case：两次纠偏如何改变执行</h3>
 <p>选取在线纠偏实验中的一条库存搭建轨迹：模型读取技能，创建产品表与出入库记录表，写入样例，再创建表单、仪表盘并回读交付。实际产生 15 次模型响应，最终保留 13 轮。图中主线是保留轨迹，两次失败在对应检查点旁展开；回退后，模型重新选择动作并继续执行。</p>
 <figure>
@@ -138,10 +144,10 @@
 <p>定向指导减少了重复尝试，但收益要沿具体行为核验：代码组的 5 个目标错误，在原轨迹后段都已经自行修复；指导避免了重犯，其中 4 条仍出现其他参数错误。语义组补好了部分公式和字段，也留下了筛选与余额口径问题。</p>
 <p>另一个影响读数的因素是问题匹配：同一缺陷可能被三轮 Judge 写成不同描述，拆成单票后漏计。因此表中的小幅分差不作为稳定提质的证据；更少的生成 token 也需与功能保留一起检查。</p>
 <h2>Offline：沿依赖关系编辑</h2>
-<p>Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；超出可验证范围、必须重新生成的情况进入 Pending。</p>
+<p>Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；需要真实执行的问题回流 Online，未知依赖或其他准出失败进入 Pending。</p>
 <figure class="tall-figure">
 <img data-figure="cli-offline" alt="离线编辑、依赖核验与训练数据准出" loading="lazy">
-<figcaption>完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出仍在逐步接入。Offline 的 Pending 保留原轨迹、补丁与原因，不在此流程中自动回跳 Online。</figcaption>
+<figcaption>完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出按该准出设计组织。需要真实执行的问题带证据回流 Online；未知依赖或其他准出失败进入 Pending。</figcaption>
 </figure>
 <p>例如，删除一个无副作用的失败调用后，后文的“刚才失败，所以重试”也需要重写；若修改字段创建参数，后续使用的字段 ID、公式和视图也可能受影响。动作变化必须有相应的真实执行证据，不能把失败回执改成成功。清洗同样保留信息时序，不把事后知道的结论提前写入决策。</p>
 <div class="table-scroll">

@@ -1,30 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" lang="ja"><foreignObject width="960" height="680"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
-*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303a31;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:960px;height:680px;background:#fff}.node{position:absolute;display:flex;justify-content:center;align-items:center;text-align:center;border:1.2px solid #a4ae9d;border-radius:8px;background:#fff;font-size:26px;line-height:1.25;padding:10px 14px}.sub{font-size:20px;color:#647259}.source{border-radius:24px;background:#fafbf7}.plan{background:#f5f8ee;border-color:#8da668}.output{background:#edf3e3;border-color:#8da668}.edge-label{position:absolute;transform:translate(-50%,-50%);font-size:19px;line-height:1.3;text-align:center;background:#fff;color:#647259;padding:4px 8px}.note{position:absolute;left:40px;top:635px;width:880px;font-size:20px;text-align:center;color:#647259}
-</style><main class="canvas" data-fixed-type="">
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" style="position:absolute;inset:0" aria-hidden="true">
-<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#8b9b7d"/></marker></defs>
-<g fill="none" stroke="#8b9b7d" stroke-width="1.5" marker-end="url(#arrow)">
-<path data-from="query" data-to="spec" d="M260 95H360"/>
-<path data-from="spec" data-to="plan" d="M480 135V230"/>
-<path data-from="plan" data-to="execute" d="M480 340V375H170V435"/>
-<path data-from="execute" data-to="judge" d="M300 490H360"/>
-<path data-from="judge" data-to="training" d="M480 545V590H800V545"/>
-</g>
-<g fill="none" stroke="#8b9b7d" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#arrow)">
-<path data-from="execute" data-to="plan" d="M40 490H20V285H340"/>
-<path data-from="judge" data-to="plan" d="M480 435V400H660V285H620"/>
-</g>
-</svg>
-<div id="query" class="node source" style="left:40px;top:55px;width:220px;height:80px"><span style="min-width: 0; overflow-wrap: anywhere;">元のQuery</span></div>
-<div id="spec" class="node" style="left:360px;top:55px;width:240px;height:80px"><span style="min-width: 0; overflow-wrap: anywhere;">Spec</span></div>
-<div id="plan" class="node plan" style="left:340px;top:230px;width:280px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">TodoList<br /><span class="sub">タスク · 依存関係 · 状態</span></span></div>
-<div id="execute" class="node" style="left:40px;top:435px;width:260px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">CLI実行<br /><span class="sub">実行・区間の再生成</span></span></div>
-<div id="judge" class="node" style="left:360px;top:435px;width:240px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">Judge–Fix<br /><span class="sub">計画と操作の整合性</span></span></div>
-<div id="training" class="node output" style="left:680px;top:435px;width:240px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">学習軌跡<br /><span class="sub">計画 · 呼び出し · 結果</span></span></div>
-<div class="edge-label" style="left:590px;top:182px">タスクに分解</div>
-<div class="edge-label" style="left:160px;top:255px;width:260px">実際の返り値 · 状態更新</div>
-<div class="edge-label" style="left:325px;top:375px">更新した計画を実行</div>
-<div class="edge-label" style="left:790px;top:330px;width:250px">原因分析 · 計画修訂</div>
-<div class="edge-label" style="left:640px;top:590px">検証を通過</div>
-<div class="note">受け入れ基準：元のQuery</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 900" width="960" height="900" lang="ja"><foreignObject width="960" height="900"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;background:#fff;overflow:hidden}.heading{position:absolute;left:40px;top:24px;font-size:30px;line-height:1.3}.node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 18px;text-align:center;border:1px solid #a6b1a1;border-radius:5px;background:#fff;font-size:28px;line-height:1.25;z-index:2}.node.soft{background:#f1f5ec}.node.plan{border-style:dashed}.node.failed{background:#faf3e9;border-color:#d8bf9f}.sub{font-size:24px;line-height:1.35;color:#687568}.label{position:absolute;font-size:22px;line-height:1.35;color:#687568;background:#fff;padding:3px 6px;text-align:center;z-index:3}.region{position:absolute;border:1px solid #d4ddcd;border-radius:6px}.region-title{position:absolute;top:-19px;left:20px;padding:0 10px;background:#fff;font-size:26px}.edge{position:absolute;height:0;border-top:1.6px solid #98a58c;transform-origin:0 0;z-index:1}.edge.feedback,.edge.support{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #98a58c;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;font-size:22px;line-height:1.5;color:#687568}.math{font-family:Georgia,serif;font-style:italic;font-size:30px}</style><main class="canvas" data-fixed-type="" style="width:1200px;height:900px"><div class="heading">Spec → TodoList：証拠に応じて計画を更新</div>
+<div id="query" class="node " style="left:60px;top:105px;width:230px;height:100px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>元のQuery</div><div class="sub">受け入れ基準</div></span></div>
+<div id="spec" class="node " style="left:400px;top:105px;width:330px;height:100px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>Spec</div><div class="sub">業務オブジェクト · 制約 · 依存関係</div></span></div>
+<div id="plan" class="node plan" style="left:400px;top:325px;width:330px;height:120px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>TodoList</div><div class="sub">タスク · 前提依存 · 状態</div></span></div>
+<div id="execute" class="node " style="left:60px;top:590px;width:300px;height:130px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>Online実行</div><div class="sub">共有Harness · 教師監督</div></span></div>
+<div id="judge" class="node " style="left:430px;top:590px;width:300px;height:130px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>Judge–Fix</div><div class="sub">原因分析 · 局所編集 / 実行</div></span></div>
+<div id="training" class="node soft" style="left:870px;top:590px;width:270px;height:130px"><span style="min-width: 0; overflow-wrap: anywhere;"><div>学習軌跡</div><div class="sub">計画 · 呼び出し · 結果</div></span></div>
+<div class="connection" data-from="query" data-to="spec" data-relation="flow"><div class="edge  arrow" style="left:290px;top:155px;width:110px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="spec" data-to="plan" data-relation="flow"><div class="edge  arrow" style="left:565px;top:205px;width:120px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="plan" data-to="execute" data-relation="flow"><div class="edge " style="left:565px;top:445px;width:55px;transform:rotate(90deg)"></div><div class="edge " style="left:565px;top:500px;width:355px;transform:rotate(180deg)"></div><div class="edge  arrow" style="left:210px;top:500px;width:90px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="execute" data-to="judge" data-relation="flow"><div class="edge  arrow" style="left:360px;top:655px;width:70px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="judge" data-to="training" data-relation="flow"><div class="edge  arrow" style="left:730px;top:655px;width:140px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="execute" data-to="plan" data-relation="feedback"><div class="edge feedback" style="left:60px;top:655px;width:30px;transform:rotate(180deg)"></div><div class="edge feedback" style="left:30px;top:655px;width:270px;transform:rotate(-90deg)"></div><div class="edge feedback arrow" style="left:30px;top:385px;width:370px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="judge" data-to="plan" data-relation="feedback"><div class="edge feedback" style="left:580px;top:590px;width:50px;transform:rotate(-90deg)"></div><div class="edge feedback" style="left:580px;top:540px;width:220px;transform:rotate(0deg)"></div><div class="edge feedback" style="left:800px;top:540px;width:155px;transform:rotate(-90deg)"></div><div class="edge feedback arrow" style="left:800px;top:385px;width:70px;transform:rotate(180deg)"></div></div>
+<div class="label" style="left:590px;top:250px;width:200px">タスクに分解</div>
+<div class="label" style="left:60px;top:335px;width:320px">実際の返り値が状態を更新</div>
+<div class="label" style="left:220px;top:505px;width:240px">計画に沿って実行</div>
+<div class="label" style="left:825px;top:425px;width:300px">原因分析後に計画を改訂</div>
+<div class="label" style="left:735px;top:600px;width:130px">検証を通過</div>
+<div class="note" style="top:795px;width:1120px">実行が必要な問題はOnlineへ戻し、既存軌跡の局所編集はOfflineへ渡す。同じ修復予算を引き継ぐ。</div>
 </main></div></foreignObject></svg>

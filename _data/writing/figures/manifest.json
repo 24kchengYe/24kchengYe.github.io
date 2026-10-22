@@ -2,7 +2,7 @@
   "cli-harness-links": {
     "source": "cli-harness-links.html",
     "width": 1200,
-    "height": 1030,
+    "height": 1080,
     "format": "html-css"
   },
   "cli-case-format": {
@@ -14,7 +14,7 @@
   "cli-rollout-environment": {
     "source": "cli-rollout-environment.html",
     "width": 1200,
-    "height": 950,
+    "height": 960,
     "format": "html-css"
   },
   "cli-combined": {
@@ -470,7 +470,13 @@
   "cli-spec-todolist": {
     "source": "cli-spec-todolist.html",
     "width": 960,
-    "height": 680,
+    "height": 900,
+    "format": "html-css"
+  },
+  "cli-trajectory-model": {
+    "source": "cli-trajectory-model.html",
+    "width": 1200,
+    "height": 760,
     "format": "html-css"
   }
 }

@@ -207,11 +207,14 @@ function buildFigures() {
   for (const [asset, item] of Object.entries(manifest)) {
     const source = fs.readFileSync(path.join(sourceDirectory, item.source), 'utf8');
     const name = path.basename(item.source, path.extname(item.source));
+    const sourceWithOverrides = item.source === 'cli-case-format.html'
+      ? source.replace('</style>', `${fs.readFileSync(path.join(sourceDirectory, 'cli-case-format-overrides.css'), 'utf8')}</style>`)
+      : source;
     figures[asset] = { ...item, localized: {} };
     for (const language of ['zh', 'en', 'ja']) {
       const directory = path.join(outputDirectory, language);
       fs.mkdirSync(directory, { recursive: true });
-      const output = item.format === 'svg' ? localizeVector(source, language) : localizeLayout(source, item, language);
+      const output = item.format === 'svg' ? localizeVector(sourceWithOverrides, language) : localizeLayout(sourceWithOverrides, item, language);
       const validation = new JSDOM(output, { contentType: 'image/svg+xml' });
       if (validation.window.document.querySelector('parsererror,script,image')) throw new Error(`Unsafe or invalid SVG: ${name}`);
       for (const element of validation.window.document.querySelectorAll('*')) {

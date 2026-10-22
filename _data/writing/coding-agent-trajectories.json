@@ -522,5 +522,45 @@
   "两条反馈路径：执行返回更新 TodoList 的状态；Judge–Fix 的问题归因推动计划修订。修改后的计划指导受影响片段的执行或重生成，再交回评审。核验通过的计划、调用与真实回执一同进入训练轨迹；修复预算与 Pending 沿用 Online / Offline 流程。": [
     "Two feedback paths: execution results update TodoList status; issue attribution from Judge–Fix drives plan revision. The revised plan guides execution or regeneration of the affected segment, which is evaluated again. Verified plans, calls, and actual results become training trajectories together. Repair budgets and Pending follow the Online / Offline workflow.",
     "フィードバックは2経路ある。実行結果でTodoListの状態を更新し、Judge–Fixの原因分析で計画を修訂する。修訂した計画に沿って影響区間を実行・再生成し、再評価する。検証を通過した計画・呼び出し・実際の返り値を一緒に学習軌跡へ収める。修復予算とPendingはOnline / Offlineの流れを引き継ぐ。"
+  ],
+  "一轮轨迹：动作、返回与状态": [
+    "One trajectory step: action, result, and state",
+    "1ターンの軌跡：動作・返却値・状態"
+  ],
+  "抽象轨迹模型": [
+    "Abstract trajectory model",
+    "抽象的な軌跡モデル"
+  ],
+  "抽象地看，每一轮都把历史消息与当前环境交给模型，由模型选择动作；Harness 执行工具并回填真实返回，形成下一轮状态。失败时保留回执与成本，在检查点恢复上下文和环境，再选择新的动作。": [
+    "At an abstract level, each step gives the model its message history and current environment. The model selects an action; the Harness executes the tool and appends the actual result to form the next state. A failure keeps its receipt and cost, restores context and environment at a checkpoint, and then selects a new action.",
+    "抽象的には、各ターンでメッセージ履歴と現在の環境をモデルに渡し、モデルが動作を選ぶ。Harnessがツールを実行して実際の返却値を追加し、次の状態を作る。失敗時も返却値とコストを残し、チェックポイントで文脈と環境を復元してから新しい動作を選ぶ。"
+  ],
+  "一轮轨迹的动作、工具返回、状态更新与失败回退": [
+    "Actions, tool results, state updates, and failure rewind in one trajectory step",
+    "1ターンの軌跡における動作・ツール返却値・状態更新・失敗復元"
+  ],
+  "抽象图将真实 Case 压缩为一轮状态转换：H 表示消息上下文，E 表示可见环境，A 表示动作，O 表示真实观察；带撇号的动作表示回退后的重新选择。符号用于说明依赖关系，不表示归档保存了完整环境快照。": [
+    "The abstract figure compresses the real case into one state transition: H is message context, E is the visible environment, A is an action, and O is an actual observation. A primed action is the choice after a rewind. The symbols explain dependencies; they do not claim that the archive stores a complete environment snapshot.",
+    "抽象図は実際のCaseを1回の状態遷移に圧縮する。Hはメッセージ文脈、Eは観測可能な環境、Aは動作、Oは実際の観測を表す。プライム付きの動作は復元後の再選択である。記号は依存関係を説明するもので、保存データが環境全体のスナップショットを持つことを意味しない。"
+  ],
+  "流程总览：a 记录模型与工具的真实交互；b 在线纠偏与有界重生成；c 沿依赖编辑、清洗并验证轨迹。需要真实执行的问题带证据回流 Online；未知依赖或其他准出失败进入 Pending。": [
+    "Overview: a records actual model–tool interaction; b provides online correction and bounded regeneration; c edits, cleans, and verifies trajectories along their dependencies. Issues requiring real execution return to Online with evidence; unknown dependencies and other release failures enter Pending.",
+    "全体像：aはモデルとツールの実際のやり取りを記録し、bはオンライン修正と回数制限付きの再生成、cは依存関係に沿った軌跡の編集・クリーニング・検証を行う。実行が必要な問題は証拠とともにOnlineへ戻し、依存関係不明やその他の受け入れ失敗はPendingに置く。"
+  ],
+  "Online 包含首次生成、运行时纠偏和评审后的有界重生成；教师监督覆盖每一次执行。这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验；发现当前问题需要真实执行时，携问题与证据回流 Online。": [
+    "Online includes initial generation, runtime correction, and bounded regeneration after review; teacher supervision covers each execution. They share one Harness for context assembly, tool environments, actual receipts, and checkpoints. Spec→TodoList provides the planning layer: plans guide execution and attribution updates them. Offline receives complete trajectories that need no further regeneration, edits and verifies dependencies, and returns an issue with evidence to Online when real execution is required.",
+    "Onlineは初回生成、実行中の修正、評価後の回数制限付き再生成を含み、教師の監督が各実行をカバーする。これらは1つのHarnessで文脈の構築、ツール環境、実際の返却値、チェックポイントを共有する。Spec→TodoListは計画層にあり、計画が実行を導き、原因分析が計画を更新する。Offlineは追加の再生成が不要な完全な軌跡を受け取り、依存関係に沿って編集・検証する。実行が必要な問題は証拠とともにOnlineへ戻す。"
+  ],
+  "框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口；Offline 在发现需要真实执行的问题时，携证据回流 Online，并沿用同一 Case 的累计预算。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。": [
+    "The vertical grouping shows responsibilities: the Harness at the bottom supports generation and repair, and the arrowless dashed line shows use rather than sequence. Solid arrows show plan feedback, repair loops, and trajectory handoff. Pending is shared by both processing paths. When Offline finds an issue requiring real execution, it returns to Online with evidence and keeps the same case’s cumulative budget. The dashed planning box is the defined Spec→TodoList design; the three Spec experiments compare input placement.",
+    "枠内の上下配置は責務の階層を表す。下部のHarnessが生成と修復を支え、矢印のない破線は順序ではなく利用関係を示す。実線矢印は計画へのフィードバック、修復ループ、軌跡の引き渡しを表す。Pendingは両処理経路に共通する。Offlineで実行が必要な問題が見つかった場合、証拠とともにOnlineへ戻し、同じCaseの累積予算を引き継ぐ。破線の計画枠は設計済みのSpec→TodoListであり、3条件のSpec実験は入力位置を比較する。"
+  ],
+  "Offline 的处理对象是一条已有的完整轨迹。先确定修改会影响哪些资源状态、返回值、控制条件和文字上下文，再选择单 turn 编辑、有限片段编辑或不编辑。四类依赖可以重叠；需要真实执行的问题回流 Online，未知依赖或其他准出失败进入 Pending。": [
+    "Offline starts from an existing complete trajectory. It identifies affected resource states, returned values, control conditions, and textual context, then chooses a single-turn edit, a bounded segment edit, or no edit. The four dependency types can overlap. Issues requiring real execution return to Online; unknown dependencies and other release failures enter Pending.",
+    "Offlineは既存の完全な軌跡を起点とする。影響を受けるリソース状態、返却値、制御条件、文章文脈を確認し、単一ターン編集、限定区間編集、編集なしから選ぶ。4種類の依存関係は重なり得る。実行が必要な問題はOnlineへ戻し、依存関係不明やその他の受け入れ失敗はPendingに置く。"
+  ],
+  "完整准出设计：局部编辑预实验已完成；清洗、交接和正式导出按该准出设计组织。需要真实执行的问题带证据回流 Online；未知依赖或其他准出失败进入 Pending。": [
+    "Release design: the local-edit pilot is complete; cleaning, handoff, and formal export follow this release structure. Issues requiring real execution return to Online with evidence; unknown dependencies and other release failures enter Pending.",
+    "受け入れ設計：局所編集の予備実験は完了し、クリーニング、受け渡し、正式出力はこの構造に沿って進める。実行が必要な問題は証拠とともにOnlineへ戻し、依存関係不明やその他の受け入れ失敗はPendingに置く。"
   ]
 }

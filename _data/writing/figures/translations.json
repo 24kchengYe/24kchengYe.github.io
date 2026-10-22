@@ -1,4 +1,164 @@
 {
+  "计划进入上下文": [
+    "Plan → context",
+    "計画を文脈へ"
+  ],
+  "计划约束动作，真实回执更新计划。": [
+    "Plans guide actions; actual receipts update plans.",
+    "計画が動作を導き、実際の返却値で計画を更新する。"
+  ],
+  "无需重生成": [
+    "No regeneration",
+    "再生成不要"
+  ],
+  "真实返回 · 更新状态": [
+    "Actual results · update status",
+    "実際の返却値で状態を更新"
+  ],
+  "content: 真实返回": [
+    "content: actual response",
+    "content: 実際の返却値"
+  ],
+  "规划、执行与修复如何衔接": [
+    "Planning, execution, and repair",
+    "計画・実行・修復のつながり"
+  ],
+  "业务约束 → 任务、依赖与状态": [
+    "Requirements → tasks, dependencies, status",
+    "業務上の制約 → タスク・依存・状態"
+  ],
+  "规划接口已确定；当前 Spec 实验与 TodoList 接入分别说明。": [
+    "Defined planning interface; Spec experiments and TodoList integration are described separately.",
+    "設計済みの計画インターフェース。Spec の実験と TodoList の組み込みは分けて説明。"
+  ],
+  "执行并记录": [
+    "Execute and record",
+    "実行・記録"
+  ],
+  "评审 · 有界重生成": [
+    "Review · bounded regeneration",
+    "評価・上限付き再生成"
+  ],
+  "局部编辑 · 核验": [
+    "Local edits · verification",
+    "局所編集・検証"
+  ],
+  "训练数据": [
+    "Training data",
+    "学習データ"
+  ],
+  "真实性与格式检查": [
+    "Evidence and format checks",
+    "真正性・形式の確認"
+  ],
+  "计划进入执行上下文": [
+    "Plan enters execution context",
+    "計画を実行文脈へ"
+  ],
+  "轨迹": [
+    "Trace",
+    "軌跡"
+  ],
+  "无需继续重生成": [
+    "No further regeneration",
+    "再生成不要"
+  ],
+  "恢复上下文与环境，再生成": [
+    "Restore context and environment; regenerate",
+    "文脈と環境を復元して再生成"
+  ],
+  "受阻 / 预算耗尽": [
+    "Blocked / budget exhausted",
+    "実行不能・予算切れ"
+  ],
+  "不可核验 / 仍需重生成": [
+    "Unverifiable / regeneration needed",
+    "検証不能・再生成が必要"
+  ],
+  "Online → Offline 单向交接；Pending 保留问题与证据。": [
+    "One-way Online → Offline handoff; Pending retains issues and evidence.",
+    "Online → Offline の一方向の引き渡し。Pending は問題と証拠を保持。"
+  ],
+  "Harness：一次 Rollout 的执行循环": [
+    "Harness: the execution loop within a rollout",
+    "Harness：Rollout 内の実行ループ"
+  ],
+  "Query · 系统指令 · Reminder · 工具定义": [
+    "Query · system instructions · Reminder · tool schemas",
+    "Query・システム指示・Reminder・ツール定義"
+  ],
+  "上下文、调度与记录": [
+    "Context, dispatch, and recording",
+    "文脈・振り分け・記録"
+  ],
+  "模型响应": [
+    "Model response",
+    "モデル応答"
+  ],
+  "思考 · 正文 · 调用": [
+    "Reasoning · text · calls",
+    "思考・本文・呼び出し"
+  ],
+  "按 tool_call_id 配对": [
+    "Pair by tool_call_id",
+    "tool_call_id で対応付け"
+  ],
+  "结束检查": [
+    "End checks",
+    "終了確認"
+  ],
+  "消息 · 回执 · 版本": [
+    "Messages · receipts · versions",
+    "メッセージ・返却値・版"
+  ],
+  "工具调用": [
+    "Tool calls",
+    "ツール呼び出し"
+  ],
+  "预算耗尽 / 不可继续": [
+    "Budget exhausted / cannot continue",
+    "予算切れ・続行不能"
+  ],
+  "工具环境保留 Skills、工作区文件与云端 Base 状态；Skills 按需 Read。": [
+    "The tool environment retains Skills, workspace files, and cloud Base state; Skills are read on demand.",
+    "ツール環境は Skills・作業ファイル・クラウド Base の状態を保持。Skills は必要時に Read。"
+  ],
+  "真实 Case 的文件结构与消息配对": [
+    "An actual case: files and message pairing",
+    "実際の Case：ファイル構成とメッセージ対応"
+  ],
+  "逐轮记录、执行账本、产物引用与终态": [
+    "Per-turn records, execution ledger, artifact references, terminal status",
+    "各ターンの記録・実行台帳・成果物参照・終端状態"
+  ],
+  "标准化评审 Case": [
+    "Normalized review case",
+    "標準化評価 Case"
+  ],
+  "规范化": [
+    "Normalize",
+    "標準化"
+  ],
+  "messages[]：一次响应可以包含多个调用": [
+    "messages[]: one response, multiple calls",
+    "messages[]：一つの応答に複数の呼び出し"
+  ],
+  "assistant · 第 t 轮": [
+    "assistant · turn t",
+    "assistant・ターン t"
+  ],
+  "assistant · 下一轮": [
+    "assistant · next turn",
+    "assistant・次のターン"
+  ],
+  "已看到两条真实返回": [
+    "Both actual responses are visible",
+    "二つの実際の返却値を参照"
+  ],
+  "字段来自实际归档；call_1 / call_2 为示意 ID，业务内容不在图中展示。": [
+    "Fields come from actual archives; call_1 / call_2 are illustrative IDs. Business content is omitted.",
+    "実際の保存フィールドを使用。call_1 / call_2 は説明用 ID。業務内容は省略。"
+  ],
   "一次 Rollout：模型、Harness 与工具环境": [
     "One rollout: model, Harness and tool environment",
     "1回の rollout：モデル・Harness・ツール環境"

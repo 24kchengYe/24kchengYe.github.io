@@ -1,44 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1290" width="1440" height="1290" lang="ja"><foreignObject width="1440" height="1290"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>
-*{box-sizing:border-box}.diagram-root{margin:0;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif;color:#303c38;background:#fff}.canvas{position:relative;width:1440px;height:1290px;background:white;overflow:hidden}.region{position:absolute;border:1px solid #c7d2c3;border-radius:5px}.region.soft{background:radial-gradient(#92a38526 .7px,transparent .8px);background-size:6px 6px}.region-title{position:absolute;top:-20px;left:22px;padding:0 12px;background:white;font-size:28px;line-height:38px}.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 18px;border:1.3px solid #9aaa96;border-radius:4px;background:white;font-size:28px;line-height:1.3;z-index:2}.node.soft{background:#eff4e9}.sub{display:block;margin-top:6px;font-size:23px;color:#677462;line-height:1.3}.label{position:absolute;z-index:3;background:white;padding:3px 8px;font-size:22px;line-height:1.3;color:#68766b;text-align:center}.heading{position:absolute;font-size:30px;left:42px}.small-note{position:absolute;font-size:23px;color:#68766b;line-height:1.5}.edges{position:absolute;inset:0;z-index:1}.edges path{fill:none;stroke:#8a9983;stroke-width:1.5;marker-end:url(#rollout-arrow)}.edges .feedback{stroke:#749452;stroke-dasharray:6 5}.edges .record{stroke:#a4ada0;stroke-dasharray:3 5}
-</style><main class="canvas" data-fixed-type="">
-<div class="heading" style="top:22px">1回の rollout：モデル・Harness・ツール環境</div>
-<div class="node" id="query" style="left:80px;top:95px;width:280px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">元のQuery</span></div>
-<div class="node" id="instructions" style="left:490px;top:95px;width:400px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">システム指示 + Reminder</span></div>
-<div class="node" id="schema" style="left:1030px;top:95px;width:340px;height:82px"><span style="min-width: 0; overflow-wrap: anywhere;">ツール定義</span></div>
-<div class="region soft" style="left:40px;top:245px;width:900px;height:570px"><div class="region-title">Harness · 文脈・実行制御・記録</div></div>
-<div class="region" style="left:990px;top:245px;width:410px;height:570px"><div class="region-title">ツール実行環境</div></div>
-<div class="node" id="context" style="left:80px;top:295px;width:280px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">現在のメッセージ文脈<span></span></span></div>
-<div class="node soft" id="model" style="left:550px;top:295px;width:340px;height:110px"><span style="min-width: 0; overflow-wrap: anywhere;">Seed の応答<br /><span class="sub">思考・本文・ツール呼び出し</span></span></div>
-<div class="node" id="dispatch" style="left:550px;top:475px;width:340px;height:100px"><span style="min-width: 0; overflow-wrap: anywhere;">応答の振り分け</span></div>
-<div class="node" id="terminal" style="left:80px;top:465px;width:280px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">終了確認と最終状態<br /><span class="sub">完了 / 失敗 / 予算上限</span></span></div>
-<div class="node soft" id="tools" style="left:1030px;top:455px;width:340px;height:140px"><span style="min-width: 0; overflow-wrap: anywhere;">実際のツール実行<br /><span class="sub">Read · Write · Edit<br />Bash · present_files</span></span></div>
-<div class="node" id="observation" style="left:550px;top:665px;width:340px;height:120px"><span style="min-width: 0; overflow-wrap: anywhere;">実際の観測を追記<br /><span class="sub">tool_call_id で対応付け</span></span></div>
-<div class="node" id="resources" style="left:1030px;top:665px;width:340px;height:120px"><span style="min-width: 0; overflow-wrap: anywhere;">Skills と作業ファイル<br /><span class="sub">lark-cli ↔ クラウド Base</span></span></div>
-<div class="label" style="left:388px;top:313px;width:132px">モデル入力</div>
-<div class="label" style="left:364px;top:495px;width:180px">最終テキスト</div>
-<div class="label" style="left:896px;top:459px;width:132px">ネイティブ呼び出し</div>
-<div class="label" style="left:366px;top:686px;width:176px">次のターンへ</div>
-<div class="label" style="left:71px;top:417px;width:300px">予算上限 / 実行障害</div>
-<div class="small-note" style="left:1040px;top:295px;width:325px">Skills は必要時に Read で取得。ファイルと Base の状態は実行を通じて保持。</div>
-<div class="heading" style="top:875px">1つの Case：実行から評価入力へ</div>
-<div class="node" id="archive" style="left:80px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">元の実行パッケージ<br /><span class="sub">messages · modelTurns<br />ツール台帳・版・最終状態</span></span></div>
-<div class="node soft" id="normalized" style="left:540px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">標準化された Case<br /><span class="sub">順序付き events・artifacts<br />ルールのスナップショット・可視時点</span></span></div>
-<div class="node" id="review" style="left:1000px;top:965px;width:360px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">Judge / 修復 / リリース<br /><span class="sub">元の要件と全証拠<br />結果と元の版を紐付け</span></span></div>
-<div class="small-note" style="left:80px;top:1160px;width:1280px">モデルが見た観測と監査証拠を分けて保存。標準化後もメッセージ・呼び出し・結果の対応を保持。</div>
-<svg class="edges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1290"><defs><marker id="rollout-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" style="fill:#8a9983;stroke:none;marker-end:none"/></marker></defs>
-<path data-from="query" data-to="context" d="M220 177 V295"/>
-<path data-from="instructions" data-to="context" d="M690 177 V210 H330 V295"/>
-<path data-from="schema" data-to="model" d="M1200 177 V210 H820 V295"/>
-<path data-from="context" data-to="model" d="M360 350 H550"/>
-<path data-from="model" data-to="dispatch" d="M720 405 V475"/>
-<path data-from="dispatch" data-to="tools" d="M890 525 H1030"/>
-<path data-from="dispatch" data-to="terminal" d="M550 525 H360"/>
-<path data-from="context" data-to="terminal" class="record" d="M220 405 V465"/>
-<path data-from="tools" data-to="resources" d="M1200 595 V665"/>
-<path data-from="tools" data-to="observation" d="M1030 560 H968 V725 H890"/>
-<path data-from="observation" data-to="context" class="feedback" d="M550 725 H420 V650 H55 V350 H80"/>
-<path data-from="terminal" data-to="archive" class="record" d="M220 615 V840 H20 V1040 H80"/>
-<path data-from="archive" data-to="normalized" d="M440 1040 H540"/>
-<path data-from="normalized" data-to="review" d="M900 1040 H1000"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950" width="1200" height="950" lang="ja"><foreignObject width="1200" height="950"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1200px;background:#fff;overflow:hidden}.heading{position:absolute;left:50px;top:22px;font-size:30px;line-height:1.3}.node{position:absolute;display:flex;align-items:center;justify-content:center;padding:14px 18px;text-align:center;border:1px solid #a6b1a1;border-radius:5px;background:#fff;font-size:28px;line-height:1.28;z-index:2}.node.soft{background:#f1f5ec}.node.plan{border-style:dashed}.sub{display:block;margin-top:8px;font-size:24px;line-height:1.3;color:#687568}.label{position:absolute;font-size:22px;line-height:1.35;color:#687568;background:#fff;padding:3px 8px;text-align:center;z-index:3}.region{position:absolute;border:1px solid #d1d8cc;border-radius:8px}.region-title{position:absolute;top:-21px;left:22px;padding:0 12px;background:#fff;font-size:28px;line-height:1.4}.edge{position:absolute;height:0;border-top:1.4px solid #8b9b83;transform-origin:0 0;z-index:1}.edge.dashed{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #8b9b83;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;font-size:22px;line-height:1.45;color:#687568}.field{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif;font-size:24px;line-height:1.65}.panel{position:absolute;border:1px solid #c6d0bf;border-radius:6px;padding:22px 26px;background:#fff}.panel h2{font-size:28px;font-weight:400;line-height:1.35;margin:0 0 18px}.panel .rule{border-top:1px solid #d9dfd3;margin:18px 0}.muted{color:#687568}</style><main class="canvas" data-fixed-type="" style="height:950px"><div class="heading">Harness：Rollout 内の実行ループ</div>
+<div id="input" class="node " style="left:60px;top:92px;width:1080px;height:86px"><span style="min-width: 0; overflow-wrap: anywhere;">Query・システム指示・Reminder・ツール定義</span></div>
+<div class="region" style="left:40px;top:235px;width:1120px;height:620px"><div class="region-title">文脈・振り分け・記録</div></div>
+<div id="context" class="node " style="left:460px;top:265px;width:280px;height:100px"><span style="min-width: 0; overflow-wrap: anywhere;">現在のメッセージ文脈</span></div>
+<div id="model" class="node soft" style="left:460px;top:440px;width:280px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">モデル応答<br /><span class="sub">思考・本文・呼び出し</span></span></div>
+<div id="tools" class="node " style="left:80px;top:650px;width:290px;height:180px"><span style="min-width: 0; overflow-wrap: anywhere;">実際のツール実行<br /><span class="sub">Read / Write / Edit<br />Bash / present_files</span></span></div>
+<div id="observation" class="node " style="left:80px;top:440px;width:290px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">実際の観測を追記<br /><span class="sub">tool_call_id で対応付け</span></span></div>
+<div id="terminal" class="node " style="left:850px;top:440px;width:290px;height:150px"><span style="min-width: 0; overflow-wrap: anywhere;">終了確認<br /><span class="sub">完了 / 失敗 / 予算上限</span></span></div>
+<div id="archive" class="node " style="left:850px;top:650px;width:290px;height:180px"><span style="min-width: 0; overflow-wrap: anywhere;">元の実行パッケージ<br /><span class="sub">メッセージ・返却値・版</span></span></div>
+<div class="connection" data-from="input" data-to="context"><div class="edge arrow" style="left:600px;top:178px;width:87px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="context" data-to="model"><div class="edge arrow" style="left:600px;top:365px;width:75px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="model" data-to="tools"><div class="edge" style="left:600px;top:590px;width:135px;transform:rotate(90deg)"></div><div class="edge arrow" style="left:600px;top:725px;width:230px;transform:rotate(180deg)"></div></div>
+<div class="connection" data-from="tools" data-to="observation"><div class="edge arrow" style="left:225px;top:650px;width:60px;transform:rotate(-90deg)"></div></div>
+<div class="connection" data-from="observation" data-to="context"><div class="edge dashed" style="left:225px;top:440px;width:125px;transform:rotate(-90deg)"></div><div class="edge dashed arrow" style="left:225px;top:315px;width:235px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="model" data-to="terminal"><div class="edge arrow" style="left:740px;top:515px;width:110px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="context" data-to="terminal"><div class="edge dashed" style="left:740px;top:315px;width:255px;transform:rotate(0deg)"></div><div class="edge dashed arrow" style="left:995px;top:315px;width:125px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="terminal" data-to="archive"><div class="edge arrow" style="left:995px;top:590px;width:60px;transform:rotate(90deg)"></div></div>
+<div class="label" style="left:115px;top:368px;width:250px">次のターンへ</div>
+<div class="label" style="left:440px;top:615px;width:190px">ツール呼び出し</div>
+<div class="label" style="left:747px;top:466px;width:100px">最終テキスト</div>
+<div class="label" style="left:790px;top:350px;width:340px">予算切れ・続行不能</div>
+<div class="note" style="left:65px;top:875px;width:1070px">ツール環境は Skills・作業ファイル・クラウド Base の状態を保持。Skills は必要時に Read。</div>
 </main></div></foreignObject></svg>

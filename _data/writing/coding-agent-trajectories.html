@@ -36,21 +36,28 @@
 </figcaption>
 </figure>
 <h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
-<p>一次 rollout 中，模型负责选择动作；Harness 负责组装上下文、分派原生工具调用、回填真实观察，并管理预算、检查点与执行账本。工具环境保存 Skills、脚本和参数文件，Bash 中的 lark-cli 连接云端 Base。下一轮决策同时依赖消息历史和此前已经改变的环境状态。</p>
+<h3>规划、执行与修复如何衔接</h3>
+<p>这几部分围绕同一条轨迹分工：Spec→TodoList 表达要做什么及其依赖；Harness 负责把模型动作变成真实执行；Online 在需要重新生成时调用 Harness；Offline 接收完整轨迹，做依赖范围内的编辑与核验。</p>
 <figure>
-<img data-figure="cli-rollout-environment" alt="Rollout Harness、工具环境与标准化 Case 的详细流程" loading="lazy">
-<figcaption>上半图是实际生成循环，下半图是 Case 的归档与评审交接。绿色虚线回填观察；灰色点线表示终止检查与归档。最终文本先经过结束检查；工具失败可以作为观察进入后续决策，预算耗尽或不可安全继续的故障则记录失败终态。rollout 完成与业务需求验收分别记录。</figcaption>
+<img data-figure="cli-harness-links" alt="Spec、TodoList、Harness 与 Online / Offline 的衔接" loading="lazy">
+<figcaption>虚线规划框表示已确定的 Spec→TodoList 接口，具体反馈见文末；现有三组 Spec 实验测量的是输入位置。Online 的重生成仍由同一个 Harness 执行。无需继续重生成的分支交给 Offline；不可核验或仍需重生成的情况进入 Pending，不自动回跳 Online。</figcaption>
+</figure>
+<p>例如，一条工作流依赖尚未创建的字段：TodoList 应先安排字段创建，再安排工作流；Harness 执行后把真实字段 ID 和返回写入轨迹；Online 在错误决策前恢复可继续执行的上下文与环境，再生成受影响后缀。若只需删除一次无副作用的失败调用并调整后文，Offline 可在核验依赖后局部编辑。涉及状态或返回值变化时，必须有对应的真实执行证据。</p>
+<h3>一次 Rollout 的执行循环</h3>
+<p>模型负责选择动作；Harness 负责组装上下文、分派工具调用、回填真实观察，并管理预算、检查点与执行账本。工具环境保存 Skills、脚本和参数文件，Bash 中的 lark-cli 连接云端 Base。下一轮决策同时依赖消息历史和此前已经改变的环境状态。</p>
+<figure>
+<img data-figure="cli-rollout-environment" alt="上下文、模型响应、工具执行与真实观察的循环" loading="lazy">
+<figcaption>工具调用走左侧循环，真实返回进入下一轮；最终文本走右侧结束检查。预算耗尽或不可安全继续时记录相应终态。这里的“完成”是 rollout 的运行状态，业务验收和轨迹质量由后续评审分别判断。</figcaption>
 </figure>
 <p>初始输入包含 ThinkSP、FunctionSP、MainSP、Reminder、原始 Query 和工具 Schema；Skills 正文通过 Read 按需进入上下文。模型能看到的是工具 observation，完整 ToolResponse 和运行元数据另作审计证据。后台任务的完成通知也会补回消息。续跑时，已完成调用按 call ID 和参数哈希复用真实回执；结果不明的写操作停止执行，交给新环境重试。</p>
-<div class="table-scroll"><table>
-<thead><tr><th>Case 层次</th><th>保存内容</th><th>作用</th></tr></thead>
-<tbody>
-<tr><td>原始轨迹</td><td><code>messages</code>、<code>tools</code>、<code>modelTurns</code>、模型与提示词版本</td><td>保留当时的系统输入、原生思考、正文，以及调用 ID 与工具返回。</td></tr>
-<tr><td>执行证据</td><td>工具账本、逐轮响应、终态、Base / 文件引用；本地生成还保存原始请求与响应</td><td>区分模型当时看到的信息和 Harness 额外保存的审计证据。</td></tr>
-<tr><td>评审 Case</td><td><code>query</code>、<code>execution_contract</code>、<code>trace_completeness</code>、<code>events</code>、<code>artifacts</code>、<code>rule_snapshots</code></td><td>用事件序号和可见时序组织原始内容，支撑逐问题归因与修复定位。</td></tr>
-</tbody></table></div>
+<h3 id="case-format">一个真实 Case 如何组织</h3>
+<p>tool_calls[] 的元素包含 id、type 和 function（name、arguments）；tool 消息的 content 保存真实返回。modelTurns[] 通过 assistantMessageIndex 与 toolCallIds 关联响应轮次、消息和调用。</p>
+<figure>
+<img data-figure="cli-case-format" alt="原始执行包、标准化评审 Case 与消息配对结构" loading="lazy">
+<figcaption>图按实际归档字段整理，省略业务内容。左上是原始文件，右上是评审使用的规范化视图；后者组织原始证据，不重新生成观察。下方展示一次 assistant 响应含两个调用时，tool 消息如何按 ID 配对，并一起进入下一轮上下文。call_1 / call_2 只是示意标识；图中保留的是核心字段，并非完整 JSON Schema。</figcaption>
+</figure>
 <p>Case 是任务及其执行证据的单位，turn 是一次模型响应的单位，event 是评审输入中的有序记录。一次响应含多个调用时，会展开为多个关联事件；训练样本还可以按 assistant 目标轮次展开。三者的数量不应混用。当前导入的轨迹包保留原生消息和工具配对，但部分批次不含原始 HTTP/SSE 或工作区文件；评审保留这些来源差异，不把产物引用当作完整环境快照。</p>
-<p>这也决定了轨迹修复的边界：仅靠一份对话 JSON，无法恢复所有工具状态。Online 续跑需要恢复或重建对应环境；Offline 编辑需要沿调用、返回值与状态依赖核验。下文的 Spec→TodoList 方案把规划纳入同一条“计划—动作—观察—更新”链，Judge–Fix 再据此定位计划与执行之间的偏差。</p>
+<p>Online / Offline 都以这组配对证据定位问题。Online 改变后续执行，需要恢复或重建环境，再让 Harness 产生新回执；Offline 改变归档内容，需要同步检查调用、返回值、状态与文字依赖。完整原始轨迹、修复版本和评审结果分别保留，便于比较修前与修后。</p>
 <h2>已做实验：Spec 如何参与规划</h2>
 <p>我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</p>
 <div class="table-scroll">
@@ -175,6 +182,7 @@
 <p>一批已提交训练的数据包含 207 条轨迹、206 个 Query 组，按 Query 分组拆为 186 条训练与 21 条独立测试。训练侧展开为 5,458 个 assistant 目标：每个目标保留完整、未截断的历史上下文，原生思考只保留当前目标轮。测试数据不提交训练或选 checkpoint。</p>
 <p>新一轮在线对照从同一 Query 各自 fresh 生成：普通生成，对比教师纠偏及后验修复，先检查 10 对再扩到 100 对。这样可以把重新生成本身的收益，与修复机制的收益分开。接下来的判断标准是：同一需求上的功能保留、可用轨迹比例，以及包含教师和 Judge 的完整成本。</p>
 <h2>方案设计：Spec → TodoList</h2>
+<p>规划工具与普通执行工具共用 Harness 的调用、回执与记录机制。执行返回推动 TodoList 状态更新；Judge–Fix 的归因推动计划修订。需要重新执行的修改进入 Online；已有轨迹中可验证的局部修改按 Offline 处理。TodoList 的完成标记始终要能追到真实动作与回执。</p>
 <p>Spec 提供业务对象、约束和依赖，TodoList 将其组织成可更新的执行计划。规划工具维护任务顺序、完成状态和执行依据，让计划随真实工具返回更新。这是本方案采用的规划结构；前面的三组实验比较的是 Spec 的输入位置。</p>
 <figure>
 <img data-figure="cli-spec-todolist" alt="Spec 与 TodoList 的规划、执行及 Judge–Fix 反馈关系" loading="lazy">

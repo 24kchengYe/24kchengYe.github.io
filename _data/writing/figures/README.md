@@ -11,4 +11,6 @@
 
 ## Review
 
+The CLI article separates three views: `cli-harness-links.html` explains the planning / execution / repair handoff; `cli-rollout-environment.html` shows only the runtime loop; `cli-case-format.html` shows archived fields and native call / response pairing. These use editable HTML/CSS with fixed 28px primary, 24px secondary and 22px annotation text. The dashed planning interface is the adopted design, distinct from the input-placement experiments. Online regenerates through the Harness; Offline edits archived evidence and sends unresolved cases to Pending, without an automatic Online loop.
+
 Check all three language variants at article width and in the image dialog. Inspect node overflow, label/box collisions, arrows, equations and mobile page width. Compare source text, graph identifiers and experimental tables before publishing. Generated SVGs are outputs; edit their sources and builders instead.

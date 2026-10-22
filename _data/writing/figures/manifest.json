@@ -1,8 +1,20 @@
 {
+  "cli-harness-links": {
+    "source": "cli-harness-links.html",
+    "width": 1200,
+    "height": 820,
+    "format": "html-css"
+  },
+  "cli-case-format": {
+    "source": "cli-case-format.html",
+    "width": 1200,
+    "height": 1220,
+    "format": "html-css"
+  },
   "cli-rollout-environment": {
     "source": "cli-rollout-environment.html",
-    "width": 1440,
-    "height": 1290,
+    "width": 1200,
+    "height": 950,
     "format": "html-css"
   },
   "cli-combined": {

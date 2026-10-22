@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'"><title>自动化开发的交互式流程蓝图 · Yecheng Zhang</title><link rel="canonical" href="https://24kchengye.github.io/writing/automation-blueprint/"><meta property="og:url" content="https://24kchengye.github.io/writing/automation-blueprint/"><meta property="og:title" content="An Interactive Blueprint for Agentic Development"><link rel="stylesheet" href="/assets/css/research-note.css?v=1"><link rel="stylesheet" href="/assets/css/automation-blueprint.css?v=1"><script defer src="/assets/js/automation-blueprint-data.js?v=1"></script><script defer src="/assets/js/automation-blueprint.js?v=1"></script></head>
+<body><main class="note">
+<header class="note-header"><p class="note-kicker">SYSTEM DESIGN / INTERACTIVE NOTE</p><h1>自动化开发的交互式流程蓝图</h1><p class="lead">需求、巡检、故障和已有代码，从不同入口进入同一条交付链路。Jerry 工作台的这张蓝图，把开发、测试、评审与发布连起来，也把返修、人工判断和恢复路径留在图中。</p><p class="note-date">2026 年 10 月 · 项目解读</p></header>
+<p>阅读这类流程时，最容易丢掉的是例外：测试没过怎么办，评审通过后谁来决定发布，线上出错又回到哪里。下面保留原图的节点层级、分支条件和回路；点击模块，可以进入它的内部步骤，再沿关联流程继续阅读。</p>
+<figure class="automation-figure"><section id="automation-map" class="automation-map" aria-label="只读流程地图"></section><noscript><p>交互图需要启用 JavaScript。下文保留主要流程说明。</p></noscript><figcaption>五类入口汇入共用执行链。已有 MR 可以跳过开发直接进入 CI；失败路径返回修复或转交人工。此图用于浏览设计，不会触发开发、部署或回滚。</figcaption></figure>
+<h2>入口不同，交付链路共用</h2>
+<p>功能需求先明确范围和验收目标；用户报 Bug、巡检结果和线上故障进入任务确认、复现与去重。开发步骤由 GitLab Issue 中的 @Cursor 和 Webhook 衔接：理解需求，有歧义则询问，实施后自测，失败再返修。已有 MR 直接进入构建与测试，避免重复开发。</p>
+<p>巡检与故障监控各有节奏。巡检定时运行核心业务并检查日志、资源和依赖；监控持续观察可达性、错误率与延迟。普通问题进入修复队列，影响线上则立即通知并补充调查简报。</p>
+<h2>测试通过之后，还有发布判断</h2>
+<p>CI 包含构建、单元／集成测试和测试环境中的用户流程验证。代码评审与 CI 必须对应同一个最新提交，并且没有阻塞问题。之后，风险分类器结合明确规则与 Agent 判断：低风险自动放行，高风险或无法确定时交给人审核。</p>
+<p>图中的几条边很重要：CI 或评审失败回到排查与返修；修复后重新跑 CI；反复失败、缺信息或缺权限时转人工。人工审核未批准则返修或停止，不能沿批准路径继续发布。</p>
+<h2>部署与恢复，都有明确出口</h2>
+<p>部署前检查版本、配置依赖、迁移兼容与可恢复性，使用已测试产物和固定脚本，在同一环境中串行发布。部署后核对实际版本、连接和关键接口，再用测试账号验证核心流程、本次改动及业务结果。</p>
+<p>尚未部署时，失败意味着停止发布并通知；部署后的故障则暂停后续发布，评估安全恢复，按预授权方案回滚并复验。无法安全回滚或恢复失败时转人工，验收通过才记录版本与证据并通知完成。</p>
+<h2>让细节留在它所属的层级</h2>
+<p>总图保留入口、判断与反馈；模块内部展示执行步骤；侧栏保留跨模块的上下游关系。这样可以看清局部，也能随时回到全局。这里沿用这一组织方式，只调整配色、字号与阅读区域，并让节点和图注随中、英、日切换。</p>
+<p class="caption">原蓝图仍列出待完善项：风险分级细则、故障响应的 10 分钟计时起点，以及重试与回滚预案。图中保留“10 分钟未回复自动修复”的原始分支，具体授权和计时边界仍需按项目约定落实。</p>
+<details class="automation-source"><summary>图的来源与可编辑文件</summary><p>流程来源：Jerry 工作台的自动化开发蓝图，2026 年 10 月 22 日读取。本文保留原流程关系，交互阅读组件独立实现。页面不连接原项目的内网服务。</p><p><a href="https://github.com/24kchengYe/24kchengYe.github.io/tree/main/_data/writing/automation-blueprint">流程数据与三语文案</a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/automation-blueprint.js">交互源码</a></p></details>
+</main></body></html>

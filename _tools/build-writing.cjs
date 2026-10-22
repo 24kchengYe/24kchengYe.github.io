@@ -3,12 +3,16 @@ const path = require('node:path');
 const { JSDOM } = require('jsdom');
 const { buildFigures } = require('./build-figures.cjs');
 const { buildCliFigures } = require('./build-cli-figures.cjs');
+const { buildAutomationBlueprint } = require('./build-automation-blueprint.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
-const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms', 'coding-agent-trajectories'];
-buildCliFigures();
-const figures = buildFigures();
+const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms', 'coding-agent-trajectories', 'automation-blueprint'];
+const requestedSlug = process.argv[2];
+if (requestedSlug && ![...slugs, ...blogOnlySlugs].includes(requestedSlug)) throw new Error(`Unknown writing: ${requestedSlug}`);
+if (requestedSlug !== 'automation-blueprint') buildCliFigures();
+const figures = requestedSlug === 'automation-blueprint' ? {} : buildFigures();
+if (!requestedSlug || requestedSlug === 'automation-blueprint') buildAutomationBlueprint();
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
 const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label="Writing">
   <a class="writing-back" href="/#writing" data-site-link><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
@@ -108,7 +112,8 @@ function build(slug, technical = false) {
 }
 
 for (const slug of slugs) {
+  if (requestedSlug && slug !== requestedSlug) continue;
   build(slug);
   build(slug, true);
 }
-for (const slug of blogOnlySlugs) build(slug);
+for (const slug of blogOnlySlugs) if (!requestedSlug || slug === requestedSlug) build(slug);

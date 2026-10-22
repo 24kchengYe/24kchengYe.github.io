@@ -28,6 +28,13 @@ select { max-width:260px; }
 .canvas .is-active:not(.connection) { outline:2px solid #6f885f; outline-offset:3px; }
 .canvas .connection.is-active .edge { border-top-color:#536f42; border-top-width:2.6px; }
 .canvas .connection.is-active .edge.arrow::after { border-left-color:#536f42; }
+.canvas .connection.is-active .wire { border-color:#536f42!important; }
+.canvas .connection.is-active .tip { border-color:#536f42!important; }
+.canvas .connection.is-active>g>path { stroke:#536f42!important; stroke-width:2px!important; }
+.vector-canvas svg { display:block; max-width:none; overflow:visible; }
+.vector-canvas [data-map-node].is-active { outline-offset:5px; }
+.tm-flowing .connection { animation:tm-emphasis 2.4s ease-in-out infinite; }
+@keyframes tm-emphasis { 50% { opacity:.35; } }
 .canvas .is-muted { opacity:.24; }
 .canvas .is-visited.event { border-left:3px solid #a7b49a; }
 .canvas .is-visited.failed { border-left-color:#c3955e; }
@@ -62,4 +69,4 @@ select { max-width:260px; }
   :host([data-expanded]) .tm-viewport { flex:1; min-height:160px; }
   :host([data-expanded]) .tm-aside { max-height:210px; }
 }
-@media(prefers-reduced-motion:reduce) { .canvas [role="button"] { transition:none; } .tm-replaying .connection.is-active .edge { animation:none; } }
+@media(prefers-reduced-motion:reduce) { .canvas [role="button"] { transition:none; } .tm-replaying .connection.is-active .edge,.tm-flowing .connection { animation:none; } }

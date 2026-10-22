@@ -79,6 +79,8 @@ async function main() {
     await page.goto(`${origin}/writing/coding-agent-trajectories/?lang=zh`);
     const map = page.locator('#trajectory-map-1');
     await map.locator('.tm-shell').waitFor();
+    assert.equal(await map.locator('select').inputValue(),'overview','First figure opens the overview');
+    assert.equal(await page.locator('#trajectory-map-2 select').inputValue(),'complete','Second figure opens the full workflow');
     const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     for (const language of ['zh','en','ja']) {
       await page.locator(`[data-language="${language}"]`).click();

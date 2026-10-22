@@ -23,6 +23,13 @@
 </header>
 <p>任务从用户需求开始，涉及表、视图、仪表盘、工作流和权限。Seed 在 Harness 中读取技能、编写参数或脚本、调用 CLI；工具返回进入下一轮上下文。训练数据需要保留这条决策与执行的因果链。</p>
 <figure>
+<img data-figure="cli-harness-links" alt="Online 内的共享 Harness、规划反馈与 Offline 交接" loading="lazy">
+<figcaption>框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口；Offline 在发现需要真实执行的问题时，携证据回流 Online，并沿用同一 Case 的累计预算。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。</figcaption>
+</figure>
+<h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
+<h3>Online 生成与修复共用执行底座</h3>
+<p>Online 包含首次生成、运行时纠偏和评审后的有界重生成；教师监督覆盖每一次执行。这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验；发现当前问题需要真实执行时，携问题与证据回流 Online。</p>
+<figure>
 <img data-figure="cli-combined" alt="长程轨迹合成、Online 修复与 Offline 准出组合图" loading="lazy">
 <figcaption>
 <p>流程总览：a 记录模型与工具的真实交互；b 在线纠偏与有界重生成；c 沿依赖编辑、清洗并验证轨迹。需要真实执行的问题带证据回流 Online；未知依赖或其他准出失败进入 Pending。</p>
@@ -35,13 +42,6 @@
 <li>文字上下文：删除失败调用后，后文“刚才失败，所以重试”的说明也需要调整。</li>
 </ul>
 </figcaption>
-</figure>
-<h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
-<h3>Online 生成与修复共用执行底座</h3>
-<p>Online 包含首次生成、运行时纠偏和评审后的有界重生成；教师监督覆盖每一次执行。这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验；发现当前问题需要真实执行时，携问题与证据回流 Online。</p>
-<figure>
-<img data-figure="cli-harness-links" alt="Online 内的共享 Harness、规划反馈与 Offline 交接" loading="lazy">
-<figcaption>框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口；Offline 在发现需要真实执行的问题时，携证据回流 Online，并沿用同一 Case 的累计预算。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。</figcaption>
 </figure>
 <p>例如，一条工作流依赖尚未创建的字段：TodoList 应先安排字段创建，再安排工作流；Harness 执行后把真实字段 ID 和返回写入轨迹；Online 在错误决策前恢复可继续执行的上下文与环境，再生成受影响后缀。若只需删除一次无副作用的失败调用并调整后文，Offline 可在核验依赖后局部编辑。涉及状态或返回值变化时，必须有对应的真实执行证据。</p>
 <h3>一次 Rollout 的执行循环</h3>

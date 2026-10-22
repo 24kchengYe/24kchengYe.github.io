@@ -5,6 +5,7 @@ const { buildFigures } = require('./build-figures.cjs');
 const { buildCliFigures } = require('./build-cli-figures.cjs');
 const { buildAutomationBlueprint } = require('./build-automation-blueprint.cjs');
 const { buildTrajectoryMap, attachTrajectoryMaps } = require('./build-trajectory-map.cjs');
+const { attachWritingMaps } = require('./build-writing-maps.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
@@ -34,6 +35,7 @@ function localizeFigures(document) {
     const source = image.getAttribute('data-figure') || image.getAttribute('src');
     const figure = figures[source];
     if (!figure) throw new Error(`Missing figure source: ${source}`);
+    image.dataset.figureKey = source;
     image.width = figure.width;
     image.height = figure.height;
     for (const language of ['en', 'zh', 'ja']) image.setAttribute(`data-src-${language}`, figure.localized[language]);
@@ -97,6 +99,7 @@ function build(slug, technical = false) {
   document.querySelector('meta[property="og:url"]').content = `https://24kchengye.github.io${route}`;
   localizeFigures(document);
   if (slug === 'coding-agent-trajectories') attachTrajectoryMaps(document, trajectoryMap);
+  else if (slug !== 'automation-blueprint') attachWritingMaps(document, sourceName);
   document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   document.body.insertAdjacentHTML('afterbegin', navigation(slug, technical));
   const stylesheet = document.createElement('link');

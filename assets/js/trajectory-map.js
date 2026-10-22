@@ -1,9 +1,9 @@
 (() => {
   'use strict';
-  const data = window.TrajectoryMapData;
+  const data = window.WritingDiagramData || window.TrajectoryMapData;
   if (!data) return;
   const stylesheet = document.querySelector('script[src*="trajectory-map.js"]').dataset.stylesheet;
-  const nodeSelector = '.node[id],.bundle[id],.workspace[id],.event[id],.checkpoint[id],.restore[id]';
+  const nodeSelector = data.generic ? '[data-map-node]' : '.node[id],.bundle[id],.workspace[id],.event[id],.checkpoint[id],.restore[id]';
   const canonical = { A:'harness', B:'online', C:'offline' };
   const element = (tag, className, content) => {
     const node = document.createElement(tag);
@@ -18,7 +18,7 @@
   for (const host of document.querySelectorAll('.trajectory-map[data-entry]')) {
     const shadow = host.attachShadow({ mode:'open' });
     const entry = host.dataset.entry;
-    const fallback = host.closest('figure').querySelector('.trajectory-static');
+    const fallback = host.nextElementSibling?.matches('.trajectory-static') ? host.nextElementSibling : host.closest('figure').querySelector('.trajectory-static');
     let language = document.documentElement.lang;
     let viewId = entry;
     let trail = [entry];
@@ -41,6 +41,7 @@
     let cursor = 0;
     let dialog = null;
     let placeholder;
+    let flowing = false;
     const externalNames = new Map();
     const translate = original => language === 'zh' ? original : data.strings[original]?.[language === 'ja' ? 1 : 0] || original;
     const view = () => data.views[viewId];
@@ -99,7 +100,7 @@
     const relations = () => [...canvas.querySelectorAll('.connection')].map(connection => ({ element:connection, from:connection.dataset.from, to:connection.dataset.to }));
     const nodeName = id => {
       const local = shadow.getElementById(id);
-      if (local) return (local.querySelector('.action,.restore-title,h3')?.textContent || local.firstElementChild?.textContent || local.textContent).trim();
+      if (local) return (local.dataset.mapLabel || local.querySelector('.action,.restore-title,h3')?.textContent || local.firstElementChild?.textContent || local.textContent).trim();
       const key = `${language}:${id}`;
       const graph = data.views[canonical[id[0]]];
       if (!externalNames.has(key) && graph) {
@@ -138,7 +139,7 @@
       render();
     };
     const related = () => {
-      aside.append(element('h3','',translate('关联流程')));
+      aside.append(element('h3','',translate(data.generic ? '本篇图解' : '关联流程')));
       for (const target of view().related) {
         const control = button(data.views[target].title, () => navigate(target));
         control.className = 'tm-related';
@@ -323,12 +324,24 @@
         select.append(option);
       }
       select.value = viewId;
-      select.addEventListener('change', () => navigate(select.value, ['overview',select.value].filter((value,index,list) => list.indexOf(value) === index)));
+      select.addEventListener('change', () => navigate(select.value, [data.generic ? Object.keys(data.views)[0] : 'overview',select.value].filter((value,index,list) => list.indexOf(value) === index)));
       const controls = element('div','tm-tools');
       scaleLabel = element('span','tm-scale');
       const expanded = button(dialog ? '收起画布' : '展开画布', expand);
       expanded.dataset.expand = '';
       controls.append(button('缩小', () => { pause(); zoom(1 / 1.2); }, '−'),scaleLabel,button('放大', () => { pause(); zoom(1.2); }, '+'),button('全图', () => { pause(); fit('all'); }),button('适合宽度', () => { pause(); fit('width'); }),expanded);
+      const hasConnections = view().localized[language].html.includes('class="connection"');
+      if (data.generic && view().kind === 'flow' && hasConnections) {
+        const motion = button(flowing ? '停止动效' : '连线动效', () => {
+          flowing = !flowing;
+          canvas.classList.toggle('tm-flowing',flowing);
+          motion.textContent = translate(flowing ? '停止动效' : '连线动效');
+          motion.setAttribute('aria-label',motion.textContent);
+          motion.setAttribute('aria-pressed',String(flowing));
+        });
+        motion.setAttribute('aria-pressed',String(flowing));
+        controls.append(motion);
+      }
       toolbar.append(select,controls);
       const breadcrumb = element('nav','tm-breadcrumb');
       breadcrumb.setAttribute('aria-label',translate('返回'));
@@ -354,6 +367,7 @@
       template.innerHTML = view().localized[language].html;
       diagram.append(template.content);
       canvas = diagram.querySelector('.canvas');
+      canvas.classList.toggle('tm-flowing',flowing && view().kind === 'flow');
       world.append(diagram);
       viewport.append(world);
       aside = element('aside','tm-aside');
@@ -376,7 +390,9 @@
         replayControls.append(previous,playButton,next,button('重新开始', () => { pause(); replay(0); }),replayInput,replayLabel);
         shell.append(replayControls);
       } else playButton = null;
-      status = element('div','tm-status',translate(viewId === 'case' ? '记录回放，不执行工具；检查点与回退不增加模型轮次。' : '悬停追踪连线；点击模块展开；拖动平移，Ctrl/⌘ + 滚轮缩放。'));
+      const flowHint = hasConnections ? '悬停追踪连接，点击查看细节或关联图；动效仅辅助读图，不代表执行。' : '点击节点查看细节或关联图；拖动平移，Ctrl/⌘ + 滚轮缩放。';
+      const hint = data.generic ? (view().kind === 'flow' ? flowHint : '点击查看原图数据；拖动平移，Ctrl/⌘ + 滚轮缩放。') : (viewId === 'case' ? '记录回放，不执行工具；检查点与回退不增加模型轮次。' : '悬停追踪连线；点击模块展开；拖动平移，Ctrl/⌘ + 滚轮缩放。');
+      status = element('div','tm-status',translate(hint));
       shell.append(body,status);
       shadow.replaceChildren(original,theme,shell);
       bindCanvas(); bindViewport();

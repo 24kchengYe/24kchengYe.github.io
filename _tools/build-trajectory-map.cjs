@@ -63,7 +63,7 @@ function attachTrajectoryMaps(document, artifact) {
   for (const [index, image] of [...document.querySelectorAll('figure img[data-figure]')].entries()) {
     const figure = image.closest('figure');
     const original = image.dataset.figure;
-    const entry = original === 'cli-combined' ? 'overview' : Object.keys(artifact.config.views).find(id => artifact.config.views[id].figure === original);
+    const entry = Object.keys(artifact.config.views).find(id => artifact.config.views[id].figure === original);
     if (!entry) throw new Error(`Unknown interactive figure: ${original}`);
     figure.classList.add('trajectory-figure');
     figure.classList.remove('tall-figure', 'case-figure');

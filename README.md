@@ -164,6 +164,34 @@ edges against the static source for all 27 view/language combinations, then
 tests navigation, replay state, fit-all bounds, mobile layouts, print, no-JS
 fallback, and the unchanged Automation Blueprint. Review screenshots under
 `_preview/trajectory-map/`; use `MAP_REVIEW_ORIGIN` to check the deployed site.
+The first inline view is Overview; the second is Full workflow. Their static
+fallbacks and captions use the same order.
+
+### Interactive Maps Across Writing
+
+The other five blogs and three technical reports reuse the same component.
+`_tools/build-writing-maps.cjs` embeds their existing localized HTML/CSS or SVG
+canvases in isolated maps; it never reconstructs data plots from pixels. The
+generated `assets/js/writing-maps/` bundles retain original text, formulas,
+paths, chart scales, and figure captions. Article tables remain unchanged.
+
+`_data/writing/diagram-explorer.json` records optional short three-language
+titles, module links, and audited connection annotations. Attention mechanism
+diagrams reuse their existing `data-from` / `data-to` relationships. Older
+figures are annotated by existing node and edge IDs or stable source ordinals;
+unannotated paths remain visible and are never assigned inferred endpoints.
+When changing a source diagram, review its annotations in the same change.
+
+Flow maps can highlight connections and open related diagrams. Optional line
+emphasis is a reading aid, not execution playback; it honors reduced-motion
+preferences. Data plots offer pan/zoom and exact-label inspection without
+simulated values or inferred causal arrows. Static figures remain available
+when scripts or component styles cannot load, and for printing.
+
+Run `npm run check:writing-maps` after rebuilding. It covers all eight editions
+in three languages, source text/geometry, module navigation, mobile fit,
+fullscreen, reduced motion, and static fallback. Screenshots and audit output
+go to `_preview/writing-maps/`. Set `WRITING_MAP_ORIGIN` to verify deployment.
 
 Public reports allow same-origin image, script, and stylesheet files in their
 Content Security Policy. The offline export's `img-src data: blob:` policy

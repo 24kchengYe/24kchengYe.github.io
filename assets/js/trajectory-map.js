@@ -96,7 +96,7 @@
       const fitWidth = Math.min(1, (width - 32) / view().width);
       if (!dialog) viewport.style.height = viewId === 'case' ? `${Math.max(380,Math.min(760,window.innerHeight * .72))}px` : `${Math.max(320, view().height * fitWidth + 32)}px`;
       scale = mode === 'all' ? Math.min(fitWidth, (viewport.clientHeight - 32) / view().height) : fitWidth;
-      offset = { x:(width - view().width * scale) / 2, y:mode === 'all' ? (viewport.clientHeight - view().height * scale) / 2 : 16 };
+      offset = { x:(width - view().width * scale) / 2, y:Math.max(16, (viewport.clientHeight - view().height * scale) / 2) };
       applyTransform();
     };
     const zoom = (factor, horizontal = viewport.clientWidth / 2, vertical = viewport.clientHeight / 2) => {

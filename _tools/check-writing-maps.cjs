@@ -16,6 +16,9 @@ function inspect(host) {
   const scale = bounds.width / parseFloat(getComputedStyle(canvas).width);
   const original = new DOMParser().parseFromString(window.WritingDiagramData.views[host.dataset.view].localized[document.documentElement.lang].html,'text/html');
   const errors = [];
+  const viewport = shadow.querySelector('.tm-viewport').getBoundingClientRect();
+  if (Math.abs(bounds.left + bounds.width / 2 - viewport.left - viewport.width / 2) > 1) errors.push('Canvas is not horizontally centered');
+  if (bounds.height <= viewport.height - 31 && Math.abs(bounds.top + bounds.height / 2 - viewport.top - viewport.height / 2) > 1) errors.push('Canvas is not vertically centered');
   const signature = parent => ({
     text:parent.querySelector('.canvas').textContent.replace(/\s+/g,' ').trim(),
     geometry:[...parent.querySelectorAll('path,polyline,polygon,line,rect,circle,text,tspan')].map(node => [node.tagName,...['d','points','x','y','x1','y1','x2','y2','width','height','transform','dx','dy'].map(key => node.getAttribute(key))]),
@@ -42,6 +45,21 @@ function inspect(host) {
     }
   }
   if (canvas.hasAttribute('data-research-diagram')) {
+    for (const node of canvas.querySelectorAll('.node')) {
+      const frame = node.getBoundingClientRect();
+      const labels = [...node.children].filter(child => !child.hidden);
+      if (getComputedStyle(node).textAlign !== 'center') errors.push(`Node text is not centered: ${node.id}`);
+      for (const label of labels) {
+        const text = document.createRange();
+        text.selectNodeContents(label);
+        for (const line of text.getClientRects()) {
+          if (line.width && Math.abs(line.left + line.width / 2 - frame.left - frame.width / 2) > scale * 2) errors.push(`Off-center node label: ${node.id}`);
+        }
+      }
+      const first = labels[0]?.getBoundingClientRect();
+      const last = labels.at(-1)?.getBoundingClientRect();
+      if (first && last && Math.abs((first.top + last.bottom) / 2 - frame.top - frame.height / 2) > scale * 2) errors.push(`Off-center node text group: ${node.id}`);
+    }
     const blocks = [...canvas.querySelectorAll('.node,.label')];
     for (let first = 0; first < blocks.length; first += 1) for (let second = first + 1; second < blocks.length; second += 1) {
       const left = blocks[first].getBoundingClientRect();

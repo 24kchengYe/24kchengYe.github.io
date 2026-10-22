@@ -6,7 +6,7 @@
 
 `research-workflows.json` is the editable source for the six workflow/case diagrams in Spec generation, Judge–Fix and Rubric model, shared by Blog and Technical editions. It stores all three languages, node geometry, directed connections, article anchors and captions. `_tools/build-research-diagrams.cjs` generates HTML/CSS, per-figure translation dictionaries and explorer annotations before the ordinary figure build.
 
-Keep the canvas brief: one action and one state per node. `nodeDetails` holds the checked explanation shown on selection; `notes` holds expandable figure notes. Linked nodes open their details first and offer the internal workflow from that panel. Primary text is 27px, secondary text 23px, annotations 21px; never shrink one label to fit a translation.
+Keep the canvas brief: one action and one state per node. `nodeDetails` holds the checked explanation shown on selection; `notes` holds expandable figure notes. Linked nodes open their details first and offer the internal workflow from that panel. Primary text is 27px, secondary text 23px, annotations 21px; never shrink one label to fit a translation. Center node text horizontally and center the title/state group vertically. Keep diagram titles, captions and expanded prose left-aligned. Fit the canvas symmetrically in the viewport; tall width-fitted diagrams retain their top inset for scrolling.
 
 Recorded evidence, verified without model calls:
 

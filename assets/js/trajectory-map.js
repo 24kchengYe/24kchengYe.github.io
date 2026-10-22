@@ -42,6 +42,11 @@
     let dialog = null;
     let placeholder;
     let flowing = false;
+    let minimap;
+    let minimapFrame;
+    let minimapScale = 1;
+    let detailsVisible = false;
+    let detailsButton;
     const externalNames = new Map();
     const translate = original => language === 'zh' ? original : data.strings[original]?.[language === 'ja' ? 1 : 0] || original;
     const view = () => data.views[viewId];
@@ -62,8 +67,26 @@
         action();
       });
     };
+    const casePadding = () => ({ x:Math.max(16,(viewport.clientWidth - view().width * scale) / 2), y:Math.max(16,(viewport.clientHeight - view().height * scale) / 2) });
+    const updateMinimap = () => {
+      if (viewId !== 'case' || !minimapFrame) return;
+      const left = Math.max(0,-offset.x / scale);
+      const top = Math.max(0,-offset.y / scale);
+      const width = Math.min(view().width - left, viewport.clientWidth / scale);
+      const height = Math.min(view().height - top, viewport.clientHeight / scale);
+      Object.assign(minimapFrame.style,{ left:`${left * minimapScale}px`,top:`${top * minimapScale}px`,width:`${width * minimapScale}px`,height:`${height * minimapScale}px` });
+    };
     const applyTransform = () => {
-      world.style.transform = `translate(${offset.x}px,${offset.y}px) scale(${scale})`;
+      if (viewId === 'case') {
+        const padding = casePadding();
+        world.style.width = `${Math.max(viewport.clientWidth,view().width * scale + 32)}px`;
+        world.style.height = `${Math.max(viewport.clientHeight,view().height * scale + 32)}px`;
+        world.firstElementChild.style.transform = `translate(${padding.x}px,${padding.y}px) scale(${scale})`;
+        viewport.scrollLeft = Math.max(0,padding.x - offset.x);
+        viewport.scrollTop = Math.max(0,padding.y - offset.y);
+        offset = { x:padding.x - viewport.scrollLeft,y:padding.y - viewport.scrollTop };
+        updateMinimap();
+      } else world.style.transform = `translate(${offset.x}px,${offset.y}px) scale(${scale})`;
       scaleLabel.textContent = `${Math.round(scale * 100)}%`;
     };
     const fit = (mode = 'width') => {
@@ -71,7 +94,7 @@
       const width = viewport.clientWidth;
       if (!width) return;
       const fitWidth = Math.min(1, (width - 32) / view().width);
-      if (!dialog) viewport.style.height = viewId === 'case' ? '660px' : `${Math.max(320, view().height * fitWidth + 32)}px`;
+      if (!dialog) viewport.style.height = viewId === 'case' ? `${Math.max(380,Math.min(760,window.innerHeight * .72))}px` : `${Math.max(320, view().height * fitWidth + 32)}px`;
       scale = mode === 'all' ? Math.min(fitWidth, (viewport.clientHeight - 32) / view().height) : fitWidth;
       offset = { x:(width - view().width * scale) / 2, y:mode === 'all' ? (viewport.clientHeight - view().height * scale) / 2 : 16 };
       applyTransform();
@@ -92,7 +115,7 @@
       const width = bounds.width / scale;
       const height = bounds.height / scale;
       cameraMode = 'node';
-      scale = Math.min(1, (viewport.clientWidth - 48) / (width + 80), (viewport.clientHeight - 48) / (height + 100));
+      scale = viewId === 'case' ? Math.min(1,(viewport.clientWidth - 32) / view().width) : Math.min(1, (viewport.clientWidth - 48) / (width + 80), (viewport.clientHeight - 48) / (height + 100));
       offset = { x:viewport.clientWidth / 2 - (left + width / 2) * scale, y:viewport.clientHeight / 2 - (top + height / 2) * scale };
       offset.x = Math.max(Math.min(16, viewport.clientWidth - view().width * scale - 16), Math.min(16, offset.x));
       applyTransform();
@@ -156,7 +179,7 @@
         return;
       }
       selected = id;
-      aside.hidden = false;
+      aside.hidden = viewId === 'case' && !detailsVisible;
       aside.replaceChildren(element('h3','',nodeName(id)));
       const fields = element('dl');
       if (node.matches('.event')) {
@@ -183,7 +206,13 @@
         }
       }
       related();
-      aside.append(button('关闭详情', () => { aside.hidden = true; selected = null; highlight(null); fit(dialog ? 'all' : 'width'); }));
+      aside.append(button('关闭详情', () => {
+        aside.hidden = true;
+        if (viewId === 'case') {
+          detailsVisible = false;
+          detailsButton.setAttribute('aria-expanded','false');
+        } else { selected = null; highlight(null); fit(dialog ? 'all' : 'width'); }
+      }));
       highlight(id);
       if (focus) focusNode(id);
     };
@@ -271,8 +300,17 @@
       }
     };
     const bindViewport = () => {
+      viewport.addEventListener('scroll', () => {
+        if (viewId !== 'case') return;
+        const padding = casePadding();
+        offset = { x:padding.x - viewport.scrollLeft,y:padding.y - viewport.scrollTop };
+        updateMinimap();
+      });
       viewport.addEventListener('pointerdown', event => {
+        if (viewId === 'case' && event.pointerType === 'touch') { pause(); return; }
         if (event.button > 0 || event.target.closest('[role="button"]')) return;
+        const bounds = viewport.getBoundingClientRect();
+        if (event.clientX - bounds.left >= viewport.clientWidth || event.clientY - bounds.top >= viewport.clientHeight) return;
         pause();
         viewport.focus({ preventScroll:true });
         drag = { id:event.pointerId, x:event.clientX, y:event.clientY, left:offset.x, top:offset.y };
@@ -287,6 +325,7 @@
       const stopDrag = () => { drag = null; viewport.classList.remove('is-dragging'); };
       for (const type of ['pointerup','pointercancel','lostpointercapture']) viewport.addEventListener(type, stopDrag);
       viewport.addEventListener('wheel', event => {
+        if (viewId === 'case' && !event.ctrlKey && !event.metaKey) { pause(); return; }
         if (!event.ctrlKey && !event.metaKey && !dialog) return;
         event.preventDefault();
         pause();
@@ -314,7 +353,7 @@
       const theme = element('link');
       theme.rel = 'stylesheet';
       theme.href = stylesheet;
-      const shell = element('section','tm-shell');
+      const shell = element('section',viewId === 'case' ? 'tm-shell tm-case' : 'tm-shell');
       const toolbar = element('div','tm-toolbar');
       const select = element('select');
       select.setAttribute('aria-label',translate('流程视图'));
@@ -373,6 +412,40 @@
       aside = element('aside','tm-aside');
       aside.hidden = true;
       aside.setAttribute('aria-label',translate('查看详情'));
+      minimap = null;
+      minimapFrame = null;
+      if (viewId === 'case') {
+        const navigator = element('div','tm-navigator');
+        navigator.append(element('span','tm-navigator-title',translate('完整轨迹')));
+        minimap = button('在总览中定位',event => {
+          if (!event.detail) { pause(); fit('all'); return; }
+          pause();
+          const bounds = minimap.getBoundingClientRect();
+          const displayScale = bounds.width / view().width;
+          const horizontal = (event.clientX - bounds.left) / displayScale;
+          const vertical = (event.clientY - bounds.top) / displayScale;
+          cameraMode = 'width';
+          scale = Math.min(1,(viewport.clientWidth - 32) / view().width);
+          offset = { x:viewport.clientWidth / 2 - horizontal * scale,y:viewport.clientHeight / 2 - vertical * scale };
+          applyTransform();
+        });
+        minimap.className = 'tm-minimap';
+        const miniature = canvas.cloneNode(true);
+        miniature.className = 'tm-mini-canvas';
+        miniature.style.width = `${view().width}px`;
+        miniature.style.height = `${view().height}px`;
+        miniature.removeAttribute('id');
+        miniature.setAttribute('aria-hidden','true');
+        miniature.inert = true;
+        for (const node of miniature.querySelectorAll('[id]')) node.removeAttribute('id');
+        minimapScale = 96 / view().width;
+        miniature.style.transform = `scale(${minimapScale})`;
+        minimap.style.height = `${view().height * minimapScale}px`;
+        minimapFrame = element('span','tm-minimap-frame');
+        minimap.replaceChildren(miniature,minimapFrame);
+        navigator.append(minimap,element('small','',translate('框内为当前视野。点击定位。')));
+        body.append(navigator);
+      }
       body.append(viewport,aside);
       if (viewId === 'case') {
         const replayControls = element('div','tm-replay');
@@ -387,11 +460,17 @@
         replayInput.addEventListener('input', () => { pause(); replay(Number(replayInput.value)); });
         replayLabel = element('output');
         replayLabel.setAttribute('aria-live','polite');
-        replayControls.append(previous,playButton,next,button('重新开始', () => { pause(); replay(0); }),replayInput,replayLabel);
+        detailsButton = button('事件详情', () => {
+          detailsVisible = !detailsVisible;
+          detailsButton.setAttribute('aria-expanded',String(detailsVisible));
+          replay(cursor);
+        });
+        detailsButton.setAttribute('aria-expanded',String(detailsVisible));
+        replayControls.append(previous,playButton,next,button('重新开始', () => { pause(); replay(0); }),replayInput,replayLabel,detailsButton);
         shell.append(replayControls);
       } else playButton = null;
       const flowHint = hasConnections ? '悬停追踪连接，点击查看细节或关联图；动效仅辅助读图，不代表执行。' : '点击节点查看细节或关联图；拖动平移，Ctrl/⌘ + 滚轮缩放。';
-      const hint = data.generic ? (view().kind === 'flow' ? flowHint : '点击查看原图数据；拖动平移，Ctrl/⌘ + 滚轮缩放。') : (viewId === 'case' ? '记录回放，不执行工具；检查点与回退不增加模型轮次。' : '悬停追踪连线；点击模块展开；拖动平移，Ctrl/⌘ + 滚轮缩放。');
+      const hint = data.generic ? (view().kind === 'flow' ? flowHint : '点击查看原图数据；拖动平移，Ctrl/⌘ + 滚轮缩放。') : (viewId === 'case' ? '滚动查看完整轨迹，也可点击左侧总览定位。回放不执行工具；检查点与回退不计模型轮次。' : '悬停追踪连线；点击模块展开；拖动平移，Ctrl/⌘ + 滚轮缩放。');
       status = element('div','tm-status',translate(hint));
       shell.append(body,status);
       shadow.replaceChildren(original,theme,shell);

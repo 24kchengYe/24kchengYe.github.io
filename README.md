@@ -155,6 +155,11 @@ diagram labels follow the article's language selection.
 The replay has 21 display events: 15 model attempts plus checkpoint/rewind events.
 There are still 13 retained turns and two failed attempts. Playback performs no
 tool calls. Checkpoint revisits preserve the failure → rewind → retry order.
+The recorded case uses native scrolling at a readable width, with a persistent
+full-trajectory navigator and viewport marker. Event details start collapsed;
+playback follows each event without zooming away its surrounding branch. Fit all
+and the expanded canvas remain available. Ordinary wheel/touch scrolling reaches
+the final event, while Ctrl/⌘ + wheel zooms.
 Static SVGs and their captions remain available below each map, with JavaScript
 disabled, and when printing. The original image viewer is unchanged.
 

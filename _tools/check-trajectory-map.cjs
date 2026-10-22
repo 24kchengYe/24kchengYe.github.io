@@ -37,8 +37,8 @@ function inspectMap(host) {
   }
   const original = new DOMParser().parseFromString(window.TrajectoryMapData.views[host.dataset.view].localized[document.documentElement.lang].html,'text/html');
   const signature = parent => ({
-    nodes:[...parent.querySelectorAll('[id]')].map(node => node.id).sort(),
-    edges:[...parent.querySelectorAll('.connection')].map(edge => `${edge.dataset.from}>${edge.dataset.to}:${edge.dataset.logicalEdge || edge.dataset.relation || ''}`).sort(),
+    nodes:[...parent.querySelector('.canvas').querySelectorAll('[id]')].map(node => node.id).sort(),
+    edges:[...parent.querySelector('.canvas').querySelectorAll('.connection')].map(edge => `${edge.dataset.from}>${edge.dataset.to}:${edge.dataset.logicalEdge || edge.dataset.relation || ''}`).sort(),
     text:parent.querySelector('.canvas').textContent.replace(/\s+/g,' ').trim()
   });
   if (JSON.stringify(signature(original)) !== JSON.stringify(signature(shadow))) errors.push(['source-fidelity']);
@@ -49,7 +49,7 @@ async function checkVisible(map, selector) {
   const visible = await map.evaluate((host, target) => {
     const shadow = host.shadowRoot;
     const viewport = shadow.querySelector('.tm-viewport').getBoundingClientRect();
-    const bounds = shadow.querySelector(target).getBoundingClientRect();
+    const bounds = shadow.querySelector('.tm-viewport').querySelector(target).getBoundingClientRect();
     return bounds.left >= viewport.left - 1 && bounds.top >= viewport.top - 1 && bounds.right <= viewport.right + 1 && bounds.bottom <= viewport.bottom + 1;
   }, selector);
   assert(visible, `${selector} must fit inside the viewport`);
@@ -123,6 +123,24 @@ async function main() {
     assert(!(await map.locator('.tm-aside').innerText()).includes('BO →'),'Cross-panel links use translated titles');
     await map.locator('select').selectOption('case');
     await settle();
+    assert(await map.locator('.tm-aside').evaluate(node => node.hidden),'Replay details start collapsed to preserve canvas width');
+    assert.equal(await map.locator('.tm-viewport').evaluate(node => getComputedStyle(node).overflowY),'auto','Long cases have native scrolling');
+    const caseViewport = map.locator('.tm-viewport');
+    await caseViewport.hover();
+    await page.mouse.wheel(0,500);
+    await page.waitForFunction(() => document.getElementById('trajectory-map-1').shadowRoot.querySelector('.tm-viewport').scrollTop > 100);
+    await caseViewport.evaluate(node => { node.scrollTop = node.scrollHeight; });
+    await settle();
+    await checkVisible(map,'#p15');
+    await checkVisible(map,'.footer');
+    const mini = map.locator('.tm-minimap');
+    await mini.click({ position:{x:48,y:20} });
+    await settle();
+    assert(await caseViewport.evaluate(node => node.scrollTop < 200),'Overview navigation reaches the beginning');
+    await mini.click({ position:{x:48,y:225} });
+    await settle();
+    assert(await caseViewport.evaluate(node => node.scrollTop > 1500),'Overview navigation reaches the end');
+    await map.getByRole('button',{name:'Event details',exact:true}).click();
     for (const [index,id] of config.views.case.sequence.entries()) {
       await map.locator('input[type="range"]').evaluate((input,value) => { input.value = value; input.dispatchEvent(new Event('input',{ bubbles:true })); },index);
       assert((await map.locator('.tm-replay output').innerText()).includes(`${index + 1} / 21`));
@@ -183,10 +201,24 @@ async function main() {
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),'Mobile horizontal overflow');
       await map.screenshot({ path:path.join(output,`mobile-overview-${language}.png`) });
       await map.locator('select').selectOption('case');
+      const details = map.getByRole('button',{name:language === 'zh' ? '事件详情' : language === 'en' ? 'Event details' : 'イベントの詳細',exact:true});
+      if (await details.getAttribute('aria-expanded') === 'true') await details.click();
+      await settle();
+      await map.locator('.tm-viewport').evaluate(node => { node.scrollTop = node.scrollHeight; });
+      await settle();
+      await checkVisible(map,'#p15');
       await map.locator('[data-expand]').click();
       await settle();
       assert(await map.locator('.tm-viewport').evaluate(node => node.clientHeight >= 160),'Mobile expanded viewport');
+      const touchAction = await map.locator('.tm-viewport').evaluate(node => getComputedStyle(node).touchAction);
+      assert(touchAction === 'manipulation' || touchAction.includes('pan-y'),'Expanded replay supports native touch scrolling');
       await page.screenshot({ path:path.join(output,`mobile-replay-${language}.png`) });
+      await map.locator('input[type="range"]').evaluate(input => { input.value = 10; input.dispatchEvent(new Event('input',{ bubbles:true })); });
+      await settle();
+      await checkVisible(map,'#restore5');
+      await details.click();
+      await settle();
+      await checkVisible(map,'#restore5');
       await page.keyboard.press('Escape');
       await page.locator('dialog.trajectory-dialog').waitFor({ state:'detached' });
       await map.locator('select').selectOption('complete');

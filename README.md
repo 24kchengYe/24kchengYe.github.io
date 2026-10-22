@@ -137,6 +137,34 @@ The article's image viewer opens with the whole figure visible. Fit width, zoom
 buttons and scrolling/dragging reveal details without cropping the source image.
 Viewer controls and figure text follow the article's language selection.
 
+### Interactive Trajectory Maps
+
+The coding-agent article uses the same pan, zoom, module navigation, and muted
+visual language as Automation Blueprint. Its eight inline maps expose nine views,
+including the full workflow, shared Harness, Online/Offline feedback, planning,
+and a recorded-case replay. Each map navigates independently. All controls and
+diagram labels follow the article's language selection.
+
+- `_data/writing/trajectory-map.json`: view links, replay order, and control translations.
+- `_tools/build-trajectory-map.cjs`: extracts the existing localized diagram canvases;
+  rejects broken links or replay references. It does not rewrite workflow geometry.
+- `assets/js/trajectory-map-data.js`: generated canvases for all three languages.
+- `assets/js/trajectory-map.js` and `assets/css/trajectory-map.css`: Shadow DOM
+  component, isolated styles, keyboard/pointer navigation, and playback controls.
+
+The replay has 21 display events: 15 model attempts plus checkpoint/rewind events.
+There are still 13 retained turns and two failed attempts. Playback performs no
+tool calls. Checkpoint revisits preserve the failure → rewind → retry order.
+Static SVGs and their captions remain available below each map, with JavaScript
+disabled, and when printing. The original image viewer is unchanged.
+
+After rebuilding, run `npm run check:trajectory-map` as well as
+`npm run check:cli-figures`. The interactive check compares text, node IDs, and
+edges against the static source for all 27 view/language combinations, then
+tests navigation, replay state, fit-all bounds, mobile layouts, print, no-JS
+fallback, and the unchanged Automation Blueprint. Review screenshots under
+`_preview/trajectory-map/`; use `MAP_REVIEW_ORIGIN` to check the deployed site.
+
 Public reports allow same-origin image, script, and stylesheet files in their
 Content Security Policy. The offline export's `img-src data: blob:` policy
 cannot load the site's separate figure files. External connections remain disabled.

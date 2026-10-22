@@ -4,6 +4,7 @@ const { JSDOM } = require('jsdom');
 const { buildFigures } = require('./build-figures.cjs');
 const { buildCliFigures } = require('./build-cli-figures.cjs');
 const { buildAutomationBlueprint } = require('./build-automation-blueprint.cjs');
+const { buildTrajectoryMap, attachTrajectoryMaps } = require('./build-trajectory-map.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
@@ -12,6 +13,7 @@ const requestedSlug = process.argv[2];
 if (requestedSlug && ![...slugs, ...blogOnlySlugs].includes(requestedSlug)) throw new Error(`Unknown writing: ${requestedSlug}`);
 if (requestedSlug !== 'automation-blueprint') buildCliFigures();
 const figures = requestedSlug === 'automation-blueprint' ? {} : buildFigures();
+const trajectoryMap = !requestedSlug || requestedSlug === 'coding-agent-trajectories' ? buildTrajectoryMap() : null;
 if (!requestedSlug || requestedSlug === 'automation-blueprint') buildAutomationBlueprint();
 const policy = "default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'";
 const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label="Writing">
@@ -94,6 +96,7 @@ function build(slug, technical = false) {
   document.querySelector('link[rel="canonical"]').href = `https://24kchengye.github.io${route}`;
   document.querySelector('meta[property="og:url"]').content = `https://24kchengye.github.io${route}`;
   localizeFigures(document);
+  if (slug === 'coding-agent-trajectories') attachTrajectoryMaps(document, trajectoryMap);
   document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   document.body.insertAdjacentHTML('afterbegin', navigation(slug, technical));
   const stylesheet = document.createElement('link');

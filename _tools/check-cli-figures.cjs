@@ -83,6 +83,7 @@ async function checkArticle(browser, origin, width, height) {
     const figures = page.locator('figure img');
     for (let index = 0; index < await figures.count(); index++) {
       const figure = figures.nth(index);
+      await figure.evaluate(image => { const fallback = image.closest('.trajectory-static'); if (fallback) fallback.open = true; });
       await figure.scrollIntoViewIfNeeded();
       await figure.evaluate(image => image.decode());
       const geometry = await figure.evaluate(image => {

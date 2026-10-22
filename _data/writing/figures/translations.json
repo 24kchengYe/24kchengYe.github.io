@@ -1,4 +1,188 @@
 {
+  "真实库存 Case · 15 次尝试，13 轮保留": [
+    "A real inventory case · 15 attempts, 13 retained turns",
+    "実際の在庫 Case · 試行15回、保持13ターン"
+  ],
+  "从读技能到交付：每行对应一次实际模型响应。": [
+    "From reading skills to delivery: one actual model response per row.",
+    "スキル読解から納品まで。各行は実際のモデル応答1回。"
+  ],
+  "尝试 / 轮次": [
+    "Attempt / turn",
+    "試行 / ターン"
+  ],
+  "工具与动作": [
+    "Tool & action",
+    "ツールと動作"
+  ],
+  "实际返回": [
+    "Actual response",
+    "実際の返却値"
+  ],
+  "执行后的状态": [
+    "State after execution",
+    "実行後の状態"
+  ],
+  "读取 Base Skill": [
+    "Read the Base skill",
+    "Base スキルを読む"
+  ],
+  "返回 SKILL.md 正文": [
+    "SKILL.md content returned",
+    "SKILL.md の本文"
+  ],
+  "规则进入上下文；尚无 Base": [
+    "Rules enter context; no Base yet",
+    "規則が文脈に加わる。Base は未作成"
+  ],
+  "读取系统搭建指引": [
+    "Read the building guide",
+    "システム構築ガイドを読む"
+  ],
+  "返回搭建规范": [
+    "Building rules returned",
+    "構築規則を取得"
+  ],
+  "补充设计规则；环境未变": [
+    "More design rules; environment unchanged",
+    "設計規則を追加。環境は変化なし"
+  ],
+  "创建 Base · 数字类型码": [
+    "Create Base · numeric types",
+    "Base 作成 · 数値の型コード"
+  ],
+  "参数校验失败 · 12 项": [
+    "Schema error · 12 issues",
+    "引数検証エラー · 12件"
+  ],
+  "无可用创建回执；该尝试放弃": [
+    "No valid creation receipt; attempt discarded",
+    "有効な作成結果なし。この試行を破棄"
+  ],
+  "重写字段 · text / number / select": [
+    "Rewrite fields · named types",
+    "フィールド修正 · 文字列の型名"
+  ],
+  "Base A 与产品表创建成功": [
+    "Base A and product table created",
+    "Base A と商品テーブルを作成"
+  ],
+  "创建出入库记录表": [
+    "Create the stock-movement table",
+    "入出庫記録テーブルを作成"
+  ],
+  "已有两张表；均未写入记录": [
+    "Two tables; no records written yet",
+    "2つのテーブル。レコードは未登録"
+  ],
+  "批量写产品 · --records": [
+    "Write products · --records",
+    "商品を一括登録 · --records"
+  ],
+  "写入未执行；产品仍为 0 条": [
+    "Write not executed; still 0 products",
+    "書き込み未実行。商品は0件のまま"
+  ],
+  "查看批量写入命令 · --help": [
+    "Inspect batch-create · --help",
+    "一括登録のヘルプ · --help"
+  ],
+  "输入格式进入上下文；未写数据": [
+    "Input format learned; no data written",
+    "入力形式を確認。データは未登録"
+  ],
+  "按帮助写入 · --json": [
+    "Write with --json",
+    "ヘルプに従い --json で登録"
+  ],
+  "ok: true · 返回 6 个记录 ID": [
+    "ok: true · 6 record IDs",
+    "ok: true · レコードID 6件"
+  ],
+  "产品表 0 → 6 条；错误闭环": [
+    "Products 0 → 6; correction verified",
+    "商品0 → 6件。修正を検証"
+  ],
+  "写入 6 条出入库样例": [
+    "Write 6 stock-movement examples",
+    "入出庫のサンプル6件を登録"
+  ],
+  "流水表 0 → 6 条": [
+    "Stock movements 0 → 6",
+    "入出庫記録0 → 6件"
+  ],
+  "创建出入库表单": [
+    "Create the stock-movement form",
+    "入出庫フォームを作成"
+  ],
+  "新增录入界面；记录数未变": [
+    "Form added; record counts unchanged",
+    "入力画面を追加。件数は変化なし"
+  ],
+  "创建库存仪表盘": [
+    "Create the inventory dashboard",
+    "在庫ダッシュボードを作成"
+  ],
+  "新增仪表盘容器": [
+    "Dashboard container added",
+    "ダッシュボードの枠を追加"
+  ],
+  "回读产品表 · record-list": [
+    "Read back products · record-list",
+    "商品を再取得 · record-list"
+  ],
+  "6 条产品可见；只读未改数据": [
+    "6 products observed; read-only",
+    "商品6件を確認。読み取りのみ"
+  ],
+  "回读流水表 · record-list": [
+    "Read back movements · record-list",
+    "入出庫記録を再取得 · record-list"
+  ],
+  "6 条流水可见；只读未改数据": [
+    "6 movements observed; read-only",
+    "入出庫6件を確認。読み取りのみ"
+  ],
+  "提交 Base 链接": [
+    "Deliver the Base link",
+    "Base リンクを納品"
+  ],
+  "链接已交付；Base 内容未变": [
+    "Link delivered; Base unchanged",
+    "リンクを納品。Base は変化なし"
+  ],
+  "最终回复": [
+    "Final reply",
+    "最終応答"
+  ],
+  "总结搭建结果": [
+    "Summarize the build",
+    "構築結果をまとめる"
+  ],
+  "无工具调用 / 返回": [
+    "No tool call or response",
+    "ツール呼び出し・返却値なし"
+  ],
+  "生成结束；业务质量另行评审": [
+    "Generation ends; quality reviewed separately",
+    "生成終了。業務品質は別途評価"
+  ],
+  "回退到 T3 前：保留 T1–2，按字段 Schema 重新选择动作。": [
+    "Rewind to before T3: retain T1–2, then reselect using the field schema.",
+    "T3の直前へ復元。T1–2を保持し、フィールドSchemaに従って動作を再選択。"
+  ],
+  "回退到 T5 前：保留 T1–4，Base A 复制为 B 并映射资源 ID，再重新选择动作。": [
+    "Rewind to before T5: retain T1–4, copy Base A to B, map resource IDs, then reselect.",
+    "T5の直前へ復元。T1–4を保持し、Base AをBに複製。リソースIDを対応付けて再選択。"
+  ],
+  "浅橙：放弃的失败尝试　浅绿：纠偏后执行　其余：保留轮次": [
+    "Amber: discarded failure · Green: corrected execution · White: retained turns",
+    "薄橙：破棄した失敗試行　薄緑：修正後の実行　白：保持したターン"
+  ],
+  "P 是实际尝试，T 是最终轨迹轮次。回退控制不另算一轮；两次失败仍留在审计与成本统计中。": [
+    "P counts actual attempts; T indexes the final trace. Rewind is control, not a new turn. Both failures remain in audit and cost records.",
+    "Pは実際の試行、Tは最終軌跡のターン番号。復元制御は追加ターンではなく、2回の失敗は監査とコスト記録に残る。"
+  ],
   "通过核验": ["Verified", "検証済み"],
   "Online 共用 Harness，轨迹再交给 Offline": [
     "A shared Online runtime; a separate Offline handoff",

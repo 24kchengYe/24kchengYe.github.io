@@ -50,14 +50,15 @@
 <figcaption>工具调用走左侧循环，真实返回进入下一轮；最终文本走右侧结束检查。预算耗尽或不可安全继续时记录相应终态。这里的“完成”是 rollout 的运行状态，业务验收和轨迹质量由后续评审分别判断。</figcaption>
 </figure>
 <p>初始输入包含 ThinkSP、FunctionSP、MainSP、Reminder、原始 Query 和工具 Schema；Skills 正文通过 Read 按需进入上下文。模型能看到的是工具 observation，完整 ToolResponse 和运行元数据另作审计证据。后台任务的完成通知也会补回消息。续跑时，已完成调用按 call ID 和参数哈希复用真实回执；结果不明的写操作停止执行，交给新环境重试。</p>
-<h3 id="case-format">一条 Case 的状态如何演进</h3>
-<p>一条轨迹由连续的状态变化组成：模型根据已有消息和可见环境选择动作，工具执行产生真实观察，再进入下一轮。文件与 Base 可能被修改，剩余预算随调用消耗；接入 TodoList 后，计划状态也根据执行证据更新。只读操作或失败调用可能不改变环境，但仍会留下观察。</p>
+<p>本批 Rollout 实际开放 5 个工具：Bash、Read、Write、Edit、present_files。本例调用了 Read、Bash、present_files，未调用 Write 或 Edit。更完整的线上工具定义还包含 Glob、Grep、TaskOutput、TaskStop、TodoWrite 等，但它们没有启用在这批轨迹的 tools[] 中。</p>
+<h3 id="case-format">真实 Case：两次纠偏如何改变执行</h3>
+<p>选取在线纠偏实验中的一条库存搭建轨迹：模型读取技能，创建产品表与出入库记录表，写入样例，再创建表单、仪表盘并回读交付。实际产生 15 次模型响应，两次失败尝试经过教师指导和 Harness 回退后重新执行，最终保留 13 轮。下面按实际发生顺序展开，同一轮的失败尝试与重新选择都保留可见。</p>
 <figure>
-<img data-figure="cli-case-format" alt="轨迹的状态转换、修复版本与三类独立结果" loading="lazy">
-<figcaption>S、M、E、P、B 用来解释执行状态，不是新增的归档字段，也不表示保存了完整环境快照。中间是一条经过 Online 重生成和 Offline 编辑的修复示例：两步均按需发生，无需修改的原始轨迹可直接进入 Offline 核验。v₀、v₁、v₁′ 是版本示意；每版分别关联运行结果、评审证据与准出决定。</figcaption>
+<img data-figure="cli-case-format" alt="真实库存轨迹的逐轮动作、工具返回、状态变化与两次纠偏" loading="lazy">
+<figcaption>P01–P15 是实际生成尝试，T1–T13 是最终轨迹中的轮次；浅橙行被放弃，浅绿行是纠偏后的执行。回退行属于 Harness 控制，不额外算作模型轮次。工具返回和状态按原记录摘要，Base A / B 是匿名代称，真实链接与资源 ID 不公开。CLI 子命令均由 Bash 调用。</figcaption>
 </figure>
-<p>一个已归档 Case 经历了 26 轮模型响应、35 次命令调用，其中 2 次命令失败，最终运行结果仍为 succeeded：执行可以在失败后恢复。Judge 是否发现质量问题、轨迹是否满足训练准出条件，要另外记录。预算耗尽会记为 failed 并保留原因；Pending 表示流程保留该版本与问题，不等同于执行失败。</p>
-<p>归档中，assistant.tool_calls[] 保存动作与参数，tool 消息按 tool_call_id 配对并保留真实返回；modelTurns[] 用 assistantMessageIndex 和 toolCallIds 关联轮次。Online 恢复或重建环境，再通过 Harness 产生新轨迹；Offline 保存补丁并核验调用、状态和文字依赖。原始轨迹始终保留，修复版本与各自的评审结果分别关联。</p>
+<p>第一处纠偏在 T3：数字类型码触发 12 项参数校验错误；回到创建前，模型重写字段定义，采用 text、number、select 等字符串类型，重新执行后拿到创建成功回执。第二处在 T5：--records 不受支持，产品仍为 0 条；恢复 T1–T4 的上下文，并把已有 Base 复制为工作副本、映射资源 ID 后，模型先读 --help，再按 --json / create_records 写入，成功得到 6 个记录 ID。</p>
+<p>两次失败尝试保留在审计日志和成本统计中，最终轨迹保留纠偏后的 13 轮。T10、T11 分别回读到 6 条产品和 6 条流水。T13 的“已完成”是模型回复，业务是否满足需求由 Judge 另行判断。这条记录展示了 Online 运行时纠偏的完整过程。</p>
 <h2>已做实验：Spec 如何参与规划</h2>
 <p>我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</p>
 <div class="table-scroll">

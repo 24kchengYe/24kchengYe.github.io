@@ -1,4 +1,32 @@
 {
+  "真实 Case：两次纠偏如何改变执行": [
+    "A real case: how two corrections change execution",
+    "実際の Case：2回の修正で実行はどう変わるか"
+  ],
+  "选取在线纠偏实验中的一条库存搭建轨迹：模型读取技能，创建产品表与出入库记录表，写入样例，再创建表单、仪表盘并回读交付。实际产生 15 次模型响应，两次失败尝试经过教师指导和 Harness 回退后重新执行，最终保留 13 轮。下面按实际发生顺序展开，同一轮的失败尝试与重新选择都保留可见。": [
+    "This inventory-building case comes from the online-correction experiment. The model reads skills, creates product and stock-movement tables, writes examples, adds a form and dashboard, then reads back and delivers the result. There are 15 actual model responses. Two failed attempts are followed by teacher guidance, a Harness rewind, and fresh execution, leaving 13 retained turns. The timeline follows the actual order, showing both failed attempts and the actions selected after rewinding.",
+    "オンライン修正実験から在庫システム構築の1軌跡を取り上げる。モデルはスキルを読み、商品・入出庫テーブルを作成し、サンプルを登録する。その後フォームとダッシュボードを作成し、読み返して納品する。実際のモデル応答は15回。2回の失敗後に教師の助言とHarnessによる復元を経て再実行し、最終的に13ターンを保持した。図は実際の順序に沿い、失敗試行と復元後の再選択の両方を示す。"
+  ],
+  "真实库存轨迹的逐轮动作、工具返回、状态变化与两次纠偏": [
+    "Turn-by-turn actions, tool responses, state changes, and two corrections in a real inventory trace",
+    "実際の在庫軌跡における各ターンの動作・返却値・状態変化と2回の修正"
+  ],
+  "P01–P15 是实际生成尝试，T1–T13 是最终轨迹中的轮次；浅橙行被放弃，浅绿行是纠偏后的执行。回退行属于 Harness 控制，不额外算作模型轮次。工具返回和状态按原记录摘要，Base A / B 是匿名代称，真实链接与资源 ID 不公开。CLI 子命令均由 Bash 调用。": [
+    "P01–P15 count actual generation attempts; T1–T13 index the final trace. Amber rows are discarded attempts; green rows are corrected execution. Rewind rows are Harness control, not additional model turns. Responses and states summarize the original records. Base A / B are anonymous aliases; live links and resource IDs are omitted. All CLI subcommands run through Bash.",
+    "P01–P15は実際の生成試行、T1–T13は最終軌跡のターン番号。薄橙は破棄した試行、薄緑は修正後の実行を示す。復元行はHarnessの制御であり、モデルの追加ターンには数えない。返却値と状態は原記録の要約。Base A / Bは匿名の代称で、実際のリンクとリソースIDは公開しない。CLIサブコマンドはすべてBash経由で実行する。"
+  ],
+  "第一处纠偏在 T3：数字类型码触发 12 项参数校验错误；回到创建前，模型重写字段定义，采用 text、number、select 等字符串类型，重新执行后拿到创建成功回执。第二处在 T5：--records 不受支持，产品仍为 0 条；恢复 T1–T4 的上下文，并把已有 Base 复制为工作副本、映射资源 ID 后，模型先读 --help，再按 --json / create_records 写入，成功得到 6 个记录 ID。": [
+    "The first correction is at T3: numeric field-type codes trigger 12 schema errors. After returning to the pre-creation state, the model rewrites the field definitions with named types such as text, number, and select, then receives a successful creation response. At T5, the unsupported --records flag leaves the product count at zero. The Harness restores the T1–T4 context, copies the existing Base into a working branch, and maps resource IDs. The model reads --help, then uses --json / create_records and receives six record IDs.",
+    "最初の修正はT3で起きた。数値の型コードによって12件の引数検証エラーが発生したため、作成前に戻り、モデルがtext・number・selectなどの文字列型名でフィールド定義を書き直し、再実行で作成成功の返却値を得た。T5では未対応の--recordsにより商品は0件のままだった。HarnessがT1–T4の文脈を復元し、既存Baseを作業用分岐へ複製してリソースIDを対応付ける。モデルは--helpを読み、--json / create_recordsを使って6件のレコードIDを取得した。"
+  ],
+  "两次失败尝试保留在审计日志和成本统计中，最终轨迹保留纠偏后的 13 轮。T10、T11 分别回读到 6 条产品和 6 条流水。T13 的“已完成”是模型回复，业务是否满足需求由 Judge 另行判断。这条记录展示了 Online 运行时纠偏的完整过程。": [
+    "Both failed attempts remain in the audit log and cost totals; the final trajectory retains the 13 corrected turns. T10 and T11 read back six products and six stock movements. The completion statement at T13 is a model response; the Judge separately assesses whether the business requirements are met. This record follows the complete Online runtime-correction process.",
+    "2回の失敗試行は監査ログとコスト集計に残し、最終軌跡には修正後の13ターンを保持する。T10とT11では商品6件と入出庫記録6件をそれぞれ読み返した。T13の完了宣言はモデルの応答であり、業務要件の充足はJudgeが別途判断する。この記録はOnline実行時修正の全過程を示している。"
+  ],
+  "本批 Rollout 实际开放 5 个工具：Bash、Read、Write、Edit、present_files。本例调用了 Read、Bash、present_files，未调用 Write 或 Edit。更完整的线上工具定义还包含 Glob、Grep、TaskOutput、TaskStop、TodoWrite 等，但它们没有启用在这批轨迹的 tools[] 中。": [
+    "This rollout exposes five tools: Bash, Read, Write, Edit, and present_files. The example uses Read, Bash, and present_files, but not Write or Edit. The broader online definitions also include Glob, Grep, TaskOutput, TaskStop, and TodoWrite, among others; these are not enabled in this batch’s tools[] schema.",
+    "このRolloutで公開されているツールはBash・Read・Write・Edit・present_filesの5つ。本例はRead・Bash・present_filesを使用し、WriteとEditは使っていない。より広いオンラインのツール定義にはGlob・Grep・TaskOutput・TaskStop・TodoWriteなどもあるが、このバッチのtools[]では有効化されていない。"
+  ],
   "Online 生成与修复共用执行底座": [
     "One runtime for Online generation and repair",
     "Online の生成と修復を支える共通実行基盤"

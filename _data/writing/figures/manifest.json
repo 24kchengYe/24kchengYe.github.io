@@ -1,8 +1,8 @@
 {
   "cli-combined": {
     "source": "cli-combined.html",
-    "width": 1760,
-    "height": 1540,
+    "width": 1848,
+    "height": 2002,
     "format": "html-css"
   },
   "nimble-kev-heads": {
@@ -433,20 +433,26 @@
   },
   "cli-harness": {
     "source": "cli-harness.html",
-    "width": 1760,
-    "height": 500,
+    "width": 1848,
+    "height": 650,
     "format": "html-css"
   },
   "cli-online": {
     "source": "cli-online.html",
-    "width": 900,
-    "height": 1020,
+    "width": 945,
+    "height": 1326,
     "format": "html-css"
   },
   "cli-offline": {
     "source": "cli-offline.html",
-    "width": 840,
-    "height": 1020,
+    "width": 882,
+    "height": 1326,
+    "format": "html-css"
+  },
+  "cli-spec-todolist": {
+    "source": "cli-spec-todolist.html",
+    "width": 960,
+    "height": 680,
     "format": "html-css"
   }
 }

@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { JSDOM } = require('jsdom');
 
 const directory = path.join(__dirname, '../_data/writing/figures');
 const graph = JSON.parse(fs.readFileSync(path.join(directory, 'cli-trajectory-flow.json'), 'utf8'));
@@ -52,5 +53,63 @@ function buildCliFigures() {
   combined += '<div class="query-note" style="left:60px;top:330px">表 · 视图 · 仪表盘<br>工作流 · 权限</div><div style="position:absolute;left:395px;top:65px;padding:0 12px;background:white;font-size:24px;color:#53624b">Harness</div>';
   combined += graph.nodes.map(node => renderNode(node, 0, 0)).join('\n');
   fs.writeFileSync(path.join(directory, 'cli-combined.html'), '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>cli-combined</title><style>' + css + '</style></head><body><main class="canvas" style="width:1760px;height:1540px">' + combined + '</main></body></html>\n');
+  for (const name of [...panels.map(panel => panel.name), 'cli-combined']) {
+    const target = path.join(directory, name + '.html');
+    const dom = new JSDOM(fs.readFileSync(target, 'utf8'));
+    const document = dom.window.document;
+    document.querySelector('.canvas').setAttribute('data-fixed-type', '');
+    for (const element of document.querySelectorAll('[style]')) {
+      const style = element.style;
+      if (element.classList.contains('edge-label')) {
+        const offsets = { '需重生成': [0, -8], '不等价': [0, 9], '有限后续': [0, 17], '未准出': [-24, 0] };
+        const offset = offsets[element.textContent];
+        if (offset) {
+          style.left = parseFloat(style.left) + offset[0] + 'px';
+          style.top = parseFloat(style.top) + offset[1] + 'px';
+        }
+      }
+      for (const property of ['left', 'width']) if (style[property]) style[property] = parseFloat(style[property]) * 1.05 + 'px';
+      for (const property of ['top', 'height']) if (style[property]) style[property] = parseFloat(style[property]) * 1.3 + 'px';
+      if (element.classList.contains('edge')) {
+        const angle = parseFloat(style.transform.match(/rotate\(([-\d.]+)/)[1]) * Math.PI / 180;
+        const length = parseFloat(style.width) / 1.05;
+        style.width = Math.hypot(Math.cos(angle) * length * 1.05, Math.sin(angle) * length * 1.3) + 'px';
+        style.transform = 'rotate(' + Math.atan2(Math.sin(angle) * 1.3, Math.cos(angle) * 1.05) * 180 / Math.PI + 'deg)';
+      }
+      if (element.classList.contains('node')) {
+        if (['BN', 'BK'].includes(element.id)) {
+          style.left = parseFloat(style.left) - 12 + 'px';
+          style.width = parseFloat(style.width) + 24 + 'px';
+        }
+        const height = Math.max(parseFloat(style.height), element.querySelector('.sub') ? 108 : 82);
+        style.top = parseFloat(style.top) + (parseFloat(style.height) - height) / 2 + 'px';
+        style.height = height + 'px';
+        style.removeProperty('font-size');
+      }
+    }
+    for (const connection of document.querySelectorAll('.connection')) {
+      const segments = [...connection.querySelectorAll('.edge')];
+      for (const [index, segment] of segments.entries()) {
+        const style = segment.style;
+        const angle = parseFloat(style.transform.match(/rotate\(([-\d.]+)/)[1]) * Math.PI / 180;
+        const start = [parseFloat(style.left), parseFloat(style.top)];
+        const end = [start[0] + Math.cos(angle) * parseFloat(style.width), start[1] + Math.sin(angle) * parseFloat(style.width)];
+        for (const [id, point, active, outgoing] of [[connection.dataset.from, start, index === 0, true], [connection.dataset.to, end, index === segments.length - 1, false]]) {
+          const node = document.getElementById(id);
+          if (!active || !node) continue;
+          const horizontal = Math.abs(Math.cos(angle)) > .5;
+          const positive = horizontal ? Math.cos(angle) > 0 : Math.sin(angle) > 0;
+          point[horizontal ? 0 : 1] = parseFloat(node.style[horizontal ? 'left' : 'top']) + (positive === outgoing ? parseFloat(node.style[horizontal ? 'width' : 'height']) : 0);
+        }
+        style.left = start[0] + 'px';
+        style.top = start[1] + 'px';
+        style.width = Math.hypot(end[0] - start[0], end[1] - start[1]) + 'px';
+        style.transform = 'rotate(' + Math.atan2(end[1] - start[1], end[0] - start[0]) * 180 / Math.PI + 'deg)';
+      }
+    }
+    document.querySelector('style').textContent += '\n.title{font-size:30px}.node,.environment,.dependencies,.bundle,.bundle h3{font-size:26px;line-height:1.25}.node{padding:6px 12px}.sub,.dependency-row,.query-note{font-size:20px;line-height:1.25}.edge-label{font-size:19px;line-height:1.25}.bundle h3{font-weight:500}.bundle p{font-size:20px}.dependency-row{gap:10px}.turns b{padding:7px 12px}';
+    fs.writeFileSync(target, dom.serialize() + '\n');
+    dom.window.close();
+  }
 }
 module.exports = { buildCliFigures };

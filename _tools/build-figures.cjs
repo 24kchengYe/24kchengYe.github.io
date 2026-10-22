@@ -94,6 +94,7 @@ function fitLayoutLabels(document, canvas, language) {
     content.style.minWidth = '0';
     content.style.overflowWrap = 'anywhere';
     node.append(content);
+    if (canvas.hasAttribute('data-fixed-type')) continue;
     if (language === 'zh') continue;
     const width = parseFloat(node.style.width) - 32;
     const height = parseFloat(node.style.height) - 20;

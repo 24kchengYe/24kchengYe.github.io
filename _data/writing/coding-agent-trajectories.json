@@ -294,5 +294,21 @@
   "放大的流程图": [
     "Expanded workflow diagram",
     "拡大したフロー図"
+  ],
+  "方案设计：Spec → TodoList": [
+    "Design: Spec → TodoList",
+    "設計：Spec → TodoList"
+  ],
+  "Spec 提供业务对象、约束和依赖，TodoList 将其组织成可更新的执行计划。规划工具维护任务顺序、完成状态和执行依据，让计划随真实工具返回更新。这是本方案采用的规划结构；前面的三组实验比较的是 Spec 的输入位置。": [
+    "Specs provide business objects, constraints, and dependencies; a TodoList organizes them into an updatable execution plan. The planning tool tracks task order, completion status, and execution evidence, updating the plan as actual tool results arrive. This is the planning structure adopted in our design; the three-arm experiment above compared where to place the Spec.",
+    "Specが業務オブジェクト・制約・依存関係を定義し、TodoListが更新可能な実行計画にまとめる。計画ツールでタスクの順序、完了状態、実行の根拠を管理し、実際のツールの返り値に応じて計画を更新する。これが本設計で採用する計画構造であり、先の3条件の実験ではSpecの入力位置を比較した。"
+  ],
+  "Spec 与 TodoList 的规划、执行及 Judge–Fix 反馈关系": [
+    "Planning, execution, and Judge–Fix feedback for Spec and TodoList",
+    "SpecとTodoListの計画・実行・Judge–Fixフィードバック"
+  ],
+  "两条反馈路径：执行返回更新 TodoList 的状态；Judge–Fix 的问题归因推动计划修订。修改后的计划指导受影响片段的执行或重生成，再交回评审。核验通过的计划、调用与真实回执一同进入训练轨迹；修复预算与 Pending 沿用 Online / Offline 流程。": [
+    "Two feedback paths: execution results update TodoList status; issue attribution from Judge–Fix drives plan revision. The revised plan guides execution or regeneration of the affected segment, which is evaluated again. Verified plans, calls, and actual results become training trajectories together. Repair budgets and Pending follow the Online / Offline workflow.",
+    "フィードバックは2経路ある。実行結果でTodoListの状態を更新し、Judge–Fixの原因分析で計画を修訂する。修訂した計画に沿って影響区間を実行・再生成し、再評価する。検証を通過した計画・呼び出し・実際の返り値を一緒に学習軌跡へ収める。修復予算とPendingはOnline / Offlineの流れを引き継ぐ。"
   ]
 }

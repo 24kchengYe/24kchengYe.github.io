@@ -3138,5 +3138,53 @@
   "来自 Online": [
     "From Online",
     "Onlineから"
+  ],
+  "任务 · 依赖 · 状态": [
+    "Tasks · Dependencies · Status",
+    "タスク · 依存関係 · 状態"
+  ],
+  "CLI 执行": [
+    "CLI execution",
+    "CLI実行"
+  ],
+  "执行或重生成片段": [
+    "Execute or regenerate a segment",
+    "実行・区間の再生成"
+  ],
+  "计划与动作一致性": [
+    "Plan–action consistency",
+    "計画と操作の整合性"
+  ],
+  "训练轨迹": [
+    "Training trajectories",
+    "学習軌跡"
+  ],
+  "计划 · 调用 · 回执": [
+    "Plans · Calls · Results",
+    "計画 · 呼び出し · 結果"
+  ],
+  "拆分为任务": [
+    "Decompose into tasks",
+    "タスクに分解"
+  ],
+  "真实返回 · 状态更新": [
+    "Actual results · Status updates",
+    "実際の返り値 · 状態更新"
+  ],
+  "按更新后的计划执行": [
+    "Execute the updated plan",
+    "更新した計画を実行"
+  ],
+  "问题归因 · 修订计划": [
+    "Issue attribution · Plan revision",
+    "原因分析 · 計画修訂"
+  ],
+  "核验通过": [
+    "Verification passed",
+    "検証を通過"
+  ],
+  "验收依据：原始 Query": [
+    "Acceptance: original Query",
+    "受け入れ基準：元のQuery"
   ]
 }

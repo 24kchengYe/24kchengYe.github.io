@@ -1,4 +1,44 @@
 {
+  "Online 生成与修复共用执行底座": [
+    "One runtime for Online generation and repair",
+    "Online の生成と修復を支える共通実行基盤"
+  ],
+  "Online 包含首次生成、运行时纠偏和评审后的有界重生成，这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验。": [
+    "Online includes initial generation, runtime correction, and bounded regeneration after review. All execution uses the same Harness for context assembly, tool environments, real responses, and checkpoints. Spec→TodoList provides the planning layer: plans guide execution, and diagnosed issues feed back into plans. Offline receives complete trajectories that need no further regeneration, then edits and verifies their dependencies.",
+    "Online は初回生成、実行中の修正、評価後の上限付き再生成を含む。いずれも同じ Harness を使い、文脈の組み立て、ツール環境、実際の返却値、チェックポイントを管理する。Spec→TodoList は計画層に位置し、計画が実行を導き、問題の分析結果が計画に反映される。Offline は追加の再生成が不要な完全な軌跡を受け取り、依存関係に沿って編集・検証する。"
+  ],
+  "Online 内的共享 Harness、规划反馈与 Offline 交接": [
+    "Shared Harness within Online, planning feedback, and Offline handoff",
+    "Online 内の共通 Harness、計画へのフィードバック、Offline への引き渡し"
+  ],
+  "框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口，Offline 不自动回跳 Online。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。": [
+    "The vertical grouping shows responsibilities: the Harness underpins generation and repair, with a dashed, arrowless line denoting runtime use. Solid arrows show planning feedback, repair loops, and trajectory handoff. Both processing lines can end in Pending; Offline does not automatically return to Online. The dashed planning box represents the defined Spec→TodoList design; the three existing Spec experiments compare input placement.",
+    "枠内の上下配置は責務の階層を表す。下部の Harness が生成と修復を支え、矢印のない破線がその利用関係を示す。実線矢印は計画へのフィードバック、修復ループ、軌跡の引き渡しを表す。Pending は両処理系に共通する保留先であり、Offline から Online へ自動では戻らない。破線の計画枠は設計済みの Spec→TodoList に対応し、既存の3条件の実験は Spec の入力位置を比較している。"
+  ],
+  "一条 Case 的状态如何演进": [
+    "How a case evolves through execution and repair",
+    "Case の状態は実行と修復でどう変わるか"
+  ],
+  "一条轨迹由连续的状态变化组成：模型根据已有消息和可见环境选择动作，工具执行产生真实观察，再进入下一轮。文件与 Base 可能被修改，剩余预算随调用消耗；接入 TodoList 后，计划状态也根据执行证据更新。只读操作或失败调用可能不改变环境，但仍会留下观察。": [
+    "A trajectory records successive state changes. The model chooses an action from its message history and visible environment; tool execution produces an actual observation for the next turn. Files and Base may change, and calls consume the remaining budget. Once TodoList is integrated, execution evidence also updates the plan. Read-only actions or failed calls may leave the environment unchanged while still producing observations.",
+    "軌跡は連続する状態変化を記録する。モデルが既存のメッセージと観測可能な環境から動作を選び、ツール実行が返す実際の観察を次のターンに引き継ぐ。ファイルや Base が変更され、呼び出しに応じて残りの予算が減る。TodoList を組み込むと、実行の証拠に基づいて計画の状態も更新される。読み取り専用の操作や失敗した呼び出しは、環境を変えずに観察だけを残すこともある。"
+  ],
+  "轨迹的状态转换、修复版本与三类独立结果": [
+    "Trajectory state transitions, repair versions, and three distinct outcomes",
+    "軌跡の状態遷移・修復バージョン・3種類の結果"
+  ],
+  "S、M、E、P、B 用来解释执行状态，不是新增的归档字段，也不表示保存了完整环境快照。中间是一条经过 Online 重生成和 Offline 编辑的修复示例：两步均按需发生，无需修改的原始轨迹可直接进入 Offline 核验。v₀、v₁、v₁′ 是版本示意；每版分别关联运行结果、评审证据与准出决定。": [
+    "S, M, E, P, and B explain execution state; they are not additional archive fields or a claim that a full environment snapshot is saved. The middle row illustrates a repair using Online regeneration and Offline editing. Both steps are conditional: an unchanged original can go directly to Offline verification. v₀, v₁, and v₁′ denote illustrative versions, each associated with its run result, review evidence, and release decision.",
+    "S・M・E・P・B は実行状態を説明する記号であり、追加の保存フィールドや環境全体のスナップショットを意味しない。中央は Online で再生成し、Offline で編集する修復例を示す。どちらも必要な場合に行い、変更不要の元軌跡はそのまま Offline の検証へ渡せる。v₀・v₁・v₁′ はバージョンの模式表現で、それぞれに実行結果、評価の証拠、学習データへの採用可否を対応付ける。"
+  ],
+  "一个已归档 Case 经历了 26 轮模型响应、35 次命令调用，其中 2 次命令失败，最终运行结果仍为 succeeded：执行可以在失败后恢复。Judge 是否发现质量问题、轨迹是否满足训练准出条件，要另外记录。预算耗尽会记为 failed 并保留原因；Pending 表示流程保留该版本与问题，不等同于执行失败。": [
+    "One archived case contains 26 model-response turns and 35 command calls, including two failed commands, yet its final run result is succeeded: execution can recover from earlier failures. Quality issues identified by the Judge and eligibility for training release are recorded separately. Budget exhaustion is recorded as failed with a reason. Pending retains the version and its unresolved issues; it is not synonymous with execution failure.",
+    "ある保存済み Case は、モデル応答26ターン、コマンド呼び出し35回、そのうち失敗2回を含むが、最終実行結果は succeeded だった。途中の失敗から復帰できるためである。Judge が検出した品質上の問題や、学習データとしての採用条件は別に記録する。予算切れは理由付きの failed として保存する。Pending はそのバージョンと未解決の問題を保留する処理上の判断であり、実行失敗とは限らない。"
+  ],
+  "归档中，assistant.tool_calls[] 保存动作与参数，tool 消息按 tool_call_id 配对并保留真实返回；modelTurns[] 用 assistantMessageIndex 和 toolCallIds 关联轮次。Online 恢复或重建环境，再通过 Harness 产生新轨迹；Offline 保存补丁并核验调用、状态和文字依赖。原始轨迹始终保留，修复版本与各自的评审结果分别关联。": [
+    "In the archive, assistant.tool_calls[] stores actions and arguments; tool messages pair through tool_call_id and retain actual responses. modelTurns[] links turns using assistantMessageIndex and toolCallIds. Online restores or rebuilds the environment and produces a new trace through the Harness. Offline stores patches and verifies call, state, and textual dependencies. The original trace is retained, with each repaired version linked to its own review results.",
+    "保存データでは assistant.tool_calls[] に動作と引数を記録し、tool メッセージを tool_call_id で対応付け、実際の返却値を保持する。modelTurns[] は assistantMessageIndex と toolCallIds でターンを関連付ける。Online は環境を復元または再構築し、Harness を通じて新しい軌跡を生成する。Offline はパッチを保存し、呼び出し・状態・文章の依存関係を検証する。元の軌跡を保持し、修復後の各バージョンに個別の評価結果を対応付ける。"
+  ],
   "tool_calls[] 的元素包含 id、type 和 function（name、arguments）；tool 消息的 content 保存真实返回。modelTurns[] 通过 assistantMessageIndex 与 toolCallIds 关联响应轮次、消息和调用。": [
     "Each tool_calls[] entry contains id, type, and function (name, arguments); the tool message’s content stores the actual response. modelTurns[] links response turns, messages, and calls through assistantMessageIndex and toolCallIds.",
     "tool_calls[] の各要素は id・type・function（name、arguments）を持ち、tool メッセージの content に実際の返却値を保存する。modelTurns[] は assistantMessageIndex と toolCallIds によって、応答ターン・メッセージ・呼び出しを関連付ける。"

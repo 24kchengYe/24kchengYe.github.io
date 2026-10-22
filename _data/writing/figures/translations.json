@@ -1,4 +1,201 @@
 {
+  "通过核验": ["Verified", "検証済み"],
+  "Online 共用 Harness，轨迹再交给 Offline": [
+    "A shared Online runtime; a separate Offline handoff",
+    "Online の共通実行基盤と Offline への引き渡し"
+  ],
+  "Online · 生成与修复": [
+    "Online · generation & repair",
+    "Online · 生成と修復"
+  ],
+  "可更新的执行计划": [
+    "Updatable execution plan",
+    "更新可能な実行計画"
+  ],
+  "生成与修复执行": [
+    "Generate / repair",
+    "生成・修復の実行"
+  ],
+  "首次生成 / 续跑 / 重生成": [
+    "Initial / resume / regenerate",
+    "初回生成・再開・再生成"
+  ],
+  "Judge 与路由": [
+    "Judge & route",
+    "Judge と振り分け"
+  ],
+  "问题归因 · 决定处理方式": [
+    "Issues · repair choice",
+    "問題の特定・対処の選択"
+  ],
+  "编辑与核验": [
+    "Edit & verify",
+    "編集と検証"
+  ],
+  "完整轨迹 · 有限依赖": [
+    "Full trace · bounded edits",
+    "完全な軌跡・範囲を絞った編集"
+  ],
+  "Harness · 共用执行底座": [
+    "Harness · shared execution runtime",
+    "Harness · 共通実行基盤"
+  ],
+  "上下文 · 工具环境 · 真实回执 · 检查点": [
+    "Context · tools · real responses · checkpoints",
+    "文脈・ツール環境・実際の返却値・チェックポイント"
+  ],
+  "训练准出": [
+    "Training release",
+    "学習データへ"
+  ],
+  "质量 · 真实性 · 格式": [
+    "Quality · evidence · format",
+    "品質・真正性・形式"
+  ],
+  "计划": [
+    "Plan",
+    "計画"
+  ],
+  "问题归因": [
+    "Issue feedback",
+    "問題の反映"
+  ],
+  "有界修复": [
+    "Bounded repair",
+    "上限付き修復"
+  ],
+  "两类执行共用同一套运行机制": [
+    "One runtime for generation and repair",
+    "生成と修復は同じ実行基盤を使用"
+  ],
+  "无需再生": [
+    "No regen",
+    "再生成不要"
+  ],
+  "受阻 / 未通过": [
+    "Blocked / checks failed",
+    "実行不能・検証未通過"
+  ],
+  "接收无需继续重生成的完整轨迹。": [
+    "Receives full traces needing no further regeneration.",
+    "追加の再生成が不要な完全な軌跡を受け取る。"
+  ],
+  "实线表示控制与交接；无箭头虚线表示调用共用底座。": [
+    "Solid arrows: control and handoff. Dashed line: shared-runtime use.",
+    "実線矢印は制御・引き渡し。矢印のない破線は共通基盤の利用。"
+  ],
+  "一条轨迹：执行状态、修复版本与结果": [
+    "A trajectory: execution state, versions, and outcomes",
+    "軌跡の実行状態・修復バージョン・結果"
+  ],
+  "Sₜ · 当前状态": [
+    "Sₜ · Current state",
+    "Sₜ · 現在の状態"
+  ],
+  "消息上下文 Mₜ": [
+    "Message context Mₜ",
+    "メッセージ文脈 Mₜ"
+  ],
+  "文件 / Base 状态 Eₜ": [
+    "Files / Base state Eₜ",
+    "ファイル・Base の状態 Eₜ"
+  ],
+  "计划 Pₜ（接入时）": [
+    "Plan Pₜ (when integrated)",
+    "計画 Pₜ（導入時）"
+  ],
+  "剩余预算 Bₜ": [
+    "Remaining budget Bₜ",
+    "残りの予算 Bₜ"
+  ],
+  "aₜ · 工具动作": [
+    "aₜ · Tool action",
+    "aₜ · ツールの動作"
+  ],
+  "oₜ · 真实观察": [
+    "oₜ · Observation",
+    "oₜ · 実際の観察"
+  ],
+  "tool_call_id 配对": [
+    "tool_call_id pairing",
+    "tool_call_id で対応付け"
+  ],
+  "Sₜ₊₁ · 更新后状态": [
+    "Sₜ₊₁ · Updated state",
+    "Sₜ₊₁ · 更新後の状態"
+  ],
+  "Mₜ 加入动作与返回": [
+    "Mₜ adds action & response",
+    "Mₜ に動作と返却値を追加"
+  ],
+  "Eₜ 以实际执行为准": [
+    "Eₜ follows actual execution",
+    "Eₜ は実際の実行結果に従う"
+  ],
+  "Pₜ 按需更新": [
+    "Pₜ updates when needed",
+    "Pₜ を必要に応じて更新"
+  ],
+  "Bₜ 扣除实际消耗": [
+    "Bₜ accounts for usage",
+    "Bₜ から実消費を差し引く"
+  ],
+  "执行可能改变环境，真实观察进入上下文；下一轮据此继续。": [
+    "Execution may change the environment; real observations enter context for the next turn.",
+    "実行で環境が変わり、実際の観察が文脈に加わる。その状態から次のターンへ進む。"
+  ],
+  "修复示例 · 同一 Case 保留各版证据": [
+    "Repair example · preserve evidence for each version",
+    "修復例 · 同一 Case の各バージョンの証拠を保持"
+  ],
+  "原始轨迹 v₀": [
+    "Original trace v₀",
+    "元の軌跡 v₀"
+  ],
+  "保留消息与真实回执": [
+    "Messages & real responses",
+    "メッセージと実際の返却値"
+  ],
+  "重生成版 v₁": [
+    "Regenerated v₁",
+    "再生成版 v₁"
+  ],
+  "新执行 · 新回执": [
+    "New run · new responses",
+    "新しい実行・新しい返却値"
+  ],
+  "编辑版 v₁′": [
+    "Edited v₁′",
+    "編集版 v₁′"
+  ],
+  "补丁 · 依赖核验": [
+    "Patch · dependency checks",
+    "パッチ・依存関係の検証"
+  ],
+  "每个版本，分别记录三类结果": [
+    "Each version has three distinct outcomes",
+    "各バージョンの結果を3種類に分けて記録"
+  ],
+  "运行结果": [
+    "Run result",
+    "実行結果"
+  ],
+  "评审结论": [
+    "Judge verdict",
+    "Judge の判定"
+  ],
+  "问题 · 分档 · 证据": [
+    "Issues · score · evidence",
+    "問題・段階評価・証拠"
+  ],
+  "准出决定": [
+    "Release decision",
+    "学習採用の判断"
+  ],
+  "运行完成不等于 Judge 通过；Pending 不等于运行失败。": [
+    "A completed run may fail review; Pending does not mean execution failed.",
+    "実行完了でも評価を通過するとは限らない。Pending は実行失敗と同義ではない。"
+  ],
   "计划进入上下文": [
     "Plan → context",
     "計画を文脈へ"

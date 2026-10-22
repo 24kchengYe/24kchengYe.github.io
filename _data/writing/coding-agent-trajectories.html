@@ -36,11 +36,11 @@
 </figcaption>
 </figure>
 <h2 id="rollout-harness">Harness 如何承载一条轨迹</h2>
-<h3>规划、执行与修复如何衔接</h3>
-<p>这几部分围绕同一条轨迹分工：Spec→TodoList 表达要做什么及其依赖；Harness 负责把模型动作变成真实执行；Online 在需要重新生成时调用 Harness；Offline 接收完整轨迹，做依赖范围内的编辑与核验。</p>
+<h3>Online 生成与修复共用执行底座</h3>
+<p>Online 包含首次生成、运行时纠偏和评审后的有界重生成，这些执行共用同一个 Harness：上下文组装、工具环境、真实回执和检查点。Spec→TodoList 位于规划层，计划指导执行，问题归因更新计划。Offline 接收无需继续重生成的完整轨迹，沿依赖做编辑与核验。</p>
 <figure>
-<img data-figure="cli-harness-links" alt="Spec、TodoList、Harness 与 Online / Offline 的衔接" loading="lazy">
-<figcaption>虚线规划框表示已确定的 Spec→TodoList 接口，具体反馈见文末；现有三组 Spec 实验测量的是输入位置。Online 的重生成仍由同一个 Harness 执行。无需继续重生成的分支交给 Offline；不可核验或仍需重生成的情况进入 Pending，不自动回跳 Online。</figcaption>
+<img data-figure="cli-harness-links" alt="Online 内的共享 Harness、规划反馈与 Offline 交接" loading="lazy">
+<figcaption>框内的上下关系表示职责分层；底部 Harness 支撑生成与修复执行，无箭头虚线表示调用关系。实线箭头表示计划反馈、修复循环和轨迹交接。Pending 是两条处理线共用的待处理出口，Offline 不自动回跳 Online。虚线规划框对应已确定的 Spec→TodoList 设计；现有三组 Spec 实验比较的是输入位置。</figcaption>
 </figure>
 <p>例如，一条工作流依赖尚未创建的字段：TodoList 应先安排字段创建，再安排工作流；Harness 执行后把真实字段 ID 和返回写入轨迹；Online 在错误决策前恢复可继续执行的上下文与环境，再生成受影响后缀。若只需删除一次无副作用的失败调用并调整后文，Offline 可在核验依赖后局部编辑。涉及状态或返回值变化时，必须有对应的真实执行证据。</p>
 <h3>一次 Rollout 的执行循环</h3>
@@ -50,14 +50,14 @@
 <figcaption>工具调用走左侧循环，真实返回进入下一轮；最终文本走右侧结束检查。预算耗尽或不可安全继续时记录相应终态。这里的“完成”是 rollout 的运行状态，业务验收和轨迹质量由后续评审分别判断。</figcaption>
 </figure>
 <p>初始输入包含 ThinkSP、FunctionSP、MainSP、Reminder、原始 Query 和工具 Schema；Skills 正文通过 Read 按需进入上下文。模型能看到的是工具 observation，完整 ToolResponse 和运行元数据另作审计证据。后台任务的完成通知也会补回消息。续跑时，已完成调用按 call ID 和参数哈希复用真实回执；结果不明的写操作停止执行，交给新环境重试。</p>
-<h3 id="case-format">一个真实 Case 如何组织</h3>
-<p>tool_calls[] 的元素包含 id、type 和 function（name、arguments）；tool 消息的 content 保存真实返回。modelTurns[] 通过 assistantMessageIndex 与 toolCallIds 关联响应轮次、消息和调用。</p>
+<h3 id="case-format">一条 Case 的状态如何演进</h3>
+<p>一条轨迹由连续的状态变化组成：模型根据已有消息和可见环境选择动作，工具执行产生真实观察，再进入下一轮。文件与 Base 可能被修改，剩余预算随调用消耗；接入 TodoList 后，计划状态也根据执行证据更新。只读操作或失败调用可能不改变环境，但仍会留下观察。</p>
 <figure>
-<img data-figure="cli-case-format" alt="原始执行包、标准化评审 Case 与消息配对结构" loading="lazy">
-<figcaption>图按实际归档字段整理，省略业务内容。左上是原始文件，右上是评审使用的规范化视图；后者组织原始证据，不重新生成观察。下方展示一次 assistant 响应含两个调用时，tool 消息如何按 ID 配对，并一起进入下一轮上下文。call_1 / call_2 只是示意标识；图中保留的是核心字段，并非完整 JSON Schema。</figcaption>
+<img data-figure="cli-case-format" alt="轨迹的状态转换、修复版本与三类独立结果" loading="lazy">
+<figcaption>S、M、E、P、B 用来解释执行状态，不是新增的归档字段，也不表示保存了完整环境快照。中间是一条经过 Online 重生成和 Offline 编辑的修复示例：两步均按需发生，无需修改的原始轨迹可直接进入 Offline 核验。v₀、v₁、v₁′ 是版本示意；每版分别关联运行结果、评审证据与准出决定。</figcaption>
 </figure>
-<p>Case 是任务及其执行证据的单位，turn 是一次模型响应的单位，event 是评审输入中的有序记录。一次响应含多个调用时，会展开为多个关联事件；训练样本还可以按 assistant 目标轮次展开。三者的数量不应混用。当前导入的轨迹包保留原生消息和工具配对，但部分批次不含原始 HTTP/SSE 或工作区文件；评审保留这些来源差异，不把产物引用当作完整环境快照。</p>
-<p>Online / Offline 都以这组配对证据定位问题。Online 改变后续执行，需要恢复或重建环境，再让 Harness 产生新回执；Offline 改变归档内容，需要同步检查调用、返回值、状态与文字依赖。完整原始轨迹、修复版本和评审结果分别保留，便于比较修前与修后。</p>
+<p>一个已归档 Case 经历了 26 轮模型响应、35 次命令调用，其中 2 次命令失败，最终运行结果仍为 succeeded：执行可以在失败后恢复。Judge 是否发现质量问题、轨迹是否满足训练准出条件，要另外记录。预算耗尽会记为 failed 并保留原因；Pending 表示流程保留该版本与问题，不等同于执行失败。</p>
+<p>归档中，assistant.tool_calls[] 保存动作与参数，tool 消息按 tool_call_id 配对并保留真实返回；modelTurns[] 用 assistantMessageIndex 和 toolCallIds 关联轮次。Online 恢复或重建环境，再通过 Harness 产生新轨迹；Offline 保存补丁并核验调用、状态和文字依赖。原始轨迹始终保留，修复版本与各自的评审结果分别关联。</p>
 <h2>已做实验：Spec 如何参与规划</h2>
 <p>我们先在同一组 10 个需求上比较三种输入：只有 Query；把 Spec 放进 user 消息；把 Spec 作为非强制 reminder。三组都由 Seed 2.0 Lite 生成，最终产物统一按原始需求验收，评审输入不包含 Spec。</p>
 <div class="table-scroll">

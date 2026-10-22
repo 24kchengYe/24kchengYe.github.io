@@ -58,12 +58,13 @@
   };
   const fit = mode => {
     const width = viewport.clientWidth;
+    if (width <= 40) return;
+    const fitWidth = Math.min((width - 40) / bounds.width, 1);
+    if (!expanded) viewport.style.setProperty('--am-canvas-height', `${Math.max(320, Math.ceil(bounds.height * fitWidth + 48))}px`);
     const height = viewport.clientHeight;
-    const fitWidth = (width - 40) / bounds.width;
-    zoom = mode === 'all' ? Math.min(fitWidth, (height - 40) / bounds.height, 1) : Math.min(fitWidth, 1);
-    if (mode === 'reset' && width < 700) zoom = Math.max(zoom, .6);
-    offset = { x: (width - bounds.width * zoom) / 2 - bounds.x * zoom, y: 24 - bounds.y * zoom };
-    if (mode === 'all') offset.y = (height - bounds.height * zoom) / 2 - bounds.y * zoom;
+    const fitAll = mode === 'all' || (expanded && mode === 'reset');
+    zoom = fitAll ? Math.min(fitWidth, (height - 40) / bounds.height) : fitWidth;
+    offset = { x: (width - bounds.width * zoom) / 2 - bounds.x * zoom, y: fitAll || !expanded ? (height - bounds.height * zoom) / 2 - bounds.y * zoom : 24 - bounds.y * zoom };
     applyTransform();
   };
   const zoomAt = (factor, clientX = viewport.clientWidth / 2, clientY = viewport.clientHeight / 2) => {
@@ -275,10 +276,15 @@
     bounds = { x: left, y: top, width: Math.max(...boxes.map(box => box.x + Math.max(box.width, 90))) * horizontalScale - left + 32, height: Math.max(...boxes.map(box => box.y + box.height)) * verticalScale - top + 60 };
     bindViewport();
     requestAnimationFrame(() => fit('reset'));
-    let firstResize = true;
+    let previousWidth = viewport.clientWidth;
+    let previousHeight = viewport.clientHeight;
     resizeObserver = new ResizeObserver(() => {
-      if (firstResize) { firstResize = false; return; }
-      fit('reset');
+      const width = viewport.clientWidth;
+      const height = viewport.clientHeight;
+      const changed = width !== previousWidth || (expanded && height !== previousHeight);
+      previousWidth = width;
+      previousHeight = height;
+      if (changed) fit('reset');
     });
     resizeObserver.observe(viewport);
   };
@@ -308,7 +314,7 @@
     viewport.addEventListener('pointerup', endDrag);
     viewport.addEventListener('pointercancel', endDrag);
     viewport.addEventListener('wheel', event => {
-      if (!event.ctrlKey && !event.metaKey && document.activeElement !== viewport) return;
+      if (!event.ctrlKey && !event.metaKey && (!expanded || document.activeElement !== viewport)) return;
       event.preventDefault();
       if (event.ctrlKey || event.metaKey) {
         const rect = viewport.getBoundingClientRect();

@@ -34,6 +34,13 @@ arrow keys, zoom with +/−, reset with 0 and close the expanded canvas with Esc
 The `view` query parameter supports direct links and browser back/forward.
 Changing language translates the current view without changing its structure.
 
+Inline canvases fit the available width and grow to the full diagram height,
+including return paths and annotations. The page scrolls normally over the map;
+dragging and modifier-wheel zoom remain available. Expanded mode starts with the
+entire graph fitted to the screen. Reset, language changes and view changes retain
+these defaults. Desktop figures can use up to 1440 px of width. Resize handling
+ignores self-induced inline height changes so manual zoom is not reset.
+
 This is a local read-only diagram: it makes no API calls, embeds no private host
 and cannot trigger the source project’s development or release operations.
 The original blueprint’s open risk/timer/retry/rollback details are retained.

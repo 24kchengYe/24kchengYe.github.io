@@ -10,7 +10,7 @@
 <meta property="og:title" content="Building Training Trajectories for Coding Agents">
 <meta name="description" content="Experiments in Spec-guided planning, online correction, and dependency-aware editing for coding-agent training trajectories.">
 <link rel="stylesheet" href="/assets/css/research-note.css?v=1">
-<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}dialog img{max-height:none;width:100%}@media(max-width:640px){.tall-figure{width:100%}}</style>
+<style>.tall-figure{width:min(780px,calc(100vw - 48px))}.tall-figure img{max-height:none}.case-figure img{width:100%}dialog{overflow:auto}dialog img{width:auto;max-width:100%;max-height:calc(94vh - 100px);object-fit:contain}@media(max-width:640px){.tall-figure{width:100%}}</style>
 </head>
 <body>
 <main class="note">
@@ -59,7 +59,7 @@
 </figure>
 <h3 id="case-format">真实 Case：两次纠偏如何改变执行</h3>
 <p>选取在线纠偏实验中的一条库存搭建轨迹：模型读取技能，创建产品表与出入库记录表，写入样例，再创建表单、仪表盘并回读交付。实际产生 15 次模型响应，最终保留 13 轮。图中主线是保留轨迹，两次失败在对应检查点旁展开；回退后，模型重新选择动作并继续执行。</p>
-<figure>
+<figure class="tall-figure case-figure">
 <img data-figure="cli-case-format" alt="真实库存轨迹的主线、失败分支、回退与重新执行" loading="lazy">
 <figcaption>P01–P15 是实际生成尝试，T1–T13 是最终轨迹轮次。浅橙支线保留失败尝试，虚线箭头返回错误动作前的检查点，浅绿节点表示重新执行。主线与侧支按箭头阅读，不表示并行执行。回退属于 Harness 控制，不另计模型轮次。返回与状态摘自原记录，Base A / B 为匿名代称；CLI 子命令均经 Bash 调用。</figcaption>
 </figure>

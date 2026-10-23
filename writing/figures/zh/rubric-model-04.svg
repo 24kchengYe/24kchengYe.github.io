@@ -9,7 +9,7 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 182.4984 180  L 271.83946800000007 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 200.47840000000002 180  L 271.83946800000007 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
     <path d="M 267.43946800000003 177.8  L 271.83946800000007 180  L 267.43946800000003 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
@@ -21,16 +21,16 @@
     <path d="M 631.770268 177.8  L 636.170268 180  L 631.770268 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 172.08  L 795.6 79.92  Q 795.6 72 803.52 72  L 842.525868 72  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 838.125868 69.8  L 842.525868 72  L 838.125868 74.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 172.08  L 795.6 79.92  Q 795.6 72 803.52 72  L 818.0358679999999 72  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 813.635868 69.8  L 818.0358679999999 72  L 813.635868 74.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 803.52 180  L 869.439468 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 865.039468 177.8  L 869.439468 180  L 865.039468 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 803.52 180  L 854.939468 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 850.539468 177.8  L 854.939468 180  L 850.539468 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 187.92  L 795.6 280.08  Q 795.6 288 803.52 288  L 862.606668 288  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 858.206668 285.8  L 862.606668 288  L 858.206668 290.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 187.92  L 795.6 280.08  Q 795.6 288 803.52 288  L 846.106668 288  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 841.706668 285.8  L 846.106668 288  L 841.706668 290.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 281.5416 209.6  L 352.0584 209.6  Q 360.6984 209.6 360.6984 193.26896551724138  L 360.6984 166.73103448275862  Q 360.6984 150.4 352.0584 150.4  L 281.5416 150.4  Q 272.9016 150.4 272.9016 166.73103448275862  L 272.9016 193.26896551724138  Q 272.9016 209.6 281.5416 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
@@ -41,13 +41,13 @@
    <g id="patch_10">
     <path d="M 645.8724 203.85  L 743.7276 203.85  Q 752.3676 203.85 752.3676 195.21  L 752.3676 164.79  Q 752.3676 156.15 743.7276 156.15  L 645.8724 156.15  Q 637.2324 156.15 637.2324 164.79  L 637.2324 195.21  Q 637.2324 203.85 645.8724 203.85  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="115.55" y="185.82384399999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="需求 · 设计 · 规则" data-type-role="primary" text-anchor="middle"><tspan x="115.55" dy="0">需求 · 设计 · 规则</tspan></text></g>
-   <g id="text_2"><text x="316.79999999999995" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="独立评审" data-type-role="primary" text-anchor="middle"><tspan x="316.79999999999995" dy="0">独立 </tspan><tspan x="316.79999999999995" dy="21.599999999999998">评审</tspan></text></g>
-   <g id="text_3"><text x="504" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="合并候选" data-type-role="primary" text-anchor="middle"><tspan x="504" dy="0">合并 </tspan><tspan x="504" dy="21.599999999999998">候选</tspan></text></g>
-   <g id="text_4"><text x="694.8" y="186.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="核验证据" data-type-role="primary" text-anchor="middle"><tspan x="694.8" dy="0">核验证据</tspan></text></g>
-   <g id="text_5"><text x="903.731336" y="77.82384400000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="完整标签 / 无问题" data-type-role="primary" text-anchor="middle"><tspan x="903.731336" dy="0">完整标签 / 无问题</tspan></text></g>
-   <g id="text_6"><text x="903.7" y="185.82384399999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="部分标签" data-type-role="primary" text-anchor="middle"><tspan x="903.7" dy="0">部分标签</tspan></text></g>
-   <g id="text_7"><text x="903.85" y="293.823844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="待处理记录" data-type-role="primary" text-anchor="middle"><tspan x="903.85" dy="0">待处理记录</tspan></text></g>
+   <g id="text_1"><text x="115.55" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="需求 · 设计 · 规则" data-type-role="primary" text-anchor="middle"><tspan x="115.55" dy="0">需求 · 设计 · 规则</tspan></text></g>
+   <g id="text_2"><text x="316.79999999999995" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_8" aria-label="独立评审" data-type-role="primary" text-anchor="middle"><tspan x="316.79999999999995" dy="0">独立 </tspan><tspan x="316.79999999999995" dy="21.599999999999998">评审</tspan></text></g>
+   <g id="text_3"><text x="504" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_9" aria-label="合并候选" data-type-role="primary" text-anchor="middle"><tspan x="504" dy="0">合并 </tspan><tspan x="504" dy="21.599999999999998">候选</tspan></text></g>
+   <g id="text_4"><text x="694.8" y="186.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_10" aria-label="核验证据" data-type-role="primary" text-anchor="middle"><tspan x="694.8" dy="0">核验证据</tspan></text></g>
+   <g id="text_5"><text x="903.731336" y="75.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="完整标签 / 无问题" data-type-role="primary" text-anchor="middle"><tspan x="903.731336" dy="0">完整标签 / 无问题</tspan></text></g>
+   <g id="text_6"><text x="903.7" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="部分标签" data-type-role="primary" text-anchor="middle"><tspan x="903.7" dy="0">部分标签</tspan></text></g>
+   <g id="text_7"><text x="903.85" y="291.98384400000003" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="待处理记录" data-type-role="primary" text-anchor="middle"><tspan x="903.85" dy="0">待处理记录</tspan></text></g>
   </g>
  </g>
  <defs>

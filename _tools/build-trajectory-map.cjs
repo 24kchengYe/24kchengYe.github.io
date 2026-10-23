@@ -71,7 +71,7 @@ function attachTrajectoryMaps(document, artifact) {
     fallback.className = 'trajectory-static';
     fallback.open = true;
     const summary = document.createElement('summary');
-    summary.append(...translate('静态图与图注'));
+    summary.append(...translate('静态图'));
     fallback.append(summary, image);
     if (index === 0) {
       fallback.append(figure.querySelector('figcaption'));

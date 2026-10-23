@@ -7,6 +7,8 @@ const root = path.join(__dirname, '..');
 const sourceDirectory = path.join(root, '_data/writing/figures');
 const manifest = JSON.parse(fs.readFileSync(path.join(sourceDirectory, 'manifest.json'), 'utf8'));
 const translations = JSON.parse(fs.readFileSync(path.join(sourceDirectory, 'translations.json'), 'utf8'));
+const explorer = JSON.parse(fs.readFileSync(path.join(root, '_data/writing/diagram-explorer.json'), 'utf8'));
+const vectorLayouts = JSON.parse(fs.readFileSync(path.join(sourceDirectory, 'vector-layouts.json'), 'utf8'));
 const svgNamespace = 'http://www.w3.org/2000/svg';
 const htmlNamespace = 'http://www.w3.org/1999/xhtml';
 
@@ -43,10 +45,13 @@ function labelWidth(label, labels, boxes, pageWidth) {
   return Math.max(available, Number(label.getAttribute('data-original-width')));
 }
 
-function localizeVector(source, language) {
+function localizeVector(source, language, item) {
   const dom = new JSDOM(source, { contentType: 'image/svg+xml' });
   const { document } = dom.window;
   const svg = document.documentElement;
+  const name = path.basename(item.source, '.svg');
+  const layout = vectorLayouts[name] || {};
+  const nodeIds = new Set((explorer[name]?.vectorEdges || []).flatMap(([from, to]) => [from, to]));
   const labels = [...svg.querySelectorAll('text')];
   const boxes = [...svg.querySelectorAll('path')].flatMap(shape => {
     const commands = shape.getAttribute('d') || '';
@@ -56,12 +61,21 @@ function localizeVector(source, language) {
     const vertical = coordinates.filter((value, index) => index % 2 === 1);
     return [{ element: shape, left: Math.min(...horizontal), right: Math.max(...horizontal), top: Math.min(...vertical), bottom: Math.max(...vertical) }];
   });
-  const originalBoxes = boxes.map(box => ({ ...box }));
   const labelBoxes = labels.map(label => {
     const center = Number(label.getAttribute('x')) + Number(label.getAttribute('data-original-width')) / 2;
     const baseline = Number(label.getAttribute('y'));
     return boxes.filter(box => center > box.left && center < box.right && baseline > box.top && baseline < box.bottom && box.bottom - box.top < 160).sort((first, second) => (first.right - first.left) * (first.bottom - first.top) - (second.right - second.left) * (second.bottom - second.top))[0];
   });
+  for (const [index, label] of labels.entries()) {
+    if (labelBoxes[index] || !nodeIds.has(label.parentElement.id)) continue;
+    const left = Number(label.getAttribute('x'));
+    const baseline = Number(label.getAttribute('y'));
+    const size = Number(label.getAttribute('font-size'));
+    const box = { element:null, left:left - 6, right:left + Number(label.getAttribute('data-original-width')) + 6, top:baseline - size - 4, bottom:baseline + 4 };
+    boxes.push(box);
+    labelBoxes[index] = box;
+  }
+  const originalBoxes = boxes.map(box => ({ ...box }));
   const widths = labels.map(label => labelWidth(label, labels, boxes, Number(svg.getAttribute('viewBox').split(/\s+/)[2])));
   for (const [index, label] of labels.entries()) {
     const original = label.textContent.trim();
@@ -73,7 +87,15 @@ function localizeVector(source, language) {
     const leftAligned = Number(label.getAttribute('x')) === 36;
     let center = Number(label.getAttribute('x')) + originalWidth / 2;
     const box = labelBoxes[index];
+    const placement = layout[label.parentElement.id];
     if (box) {
+      if (box.element) label.setAttribute('data-node-box', box.element.parentElement.id);
+      if (!box.element) {
+        const available = Math.min(placement?.width || 220, 2 * Math.min(center - 12, item.width - center - 12));
+        const width = Math.min(available, Math.max(box.right - box.left, estimatedWidth(translated, fontSize) + 24));
+        box.left = center - width / 2;
+        box.right = center + width / 2;
+      }
       const wordWidth = Math.max(...[...new Intl.Segmenter(language, { granularity: 'word' }).segment(translated)].map(part => estimatedWidth(part.segment, fontSize)));
       const extra = Math.max(0, wordWidth + 20 - (box.right - box.left));
       box.left -= extra / 2;
@@ -84,6 +106,11 @@ function localizeVector(source, language) {
     if (leftAligned) {
       widths[index] = oldSize >= 15 ? 790 : 180;
       center = 36;
+    }
+    if (placement && !box) {
+      center = placement.x;
+      widths[index] = placement.width;
+      label.setAttribute('data-layout-label', 'true');
     }
     const lines = [''];
     for (const { segment } of new Intl.Segmenter(language, { granularity: 'word' }).segment(translated)) {
@@ -98,6 +125,7 @@ function localizeVector(source, language) {
     label.setAttribute('x', center);
     label.setAttribute('text-anchor', leftAligned ? 'start' : 'middle');
     let baseline = Number(label.getAttribute('y')) + (fontSize - oldSize) * 0.3;
+    if (placement && !box) baseline = placement.y + fontSize * 0.35;
     if (box && labelBoxes.filter(candidate => candidate === box).length === 1) {
       const extra = Math.max(0, lines.length * fontSize * 1.2 + 16 - (box.bottom - box.top));
       box.top -= extra / 2;
@@ -144,6 +172,7 @@ function localizeVector(source, language) {
     if (paths.length === 2) rewriteCoordinates(paths[1], (value, index) => value + (index % 2 ? end[1] - points.at(-1) : end[0] - points.at(-2)));
   }
   for (const [index, box] of boxes.entries()) {
+    if (!box.element) continue;
     const before = originalBoxes[index];
     rewriteCoordinates(box.element, (value, coordinate) => coordinate % 2 ? box.top + (value - before.top) * (box.bottom - box.top) / (before.bottom - before.top) : box.left + (value - before.left) * (box.right - box.left) / (before.right - before.left));
   }
@@ -219,7 +248,7 @@ function buildFigures() {
     for (const language of ['zh', 'en', 'ja']) {
       const directory = path.join(outputDirectory, language);
       fs.mkdirSync(directory, { recursive: true });
-      const output = item.format === 'svg' ? localizeVector(sourceWithOverrides, language) : localizeLayout(sourceWithOverrides, item, language);
+      const output = item.format === 'svg' ? localizeVector(sourceWithOverrides, language, item) : localizeLayout(sourceWithOverrides, item, language);
       const validation = new JSDOM(output, { contentType: 'image/svg+xml' });
       if (validation.window.document.querySelector('parsererror,script,image')) throw new Error(`Unsafe or invalid SVG: ${name}`);
       for (const element of validation.window.document.querySelectorAll('*')) {

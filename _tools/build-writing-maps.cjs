@@ -134,7 +134,7 @@ function attachWritingMaps(document, sourceName) {
     fallback.className = 'trajectory-static';
     fallback.open = true;
     const summary = document.createElement('summary');
-    for (const [language,text] of [['zh','静态图与图注'],['en','Static figure & caption'],['ja','静止図と注記']]) {
+    for (const [language,text] of [['zh','静态图'],['en','Static figure'],['ja','静止図']]) {
       const span = document.createElement('span');
       span.lang = language; span.textContent = text; summary.append(span);
     }
@@ -143,11 +143,20 @@ function attachWritingMaps(document, sourceName) {
     fallback.append(image);
     const source = container.querySelector('.figure-source-link');
     if (source) fallback.append(source);
+    const caption = container.querySelector(':scope > figcaption') || (figure.querySelectorAll('img[data-figure-key]').length === 1 ? figure.querySelector(':scope > figcaption') : null);
+    if (caption) {
+      const simplify = value => value.trim().replace(/^(?:图|Figure|Fig\.|図)\s*\d+\s*[:：·.\s]*/u,'');
+      const localized = caption.querySelector('[lang="zh"]')?.textContent || caption.textContent;
+      if (simplify(localized) === simplify(image.dataset.altZh || image.alt)) caption.classList.add('map-duplicate-caption');
+    }
     delete image.dataset.mapEntry;
   }
   const style = document.createElement('style');
   style.textContent = '.writing-map-figure .trajectory-map{max-width:1200px;margin:0 auto}.writing-map-figure .figure-panel{padding:0!important;background:none!important;border:0!important}.trajectory-map[hidden]{display:none}.trajectory-static{margin:12px 0;font-size:13px;color:#71767e}.trajectory-static>summary{cursor:pointer;padding:8px 0}.trajectory-static img{margin-top:16px}@media print{.trajectory-map{display:none}.trajectory-static>summary{display:none}}';
   document.head.append(style);
+  const compact = document.createElement('style');
+  compact.textContent = '.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:none}.writing-map-figure .trajectory-static{font-size:12px;margin:6px 0 12px}.writing-map-figure .trajectory-static>summary{padding:4px 0}@media print{.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:block}}';
+  document.head.append(compact);
   for (const file of [dataFile,'assets/js/trajectory-map.js']) {
     const script = document.createElement('script');
     script.src = `/${file}?v=${hash(file)}`;

@@ -11,6 +11,7 @@
     "complete": {"figure": "cli-combined", "title": "完整流程", "links": {"AM": "harness", "AT": "rollout", "AO": "model", "BG": "online", "BT": "case", "BO": "offline", "CD": "offline", "CR": "online"}, "related": ["overview", "planning", "case"]}
   },
   "strings": {
+    "读图帮助": ["Diagram help", "図の操作"],
     "总览": ["Overview", "全体像"],
     "共享 Harness": ["Shared Harness", "共有Harness"],
     "执行循环": ["Execution loop", "実行ループ"],
@@ -57,6 +58,7 @@
     "最终保留轮次": ["Retained turn", "最終的に保持したターン"],
     "Harness 控制事件": ["Harness control event", "Harnessの制御イベント"],
     "静态图与图注": ["Static figure & caption", "静止図と注記"],
+    "静态图": ["Static figure", "静止図"],
     "点击模块可进入内部流程，也可沿关联流程切换。Harness 是 Online 生成与修复共用的执行底座；虚线规划层对应 Spec→TodoList 设计。": ["Open a module or follow its related flows. Harness is the execution substrate shared by Online generation and repair; the dashed planning layer represents the Spec→TodoList design.", "モジュールや関連フローを開いて詳しく確認できます。HarnessはOnlineの生成・修復が共有する実行基盤で、破線の計画層はSpec→TodoListの設計を示します。"]
   }
 }

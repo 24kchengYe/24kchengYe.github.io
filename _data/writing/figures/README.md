@@ -22,7 +22,7 @@ Run `node _tools/check-research-evidence.cjs /path/to/projectTest_1103` to reche
 
 - `_tools/build-figures.cjs` defines fixed semantic type levels. HTML diagrams use 28px nodes, 24px secondary text, 22px annotations and 30px titles on a 1440px canvas. Existing CLI panels declare their own fixed scale with `data-fixed-type`.
 - Native SVG diagrams use 18px node text, 15px secondary/chart labels and larger numeric callouts. Long translations wrap; glyphs are never compressed and individual labels are not shrunk.
-- For SVG nodes, the builder expands rounded boxes as needed and reanchors connected path endpoints. Node IDs, path groups, branches, text and numeric values remain intact. Label offsets live in the source SVG.
+- For SVG nodes, the builder expands rounded boxes as needed and reanchors connected path endpoints and arrowheads. Unboxed nodes reserve text-sized ports too. Node IDs, path groups, branches, text and numeric values remain intact. `vector-layouts.json` stores shared multilingual annotation centers and wrapping widths; coordinates refer to the source SVG viewBox. Reserve space outside both nodes and connectors, including the longest translation. The entrance router has extra vertical space for its release-vote branch.
 - For HTML diagrams, reserve enough space in the source for the longest translation. When changing box geometry, adjust connected segments without changing `data-from` / `data-to` relationships. Preserve formulas, gates and branches.
 
 ## Review
@@ -36,3 +36,9 @@ This case's runtime schema exposes Bash, Read, Write, Edit, and present_files; i
 These use editable HTML/CSS with fixed 28px primary, 24px secondary and 22px annotation text. The dashed planning interface is the adopted design, distinct from the input-placement experiments. The arrowless dashed line denotes shared-runtime use, not a sequential stage. Pending is a common disposition outside both processing regions. When Offline discovers an issue that requires real execution, it returns the issue and evidence to Online under the same cumulative case budget; unknown dependencies and other release failures remain Pending. Native tool-call / response pairing and actual archive status values remain documented in the article.
 
 Check all three language variants at article width and in the image dialog. Inspect node overflow, label/box collisions, arrows, equations and mobile page width. Compare source text, graph identifiers and experimental tables before publishing. Generated SVGs are outputs; edit their sources and builders instead.
+
+## Interactive presentation
+
+Use clear thin borders, a white canvas and one restrained accent. Keep one current-view title in the selector; breadcrumbs show navigation history only. Hide duplicate panel headings only after the interactive diagram is ready. Preserve substantive captions, static figures and print output. The `?` control reveals reading help on demand. Node selection opens the detailed explanation without repeating its heading. Hover tracing, related-diagram navigation, zoom, fullscreen and optional connection animation remain available.
+
+`check-writing-maps.cjs` also checks native SVG text against other labels, node boundaries and sampled connector paths in all three languages. Rendering tests preserve the source text, values and directed edge identities; visual simplification must not change the computational or experimental flow.

@@ -9,34 +9,34 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 141.0984 90  L 244.08 90  Q 252 90 252 97.92  L 252 161.28  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 173.5984 90  L 244.08 90  Q 252 90 252 97.92  L 252 161.28  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
     <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
-    <path d="M 161.6004 169.2  L 244.08 169.2  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 173.60039999999998 169.2  L 244.08 169.2  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
     <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
-    <path d="M 154.7676 248.4  L 244.08 248.4  Q 252 248.4 252 240.48  L 252 177.12  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 182.2676 248.4  L 244.08 248.4  Q 252 248.4 252 240.48  L 252 177.12  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
     <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
-    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 161.28  L 626.4 119.52  Q 626.4 111.6 634.32 111.6  L 787.795068 111.6  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 783.395068 109.4  L 787.795068 111.6  L 783.395068 113.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 161.28  L 626.4 119.52  Q 626.4 111.6 634.32 111.6  L 767.8050680000001 111.6  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 763.4050680000001 109.4  L 767.8050680000001 111.6  L 763.4050680000001 113.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
-    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 177.12  L 626.4 218.88  Q 626.4 226.8 634.32 226.8  L 753.170268 226.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 748.770268 224.6  L 753.170268 226.8  L 748.770268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 177.12  L 626.4 218.88  Q 626.4 226.8 634.32 226.8  L 748.690268 226.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 744.290268 224.6  L 748.690268 226.8  L 744.290268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 403.9416 198.8  L 474.4584 198.8  Q 483.0984 198.8 483.0984 182.46896551724137  L 483.0984 155.93103448275863  Q 483.0984 139.6 474.4584 139.6  L 403.9416 139.6  Q 395.3016 139.6 395.3016 155.93103448275863  L 395.3016 182.46896551724137  Q 395.3016 198.8 403.9416 198.8  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter"/>
    </g>
-   <g id="text_1"><text x="108.1" y="95.91910200000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="ユーザー要求" data-type-role="primary" text-anchor="middle"><tspan x="108.1" dy="0">ユーザー要求</tspan></text></g>
-   <g id="text_2"><text x="108.05" y="175.023844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="指定版の設計" data-type-role="primary" text-anchor="middle"><tspan x="108.05" dy="0">指定版の設計</tspan></text></g>
-   <g id="text_3"><text x="108.4" y="254.22384399999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="領域の完全規則" data-type-role="primary" text-anchor="middle"><tspan x="108.4" dy="0">領域の完全規則</tspan></text></g>
-   <g id="text_4"><text x="439.20000000000005" y="164.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="審査モデル" data-type-role="primary" text-anchor="middle"><tspan x="439.20000000000005" dy="0">審査 </tspan><tspan x="439.20000000000005" dy="21.599999999999998">モデル</tspan></text></g>
-   <g id="text_5"><text x="835.531336" y="117.423844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="合格 / 不合格" data-type-role="primary" text-anchor="middle"><tspan x="835.531336" dy="0">合格 / 不合格</tspan></text></g>
-   <g id="text_6"><text x="835.35" y="232.706258" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="対象 · 規則 · 根拠" data-type-role="primary" text-anchor="middle"><tspan x="835.35" dy="0">対象 · 規則 · 根拠</tspan></text></g>
+   <g id="text_1"><text x="108.1" y="94.079102" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="ユーザー要求" data-type-role="primary" text-anchor="middle"><tspan x="108.1" dy="0">ユーザー要求</tspan></text></g>
+   <g id="text_2"><text x="108.05000000000001" y="173.18384400000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="指定版の設計" data-type-role="primary" text-anchor="middle"><tspan x="108.05000000000001" dy="0">指定版の設計</tspan></text></g>
+   <g id="text_3"><text x="108.4" y="252.383844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="領域の完全規則" data-type-role="primary" text-anchor="middle"><tspan x="108.4" dy="0">領域の完全規則</tspan></text></g>
+   <g id="text_4"><text x="439.20000000000005" y="164.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_7" aria-label="審査モデル" data-type-role="primary" text-anchor="middle"><tspan x="439.20000000000005" dy="0">審査 </tspan><tspan x="439.20000000000005" dy="21.599999999999998">モデル</tspan></text></g>
+   <g id="text_5"><text x="835.531336" y="115.583844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="合格 / 不合格" data-type-role="primary" text-anchor="middle"><tspan x="835.531336" dy="0">合格 / 不合格</tspan></text></g>
+   <g id="text_6"><text x="835.35" y="230.86625800000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="対象 · 規則 · 根拠" data-type-role="primary" text-anchor="middle"><tspan x="835.35" dy="0">対象 · 規則 · 根拠</tspan></text></g>
   </g>
  </g>
  <defs>

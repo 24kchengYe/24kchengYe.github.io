@@ -67,6 +67,45 @@ function inspect(host) {
       if (Math.min(left.right, right.right) - Math.max(left.left, right.left) > scale * 2 && Math.min(left.bottom, right.bottom) - Math.max(left.top, right.top) > scale * 2) errors.push(`Overlapping blocks: ${blocks[first].id || blocks[first].textContent} / ${blocks[second].id || blocks[second].textContent}`);
     }
   }
+  const vector = canvas.querySelector('svg');
+  if (canvas.classList.contains('vector-canvas') && vector) {
+    const frame = vector.getBoundingClientRect();
+    const viewBox = vector.getAttribute('viewBox').split(/\s+/).map(Number);
+    const factor = Math.min(frame.width / viewBox[2], frame.height / viewBox[3]);
+    const origin = { x:frame.left + (frame.width - viewBox[2] * factor) / 2 - viewBox[0] * factor, y:frame.top + (frame.height - viewBox[3] * factor) / 2 - viewBox[1] * factor };
+    const labels = [...vector.querySelectorAll('text')].map(element => ({ element,id:element.parentElement.id,box:element.getBoundingClientRect() }));
+    const overlaps = (first,second) => Math.min(first.right,second.right) - Math.max(first.left,second.left) > factor && Math.min(first.bottom,second.bottom) - Math.max(first.top,second.top) > factor;
+    const nodeIds = [...new Set(labels.map(label => label.element.dataset.nodeBox).filter(Boolean))];
+    for (const [index,label] of labels.entries()) {
+      for (const other of labels.slice(index + 1)) if (overlaps(label.box,other.box)) errors.push(`Overlapping vector text: ${label.id}/${other.id}`);
+      for (const id of nodeIds) {
+        const shape = vector.querySelector(`[id="${id}"]>path`);
+        const box = shape.getBoundingClientRect();
+        if (label.element.dataset.nodeBox === id) {
+          if (label.box.left < box.left + factor * 2 || label.box.right > box.right - factor * 2 || label.box.top < box.top + factor * 2 || label.box.bottom > box.bottom - factor * 2) errors.push(`Vector text outside node: ${label.id}/${id}`);
+        } else if (overlaps(label.box,box)) errors.push(`Vector text overlaps another node: ${label.id}/${id}`);
+      }
+    }
+    for (const connection of vector.querySelectorAll('.connection>g>path:first-child')) {
+      let start = [0,0];
+      const hits = new Set();
+      const commands = connection.getAttribute('d');
+      if (/[a-zA-Z]/.test(commands.replace(/[MLQ]/g,''))) errors.push(`Unsupported connector geometry: ${connection.parentElement.id}`);
+      for (const segment of commands.match(/[MLQ][^MLQ]*/g) || []) {
+        const points = (segment.slice(1).match(/-?\d+(?:\.\d+)?/g) || []).map(Number);
+        const end = points.slice(-2);
+        if (segment[0] !== 'M') for (let sample = 0; sample <= 120; sample += 1) {
+          const weight = sample / 120;
+          const position = start.map((value,axis) => segment[0] === 'Q' ? (1 - weight) ** 2 * value + 2 * (1 - weight) * weight * points[axis] + weight ** 2 * end[axis] : value + weight * (end[axis] - value));
+          const horizontal = origin.x + position[0] * factor;
+          const vertical = origin.y + position[1] * factor;
+          for (const label of labels) if (horizontal > label.box.left + factor && horizontal < label.box.right - factor && vertical > label.box.top + factor && vertical < label.box.bottom - factor) hits.add(label.id);
+        }
+        start = end;
+      }
+      for (const id of hits) errors.push(`Connector crosses text: ${connection.parentElement.id}/${id}`);
+    }
+  }
   return errors;
 }
 
@@ -94,6 +133,12 @@ async function main() {
       await page.goto(`${origin}/writing/${route}/?lang=zh`);
       const map = page.locator('#writing-map-1');
       await map.locator('.tm-shell').waitFor();
+      assert.equal(await map.locator('.tm-breadcrumb:visible').count(),0,'No duplicate current-view breadcrumb');
+      assert.equal(await map.locator('.tm-status:visible').count(),0,'Reading help is opt-in');
+      assert.equal(await page.locator('.map-ready>.panel-label:visible,.map-ready>.map-duplicate-caption:visible').count(),0,'Duplicate figure titles stay in the static fallback');
+      await map.getByRole('button',{ name:'读图帮助',exact:true }).click();
+      assert.equal(await map.locator('.tm-status:visible').count(),1);
+      await map.getByRole('button',{ name:'读图帮助',exact:true }).click();
       const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       const views = await page.evaluate(() => Object.keys(window.WritingDiagramData.views));
       for (const language of ['zh','en','ja']) {

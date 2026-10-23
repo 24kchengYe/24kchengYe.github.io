@@ -18,6 +18,8 @@
   for (const host of document.querySelectorAll('.trajectory-map[data-entry]')) {
     const shadow = host.attachShadow({ mode:'open' });
     const entry = host.dataset.entry;
+    const figure = host.closest('figure');
+    const panel = host.closest('.figure-panel') || figure;
     const fallback = host.nextElementSibling?.matches('.trajectory-static') ? host.nextElementSibling : host.closest('figure').querySelector('.trajectory-static');
     let language = document.documentElement.lang;
     let viewId = entry;
@@ -190,7 +192,8 @@
         aside.append(element('p','',translate(node.dataset.disposition === 'discarded' ? '失败尝试 · 保留审计与成本' : '最终保留轮次')));
       } else {
         const detail = node.querySelector('[data-node-detail]');
-        aside.append(element('p',detail ? 'tm-node-detail' : '',(detail?.textContent || node.textContent).trim()));
+        const description = (detail?.textContent || node.textContent).trim();
+        if (description.replace(/\s+/g,' ') !== nodeName(id).replace(/\s+/g,' ')) aside.append(element('p',detail ? 'tm-node-detail' : '',description));
         if (node.matches('.checkpoint,.restore')) aside.append(element('small','',translate('Harness 控制事件')));
       }
       aside.append(fields);
@@ -386,13 +389,13 @@
       toolbar.append(select,controls);
       const breadcrumb = element('nav','tm-breadcrumb');
       breadcrumb.setAttribute('aria-label',translate('返回'));
+      breadcrumb.hidden = trail.length < 2;
       const back = button('返回', () => navigate(trail.at(-2), trail.slice(0,-1)), '←');
       back.disabled = trail.length < 2;
       breadcrumb.append(back);
-      trail.forEach((id,index) => {
+      trail.slice(0,-1).forEach((id,index) => {
         if (index) breadcrumb.append(element('span','','›'));
         const crumb = button(data.views[id].title, () => navigate(id,trail.slice(0,index + 1)));
-        if (index === trail.length - 1) crumb.setAttribute('aria-current','page');
         breadcrumb.append(crumb);
       });
       if (viewId !== entry) breadcrumb.append(button('回到本节', () => navigate(entry,[entry])));
@@ -408,6 +411,9 @@
       template.innerHTML = view().localized[language].html;
       diagram.append(template.content);
       canvas = diagram.querySelector('.canvas');
+      for (const title of canvas.querySelectorAll('.label.title')) {
+        if (title.textContent.trim() === translate(view().title)) title.classList.add('tm-repeated-title');
+      }
       canvas.classList.toggle('tm-flowing',flowing && view().kind === 'flow');
       world.append(diagram);
       viewport.append(world);
@@ -474,6 +480,13 @@
       const flowHint = hasConnections ? '悬停追踪连接，点击查看细节或关联图；动效仅辅助读图，不代表执行。' : '点击节点查看细节或关联图；拖动平移，Ctrl/⌘ + 滚轮缩放。';
       const hint = data.generic ? (view().kind === 'flow' ? flowHint : '点击查看原图数据；拖动平移，Ctrl/⌘ + 滚轮缩放。') : (viewId === 'case' ? '滚动查看完整轨迹，也可点击左侧总览定位。回放不执行工具；检查点与回退不计模型轮次。' : '悬停追踪连线；点击模块展开；拖动平移，Ctrl/⌘ + 滚轮缩放。');
       status = element('div','tm-status',translate(hint));
+      status.hidden = true;
+      const help = button('读图帮助', () => {
+        status.hidden = !status.hidden;
+        help.setAttribute('aria-expanded',String(!status.hidden));
+      }, '?');
+      help.setAttribute('aria-expanded','false');
+      controls.append(help);
       shell.append(body,status);
       shadow.replaceChildren(original,theme,shell);
       bindCanvas(); bindViewport();
@@ -481,6 +494,8 @@
       const ready = () => {
         if (theme !== shadow.querySelector('link') || !theme.sheet) return;
         host.hidden = false;
+        panel?.classList.add('map-ready');
+        if (figure?.querySelectorAll('.trajectory-map').length === 1) figure.classList.add('map-ready');
         fallback.open = false;
         fit(storedCameraMode === 'node' ? 'width' : storedCameraMode);
         if (viewId === 'case') replay(cursor, storedCameraMode === 'node');
@@ -491,6 +506,8 @@
         if (theme !== shadow.querySelector('link')) return;
         pause();
         host.hidden = true;
+        panel?.classList.remove('map-ready');
+        figure?.classList.remove('map-ready');
         fallback.open = true;
       }, { once:true });
       requestAnimationFrame(ready);

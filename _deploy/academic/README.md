@@ -33,6 +33,12 @@ put the public mapping in `_data/reading-previews.json` and rebuild the library.
 The reader shows a small image while PDF.js initializes; it replaces the image
 with the selectable PDF page when ready. The original PDF bytes remain intact.
 PDF.js is warmed only after a report is selected, and reused between editions.
+An opened document uses streaming together with range requests, so the PDF index
+and page data can become available without dozens of sequential small requests.
+After displaying a page, the reader prepares only the next page's drawing
+instructions. Switching documents cancels the previous download and prefetch
+timer; the library entry itself still downloads no PDFs. During initialization
+the first-page preview remains visible with an explicit navigation-loading status.
 
 Learning titles preserve original Chinese headings alongside searchable English
 labels. Date provenance distinguishes initial arXiv submission, explicit source

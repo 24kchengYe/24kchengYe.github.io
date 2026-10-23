@@ -1,0 +1,4 @@
+yechengzhang.duqi.top {
+    encode zstd gzip
+    reverse_proxy yechengzhang-academic:8080
+}

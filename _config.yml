@@ -70,6 +70,7 @@ include:
   - _pages
   - files
 exclude:
+  - _deploy
   - session-log.jsonl
   - AGENTS.md
   - docs

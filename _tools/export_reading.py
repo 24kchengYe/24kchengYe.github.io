@@ -127,12 +127,13 @@ def source_url(catalog: dict, selected: dict | None) -> tuple[str, str]:
     return public_url(catalog.get("source_url")), "catalog.source_url"
 
 
-def display_year(value: object) -> str | None:
+def display_date(value: object) -> str | None:
     if value in (None, ""):
         return None
-    if not isinstance(value, str) or not re.match(r"^(?:19|20)\d{2}(?:-|$)", value):
-        raise ValueError("Invalid catalog date; cannot project a year")
-    return value[:4]
+    if not isinstance(value, str) or not re.fullmatch(r"(?:19|20)\d{2}(?:-\d{2}(?:-\d{2})?)?", value):
+        raise ValueError("Invalid catalog date")
+    datetime.strptime(value, {4: "%Y", 7: "%Y-%m", 10: "%Y-%m-%d"}[len(value)])
+    return value[:7].replace("-", ".")
 
 
 def write_json(path: Path, data: object) -> bytes:
@@ -209,7 +210,7 @@ def export(source: Path, root: Path) -> dict:
         title = require_text(preferred.get("title"), f"{report_id}.title")
         source_link, source_field = source_url(row, selected)
         source_fields[source_field] += 1
-        year = display_year(preferred.get("date") or row.get("date"))
+        year = display_date(preferred.get("date") or row.get("date"))
         if year is None:
             missing_years.append(report_id)
         technologies = (
@@ -290,7 +291,7 @@ def export(source: Path, root: Path) -> dict:
         "category_field_whitelist": list(CATEGORY_FIELDS),
         "projections": {
             "company": "catalog.company; unchanged label",
-            "date": "First four digits of existing date, or null; a catalog year, not a release date",
+            "date": "Existing catalog year and month as YYYY.MM; preserve year-only precision or null when missing; no inferred release dates",
             "technologies": "Existing reading-data technology IDs projected to their existing labels",
             "keywords": "Existing focus[].keyword only",
             "category": "Existing selected category ID; null outside the selection",

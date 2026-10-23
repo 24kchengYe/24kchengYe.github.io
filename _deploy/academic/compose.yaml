@@ -1,0 +1,35 @@
+name: yechengzhang-academic
+services:
+  web:
+    image: nginx:1.27-alpine
+    pull_policy: never
+    container_name: yechengzhang-academic
+    user: "101:101"
+    command: ["nginx", "-c", "/etc/nginx/academic.conf", "-g", "daemon off;"]
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 64m
+    cpus: 0.25
+    pids_limit: 64
+    ports: ["127.0.0.1:18086:8080"]
+    volumes:
+      - ./releases:/srv/releases:ro
+      - ./nginx.conf:/etc/nginx/academic.conf:ro
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    networks: [caddy_web]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+networks:
+  caddy_web:
+    external: true

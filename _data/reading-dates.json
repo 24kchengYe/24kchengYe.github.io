@@ -1,0 +1,387 @@
+{
+  "209f2a74a248": {
+    "date": "2026.08",
+    "dateBasis": "publication",
+    "source": "https://github.com/QwenLM/Qwen3.8",
+    "source_sha256": "1d1083c7142bb254e40e85f406953f7e722250869dab4f1eb06a97268d256a75",
+    "evidence": "2026-08-12: Qwen3.8-2.4T-A95B is now available"
+  },
+  "ef742a03b510": {
+    "date": "2025.08",
+    "dateBasis": "publication",
+    "source": "https://github.com/ByteDance-Seed/seed-oss",
+    "source_sha256": "1109d038006a60fd9a0bdbcc1a5884518876cfa256b746ab0a446f6602e1a816",
+    "evidence": "2025/08/20"
+  },
+  "416d4198c273": {
+    "date": "2025.02",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/codegemma/model_card",
+    "source_sha256": "f57711291fe7f22687b804c14fa24cc0fca22c1909ac2cb2136622d5053d9364",
+    "evidence": "Last updated 2025-02-25 UTC."
+  },
+  "64eaab62d646": {
+    "date": "2026.06",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/diffusiongemma/model_card?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content",
+    "source_sha256": "3d72b55c4d075fde7ad66402cea5996c708518c8b683d2936373b4158327e7b1",
+    "evidence": "Last updated 2026-06-10 UTC."
+  },
+  "83f3a3dc98ce": {
+    "date": "2026.10",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+    "source_sha256": "f68ab9da24e0b0c70746022f35fab79ed6f0c54d2e32183139d7c7c9ac0476b1",
+    "evidence": "Last updated 2026-10-06 UTC."
+  },
+  "be11adff01d6": {
+    "date": "2026.10",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2?hl=en",
+    "source_sha256": "43de9796aa3d8087096a626b71f410ac7223e64ec2491cba72e218fafd5166dc",
+    "evidence": "Last updated 2026-10-06 UTC."
+  },
+  "8d2fa9df465e": {
+    "date": "2025.09",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/embeddinggemma/model_card",
+    "source_sha256": "8e500f62f8d1917c8a49ff5ecad4f27ec5e4370502622602fa624c708973cea0",
+    "evidence": "Last updated 2025-09-25 UTC."
+  },
+  "ef341fe7bdbf": {
+    "date": "2026.04",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/functiongemma/model_card",
+    "source_sha256": "ae5ed3317c8568523f9e6f88fb761c2c12c00279850b20f395c2115eb7ccb5ad",
+    "evidence": "Last updated 2026-04-16 UTC."
+  },
+  "7e0eaa713231": {
+    "date": "2025.04",
+    "dateBasis": "publication",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+    "source_sha256": "b1575ae4e9dcbc6aef722adab208b9798d26dc39eb2fb63fc7d04bd47b9bd597",
+    "evidence": "Model card published  April 15, 2025\n\nModel Cards are intended to provide essential information on Gemini models, including known \nlimitations, mitigation approaches, and safety performance. These cards are accompanied by a"
+  },
+  "e156c9d87724": {
+    "date": "2025.04",
+    "dateBasis": "publication",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+    "source_sha256": "fafcad388912b4108943b9332399c34e55001e102cb67432a78e32d05db62757",
+    "evidence": "Model card published  April 10, 2025\n\nModel Cards are intended to provide essential information on Gemini models, including known \nlimitations, mitigation approaches, and safety performance. These cards are accompanied by a"
+  },
+  "bab8f7f59398": {
+    "date": "2025.10",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Computer-Use-Model-Card.pdf",
+    "source_sha256": "b3f56bc303fcffdc7eb76903843f273565a8eb3a686686cd55195fa2816cc39d",
+    "evidence": "Model card published/updated OCT 07,  2025"
+  },
+  "4b812d9df852": {
+    "date": "2025.08",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Deep-Think-Model-Card.pdf",
+    "source_sha256": "4f38096e3dffa489aeb429f85a17e07e0870ad1e8ebd480cb55bf0819515c267",
+    "evidence": "Model card published/updated AUG 01, 2025"
+  },
+  "ae9af674722b": {
+    "date": "2025.12",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf",
+    "source_sha256": "f3221d9458b2fed961c4eb8bef0b33a8164550a7e87b3805278209d12e9f34af",
+    "evidence": "Model card published/updated December, 2025"
+  },
+  "82eedb066f0e": {
+    "date": "2025.09",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Lite-Model-Card.pdf",
+    "source_sha256": "3fd8835ea1b38974d88fab496b89f1d0587e4955ab030b0c844f17652c893a7b",
+    "evidence": "Model card published/updated SEP 26, 2025"
+  },
+  "a573cfcec4e3": {
+    "date": "2025.06",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf",
+    "source_sha256": "247f1ba6fc665333ade40fa8871b668e6f652e285c9561de2c57194183e6cf53",
+    "evidence": "Model card updated June 27, 2025"
+  },
+  "8306d3eb7224": {
+    "date": "2025.12",
+    "dateBasis": "publication",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-flash/",
+    "source_sha256": "b2800104a47322d76d80a72bfb128ba7f0bacffc419ae9bb630eae289c761ba0",
+    "evidence": "Model card published: December, 2025"
+  },
+  "4a5f17838038": {
+    "date": "2025.11",
+    "dateBasis": "publication",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-pro-image/",
+    "source_sha256": "41109d8b6467be8aeb42df84132894a321d64145a4152ac2153211e2d018dea1",
+    "evidence": "Model card published: November, 2025"
+  },
+  "9d775764a77f": {
+    "date": "2026.05",
+    "dateBasis": "updated",
+    "source": "https://deepmind.google/models/model-cards/gemini-3-pro/",
+    "source_sha256": "9a1734bc3aa310691772d1756990b01383dc7732d4f9cb0a2888e2e06a7f84d8",
+    "evidence": "Last Updated:  May 2026"
+  },
+  "704c3cc06b0e": {
+    "date": "2026.08",
+    "dateBasis": "updated",
+    "source": "https://deepmind.google/models/model-cards/gemini-omni-flash/",
+    "source_sha256": "6cc6e2aafcb8202d367ae36a85e12af0db7c4007b5c029b24a0559f7523475ef",
+    "evidence": "Last Updated: August 2026"
+  },
+  "e1fe1e2ab4f2": {
+    "date": "2025.06",
+    "dateBasis": "updated",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-Robotics-On-Device-Model-Card.pdf",
+    "source_sha256": "c7289fa5d75d7665c2a7c981ca38393a7350390db65fa572157f0f65247e6207",
+    "evidence": "Model card updated  06/30/2025"
+  },
+  "61b2ff8998b7": {
+    "date": "2025.02",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/model_card",
+    "source_sha256": "dc3a7f4d33e09bb491df4fb76ca8b0c8f3e8acb9439fd73cc783076cac7228f5",
+    "evidence": "Last updated 2025-02-25 UTC."
+  },
+  "7a5dede03edf": {
+    "date": "2025.08",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_3",
+    "source_sha256": "ca2e454470a4aa9823f94140b3d637e505dc28133ae9617a1eadc8f7173de101",
+    "evidence": "Last updated 2025-08-14 UTC."
+  },
+  "8560b97f1829": {
+    "date": "2025.06",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/gemma-3n/model_card",
+    "source_sha256": "165836e16e91ffc3fd34afba5d8ead5e7515959b99b48f5efa788038ac8346e6",
+    "evidence": "Last updated 2025-06-17 UTC."
+  },
+  "6f8eb7579f51": {
+    "date": "2026.07",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/core/model_card_4?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content",
+    "source_sha256": "dfd8a3f5cfdafede35173bd9d9b8a3e31fe4e9c855303f343a3ea86cf313dc0b",
+    "evidence": "Last updated 2026-07-30 UTC."
+  },
+  "103a46a16f79": {
+    "date": "2025.05",
+    "dateBasis": "publication",
+    "source": "https://storage.googleapis.com/deepmind-media/Model-Cards/Imagen-4-Model-Card.pdf",
+    "source_sha256": "23632fbcba0a1bb785eff161571238310410485255b435f9849326cc7b29360e",
+    "evidence": "Model card published  May 20, 2025"
+  },
+  "d8bf2adb6814": {
+    "date": "2026.03",
+    "dateBasis": "updated",
+    "source": "https://deepmind.google/models/model-cards/lyria-3/",
+    "source_sha256": "aaee77c7f6f1a01a49c272d3372ead8b4dba2009e472296863716be7044760d8",
+    "evidence": "Model card updated March  2026"
+  },
+  "f3155b278230": {
+    "date": "2026.01",
+    "dateBasis": "updated",
+    "source": "https://developers.google.com/health-ai-developer-foundations/medgemma/model-card-v1",
+    "source_sha256": "07b2b1a3e0d0c4b2ba7641cd8781b43256cfbee67e76a44c6ea92b86cef1ba81",
+    "evidence": "Last updated 2026-01-12 UTC."
+  },
+  "6a88f29126d4": {
+    "date": "2026.04",
+    "dateBasis": "updated",
+    "source": "https://developers.google.com/health-ai-developer-foundations/medgemma/model-card",
+    "source_sha256": "7bd56454f19ca9105405b35bd4f5003fe88b6471bfcefb5be96404cafc78f043",
+    "evidence": "Last updated 2026-04-21 UTC."
+  },
+  "f2dc31982b30": {
+    "date": "2025.02",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/paligemma/model-card",
+    "source_sha256": "4916cadf4dfd2a7b9be84b275a72347abbbddfdab83de3f1cedcffe9df32c42c",
+    "evidence": "Last updated 2025-02-25 UTC."
+  },
+  "cc7852a5f6cd": {
+    "date": "2025.02",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/paligemma/model-card-2",
+    "source_sha256": "765a6d6bbc93cf71fa2776146eec2688d56d8dc14a19e9e986b792881b4c18dd",
+    "evidence": "Last updated 2025-02-25 UTC."
+  },
+  "5b8138dd8ac6": {
+    "date": "2025.02",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/recurrentgemma/model_card",
+    "source_sha256": "99f1e9262224704356d45d453cd00ff76e9a95ba80da693fb787cb4eae8ea334",
+    "evidence": "Last updated 2025-02-25 UTC."
+  },
+  "9d2942940d67": {
+    "date": "2024.04",
+    "dateBasis": "publication",
+    "source": "https://deepmind.google/models/gemma/recurrentgemma/",
+    "source_sha256": "02e4ebe3e8aaee3c00568cf44638c1e3d352df1f4e716d7aec4d2809aa247f5f",
+    "evidence": "2024-4-9"
+  },
+  "a05c236c789b": {
+    "date": "2025.04",
+    "dateBasis": "updated",
+    "source": "https://ai.google.dev/gemma/docs/shieldgemma/model_card_2",
+    "source_sha256": "726c4192cba8ab049e291bb050757d4fd59a48221a9d8050b229e1b9b842fa0d",
+    "evidence": "Last updated 2025-04-03 UTC."
+  },
+  "095b88ef8f7c": {
+    "date": "2025.04",
+    "dateBasis": "updated",
+    "source": "https://developers.google.com/health-ai-developer-foundations/txgemma/model-card",
+    "source_sha256": "9fd494268ace432dbe8b6409ddf6e76b9c197e4fd4d40486cf0edf7fe6d36fbb",
+    "evidence": "Last updated 2025-04-10 UTC."
+  },
+  "aae681099148": {
+    "date": "2024.04",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3/MODEL_CARD.md",
+    "source_sha256": "4fe1d65fc9f7d922336789052206e00ce2aab99696a5f0ca1c33bfcfb9538fc3",
+    "evidence": "Model Release Date** April 18, 2024.\n\n**Status** This is a static model trained on an offline dataset. Future versions of the tuned models will be released as"
+  },
+  "5a3e626f3ac0": {
+    "date": "2024.07",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+    "source_sha256": "e321bab9a7350ccf8bdf7a26adbdf195c6501a16f26f3a46e8bedf3fd5795bf7",
+    "evidence": "Model Release Date:** July 23, 2024.\n\n**Status:** This is a static model trained on an offline dataset. Future versions of the tuned models will be released a"
+  },
+  "1e24d7aa1867": {
+    "date": "2024.10",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
+    "source_sha256": "bf526a4e49ad43d4535c3d76637b9fb066597a2e56284c0b1739ebe7aa24dcad",
+    "evidence": "Model Release Date:** Oct 24, 2024\n\n**Status:** This is a static model trained on an offline dataset. Future versions may be released that improve model cap"
+  },
+  "17429fbfee2f": {
+    "date": "2024.09",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md",
+    "source_sha256": "b97c4464c27bd4318eed804089fa6a027d6649c33f6378a728405d057702e5cb",
+    "evidence": "Model Release Date:** Sept 25, 2024\n\n**Status:** This is a static model trained on an offline dataset. Future versions may be released that improve model cap"
+  },
+  "049d04cfffb6": {
+    "date": "2024.12",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
+    "source_sha256": "b4222fc59017f1402521d87cde05c305a2065e3064fb9f5762d4a175f0d6da49",
+    "evidence": "Model Release Date:** \n\n* **70B Instruct: December 6, 2024"
+  },
+  "4ba167d96c7e": {
+    "date": "2025.04",
+    "dateBasis": "publication",
+    "source": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
+    "source_sha256": "d984015dd1c697915194253f03f2b56f925cc69ffad068a8d00a6572ddd78e00",
+    "evidence": "Model Release Date:** April 5, 2025\n\n**Status:** This is a static model trained on an offline dataset. Future versions of the tuned models may be released as"
+  },
+  "2cf0209b5679": {
+    "date": "2026.08",
+    "dateBasis": "publication",
+    "source": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+    "source_sha256": "80445a383ec07bde4f4f356f1a3a5d8178f2285867ddc7defac5713c09f6ff3c",
+    "evidence": "Model Release Date:** August 2026  \n**License:** [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\nMuse Glimmer is a 30-billion-parameter causal language model with a dedicated perception encoder, distilled from Muse Sp"
+  },
+  "d6030208ae6b": {
+    "date": "2026.08",
+    "dateBasis": "publication",
+    "source": "https://microsoft.ai/models/mai-code-1-flash/",
+    "source_sha256": "9caf4abe4c8eb6c3b5e1dfd5c61238e42139510bf4c5690d6115d9277f59e22f",
+    "evidence": "Release date \nAugust 11, 2026 \nRelease date in the \nEU \nAugust 11, 2026"
+  },
+  "ddce5b415c79": {
+    "date": "2026.07",
+    "dateBasis": "publication",
+    "source": "https://microsoft.ai/models/mai-cyber-1-flash/",
+    "source_sha256": "e10050344fa3e591745c73ca4dca7a4dfbbf1c525ab5b3146f82e974a9b55ee2",
+    "evidence": "Release date \nRelease date in \nthe EU (if \ndifferent) \n27 July 2026"
+  },
+  "e93c0f84c3d2": {
+    "date": "2026.08",
+    "dateBasis": "publication",
+    "source": "https://microsoft.ai/models/mai-image-2-6/",
+    "source_sha256": "0f60c3a58ac49a3ab8f433b72c059bd2fddc52cebd929428d5092a51f4e017af",
+    "evidence": "Release date \nAug 14, 2026 (2.6), Sep 4 (2.6"
+  },
+  "2ec17b329628": {
+    "date": "2026.10",
+    "dateBasis": "updated",
+    "source": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+    "source_sha256": "919c213d94e0027ff4c119a7887f0270d018c33126acf2b5f6afaae1318fbf87",
+    "evidence": "Last updated: October 1st, 2026 \nOverview"
+  },
+  "b73f4eeb79bf": {
+    "date": "2026.10",
+    "dateBasis": "updated",
+    "source": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+    "source_sha256": "779d6bcbfcaebcb556ed7ec4b832bfd7fa9aa6f8329d216177e573ef78e62f32",
+    "evidence": "Last updated: October 1st, 2026 \nOverview"
+  },
+  "dfafccfe1641": {
+    "date": "2026.10",
+    "dateBasis": "updated",
+    "source": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+    "source_sha256": "fb9d248dc8d3ae87637a3546acf11d1f9f8a3bb00d25918311e52b965b1f0c63",
+    "evidence": "Last updated: October 1st, 2026 \nOverview"
+  },
+  "9791375e4e15": {
+    "date": "2025.09",
+    "dateBasis": "updated",
+    "source": "https://x.ai/safety",
+    "source_sha256": "0b9080d64e74ac882c0deb3d0d9dd13140367d52b14b5f252cce8bfb4868751d",
+    "evidence": "Last updated: September 19, 2025\n1"
+  },
+  "00cea88e657f": {
+    "date": "2025.08",
+    "dateBasis": "updated",
+    "source": "https://x.ai/safety",
+    "source_sha256": "54068c0d9570d94dfc63c08247707b8c48045a79b5bbe865af709af95ee14415",
+    "evidence": "Last updated: August 20, 2025\n1"
+  },
+  "ed328a58f8ff": {
+    "date": "2025.08",
+    "dateBasis": "updated",
+    "source": "https://x.ai/safety",
+    "source_sha256": "e9ff949fdd9c3cb1b0d819e6b5dfb3239d5429976ce56602cba389c8564674fd",
+    "evidence": "Last updated: August 26, 2025\n1"
+  },
+  "8b74c0c0840e": {
+    "date": "2025.05",
+    "dateBasis": "publication",
+    "source": "https://huggingface.co/nvidia/Cosmos-Reason1-7B",
+    "source_sha256": "7c68ff8a2d211fff13aad45a32c9e0bfb20ab9114598b7b3a3546f337fe801de",
+    "evidence": "Release Date:\n\n* Github: [05/17/2025](https://g"
+  },
+  "ec0db00bd4e6": {
+    "date": "2025.12",
+    "dateBasis": "publication",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+    "source_sha256": "feecd6e2fa698645f76f9ffa714fd049c660d84116e004142c18ad46a088296c",
+    "evidence": "Release Date\n\nDecember 15, 2025 via [Hugging"
+  },
+  "3d5d1a4d087e": {
+    "date": "2026.06",
+    "dateBasis": "publication",
+    "source": "https://research.nvidia.com/labs/nemotron/Nemotron-3/",
+    "source_sha256": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+    "evidence": "2026-6-9"
+  },
+  "a443c0bdcbf6": {
+    "date": "2025.11",
+    "dateBasis": "publication",
+    "source": "https://research.nvidia.com/labs/adlr/",
+    "source_sha256": "e2ba7dd9b17730160515db92e3a9380e18939dec70101dcf135a2b8aa1a1c31f",
+    "evidence": "2025-11-7"
+  },
+  "61bed72b2c0b": {
+    "date": "2026.04",
+    "dateBasis": "publication",
+    "source": "https://research.nvidia.com/labs/nemotron/Nemotron-3/",
+    "source_sha256": "73ea5d737b9c7c62a39ed3edefbecb82e5a23681bc2c4167e202eeee7b3d254d",
+    "evidence": "2026-4-3"
+  }
+}

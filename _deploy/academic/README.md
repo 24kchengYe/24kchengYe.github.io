@@ -18,9 +18,27 @@ Fallback to local upload for changed/unavailable originals. Verify the complete
 manifest before activating new metadata. Partial files are not served. Hashes
 in file URLs allow immutable caching and safe future incremental updates.
 
-Only catalog originals and completed editions belong in the public document
-store. The Foundation Models knowledge-base directory has its own publication
-and access decision; do not copy its whole tree, archives or internal logs.
+The user confirmed public access to the Foundation Models learning originals
+on 2026-10-23. `_tools/export_learning_documents.py` exports only the linked
+Markdown/PDF/image closure beneath the selected collection directory, renders
+sanitized HTML and native MathML, and audits missing references. Its versioned
+assets live in `releases/learning-files/<version>`, outside Git. Upload and
+verify every batch with `install_learning_batch.py` before committing the public
+`_data/reading-learning-assets.json` and rebuilding collection metadata. Do not
+copy unrelated notes, source archives, logs or credentials.
+
+`_tools/build_reading_previews.py` creates first-page WebP images for existing
+PDF editions. Install the verified bundle using `install_reading_previews.py`;
+put the public mapping in `_data/reading-previews.json` and rebuild the library.
+The reader shows a small image while PDF.js initializes; it replaces the image
+with the selectable PDF page when ready. The original PDF bytes remain intact.
+PDF.js is warmed only after a report is selected, and reused between editions.
+
+Learning titles preserve original Chinese headings alongside searchable English
+labels. Date provenance distinguishes initial arXiv submission, explicit source
+publication metadata and model-card updates. Never use PDF creation timestamps
+or local download dates as publication dates. Undated items sort last in both
+ascending and descending order; researcher profiles do not get invented dates.
 
 Runtime: `/opt/yechengzhang-academic`. Keep `compose.yaml`, `nginx.conf`, and
 `releases/<commit>/site` here; `releases/current` points to the selected release.

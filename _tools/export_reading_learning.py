@@ -160,7 +160,7 @@ ARXIV = re.compile(r'(?:arxiv\.org/(?:abs|pdf|html)/|arxiv\s*[:：]\s*)(\d{4}\.\
 PAPER_LABEL = re.compile(r'(?:论文(?:链接|地址|原文|与资产|与代码|/代码|/代码/数据)?|原始(?:论文|报告)|arXiv|Paper|DOI|资源|版本/状态|早期版本)', re.I)
 ASSET_LABEL = re.compile(r'(?:官方(?:代码仓库|仓库|代码|资源仓库|资源|资料仓库|配套资料库|项目页|资产|产物|发布|数据集|平台|资料)|代码仓库|代码与模型|论文专属代码|公开资产|开放资产|项目页|项目主页|Apple Research)', re.I)
 PRIVATE_HOSTS = ('larkoffice.com', 'feishu.cn', 'feishu.net', 'bytetech.info', 'bytedance.net', 'bytedance.com')
-RUNTIME_FIELDS = {'id', 'title', 'section', 'sourceUrls', 'reportIds'}
+RUNTIME_FIELDS = {'id', 'title', 'section', 'sourceUrls', 'reportIds', 'date', 'dateBasis'}
 
 
 def clean(text):
@@ -257,6 +257,28 @@ def neutral_title(ident, raw_title, body):
     return title, 'source-heading'
 
 
+def chapter_date(urls, body):
+    # arXiv identifiers encode the initial submission month, not revision dates.
+    for url in urls:
+        match = ARXIV.search(url)
+        if match:
+            prefix = match.group(1)[:4]
+            month = int(prefix[2:])
+            if 1 <= month <= 12:
+                return f"20{prefix[:2]}.{month:02d}", 'arxiv-first-submission'
+    metadata = [clean(line) for line in body.splitlines()[:28] if re.match(r'^\s*-?\s*\*?\*?(?:写作|发表|发布|版本|论文/)', line)]
+    for line in metadata:
+        match = re.search(r'arxiv[^\d]{0,12}(\d{2})(0[1-9]|1[0-2])\.\d{4,5}', line, re.I)
+        if match:
+            return f'20{match[1]}.{match[2]}', 'arxiv-first-submission'
+    line = next((line for line in metadata if re.search(r'时间|日期|版本/发表|版本/状态', line)), '')
+    match = re.search(r'(20\d{2})\s*[-/.年]\s*(0?[1-9]|1[0-2])(?=\D|$)', line)
+    if match:
+        return f"{match[1]}.{int(match[2]):02d}", 'source-publication-metadata'
+    match = re.search(r'\b(20\d{2})\b', line)
+    return (match[1], 'source-publication-year') if match else (None, 'unverified')
+
+
 def report_lookup(path):
     rows = json.loads(path.read_text(encoding='utf-8'))
     if isinstance(rows, dict):
@@ -272,6 +294,8 @@ def report_lookup(path):
 
 def export(source, reports):
     raw = source.read_text(encoding='utf-8')
+    override_path = Path(__file__).resolve().parents[1]/'_data/reading-learning-dates.json'
+    date_overrides = json.loads(override_path.read_text(encoding='utf-8')) if override_path.exists() else {}
     lookup = report_lookup(reports)
     anchors = list(re.finditer(r'<a id="([^"]+)"\s*></a>', raw))
     books, audit_entries, empty_anchors = {}, [], []
@@ -317,13 +341,18 @@ def export(source, reports):
         related = sorted({report for arxiv in arxivs for report in lookup.get(arxiv, [])})
         if ident in REPORT_EXCLUSIONS:
             related = []
-        chapter = {'id': ident, 'title': title, 'section': SECTIONS.get(subsection, subsection), 'sourceUrls': urls, 'reportIds': related}
+        date, date_basis = chapter_date(urls, body)
+        if not date and ident in date_overrides:
+            amendment = date_overrides[ident]
+            date, date_basis = amendment['date'], amendment['dateBasis']
+        chapter = {'id': ident, 'title': {'zh': clean(heading.group(1)), 'en': title}, 'date': date, 'dateBasis': date_basis, 'section': SECTIONS.get(subsection, subsection), 'sourceUrls': urls, 'reportIds': related}
         assert set(chapter) == RUNTIME_FIELDS
         books[category]['chapters'].append(chapter)
         audit_entries.append({
             'id': ident, 'book': category,
             'source_line': raw[:marker.start()].count('\n') + 1,
-            'title_basis': title_basis, 'source_basis': url_basis,
+            'title_basis': {'zh': 'source-heading', 'en': title_basis}, 'source_basis': url_basis,
+            'date': date, 'date_basis': date_basis,
             'arxiv_ids': arxivs, 'source_url_count': len(urls),
             'report_ids': related,
             **({'source_correction': correction} if correction else {}),

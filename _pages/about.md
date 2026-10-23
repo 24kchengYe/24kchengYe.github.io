@@ -16,21 +16,21 @@ redirect_from:
 
 <div lang="en" markdown="block">
 
-I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/). I received my B.Eng. in Urban Planning from [Hefei University of Technology](https://www.hfut.edu.cn/) in 2023.
+I am a Ph.D. student at the [School of Architecture](https://www.arch.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/), advised by [Prof. Ying Long](http://www.intelli-city.com/), and a member of [Beijing City Lab (BCL)](https://www.beijingcitylab.com/).
 
 My research focuses on **building-scale urban analytics and simulation**, **LLM/VLM post-training, evaluation and alignment**, and **multi-agent systems**.
 
 </div>
 <div lang="zh" markdown="block">
 
-我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。2023年获[合肥工业大学](https://www.hfut.edu.cn/)城乡规划学士学位。
+我是[清华大学](https://www.tsinghua.edu.cn/)[建筑学院](https://www.arch.tsinghua.edu.cn/)博士生，导师为[龙瀛教授](http://www.intelli-city.com/)，[北京城市实验室 (BCL)](https://www.beijingcitylab.com/) 成员。
 
 研究方向包括**建筑尺度城市分析与模拟**、**大模型后训练、评测与对齐**和**多智能体系统**。
 
 </div>
 <div lang="ja" markdown="block">
 
-[清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。2023年に[合肥工業大学](https://www.hfut.edu.cn/)にて都市計画の学士号を取得しました。
+[清華大学](https://www.tsinghua.edu.cn/)[建築学院](https://www.arch.tsinghua.edu.cn/)の博士課程に在籍し、[龍瀛教授](http://www.intelli-city.com/)の指導を受けています。[北京城市実験室 (BCL)](https://www.beijingcitylab.com/) のメンバーです。
 
 研究分野は**建築スケール都市分析・シミュレーション**、**LLM/VLMの事後学習・評価・アライメント**、**マルチエージェントシステム**です。
 

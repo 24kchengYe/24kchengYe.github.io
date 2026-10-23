@@ -1,0 +1,2406 @@
+{
+  "version": "dfe7a3d85bc5bb43",
+  "base_url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/",
+  "chapters": {
+    "toc-001": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-001.html",
+      "bytes": 3957,
+      "sha256": "5ac555db059b0633a52bd2a3e8f45cb382739a24f97814449694e23907e0e5e7"
+    },
+    "toc-002": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-002.html",
+      "bytes": 4247,
+      "sha256": "9d1ab43641ab4e9b31acaaf046e1dfcd8f4a554cbd2d241b241efee9a3e8992b"
+    },
+    "toc-003": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-003.html",
+      "bytes": 4993,
+      "sha256": "c8fd322ceb610dd2d5123dd945c90af02f5e62abbfc8dee1b4da7e70e5d72985"
+    },
+    "toc-004": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-004.html",
+      "bytes": 3977,
+      "sha256": "7916f9c511f411a7bec753d6dcfc92945d7d70b36dd13586185f36905a767c76"
+    },
+    "toc-005": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-005.html",
+      "bytes": 4625,
+      "sha256": "58a7ef0b98fca3ba1588f68f045770848a42e66be910d98a3ae8e3f1221e135f"
+    },
+    "toc-006": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-006.html",
+      "bytes": 4023,
+      "sha256": "d2dad4e65ecfc6e9c4c660edd1870e72d1549e2ca8c22e43042bb571eb194bc8"
+    },
+    "toc-007": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-007.html",
+      "bytes": 3987,
+      "sha256": "d9a5696381b2194ff28e2579433a44c2cacd1956dc8bc70aa128f7487ff4aaac"
+    },
+    "toc-008": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-008.html",
+      "bytes": 4905,
+      "sha256": "45857279e18a48a4c3a0dc50f9bfe1392155b20b3ee161dec44cbb4b0b723897"
+    },
+    "toc-009": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-009.html",
+      "bytes": 3833,
+      "sha256": "b79786ee58eb7616a62cac0bd7682c8db17c64de2e0d773846748b568a20b8b9"
+    },
+    "toc-010": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-010.html",
+      "bytes": 3860,
+      "sha256": "94722f9c16588171dd854f7961c24400cbfafefb7275bdcf4cfa86a4ddc43120"
+    },
+    "toc-011": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-011.html",
+      "bytes": 3883,
+      "sha256": "c10d069c05474b98f76508114e0965a94a9244f129961be36f97de54a07b6d51"
+    },
+    "toc-012": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-012.html",
+      "bytes": 3599,
+      "sha256": "fb8df3bd65da63083642436830df1136a927ebe4217945b93c8c16d637f55379"
+    },
+    "toc-013": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-013.html",
+      "bytes": 3789,
+      "sha256": "6a995722c798e311d97bbd67f9bd30d997a6d0fe3c9c331d4efaba85a3150b0f"
+    },
+    "toc-014": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-014.html",
+      "bytes": 3714,
+      "sha256": "67182fc4172d0a15014011b73e38d8afa33cf9dd4c7e1360d1e95c1f109c6a86"
+    },
+    "toc-015": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-015.html",
+      "bytes": 5777,
+      "sha256": "f0e8e959824f89d52c6df39a31d894c2d2214775cbf7cb19a1030461877afca9"
+    },
+    "toc-016": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-016.html",
+      "bytes": 3526,
+      "sha256": "5cec7a5d257a8f0f3d3b7210eab88496e0c4d520847f9d845a39a2d3d4da9bf5"
+    },
+    "toc-017": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-017.html",
+      "bytes": 2839,
+      "sha256": "5a36ca145a150de376bdbffc35f8d4b862947b307941747a4c61821f95c4cfff"
+    },
+    "toc-018": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-018.html",
+      "bytes": 3633,
+      "sha256": "c1d830ceb7897cc069da4fbee123dca969334f32c3ceaaf70c000941580471cc"
+    },
+    "toc-019": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-019.html",
+      "bytes": 3299,
+      "sha256": "017aa45000d9e69a66d8743bf07c28860028c38f33c78efcebb53e2e917ef0cc"
+    },
+    "toc-020": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-020.html",
+      "bytes": 3512,
+      "sha256": "0c35047f8475eae807ff519ff1a80274f17b66ecdb4e400989f4eef3dc279276"
+    },
+    "toc-021": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-021.html",
+      "bytes": 3481,
+      "sha256": "d038b1e419e499368b3aae29992f02a8990699b5f12b3b1440b58e70d726a682"
+    },
+    "toc-022": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-022.html",
+      "bytes": 3493,
+      "sha256": "0a3f8ab2df572f1bcba5af07196991f71a594b8744d6a60cfb1371851e81427d"
+    },
+    "toc-023": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-023.html",
+      "bytes": 3528,
+      "sha256": "c2dc68b2e789f0c5a8ed2160633e1cf416ac5de15754a5907653f95584aafc04"
+    },
+    "toc-024": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-024.html",
+      "bytes": 4027,
+      "sha256": "c21f077997c4c2f7a734945e4fb08ab20c791bc3a6089e8449a949fbea4e24b4"
+    },
+    "toc-025": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-025.html",
+      "bytes": 3627,
+      "sha256": "d2f745c1a391067932195c2c53c199ab34465db8ed3bd520b50083f0bf52bc6a"
+    },
+    "toc-026": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-026.html",
+      "bytes": 3455,
+      "sha256": "368ca93062540b1f10709ad00062bc47ae861d965d750240c6d0e65313bb1f30"
+    },
+    "toc-027": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-027.html",
+      "bytes": 3418,
+      "sha256": "91e6f17db0a2182c46faf1564019dcff4c21ac8af091106915db9da8b7e163ea"
+    },
+    "toc-028": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-028.html",
+      "bytes": 3643,
+      "sha256": "394deb29883f19c3a0637ba0751205314661aa59335444b75cc9ebc5e724d6b4"
+    },
+    "toc-029": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-029.html",
+      "bytes": 3791,
+      "sha256": "beea58d871f28d4e47a6bd506026dd42e7c1a8140bab7db4191f47ab762dfb09"
+    },
+    "toc-030": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-030.html",
+      "bytes": 3610,
+      "sha256": "cbd29385fc6ba590896073bfc4cd48d7db52471ac9a72548dd3b3e822745e08e"
+    },
+    "toc-031": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-031.html",
+      "bytes": 3771,
+      "sha256": "72eb59aea8eb0f4be259e0f0e4eae200a72c1f653bd61f8993bf4186029beeeb"
+    },
+    "toc-032": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-032.html",
+      "bytes": 4109,
+      "sha256": "64e6cd8f7b521b45118fad113c6c41ac2a88f3e7b58f5a6564d1fc530bdd476f"
+    },
+    "toc-033": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-033.html",
+      "bytes": 3622,
+      "sha256": "cd2f770d14a1fbeac9dc165a862bdcec6546fe2dff04992aa6e6f5302e1259b0"
+    },
+    "toc-034": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-034.html",
+      "bytes": 3894,
+      "sha256": "857fdabbb1ae769aa8af3ba9bf93f5be7337f60a3c1d893cb0d1bb3eaa4d8594"
+    },
+    "toc-035": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-035.html",
+      "bytes": 3613,
+      "sha256": "c306c54f7baec65460252b4e55b8f3a86662424213bab1330d35ac770c83e930"
+    },
+    "toc-036": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-036.html",
+      "bytes": 3764,
+      "sha256": "50bc50391faeefca5f6b346a34f3d07c82dfd9861c433b2ee95be033f1b89f6b"
+    },
+    "toc-037": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-037.html",
+      "bytes": 3628,
+      "sha256": "359db5234c360b5c2d26de8a9a0762bdd140d27261f86fe17d4004e34cf1a7d1"
+    },
+    "toc-038": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-038.html",
+      "bytes": 3908,
+      "sha256": "71e67a9975bee5d9554fdf9ac67b9c4871ee68d84f96e8749b69bb339f4f28bf"
+    },
+    "toc-039": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-039.html",
+      "bytes": 3715,
+      "sha256": "89430cd6f55bb499c0482f02c4cf8d351ee9be155fbbbb142fa89ca4a5956713"
+    },
+    "toc-040": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-040.html",
+      "bytes": 3704,
+      "sha256": "02da744f4824641b95616d872aa50a3feabedcf0de2d3a2a6920c30906db7419"
+    },
+    "toc-041": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-041.html",
+      "bytes": 3165,
+      "sha256": "125579cd8945a1893bdfb36abdbde945694c706b8a07b41a58c9021bf01d6a37"
+    },
+    "toc-042": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-042.html",
+      "bytes": 1951,
+      "sha256": "c4414498eb8fe1820f0e3089dd477a006c0ed3145c1f75549e6c1ec90d5fea9d"
+    },
+    "toc-043": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-043.html",
+      "bytes": 3632,
+      "sha256": "6a9b80ef88aad30f2082bac3a565617e8963f5a101f8de360b025d54164a2545"
+    },
+    "toc-044": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-044.html",
+      "bytes": 3455,
+      "sha256": "4f200224c867c3c7a2c957796151efed1426355e97d6869cfaa60bb744f791f8"
+    },
+    "toc-045": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-045.html",
+      "bytes": 3462,
+      "sha256": "27308ba676d169e6771c119891eac294000dad553b89ed839675afed99de5ece"
+    },
+    "toc-046": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-046.html",
+      "bytes": 3708,
+      "sha256": "81a053134f51b2c76604edbb2b5773bf6f92db89474b5911d385c89cee175cba"
+    },
+    "toc-047": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-047.html",
+      "bytes": 3841,
+      "sha256": "1019f0deac62fc2435a586973ba976528d6e7b94e8634a87fb23d81f5fe0f965"
+    },
+    "toc-048": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-048.html",
+      "bytes": 3607,
+      "sha256": "da6e6c72db9217f68454c7053b715d56647dc2500c474ecd2bc92e735597a28c"
+    },
+    "toc-049": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-049.html",
+      "bytes": 3815,
+      "sha256": "87d35dfcecc994699e033e7822e3c442545f3cb783dbe35ad2b0b2976d3de6a6"
+    },
+    "toc-050": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-050.html",
+      "bytes": 3479,
+      "sha256": "1b909b80fead64c7aa04e1ba3a1cc4787b3677e6bfb67e2195fa47938caa8383"
+    },
+    "toc-051": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-051.html",
+      "bytes": 3562,
+      "sha256": "84a50cee2be48e66c626cb502054cacacdabf724acfcb4fe3ca685da1e29e4a0"
+    },
+    "toc-052": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-052.html",
+      "bytes": 3221,
+      "sha256": "01894bb9707a2a27b1c2f00a8ee0fa2b5ecc02ef271e59d61b3f6ca321ef224c"
+    },
+    "toc-053": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-053.html",
+      "bytes": 3560,
+      "sha256": "9291fb3c19cf03d29a0d67df6d9d8ad9c3c226b043073bf198c14d77c5fa99e8"
+    },
+    "toc-054": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-054.html",
+      "bytes": 4068,
+      "sha256": "87af8d48c4d123af85abbe88c18e0c6faab037d9b3959f77753aee4331974c9c"
+    },
+    "toc-055": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-055.html",
+      "bytes": 3890,
+      "sha256": "722e106fb15a55fff6d4028a615a5065024c1d504dce420c69e28d57b598d493"
+    },
+    "toc-056": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-056.html",
+      "bytes": 3786,
+      "sha256": "195cb0be2420a4c9b30b775017ef2f128a67169a4bafd7044c03779be0f6fb49"
+    },
+    "toc-057": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-057.html",
+      "bytes": 3866,
+      "sha256": "d07eb51c8b4beb45380fd48be372701ddea73b02f5581ea5e22121380478e82e"
+    },
+    "toc-058": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-058.html",
+      "bytes": 3525,
+      "sha256": "ad0cb27cc357c8f7e967a81359cd0f8aac8c19123e3eb20ac988c70031a00f73"
+    },
+    "toc-059": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-059.html",
+      "bytes": 2313,
+      "sha256": "2b79a156a4101820ee2e69edb97d285c42727acbf67a1fc2d9712b962517ccde"
+    },
+    "toc-060": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-060.html",
+      "bytes": 3848,
+      "sha256": "054adbb54526dbe0d4666f6ac26d167775a751398b4b02811eb661f874d7938b"
+    },
+    "toc-061": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-061.html",
+      "bytes": 3783,
+      "sha256": "8ba8b3860de79f4d8e4a3f10bb075c2105511f60042acc792d5011717fec5cf4"
+    },
+    "toc-062": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-062.html",
+      "bytes": 3314,
+      "sha256": "cf216464d2d396d44924420b8bf5b3b74e2f7b66a5747932e6e8a321dfc59e02"
+    },
+    "toc-063": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-063.html",
+      "bytes": 3719,
+      "sha256": "d28000de2144dd80f168d5820b9a2a1801b1b4a828aca2f867324ed599beddaa"
+    },
+    "toc-064": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-064.html",
+      "bytes": 3903,
+      "sha256": "fba4afdb8ece07b1a811ad11c68a0f947ad0ea5fdb6940378ab3d56b75884aff"
+    },
+    "toc-065": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-065.html",
+      "bytes": 4337,
+      "sha256": "af738d44823066b6b0da29a1379380b505fa4c0dea15b62be6f687ed36842541"
+    },
+    "toc-066": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-066.html",
+      "bytes": 3730,
+      "sha256": "25aa304c65098087edffd24fd1b4b6d8b984dcfedfbb185bd1406b32f0161d78"
+    },
+    "toc-067": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-067.html",
+      "bytes": 3549,
+      "sha256": "88252bf5de65463bd40bb20eb5119c5fe1794168375abfc86fab56bb2d8a79f2"
+    },
+    "toc-068": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-068.html",
+      "bytes": 3457,
+      "sha256": "14e9a44ab066b19542ac46f5ff6d6b6bcae7d2e22b497836d4cc34fbee871dec"
+    },
+    "toc-069": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-069.html",
+      "bytes": 4433,
+      "sha256": "ff4c4f3d08599c3eebe958881cab82fe3bba34fe4bd61ca1e441537207cfd918"
+    },
+    "toc-070": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-070.html",
+      "bytes": 4629,
+      "sha256": "540cc3478feb9b998b97e0b7e35c273a25dbb7c107cca9af5daddfb62e8ec90f"
+    },
+    "toc-071": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-071.html",
+      "bytes": 4218,
+      "sha256": "641594051081f2911ab9c372fa559ecbcbb7474d687cc656558976929be66447"
+    },
+    "toc-072": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-072.html",
+      "bytes": 3740,
+      "sha256": "b2ade5fb71a27f29355597f435bc7955569f39679fd1cfeaff7de37673a08960"
+    },
+    "toc-073": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-073.html",
+      "bytes": 3939,
+      "sha256": "82b1840cad8cdd92466a096c60b474ab1e758a0ba8b3fe1035f8503207f06f26"
+    },
+    "toc-074": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-074.html",
+      "bytes": 4003,
+      "sha256": "08a656361974be6b0bcbb390427cc7c1159ce94fda91d2459526ed9e85076a8d"
+    },
+    "toc-075": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-075.html",
+      "bytes": 3267,
+      "sha256": "a35354de77b72a50d4eee453e478a6d7e3bafac9aaaab9e5682349094acc807b"
+    },
+    "toc-076": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-076.html",
+      "bytes": 3571,
+      "sha256": "c6b4a2264d10e227ebe970fa3f69bba40799c69834cdccbe3abc4a7ecc518cb3"
+    },
+    "toc-077": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-077.html",
+      "bytes": 3992,
+      "sha256": "6bee1698cd011bbf02c88d93a432dd9f259e0ff8aa9b73acb06359092cf68118"
+    },
+    "toc-078": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-078.html",
+      "bytes": 4035,
+      "sha256": "a739bb3efd3ff9382ef03088282fbda15d83dc020d995871e68a9e2286f3c262"
+    },
+    "toc-079": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-079.html",
+      "bytes": 4440,
+      "sha256": "6563578e6c834d978fd57d61ca7f7bd22dd84b72dc9be377cec0e96461070f0d"
+    },
+    "toc-080": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-080.html",
+      "bytes": 4438,
+      "sha256": "01d04e83df09a9c899bbee7eff31cda48474b71d2350def6758bf0c8148f62c1"
+    },
+    "toc-081": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-081.html",
+      "bytes": 3822,
+      "sha256": "0bcfa0aab29a3b34a580e0819b3707d39cfd05114aa7b092715bf9ff7b8b6deb"
+    },
+    "toc-082": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-082.html",
+      "bytes": 3309,
+      "sha256": "df0d5f9a11860d242bc3bcf51c607c34fd35d29e9bf2fe709288ea516200368b"
+    },
+    "toc-083": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-083.html",
+      "bytes": 3336,
+      "sha256": "e8ae994a9be300caba3bf8580ac491e3841cdc0ab5b05a3eedc3238d38258471"
+    },
+    "toc-084": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-084.html",
+      "bytes": 3721,
+      "sha256": "0bd15d0c0ed11b48dd8ccb214838ae457fe4f976406c601595a77ff6dc4fd4a1"
+    },
+    "toc-085": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-085.html",
+      "bytes": 3485,
+      "sha256": "03e9fe8e612e50c3ff357bfa17cef64d024ce73cf63720a618ee469e881a29e3"
+    },
+    "toc-086": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-086.html",
+      "bytes": 4353,
+      "sha256": "458d2a6962145c7e38af0c9ebbb6ee80a624c65854a72c5c0c241397854a5523"
+    },
+    "toc-087": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-087.html",
+      "bytes": 3771,
+      "sha256": "1de94cbdfc97b10fa068ce6418060d7143403212b688f546321d244273ddd9de"
+    },
+    "toc-088": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-088.html",
+      "bytes": 3941,
+      "sha256": "a1ddb0619dd18b2acc0a1a6f0e4b40aaf00477b8410ab60fd935adb62f837bf6"
+    },
+    "toc-089": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-089.html",
+      "bytes": 4147,
+      "sha256": "c45604fe169812205c1c91c8295d247c822a04da199d93094ed866837567bc33"
+    },
+    "toc-090": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-090.html",
+      "bytes": 4164,
+      "sha256": "b1fa17c443e804823daa2cd5c32348f466d0d5fc292a75f053de59da53f2f955"
+    },
+    "toc-091": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-091.html",
+      "bytes": 3974,
+      "sha256": "81240232d38cad04fb415a5ef1e679aa3b0fbdd44a917bf15f7e87224adf3e8e"
+    },
+    "toc-092": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-092.html",
+      "bytes": 4415,
+      "sha256": "8fd7f93c56a828972a01a0ca0140892d70f5bcbd94f30c7e5e41053d569a2f9d"
+    },
+    "toc-093": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-093.html",
+      "bytes": 4807,
+      "sha256": "6c2074605187b2a90e25c7326e6fc008325a32f8e8063378e53e75568bde56e3"
+    },
+    "toc-094": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-094.html",
+      "bytes": 3551,
+      "sha256": "17042e2ab0bf3c72d350b4efb0feac5ef5e82f88cf5ffcd0a88cca207b26df40"
+    },
+    "toc-095": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-095.html",
+      "bytes": 3874,
+      "sha256": "3cb39f92c88c9234e352173b89b9f5c104895bce6960c0ac529b0ef3b69441f8"
+    },
+    "toc-096": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-096.html",
+      "bytes": 4147,
+      "sha256": "a9ec77e8bcb52392673d2843cab680e3d5e2ddcdbd6a970512b9db56dd736518"
+    },
+    "toc-097": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-097.html",
+      "bytes": 3976,
+      "sha256": "4c7e7c8b579aa706507c5c0e169f0114707685b44bfc201637ad2d6ccaad19d2"
+    },
+    "toc-098": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-098.html",
+      "bytes": 3300,
+      "sha256": "e13cc70f81240b10d6e3cb62abbda495e4ad462fafed926de76493769e0cb239"
+    },
+    "toc-099": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-099.html",
+      "bytes": 3836,
+      "sha256": "7330ac37ba23807d48f1c550b3e324988834ffb8313a0ff6ea9f8643ea1141e0"
+    },
+    "toc-100": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-100.html",
+      "bytes": 4153,
+      "sha256": "ec1f717401c47fad6c311037c8049a42a8fafba5f27981737c3841b67dbd4057"
+    },
+    "toc-101": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-101.html",
+      "bytes": 3914,
+      "sha256": "a0717872bc4bc1f313b28e564896669b7bddffae75d0330a4519f30e54a4c19e"
+    },
+    "toc-102": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-102.html",
+      "bytes": 3960,
+      "sha256": "effff831bc7258983352c49125f0d0fab9b6bd82646f2dd73fd902b1a84e1e5b"
+    },
+    "toc-103": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-103.html",
+      "bytes": 4240,
+      "sha256": "2dc9cb1abc0274a5b4ce4a70e21ad277d822bf5bef6b9b2fb4355d2376cedd47"
+    },
+    "toc-104": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-104.html",
+      "bytes": 3883,
+      "sha256": "5b28985b947511c3ceacc4634998ffdc2204cb8440d1f4b3cfcec58eb3a5549b"
+    },
+    "toc-105": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-105.html",
+      "bytes": 3812,
+      "sha256": "4f1dc3bc26dd5a714c8d3d3f0d51710161e9789e5bc5fa737c4b6ad2c3cac471"
+    },
+    "toc-106": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-106.html",
+      "bytes": 3956,
+      "sha256": "8e1baf8c0e183b069b7b14e8fb375a5c945c863b64712348128068355cbbd65e"
+    },
+    "toc-107": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-107.html",
+      "bytes": 3919,
+      "sha256": "76a98034aece4f7084599fb478b2c76cd52b619e780e249f4376a6c5006cffc3"
+    },
+    "toc-108": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-108.html",
+      "bytes": 3975,
+      "sha256": "4aeeea69d91963d21f24df1c69f48d9a73320e7345342f7b80fa6ff6b1716085"
+    },
+    "toc-109": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-109.html",
+      "bytes": 4205,
+      "sha256": "3418f5bd6ca815f76dc9f95f000b77cc3568349f875bc7b8c09d138abad2abe9"
+    },
+    "toc-110": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-110.html",
+      "bytes": 3580,
+      "sha256": "079e09262089837a122cbd1011dd8c31ee0e10e85fb5227b2c6633729096925e"
+    },
+    "toc-111": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-111.html",
+      "bytes": 4222,
+      "sha256": "4fcdaa9f6494f338d6fa9bee0b9ac99794e0578cf7908f02ca5250a8d188bc20"
+    },
+    "toc-112": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-112.html",
+      "bytes": 4112,
+      "sha256": "3737ec7e135f973c76c5b3bfffc2dc4b5a6a6522adbbc63e149d129726a98ccd"
+    },
+    "toc-113": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-113.html",
+      "bytes": 4053,
+      "sha256": "1678a82f9d761e04989201208c6cc16e3d75d79d749c3b9ae4e7c2e7e859cb3f"
+    },
+    "toc-114": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-114.html",
+      "bytes": 4245,
+      "sha256": "3b7caa1f57fe1b3f69ec1ae28bb29bd69167d47fa4681e5f428f267c97976ee6"
+    },
+    "toc-115": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-115.html",
+      "bytes": 5618,
+      "sha256": "067ec28d07b0739363b7d443dfb1e7def74e066d211a1842bef43c1a6a8cf469"
+    },
+    "toc-116": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-116.html",
+      "bytes": 4499,
+      "sha256": "4254b504e1623c1c6d581a7f9d45803841dec1a113b6807f68ea615d76759ed8"
+    },
+    "toc-117": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-117.html",
+      "bytes": 3900,
+      "sha256": "74b0da754a429b2b7bdb7741935c51c5a48a65fd696f5d9576cb3b39f793bcb2"
+    },
+    "toc-118": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-118.html",
+      "bytes": 3995,
+      "sha256": "f4556c1d75ec2c59abe8e61ce1e4660df71f18ba773a60fef7fe089b39e44adc"
+    },
+    "toc-119": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-119.html",
+      "bytes": 4211,
+      "sha256": "c5b865bddaec69f5da742ae6901325c64cda253397c6ca4b5b007b5a46c352ee"
+    },
+    "toc-120": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-120.html",
+      "bytes": 4833,
+      "sha256": "6bf34456323e65bf391e8b7e1284a24a38d43346afb0433237270a4f1566bbdc"
+    },
+    "toc-121": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-121.html",
+      "bytes": 4014,
+      "sha256": "4f6f556650a8111c04793b4008ca3a1102a26bdb9aeb8887fa06b774addcad35"
+    },
+    "toc-122": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-122.html",
+      "bytes": 3518,
+      "sha256": "a4fbb759f6ae7d6cdba1c92ac1e9a350836ed2c42838a9c57b053b743f6b82bb"
+    },
+    "toc-123": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-123.html",
+      "bytes": 4004,
+      "sha256": "15f9c009f87364a895ec7b0478b2dd708267dd87a94aaae58082aafbbacae60c"
+    },
+    "toc-124": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-124.html",
+      "bytes": 3833,
+      "sha256": "30f86aadb776eabc7be848284ffb823efe7fea2e94c55cf641bb39716c13172c"
+    },
+    "toc-125": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-125.html",
+      "bytes": 4311,
+      "sha256": "9820fd1271400c87602cc3fb50b97d5d1e6e39b0d2e7c93d2830eaf8b1d2648e"
+    },
+    "toc-126": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-126.html",
+      "bytes": 4155,
+      "sha256": "2b9e372885df3e0c7674077fc6f8d7b0d33ddaa5c72428601ab7218ea6f8af27"
+    },
+    "toc-127": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-127.html",
+      "bytes": 4305,
+      "sha256": "9412fbd05614df2b0420e34e698e67f488a619cd8ae7b14562158c3bbfce9b4a"
+    },
+    "toc-128": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-128.html",
+      "bytes": 4023,
+      "sha256": "344aee1483b41bbbe6abbbdfffffd3e509fd6bf5848ea9588acd3093a9f1816d"
+    },
+    "toc-129": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-129.html",
+      "bytes": 5101,
+      "sha256": "a729b4f73fa76a67d0c6f935c8f195d702fc5ef66f78db7c750fd5549c3a4781"
+    },
+    "toc-130": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-130.html",
+      "bytes": 3539,
+      "sha256": "737ec362c773cafb0bd8ac8cc71bc44558545b61e2bb772b77873189368de35e"
+    },
+    "toc-131": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-131.html",
+      "bytes": 4630,
+      "sha256": "40bfade5e3d9df080d165bc007d16e61581ca53e5f8e0a8b65f70660893c4099"
+    },
+    "toc-132": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-132.html",
+      "bytes": 4321,
+      "sha256": "04e91b6267c060a8f6ba62d0f37a479b12254f8d6b8149c3421decbbca70990f"
+    },
+    "toc-133": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-133.html",
+      "bytes": 4153,
+      "sha256": "3dc4e468a17c9d9326f5c5b53edc2252788ead0c6ad6d092b844ac99943195ce"
+    },
+    "toc-134": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-134.html",
+      "bytes": 4243,
+      "sha256": "dc1c3ab94f97e933f55325d189f07d85d1a8afb9c567cc6ac52f927df96511a5"
+    },
+    "toc-135": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-135.html",
+      "bytes": 4507,
+      "sha256": "d6a97b6466298f88e29bb5ae6ca8a448d9287fb9551304a83815e989a40ba790"
+    },
+    "toc-136": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-136.html",
+      "bytes": 5777,
+      "sha256": "3330d72a950db908133bf391ed96c27211ee4e1f320b04513920253427dcdfbb"
+    },
+    "toc-137": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-137.html",
+      "bytes": 5221,
+      "sha256": "a7d39b326469013f9f9379f2a0721fbb6eb0200ec407bf7e3be573fc77378f74"
+    },
+    "toc-138": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-138.html",
+      "bytes": 4135,
+      "sha256": "3079be49e7e91d73c403934860a86a8fac7ae0d170bd2c6f99fa8dd5dd070b78"
+    },
+    "toc-139": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-139.html",
+      "bytes": 4174,
+      "sha256": "f2c9afe52428c25b2f19a1846af7fa0dac22b485fd0b3be366f09e1660e25fd2"
+    },
+    "toc-140": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-140.html",
+      "bytes": 4189,
+      "sha256": "015414f00b1fc4ea95a1c2c339ee06760da9beae4104c036a42d3ef6272c340e"
+    },
+    "toc-141": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-141.html",
+      "bytes": 3988,
+      "sha256": "c191d4c255f2596a410f50b81c571b273fe7001a47f3ae40942768cfb2ffc346"
+    },
+    "toc-142": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-142.html",
+      "bytes": 3966,
+      "sha256": "9d2fdf891d2eff01b85e4bba986c78aaaecc99e74c984e299971a4990426d9b0"
+    },
+    "toc-143": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-143.html",
+      "bytes": 5139,
+      "sha256": "93e7e0117092480c28a520009765abd8c284c33ce47ef04d61a3f34ab4fdfc8c"
+    },
+    "toc-144": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-144.html",
+      "bytes": 5695,
+      "sha256": "976aa8fd59053db082e2b16a01feef25d64561937d53291853b408e8997cea91"
+    },
+    "toc-145": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-145.html",
+      "bytes": 5158,
+      "sha256": "37a49133a59f929370c9fcebcf2479e554d9d0d92e15003f3791a37170d3b8e5"
+    },
+    "toc-146": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-146.html",
+      "bytes": 4040,
+      "sha256": "929f0c2b45f6c99b668bbaa9dc782a1299a38eaff59179a3b476c7e9047abc16"
+    },
+    "toc-147": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-147.html",
+      "bytes": 4112,
+      "sha256": "df0de011fd38b5f0fc8b127d265daf38ebbabe6ec6ff03b5eaf78c24dd1ae267"
+    },
+    "toc-148": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-148.html",
+      "bytes": 4107,
+      "sha256": "9cfde8f7e2d7e80db9dc4c56284e8d6eec6e93473d934190335c9e852ae74c62"
+    },
+    "toc-152": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-152.html",
+      "bytes": 4614,
+      "sha256": "78e4865c93c1a54ac025e3dc761b5feadbfe44fe27ef5a9281dca310b5192331"
+    },
+    "toc-150": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-150.html",
+      "bytes": 3444,
+      "sha256": "a77a31530dbaaab50218b154220c08812142ec37252a22028dfd0daef92c9907"
+    },
+    "toc-151": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-151.html",
+      "bytes": 3678,
+      "sha256": "e82d2b601dfbe7b2de07cf3fe2a00c0f27d2db8ca3acb4b42d4db2a3c92258f8"
+    },
+    "toc-153": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-153.html",
+      "bytes": 3431,
+      "sha256": "2f87de9b13ddc69b6b9bab975bc7fda428389bcde3c23eea367e3de6f34f09b2"
+    },
+    "toc-154": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-154.html",
+      "bytes": 3974,
+      "sha256": "f49e3a0911b248a282e4e8e424d9ad0cd8ecb9c5b44db7dc6f14fb3057de4977"
+    },
+    "toc-155": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-155.html",
+      "bytes": 3506,
+      "sha256": "8bf3cb51a1576cc40867d1a6c68d54d9360511095799b454bb318423efca319c"
+    },
+    "toc-156": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-156.html",
+      "bytes": 3745,
+      "sha256": "c8e2be411958cb8e004125ed101bd13feafa9234abc9e0a92d3eeacf46e19625"
+    },
+    "toc-157": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-157.html",
+      "bytes": 3913,
+      "sha256": "8bf86e9c8d1a2d67389b1012cc9fbd674ba8be86e03bd05eaca75edf6d5865de"
+    },
+    "toc-158": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-158.html",
+      "bytes": 2897,
+      "sha256": "710a2f0f1c6f8a014e4e7dad715f1ab1bcda0f2751c6a026267db33c5c96b41f"
+    },
+    "toc-159": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-159.html",
+      "bytes": 3055,
+      "sha256": "d378c0ac2df86d8a70dfa110238d811d9d70f295d983fdd12aa0469791e5b8c9"
+    },
+    "toc-160": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-160.html",
+      "bytes": 3821,
+      "sha256": "f50a700b15ecc56640ba2c635d888d294c8e2f5a7369d7b549b6f44901a05ee7"
+    },
+    "toc-161": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-161.html",
+      "bytes": 3721,
+      "sha256": "19f3247179bb2590c48c76951d0af040eb49c96af3b242eac7b3ec721770457b"
+    },
+    "toc-162": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-162.html",
+      "bytes": 3441,
+      "sha256": "c5d57b0ea4f8da009848ee84109f39d2913d8aacc003f0ccf35d529fe03a266b"
+    },
+    "toc-163": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-163.html",
+      "bytes": 4120,
+      "sha256": "c3eebf65379e157a708f4c3e7556566f1afee57134925262ae23c4195dafba29"
+    },
+    "toc-164": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-164.html",
+      "bytes": 4677,
+      "sha256": "2a0bb9d343f9f74a21b5afd8bc41383596d89bf1f79483d93acbb6a2513188dd"
+    },
+    "toc-165": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-165.html",
+      "bytes": 4481,
+      "sha256": "0466765a4eee6a37c58d47f929da7598a201655f8f4b250cb05a67fc53997387"
+    },
+    "toc-166": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-166.html",
+      "bytes": 4437,
+      "sha256": "40cdcbaa7f5aadd0852a991f69feb63c2181a8cbd7217436acac115606ee89c5"
+    },
+    "toc-167": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-167.html",
+      "bytes": 4147,
+      "sha256": "f00d470e6ae3c9690ccd44de8c91ef4fbb176ddfc4d769e72a728973a265fba3"
+    },
+    "toc-168": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-168.html",
+      "bytes": 4274,
+      "sha256": "b21c329d206bc282938498928741cac9c1c307464ae5f9946aa06a3213b6efca"
+    },
+    "toc-169": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-169.html",
+      "bytes": 4390,
+      "sha256": "d18ef7335e4169c754222d4686d1c1309727c4f3ebdddc895e331158e0a4b915"
+    },
+    "toc-170": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-170.html",
+      "bytes": 4222,
+      "sha256": "3fe5cc057a534cea3241890ff85574e70f8da3ecb6f75275fe5e39edb0de3d0c"
+    },
+    "toc-171": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-171.html",
+      "bytes": 4451,
+      "sha256": "0593c7b000906d2ae46130f2eff276238962082ec836bfb4785468f0bf16864d"
+    },
+    "toc-172": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-172.html",
+      "bytes": 5129,
+      "sha256": "e1e563ad55cb73a6bdd8473a90105f08618373215e2e2643a4bfc31edecbf247"
+    },
+    "toc-173": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-173.html",
+      "bytes": 4881,
+      "sha256": "d2fa91b9e46e2edc0cc9ce942a8b33f753132cb7ea6013d08f534b94020569b3"
+    },
+    "toc-174": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-174.html",
+      "bytes": 5032,
+      "sha256": "69de13733a043fdc7c65f86f537b17a0c5156b19627d2dda8d17f66e9de74501"
+    },
+    "toc-175": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-175.html",
+      "bytes": 4033,
+      "sha256": "39f3402812e4cca11cf0990e0710ce26bbff2a2cfb8302a809180110145c75ee"
+    },
+    "toc-176": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-176.html",
+      "bytes": 4547,
+      "sha256": "cf19fdff012ab99fe0c44774acd6c2ba33b3a9e233208afbf31af580772d0941"
+    },
+    "toc-177": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-177.html",
+      "bytes": 5510,
+      "sha256": "b85520350eade53982c4763d6a729b8c89ef4be320255c43a9869dd959e4817d"
+    },
+    "toc-178": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-178.html",
+      "bytes": 5913,
+      "sha256": "4d5a8d8ce93e5514f0bf0947a65707bc26279fdb95076c25f7c61ded59726cbb"
+    },
+    "toc-179": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-179.html",
+      "bytes": 4568,
+      "sha256": "10bfbe921b625be3402558fb66a0324708d49a4fbccda37006a3c10b3439ddda"
+    },
+    "toc-180": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-180.html",
+      "bytes": 5403,
+      "sha256": "99006347ea933fcefffa572d7601109c1f37a9fdc646ecb80fee3a35944bd644"
+    },
+    "toc-181": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-181.html",
+      "bytes": 5351,
+      "sha256": "2683ebd1e628150cc2ca34570818027ee1c0cc7cbf1ecbc52ba227566d592e7c"
+    },
+    "toc-182": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-182.html",
+      "bytes": 3822,
+      "sha256": "269416a6c911e123f9b286b28ec7e36cf4c5ad58bf4a01e29599cadc15edbdd1"
+    },
+    "toc-183": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-183.html",
+      "bytes": 4877,
+      "sha256": "ffdea1a003d6d103d977a22a3b479a4ddde24ea6811790a94e6af078e84bcff2"
+    },
+    "toc-184": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-184.html",
+      "bytes": 4266,
+      "sha256": "864a882be982ca745171bd563f4143f5f02ea0efb2ba0dfbb95985f7a8de2e58"
+    },
+    "toc-185": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-185.html",
+      "bytes": 4741,
+      "sha256": "db7a9d07009b33e1f9a3451a06765bae25598c378dbaa243e6ad3ef83720f58e"
+    },
+    "toc-186": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-186.html",
+      "bytes": 4627,
+      "sha256": "88645dd51ef66670513d418a5dbede5312d9010c47c02a046958c38bba766a7a"
+    },
+    "toc-187": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-187.html",
+      "bytes": 5389,
+      "sha256": "cce2d78cc0468da14760d06e9d79706d07c672999aac2f449fa26449e94d080a"
+    },
+    "toc-188": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-188.html",
+      "bytes": 5046,
+      "sha256": "ddacc4cb59922594cca8de572485678064a631f838c2e0c037e685dbf12f14a5"
+    },
+    "toc-189": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-189.html",
+      "bytes": 3913,
+      "sha256": "a3c31773cdfd5c8f9162561167411c3a6f9b1f9a1f6cff79a020279431afc8fb"
+    },
+    "toc-190": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-190.html",
+      "bytes": 4262,
+      "sha256": "32e72c5c81b80946c88e14f05ed3ccc96921931f237d7df768d5807697bc5d50"
+    },
+    "toc-191": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-191.html",
+      "bytes": 4048,
+      "sha256": "2c404fede569498890731c88af99c6a308b1ab95b8122d523573ad64f6fe6a03"
+    },
+    "toc-192": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-192.html",
+      "bytes": 4389,
+      "sha256": "dc992b3231378a1e6aff535fcd7a6605d47fe4e3651396f9f6465b03113643d3"
+    },
+    "toc-193": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-193.html",
+      "bytes": 4149,
+      "sha256": "b71eb209cf1b579f76da2fed3d9d0b2c2f27be269714ab5725607d15de748c44"
+    },
+    "toc-194": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-194.html",
+      "bytes": 4231,
+      "sha256": "01bdea6576151e99cf4991db3b2ef545eb2a82990d415ad2620750066f1452dc"
+    },
+    "toc-195": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-195.html",
+      "bytes": 4366,
+      "sha256": "ac04963c4b00e1f1194f5e6294605431e65f0c88c88521ee28cb4e63ea340397"
+    },
+    "toc-196": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-196.html",
+      "bytes": 5050,
+      "sha256": "b7058282f20a454d1c820ed5240bc9bf9c2872a1e88339c628d98f338240b1d6"
+    },
+    "toc-197": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-197.html",
+      "bytes": 4212,
+      "sha256": "c40095411eb6d3e2cf0174cd19e7f3e44bff15e54d7887effdb84ffb87e90e40"
+    },
+    "toc-198": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-198.html",
+      "bytes": 4532,
+      "sha256": "3658a3717b12efb04186e6dbf622cf5f916ce5e2eb14e0108bfdb87d413b59f5"
+    },
+    "toc-199": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-199.html",
+      "bytes": 4434,
+      "sha256": "61c4c430263b6c0a9443ff924f59ec3176fb69301c74d1a2c581539faefda910"
+    },
+    "toc-200": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-200.html",
+      "bytes": 4687,
+      "sha256": "e68cad0481078fda19a7035154f5bae7fd49459c5d9e77a84aa84799d2e6def1"
+    },
+    "toc-201": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-201.html",
+      "bytes": 4229,
+      "sha256": "b6a0ff1512c1108176fe4158de80a23e224dc2785a7a990ff3798284078b8c26"
+    },
+    "toc-202": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-202.html",
+      "bytes": 4272,
+      "sha256": "a92cbbe5b9fc0a4aca1c032fd47d3a71639d00931fc682f3e4eef54f37e805a4"
+    },
+    "toc-203": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-203.html",
+      "bytes": 4194,
+      "sha256": "b55bfc306cc94647d0f870fe1b71526e8eca5a286587c2e0736b80ca72365cd0"
+    },
+    "toc-204": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-204.html",
+      "bytes": 4121,
+      "sha256": "258c44d4f58157a73423f06bda9ab56bd5f80a45963f4e3ba25478e398822450"
+    },
+    "toc-205": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-205.html",
+      "bytes": 4308,
+      "sha256": "7f1339febde5dd46b647e7c00c757cc26a72e05e5aecbb3a705a09def1012306"
+    },
+    "toc-206": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-206.html",
+      "bytes": 4837,
+      "sha256": "9f8586a8c2cd8f630acec55bac51b346152db55357ecebe2d36f0178812bd2f7"
+    },
+    "toc-207": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-207.html",
+      "bytes": 4725,
+      "sha256": "ff5836a23f5b3041a0909d86e57d406827f6ec094609782ab51412593aab4905"
+    },
+    "toc-208": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-208.html",
+      "bytes": 4510,
+      "sha256": "2fc77b22220ff2de604edfd70b911bb3fca0af8e26d966bfc3cac9907a54e185"
+    },
+    "toc-209": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-209.html",
+      "bytes": 4658,
+      "sha256": "d80bb735d57ac28ca0e4a603f7592ed708098261500beca068b28516efe5fca2"
+    },
+    "toc-210": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-210.html",
+      "bytes": 4381,
+      "sha256": "f7167d878d130a3cd64348415b69db6e06fff90130cb1009eb0d09422becaac4"
+    },
+    "toc-211": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-211.html",
+      "bytes": 4195,
+      "sha256": "cc85455614e2f14e536086b77a5f382376bb5ba6083b731ceed55da8a1158470"
+    },
+    "toc-212": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-212.html",
+      "bytes": 4259,
+      "sha256": "e2dcf42586f5273e7d0f7550b89bd77ee7c37dd5e19dec5ab9c29fad827534ff"
+    },
+    "toc-213": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-213.html",
+      "bytes": 4574,
+      "sha256": "5a8d7f482dae62f01439afc480f34f45d721668482d4155544eee8db34c85fe9"
+    },
+    "toc-214": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-214.html",
+      "bytes": 4078,
+      "sha256": "9b6494efdde62b9c9212b95ceb3936e61bd154d2d18593bfaa10937483498e0c"
+    },
+    "toc-215": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-215.html",
+      "bytes": 4172,
+      "sha256": "b782522c37eecf91f3635aa7d06f52e59d2cb34d29ef9e26fa8f136457031cc1"
+    },
+    "toc-216": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-216.html",
+      "bytes": 4652,
+      "sha256": "524825ee200bc47194af7fd35ec75dab85ed50e9cce3b0a416fe76cd7b3088ea"
+    },
+    "toc-217": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-217.html",
+      "bytes": 4747,
+      "sha256": "8c09e0ac31c80947d15d0fcb334b9a1147d68fa1a8247dd9b6ef5c3a89c47f27"
+    },
+    "toc-218": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-218.html",
+      "bytes": 4671,
+      "sha256": "f4e903cb4797252742f55e45f1c4df7c110c19bf73356732f2f0ba45c87c8a11"
+    },
+    "toc-219": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-219.html",
+      "bytes": 5197,
+      "sha256": "b2b6531311250bb0c12ab7b863fa228eb1a6c032b9d15afcb66198929175c30c"
+    },
+    "toc-220": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-220.html",
+      "bytes": 4171,
+      "sha256": "fd12133c4b26aa62abb85bf6b9c2049734bff45ff46af0209e2dc6d46564b878"
+    },
+    "toc-221": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-221.html",
+      "bytes": 3734,
+      "sha256": "b6785e39d80101a7453549d344f286c88a60af1884d926c4cf3e6ff258940037"
+    },
+    "toc-222": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-222.html",
+      "bytes": 3681,
+      "sha256": "ce63a90d048d573bd834cb93247d74a22e3d6c1f21a033d944b751e73aab1de6"
+    },
+    "toc-223": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-223.html",
+      "bytes": 4681,
+      "sha256": "ee7227dfc458ccc4e8cbab26ec5b7349263fdee1a9403d955d148c5df47b0d33"
+    },
+    "toc-224": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-224.html",
+      "bytes": 4727,
+      "sha256": "a4465e3fa08a8deb3c56b190f69156ab2b2ff6d2715a0dfb02d21c0ffcf12090"
+    },
+    "toc-225": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-225.html",
+      "bytes": 4373,
+      "sha256": "153d2d944a90761b0971a89785e9af390bc6335f79dfedb8a0afcfa577a36089"
+    },
+    "toc-226": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-226.html",
+      "bytes": 4443,
+      "sha256": "70c750c68ac4e206c3de85b544671385dc9abc92c2e4987461af9d0d9697ac36"
+    },
+    "toc-227": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-227.html",
+      "bytes": 4657,
+      "sha256": "e4542a451f9a81246d65125872b4825da390d1e2c718a7034c78c5cbbfbe022e"
+    },
+    "toc-228": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-228.html",
+      "bytes": 4728,
+      "sha256": "28b46d11c0883154933c4ebfe7f391edb220a69be3b79b7f08f14dd5ef1d3f11"
+    },
+    "toc-229": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-229.html",
+      "bytes": 4269,
+      "sha256": "ced6a11f4478c1f7d0dc441a7ef534204664263d14b4e9accbafe8c9bb3f8abd"
+    },
+    "toc-230": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-230.html",
+      "bytes": 4308,
+      "sha256": "4a3eaff970f4314c2c7697bb4c59294eef8448f242216d1cabb49f9185729664"
+    },
+    "toc-231": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-231.html",
+      "bytes": 4484,
+      "sha256": "26cdae5a4e19ef6f0610cf22c8a690dfe41cf209256fd89b73208c420900754f"
+    },
+    "toc-232": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-232.html",
+      "bytes": 4363,
+      "sha256": "ec439d4e2d04cedd3c93e6e6ac44c01b22bfb8f204e45a752413298a4c0ad65d"
+    },
+    "toc-233": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-233.html",
+      "bytes": 4415,
+      "sha256": "398f9f504b078c69314798b09b5095472983b8807d0697861c18a11b001e273f"
+    },
+    "toc-234": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-234.html",
+      "bytes": 4613,
+      "sha256": "e207394e0bc64bf52c0893d720d8fab3113cf98370af606180b95f1c60a3e621"
+    },
+    "toc-235": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-235.html",
+      "bytes": 4512,
+      "sha256": "2be10794223f168b73c5afaf1f042f09cb0d5a82017b01561417c93fa93ca1fd"
+    },
+    "toc-236": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-236.html",
+      "bytes": 4094,
+      "sha256": "7d57dc333c4202a2e2912d8212e048fd8ba6ded99e40805745769edb81786ced"
+    },
+    "toc-237": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-237.html",
+      "bytes": 4765,
+      "sha256": "17c2fcd6a173965e289efc1be6670216482a74447041bbdc4cae8d44712c1418"
+    },
+    "toc-238": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-238.html",
+      "bytes": 4741,
+      "sha256": "badef6d78c20d461085620311f638200516555dae65d215e034b581c28e0eb83"
+    },
+    "toc-239": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-239.html",
+      "bytes": 4557,
+      "sha256": "590b7c188a642d38cab09e1bf1cc728b5e5cf6b0c63f2b421fcd878e78395e75"
+    },
+    "toc-240": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-240.html",
+      "bytes": 4785,
+      "sha256": "cc5565064b4ae97464fb9daa773681c837b34e6f011752502a53499663164e01"
+    },
+    "toc-241": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-241.html",
+      "bytes": 4750,
+      "sha256": "83404039cf1959171d8d81965b3fe3d79f6d0e8aa5bee2e7a0515e9be1556763"
+    },
+    "toc-242": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-242.html",
+      "bytes": 4548,
+      "sha256": "79a31fefcd9d6f176ef1c0c2339b304e49280a58de5280440a3844332c94bfb8"
+    },
+    "toc-243": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-243.html",
+      "bytes": 4769,
+      "sha256": "12ccba0423c81b04d45de91a237a752a7be8af40ab06bb8cde59c6b4aa694150"
+    },
+    "toc-244": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-244.html",
+      "bytes": 4695,
+      "sha256": "a293ba0611547121ed074773ff0921f238110a44bb81352bdaeea116b556d181"
+    },
+    "toc-245": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-245.html",
+      "bytes": 4501,
+      "sha256": "7b6cfcef9ae40dba69abd57aa938b8cc5330cc2dbc0c740078f8ce442132e3b8"
+    },
+    "toc-246": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-246.html",
+      "bytes": 5130,
+      "sha256": "4a73231cf5dc325752b56915468b5dbc230d80582018b56f9d13c95d6710b7b4"
+    },
+    "toc-247": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-247.html",
+      "bytes": 4525,
+      "sha256": "14a398aff207209523d04b8a857c202a2f5ac10f40ae49e61dc022a000b216df"
+    },
+    "toc-248": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-248.html",
+      "bytes": 4405,
+      "sha256": "ae01117230e3bf87d72ced27ac867c1c985b8bc42de5131d8987d73ebe0322ff"
+    },
+    "toc-249": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-249.html",
+      "bytes": 4386,
+      "sha256": "37bc4cf6b94ea835189984a23d40d308ace5c8e6c6fd24817af9b9a16d6de882"
+    },
+    "toc-250": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-250.html",
+      "bytes": 4125,
+      "sha256": "0f7ab243b490ee48e99c9d6ccdf340360e52e7d2f2fd640ae5cedead6e3181bc"
+    },
+    "toc-251": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-251.html",
+      "bytes": 4232,
+      "sha256": "91e0a57a7a528e22feb091548f675d8ab95c3da927b9ee11b3ceb7ba3ef3f825"
+    },
+    "toc-252": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-252.html",
+      "bytes": 4413,
+      "sha256": "7a76dbca4b64e5bb5ae4b50a940c2da7840e4b1975b12b2341d729c683d14d44"
+    },
+    "toc-253": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-253.html",
+      "bytes": 4386,
+      "sha256": "c84d70bb1eef88e5046564756312daf7471ec71cbc50570c194bf6246395a307"
+    },
+    "toc-254": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-254.html",
+      "bytes": 4461,
+      "sha256": "89bb4f6b45b464ff80816e7a426c91787427e35279d91545224b2ae52e237992"
+    },
+    "toc-255": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-255.html",
+      "bytes": 4002,
+      "sha256": "82094fc364cc0216813a8ac1c7f9ac90ae732e2181ff441c0d2e3a504bfe4f93"
+    },
+    "toc-256": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-256.html",
+      "bytes": 4528,
+      "sha256": "62a8adcdd3ccf2750e8d8a7a6ddea74c21dbdbc8bf54d649cd45cf4fde451958"
+    },
+    "toc-257": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-257.html",
+      "bytes": 3677,
+      "sha256": "2b6a92916ecfdb4fac17906ad66c63f830e057f70d238b3d4408bc811bc246ba"
+    },
+    "toc-258": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-258.html",
+      "bytes": 4250,
+      "sha256": "322d8a67d4de2a50a1abaea550e0894f70749aba94b35a7bda28e7fb2df649ce"
+    },
+    "toc-259": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-259.html",
+      "bytes": 3904,
+      "sha256": "5c99eed3043f7ffeaa4fe0e34062110db2499d93441cc9047230110346ba66d8"
+    },
+    "toc-260": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-260.html",
+      "bytes": 4684,
+      "sha256": "fec3580ee118c714fe6fce402dce18124b37d1b89f5b0068fe21648b881a5923"
+    },
+    "toc-261": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-261.html",
+      "bytes": 4672,
+      "sha256": "3ba0cdbbb05e414aa514ae26665bb299b614273c41de4b63b68c2993fc9d18ac"
+    },
+    "toc-262": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-262.html",
+      "bytes": 4331,
+      "sha256": "ef3a5930e245d48b64399d9f46c23a23a36b4549b8895050ea3f2137d2dfcc14"
+    },
+    "toc-263": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-263.html",
+      "bytes": 3567,
+      "sha256": "0a7fc0c9063394dcd69335c6ea67f7bff30a11df5fbf6ecbb1838c7d07129cbd"
+    },
+    "toc-264": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-264.html",
+      "bytes": 3399,
+      "sha256": "7ca1c3a0fa11f0b507273eb650b8ea099aeec4556401eb83586500b5ee94bdd3"
+    },
+    "toc-265": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-265.html",
+      "bytes": 4393,
+      "sha256": "f00bdd1e096a8d5984150c5ca0bc8098114e426ea120e7eeff5090920ef18d11"
+    },
+    "toc-266": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-266.html",
+      "bytes": 4283,
+      "sha256": "18663a62ae51f7dcf11562cf98c6cbf9353e09ea5cff80bfc9a6d6098a3ef9ed"
+    },
+    "toc-267": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-267.html",
+      "bytes": 4851,
+      "sha256": "5890f7c59dbf8d3e8033b2418f5aaa3026885b769a863266b4b5b71e415998ef"
+    },
+    "toc-268": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-268.html",
+      "bytes": 5593,
+      "sha256": "05749efadc418461593816913dfc0459954ea195d37bb14e460386b07cc660fb"
+    },
+    "toc-269": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-269.html",
+      "bytes": 4720,
+      "sha256": "935f4939c815de60fa6de6c6c371f9e946dc514e0b928cc420530465a3683364"
+    },
+    "toc-270": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-270.html",
+      "bytes": 4617,
+      "sha256": "8941f72c2c02affd8d107620d77183e498db8bae36d90027928289d50c797f01"
+    },
+    "toc-271": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-271.html",
+      "bytes": 4714,
+      "sha256": "b8af023ed628e26b2c4093f5dc335ada0271139c1569f6787d83584da0a20d6b"
+    },
+    "toc-272": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-272.html",
+      "bytes": 5435,
+      "sha256": "b3dbc7001fd57fd92333877ceffee2e589f894714f7c45538d19b6758d330751"
+    },
+    "toc-273": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-273.html",
+      "bytes": 4278,
+      "sha256": "f414a94bdea09d27669ae36d39798b1797470e3d531d4ef7ccc332ba1c8d1aa0"
+    },
+    "toc-274": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-274.html",
+      "bytes": 4912,
+      "sha256": "f4e57fc7f2c7c9ea3af19f62c94ef0ea9a170e99e5e87a36b432dc58644bf101"
+    },
+    "toc-275": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-275.html",
+      "bytes": 4603,
+      "sha256": "6169fe68e26d1f393ca508b57340e595b0f40360fff69092b3c5c84913fe5d4e"
+    },
+    "toc-276": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-276.html",
+      "bytes": 4800,
+      "sha256": "4398392a9989df344e21de227ecf25ed373d878a822c6d0b6b5e5d513a51ff0c"
+    },
+    "toc-277": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-277.html",
+      "bytes": 5606,
+      "sha256": "aee2371fca77991be3be6397bdd1af5d8bcadbbfb91432270432c6c4aaa0fd8f"
+    },
+    "toc-278": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-278.html",
+      "bytes": 5162,
+      "sha256": "7b47097ebb9127df8ecf7654f4557ec97f969b0166435f2414188eb2d609e8a5"
+    },
+    "toc-279": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-279.html",
+      "bytes": 4674,
+      "sha256": "beebf1a6628d68d168aa356a02ec87ffed129c972a6bc8db261f107626e2a0f2"
+    },
+    "toc-280": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-280.html",
+      "bytes": 5314,
+      "sha256": "bbffee1c083c7fd5f1602de457bcf6619d3c263b8c411a2dcde9d51d0d55ad2c"
+    },
+    "toc-281": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-281.html",
+      "bytes": 4832,
+      "sha256": "34a1b3bac2338cc7e18affcf801680f2fcd0f405bb59f87c406a914db2955787"
+    },
+    "toc-282": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-282.html",
+      "bytes": 4757,
+      "sha256": "e1b8666b0dfdbb8ca0170a9f6218f53ed77ed5705e8ddba263c51786898183bf"
+    },
+    "toc-283": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-283.html",
+      "bytes": 4859,
+      "sha256": "ccc6e789cc84804ff6c896d25c9661f63321543b0649f1e5fe8f4ea4b9703ed2"
+    },
+    "toc-284": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-284.html",
+      "bytes": 4862,
+      "sha256": "7044e5ce13a2fafd3accfe133f49a9cf9b1fa228de239e5472d348fc2431a728"
+    },
+    "toc-285": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-285.html",
+      "bytes": 5138,
+      "sha256": "01705038db3247ac222d8cbd738d5a6e5fc3e722fd1b239f1d75dabf06028b2b"
+    },
+    "toc-286": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-286.html",
+      "bytes": 4977,
+      "sha256": "cdc0e61afbf0cb077191be2402d9a0a2dc6ea831c4762066a08d1d9529b69235"
+    },
+    "toc-287": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-287.html",
+      "bytes": 4658,
+      "sha256": "d55d60314e9d472080ff44ee0e5398747f795673ad1b8aed911ba68d0fb3212d"
+    },
+    "toc-288": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-288.html",
+      "bytes": 5263,
+      "sha256": "f342e7102677a53dc78492aed72368a6af81f8d6a2113fdb8021bab2ba0271b6"
+    },
+    "toc-289": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-289.html",
+      "bytes": 4627,
+      "sha256": "cc36f189fec0fbd547d26578a7c723a1f6f62e91df0b4e0a5f762acabf6d03e7"
+    },
+    "toc-skillopt-lite": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-skillopt-lite.html",
+      "bytes": 4597,
+      "sha256": "07e2cac3171e37b781f31f9d630e92f0d31b1a3cd2f0a48fceee1b7cfb6bf84f"
+    },
+    "toc-290": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-290.html",
+      "bytes": 4846,
+      "sha256": "bb3c411fe2e2738dddb233fd1dfcb3e0408493984b285a72085edf04e5c6e4a5"
+    },
+    "toc-291": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-291.html",
+      "bytes": 4928,
+      "sha256": "6a169aff5b0c5f7ebcd29b7cd6e0fa5e7172111cdd4dc677fdc0ea9d1a0cc71f"
+    },
+    "toc-292": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-292.html",
+      "bytes": 5423,
+      "sha256": "115e2a9192a758938b4337f6ac82406b56f62774a725c5bae9b1d6331bdf5563"
+    },
+    "toc-293": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-293.html",
+      "bytes": 5060,
+      "sha256": "680fb9ff7bc884dcd2f07b545504fa876ae5aa01b8777b59f8a99cf94b9a7385"
+    },
+    "toc-294": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-294.html",
+      "bytes": 4903,
+      "sha256": "1ee7d001b1073aa94fe5c8cd95556bfa7a96265d48295ebdd577105ecb5ec9df"
+    },
+    "toc-295": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-295.html",
+      "bytes": 4921,
+      "sha256": "503d56a71d5747698b948c9465ce10e2d6db07c8bca31b00b12c04b4e64f7791"
+    },
+    "toc-296": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-296.html",
+      "bytes": 5275,
+      "sha256": "a54f92848bc92d618eaa0448a772620bbc8e897ab3adc72f8164156baffa4127"
+    },
+    "toc-297": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-297.html",
+      "bytes": 5353,
+      "sha256": "edefabdba7c9665b67cea7dc68681ee7349ef6f51ac144ec621699d082a7410a"
+    },
+    "toc-298": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-298.html",
+      "bytes": 5446,
+      "sha256": "966a4191a6ffe5574217659d69b29c6a4fbfcae55b01fb07c1d10ffd4990edb4"
+    },
+    "toc-299": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-299.html",
+      "bytes": 6236,
+      "sha256": "b70acb329d458de6b8876a21397cc492beb76db49b7f86573d4ca2914471498c"
+    },
+    "toc-300": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-300.html",
+      "bytes": 7306,
+      "sha256": "a38e6098a4d729564f4553e100f5241fb879a2252d2f0a317e9d861ecf9f1ce0"
+    },
+    "toc-301": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-301.html",
+      "bytes": 7391,
+      "sha256": "5d488e1e21b17a85df4dc12fe3e1ccbc51e464ba70d389ec06720b77da690e90"
+    },
+    "toc-302": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-302.html",
+      "bytes": 7335,
+      "sha256": "cee4b8fa3e95280abfd0ba0f07e35d5aa8008542e27e39bb723d1f7bc9c64c92"
+    },
+    "toc-303": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-303.html",
+      "bytes": 6204,
+      "sha256": "1471dc82131773f8d535f910edd5f1b6f8e052ab35894ea35f6d94b2bde74c6e"
+    },
+    "toc-304": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-304.html",
+      "bytes": 6523,
+      "sha256": "638dc9428d29d3f8e579051044b0f9b5a483d65c5f82bec485e8cafde3b2a647"
+    },
+    "toc-305": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-305.html",
+      "bytes": 5851,
+      "sha256": "e04d6663b37dea63227c44a236aaf58aa117735911d09d6d9269fec1424820e0"
+    },
+    "toc-306": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-306.html",
+      "bytes": 5257,
+      "sha256": "2e78e7064b08cc88b62a278992ef7ae1b3307914118891929c47df32b5f1d589"
+    },
+    "toc-307": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-307.html",
+      "bytes": 5322,
+      "sha256": "c0fdb24529f3e82ac269dfa003bb512edb620e131d6079ac8046ccdd4c9971a6"
+    },
+    "toc-308": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-308.html",
+      "bytes": 5442,
+      "sha256": "4d6aa15495f3227beea0fdca32156acbf02859cc6f184bbe672f18c1137a5ad3"
+    },
+    "toc-309": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-309.html",
+      "bytes": 5339,
+      "sha256": "95d3276c4b96e554fb34ed6c7251039c33cb0d28bbcd9964165855179f2e48b0"
+    },
+    "toc-src-2607-15524": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-15524.html",
+      "bytes": 5560,
+      "sha256": "a205dddac4fd5ea4cd236f6df36c7a752d017a1c3227d52dc2f02c966d881a5e"
+    },
+    "toc-src-2607-21461": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-21461.html",
+      "bytes": 6115,
+      "sha256": "7b7da194c263d0cc81f52e1c3eb8f8f1c519c75c817b8af24b798300f49fa507"
+    },
+    "toc-src-2607-26784": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-26784.html",
+      "bytes": 4525,
+      "sha256": "4f7c126b384779ec12e789361181a40d988872017f38a95800aa60c920d44b65"
+    },
+    "toc-src-2608-01678": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-01678.html",
+      "bytes": 5314,
+      "sha256": "930eb70acde4c0a8b030ecd9b43592f6ca5e4252a30a4e38143257eb56d15e57"
+    },
+    "toc-src-2608-02287": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-02287.html",
+      "bytes": 5634,
+      "sha256": "1f3e366f462e7858f1ab3f6bbf196ec5b0eab0698b5796b975941578cf0f43cb"
+    },
+    "toc-src-2608-02276": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-02276.html",
+      "bytes": 4893,
+      "sha256": "8c547763fbad221c37763d27d8ee774ec09f1ed93f51c7b593dc0f35140660e9"
+    },
+    "toc-src-2608-05139": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-05139.html",
+      "bytes": 3960,
+      "sha256": "398d8f022813f75a779c53841cec2ff9e71627c4c4cf517bab651d6e78a28bb3"
+    },
+    "toc-src-2607-25886": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-25886.html",
+      "bytes": 4037,
+      "sha256": "e7bf0744010d42a7db4f6ed5d31d7067ebe866fa2e0c6fba042d8b74b62d0db8"
+    },
+    "toc-src-2607-27687": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-27687.html",
+      "bytes": 3646,
+      "sha256": "8ae8c21a835ffd13d5dc6b11c17fc7fbb727cde0bf271af2d9b97a99e42e322a"
+    },
+    "toc-src-2608-07645": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-07645.html",
+      "bytes": 3985,
+      "sha256": "a7a36af1581cbafc0270a95c548745a0d4ed69061128f7a48f0dd36cbf2e56b9"
+    },
+    "toc-src-2608-10299": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-10299.html",
+      "bytes": 3773,
+      "sha256": "e3962fb2c86582a98cd6663f6f32edd5c97a7f956ac44946dc875ef945ae1669"
+    },
+    "toc-src-2608-11079": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-11079.html",
+      "bytes": 3894,
+      "sha256": "5b4f6eaa509fc8355cebcb60d7ebee617ff5509319168bf9ccb4410a3e3e9032"
+    },
+    "toc-src-2608-13560": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-13560.html",
+      "bytes": 3952,
+      "sha256": "c2ca64a4a9ce77605e785de08d69fd266475dbd46ad68df42bc956a8a4400213"
+    },
+    "toc-src-2608-07545": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-07545.html",
+      "bytes": 3768,
+      "sha256": "ed2fcf6e242761ac0d3661b07a7af1e81c7e2a63bf6e8a47fbcb50ffe0f00717"
+    },
+    "toc-src-2607-21596": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-21596.html",
+      "bytes": 4677,
+      "sha256": "52851d40a04959c86215a3c45d564ba54e8740ff4e65f894ec9e1ae8e8c595fd"
+    },
+    "toc-src-2608-13120": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-13120.html",
+      "bytes": 3705,
+      "sha256": "24f8e7920d31795e84a6d128f13eb8d24b1f53c94ea61e3317ed89242a668fff"
+    },
+    "toc-src-2608-19880": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-19880.html",
+      "bytes": 4994,
+      "sha256": "dcf0929306d9d24f0ec03f4774c4bf3977604dd56530d9d9ae3cdcd899682179"
+    },
+    "toc-src-2607-26598": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2607-26598.html",
+      "bytes": 3935,
+      "sha256": "d58f6c5a653bf795c67eb4638044d6a8f10c4f986c1368bb9b2dc821b53d7d2e"
+    },
+    "toc-src-2608-23552": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-23552.html",
+      "bytes": 3950,
+      "sha256": "13dea2519fdbeff7f3b72231e3ec484a45b8fb4ef85b99dd904feb2d6eafc4b7"
+    },
+    "toc-src-2608-20169": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-20169.html",
+      "bytes": 5278,
+      "sha256": "475514d8caa17b3e1273d3c3c03ba4f67da32a01fe35d968df2485d601263686"
+    },
+    "toc-src-2608-24794": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-24794.html",
+      "bytes": 4732,
+      "sha256": "c9b0bc1b2eda5358e58d2aaddcdc0101952294a8670139d2dfdce5dfa6ba7c03"
+    },
+    "toc-src-2608-24876": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-24876.html",
+      "bytes": 4789,
+      "sha256": "19248968e8557eda10bf843d68f27cee71e59eacbd222ca7b9cdad5d4d5d1355"
+    },
+    "toc-src-2608-25593": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-src-2608-25593.html",
+      "bytes": 3848,
+      "sha256": "7d1340a68dec5a07bd4aa87b413e5b03cfc3dc8e0581c8f6d4ab3f3061a95a7f"
+    },
+    "toc-310": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-310.html",
+      "bytes": 5889,
+      "sha256": "8bb20a5583fa52460ebd1f0579966c339b39b3b26b5005cdc2ff5d6b2d935095"
+    },
+    "toc-311": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-311.html",
+      "bytes": 5078,
+      "sha256": "b36b1fff7ad268cbaeb93723385a44f1b11f7bf71cec40c885860028f00625e7"
+    },
+    "toc-312": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-312.html",
+      "bytes": 5194,
+      "sha256": "45d8673a6b0d0a53a9b0d78e959ac3d679a2bc9e4477921a7bd5ee7d517011e7"
+    },
+    "toc-313": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-313.html",
+      "bytes": 5336,
+      "sha256": "b29044db3c99f09f11c00ea6b03ed4bade8efe9fb2a89b49fa8a84a6cb4b904a"
+    },
+    "toc-314": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-314.html",
+      "bytes": 4830,
+      "sha256": "5ecc4a4298f2492e1bb735a43ce2c0940a875cea6495b8deff65380afd67638d"
+    },
+    "toc-315": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-315.html",
+      "bytes": 4775,
+      "sha256": "ea38974e2d1fc497574f817f891bc5500b7920e62e973a2e722f5a7d4d165c87"
+    },
+    "toc-316": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-316.html",
+      "bytes": 5205,
+      "sha256": "13fd3620a720c17514c10084f0b0090e0ff56cff76f491d0af0c657c5f827b52"
+    },
+    "toc-317": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-317.html",
+      "bytes": 4726,
+      "sha256": "11e7648b641b58e21cc2641e1bbc98bede86fbe0de42b1769e76ae47e784585a"
+    },
+    "toc-318": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-318.html",
+      "bytes": 5674,
+      "sha256": "0839c9c684a60aa5f78b2c28a70f58ea7a5fb6ca1d67855d8f4878d8e3de9331"
+    },
+    "toc-319": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-319.html",
+      "bytes": 5423,
+      "sha256": "81c22c5db4ed8ff6c8549ebdb261ad829e4b16c16a51b04523e24dfa50ddf723"
+    },
+    "toc-320": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-320.html",
+      "bytes": 5514,
+      "sha256": "556ceff2dd40d05b04c327cf24aaaa0405c588706423a6c059f1c328e074810a"
+    },
+    "toc-321": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-321.html",
+      "bytes": 5080,
+      "sha256": "85e400e7f68618f0736cb6e0f52ea377cbf5b41c2608eb75408dc2a445004582"
+    },
+    "toc-322": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-322.html",
+      "bytes": 4915,
+      "sha256": "df46c2b3fe137166a921cdcbeb83d07b4dca8bbdf35b09c1e4f100d3d0f8d1fd"
+    },
+    "toc-323": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-323.html",
+      "bytes": 4379,
+      "sha256": "ce03d770810f18c70d23c26a84372644d5a4f50868038f0882a041e597b81ea9"
+    },
+    "toc-324": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-324.html",
+      "bytes": 5296,
+      "sha256": "86dc9285a8ebf9f3aceb9710254b1ea19fcc529eba530b617a11a1f037604be3"
+    },
+    "toc-325": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-325.html",
+      "bytes": 4394,
+      "sha256": "9b7de90a4c489c6dd8a2b4cdc11eca78e19fec4d9a887a7e593609cb7a80c3ec"
+    },
+    "toc-326": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-326.html",
+      "bytes": 4326,
+      "sha256": "00c050b2beec50b501d3641547cdc71ebaa750b5e932964b0f9cf150b5a01d8f"
+    },
+    "toc-327": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-327.html",
+      "bytes": 4942,
+      "sha256": "acbd0fd9d904fa112623d49776348967d3b80f9c6e035e2ba3f0051cbf4ec2ff"
+    },
+    "toc-328": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-328.html",
+      "bytes": 4695,
+      "sha256": "501c75a333ae103c5c9bbcd702224c261141713bc6242984b2a78d1127d91278"
+    },
+    "toc-329": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-329.html",
+      "bytes": 4807,
+      "sha256": "cfd122bf53ffd18448108f6f3f1c779fb70d770243e2578d8f9ae096d25b9c4d"
+    },
+    "toc-330": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-330.html",
+      "bytes": 4749,
+      "sha256": "8daa9bb86a04f54f068126b6d94cadbce5c816bf7fecd1f39366d2fb444ed63d"
+    },
+    "toc-331": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-331.html",
+      "bytes": 4599,
+      "sha256": "b0c5c4971a4702d761c8320d4159fed27829e0afdcbf02eae409b1ddc878c2ae"
+    },
+    "toc-332": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-332.html",
+      "bytes": 4215,
+      "sha256": "0df1eb2d6f9b0d9a8c24faef973bf333d508e4b0c0d20d06d63664e7ccc278ea"
+    },
+    "toc-333": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-333.html",
+      "bytes": 4492,
+      "sha256": "18fc08834fbadffbb3987b56f8ecb1468fc0069d3e5dbc6c05d6f74582a3b870"
+    },
+    "toc-334": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-334.html",
+      "bytes": 5013,
+      "sha256": "f78b4361d6ee75ad61132ba57e917803805159e7cb5e5205158c2dda818e75d5"
+    },
+    "toc-335": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-335.html",
+      "bytes": 5637,
+      "sha256": "928bf75b3258e0c5855f1f57eb5e358be988aefb0cd516d0a7ebadd5ad64feae"
+    },
+    "toc-336": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-336.html",
+      "bytes": 6217,
+      "sha256": "c88eb6ed1f75a532f3cfdc6497736bcc03fd592abbbe2adcc0350ab1ecc4ca27"
+    },
+    "toc-337": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-337.html",
+      "bytes": 5662,
+      "sha256": "36410b5ad61d8c9211c386ce08044d137b4516f21f3f812987790d98b445a961"
+    },
+    "toc-338": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-338.html",
+      "bytes": 5411,
+      "sha256": "174f33f44714eed0de5c910e8e408d44f490895a1bacec5e5030a7cdc0155611"
+    },
+    "toc-339": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-339.html",
+      "bytes": 7660,
+      "sha256": "acfff44b548cf12e42d66dce4baad84f0e289fc71c09ea0b7cc8c1cae6aa314c"
+    },
+    "toc-340": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-340.html",
+      "bytes": 7228,
+      "sha256": "9c59fdaee27d6436e331be22e8829643b63e0cf3eb7bdb9ba424d4550e25f48c"
+    },
+    "toc-341": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-341.html",
+      "bytes": 4836,
+      "sha256": "5fce0dfd3fb337a94874a5c43855fe32e4b01659b3cc218af312a2d5adc8ba12"
+    },
+    "toc-342": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-342.html",
+      "bytes": 4382,
+      "sha256": "9d73441d87eae71c9703fbdbf8c9a038403520113261be8f8f6c8c6c630ef478"
+    },
+    "toc-343": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-343.html",
+      "bytes": 6704,
+      "sha256": "ca99fc5d7eca5f1481282e50e4007e5138c1ef94121c0659c968f24b78d47da2"
+    },
+    "toc-344": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-344.html",
+      "bytes": 4943,
+      "sha256": "adf0c0b64a04859afcb57d2a26813e72f3a4346da88026bf0d476650569a15c8"
+    },
+    "toc-345": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-345.html",
+      "bytes": 4984,
+      "sha256": "8c6bd3dbf9658c21f86ebe9c2a87a84fe3af1a42c4d86c68ef0bc3014b744231"
+    },
+    "toc-346": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-346.html",
+      "bytes": 5137,
+      "sha256": "30897104d90e92b284cfce10d9ec32bb0de0478adab3d6016fbbc85588b181bb"
+    },
+    "toc-347": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-347.html",
+      "bytes": 5038,
+      "sha256": "db7944f199933aac815fc4e8409d1e706360dff691c86ffab7d699e2542b954c"
+    },
+    "toc-348": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-348.html",
+      "bytes": 4201,
+      "sha256": "0fd7e2efb9e2aaaa0839d3fafdd6da0c90d5450295ad383c8b06b2403e308c22"
+    },
+    "toc-349": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-349.html",
+      "bytes": 5845,
+      "sha256": "ac2b38a4113cad6bcd3a812aa3a0a61da006f013188bfa6e2a55d15a7b6c8738"
+    },
+    "toc-350": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-350.html",
+      "bytes": 4825,
+      "sha256": "5dc5cc4150dd1a0dbefb39f535a11d3f90e22af4f945530d769a9f065fa64d21"
+    },
+    "toc-351": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-351.html",
+      "bytes": 4826,
+      "sha256": "85acb1198a222da1ec8d8e5aa09ce1d7cc109698ba01aaa3e380e005b324663e"
+    },
+    "toc-352": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-352.html",
+      "bytes": 3860,
+      "sha256": "bcaa76a7d8321239fb46bfcb937283716e175f4e13736d603ff058ec8305daa3"
+    },
+    "toc-353": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-353.html",
+      "bytes": 4464,
+      "sha256": "82403096f2c902154890e3bf137a5feae8720166b09f4827ee42dd4371ec442f"
+    },
+    "toc-354": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-354.html",
+      "bytes": 4891,
+      "sha256": "f92e1dc15fa5dbc9de881778ff6938f0d6819dbff6320ee8785746d50c1da10a"
+    },
+    "toc-355": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-355.html",
+      "bytes": 6017,
+      "sha256": "37e259ab20541c957d8e73a7e490e0ee681c82d30095f0b83859e050b6a3613d"
+    },
+    "toc-356": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-356.html",
+      "bytes": 6131,
+      "sha256": "8988238b24f8fd68ab93b0d6ce2c46570def8517a457106dd4fe941d0091dc00"
+    },
+    "toc-357": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-357.html",
+      "bytes": 4769,
+      "sha256": "4d52ebdccdac9eea9ef0f05c0fd2d3809be002521947c3be383dffe2ecb03eed"
+    },
+    "toc-358": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-358.html",
+      "bytes": 5369,
+      "sha256": "b7ff32b2acc555fc67be4cfa941abbd428ed0b16ecd5dd74a5ed2ef836d22d03"
+    },
+    "toc-359": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-359.html",
+      "bytes": 4889,
+      "sha256": "c65510dd7025599af5109f27381c16e89a1885d3ca9f76427274f911cd52ae80"
+    },
+    "toc-360": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-360.html",
+      "bytes": 5021,
+      "sha256": "58ff63f794dd5c9a4a46062e35e2f4baa687e7a67013999fed827b49c7caf205"
+    },
+    "toc-361": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-361.html",
+      "bytes": 4614,
+      "sha256": "2962790646808d0ed8bb6a13dc6d5d30915c460a73b179401d8286f355dbb1fd"
+    },
+    "toc-362": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-362.html",
+      "bytes": 4673,
+      "sha256": "4fa8b552548db866b9442ef7e4226292255ea21d47f59d7666f0dd36f77619e2"
+    },
+    "toc-363": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-363.html",
+      "bytes": 4891,
+      "sha256": "37897b724c9b7544d5e90efa0880da13740dcad8bd0288fef885ed2c782db0f6"
+    },
+    "toc-364": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-364.html",
+      "bytes": 4866,
+      "sha256": "5865dcbe3f3ca84d41258426d71c3d1e2e1ff4cd1a880ac02cbd5f580dbda434"
+    },
+    "toc-365": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-365.html",
+      "bytes": 4961,
+      "sha256": "d2962ece1ffe9d6529575e9540e28e67470c8ba86d97925c0f048a9cc461f527"
+    },
+    "toc-366": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-366.html",
+      "bytes": 4679,
+      "sha256": "4e6a1b2a46022ae58c4e644db85c0f600fd460532db022e85369680f654ee35c"
+    },
+    "toc-367": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-367.html",
+      "bytes": 4815,
+      "sha256": "0dd43cafa846c1b5351f6b06b9388fce03927a8782ecb592046534e9a0e6e1b2"
+    },
+    "toc-368": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-368.html",
+      "bytes": 5088,
+      "sha256": "f5da9f75f6d8fdac65059cbe071a16bc6ffeed848b98d74bd1c4e24e1d2d06e0"
+    },
+    "toc-369": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-369.html",
+      "bytes": 5563,
+      "sha256": "8da4161b25b9a95d85a981ef16cb0d9a1330d52c83c12ba554b31afa81ed38a9"
+    },
+    "toc-370": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-370.html",
+      "bytes": 5297,
+      "sha256": "afdab94e72b85de6a650482a8f8d8c6a26b4424a16dcdaf2fbe2ae1b662d65ac"
+    },
+    "toc-371": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-371.html",
+      "bytes": 5117,
+      "sha256": "4e4eb4d36124f05c43438111d463395c43c845e125265d22fdefdeb41d518da6"
+    },
+    "toc-372": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-372.html",
+      "bytes": 5181,
+      "sha256": "890272897a1512d333427b6043544ecc2761a5e6c41de69dd6899bd5665f1216"
+    },
+    "toc-373": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-373.html",
+      "bytes": 4965,
+      "sha256": "16a5443cfd94eacd8ec231bba58f9a3c78b6d9683af6a8e2579c98c41fbb2399"
+    },
+    "toc-374": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-374.html",
+      "bytes": 4995,
+      "sha256": "bf3e52ba65b5a6a4d23fce73dfe0cc58ce4eca398b11e1216d9e0ac2938f7bfc"
+    },
+    "toc-375": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-375.html",
+      "bytes": 4730,
+      "sha256": "717a18151aedae748d891e245f4eb81b1dbcfe7f9ade47b6ac682e1552e6c701"
+    },
+    "toc-376": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-376.html",
+      "bytes": 5018,
+      "sha256": "fc9b5274e730dbb4afd4c3ab69ad6b8236417b54b80452b8fac9759ee985f02e"
+    },
+    "toc-377": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-377.html",
+      "bytes": 5414,
+      "sha256": "5a71832d3e1a92689af4b0d2feda706d50a179e479e0b3fac3084c11a05a780b"
+    },
+    "toc-378": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-378.html",
+      "bytes": 5136,
+      "sha256": "eb1ffbf3c3c1001e7add132cacf28d6e7092cd1a339ba332acf2d7345336e126"
+    },
+    "toc-379": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-379.html",
+      "bytes": 4885,
+      "sha256": "138e7d423e44389b15c121b8d3ec32e53784079e5b29f3d0a39abf3782529278"
+    },
+    "toc-380": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-380.html",
+      "bytes": 4890,
+      "sha256": "2cb68b1709f114baab710ebc91b73af7eeea428467c81e982c87afedff9f38cb"
+    },
+    "toc-381": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-381.html",
+      "bytes": 4677,
+      "sha256": "64675bea9e6b8b5540554734d9a402afa0a8f6028e097ea6ef59a8880b75cea0"
+    },
+    "toc-382": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-382.html",
+      "bytes": 4538,
+      "sha256": "ac725e7ed7cc257842b5382579cdf1a6b33a961fc0753a7d4f90c9772c259181"
+    },
+    "toc-383": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-383.html",
+      "bytes": 4535,
+      "sha256": "464040974ea372c6f55a6fd85db6f835925f9c326fa0459b449042b2527061d9"
+    },
+    "toc-384": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-384.html",
+      "bytes": 4845,
+      "sha256": "3a33784c96c523437d69d75255e7ab2c4e52cef9a4aae2d99656b51e45a43f2a"
+    },
+    "toc-385": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-385.html",
+      "bytes": 4451,
+      "sha256": "867b97fecb2ff964128730b84dd6046b172b8bc7fd35eef9f1265aa56b13103d"
+    },
+    "toc-386": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-386.html",
+      "bytes": 4177,
+      "sha256": "c443b39c0894e0467ce38ced29f5162716b437e1ef44a34d8ff0c7ee045aa657"
+    },
+    "toc-387": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-387.html",
+      "bytes": 4491,
+      "sha256": "a140d786069c38e560517c466e6f84e9be4fd7a6d36d5fb7ea6c71dd73bf97c0"
+    },
+    "toc-388": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-388.html",
+      "bytes": 4689,
+      "sha256": "21d8a1e29faecf69c186a96509714c06f300efe1e1baf96349a21a60f5cb55cc"
+    },
+    "toc-389": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-389.html",
+      "bytes": 4465,
+      "sha256": "2aa494635f9fe47891231d3859f749f5d34f699b9cdb4d8261dde07f1af77930"
+    },
+    "toc-390": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-390.html",
+      "bytes": 4718,
+      "sha256": "38938fde50709014bb2fa9794056670909d04cb7ac0c77324e1f558dfacb3fda"
+    },
+    "toc-391": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-391.html",
+      "bytes": 4895,
+      "sha256": "8a08dd68bfb07ead555b93e755626020ce335d61b396382a2e128f4fdb39bd0f"
+    },
+    "toc-392": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-392.html",
+      "bytes": 4979,
+      "sha256": "8742a6a8448b9bf96da68de97534eff1da64c0c979f5fcc3c81d7bdfec1a23c1"
+    },
+    "toc-393": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-393.html",
+      "bytes": 5087,
+      "sha256": "9c09daa6952b450f8dd86eac955a6c14bca6ed54a6d725def61b3ea8e468e987"
+    },
+    "toc-394": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-394.html",
+      "bytes": 4635,
+      "sha256": "91ddf5ba1bdd4e3eb87b40d41444f19980aee7e41ef5dfbad309c9bd6fdb9aa3"
+    },
+    "toc-395": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-395.html",
+      "bytes": 4894,
+      "sha256": "891d8e83af623d8c597d02bebe2acd90859776230a21183f614a9c1b86b0e251"
+    },
+    "toc-396": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-396.html",
+      "bytes": 4065,
+      "sha256": "992669f9e15332ad5fe16a7ab58adf8e6f90dc6d596f50d5d5f6905d12af2f5d"
+    },
+    "toc-397": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-397.html",
+      "bytes": 3965,
+      "sha256": "1577b0460e235c6219cdde64a6b25aa8cfa6846208289ec3f2a718e00720be14"
+    },
+    "toc-398": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-398.html",
+      "bytes": 4099,
+      "sha256": "4a3eefd581f063cdb5d8300e2c6b37a5d6c01df9886fdaa3116dc4c9b6f3e652"
+    },
+    "toc-399": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-399.html",
+      "bytes": 3823,
+      "sha256": "5fc02678d025eaf6e3676163b1fe78f7df3b2176bdf7e76de1f575151eb7a846"
+    },
+    "toc-400": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-400.html",
+      "bytes": 3765,
+      "sha256": "c41e601c2ee27b9b6a83e97e97770c1112af240ca5dbb4e795006ad7aaeaaf9d"
+    },
+    "toc-401": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-401.html",
+      "bytes": 3807,
+      "sha256": "782668a54410ffd10c5d8f4178c6f46cc0cc7a85fcaa5f9f3ad27053bd601e11"
+    },
+    "toc-402": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-402.html",
+      "bytes": 3819,
+      "sha256": "b176835e7efabc0f648db35810c1e57f5da46abbd18a18b8c9c378b23c59c358"
+    },
+    "toc-403": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-403.html",
+      "bytes": 3906,
+      "sha256": "cfde670a649f895ef227f8f0d2666bbef1d4b36057e76462a1391afbc1fa5e48"
+    },
+    "toc-404": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-404.html",
+      "bytes": 4585,
+      "sha256": "c0cd91c412e470cc59531c839ef5f87eea6eef77b813063774aab1c3f222bbbd"
+    },
+    "toc-405": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-405.html",
+      "bytes": 5136,
+      "sha256": "0bbc940c9e22cbd297142fd673b01f4eeebc7bc1e8f797688055ad13ada17047"
+    },
+    "toc-406": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-406.html",
+      "bytes": 4207,
+      "sha256": "08ce97487c303731a21511314f830ca59f11ed4c0ba68786f05d7f76e67f45b0"
+    },
+    "toc-407": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-407.html",
+      "bytes": 5498,
+      "sha256": "f8a21302e807378e3703af6597a78e4b3c2ba0a7b9c28e5a0aab1fa375cb59d3"
+    },
+    "toc-408": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-408.html",
+      "bytes": 7391,
+      "sha256": "d6d6bc1715a9d2bf98030cbff165f556a6e1e7c3e9cd71dcba95200099845877"
+    },
+    "toc-409": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-409.html",
+      "bytes": 4655,
+      "sha256": "cbf4c6ba7981f262ac97048737324f127c477f740204c38395847f842b61a483"
+    },
+    "toc-410": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-410.html",
+      "bytes": 4547,
+      "sha256": "c0edcc4a84670510416068076ce369341641633b25f32c461bbc65b93516d1ac"
+    },
+    "toc-411": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-411.html",
+      "bytes": 4939,
+      "sha256": "1a81b1139b6e5a7330abfebb23f228b44b04ea0f059c421afa1e80a2491b97fb"
+    },
+    "toc-412": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-412.html",
+      "bytes": 4568,
+      "sha256": "9daf25ab5494e45e88debbd18ca487f8584f29fba07bec2484bd876237531017"
+    },
+    "toc-413": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-413.html",
+      "bytes": 4575,
+      "sha256": "bdec97d5f6fbaa1f9a28f2547df6c7fb63533bdc97d397c11e14c90eabe74389"
+    },
+    "toc-414": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-414.html",
+      "bytes": 5101,
+      "sha256": "c3c6e7854acdf8c77a08f33c1b78dd043d045660e37a8cbc0c86c2697e7e80a3"
+    },
+    "toc-415": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-415.html",
+      "bytes": 4392,
+      "sha256": "6d295f1a92c4f6df09d2585bdfea2b1bcd4d137a312d7e75b4e12e874d135cd7"
+    },
+    "toc-416": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-416.html",
+      "bytes": 4600,
+      "sha256": "06ce459852809bec12ba417369e07bcf39251f77bcec7b860c9fb023b6c64d00"
+    },
+    "toc-417": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-417.html",
+      "bytes": 4502,
+      "sha256": "4fae67f4862d94f602ee439b578c97f5e9d1a8310e906f52379d1f5483fbce62"
+    },
+    "toc-418": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-418.html",
+      "bytes": 4625,
+      "sha256": "5e5a704226a5cd70171e7d42d50aa7740a250c264a6b2ef0c56dcf96c5dbca38"
+    },
+    "toc-419": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-419.html",
+      "bytes": 4490,
+      "sha256": "ba7ee1927322fa02333dcf39ffe57ddcb21b0319a3e712845e5ec63db45b9e5b"
+    },
+    "toc-420": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-420.html",
+      "bytes": 4655,
+      "sha256": "aae40fad25d179f82ea706a8b8e666b0ba595319b7f61a95fcd2a12ce4f7a9fa"
+    },
+    "toc-421": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-421.html",
+      "bytes": 4612,
+      "sha256": "21bcce1ad0dba390b62e22693d2ee9a9885198c332b8afdd2a07003799d9f5d3"
+    },
+    "toc-422": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-422.html",
+      "bytes": 4480,
+      "sha256": "e5961a894ba6fc8ca589d2e8af59979f9fbed60b6a01991fa7578c73dcd06261"
+    },
+    "toc-423": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-423.html",
+      "bytes": 6403,
+      "sha256": "b3df016fd9bb93f48685980a9526442ca71a8df59ae7129f642e3010847ef116"
+    },
+    "toc-424": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-424.html",
+      "bytes": 6431,
+      "sha256": "ecadc249471e4f34f02409fe3cfd888df43f04241fd45e3c157308141305c2ef"
+    },
+    "toc-425": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-425.html",
+      "bytes": 6012,
+      "sha256": "d42265b9c82f85357ff1d1277906040bddda118e143c212f63e9b7c6c63cbb46"
+    },
+    "toc-426": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-426.html",
+      "bytes": 6086,
+      "sha256": "add0e738c902b256d62c677c6a7c6eb3ef07bfeb58f7450b6e748a3a9ac8e1eb"
+    },
+    "toc-427": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-427.html",
+      "bytes": 5846,
+      "sha256": "a011068b5f5753208715a47aff42c3fef6989a19f22c99e4960ff0cff097be5c"
+    },
+    "toc-428": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-428.html",
+      "bytes": 6050,
+      "sha256": "f0a825b720666ab7030df2c57c1525b6b1c62fb32f0a45089e0a0b07d9c3e3a0"
+    },
+    "toc-429": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-429.html",
+      "bytes": 5415,
+      "sha256": "1a30596f26e935f089d6f963858117aa9a4f9f296c17c5e5a96bc87f845e0c0c"
+    },
+    "toc-430": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-430.html",
+      "bytes": 5653,
+      "sha256": "ba765ffa08ecff4344d3284a90ad145c08a0646935d0ecac43f00f76dba2b3c6"
+    },
+    "toc-431": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-431.html",
+      "bytes": 5331,
+      "sha256": "08cd437cefe6eb540ce88eb67fd7bccced517ad86aa94d3a652f8ba47da74d74"
+    },
+    "toc-432": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-432.html",
+      "bytes": 5915,
+      "sha256": "1ccc8cbf5a10578331c5f9bd65f25719343e0cf9205cc19741d368c0dd1dbd23"
+    },
+    "toc-433": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-433.html",
+      "bytes": 5534,
+      "sha256": "4b561dfc49d01ac3faf88984712dc234f6a6d4b6c9050a9334ee5aebfa9278bb"
+    },
+    "toc-434": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-434.html",
+      "bytes": 5619,
+      "sha256": "420cffcca88696f857ad8992122481fee1a4b9353dc0e182faac32cf1062cc19"
+    },
+    "toc-435": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-435.html",
+      "bytes": 5768,
+      "sha256": "fc5e374eb960abd209a39b727e71b023228339b5e4fdad8d3b1fec2043b33109"
+    },
+    "toc-436": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-436.html",
+      "bytes": 5662,
+      "sha256": "9c28db0e4d1237cb974751079231e3cc79f377664982ad54fc14bb02ded34160"
+    },
+    "toc-437": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-437.html",
+      "bytes": 5673,
+      "sha256": "ca98ec58a828ce843988a0509bff6ccd49b5ac457c8cc27f7cfce4cfd64d3971"
+    },
+    "toc-438": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-438.html",
+      "bytes": 4787,
+      "sha256": "24339c1db5cf825fe3a8d773f231eb92bd6e71cea21e15c23e8b3056cad32de6"
+    },
+    "toc-439": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-439.html",
+      "bytes": 4942,
+      "sha256": "c4347ee0768b3e67f9d5ca6ababbf114e967318be386876dea1b45b2e72b9079"
+    },
+    "toc-440": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-440.html",
+      "bytes": 4795,
+      "sha256": "e0bca3efc45deffe64badeb3c6142c97d9fcae41d19e19d498ce8d6727396496"
+    },
+    "toc-441": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-441.html",
+      "bytes": 4965,
+      "sha256": "bc344242e255023159e4712137c89bd42403ee2dbaa36b298c907de0b6ca14bf"
+    },
+    "toc-442": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-442.html",
+      "bytes": 4918,
+      "sha256": "96ebe7ad743810e284a0449dcb64d3f3d15622b4579deeb51e8eada0981e9ed5"
+    },
+    "toc-443": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-443.html",
+      "bytes": 4653,
+      "sha256": "d322b4c6f47e5eb2de257baa82fe19b22e5dbbd742b2a437bc8fd873c102e5c8"
+    },
+    "toc-444": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-444.html",
+      "bytes": 5042,
+      "sha256": "76c1a1959b1e513f05359786895089f58fc3ccbd18957bddd2415cfcd997a7b7"
+    },
+    "toc-445": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-445.html",
+      "bytes": 4681,
+      "sha256": "f447b9d65c19b1fc5ee5d292608e6cd9d6e098b8a3c8465f225d6792e4a24d49"
+    },
+    "toc-446": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-446.html",
+      "bytes": 4860,
+      "sha256": "98d5b0efb4cc4fa6cbe4d42a1c9dd328df9c8df603ec1a8874cc08a2f5ab43ab"
+    },
+    "toc-447": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-447.html",
+      "bytes": 4343,
+      "sha256": "07ac538d1ccb13230180a202b68d8f6bb15dafac7675d4f92790c7768215079e"
+    },
+    "toc-448": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-448.html",
+      "bytes": 3861,
+      "sha256": "51de991a376d4cad2674bbdc369d729d38d527b6c6c4d1f9f3708b552679c297"
+    },
+    "toc-449": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-449.html",
+      "bytes": 3586,
+      "sha256": "1f4ac17f5180a8f31009e86f116453f05707fad95fa596181148cbbba1d13b2e"
+    },
+    "toc-450": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-450.html",
+      "bytes": 3416,
+      "sha256": "675d92cb7872337da7a9c014d072047888a5395553ca7913f3618f3e6d72c297"
+    },
+    "toc-451": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-451.html",
+      "bytes": 3689,
+      "sha256": "f7337e949fb1d97973036b5f5fbf9415fb14eedcdca1741110fb45ddb502dfbd"
+    },
+    "toc-452": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-452.html",
+      "bytes": 3657,
+      "sha256": "b966a8f8505ddda2becc5a3add9c645fbb2d4ab06c018eae426a7770717b1a82"
+    },
+    "toc-453": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-453.html",
+      "bytes": 3634,
+      "sha256": "4391b0fcb33972d1fa4e168025caf59f6995221fbb4aa7879d0391074fe2727d"
+    },
+    "toc-454": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-454.html",
+      "bytes": 3537,
+      "sha256": "98602a42625ca5684206f5f1c15c12005cc50b42d404a04ca43745a25eb14044"
+    },
+    "toc-455": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-455.html",
+      "bytes": 3770,
+      "sha256": "a3a597ecec40cbd9cdb90cb0f9ced73a7d52679ab3538c8fdaab5196351091cb"
+    },
+    "toc-456": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-456.html",
+      "bytes": 3686,
+      "sha256": "67c96ffd5ec6d033f589b5694d8757b45693e79a4b6db21901adf46fdb6099b2"
+    },
+    "toc-457": {
+      "url": "https://yechengzhang.duqi.top/reading/learning-files/dfe7a3d85bc5bb43/toc-457.html",
+      "bytes": 4068,
+      "sha256": "21105ba311638684b88ba30252b32ce8a1ae7b945f768131264b9114be1c4143"
+    }
+  }
+}

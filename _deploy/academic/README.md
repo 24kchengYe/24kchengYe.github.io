@@ -35,10 +35,13 @@ with the selectable PDF page when ready. The original PDF bytes remain intact.
 PDF.js is warmed only after a report is selected, and reused between editions.
 An opened document uses streaming together with range requests, so the PDF index
 and page data can become available without dozens of sequential small requests.
-After displaying a page, the reader prepares only the next page's drawing
-instructions. Switching documents cancels the previous download and prefetch
-timer; the library entry itself still downloads no PDFs. During initialization
-the first-page preview remains visible with an explicit navigation-loading status.
+The reader scrolls continuously through page placeholders and renders the visible
+pages plus two ahead and one behind. Distant canvases/text layers are released;
+per-page canvas pixels are capped. Page arrows, number entry and URL state follow
+the scroll position. Switching documents cancels old rendering and downloads;
+the library entry itself still downloads no PDFs. During initialization the
+first-page preview remains visible with an explicit loading status. Streaming
+and continuous rendering cannot eliminate packet loss on the public connection.
 
 Learning titles preserve original Chinese headings alongside searchable English
 labels. Date provenance distinguishes initial arXiv submission, explicit source

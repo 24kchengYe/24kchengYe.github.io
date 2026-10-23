@@ -497,9 +497,9 @@
     "The next online comparison starts fresh from the same Query in each arm: ordinary generation versus teacher correction and post-trajectory repair, checking ten pairs before expanding to one hundred. This separates the benefit of regeneration itself from the repair mechanism. The next measures are retained functionality on the same requests, the share of usable trajectories, and full cost including teacher and judge calls.",
     "次のオンライン比較では、同じQueryから各条件を新規生成する。通常生成と、教師による修正および全体評価後の修復を比較し、10組を確認してから100組へ広げる。再生成自体の効果と修復機構の効果を分けるためである。今後は同じ要求での機能維持、利用可能な軌跡の割合、教師とJudgeを含む全コストを測る。"
   ],
-  "本文整理自 2026 年 10 月的 CLI 轨迹合成与修复实验。三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。": [
-    "Based on CLI trajectory synthesis and repair experiments from October 2026. The Spec-input comparison, guided continuation, and local editing use their own fixed samples and evaluation protocols and are reported separately.",
-    "2026年10月のCLI軌跡合成・修復実験を整理した。Spec入力の比較、指示付き再実行、局所編集は、それぞれ固定したサンプルと評価方式で個別に報告している。"
+  "三组 Spec 对照、定向续跑和局部编辑使用各自的固定样本与评审协议，分别报告。": [
+    "The Spec-input comparison, guided continuation, and local editing use their own fixed samples and evaluation protocols and are reported separately.",
+    "Spec入力の比較、指示付き再実行、局所編集は、それぞれ固定したサンプルと評価方式で個別に報告します。"
   ],
   "关闭大图": [
     "Close expanded figure",

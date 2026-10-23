@@ -30,7 +30,6 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <h2 id="section-1">摘要</h2>
 <p>本报告回溯接手Spec生成任务后，在PE搜索、规则组织、生成架构、评测口径、监督数据和下游执行上的连续实验，必要时引用5月历史基线。核心目标是在一次模型调用中生成符合需求与产品能力的SpecDoc，并验证优化后的准确率和成本。</p>
 <p>主要发现有四点。第一，定点修改改善了部分目标问题，但四域联合通过率仍受其他题退化影响，局部检查与全量验收需要配合使用。第二，呈现规范化和直接搬运高分样本特征出现多组回退，重构由此转向职责分层与字段依赖规划。第三，分层生成PE在七月统一口径下取得Dev150 16/150、Former50 31/50，Dev平均输入约8.8k；后续八轮搜索0 KEEP，同一PE两次全量运行有19题翻转，重复性成为下一阶段重点。第四，人工PE专项的动态策略记忆取得历史KEEP，后期继续训练配置在Building0.7同题对照中由32/50升至35/50。各阶段按题集与Judge分别报告。</p>
-<p>正文按结构或用途命名PE，文末提供历史版本与文件对照。全面版另附完整实验来源。</p>
 <figure><img src="/writing/assets/5930efdb0f0a6acb35b1.png" alt="研究对象" loading="eager" decoding="async" width="2160" height="810"><figcaption>Spec 生成研究路线</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <h2 id="section-2">1　任务与评测范围</h2>
 <p>输入为用户Query及其澄清Q&amp;A，输出是下一步搭建系统要消费的Lite SpecDoc。七月主线要求一次Seed2调用直接生成，不依赖外部Planner、生成后LLM repair、Contract剥离或best-of。离线Harness可使用多Agent分析和修改下一轮PE，这不改变线上调用次数。</p>
@@ -322,7 +321,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <td><strong>未采用。</strong> 额外调用成本持续增加，后续两对复测的整题收益持平</td>
 </tr>
 </tbody></table></div>
-<p>多领域生成增加三次领域调用，初跑平均总token约31k→41k。初跑数据来自run汇总，后续两对复测来自当期会话记录。</p>
+<p>多领域生成增加三次领域调用，初跑平均总token约31k→41k。</p>
 <h3 id="section-15">六月Pro重复切片：同模型自我修订</h3>
 <p><strong>设置：生产bitable-lcp四域Judge，Pro，三轮重复实验。</strong> 统计单位为“题目×轮次”，共72次判定。</p>
 <div class="table-scroll"><table>
@@ -956,9 +955,8 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 </tbody></table></div>
 <p>优先完成固定Spec的重复Judge与固定PE的重复生成，用两层实验确定波动范围，再配对复核候选。随后在未参与规则设计的封存查询上验证泛化；动态检索、扩数据和Harness Dropout分别作为独立实验开展。</p>
 <details class="name-key">
-<summary>名称与历史版本对照（溯源）</summary>
+<summary>附录：PE 版本索引</summary>
 
-<p>报告按PE的结构与用途命名，历史标识用于定位对应文件和实验快照。</p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -1038,7 +1036,6 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <td>训练侧独立提示词，包含能力约束与完整格式示例</td>
 </tr>
 </tbody></table></div>
-<p>主快照、路径与哈希见、；中间实验见、；训练提示词见。</p>
 </details>
 
 
@@ -1046,7 +1043,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 
 
 
-<footer>Spec Generation Research · 2026-10-20<br>离线阅读版</footer></article></div><dialog id="zoom"><button aria-label="关闭大图">关闭 ×</button><img alt=""></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script>
+<footer>Spec Generation Research · 2026-10-20</footer></article></div><dialog id="zoom"><button aria-label="关闭大图">关闭 ×</button><img alt=""></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script>
 
 
 

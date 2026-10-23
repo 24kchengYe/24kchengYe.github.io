@@ -141,8 +141,6 @@ function attachWritingMaps(document, sourceName) {
     fallback.append(summary);
     image.before(map,fallback);
     fallback.append(image);
-    const source = container.querySelector('.figure-source-link');
-    if (source) fallback.append(source);
     const caption = container.querySelector(':scope > figcaption') || (figure.querySelectorAll('img[data-figure-key]').length === 1 ? figure.querySelector(':scope > figcaption') : null);
     if (caption) {
       const simplify = value => value.trim().replace(/^(?:图|Figure|Fig\.|図)\s*\d+\s*[:：·.\s]*/u,'');

@@ -279,7 +279,7 @@ body[data-publication-genre=blog] .article-body h2{font-size:28px}
 <p>多维表格设计分为数据表、仪表盘、工作流和权限四个域。后三域依赖表和字段，因此不能把四份错误清单各自交给模型，最后拼起来。例如统计图和工作流同时缺一个字段，应先补表，再修改两个下游设计。</p>
 <p>主链路先检查四域，由 Router 选择修复位置。修改后重新检查；普通阶段未解决的样本可以进入难例阶段，但总预算有限。最后对同一份文档投票，确认业务通过后再处理格式。格式候选如果改变了文档，也需要重新确认业务判断。</p>
 <figure class="full-pipeline-figure wide figure-block" data-figure="main_entry" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label">A · 入口检查</p><img src="/writing/assets/ad8ed4327da8728f89fe.svg" alt="A · 入口检查" width="1200" height="440" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">B · 普通修复 · 共用回退预算 2 次</p><img src="/writing/assets/96bab7319c80cd000e6a.svg" alt="B · 普通修复 · 共用回退预算 2 次" width="1200" height="650" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">C · 难例修复 · 独立回退预算 3 次</p><img src="/writing/assets/532a029e70811a11a29e.svg" alt="C · 难例修复 · 独立回退预算 3 次" width="1200" height="690" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><div class="figure-panel"><p class="panel-label">D · 准出 · 格式回退预算 1 次</p><img src="/writing/assets/515e12ce143dbbed4959.svg" alt="D · 准出 · 格式回退预算 1 次" width="1200" height="330" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 2　主链路</figcaption></figure>
-<p>这些流程不是所有历史实验的统一配置。图展示的是 2026-10-16 收录的本地实现，具体实验仍按各自冻结参数比较。</p>
+<p>流程图对应 2026-10-16 的实现；各实验采用各自固定的配置。</p>
 
 <h2 id="blog-2">一次修复包含什么</h2>
 <p>Fix 读取用户需求、当前设计和待修问题。对 Markdown SpecDoc，它主要生成局部补丁；对 HostPlan，则按 JSON 结构写回。程序先确认输出能解析、补丁能应用，才把候选送去评审。原文没匹配上，不能算作修复已完成。</p>

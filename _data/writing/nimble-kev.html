@@ -71,7 +71,6 @@
 <p class="formula">p = Softmax(z / T)　·　T &gt; 0</p>
 <p>正温度保持类别排序，所以可以调整置信度，却不会修复分类错误。实际选型应分别看类别一致率、参考概率拟合和校准表现，并检查 Base 这类关键路由的精确率。</p>
 <p>这组实验保留了一个简单起点：有完整概率监督时，先训练直接蒸馏基线，再检验强化学习是否带来额外收益。模型选型结合相同请求上的质量与处理成本，概率是否可信则交给独立的校准检查。</p>
-<p class="source-note">本文整理自《Nimble 9B 与 KEV 0.8B 训练报告》HTML 正文，涵盖 2026 年 9–10 月的训练与评测。</p>
 </main><dialog id="figure-zoom"><button type="button" aria-label="关闭大图">关闭 ×</button><img alt="放大的流程图"></dialog>
 <script>
 const zoom = document.getElementById('figure-zoom');

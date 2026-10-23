@@ -659,9 +659,9 @@
     "Extra-call costs persisted; the later two paired tests had no mean whole-case gain",
     "追加費用は継続し、後の二対は平均整題利益なし"
   ],
-  "多领域生成增加三次领域调用，初跑平均总token约31k→41k。初跑数据来自run汇总，后续两对复测来自当期会话记录。": [
-    "Three extra domain calls raised initial mean total tokens from about 31k to 41k. The first result comes from run summaries; the later paired tests come from contemporaneous conversation records.",
-    "三領域追加で初回の平均総トークンは約31kから41kへ増えた。初回は実行要約、後の二対は当時の会話記録に基づく。"
+  "多领域生成增加三次领域调用，初跑平均总token约31k→41k。": [
+    "Multi-domain generation adds three domain calls, increasing average total tokens from about 31k to 41k in the initial run.",
+    "領域別生成では呼び出しが3回増え、初回実験の平均総token数は約31kから41kへ増えた。"
   ],
   "六月Pro重复切片：同模型自我修订": [
     "June · Repeated Pro slices: same-model self-revision",
@@ -947,13 +947,9 @@
     "Next, repeat Judge on fixed Specs and independently generate from fixed PEs, estimate both sources of variation, and adjust KEEP acceptance accordingly.",
     "次は固定SpecのJudge反復と固定PEの独立生成で両変動を推定し、KEEP条件を調整する。"
   ],
-  "名称与历史版本对照（溯源）": [
-    "Names and historical versions",
-    "名称と過去版の対応"
-  ],
-  "报告按PE的结构与用途命名，历史标识用于定位对应文件和实验快照。": [
-    "Reader-facing names describe structure or purpose; historical identifiers locate files and experiment snapshots.",
-    "読者向け名称は構造・用途を表し、過去識別子はファイルと実験スナップショットの追跡に使う。"
+  "附录：PE 版本索引": [
+    "Appendix: PE version index",
+    "付録：PEバージョン索引"
   ],
   "报告名称": [
     "Name in this report",
@@ -1102,14 +1098,6 @@
   "训练侧独立提示词，包含能力约束与完整格式示例": [
     "Independent training prompt with capability constraints and full format examples",
     "能力制約と完全な形式例を持つ独立した訓練用Prompt"
-  ],
-  "主快照、路径与哈希见、；中间实验见、；训练提示词见。": [
-    "Historical identifiers are listed in the table above.",
-    "過去の識別子は上の表に示す。"
-  ],
-  "离线阅读版": [
-    "Reading edition",
-    "閲覧版"
   ],
   "关闭 ×": [
     "Close ×",

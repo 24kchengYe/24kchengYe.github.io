@@ -131,9 +131,9 @@
     "Case-level evidence from design, execution, and evaluation",
     "設計・実行・審査の逐例証拠"
   ],
-  "链路准出、独立参考复核和 E2E 分开统计。历史累计交付率不等于单次实验通过率，模型判定也不等于人工准确率。详细实验记录可在正文中展开。": [
-    "Pipeline release, independent reference review, and E2E are counted separately. Cumulative historical delivery is not a single-run pass rate; model judgments are not human accuracy. Detailed experiment records expand within the article.",
-    "パイプライン出荷、独立参照審査、E2Eは別集計とする。過去累積出荷率は一回の合格率ではなく、モデル判定も人手精度ではない。詳細記録は本文内で展開できる。"
+  "链路准出、独立参考复核和 E2E 分开统计。历史累计交付率不等于单次实验通过率，模型判定也不等于人工准确率。": [
+    "Pipeline release, independent reference review, and E2E results are reported separately. Historical cumulative delivery rates differ from single-run pass rates, and model judgments are not human-verified accuracy.",
+    "パイプラインのリリース判定、独立した参照評価、E2Eの結果は別々に集計します。過去の累積リリース率は単一実験の合格率とは異なり、モデルの判定も人手で確認した正解率とは区別します。"
   ],
   "2. 实验设置": [
     "2. Experimental setup",
@@ -359,9 +359,9 @@
     "Not scheduled in this snapshot's four domains; historical content may pass through",
     "この四領域実行には不参加。過去内容は透過保持され得る"
   ],
-  "以上是报告收录时的本地状态，不代表所有历史实验配置，也不替代线上部署核验。": [
-    "This is the local state captured for the report, not the configuration of every historical run or a substitute for production deployment verification.",
-    "これは報告時点のローカル状態で、全過去実験の設定でも本番配備の検証の代替でもない。"
+  "本节配置对应 2026-10-16 的实现；历史实验配置在各节单独列出。": [
+    "This configuration describes the implementation as of October 16, 2026. Historical experiment configurations are listed in their respective sections.",
+    "この設定は2026年10月16日時点の実装に対応します。過去の実験設定は各節に個別に記載しています。"
   ],
   "3.3 文档格式适配": [
     "3.3 Document-format adaptation",
@@ -1375,9 +1375,9 @@
     "9. Conclusions",
     "9. 結論"
   ],
-  "以下结论依据截至 2026-10-16 收录的实验和实现。后续修改建议尚未经过新实验验证。": [
-    "These conclusions reflect experiments and implementation collected through October 16, 2026. Proposed changes below have not yet been validated in new experiments.",
-    "結論は2026-10-16までの実験・実装に基づく。以下の変更提案は新実験での検証前である。"
+  "实验结论截至 2026-10-16；后续改进方案有待实验验证。": [
+    "The experimental findings cover work through October 16, 2026. The proposed improvements remain to be tested.",
+    "実験結果の対象は2026年10月16日までです。今後の改善案は実験で検証する必要があります。"
   ],
   "9.1 主要结论": [
     "9.1 Main findings",

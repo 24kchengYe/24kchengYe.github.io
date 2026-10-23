@@ -2,7 +2,7 @@
 <html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'"><title>How an Agent Remembers · Yecheng Zhang</title><link rel="canonical" href="https://24kchengye.github.io/writing/agent-memory/"><meta property="og:url" content="https://24kchengye.github.io/writing/agent-memory/"><meta property="og:title" content="How an Agent Remembers"><meta name="description" content="A visual guide to agent memory: what is stored, how it returns to the model, and what survives context compression and a new session."><link rel="stylesheet" href="/assets/css/research-note.css?v=1"></head>
 <body><main class="note">
 <header class="note-header"><p class="note-kicker">Agent memory · Harness engineering</p><h1>Agent 是怎么记住事情的</h1><p class="lead">用户说“按上次的格式来”，Agent 要完成三件事：找到上次的格式，把它放进这次的输入，再据此行动。沿着这条路径看，记忆机制就容易理解了。</p><p class="note-date">2026 年 10 月 · 实现解读</p></header>
-<p>本文以 SWALM 的 MainAgent 为例。两份原始文档分别比较当前实现与历史线上轨迹，以及逐层追踪记忆和压缩的实现。合起来，它们回答一个问题：一条信息怎样留得下来，又怎样在需要时被模型看见？</p>
+<p>以 SWALM 的 MainAgent 为例，沿着一条信息的保存与读取路径，看看它怎样在需要时被模型看见。</p>
 <h2>先分清三个地方</h2>
 <p>当前输入像工作台，放着模型这次能看到的内容；记忆库和文件像资料柜，需要取用；原始轨迹像流水账，记录发生过什么。资料柜里有记录，流水账里有原话，都不代表下一次模型调用已经看到了它。</p>
 <p id="input-path">系统规则、用户请求和近期对话进入当前输入。偏好可以按预算自动注入；过去的任务和日记通过 memory recall 搜索，经验与 Skills 通过 Read 读取。取回的内容进入后续输入，才参与新的判断。</p>
@@ -31,11 +31,10 @@
 <h2>一次线上压缩，留下了什么</h2>
 <p>历史线上记录中有一次压缩，将 303 条消息变为 98 条。3 条 system 消息保持不变，保留了 7 条较早的 user-role 消息，加入 10,138 字符的摘要，并保留一条 56,945 字符的 Skill 消息。</p>
 <p>这里的 7 条 user-role 消息包含环境信息，不能读作 7 次真人请求；字符数也不能当作 token 数。这条轨迹展示了摘要、规则和原文共同保留的结果，前面的阈值则来自当前实现的配置。</p>
-<p>两份文档还指出了写入时机的变化：旧线上流程在任务末尾生成任务摘要并更新日记；当前实现分别在任务完成、接近压缩阈值、Agent 编辑经验时写入。迁移旧轨迹时，需要连这些生命周期一起对齐。</p>
+<p>旧线上流程在任务末尾生成任务摘要并更新日记；当前实现分别在任务完成、接近压缩阈值、Agent 编辑经验时写入。迁移旧轨迹时，需要连这些生命周期一起对齐。</p>
 <h2>排查“忘记”，沿一条信息走一遍</h2>
 <p>比如“报告先给结论”这条偏好：先看它是否写入当前使用的记忆库，再看有没有被注入或检索，最后查看实际发送给模型的输入。如果信息已经在输入里，才继续分析模型是否遵循。这样可以把存储隔离、读取缺失、压缩遗漏和执行偏差分开。</p>
 <p>一个好用的记忆系统，需要明确保存什么、何时读取、能跨过哪些边界。最有价值的检查点，是下一次模型调用真正拿到了哪些信息。</p>
-<footer class="source-note"><p>来源：2026 年 10 月的实现分析与历史线上轨迹核对。图中描述的是该版本的机制，303 → 98 是一次记录中的压缩事件。</p><p><a href="https://bytedance.larkoffice.com/docx/MzM9d2fxLotoTdxySw9cJoyqnUg">Harness：当前实现与线上轨迹对比</a> · <a href="https://bytedance.larkoffice.com/docx/Zr4CdpoJLoAvoxx91sVcdHSznhe">MainAgent：记忆与上下文压缩</a></p></footer>
 </main>
 <dialog id="figure-zoom" aria-label="图片查看器"><div class="figure-toolbar"><button type="button" data-viewer="fit">全图</button><button type="button" data-viewer="width">适合宽度</button><button type="button" data-viewer="out" aria-label="缩小">−</button><output class="figure-scale" aria-live="polite"></output><button type="button" data-viewer="in" aria-label="放大">+</button><button type="button" data-viewer="close" aria-label="关闭大图">关闭 ×</button></div><div class="figure-viewport" tabindex="0" aria-label="可滚动的流程图"><div class="figure-surface"><img alt="放大的流程图" draggable="false"></div></div></dialog><script src="/assets/js/figure-viewer.js?v=1" defer></script>
 </body></html>

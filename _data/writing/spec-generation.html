@@ -261,7 +261,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <td><strong>未采用。</strong> 额外调用成本持续增加，后续两对复测的整题收益持平</td>
 </tr>
 </tbody></table></div>
-<p>多领域生成增加三次领域调用，初跑平均总token约31k→41k。初跑数据来自run汇总，后续两对复测来自当期会话记录。</p>
+<p>多领域生成增加三次领域调用，初跑平均总token约31k→41k。</p>
 <h3 id="section-12">六月Pro重复切片：同模型自我修订</h3>
 <p><strong>设置：生产bitable-lcp四域Judge，Pro，三轮重复实验。</strong> 统计单位为“题目×轮次”，共72次判定。</p>
 <div class="table-scroll"><table>
@@ -381,9 +381,8 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <p>分层生成PE以较少输入取得了五套PE对照中最高的单轮通过数，成为后续搜索的起点；Free和Data分别保留了执行协议修改，Data的重复评测也显示出峰值与均值的距离。新200曾参与Pattern抽取，其中Holdout50尚未运行；最终泛化验证需要另建未参与规则设计的封存集。</p>
 <p>下一步先固定Spec重复Judge，再固定PE独立生成，分别估计两个环节的波动，据此调整KEEP的验收条件。</p>
 <details class="name-key">
-<summary>名称与历史版本对照（溯源）</summary>
+<summary>附录：PE 版本索引</summary>
 
-<p>报告按PE的结构与用途命名，历史标识用于定位对应文件和实验快照。</p>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -468,4 +467,4 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 
 
 
-<footer>Spec Generation Research · 2026-10-20<br>离线阅读版</footer></article></div><dialog id="zoom"><button aria-label="关闭大图">关闭 ×</button><img alt=""></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script></body></html>
+<footer>Spec Generation Research · 2026-10-20</footer></article></div><dialog id="zoom"><button aria-label="关闭大图">关闭 ×</button><img alt=""></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script></body></html>

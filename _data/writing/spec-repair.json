@@ -91,9 +91,9 @@
     "Figure 2 · Main pipeline",
     "図2　主処理"
   ],
-  "这些流程不是所有历史实验的统一配置。图展示的是 2026-10-16 收录的本地实现，具体实验仍按各自冻结参数比较。": [
-    "The diagram shows the local implementation recorded on October 16, 2026. Historical experiments used their own frozen settings rather than one universal pipeline configuration.",
-    "図は2026年10月16日に収録したローカル実装を示す。過去の実験はすべて同じ設定ではなく、それぞれ固定したパラメータで比較する。"
+  "流程图对应 2026-10-16 的实现；各实验采用各自固定的配置。": [
+    "The diagrams show the implementation as of October 16, 2026; each experiment uses its own fixed configuration.",
+    "フロー図は2026年10月16日時点の実装を示します。各実験では、それぞれ固定した設定を用いています。"
   ],
   "Fix 读取用户需求、当前设计和待修问题。对 Markdown SpecDoc，它主要生成局部补丁；对 HostPlan，则按 JSON 结构写回。程序先确认输出能解析、补丁能应用，才把候选送去评审。原文没匹配上，不能算作修复已完成。": [
     "Fix reads the user requirements, current design, and outstanding issues. It mainly produces local patches for Markdown SpecDocs and writes structured JSON for HostPlan. A candidate is reviewed only after its output parses and its patch applies. A patch that cannot match the original text is not a completed repair.",

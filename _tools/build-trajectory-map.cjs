@@ -84,8 +84,6 @@ function attachTrajectoryMaps(document, artifact) {
     map.id = `trajectory-map-${index + 1}`;
     map.dataset.entry = entry;
     map.hidden = true;
-    const source = figure.querySelector('.figure-source-link');
-    if (source) fallback.append(source);
     figure.prepend(map);
     figure.append(fallback);
   }

@@ -179,9 +179,9 @@
     "Start with what is stored for a token. Then ask which positions a query can read, who selects them, and how the result is normalized and executed. Mistral 7B combines GQA and SWA to reduce KV heads and the directly visible range. Kimi Linear distributes layers between state memory and explicit history through KDA and MLA. Following these paths makes similar names easier to distinguish and complementary designs easier to combine.",
     "まずトークンがどの形で保存されるかを見る。次にクエリの参照範囲、選択する仕組み、正規化と実行方法を追う。Mistral 7BはGQAとSWAでKVヘッド数と直接の参照範囲を減らす。Kimi LinearはKDAとMLAで状態記憶と明示的な履歴に層を配分する。この流れで読むと、似た名前の方式を区別し、相補的な設計を組み合わせやすくなる。"
   ],
-  "本文按原论文中的机制绘图；示意单元数与颜色用于说明结构，不代表模型配置或性能测量。": [
-    "Diagrams follow the mechanisms in the cited papers. Cell counts and colors illustrate structure, not model configurations or measured performance.",
-    "図は引用論文の機構に沿って作成した。セル数や色は構造の説明用であり、モデルの設定や性能測定値ではない。"
+  "图中的单元数量与颜色用于结构示意。": [
+    "Cell counts and colors in the diagrams illustrate structure.",
+    "図のセル数と色は、構造を示すためのものです。"
   ],
   "关闭大图": [
     "Close enlarged figure",

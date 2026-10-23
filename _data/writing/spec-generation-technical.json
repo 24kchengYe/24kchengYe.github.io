@@ -79,10 +79,6 @@
     "Four findings stand out. Targeted edits improved some cases, but regressions elsewhere limited four-domain joint accuracy, requiring both local and full-set checks. Presentation normalization and direct transfer of high-scoring sample features repeatedly regressed, shifting restructuring toward responsibility layers and field dependencies. Under July's unified protocol, the layered PE achieved 16/150 on Dev150 and 31/50 on Former50 at about 8.8k Dev input tokens; eight subsequent search rounds yielded no KEEP, and two full runs of the same PE flipped 19 cases, making repeatability the next priority. Dynamic strategy memory produced historical KEEPs in the human-PE track; later, continued training improved a paired Building0.7 result from 32/50 to 35/50. Results remain grouped by dataset and Judge.",
     "主な知見は四つある。局所編集で目標ケースは改善したが、他ケースの悪化が四領域同時合格率を制約し、局所確認と全件検証の併用が必要だった。表現の正規化と高得点例の表面的特徴の移植は複数回悪化し、責務の分離とフィールド依存の設計へ方針を転換した。7月の統一条件では、階層型PEがDev150で16/150、Former50で31/50、Dev平均入力約8.8kを達成した。その後の八回の探索はKEEPゼロで、同じPEの全件実行二回で19問が反転し、再現性が次の焦点となった。人手PE系統では動的戦略メモリがKEEPを獲得し、後期の継続学習設定はBuilding0.7の同一問題比較で32/50から35/50へ改善した。各段階はデータセットとJudge別に報告する。"
   ],
-  "正文按结构或用途命名PE，文末提供历史版本与文件对照。全面版另附完整实验来源。": [
-    "PEs are named by structure or purpose; historical versions and file mappings appear at the end. The full edition includes the complete experiment sources.",
-    "PEは構造や用途で呼び、末尾に過去バージョンとファイルの対応を示す。完全版には実験の全出典を収録した。"
-  ],
   "输入为用户Query及其澄清Q&A，输出是下一步搭建系统要消费的Lite SpecDoc。七月主线要求一次Seed2调用直接生成，不依赖外部Planner、生成后LLM repair、Contract剥离或best-of。离线Harness可使用多Agent分析和修改下一轮PE，这不改变线上调用次数。": [
     "The input is the user query and clarification Q&A; the output is a Lite SpecDoc consumed by the downstream builder. July's main track requires one direct Seed2 generation call, without external planners, post-generation LLM repair, contract stripping, or best-of selection. The offline harness may use multiple agents to analyze and revise the next PE without changing the online call count.",
     "入力はユーザーQueryと確認Q&A、出力は下流の構築処理が利用するLite SpecDocである。7月の主系統はSeed2一回での直接生成を要件とし、外部Planner、生成後のLLM修正、Contract除去、best-of選択を使わない。オフラインHarnessで複数Agentが分析し次のPEを変更しても、オンライン呼び出し回数は変わらない。"

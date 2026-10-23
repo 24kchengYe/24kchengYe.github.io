@@ -60,7 +60,7 @@
 <p class="caption"><a href="https://arxiv.org/abs/1706.03762">Transformer</a> · <a href="https://arxiv.org/abs/2205.14135">FlashAttention</a></p>
 <h2>读架构时，沿着数据走</h2>
 <p>先看一个 token 被存成什么，再看查询能读哪些位置、由谁选中，最后看结果怎样归一化和执行。Mistral 7B 的 GQA + SWA 同时减少 KV 头数和直接可见范围；Kimi Linear 的 KDA + MLA 则在状态记忆与显式历史之间分配层。沿着这些路径，名字相近的方法也能分清，互补的设计也更容易组合。</p>
-<p class="source-note">本文按原论文中的机制绘图；示意单元数与颜色用于说明结构，不代表模型配置或性能测量。</p>
+<p class="source-note">图中的单元数量与颜色用于结构示意。</p>
 </main><dialog id="figure-zoom"><button type="button" aria-label="关闭大图">关闭 ×</button><img alt="放大的流程图"></dialog>
 <script>
 const zoom = document.getElementById('figure-zoom');

@@ -34,6 +34,7 @@ const navigation = (slug, technical) => `<nav class="report-site-nav" aria-label
 </nav>`;
 
 function localizeFigures(document) {
+  const sources = new Map();
   for (const image of document.querySelectorAll('img[src^="/writing/assets/"], img[data-figure]')) {
     const source = image.getAttribute('data-figure') || image.getAttribute('src');
     const figure = figures[source];
@@ -48,16 +49,64 @@ function localizeFigures(document) {
       image.setAttribute(`data-src-engineering-${language}`,figure.engineering[language]);
     }
     image.src = figure.localized.zh;
-    const container = image.closest('.figure-panel') || image.closest('figure');
-    if (container) {
-      const details = document.createElement('details');
-      details.className = 'figure-source-link';
-      details.innerHTML = `<summary><span lang="en">Figure source</span><span lang="zh">图源</span><span lang="ja">図のソース</span></summary>
-        <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/${figure.source}">${figure.format === 'svg' ? 'SVG' : 'HTML + CSS'}</a>
-        · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json">EN / 中 / 日</a>`;
-      container.append(details);
-    }
+    if (!sources.has(figure.source)) sources.set(figure.source, {
+      file: `_data/writing/figures/${figure.source}`,
+      labels: ['zh','en','ja'].map(language => image.getAttribute(`data-alt-${language}`) || image.alt),
+    });
   }
+  return [...sources.values()];
+}
+
+function appendArticleResources(document, slug, sourceName, sources) {
+  const article = document.querySelector('article,main');
+  if (!article) throw new Error(`Missing article: ${sourceName}`);
+  const details = document.createElement('details');
+  details.className = 'article-resources';
+  details.id = 'figure-sources';
+  const summary = document.createElement('summary');
+  const label = (element, texts) => {
+    for (const [index, language] of ['zh','en','ja'].entries()) {
+      const span = document.createElement('span');
+      span.lang = language;
+      span.textContent = texts[index];
+      element.append(span);
+    }
+  };
+  label(summary, ['图源与代码','Figures and code','図とコード']);
+  details.append(summary);
+  const list = document.createElement('ul');
+  list.className = 'article-resource-list';
+  const link = (file, labels, directory = false) => {
+    if (!fs.existsSync(path.join(root,file))) throw new Error(`Missing article resource: ${file}`);
+    const anchor = document.createElement('a');
+    anchor.href = `https://github.com/24kchengYe/24kchengYe.github.io/${directory ? 'tree' : 'blob'}/main/${file}`;
+    label(anchor, labels);
+    return anchor;
+  };
+  for (const source of sources) {
+    const item = document.createElement('li');
+    item.append(link(source.file, source.labels));
+    list.append(item);
+  }
+  if (sources.length) details.append(list);
+  const codeLinks = document.createElement('p');
+  codeLinks.className = 'article-resource-code';
+  const resources = slug === 'automation-blueprint' ? [
+    ['_data/writing/automation-blueprint', ['流程数据与三语文案','Flow data and translations','フローデータと3言語の文言'], true],
+    ['assets/js/automation-blueprint.js', ['交互代码','Interaction code','操作部分のコード']],
+  ] : [
+    ['_data/writing/figures/translations.json', ['图中文字翻译','Figure translations','図の翻訳']],
+    [slug === 'coding-agent-trajectories' ? '_data/writing/trajectory-map.json' : `assets/js/writing-maps/${sourceName}.js`, ['流程与交互数据','Flow and interaction data','フローと操作データ']],
+    ['assets/js/trajectory-map.js', ['交互代码','Interaction code','操作部分のコード']],
+  ];
+  for (const [index, [file, labels, directory]] of resources.entries()) {
+    if (index) codeLinks.append(' · ');
+    codeLinks.append(link(file, labels, directory));
+  }
+  details.append(codeLinks);
+  const footer = article.querySelector(':scope > footer');
+  if (footer) footer.before(details);
+  else article.append(details);
 }
 
 function build(slug, technical = false) {
@@ -113,9 +162,10 @@ function build(slug, technical = false) {
   const route = `/writing/${slug}/${technical ? 'technical/' : ''}`;
   document.querySelector('link[rel="canonical"]').href = `https://24kchengye.github.io${route}`;
   document.querySelector('meta[property="og:url"]').content = `https://24kchengye.github.io${route}`;
-  localizeFigures(document);
+  const figureSources = localizeFigures(document);
   if (slug === 'coding-agent-trajectories') attachTrajectoryMaps(document, trajectoryMap);
   else if (slug !== 'automation-blueprint') attachWritingMaps(document, sourceName);
+  appendArticleResources(document, slug, sourceName, figureSources);
   document.querySelector('img[src]')?.setAttribute('loading', 'eager');
   document.body.insertAdjacentHTML('afterbegin', navigation(slug, technical));
   const stylesheet = document.createElement('link');

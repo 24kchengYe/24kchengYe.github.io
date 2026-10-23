@@ -68,12 +68,7 @@
   }
   function matching(){
     const words=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
-    return all.filter(r=>(state.scope==='all'||state.scope==='core'&&r.core_order>0||state.scope==='online'&&r.assets||state.scope==='selected'&&r.selected)&&(!state.path||paths[state.path].includes(r.id))&&(!state.tech||r.technologies.includes(state.tech))&&words.every(w=>`${r.short} ${r.title} ${r.company} ${r.technologies.join(' ')} ${r.keywords.join(' ')}`.toLocaleLowerCase().includes(w))).sort((a,b)=>state.path?paths[state.path].indexOf(a.id)-paths[state.path].indexOf(b.id):state.scope==='core'?a.core_order-b.core_order:0);
-  }
-  function groupKey(r){
-    if(['architecture','systems'].includes(r.category))return 'architecture';
-    if(['reasoning','agent'].includes(r.category)||['d88dbc069c2f','af0ec679eebb','339895873692','cf2d197ad533','e61712df4b8b'].includes(r.id))return 'posttraining';
-    return 'foundations';
+    return all.filter(r=>(state.scope==='all'||state.scope==='core'&&r.core_order>0||state.scope==='online'&&r.assets||state.scope==='selected'&&r.selected)&&(!state.topic||r.topicId===state.topic)&&(!state.path||paths[state.path].includes(r.id))&&(!state.tech||r.technologies.includes(state.tech))&&words.every(w=>`${r.short} ${r.title} ${r.company} ${r.technologies.join(' ')} ${r.keywords.join(' ')}`.toLocaleLowerCase().includes(w))).sort((a,b)=>state.path?paths[state.path].indexOf(a.id)-paths[state.path].indexOf(b.id):state.scope==='core'?a.core_order-b.core_order:0);
   }
   function shelfButton(r){
     const name=title(r),idx=all.indexOf(r),length=[...name].length;
@@ -86,7 +81,7 @@
     return `<section class="shelf-group"><div class="shelf-caption"><h2 class="shelf-subject" id="${id}-label">${esc(label)}</h2><div class="shelf-navigation"><span class="shelf-position">${books.length}</span><button type="button" data-slide="prev" aria-label="${esc(t().previousBooks+' · '+label)}" aria-controls="${id}" disabled>←</button><button type="button" data-slide="next" aria-label="${esc(t().nextBooks+' · '+label)}" aria-controls="${id}">→</button></div></div><div class="shelf-stage"><div id="${id}" class="shelf-track" role="region" aria-labelledby="${id}-label" data-position-key="${esc(key)}"><div class="book-row">${books.map(button).join('')}</div></div></div></section>`;
   }
   function renderShelves(rows){
-    $('library-shelves').innerHTML=['foundations','architecture','posttraining'].map(group=>shelfMarkup(group,t()[group],rows.filter(r=>groupKey(r)===group),shelfButton)).join('');
+    $('library-shelves').innerHTML=collections.books.map(group=>shelfMarkup(group.id,local(group.title),rows.filter(r=>r.topicId===group.id),shelfButton)).join('');
   }
   function renderList(rows){
     $('library-list').innerHTML=rows.map((r,i)=>`<article class="library-list-row"><span class="list-number">${String(i+1).padStart(2,'0')}</span><div><h2><a href="${esc(url({book:r.id}))}" data-book="${r.id}">${esc(title(r))}</a></h2><p class="list-meta">${esc(r.company)} · ${esc(r.date||'')} ${r.technologies.length?' · '+esc(r.technologies.slice(0,4).join(' · ')):''}</p></div><span class="list-status ${r.assets?'online':''}">${esc(status(r))}</span></article>`).join('');
@@ -133,7 +128,7 @@
     const urls=c.sourceUrls||[c.url];
     const related=(c.reportIds||[]).filter(id=>byId.has(id));
     const extras=urls.slice(1).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${i+2} ↗</a>`).join(' ');
-    return `<li><span class="chapter-number">${String(index+1).padStart(2,'0')}</span><div>${urls.length?`<a href="${esc(urls[0])}" target="_blank" rel="noopener">${esc(c.title)} <span aria-hidden="true">↗</span></a>`:`<span>${esc(c.title)}</span> <small>${t().unlinked}</small>`}${extras?` <span class="chapter-extra">${extras}</span>`:''}${related.map(id=>` <a class="chapter-report" href="${esc(url({collection:'reports',book:id,report:'',q:'',scope:'all',tech:'',path:''}))}" data-related="${id}">${t().related} ↗</a>`).join('')}</div></li>`;
+    return `<li><span class="chapter-number">${String(index+1).padStart(2,'0')}</span><div>${urls.length?`<a href="${esc(urls[0])}" target="_blank" rel="noopener">${esc(c.title)} <span aria-hidden="true">↗</span></a>`:`<span>${esc(c.title)}</span> <small>${t().unlinked}</small>`}${extras?` <span class="chapter-extra">${extras}</span>`:''}${related.map(id=>` <a class="chapter-report" href="${esc(url({collection:'reports',book:id,report:'',q:'',topic:'',scope:'all',tech:'',path:''}))}" data-related="${id}">${t().related} ↗</a>`).join('')}</div></li>`;
   }
   function renderDetail(){
     const panel=$('book-detail');panel.classList.toggle('collection-detail',state.collection!=='reports');
@@ -189,7 +184,7 @@
       if(el.dataset.collection===state.collection)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');
       el.href=url({collection:el.dataset.collection,topic:'',book:'',report:'',q:'',path:'',tech:'',scope:'core'});
     });
-    $('learning-topic-control').hidden=state.collection!=='learning';$('learning-topic').value=state.topic;collections.books.forEach(b=>{$('learning-topic').querySelector(`[value="${b.id}"]`).textContent=local(b.title);});
+    $('learning-topic-control').hidden=state.collection==='researchers';$('learning-topic').value=state.topic;collections.books.forEach(b=>{$('learning-topic').querySelector(`[value="${b.id}"]`).textContent=local(b.title);});
     $('library-scope-control').hidden=!reportCollection;$('library-tech-control').hidden=!reportCollection;
     $('library-index').hidden=!!state.report;$('library-reader').hidden=!state.report;
     if(state.report){renderReader();return;}

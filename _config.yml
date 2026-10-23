@@ -70,6 +70,8 @@ include:
   - _pages
   - files
 exclude:
+  - session-log.jsonl
+  - AGENTS.md
   - docs
   - google_scholar_crawler
   - "*.sublime-project"

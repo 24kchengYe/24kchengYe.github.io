@@ -32,7 +32,7 @@
   Object.assign(copy.zh,{allTopics:'全部主题',topicLabel:'主题',topicAll:n=>`全部 ${n} 条 →`,overview:(n,c)=>`${n} 个书架 · ${c} 条`,learningNote:'每本书对应一篇论文或资料，按 Foundation Models 合集的主题编排。'});
   Object.assign(copy.ja,{allTopics:'すべてのテーマ',topicLabel:'テーマ',topicAll:n=>`全 ${n} 件 →`,overview:(n,c)=>`${n} 棚 · ${c} 件`,learningNote:'一冊が論文や資料に対応。Foundation Models 文献集をテーマ別に整理。'});
   Object.assign(copy.en,{previousBooks:'Previous books',nextBooks:'Next books'});
-  Object.assign(copy.zh,{previousBooks:'向前浏览',nextBooks:'向后浏览'});
+  Object.assign(copy.zh,{previousBooks:'向上浏览',nextBooks:'向下浏览'});
   Object.assign(copy.ja,{previousBooks:'前の本',nextBooks:'次の本'});
   const language = () => copy[document.documentElement.lang] ? document.documentElement.lang : 'en';
   const t = () => copy[language()];
@@ -72,13 +72,13 @@
   }
   function shelfButton(r){
     const name=title(r),idx=all.indexOf(r),length=[...name].length;
-    return `<button type="button" class="shelf-book" data-book="${r.id}" aria-pressed="${state.book===r.id}" aria-label="${esc(name+' · '+status(r))}" title="${esc(r.title)}" style="--book-color:${shade(r)};--book-width:${56+idx%4*5}px;--book-height:${178+idx%5*8}px;--spine-size:${length>25?10:length>14?12:16}px"><span class="book-year">${esc(r.date||'')}</span><span class="book-spine">${esc(name)}</span><span class="book-mark ${r.assets?'online':''}" aria-hidden="true"></span></button>`;
+    return `<button type="button" class="shelf-book" data-book="${r.id}" aria-pressed="${state.book===r.id}" aria-label="${esc(name+' · '+status(r))}" title="${esc(r.title)}" style="--book-color:${shade(r)};--book-inset:${idx%4*4}px;--stack-height:${64+idx%3*5}px;--spine-size:${length>45?13:15}px"><span class="book-year">${esc(r.date||'')}</span><span class="book-spine">${esc(name)}</span><span class="book-mark ${r.assets?'online':''}" aria-hidden="true"></span></button>`;
   }
   function shelfMarkup(group,label,books,button){
     if(!books.length)return '';
     const key=JSON.stringify([state.collection,state.scope,state.path,state.tech,state.q,group]);
     const id='shelf-'+group;
-    return `<section class="shelf-group"><div class="shelf-caption"><h2 class="shelf-subject" id="${id}-label">${esc(label)}</h2><div class="shelf-navigation"><span class="shelf-position">${books.length}</span><button type="button" data-slide="prev" aria-label="${esc(t().previousBooks+' · '+label)}" aria-controls="${id}" disabled>←</button><button type="button" data-slide="next" aria-label="${esc(t().nextBooks+' · '+label)}" aria-controls="${id}">→</button></div></div><div class="shelf-stage"><div id="${id}" class="shelf-track" role="region" aria-labelledby="${id}-label" data-position-key="${esc(key)}"><div class="book-row">${books.map(button).join('')}</div></div></div></section>`;
+    return `<section class="shelf-group"><div class="shelf-caption"><h2 class="shelf-subject" id="${id}-label">${esc(label)}</h2><div class="shelf-navigation"><span class="shelf-position">${books.length}</span><button type="button" data-slide="prev" aria-label="${esc(t().previousBooks+' · '+label)}" aria-controls="${id}" disabled>↑</button><button type="button" data-slide="next" aria-label="${esc(t().nextBooks+' · '+label)}" aria-controls="${id}">↓</button></div></div><div class="shelf-stage"><div id="${id}" class="shelf-track" role="region" aria-labelledby="${id}-label" data-position-key="${esc(key)}"><div class="book-row">${books.map(button).join('')}</div></div></div></section>`;
   }
   function renderShelves(rows){
     $('library-shelves').innerHTML=collections.books.map(group=>shelfMarkup(group.id,local(group.title),rows.filter(r=>r.topicId===group.id),shelfButton)).join('');
@@ -103,17 +103,9 @@
     if(state.collection==='learning')return learningEntries.filter(r=>(!state.topic||r.topicId===state.topic)&&searchMatch(itemText(r)));
     return collections.researchers.filter(r=>childItems(r).length);
   }
-  function spineTitle(name){
-    const aliases={'Attention is All You Need':'Transformer','Proximal Policy Optimization':'PPO','Group Relative Policy Optimization':'GRPO','Direct Preference Optimization':'DPO','Fast Inference from Transformers via Speculative Decoding':'Speculative Decoding','Scaling Laws for Neural Language Models':'Scaling Laws','Training Compute-Optimal Large Language Models':'Chinchilla'};
-    if(aliases[name])return aliases[name];
-    if(/[\u3400-\u9fff]/.test(name))return name.length>13?name.slice(0,12)+'…':name;
-    if(name.length<=29)return name;
-    const lead=name.split(/[:：]/)[0];
-    return lead.length<=29?lead:name.slice(0,26).replace(/\s+\S*$/,'')+'…';
-  }
   function collectionBook(r,i){
-    const name=collectionName(r),spine=spineTitle(name),learning=state.collection==='learning';
-    return `<button type="button" class="shelf-book" data-book="${esc(r.id)}" aria-pressed="${state.book===r.id}" aria-label="${esc(name)}" title="${esc(name)}" style="--book-color:${shade(r)};--book-width:${60+i%3*7}px;--book-height:${185+i%4*9}px;--spine-size:${spine.length>22?10:spine.length>13?12:16}px"><span class="book-year">${learning?String(i+1).padStart(2,'0'):String(r.articles.length).padStart(2,'0')}</span><span class="book-spine">${esc(spine)}</span><span class="book-mark" aria-hidden="true"></span></button>`;
+    const name=collectionName(r),spine=name,learning=state.collection==='learning';
+    return `<button type="button" class="shelf-book" data-book="${esc(r.id)}" aria-pressed="${state.book===r.id}" aria-label="${esc(name)}" title="${esc(name)}" style="--book-color:${shade(r)};--book-inset:${i%4*4}px;--stack-height:${64+i%3*5}px;--spine-size:${spine.length>45?13:15}px"><span class="book-year">${learning?String(i+1).padStart(2,'0'):String(r.articles.length).padStart(2,'0')}</span><span class="book-spine">${esc(spine)}</span><span class="book-mark" aria-hidden="true"></span></button>`;
   }
   function renderCollection(rows){
     const learning=state.collection==='learning';

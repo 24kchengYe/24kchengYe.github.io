@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "asset_base_url": "files/",
+  "asset_base_url": "/reading/library-preview/files/",
   "reports": [
     {"id": "d88dbc069c2f", "filename_prefix": "deepseek-r1-v2", "source_version": "2501.12948v2"},
     {"id": "0eac14151cad", "filename_prefix": "deepseek-v3-v2", "source_version": "2412.19437v2"}

@@ -1,0 +1,119 @@
+{
+  "researchers": [
+    {
+      "id": "lilian-weng",
+      "name": "Lilian Weng",
+      "topics": [
+        "PPO",
+        "Reward hacking",
+        "Agents"
+      ],
+      "url": "https://lilianweng.github.io/",
+      "articles": [
+        {
+          "title": "Policy Gradient Algorithms",
+          "url": "https://lilianweng.github.io/posts/2018-04-08-policy-gradient/"
+        },
+        {
+          "title": "Reward Hacking in Reinforcement Learning",
+          "url": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/"
+        },
+        {
+          "title": "LLM Powered Autonomous Agents",
+          "url": "https://lilianweng.github.io/posts/2023-06-23-agent/"
+        }
+      ]
+    },
+    {
+      "id": "chris-olah",
+      "name": "Chris Olah",
+      "topics": [
+        "LSTM",
+        "Feature visualization"
+      ],
+      "url": "https://colah.github.io/",
+      "articles": [
+        {
+          "title": "Understanding LSTM Networks",
+          "url": "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"
+        },
+        {
+          "title": "Feature Visualization",
+          "url": "https://distill.pub/2017/feature-visualization/"
+        }
+      ]
+    },
+    {
+      "id": "andrej-karpathy",
+      "name": "Andrej Karpathy",
+      "topics": [
+        "Policy gradient",
+        "Training"
+      ],
+      "url": "https://karpathy.github.io/",
+      "articles": [
+        {
+          "title": "Deep Reinforcement Learning: Pong from Pixels",
+          "url": "https://karpathy.github.io/2016/05/31/rl/"
+        },
+        {
+          "title": "A Recipe for Training Neural Networks",
+          "url": "https://karpathy.github.io/2019/04/25/recipe/"
+        }
+      ]
+    },
+    {
+      "id": "jan-leike",
+      "name": "Jan Leike",
+      "topics": [
+        "RLHF",
+        "Scalable oversight"
+      ],
+      "url": "https://aligned.substack.com/",
+      "articles": [
+        {
+          "title": "Why I’m excited about AI-assisted human feedback",
+          "url": "https://aligned.substack.com/p/ai-assisted-human-feedback"
+        },
+        {
+          "title": "A minimal viable product for alignment",
+          "url": "https://aligned.substack.com/p/alignment-mvp"
+        }
+      ]
+    },
+    {
+      "id": "gabriel-goh",
+      "name": "Gabriel Goh",
+      "topics": [
+        "Momentum",
+        "Optimization"
+      ],
+      "url": "https://gabgoh.github.io/",
+      "articles": [
+        {
+          "title": "Why Momentum Really Works",
+          "url": "https://distill.pub/2017/momentum/"
+        }
+      ]
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "topics": [
+        "Interpretability",
+        "AI impacts"
+      ],
+      "url": "https://darioamodei.com/",
+      "articles": [
+        {
+          "title": "The Urgency of Interpretability",
+          "url": "https://darioamodei.com/post/the-urgency-of-interpretability"
+        },
+        {
+          "title": "Machines of Loving Grace",
+          "url": "https://darioamodei.com/essay/machines-of-loving-grace"
+        }
+      ]
+    }
+  ]
+}

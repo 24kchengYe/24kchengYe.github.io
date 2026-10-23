@@ -1,40 +1,8 @@
 ---
 permalink: /reading/library-preview/
-layout: reading
-library: true
-title: Foundation Models · Library
-description: A shelf of foundation model reports, with original papers and Chinese reading editions.
-author_profile: false
+layout: null
 ---
-<div class="library" id="library">
-  <section id="library-index">
-    <header class="library-heading">
-      <p class="library-eyebrow"><span lang="en">Reading / Library preview</span><span lang="zh">阅读 / 书架试阅</span><span lang="ja">読書 / ライブラリー試作</span></p>
-      <h1 data-page-title><span lang="en">Foundation Models</span><span lang="zh">基模阅读</span><span lang="ja">基盤モデル</span></h1>
-      <p class="library-intro"><span lang="en">Papers on building, training, and reasoning.</span><span lang="zh">模型如何构建、训练与推理。</span><span lang="ja">モデルの構築、学習、推論。</span></p>
-    </header>
-    <div class="library-tools">
-      <div class="library-tabs" role="group" aria-label="View">
-        <button type="button" data-view="shelf" aria-pressed="true"><span lang="en">Bookshelf</span><span lang="zh">书架</span><span lang="ja">本棚</span></button>
-        <button type="button" data-view="list" aria-pressed="false"><span lang="en">Index</span><span lang="zh">目录</span><span lang="ja">目録</span></button>
-      </div>
-      <label class="library-search"><span class="visually-hidden" data-copy="searchLabel">Search reports</span><input id="library-search" type="search" autocomplete="off" placeholder="Search title, company, technology"></label>
-    </div>
-    <div class="library-filters">
-      <label><span class="visually-hidden" data-copy="collection">Collection</span><select id="library-scope">
-        <option value="core" data-copy="core">Core · 20</option><option value="online" data-copy="online">Read here · 2</option><option value="selected" data-copy="selected">Selected · 105</option><option value="all" data-copy="all">All · 643</option>
-      </select></label>
-      <label><span class="visually-hidden" data-copy="technology">Technology</span><select id="library-tech"><option value="" data-copy="allTech">All technologies</option></select></label>
-      <button type="button" class="library-reset" id="library-reset" hidden data-copy="reset">Reset</button>
-      <p id="library-count" aria-live="polite" role="status"></p>
-    </div>
-    <div id="library-shelves" class="library-shelves"></div>
-    <div id="library-list" hidden></div>
-    <p id="library-empty" class="library-empty" hidden data-copy="empty">No matching reports. Clear the filters or try another term.</p>
-    <button id="library-more" class="library-more" type="button" hidden data-copy="more">Show more</button>
-    <section id="book-detail" class="book-detail" aria-labelledby="detail-title" hidden></section>
-    <footer class="library-note"><p data-copy="pilot">R1 and V3 are available to read here. The remaining reports link to their original sources.</p><a href="{{ '/reading/' | relative_url }}" data-site-link><span lang="en">Reading paths ↗</span><span lang="zh">阅读路线 ↗</span><span lang="ja">読む順番 ↗</span></a></footer>
-  </section>
-  <section id="library-reader" hidden aria-labelledby="reader-title"></section>
-  <noscript><p>This preview uses JavaScript. <a href="{{ '/reading/' | relative_url }}">Open the complete reading index.</a></p><p><a href="files/deepseek-r1-v2.original.pdf">DeepSeek-R1 PDF</a> · <a href="files/deepseek-v3-v2.original.pdf">DeepSeek-V3 PDF</a></p></noscript>
-</div>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reading — Yecheng Zhang</title><link rel="canonical" href="{{ '/reading/' | absolute_url }}"></head>
+<body><p><a id="reading-link" href="{{ '/reading/' | relative_url }}">Open the bookshelf →</a></p>
+<script>const link=document.getElementById('reading-link');link.href+=location.search+location.hash;location.replace(link.href);</script></body></html>

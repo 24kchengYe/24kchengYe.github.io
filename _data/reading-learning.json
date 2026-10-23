@@ -1,0 +1,5941 @@
+{
+  "schemaVersion": 1,
+  "books": [
+    {
+      "id": "sec-001",
+      "title": {
+        "zh": "模型解读",
+        "en": "Foundation models",
+        "ja": "基盤モデル"
+      },
+      "topics": [
+        "GPT",
+        "DeepSeek",
+        "Qwen",
+        "Gemini"
+      ],
+      "chapters": [
+        {
+          "id": "toc-001",
+          "title": "GPT-3",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2005.14165",
+            "https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf"
+          ],
+          "reportIds": [
+            "29864daaa4da"
+          ]
+        },
+        {
+          "id": "toc-002",
+          "title": "DeepSeek-R1",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2501.12948",
+            "https://www.nature.com/articles/s41586-025-09422-z"
+          ],
+          "reportIds": [
+            "d88dbc069c2f"
+          ]
+        },
+        {
+          "id": "toc-003",
+          "title": "DeepSeek-V3: Scaling Challenges and Hardware",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.09343",
+            "https://dl.acm.org/doi/10.1145/3695053.3731412"
+          ],
+          "reportIds": [
+            "fb9283f4aa9d"
+          ]
+        },
+        {
+          "id": "toc-004",
+          "title": "DeepSeek-V3.2",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.02556"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-005",
+          "title": "DeepSeek-V4",
+          "section": "",
+          "sourceUrls": [
+            "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-006",
+          "title": "DeepSeek-OCR / DeepSeek-OCR 2",
+          "section": "",
+          "sourceUrls": [
+            "https://github.com/deepseek-ai/DeepSeek-OCR"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-007",
+          "title": "DeepSeekMath",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2402.03300"
+          ],
+          "reportIds": [
+            "af0ec679eebb"
+          ]
+        },
+        {
+          "id": "toc-008",
+          "title": "GLM-4.5",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.06471"
+          ],
+          "reportIds": [
+            "6394f7e95a09"
+          ]
+        },
+        {
+          "id": "toc-009",
+          "title": "GLM-5",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.15763"
+          ],
+          "reportIds": [
+            "e253f6a15654"
+          ]
+        },
+        {
+          "id": "toc-010",
+          "title": "GLM-5.1",
+          "section": "",
+          "sourceUrls": [
+            "https://z.ai/blog/glm-5.1"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-011",
+          "title": "GLM-5V-Turbo",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.26752"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-012",
+          "title": "Qwen3 / Qwen3-VL",
+          "section": "",
+          "sourceUrls": [
+            "https://github.com/QwenLM/Qwen3"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-013",
+          "title": "Kimi K2 / K2.5",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-014",
+          "title": "MiniMax-M1",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.13585"
+          ],
+          "reportIds": [
+            "10f25589d5ab"
+          ]
+        },
+        {
+          "id": "toc-015",
+          "title": "MiniMax-M2",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.26494",
+            "https://huggingface.co/papers/2605.26494"
+          ],
+          "reportIds": [
+            "ddb5a7dbf011"
+          ]
+        },
+        {
+          "id": "toc-016",
+          "title": "LongCat-Flash-Thinking-2601",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.16725"
+          ],
+          "reportIds": [
+            "065e7f7768cc"
+          ]
+        },
+        {
+          "id": "toc-017",
+          "title": "ERNIE 5.0",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-018",
+          "title": "WideSeek-R1",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.04634"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-019",
+          "title": "UI-TARS / UI-TARS 2",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-020",
+          "title": "EvoCUA",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.15876"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-021",
+          "title": "MiniCPM-V 4.5",
+          "section": "",
+          "sourceUrls": [
+            "https://github.com/OpenBMB/MiniCPM-V"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-022",
+          "title": "MinerU2.5",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-023",
+          "title": "STEP3-VL-10B",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.09668"
+          ],
+          "reportIds": [
+            "4a24f5938bf3"
+          ]
+        },
+        {
+          "id": "toc-024",
+          "title": "InternVL3.5",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.18265"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-025",
+          "title": "Youth_LLM",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.24618"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-026",
+          "title": "Seed1.5-Thinking",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-027",
+          "title": "Seed-Prover 1.5",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.17260"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-028",
+          "title": "Seedream 4.0",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.20427"
+          ],
+          "reportIds": [
+            "148c951d94d9"
+          ]
+        },
+        {
+          "id": "toc-029",
+          "title": "Gemini 2.5",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.06261"
+          ],
+          "reportIds": [
+            "c95324669aaf"
+          ]
+        },
+        {
+          "id": "toc-030",
+          "title": "MiMo",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.07608"
+          ],
+          "reportIds": [
+            "f1fc6108744b"
+          ]
+        },
+        {
+          "id": "toc-031",
+          "title": "QwenLong-L1",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.17667"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-032",
+          "title": "Baichuan-M3",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.06570"
+          ],
+          "reportIds": [
+            "9a81552c2334"
+          ]
+        },
+        {
+          "id": "toc-033",
+          "title": "Qwen2.5-Omni",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.20215"
+          ],
+          "reportIds": [
+            "27a338420c17"
+          ]
+        },
+        {
+          "id": "toc-034",
+          "title": "SmolLM2",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.02737"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-035",
+          "title": "MedXIAOHE",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.12705"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-036",
+          "title": "Qwen3-Coder-Next",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.00729"
+          ],
+          "reportIds": [
+            "0b6c5715eff1"
+          ]
+        },
+        {
+          "id": "toc-037",
+          "title": "Phi-4 Reasoning Vision 15B",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03975"
+          ],
+          "reportIds": [
+            "0742d34107f0"
+          ]
+        },
+        {
+          "id": "toc-038",
+          "title": "Penguin-VL",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.06569"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-039",
+          "title": "Seedance 2.0",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.14148"
+          ],
+          "reportIds": [
+            "1713a9828c9f"
+          ]
+        },
+        {
+          "id": "toc-040",
+          "title": "OpenSeeker-v2",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.04036"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-002",
+      "title": {
+        "zh": "架构与长上下文",
+        "en": "Architecture & context",
+        "ja": "アーキテクチャと長文脈"
+      },
+      "topics": [
+        "Transformer",
+        "MoE",
+        "RoPE",
+        "MLA"
+      ],
+      "chapters": [
+        {
+          "id": "toc-041",
+          "title": "Attention is All You Need",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1706.03762"
+          ],
+          "reportIds": [
+            "fffe3a68fde7"
+          ]
+        },
+        {
+          "id": "toc-042",
+          "title": "Mixture of Experts",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-043",
+          "title": "RoFormer / RoPE",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2104.09864"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-044",
+          "title": "DoPE: Denoising Rotary Position Embedding",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.09146"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-045",
+          "title": "YaRN",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-046",
+          "title": "Ring Attention / Blockwise Transformer",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2310.01889"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-047",
+          "title": "mHC: Manifold-Constrained Hyper-Connections",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.24880"
+          ],
+          "reportIds": [
+            "6df83839cbfd"
+          ]
+        },
+        {
+          "id": "toc-048",
+          "title": "FASA",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.03152"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-049",
+          "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.11089"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-050",
+          "title": "LongLoRA",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2309.12307"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-051",
+          "title": "QLoRA",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2305.14314"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-052",
+          "title": "Position Interpolation",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2306.15595"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-053",
+          "title": "MoE Experts 与 Routers 的辅助损失",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.23447"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-054",
+          "title": "Kimi Linear",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.26692"
+          ],
+          "reportIds": [
+            "12c6aeb6aa29"
+          ]
+        },
+        {
+          "id": "toc-055",
+          "title": "The End of Manual Decoding: Towards Truly End-to-End Language Models",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.26697"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-056",
+          "title": "Transformers without Normalization",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.10622"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-057",
+          "title": "Memory Caching: RNNs with Growing Memory",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.24281"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-058",
+          "title": "Attention Residuals",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.15031"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-003",
+      "title": {
+        "zh": "推理与部署",
+        "en": "Inference & systems",
+        "ja": "推論とシステム"
+      },
+      "topics": [
+        "PagedAttention",
+        "FlashAttention",
+        "GPTQ",
+        "Speculative Decoding"
+      ],
+      "chapters": [
+        {
+          "id": "toc-059",
+          "title": "分布式训练",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-060",
+          "title": "All is Not Lost: LLM Recovery without Checkpoints",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.15461"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-061",
+          "title": "vLLM / PagedAttention",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2309.06180"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-062",
+          "title": "FlashAttention / FlashAttention-2",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-063",
+          "title": "Fast Inference from Transformers via Speculative Decoding",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2211.17192",
+            "https://proceedings.mlr.press/v202/leviathan23a.html"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-064",
+          "title": "TAPS: Task Aware Proposal Distributions for Speculative Sampling",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27027"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-065",
+          "title": "R2R: Efficiently Navigating Divergent Reasoning Paths with Small-Large Model Token Routing",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.21600"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-066",
+          "title": "AWQ",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2306.00978"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-067",
+          "title": "GPTQ",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2210.17323"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-068",
+          "title": "Multi-Token Prediction via Self-Distillation",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-069",
+          "title": "Scaling Law for Quantization-Aware Training",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.14302"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-070",
+          "title": "Shifting AI Efficiency From Model-Centric to Data-Centric Compression",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.19147"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-071",
+          "title": "PRIMA.CPP: Speeding Up 70B-Scale LLM Inference on Low-Resource Everyday Home Clusters",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.08791"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-072",
+          "title": "DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.21548"
+          ],
+          "reportIds": [
+            "c070ef2cded0"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-004",
+      "title": {
+        "zh": "训练与对齐",
+        "en": "Training & alignment",
+        "ja": "学習とアラインメント"
+      },
+      "topics": [
+        "PPO",
+        "GRPO",
+        "DPO",
+        "OPD"
+      ],
+      "chapters": [
+        {
+          "id": "toc-073",
+          "title": "Adam 定律与文本频率",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.02176"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-074",
+          "title": "Scaling Laws for Neural Language Models",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2001.08361"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-075",
+          "title": "Training Compute-Optimal Large Language Models",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2203.15556"
+          ],
+          "reportIds": [
+            "062b6f36b6d9"
+          ]
+        },
+        {
+          "id": "toc-076",
+          "title": "Scaling Laws for Optimal Data Mixtures",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.09404"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-077",
+          "title": "语言模型的单射性与可逆性",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.15511"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-078",
+          "title": "Why Language Models Hallucinate",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.04664"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-079",
+          "title": "PhysiCo：物理概念理解评测",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.08946",
+            "https://aclanthology.org/2025.naacl-long.569/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-080",
+          "title": "LLM-Microscope: Uncovering the Hidden Role of Punctuation in Context Memory of Transformers",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.15007",
+            "https://aclanthology.org/2025.findings-naacl.432/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-081",
+          "title": "Inside-Out: Hidden Factual Knowledge in LLMs",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.15299"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-082",
+          "title": "原子任务与组合推理",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-083",
+          "title": "LLM-as-a-Judge 的上下文效应",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-084",
+          "title": "The Path Not Taken: RLVR Provably Learns Off the Principals",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-085",
+          "title": "自然语言反馈学习",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-086",
+          "title": "Should We Still Pretrain Encoders with Masked Language Modeling？",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.00994"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-087",
+          "title": "NanoKnow: How to Know What Your Language Model Knows",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.20122"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-088",
+          "title": "InfoNCE Induces Gaussian Distribution",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.24012"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-089",
+          "title": "Humans and LLMs Diverge on Probabilistic Inferences",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.23546"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-090",
+          "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.08660"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-091",
+          "title": "Alignment Makes Language Models Normative, Not Descriptive",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.17218"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-092",
+          "title": "Where does output diversity collapse in post-training?",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.16027"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-093",
+          "title": "Why Fine-Tuning Encourages Hallucinations and How to Fix It",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.15574"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-094",
+          "title": "Nonsense Helps: Prompt Space Perturbation Broadens Reasoning Exploration",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.05566"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-095",
+          "title": "Hallucinations Undermine Trust; Metacognition is a Way Forward",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.01428"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-096",
+          "title": "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories",
+          "section": {
+            "zh": "基础理论",
+            "en": "Foundations",
+            "ja": "基礎理論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.03979"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-097",
+          "title": "δ-mem: Efficient Online Memory for Large Language Models",
+          "section": {
+            "zh": "参数高效微调",
+            "en": "Parameter-efficient fine-tuning",
+            "ja": "パラメータ効率の高い微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.12357"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-098",
+          "title": "LoRA 的学习与遗忘",
+          "section": {
+            "zh": "参数高效微调",
+            "en": "Parameter-efficient fine-tuning",
+            "ja": "パラメータ効率の高い微調整"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-099",
+          "title": "How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM?",
+          "section": {
+            "zh": "参数高效微调",
+            "en": "Parameter-efficient fine-tuning",
+            "ja": "パラメータ効率の高い微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.14502"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-100",
+          "title": "When Can LLMs Learn to Reason with Weak Supervision",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.18574"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-101",
+          "title": "Reasoning Shift: How Context Silently Shortens LLM Reasoning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.01161"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-102",
+          "title": "Lie to Me: How Faithful Is Chain-of-Thought Reasoning in Open-Weight Reasoning Models?",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.22582"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-103",
+          "title": "The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.22617"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-104",
+          "title": "On the Entropy Dynamics in Reinforcement Fine-Tuning of Large Language Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.03392"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-105",
+          "title": "KV Cache Steering for Inducing Reasoning in Small Language Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.08799"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-106",
+          "title": "Grokking 与 Multi-Hop 数据增强",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.20752"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-107",
+          "title": "强化学习评测中的数据污染",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.10532"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-108",
+          "title": "Is Chain-of-Thought Reasoning of LLMs a Mirage? A Data Distribution Lens",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.01191"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-109",
+          "title": "Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.00432"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-110",
+          "title": "Don't Overthink it. Preferring Shorter Thinking Chains for Improved LLM Reasoning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.17813"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-111",
+          "title": "Wait, We Don’t Need to “Wait”! Removing Thinking Tokens Improves Reasoning Efficiency",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.08343",
+            "https://aclanthology.org/2025.findings-emnlp.394/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-112",
+          "title": "Reasoning Model is Stubborn: Diagnosing and Mitigating Reasoning Rigidity in Large Language Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.17225",
+            "https://openreview.net/forum?id=2cNSSslHfS"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-113",
+          "title": "Think Longer to Explore Deeper: Learn to Explore In-Context via Length-Incentivized Reinforcement Learning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.11748"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-114",
+          "title": "Large Language Model Reasoning Failures",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.06176",
+            "https://openreview.net/forum?id=vnX1WHMNmz"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-115",
+          "title": "RLVR 与推理能力评估",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.14245"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-116",
+          "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2025/hash/8d341fb815c944be645e5a3eb4e8cd65-Abstract-Conference.html",
+            "https://arxiv.org/abs/2504.13837"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-117",
+          "title": "Rethinking Reflection in Pre-Training",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.04022"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-118",
+          "title": "Scaling Reasoning, Losing Control: Evaluating Instruction Following in Large Reasoning Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.14810"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-119",
+          "title": "Does Your Reasoning Model Implicitly Know When to Stop Thinking?",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.08354"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-120",
+          "title": "Reasoning Models Struggle to Control their Chains of Thought",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.05706"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-121",
+          "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.09906"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-122",
+          "title": "Competitive Programming with Large Reasoning Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.06807"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-123",
+          "title": "Deep Think with Confidence",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.15260"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-124",
+          "title": "OpenThoughts",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.04178"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-125",
+          "title": "AdaptThink",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2025.emnlp-main.184/",
+            "https://arxiv.org/abs/2505.13417"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-126",
+          "title": "Thinkless: LLM Learns When to Think",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.13379"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-127",
+          "title": "ReTool: Reinforcement Learning for Strategic Tool Use in LLMs",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.11536"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-128",
+          "title": "小模型推理的强化学习",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.16219"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-129",
+          "title": "Reinforcement Learning for Reasoning in Large Language Models with One Training Example",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.20571"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-130",
+          "title": "高熵 Token 与强化学习",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.01939"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-131",
+          "title": "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1a22b912945fb7c0bdd079e792b31b6f-Abstract-Conference.html",
+            "https://arxiv.org/abs/2505.24864"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-132",
+          "title": "Unsupervised Post-Training for Multi-Modal LLM Reasoning via GRPO",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.22453"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-133",
+          "title": "TTRL: Test-Time Reinforcement Learning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.16084"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-134",
+          "title": "s1: Simple test-time scaling",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2025.emnlp-main.1025/",
+            "https://arxiv.org/abs/2501.19393"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-135",
+          "title": "TERMINATOR: Learning Optimal Exit Points for Early Stopping in Chain-of-Thought Reasoning",
+          "section": {
+            "zh": "推理与熵",
+            "en": "Reasoning & entropy",
+            "ja": "推論とエントロピー"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.12529"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-136",
+          "title": "Parallel Scaling Laws",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://papers.nips.cc/paper_files/paper/2025/hash/ac6de776b8de8c9aed1d356997eb54b8-Abstract-Conference.html",
+            "https://arxiv.org/abs/2505.10475"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-137",
+          "title": "MetaStone-S1",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.01951"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-138",
+          "title": "Parallel-R1: Towards Parallel Thinking via Reinforcement Learning",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.07980"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-139",
+          "title": "Multiverse: Your Language Models Secretly Decide How to Parallelize and Merge Generation",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.09991"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-140",
+          "title": "Hogwild! Inference: Parallel LLM Generation via Concurrent Attention",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.06261"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-141",
+          "title": "小模型递归推理",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.04871"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-142",
+          "title": "群体强化学习与经验共享",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.08721"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-143",
+          "title": "推理模型的同伴学习",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.07787"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-144",
+          "title": "Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.06703"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-145",
+          "title": "V1: Unifying Generation and Self-Verification for Parallel Reasoners",
+          "section": {
+            "zh": "并行与群体推理",
+            "en": "Parallel & collective reasoning",
+            "ja": "並列・集団推論"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.04304"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-146",
+          "title": "Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.21320"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-147",
+          "title": "Process-based Self-Rewarding Language Models",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.03746"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-148",
+          "title": "Self-rewarding correction for mathematical reasoning",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.19613"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-152",
+          "title": "Reinforcement Learning via Self-Distillation",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.20802"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-150",
+          "title": "DuPO: Enabling Reliable LLM Self-Verification via Dual Preference Optimization",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.14460"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-151",
+          "title": "Self-Distillation Enables Continual Learning",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.19897"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-153",
+          "title": "SOAR",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.18778"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-154",
+          "title": "R-Zero: Self-Evolving Reasoning LLM from Zero Data",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.05004"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-155",
+          "title": "Reflect, Retry, Reward: Self-Improving LLMs via Reinforcement Learning",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.24726"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-156",
+          "title": "AI Can Learn Scientific Taste",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.14473"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-157",
+          "title": "Code-A1: Adversarial Evolving of Code LLM and Test LLM via Reinforcement Learning",
+          "section": {
+            "zh": "自博弈与自训练",
+            "en": "Self-play & self-training",
+            "ja": "自己対戦と自己学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.15611"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-158",
+          "title": "SFT 与 RL 的记忆和泛化",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-159",
+          "title": "面向 RL 的 SFT",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-160",
+          "title": "Rethinking Expert Trajectory Utilization in LLM Post-training for Mathematical Reasoning",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.11470"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-161",
+          "title": "Data Repetition Beats Data Scaling in Long-CoT Supervised Fine-Tuning",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.11149"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-162",
+          "title": "Sample-efficient LLM Optimization with Reset Replay",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.06412"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-163",
+          "title": "NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.18116"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-164",
+          "title": "On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.05629"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-165",
+          "title": "Supervised Fine-Tuning versus Reinforcement Learning: A Study of Post-Training Methods for Large Language Models",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.13985"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-166",
+          "title": "mSFT: Addressing Dataset Mixtures Overfitting Heterogeneously in Multi-task SFT",
+          "section": {
+            "zh": "监督微调",
+            "en": "Supervised fine-tuning",
+            "ja": "教師あり微調整"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.21606"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-167",
+          "title": "The Many Faces of On-Policy Distillation: Pitfalls, Mechanisms, and Fixes",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.11182"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-168",
+          "title": "Unmasking On-Policy Distillation: Where It Helps, Where It Hurts, and Why",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.10889"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-169",
+          "title": "A Survey of On-Policy Distillation for Large Language Models",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.00626"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-170",
+          "title": "Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.13010"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-171",
+          "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.13016"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-172",
+          "title": "TIP: Token Importance in On-Policy Distillation",
+          "section": {
+            "zh": "在线策略蒸馏",
+            "en": "On-policy distillation",
+            "ja": "オンポリシー蒸留"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.14084"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-173",
+          "title": "The Differences Between Direct Alignment Algorithms are a Blur",
+          "section": {
+            "zh": "偏好优化",
+            "en": "Preference optimization",
+            "ja": "選好最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2502.01237"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-174",
+          "title": "Direct Preference Optimization",
+          "section": {
+            "zh": "偏好优化",
+            "en": "Preference optimization",
+            "ja": "選好最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2305.18290"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-175",
+          "title": "A Survey of Direct Preference Optimization",
+          "section": {
+            "zh": "偏好优化",
+            "en": "Preference optimization",
+            "ja": "選好最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.11701"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-176",
+          "title": "Proximal Policy Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/1707.06347"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-177",
+          "title": "Group Relative Policy Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2402.03300"
+          ],
+          "reportIds": [
+            "af0ec679eebb"
+          ]
+        },
+        {
+          "id": "toc-178",
+          "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.14476"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-179",
+          "title": "Exploring Data Scaling Trends and Effects in Reinforcement Learning from Human Feedback",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.22230"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-180",
+          "title": "Group Sequence Policy Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.18071"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-181",
+          "title": "Understanding R1-Zero-Like Training: A Critical Perspective",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.20783"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-182",
+          "title": "GDPO",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.05242"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-183",
+          "title": "Tree-GRPO",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.21240"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-184",
+          "title": "TreePO",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.17445"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-185",
+          "title": "BAPO",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.18927"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-186",
+          "title": "Multiplayer Nash Preference Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.23102"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-187",
+          "title": "LongR",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05758"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-188",
+          "title": "Length-Unbiased Sequence Policy Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05261"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-189",
+          "title": "组相对优势估计的偏差",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.08521"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-190",
+          "title": "Near-Future Policy Optimization",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.20733"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-191",
+          "title": "JustRL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.16649"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-192",
+          "title": "Unveiling Implicit Advantage Symmetry: Why GRPO Struggles with Exploration and Difficulty Adaptation",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05548"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-193",
+          "title": "Stabilizing Reinforcement Learning with LLMs- Formulation and Practices",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.01374"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-194",
+          "title": "Uniqueness-Aware RL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.08763"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-195",
+          "title": "FaithRL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05897"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-196",
+          "title": "Composition-RL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.12036"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-197",
+          "title": "ReGFT",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.01223"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-198",
+          "title": "Complementary RL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.17621"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-199",
+          "title": "MEDS",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.11297"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-200",
+          "title": "KnowRL",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.12627"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-201",
+          "title": "Balanced Aggregation",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.04077"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-202",
+          "title": "GFCR",
+          "section": {
+            "zh": "策略优化",
+            "en": "Policy optimization",
+            "ja": "方策最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.02913"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-203",
+          "title": "PMA",
+          "section": {
+            "zh": "预训练",
+            "en": "Pretraining",
+            "ja": "事前学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.12082",
+            "https://openreview.net/forum?id=HW55AwGEC8"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-204",
+          "title": "ZClip",
+          "section": {
+            "zh": "预训练",
+            "en": "Pretraining",
+            "ja": "事前学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.02507",
+            "https://github.com/bluorion-com/ZClip"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-205",
+          "title": "RLPT",
+          "section": {
+            "zh": "预训练",
+            "en": "Pretraining",
+            "ja": "事前学習"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2026.acl-long.506/",
+            "https://arxiv.org/abs/2509.19249"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-206",
+          "title": "Reinforcement Pre-Training",
+          "section": {
+            "zh": "预训练",
+            "en": "Pretraining",
+            "ja": "事前学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.08007"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-207",
+          "title": "Reward Hacking in Rubric-Based Reinforcement Learning",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.12474",
+            "https://labs.scale.com/papers/reward-hacking-rubric-based-rl"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-208",
+          "title": "RubricEM: Meta-RL with Rubric-guided Policy Decomposition beyond Verifiable Rewards",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.10899",
+            "https://huggingface.co/papers/2605.10899"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-209",
+          "title": "Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.08354"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-210",
+          "title": "C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.13618"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-211",
+          "title": "BERT-as-a-Judge: A Robust Alternative to Lexical Methods for Efficient Reference-Based LLM Evaluation",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.09497"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-212",
+          "title": "Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.17746"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-213",
+          "title": "Beyond Length Scaling: Synergizing Breadth and Depth for Generative Reward Models",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.01571"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-214",
+          "title": "Are We on the Right Way to Assessing LLM-as-a-Judge?",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.16041",
+            "https://github.com/plafle/LLMasaJudgeAssessment"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-215",
+          "title": "RM-R1: Reward Modeling as Reasoning",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://openreview.net/forum?id=1ZqJ6jj75q",
+            "https://arxiv.org/abs/2505.02387",
+            "https://github.com/RM-R1-UIUC/RM-R1",
+            "https://huggingface.co/collections/gaotang/rm-r1"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-216",
+          "title": "JudgeLRM: Large Reasoning Models as a Judge",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.00050",
+            "https://github.com/NuoJohnChen/JudgeLRM",
+            "https://huggingface.co/nuojohnchen/JudgeLRM-3B",
+            "https://huggingface.co/nuojohnchen/JudgeLRM-4B",
+            "https://huggingface.co/nuojohnchen/JudgeLRM-7B",
+            "https://huggingface.co/nuojohnchen/JudgeLRM-8B",
+            "https://huggingface.co/nuojohnchen/JudgeLRM-14B"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-217",
+          "title": "Outcome Accuracy is Not Enough: Aligning the Reasoning Process of Reward Models",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.04649",
+            "https://github.com/QwenLM/RationaleRM",
+            "https://huggingface.co/datasets/Qwen/RationaleRM"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-218",
+          "title": "DeepCritic: Deliberate Critique with Large Language Models",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.00662",
+            "https://github.com/RUCBM/DeepCritic",
+            "https://huggingface.co/collections/Keven16/deepcritic-681dca3343f04476c9d0d5c4"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-219",
+          "title": "Pre-Trained Policy Discriminators are General Reward Models",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.05197",
+            "https://openreview.net/forum?id=efwbxMJ5M6",
+            "https://github.com/InternLM/POLAR",
+            "https://huggingface.co/collections/internlm/polar-68693f829d2e83ac5e6e124a"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-220",
+          "title": "Rewards as Labels: Revisiting RLVR from a Classification Perspective",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05630"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-221",
+          "title": "Exploring Reasoning Reward Model for Agents",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.22154"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-222",
+          "title": "Self-Improving VLM Judges Without Human Annotations",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.05145"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-223",
+          "title": "xVerify: Efficient Answer Verifier for Reasoning Model Evaluations",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.10481"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-224",
+          "title": "Feature-Level Insights into Artificial Text Detection with Sparse Autoencoders",
+          "section": {
+            "zh": "奖励与评价模型",
+            "en": "Rubrics & reward models",
+            "ja": "ルーブリックと報酬モデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.03601"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-225",
+          "title": "Prompt Repetition Improves Non-Reasoning LLMs",
+          "section": {
+            "zh": "提示词优化",
+            "en": "Prompt optimization",
+            "ja": "プロンプト最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.14982"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-226",
+          "title": "System Prompt Optimization with Meta-Learning",
+          "section": {
+            "zh": "提示词优化",
+            "en": "Prompt optimization",
+            "ja": "プロンプト最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.09666"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-227",
+          "title": "Self-Supervised Prompt Optimization",
+          "section": {
+            "zh": "提示词优化",
+            "en": "Prompt optimization",
+            "ja": "プロンプト最適化"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2025.findings-emnlp.479/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-228",
+          "title": "When Punctuation Matters: A Large-Scale Comparison of Prompt Robustness Methods for LLMs",
+          "section": {
+            "zh": "提示词优化",
+            "en": "Prompt optimization",
+            "ja": "プロンプト最適化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.11383"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-229",
+          "title": "TaskCraft: Automated Generation of Agentic Tasks",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.10055"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-230",
+          "title": "Code2Math: Can Your Code Agent Effectively Evolve Math Problems Through Exploration?",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03202"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-231",
+          "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.00889"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-232",
+          "title": "On Data Engineering for Scaling LLM Terminal Capabilities",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.21193"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-233",
+          "title": "Less is Enough: Synthesizing Diverse Data in LLM Feature Space with Sparse Autoencoders",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.10388"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-234",
+          "title": "Detecting RLVR Training Data via Structural Convergence of Reasoning",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.11792"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-235",
+          "title": "CLIMB",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.13161"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-236",
+          "title": "LLM 数据整理综述",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://github.com/OpenDataBox/awesome-data-llm"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-237",
+          "title": "SynthRL",
+          "section": {
+            "zh": "数据工程",
+            "en": "Data engineering",
+            "ja": "データエンジニアリング"
+          },
+          "sourceUrls": [
+            "https://github.com/real-absolute-AI/SynthRL",
+            "https://huggingface.co/collections/Jakumetsu/synthrl-6839d265136fa9ca717105c5"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-005",
+      "title": {
+        "zh": "评测与验证",
+        "en": "Evaluation & verification",
+        "ja": "評価と検証"
+      },
+      "topics": [
+        "LLM-as-a-Judge",
+        "Rubrics",
+        "Benchmarks"
+      ],
+      "chapters": [
+        {
+          "id": "toc-238",
+          "title": "SkillFlow: Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.17308"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-239",
+          "title": "WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.18224"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-240",
+          "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.18470"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-241",
+          "title": "AgentCE-Bench: Agent Configurable Evaluation with Scalable Horizons and Controllable Difficulty under Lightweight Environments",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.06111"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-242",
+          "title": "YC-Bench: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.01212"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-243",
+          "title": "SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.24755"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-244",
+          "title": "SWE-Milestone / EvoClaw",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.13428"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-245",
+          "title": "LMEB",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.12572"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-246",
+          "title": "Lost in Stories",
+          "section": "",
+          "sourceUrls": [
+            "https://aclanthology.org/2026.findings-acl.410/",
+            "https://arxiv.org/abs/2603.05890"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-247",
+          "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03823"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-248",
+          "title": "LongCLI-Bench: A Preliminary Benchmark and Study for Long-horizon Agentic Programming in Command-Line Interfaces",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.14337"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-249",
+          "title": "Interactive Benchmarks",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.04737"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-250",
+          "title": "AgentVista: Evaluating Multimodal Agents in Ultra-Challenging Realistic Visual Scenarios",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.23166"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-251",
+          "title": "UniG2U-Bench: Do Unified Models Advance Multimodal Understanding?",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03241"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-252",
+          "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03790"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-253",
+          "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
+          "section": "",
+          "sourceUrls": [
+            "https://aclanthology.org/2026.acl-long.1439/",
+            "https://arxiv.org/abs/2603.01562"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-254",
+          "title": "General Agent Evaluation",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.22953"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-255",
+          "title": "LongCLI-Bench: A Preliminary Benchmark and Study for Long-horizon Agentic Programming in Command-Line Interfaces",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.14337"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-256",
+          "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.12670"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-257",
+          "title": "RubricHub",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.08430"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-258",
+          "title": "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.14965",
+            "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c2f71567cd53464161cab3336e8fc865-Abstract-Datasets_and_Benchmarks_Track.html"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-259",
+          "title": "From Perception to Action: An Interactive Benchmark for Vision Reasoning",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.21015"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-260",
+          "title": "AI GAMESTORE: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.17594"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-261",
+          "title": "MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.22638"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-006",
+      "title": {
+        "zh": "Agent",
+        "en": "Agents",
+        "ja": "エージェント"
+      },
+      "topics": [
+        "ReAct",
+        "Agentic RL",
+        "Memory",
+        "Skills"
+      ],
+      "chapters": [
+        {
+          "id": "toc-262",
+          "title": "ACON: Optimizing Context Compression for Long-horizon LLM Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.00615"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-263",
+          "title": "Learning on the Job: An Experience-Driven Self-Evolving Agent for Long-Horizon Tasks",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.08002"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-264",
+          "title": "PACEvolve: Enabling Long-Horizon Progress-Aware Consistent Evolution",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.10657"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-265",
+          "title": "REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.14234"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-266",
+          "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.04257"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-267",
+          "title": "A Subgoal-driven Framework for Improving Long-Horizon LLM Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.19685"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-268",
+          "title": "AndroTMem: From Interaction Trajectories to Anchored Memory in Long-Horizon GUI Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.18429"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-269",
+          "title": "AdaMem: Adaptive User-Centric Memory for Long-Horizon Dialogue Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.16496"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-270",
+          "title": "AGENTSWING: Adaptive Parallel Context Management Routing for Long-Horizon Web Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27490"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-271",
+          "title": "ContextBudget: Budget-Aware Context Management for Long-Horizon Search Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.01664"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-272",
+          "title": "KLong: Training LLM Agent for Extremely Long-horizon Tasks",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.17547"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-273",
+          "title": "Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.11753"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-274",
+          "title": "SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2026.acl-long.356/",
+            "https://doi.org/10.18653/v1/2026.acl-long.356",
+            "https://arxiv.org/abs/2604.08865"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-275",
+          "title": "Towards Long-horizon Agentic Multimodal Search",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.12890"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-276",
+          "title": "Toward Autonomous Long-Horizon Engineering for ML Research",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.13018"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-277",
+          "title": "Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.20987"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-278",
+          "title": "MAP: A Map-then-Act Paradigm for Long-Horizon Interactive Agent Reasoning",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.13037"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-279",
+          "title": "Meta-Cognitive Memory Policy Optimization for Long-Horizon LLM Agents",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.30159"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-280",
+          "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis",
+          "section": {
+            "zh": "长程任务",
+            "en": "Long-horizon tasks",
+            "ja": "長期タスク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.30434"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-281",
+          "title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.28052"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-282",
+          "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.25158"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-283",
+          "title": "MuSEAgent: A Multimodal Reasoning Agent with Stateful Experiences",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27813"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-284",
+          "title": "Hyperagents",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.19461"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-285",
+          "title": "Memento-Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.18743"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-286",
+          "title": "MetaClaw",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.17187"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-287",
+          "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.04618"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-288",
+          "title": "Training-Free Group Relative Policy Optimization",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.08191"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-289",
+          "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.23904"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-skillopt-lite",
+          "title": "SkillOpt-Lite: Better and Faster Agent Self-evolution via One Line of Vibe",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.03451"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-290",
+          "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.25850"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-291",
+          "title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.27366"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-292",
+          "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.01311"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-293",
+          "title": "EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.03841"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-294",
+          "title": "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.06473"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-295",
+          "title": "Rethinking Continual Experience Internalization for Self-Evolving LLM Agents",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.04703"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-296",
+          "title": "Bayesian-Agent: Posterior-Guided Skill Evolution for LLM Agent Harnesses",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.08348"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-297",
+          "title": "OpenSkill: Open-World Self-Evolution for LLM Agents",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.06741"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-298",
+          "title": "Experience Makes Skillful: Enabling Generalizable Medical Agent Reasoning via Self-Evolving Skill Memory",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.09365"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-299",
+          "title": "SePO: Self-Evolving Prompt Agent for System Prompt Optimization",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.04465"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-300",
+          "title": "MMG2Skill: Can Agents Distill In-the-Wild Guides into Self-Evolving Skills?",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.01993"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-301",
+          "title": "Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.07412"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-302",
+          "title": "CODESKILL: Learning Self-Evolving Skills for Coding Agents",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.25430"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-303",
+          "title": "EvoTrainer: Co-Evolving LLM Policies and Training Harnesses for Autonomous Agentic Reinforcement Learning",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.03108"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-304",
+          "title": "Retrospective Harness Optimization",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.05922"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-305",
+          "title": "From Failed Trajectories to Reliable LLM Agents: Diagnosing and Repairing Harness Flaws",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.06324"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-306",
+          "title": "Skill-RM: Unifying Heterogeneous Evaluation Criteria via Agent Skill",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.03980"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-307",
+          "title": "EmbodiSkill: Skill-Aware Reflection for Self-Evolving Embodied Agents",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.10332"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-308",
+          "title": "SkillEvolver: Skill Learning as a Meta-Skill",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.10500"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-309",
+          "title": "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.23899"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-15524",
+          "title": "Recursive Harness Self-Improvement",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.15524"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-21461",
+          "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://huggingface.co/papers/2607.21461"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-26784",
+          "title": "SkillRise: Agentic Reinforcement Learning for Cross-Task Skill Evolution",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.26784"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-01678",
+          "title": "Progressive Agent Skill Generation via Reinforcement Learning",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.01678",
+            "https://huggingface.co/papers/2608.01678"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-02287",
+          "title": "SKT: Skill-Use Training at Scale via Verified Synthetic Data Generation",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.02287"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-02276",
+          "title": "Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.02276"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-05139",
+          "title": "Toward Skill-Native LLMs: Skill Entropy for Benchmarking and Training Long-Horizon Reasoning",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.05139"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-25886",
+          "title": "RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.25886"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-27687",
+          "title": "Rehearse: Stepping Back from the Confidence Cliff in Self-Improving Autoresearch",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.27687"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-07645",
+          "title": "MENDELGÖDELMACHINE: RECURSIVE SELF-IMPROVING CODING AGENTS VIA COMPARATIVE EVOLUTION",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.07645"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-10299",
+          "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.10299"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-11079",
+          "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.11079"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-13560",
+          "title": "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.13560"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-07545",
+          "title": "DarwinX: Evolving Agent Harnesses Through Natural Selection",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.07545"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-21596",
+          "title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.21596"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-13120",
+          "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.13120"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-19880",
+          "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.19880"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2607-26598",
+          "title": "Living-Harness Is an Interactive-Agent Evolver",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2607.26598"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-23552",
+          "title": "Prime Agent: A Self-Improving RLM Harness",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.23552"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-20169",
+          "title": "Task-CoEvolve: Efficient Harness Optimization via Adaptive Validation Task Selection",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.20169"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-24794",
+          "title": "CAFE: SELF-IMPROVING SEARCH AGENTS NEED CO-EVOLVING FEEDBACK",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.24794"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-24876",
+          "title": "长程 Agent 编排的经验与工作记忆",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.24876"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-src-2608-25593",
+          "title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+          "section": {
+            "zh": "自进化 Agent",
+            "en": "Self-evolving agents",
+            "ja": "自己進化エージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.25593"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-310",
+          "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.02604"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-311",
+          "title": "Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.04837"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-312",
+          "title": "Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.06229"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-313",
+          "title": "Latent Collaboration in Multi-Agent Systems",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.20639"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-314",
+          "title": "Emergent Social Intelligence Risks in Generative Multi-Agent Systems",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27771"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-315",
+          "title": "EpochX: Building the Infrastructure for an Emergent Agent Civilization",
+          "section": {
+            "zh": "协作与群体进化",
+            "en": "Collective evolution",
+            "ja": "集団的進化"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27304"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-316",
+          "title": "Beyond Context Limits: Subconscious Threads for Long-Horizon Reasoning",
+          "section": {
+            "zh": "子 Agent",
+            "en": "Subagents",
+            "ja": "サブエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.16784"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-317",
+          "title": "Scaling Test-time Compute for LLM Agents",
+          "section": {
+            "zh": "子 Agent",
+            "en": "Subagents",
+            "ja": "サブエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.12928"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-318",
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2210.03629",
+            "https://openreview.net/forum?id=WE_vluYUL-X"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-319",
+          "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2303.11366",
+            "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-320",
+          "title": "Context Engineering 2.0: The Context of Context Engineering",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.26493"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-321",
+          "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2407.01489"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-322",
+          "title": "Mem0",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2504.19413"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-323",
+          "title": "Agent READMEs",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.12884"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-324",
+          "title": "Agentic Reasoning for Large Language Models",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.12538"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-325",
+          "title": "Computer Environments Elicit General Agentic Intelligence in LLMs",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.16206"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-326",
+          "title": "Efficient Agents",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.02694"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-327",
+          "title": "Flash-Searcher: Fast and Effective Web Agents via DAG-Based Parallel Execution",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.25301"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-328",
+          "title": "Why Do Multi-Agent LLM Systems Fail?",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.13657"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-329",
+          "title": "Anatomy of Agentic Memory: Taxonomy and Empirical Analysis of Evaluation and System Limitations",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.19320"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-330",
+          "title": "SkillOrchestra: Learning to Route Agents via Skill Transfer",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.19672"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-331",
+          "title": "AgentDropoutV2: Optimizing Information Flow in Multi-Agent Systems via Test-Time Rectify-or-Reject Pruning",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.23258"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-332",
+          "title": "Agentic Code Reasoning",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.01896"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-333",
+          "title": "Scaling Agentic Capabilities, Not Context: Efficient Reinforcement Finetuning for Large Toolspaces",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.06713"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-334",
+          "title": "Terminal Agents Suffice for Enterprise Automation",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.00073"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-335",
+          "title": "Do AI Coding Agents Log Like Humans? An Empirical Study",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.09409"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-336",
+          "title": "HEAVYSKILL: Heavy Thinking as the Inner Skill in Agentic Harness",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.02396"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-337",
+          "title": "Code as Agent Harness: Toward Executable, Verifiable, and Stateful Agent Systems",
+          "section": {
+            "zh": "Agent 基础",
+            "en": "Agent foundations",
+            "ja": "エージェントの基礎"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.18747"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-338",
+          "title": "MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.09131"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-339",
+          "title": "AEM: Adaptive Entropy Modulation for Multi-Turn Agentic Reinforcement Learning",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.00425"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-340",
+          "title": "Training LLM Agents for Spontaneous, Reward-Free Self-Evolution via World Knowledge Exploration",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.18131"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-341",
+          "title": "TRACE: Capability-Targeted Agentic Training",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.05336"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-342",
+          "title": "Agentic Critical Training",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.08706"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-343",
+          "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.01940"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-344",
+          "title": "OmniGAIA: Towards Native Omni-Modal AI Agents",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.22897"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-345",
+          "title": "GUI-Libra: Training Native GUI Agents to Reason and Act with Action-aware Supervision and Partially Verifiable RL",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.22190"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-346",
+          "title": "Experiential Reinforcement Learning",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.13949"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-347",
+          "title": "ATLAS: Agent Tuning via Learning Critical Steps",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.02197",
+            "https://aclanthology.org/2025.findings-acl.1299/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-348",
+          "title": "Agentic RL 的梯度反传",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-349",
+          "title": "RWML",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.05842"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-350",
+          "title": "LIMI: Less is More for Agency",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.17567"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-351",
+          "title": "Distilling LLM Agent into Small Models with Retrieval and Code Tools",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2505.17612",
+            "https://proceedings.neurips.cc/paper_files/paper/2025/hash/99263f9bf46874e2b8b7f104b5063864-Abstract-Conference.html"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-352",
+          "title": "ARPO",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.19849"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-353",
+          "title": "A²FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.12838"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-354",
+          "title": "O-Researcher: An Open Ended Deep Research Model via Multi-Agent Distillation and Agentic RL",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.03743"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-355",
+          "title": "Multi-Agent Deep Research: Training Multi-Agent Systems with M-GRPO",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.13288"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-356",
+          "title": "AutoWebWorld: Synthesizing Infinite Verifiable Web Environments via Finite State Machines",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.14296"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-357",
+          "title": "Reasoning and Tool-use Compete in Agentic RL: From Quantifying Interference to Disentangled Tuning",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.00994"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-358",
+          "title": "ARLArena: A Unified Framework for Stable Agentic Reinforcement Learning",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.21534"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-359",
+          "title": "Search More, Think Less: Rethinking Long-Horizon Agentic Search for Efficiency and Generalization",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.22675"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-360",
+          "title": "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation",
+          "section": {
+            "zh": "Agent 训练",
+            "en": "Training agents",
+            "ja": "エージェントの学習"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.24286"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-361",
+          "title": "AI Co-Mathematician: Accelerating Mathematicians with Agentic AI",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.06651"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-362",
+          "title": "SkillOS: Learning Skill Curation for Self-Evolving Agents",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.06614"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-363",
+          "title": "Skill1",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.06130"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-364",
+          "title": "Recursive Multi-Agent Systems",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.25917"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-365",
+          "title": "From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.22446"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-366",
+          "title": "OpenGame: Open Agentic Coding for Games",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.18394"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-367",
+          "title": "Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.14228"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-368",
+          "title": "UI-Copilot: Advancing Long-Horizon GUI Automation via Tool-Integrated Policy Optimization",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2026.acl-long.904/",
+            "https://arxiv.org/abs/2604.13822"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-369",
+          "title": "TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.14116"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-370",
+          "title": "Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.00842"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-371",
+          "title": "Natural-Language Agent Harnesses",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.25723"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-372",
+          "title": "Aime: Towards Fully-Autonomous Multi-Agent Framework",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.11988"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-373",
+          "title": "OpenClaw",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://github.com/openclaw/openclaw"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-374",
+          "title": "AutoResearch-RL: Perpetual Self-Evaluating Reinforcement Learning Agents for Autonomous Neural Architecture Discovery",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.07300"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-375",
+          "title": "APRES: An Agentic Paper Revision and Evaluation System",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03142",
+            "https://openreview.net/forum?id=I2hLjiqNAv"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-376",
+          "title": "CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.23452"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-377",
+          "title": "TermiGen",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.07274"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-378",
+          "title": "Mobile-Agent-v3.5",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.16855"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-379",
+          "title": "Clawdbot / OpenClaw",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.14364"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-380",
+          "title": "TradingAgents",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2412.20138"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-381",
+          "title": "Idea2Story",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://github.com/AgentAlphaAGI/Idea2Paper"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-382",
+          "title": "Croto",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-383",
+          "title": "SlideTailor",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-384",
+          "title": "Chain-of-Agents: End-to-End Agent Foundation Models via Multi-Agent Distillation and Agentic RL",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.13167"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-385",
+          "title": "Paper2Agent",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-386",
+          "title": "WebAgent",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-387",
+          "title": "QuantaAlpha",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-388",
+          "title": "Agents of Chaos",
+          "section": {
+            "zh": "应用框架",
+            "en": "Application frameworks",
+            "ja": "応用フレームワーク"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-007",
+      "title": {
+        "zh": "代码与软件工程",
+        "en": "Code & software engineering",
+        "ja": "コードとソフトウェア工学"
+      },
+      "topics": [
+        "SWE-agent",
+        "SWE-RL",
+        "CodeLLM",
+        "Verifiers"
+      ],
+      "chapters": [
+        {
+          "id": "toc-389",
+          "title": "WebGen-R1",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-390",
+          "title": "PDB：精确调试基准",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-391",
+          "title": "Self-Execution Simulation Improves Coding Models",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.03253"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-392",
+          "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.01193"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-393",
+          "title": "Think Anywhere in Code Generation",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.29957"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-394",
+          "title": "KAT-Coder-V2 Technical Report",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.27703"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-395",
+          "title": "Composer 2 Technical Report",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.24477"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-396",
+          "title": "DeepSeek-Coder",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2401.14196",
+            "https://arxiv.org/abs/2406.11931"
+          ],
+          "reportIds": [
+            "210075d3b4bb",
+            "7f03d8c3f8ae"
+          ]
+        },
+        {
+          "id": "toc-397",
+          "title": "CodeOCR",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.01785"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-398",
+          "title": "CodeDPO",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://aclanthology.org/2025.acl-long.771/",
+            "https://arxiv.org/abs/2410.05605"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-399",
+          "title": "SWE-RM",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-400",
+          "title": "Agent-RLVR",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-401",
+          "title": "SWE-RL",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-402",
+          "title": "SWE-Fixer",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-403",
+          "title": "CodeArena",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-404",
+          "title": "RPG / RPG-Encoder",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.16198",
+            "https://arxiv.org/abs/2602.02084",
+            "https://openreview.net/forum?id=VAQq3Y8tIF"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-405",
+          "title": "Code Generation with AlphaCodium",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2401.08500"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-406",
+          "title": "daVinci-Dev",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.18418"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-407",
+          "title": "HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithmic Coding",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://openreview.net/forum?id=v3SzGCfAXN",
+            "https://arxiv.org/abs/2505.24098"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-408",
+          "title": "Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills",
+          "section": {
+            "zh": "代码模型",
+            "en": "Code models",
+            "ja": "コードモデル"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.07412"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-409",
+          "title": "CodeTracer: Towards Traceable Agent States",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.11641"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-410",
+          "title": "Learning to Commit: Generating Organic Pull Requests via Online Repository Memory",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.26664"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-411",
+          "title": "长上下文多轮 SWE Agent 的强化学习",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.03501"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-412",
+          "title": "Live-SWE-agent",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://github.com/OpenAutoCoder/live-swe-agent"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-413",
+          "title": "DeepCode",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.07921"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-414",
+          "title": "Dreaming in Code",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.08194",
+            "https://icml.cc/virtual/2026/poster/62759"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-415",
+          "title": "SWE-agent",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://github.com/SWE-agent/SWE-agent"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-416",
+          "title": "SWE-World",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-417",
+          "title": "SWE-Universe",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-418",
+          "title": "SWE-Master",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-419",
+          "title": "SWE-Pruner",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.16746"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-420",
+          "title": "SWE-Perf: Can Language Models Optimize Code Performance on Real-World Repositories？",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.12415"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-421",
+          "title": "SWE-Factory: Your Automated Factory for Issue Resolution Training Data and Evaluation Benchmarks",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2506.10954"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-422",
+          "title": "SWE-rebench V2",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-423",
+          "title": "BeyondSWE: Can Current Code Agent Survive Beyond Single-Repo Bug Fixing?",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03194",
+            "https://github.com/AweAI-Team/BeyondSWE",
+            "https://github.com/AweAI-Team/AweAgent",
+            "https://huggingface.co/datasets/AweAI-Team/BeyondSWE"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-424",
+          "title": "SWE-chat: Coding Agent Interactions From Real Users in the Wild",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2604.20779",
+            "https://github.com/SALT-NLP/SWE-chat",
+            "https://huggingface.co/datasets/SALT-NLP/SWE-chat",
+            "https://github.com/entireio/cli"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-425",
+          "title": "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+          "section": {
+            "zh": "编程 Agent",
+            "en": "Coding agents",
+            "ja": "コーディングエージェント"
+          },
+          "sourceUrls": [
+            "https://arxiv.org/abs/2606.07297"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-008",
+      "title": {
+        "zh": "综述与教程",
+        "en": "Surveys & tutorials",
+        "ja": "サーベイとチュートリアル"
+      },
+      "topics": [
+        "Agentic RL",
+        "Context Engineering",
+        "Test-time Scaling"
+      ],
+      "chapters": [
+        {
+          "id": "toc-426",
+          "title": "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution",
+          "section": "",
+          "sourceUrls": [
+            "https://doi.org/10.36227/techrxiv.177203250.05832634/v2",
+            "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.177203250.05832634/v2",
+            "https://ssrn.com/abstract=6626878"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-427",
+          "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.21046",
+            "https://openreview.net/forum?id=CTr3bovS5F"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-428",
+          "title": "The Landscape of Agentic Reinforcement Learning for LLMs",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2509.02547",
+            "https://openreview.net/forum?id=RY19y2RI1O"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-429",
+          "title": "测试时扩展综述",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.24235"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-430",
+          "title": "A Comprehensive Survey on Long Context Language Modeling",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.17407"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-431",
+          "title": "A Survey of Vibe Coding with Large Language Models",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.12399"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-432",
+          "title": "上下文工程综述",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.13334"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-433",
+          "title": "A Survey on Latent Reasoning",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.06203"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-434",
+          "title": "Deep Research: A Systematic Survey",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.02038"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-435",
+          "title": "From Code Foundation Models to Agents and Applications: A Comprehensive Survey and Practical Guide to Code Intelligence",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.18538"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-436",
+          "title": "Unifying the Perspectives of NLP and Software Engineering: A Survey on Language Models for Code",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2311.07989"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-437",
+          "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2507.21046"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-438",
+          "title": "How Far Are We from Genuinely Useful Deep Research Agents？",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2512.01948"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-439",
+          "title": "Robot Learning: A Tutorial",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.12403"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-009",
+      "title": {
+        "zh": "多模态",
+        "en": "Multimodal learning",
+        "ja": "マルチモーダル学習"
+      },
+      "topics": [
+        "VLM",
+        "DiT",
+        "World Models"
+      ],
+      "chapters": [
+        {
+          "id": "toc-440",
+          "title": "Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.13831"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-441",
+          "title": "Qwen-Image-2.0 Technical Report",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2605.10730"
+          ],
+          "reportIds": [
+            "dcc2a4e23e3b"
+          ]
+        },
+        {
+          "id": "toc-442",
+          "title": "Specificity-aware reinforcement learning for fine-grained open-world classification",
+          "section": "",
+          "sourceUrls": [
+            "https://openaccess.thecvf.com/content/CVPR2026/html/Angheben_Specificity-aware_reinforcement_learning_for_fine-grained_open-world_classification_CVPR_2026_paper.html",
+            "https://arxiv.org/abs/2603.03197"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-443",
+          "title": "Large Multimodal Models as General In-Context Classifiers",
+          "section": "",
+          "sourceUrls": [
+            "https://openaccess.thecvf.com/content/CVPR2026F/html/Garosi_Large_Multimodal_Models_as_General_In-Context_Classifiers_CVPRF_2026_paper.html",
+            "https://arxiv.org/abs/2602.23229"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-444",
+          "title": "Kling‑MotionControl: Orchestrating Heterogeneous Motions for Adaptive Holistic Character Animation",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03160",
+            "https://app.klingai.com/global/video-motion-control/new"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-445",
+          "title": "Beyond Language Modeling: An Exploration of Multimodal Pretraining",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2603.03276",
+            "https://beyond-llms.github.io/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-446",
+          "title": "DreamID-Omni: Unified Framework for Controllable Human-Centric Audio-Video Generation",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.12160",
+            "https://guoxu1233.github.io/DreamID-Omni/"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-447",
+          "title": "PyVision-RL: Forging Open Agentic Vision Models via RL",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.20739"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-448",
+          "title": "Scalable Diffusion Models with Transformers",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2212.09748"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-449",
+          "title": "Advancing Open-source World Models",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.20540"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-450",
+          "title": "PaperBanana",
+          "section": "",
+          "sourceUrls": [],
+          "reportIds": []
+        },
+        {
+          "id": "toc-451",
+          "title": "Vision-DeepResearch",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.22060"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-452",
+          "title": "BabyVision",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2601.06521"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-453",
+          "title": "大模型的极端多标签分类",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2511.13189"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-454",
+          "title": "Paper2Video: Automatic Video Generation from Scientific Papers",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2510.05096"
+          ],
+          "reportIds": []
+        }
+      ]
+    },
+    {
+      "id": "sec-010",
+      "title": {
+        "zh": "具身智能",
+        "en": "Embodied AI",
+        "ja": "身体性AI"
+      },
+      "topics": [
+        "VLA",
+        "Robot Learning",
+        "Reward Models"
+      ],
+      "chapters": [
+        {
+          "id": "toc-455",
+          "title": "Green-VLA",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.00919"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-456",
+          "title": "World Modeling Makes a Better Planner: Dual Preference Optimization for Embodied Task Planning",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.10480"
+          ],
+          "reportIds": []
+        },
+        {
+          "id": "toc-457",
+          "title": "TOPReward: Token Probabilities as Hidden Zero-Shot Rewards for Robotics",
+          "section": "",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2602.19313"
+          ],
+          "reportIds": []
+        }
+      ]
+    }
+  ]
+}

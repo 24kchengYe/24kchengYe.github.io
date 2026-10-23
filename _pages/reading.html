@@ -1,80 +1,47 @@
 ---
 permalink: /reading/
 layout: reading
-title: Foundation Models
-description: A reading index of foundation model technical reports, organized by model generations, architectures, and post-training.
+library: true
+title: Reading
+description: A bookshelf of reports, AI learning topics, and researchers’ writing.
 author_profile: false
 ---
-{% assign selected = site.data.reading.reports | where: "selected", true %}
-<header class="reading-heading">
-  <p class="reading-kicker"><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></p>
-  <h1><span lang="en">Foundation Models</span><span lang="zh">基模阅读</span><span lang="ja">基盤モデル</span></h1>
-  <p><span lang="en">Architecture, post-training &amp; agents.</span><span lang="zh">架构、后训练与智能体。</span><span lang="ja">アーキテクチャ、事後学習、エージェント。</span></p>
-  <p style="margin-top:14px;font-size:.8rem"><a href="{{ '/reading/library-preview/' | relative_url }}" data-site-link><span lang="en">Try the bookshelf ↗</span><span lang="zh">书架试阅 ↗</span><span lang="ja">本棚を試す ↗</span></a></p>
-</header>
-
-<nav class="reading-paths" aria-label="Reading paths">
-  <a href="?path=foundations#reports" data-path="foundations">
-    <span class="path-number">01</span>
-    <span class="path-name"><span lang="en">Foundations &amp; scale</span><span lang="zh">基础与规模规律</span><span lang="ja">基礎とスケーリング</span></span>
-    <span class="path-terms">Transformer · GPT-3 · Chinchilla</span><span class="path-arrow" aria-hidden="true">↗</span>
-  </a>
-  <a href="?path=architecture#reports" data-path="architecture">
-    <span class="path-number">02</span>
-    <span class="path-name"><span lang="en">Architecture &amp; efficiency</span><span lang="zh">架构与效率</span><span lang="ja">アーキテクチャと効率</span></span>
-    <span class="path-terms">MoE · MLA · KV Cache</span><span class="path-arrow" aria-hidden="true">↗</span>
-  </a>
-  <a href="?path=posttraining#reports" data-path="posttraining">
-    <span class="path-number">03</span>
-    <span class="path-name"><span lang="en">Post-training &amp; agents</span><span lang="zh">后训练与智能体</span><span lang="ja">事後学習とエージェント</span></span>
-    <span class="path-terms">PPO · GRPO · RLVR</span><span class="path-arrow" aria-hidden="true">↗</span>
-  </a>
-</nav>
-
-<section class="report-index" id="reports" aria-labelledby="reports-heading">
-  <h2 id="reports-heading"><span lang="en">Technical reports</span><span lang="zh">基模技术报告</span><span lang="ja">技術レポート</span></h2>
-  <div class="index-toolbar js-only">
-    <div class="index-scopes" role="group" aria-label="Collection">
-      <button type="button" data-scope="core" aria-pressed="true"><span lang="en">Core</span><span lang="zh">核心</span><span lang="ja">コア</span> <span class="scope-count">{{ site.data.reading.core.size }}</span></button>
-      <button type="button" data-scope="selected" aria-pressed="false"><span lang="en">Selected</span><span lang="zh">精选</span><span lang="ja">選集</span> <span class="scope-count">{{ selected.size }}</span></button>
-      <button type="button" data-scope="archive" aria-pressed="false"><span lang="en">Archive</span><span lang="zh">全部</span><span lang="ja">すべて</span> <span class="scope-count">{{ site.data.reading.reports.size }}</span></button>
+<div class="library" id="library">
+  <section id="library-index">
+    <header class="library-heading">
+      <h1><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></h1>
+    </header>
+    <div class="library-tools">
+      <nav class="library-collections" aria-label="Collections">
+        <a href="?collection=reports" data-collection="reports" aria-current="page" data-copy="reportsTab">Technical reports</a>
+        <a href="?collection=learning" data-collection="learning" data-copy="learningTab">AI learning</a>
+        <a href="?collection=researchers" data-collection="researchers" data-copy="researchersTab">Researchers</a>
+      </nav>
+      <label class="library-search"><span class="visually-hidden" id="library-search-label">Search reports</span><input id="library-search" type="search" autocomplete="off" placeholder="Search title, company, technology"></label>
     </div>
-    <label class="report-search">
-      <span class="visually-hidden"><span lang="en">Search title, company or technology</span><span lang="zh">搜索标题、公司或技术</span><span lang="ja">タイトル・企業・技術を検索</span></span>
-      <input type="search" id="report-search" placeholder="Search reports…" autocomplete="off" spellcheck="false">
-    </label>
-  </div>
-  <div class="index-filters js-only">
-    <details class="technology-filter">
-      <summary><span lang="en">Technology</span><span lang="zh">技术筛选</span><span lang="ja">技術で絞り込み</span><span id="active-tech-count"></span></summary>
-      <div id="technology-options" class="technology-options" role="group" aria-label="Technology"></div>
-      <p class="filter-hint"><span lang="en">Tags cover the selected reports. Matches any selected term.</span><span lang="zh">仅筛选精选报告；匹配任一所选技术。</span><span lang="ja">選集の技術タグが対象。選択した技術のいずれかに一致。</span></p>
-    </details>
-    <button type="button" id="clear-filters" hidden><span lang="en">Reset</span><span lang="zh">重置</span><span lang="ja">リセット</span></button>
-  </div>
-  <div class="index-status js-only">
-    <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
-    <span id="reading-order"><span lang="en">Reading order</span><span lang="zh">按阅读顺序</span><span lang="ja">読む順番</span></span>
-  </div>
-  <noscript><p class="filter-hint">All reports are listed below. Search and filters require JavaScript.</p></noscript>
-  <ol class="report-list" id="report-list">
-    {% for report in site.data.reading.reports %}
-    <li class="report" id="report-{{ report.id | escape }}" data-id="{{ report.id | escape }}" data-core="{{ report.core_order }}" data-selected="{{ report.selected }}" data-technologies="{{ report.technologies | jsonify | escape }}">
-      <span class="report-number" aria-hidden="true">{{ forloop.index }}</span>
-      <div class="report-body">
-        <div class="report-title-line">
-          <h3><a href="{{ report.source | escape }}" title="{{ report.title | escape }}" rel="noopener">{{ report.short | escape }} <span class="source-arrow" aria-hidden="true">↗</span></a></h3>
-          <span class="report-year" title="Year in source index · 来源登记年份">{{ report.date | escape }}</span>
-        </div>
-        <p class="report-company">{{ report.company | escape }}</p>
-        {% if report.keywords.size > 0 %}
-        <p class="report-keywords">{% for keyword in report.keywords %}<span>{{ keyword | escape }}</span>{% endfor %}</p>
-        {% elsif report.technologies.size > 0 %}
-        <p class="report-keywords">{% for keyword in report.technologies %}<span>{{ keyword | escape }}</span>{% endfor %}</p>
-        {% endif %}
+    <div class="library-filters">
+      <label id="learning-topic-control" hidden><span class="visually-hidden" data-copy="topicLabel">Topic</span><select id="learning-topic"><option value="" data-copy="allTopics">All topics</option></select></label>
+      <label id="library-scope-control"><span class="visually-hidden" data-copy="collection">Collection</span><select id="library-scope">
+        <option value="core" data-copy="core">Core · 20</option><option value="online" data-copy="online">Read here · 2</option><option value="selected" data-copy="selected">Selected · 105</option><option value="all" data-copy="all">All · 643</option>
+      </select></label>
+      <label id="library-tech-control"><span class="visually-hidden" data-copy="technology">Technology</span><select id="library-tech"><option value="" data-copy="allTech">All technologies</option></select></label>
+      <button type="button" class="library-reset" id="library-reset" hidden data-copy="reset">Reset</button>
+      <p id="library-count" aria-live="polite" role="status"></p>
+      <div class="library-tabs" role="group" aria-label="View">
+        <button type="button" data-view="shelf" aria-pressed="true"><span lang="en">Bookshelf</span><span lang="zh">书架</span><span lang="ja">本棚</span></button>
+        <button type="button" data-view="list" aria-pressed="false"><span lang="en">Index</span><span lang="zh">目录</span><span lang="ja">目録</span></button>
       </div>
-    </li>
-    {% endfor %}
-  </ol>
-  <p class="empty-results" id="empty-results" hidden><span lang="en">No matching reports. Try another term or select Archive.</span><span lang="zh">没有匹配的报告。换个关键词，或切换「全部」。</span><span lang="ja">一致するレポートはありません。検索語を変えるか「すべて」を選んでください。</span></p>
-</section>
+
+    </div>
+    <div id="library-shelves" class="library-shelves"></div>
+    <div id="library-list" hidden></div>
+    <p id="library-empty" class="library-empty" hidden data-copy="empty">No matching reports. Clear the filters or try another term.</p>
+    <button id="library-more" class="library-more" type="button" hidden data-copy="more">Show more</button>
+    <section id="book-detail" class="book-detail" aria-labelledby="detail-title" hidden></section>
+    <footer class="library-note"><p id="library-note-text"></p></footer>
+  </section>
+  <section id="library-reader" hidden></section>
+  <noscript><p>Enable JavaScript for the bookshelf. The full report index is available below.</p>
+    <ol>{% for report in site.data.reading.reports %}<li><a href="{{ report.source | escape }}">{{ report.short | escape }}</a> · {{ report.company | escape }}</li>{% endfor %}</ol>
+  </noscript>
+</div>

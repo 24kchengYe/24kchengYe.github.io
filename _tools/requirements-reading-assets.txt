@@ -1,0 +1,4 @@
+# Install into an isolated build environment; no server runtime dependency.
+Markdown>=3.7,<4
+nh3==0.3.7
+paramiko>=3.5,<5

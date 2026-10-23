@@ -130,3 +130,31 @@
 
 @media(max-width:760px){.library-tools{flex-wrap:wrap;gap:4px}.library-collections{width:100%;justify-content:space-between;gap:15px}.library-collections a{font-size:.8rem}.library-search{width:100%;max-width:100%;margin:0 0 6px}.library-search input{font-size:.78rem}.library-filters{gap:6px 13px}.library-filters p{margin-left:0}.library-tabs{margin-left:auto}.library-filters select{max-width:155px}.library-heading{margin:38px 0 24px}.chapter-list li{font-size:.8rem;gap:8px}.collection-detail{gap:18px}.library-collections{overflow:auto}}
 @media print{.library-tools,.library-filters,.library-shelves,.book-detail,.reader-back,.edition-bar{display:none!important}.library-list-row{break-inside:avoid}}
+
+.learning-book .book-spine { -webkit-line-clamp:3;line-height:1.4;font-size:13px; }
+
+.note-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:24px 0;font-size:.78rem;color:var(--muted)}.note-toolbar .reader-back{margin:0}.note-frame{height:82vh;min-height:500px;border:0;background:white}@media(max-width:600px){.note-toolbar{flex-wrap:wrap;font-size:.7rem}.note-frame{height:80vh;min-height:440px}}
+
+/* The shelf stays narrow; an opened document uses the available screen. */
+body.is-reading .site-shell{width:min(1600px,calc(100% - 48px))}
+body.is-reading .site-nav{padding-top:16px}
+body.is-reading .site-footer{display:none}
+body.is-reading .reader-back{margin-top:18px}
+body.is-reading .reader-heading{margin:12px 0 14px}
+body.is-reading .reader-heading h1{font-size:28px;margin:0 0 4px;line-height:1.3}
+body.is-reading .reader-subtitle{margin:0 0 5px;max-width:none;font-size:13px}
+body.is-reading .reader-meta{margin:0;font-size:12px}
+body.is-reading .edition-bar{margin:0 0 12px;padding:0;min-height:42px}
+body.is-reading .edition-tabs a{padding:10px 0}
+body.is-reading .reader-external{padding:0}
+body.is-reading .reader-frame{width:100%;margin-left:0;height:calc(100dvh - 220px);min-height:480px}
+body.is-reading .pdf-viewer{height:calc(100dvh - 235px);min-height:480px;display:flex;flex-direction:column}
+body.is-reading .pdf-scroll{flex:1;min-height:0}
+.reader-issues{font-size:12px;color:var(--muted);margin:0 0 8px}
+.reader-issues summary{cursor:pointer}
+.pdf-controls [data-pdf="fullscreen"]{margin-left:auto;font-size:21px;line-height:1}
+.pdf-viewer:fullscreen{width:100vw!important;height:100dvh!important;max-height:none;min-height:0!important;display:flex;flex-direction:column}
+.pdf-viewer:fullscreen .pdf-scroll{flex:1;min-height:0}
+@media(max-width:600px){body.is-reading .site-shell{width:calc(100% - 24px)}body.is-reading .reader-heading h1{font-size:23px}body.is-reading .reader-subtitle{display:none}body.is-reading .reader-meta{font-size:11px}body.is-reading .pdf-viewer{height:calc(100dvh - 210px);min-height:380px}.pdf-controls{gap:8px}.pdf-controls select{margin-left:0}.pdf-scroll{padding:8px}}
+
+.pdf-first-preview{display:block;width:100%;height:auto;margin:0 auto;background:white;box-shadow:0 1px 5px #272b3014}.pdf-sheet[hidden]{display:none!important}

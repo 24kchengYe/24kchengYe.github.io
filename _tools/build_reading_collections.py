@@ -9,6 +9,13 @@ def main():
     learning = json.loads((ROOT / '_data/reading-learning.json').read_text(encoding='utf-8'))
     researchers = json.loads((ROOT / '_data/reading-researchers.json').read_text(encoding='utf-8'))
     payload = {'schemaVersion': 1, 'books': learning['books'], 'researchers': researchers['researchers']}
+    document_path=ROOT/'_data/reading-learning-assets.json'
+    if document_path.exists():
+        manifest=json.loads(document_path.read_text(encoding='utf-8'))
+        payload['documents']=manifest['chapters']
+        expected={c['id'] for b in learning['books'] for c in b['chapters']}
+        assert set(payload['documents'])==expected
+        assert all(row['url'].startswith('https://yechengzhang.duqi.top/reading/learning-files/'+manifest['version']+'/') for row in payload['documents'].values())
     ids = []
     urls = []
     report_ids = {r['id'] for r in json.loads((ROOT/'_data/reading.json').read_text(encoding='utf-8'))['reports']}
@@ -17,7 +24,7 @@ def main():
         assert set(book) == {'id','title','topics','chapters'}
         for chapter in book['chapters']:
             ids.append(chapter['id'])
-            assert set(chapter) == {'id','title','section','sourceUrls','reportIds'}
+            assert set(chapter) == {'id','title','section','sourceUrls','reportIds','date','dateBasis'}
             assert set(chapter['reportIds']).issubset(report_ids)
             urls.extend(chapter['sourceUrls'])
     for person in payload['researchers']:

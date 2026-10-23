@@ -88,9 +88,16 @@ def main():
              'zh_bytes':sum(r['bytes'] for r in inventory['editions'] if r['kind']=='zh'),
              'dual_bytes':sum(r['bytes'] for r in inventory['editions'] if r['kind']=='dual'),
              'formats':dict(Counter(r['format'] for r in inventory['sources']))}
+    preview_path=ROOT/'_data/reading-previews.json'
+    previews=json.loads(preview_path.read_text(encoding='utf-8')) if preview_path.exists() else {}
+    date_overrides=json.loads((ROOT/'_data/reading-dates.json').read_text(encoding='utf-8')) if (ROOT/'_data/reading-dates.json').exists() else {}
     published=[]
     for report in public['reports']:
         r=dict(report); source_record=by_id[r['id']]
+        if r['id'] in date_overrides:
+            override=date_overrides[r['id']]
+            assert override['source_sha256']==source_record['sha256']
+            r.update(date=override['date'],dateBasis=override['dateBasis'])
         r.update(topicId=report_topics[r['id']],pages=source_record.get('pages'),version=source_record.get('downloaded_version') or source_record.get('version') or '',
                  translation='generated' if r['id'] in records else 'none',assets=None,quality=None)
         if remote:
@@ -129,6 +136,10 @@ def main():
                 assert digest(destination)==expected
                 assets[kind]={'url':base_url.rstrip('/')+'/'+name,'bytes':destination.stat().st_size,'sha256':expected}
             r['assets']=assets
+        if r['assets']:
+            for asset in r['assets'].values():
+                if asset['format']=='pdf' and asset['sha256'] in previews:
+                    asset['preview']=previews[asset['sha256']]
         if r['assets'] and any(k in r['assets'] for k in ['zh','dual']):
             r['quality']=({'state':'sampled_with_issues','reviewed_at':'2026-10-21','summary':QUALITY[r['id']]}
                           if r['id'] in QUALITY else {'state':'not_reviewed','summary':{'en':'Machine translation; not reviewed.','zh':'机器译文，尚未校对。','ja':'機械翻訳・未校閲。'}})

@@ -1,0 +1,122 @@
+{
+  "toc-012": {
+    "date": "2025.05",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "2b2fbf8c0a9e408d2d1a88a33538e90a121303173b65627bb7498a4aad23b20e",
+    "evidence": "> 论文原文：[Qwen3 Technical Report](https://arxiv.org/abs/2505.09388)；[Qwen3-VL Technical Report](https://arxiv.org/abs/2511.21631)<br>"
+  },
+  "toc-013": {
+    "date": "2025.07",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "e900a398cc430a1ca146761e53af13505b208ee051ddb5213d6ec586df0906e8",
+    "evidence": "> 论文原文：[Kimi K2: Open Agentic Intelligence](https://arxiv.org/abs/2507.20534)<br>"
+  },
+  "toc-017": {
+    "date": "2026.02",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "cfaaa6d5a3d4302b730c6136227367560f59125bfd1073e2701165f436b77b3a",
+    "evidence": "- 论文链接：[arXiv:2602.04705](https://arxiv.org/abs/2602.04705)"
+  },
+  "toc-019": {
+    "date": "2025.01",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "66e9b2c822a256ac28485923044f93c62d10dcdb224f088e610632f095996ecb",
+    "evidence": "> UI-TARS 论文：[UI-TARS: Pioneering Automated GUI Interaction with Native Agents](https://arxiv.org/abs/2501.12326)<br>"
+  },
+  "toc-021": {
+    "date": "2025.09",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "34c60670d6cd33940693492842122849da46968baf9b0e00d6e8d371f7099e37",
+    "evidence": "> 论文原文：[MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data, and Training Recipes](https://arxiv.org/abs/2509.18154)<br>"
+  },
+  "toc-022": {
+    "date": "2025.09",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "59f0170bcc8a1ea6b0fec1b6351e3d99923464d59940c8be214c70cafcb78f2f",
+    "evidence": "> 论文原文：[MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing](https://arxiv.org/abs/2509.22186)<br>"
+  },
+  "toc-062": {
+    "date": "2022.05",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "fcd882d1945d040811422035d025716f452001fd9c49251b81e1a99fd374c4a6",
+    "evidence": "- **论文页面**：[arXiv:2205.14135](https://arxiv.org/abs/2205.14135)"
+  },
+  "toc-068": {
+    "date": "2026.02",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "775a895a2b9ff8aee2eade926f8d80abf56b5ce57965ece869014878e3b2bcb1",
+    "evidence": "- **论文**：[Multi-Token Prediction via Self-Distillation](https://arxiv.org/abs/2602.06019)"
+  },
+  "toc-082": {
+    "date": "2025.12",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "61681506074a23966b2840371a5f4fefb485c1188f571187bc38a942e01c0fde",
+    "evidence": "作者的主要实验结论是：先用监督微调（SFT）分别学好两项原子技能，再在复合任务上做强化学习（RL），在其设计的结构性 Zero-shot 划分上优于直接对复合任务做 SFT 后再做 RL。这个结论是该受控设置中的**经验结果**；“RL 合成了新技能”是作者用 `pass@k` 等分析支持的解释，不是对模型内部因果机制的直接证明。[论文 arXiv v3](https://arxiv.org/abs/2512.01970)"
+  },
+  "toc-083": {
+    "date": "2025.09",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "ba7339a907099704816cf5ceeb21e918e825024b1476251a542d787e233c42a0",
+    "evidence": "**论文**：Weiyuan Li et al., *Curse of Knowledge: When Complex Evaluation Context Benefits yet Biases LLM Judges*，Findings of EMNLP 2025，pp. 14900-14924。本文把“知识诅咒”用于描述一种评测风险：当 LLM 评委同时接收参考答案、评分细则或背景资料等辅助信息时，这些信息可以提高常规样本上的判断准确性，也可能成为可被利用的锚点，使评判偏离回答本身的质量。[官方论文页](https://aclanthology.org/2025.findings-emnlp.805/)｜[官方 PDF](https://aclanthology.org/2025.findings-emnlp.805.pdf)｜[arXiv v2](https://arxiv.org/abs/2509.03419)｜[本地 PDF](references/Curse_of_Knowledge_EMNLP_2025.pdf)"
+  },
+  "toc-098": {
+    "date": "2024.05",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "59891016c6cba133fad0061a4d58c740316f7245e7c4dd105c1d42e4563a46c0",
+    "evidence": "- **定稿 PDF**：[本地 PDF](references/LoRA_Learns_Less_and_Forgets_Less_TMLR_2024_arXiv_2405.09673v2.pdf) · [arXiv](https://arxiv.org/abs/2405.09673) · [OpenReview](https://openreview.net/forum?id=aloEru2qCG)"
+  },
+  "toc-158": {
+    "date": "2025.01",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "ca9d46ff6eb7369d580dce0532823f56b5a1a568e599a0c75bba88e3435e5dc7",
+    "evidence": "- 论文：[arXiv 2501.17161v2](https://arxiv.org/abs/2501.17161)；[本地 PDF](references/sft-memorizes-rl-generalizes-icml2025.pdf)"
+  },
+  "toc-159": {
+    "date": "2026.02",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "72347ad30b7ffadb770c85f3fd1f154d0d869f704333e9e0ac344583d7e20c5d",
+    "evidence": "- 版本：[arXiv 2602.01058v2](https://arxiv.org/abs/2602.01058)，2026-05-28"
+  },
+  "toc-373": {
+    "date": "2026.07",
+    "dateBasis": "source-release",
+    "sourceNoteSha256": "c0d8578d8001676b8a9ab0744e883167fe5a62b16de817ef31b67462bc576cb5",
+    "evidence": "发布日期：2026-07-13 22:33:14 UTC"
+  },
+  "toc-399": {
+    "date": "2025.12",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "2f3227c34649310c9513acf7df7000fae0d73d928d764229f32d1f17984426ae",
+    "evidence": "> 来源：[飞书原文](https://bytedance.larkoffice.com/docx/WCKPdtU7poNItox3YkwcE3Gjngh) · [arXiv:2512.21919](https://arxiv.org/abs/2512.21919) · [ICLR 2026 OpenReview](https://openreview.net/forum?id=H9wMe1G76j)"
+  },
+  "toc-400": {
+    "date": "2025.06",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "2064f07209ed86e1e3cfd135e30db90a2234c884f5eae8f9994f5c5f9da82e62",
+    "evidence": "> 来源：[飞书原文](https://bytedance.larkoffice.com/docx/DTKod8jhjowC3Exp84Zc1PTsnpg) · [arXiv:2506.11425](https://arxiv.org/abs/2506.11425) · [Scale Labs 论文页](https://labs.scale.com/papers/agent_rlvr)"
+  },
+  "toc-401": {
+    "date": "2025.02",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "25035629b43801b5f1f666749782937aecc6c08f579e0efefaf489b928f59ae7",
+    "evidence": "> 来源：[飞书原文](https://bytedance.larkoffice.com/docx/SqLbdre47oLqL8x1Nz2ckD4enBe) · [arXiv:2502.18449](https://arxiv.org/abs/2502.18449) · [NeurIPS 2025](https://proceedings.neurips.cc/paper_files/paper/2025/hash/7107d4d2e837bde2171c6b71b5bde954-Abstract-Conference.html) · [官方仓库](https://github.com/facebookresearch/swe-rl)"
+  },
+  "toc-402": {
+    "date": "2025.01",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "d66c22c3dd01ee2e8cc77083a32747eb310eac297d750d29f5ffb52c7b53ea98",
+    "evidence": "> 来源：[飞书原文](https://bytedance.larkoffice.com/docx/Nmqld2i32ocYrixbftjclyryncg) · [arXiv:2501.05040](https://arxiv.org/abs/2501.05040) · [Findings of ACL 2025](https://aclanthology.org/2025.findings-acl.62/) · [官方仓库](https://github.com/InternLM/SWE-Fixer)"
+  },
+  "toc-403": {
+    "date": "2024.12",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "a0ba6a5d8537b89de85cd16cb1138594060004400994d1d8ac84dc50331e9f9c",
+    "evidence": "> 来源：[飞书原文](https://bytedance.larkoffice.com/docx/Lz7adqD7Fo6MvQxJCiBcQ7LhnGf) · [arXiv:2412.05210](https://arxiv.org/abs/2412.05210) · [EMNLP 2025 正式版](https://aclanthology.org/2025.emnlp-main.489/) · [CodeArena 数据集](https://huggingface.co/datasets/CSJianYang/CodeArena) · [公开评测代码](https://github.com/QwenLM/Qwen3-Coder/tree/main/qwencoder-eval/instruct/CodeArena)"
+  },
+  "toc-450": {
+    "date": "2026.01",
+    "dateBasis": "arxiv-first-submission",
+    "sourceNoteSha256": "0cd11b5724fcf0f3c25cac2c61bfd5588f4def7b1d296bbef9083cefc6357b5c",
+    "evidence": "今天我们要聊的这篇论文，就是来解决这个大麻烦的。它来自一个星光熠熠的团队——**北京大学**与 **Google Cloud AI Research** 联合出品，一作是北大在读博士生 **Dawei Zhu**，通讯作者包括 **Sujian Li** 教授和 Google 的 **Jinsung Yoon**。这篇名为 **PaperBanana** 的工作首发于 **2026年1月30日**（arXiv 编号：[2601.23265](https://arxiv.org/abs/2601.23265)），并配套了超酷的[项目主页](https://dwzhu-pku.github.io/PaperBanana/)。"
+  }
+}

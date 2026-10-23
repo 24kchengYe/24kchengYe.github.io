@@ -1,0 +1,91 @@
+[
+  {
+    "id": "agent-memory-input",
+    "title": ["记忆怎样回到输入", "How memory reaches the input", "記憶が入力に届くまで"],
+    "width": 1400, "height": 660,
+    "anchors": ["input-path", "input-path"],
+    "caption": ["偏好按预算注入；其余资料按需取回。模型使用的是实际组装出的输入。", "Preferences are injected within a budget; other material is fetched when needed. The model uses the input actually assembled.", "好みは上限内で注入し、その他の資料は必要に応じて取得します。モデルが使うのは実際に組み立てられた入力です。"],
+    "notes": [["箭头表示信息进入输入的路径。资料柜不会整库自动注入；原始轨迹也不会自动回放。", "Arrows show paths into the input. Neither the entire memory store nor the raw trace is automatically replayed.", "矢印は入力への情報経路です。記憶ストア全体や元の軌跡を自動で再生するわけではありません。"]],
+    "nodes": {
+      "request": [40,60,340,160,["规则与请求","Rules and request","規則と依頼"],["System · User","System · User","System · User"],""],
+      "input": [530,60,340,160,["本轮输入","Current input","今回の入力"],["近期消息 · 历史摘要","Recent turns · Summary","直近の会話 · 履歴要約"],"soft"],
+      "model": [1020,60,340,160,["模型调用","Model call","モデル呼び出し"],["判断并继续行动","Decide and act","判断して行動を続ける"],"result"],
+      "preferences": [40,440,340,160,["活跃偏好","Active preferences","有効な好み"],["有预算地自动注入","Budgeted injection","上限内で自動注入"],""],
+      "retrieve": [530,440,340,160,["按需读取","Retrieve as needed","必要に応じて取得"],["memory recall · Read","memory recall · Read","memory recall · Read"],""],
+      "store": [1020,440,340,160,["记忆库与文件","Memory and files","記憶ストアとファイル"],["任务 · 日记 · 经验 · Skills","Tasks · Notes · Guides","タスク · 日記 · 経験 · Skills"],""]
+    },
+    "edges": [
+      ["request","input",[[380,140],[530,140]],false],
+      ["input","model",[[870,140],[1020,140]],false],
+      ["preferences","input",[[210,440],[210,330],[600,330],[600,220]],false],
+      ["store","retrieve",[[1020,520],[870,520]],false],
+      ["retrieve","input",[[760,440],[760,220]],false]
+    ],
+    "labels": [],
+    "nodeDetails": {
+      "input": ["当前输入还包括恢复的环境状态。压缩后的活动段替代旧活动段，原始轨迹另存。", "The input also contains refreshed environment state. A compacted active segment replaces the old one; raw traces remain separate.", "入力には更新された環境状態も含まれます。圧縮後の有効区間が以前の区間に置き換わり、元の軌跡は別に残ります。"],
+      "preferences": ["统一记忆挂载后，活跃偏好按预算注入。只有 MainAgent 能修改偏好。", "With unified memory mounted, active preferences are injected within a budget. Only MainAgent can change preferences.", "統合記憶の接続後、有効な好みを上限内で注入します。変更できるのはMainAgentだけです。"],
+      "retrieve": ["recall 检索任务、日记等记录；Read 读取经验和 Skills。工具返回进入后续模型输入。", "recall searches records such as tasks and daily notes; Read loads experience and Skills. Tool results enter subsequent model inputs.", "recallはタスクや日記を検索し、Readは経験やSkillsを読み込みます。ツール結果は後続のモデル入力に入ります。"]
+    }
+  },
+  {
+    "id": "agent-memory-compaction",
+    "title": ["上下文压缩的两条路径", "Two paths through compaction", "文脈圧縮の二つの経路"],
+    "width": 1440, "height": 920,
+    "anchors": ["compression-path", "compression-path"],
+    "caption": ["先试算旧工具正文的过期替换。未达标时，摘要使用本次清理前的历史；两条路径都保留近期工作的连续性。", "First plan expiration of old tool bodies. If the target is not met, summarize history from before that cleanup attempt. Both paths preserve continuity of recent work.", "まず古いツール本文の期限切れ処理を試算します。条件を満たさなければ、今回の整理前の履歴を要約します。どちらも直近の作業のつながりを保ちます。"],
+    "notes": [["日记写入是压缩附近的独立流程，可能额外调用模型；图中的本地替换步骤本身不调用摘要模型。", "Daily-note flushing is a separate nearby process that may call a model. The local replacement step itself does not call a summarizer.", "日記保存はこの前後で行う独立処理で、モデルを呼ぶ場合があります。図のローカル置換自体は要約モデルを呼びません。"],["摘要后恢复预算内的 Skills、工具名称与重新查询提示、最新状态；工具名不等于完整工具 schema。摘要为空时保留旧活动段。", "After summarization, restore budgeted Skills, tool names and re-query guidance, and fresh state. A tool name is not its full schema. An empty summary leaves the old active segment intact.", "要約後に上限内のSkills、ツール名と再照会指示、最新状態を戻します。ツール名は完全なschemaではありません。要約が空なら旧区間を保持します。"]],
+    "nodes": {
+      "trigger": [540,40,360,150,["当前输入过长","Input over budget","入力が上限を超過"],["本地估算 > 200k tokens","Local estimate > 200k tokens","ローカル推定 > 200k tokens"],""],
+      "plan": [540,280,360,150,["试算工具过期","Plan tool expiration","ツール本文の整理を試算"],["保护近期轮次与工具信息","Protect recent rounds\nand tool information","直近のラウンドと\nツール情報を保護"],"soft"],
+      "expire": [50,560,400,150,["应用过期替换","Apply expiration","期限切れ置換を適用"],["旧正文 → 占位标记","Old bodies → Placeholders","古い本文 → プレースホルダー"],"result"],
+      "summary": [990,560,400,150,["放弃草案 · 摘要","Discard plan · Summarize","案を破棄して要約"],["较早历史 → 摘要\n近期完整轮次保留原文","Older history → Summary\nRecent rounds stay verbatim","古い履歴 → 要約\n直近のラウンドは原文保持"],""],
+      "resume": [540,770,360,120,["继续当前任务","Continue the task","タスクを続行"],["使用新的活动段","Use the new active segment","新しい有効区間を使用"],"soft"]
+    },
+    "edges": [
+      ["trigger","plan",[[720,190],[720,280]],false],
+      ["plan","expire",[[540,355],[250,355],[250,560]],false],
+      ["plan","summary",[[900,355],[1190,355],[1190,560]],false],
+      ["expire","resume",[[250,710],[250,830],[540,830]],false],
+      ["summary","resume",[[1190,710],[1190,830],[900,830]],false]
+    ],
+    "labels": [
+      [55,445,390,["节省 ≥ 2k\n且剩余 ≤ 120k tokens","Save ≥ 2k\nand leave ≤ 120k tokens","2k以上削減\nかつ残量 ≤ 120k tokens"],"center"],
+      [1030,450,320,["未同时满足","Either condition fails","いずれかを満たさない"],"center"]
+    ],
+    "nodeDetails": {
+      "plan": ["仅替换符合条件的旧 tool-role 文本。保护近期约 40k tokens 的完整轮次、Skill 读取及工具发现结果。", "Only eligible old tool-role text is replaced. Protect about 40k tokens of recent complete rounds, Skill reads, and tool-discovery results.", "対象となる古いtool-role本文だけを置換します。直近約40k tokensの完全なラウンド、Skill読み出し、ツール探索結果を保護します。"],
+      "summary": ["用本次过期试算之前的历史总结。近期预算约 12k tokens，至少保留一轮；更早已过期的正文不会从原始日志恢复。", "Summarize history from before this expiration attempt. Keep about 12k tokens of recent history, at least one complete round. Previously expired bodies are not restored from raw logs.", "今回の整理試算前の履歴を要約します。直近約12k tokens、少なくとも一つの完全なラウンドを保持。以前に期限切れとなった本文は元ログから復元しません。"]
+    }
+  },
+  {
+    "id": "agent-memory-lifecycle",
+    "title": ["记忆能否跨过任务边界", "Does memory cross task boundaries?", "記憶はタスクの境界を越えるか"],
+    "width": 1400, "height": 760,
+    "anchors": ["lifecycle-path", "lifecycle-path"],
+    "caption": ["同一个 user ID，遇到不同入口，也可能读到不同的记忆库。归档本身不会建立自动恢复路径。", "The same user ID can reach different memory stores through different entry points. Archiving does not create an automatic restore path.", "同じuser IDでも、入口によって別の記憶ストアを使うことがあります。アーカイブだけでは自動復元の経路はできません。"],
+    "notes": [["此图比较存储生命周期，不表示模型自动加载全部历史。长驻入口的存储复用，也不等于进程重启后完整会话自动恢复。", "This diagram compares storage lifecycles, not automatic loading of all history. Reusing a store through a long-lived entry also does not automatically restore the full conversation after a restart.", "この図はストアの寿命を比較しており、全履歴の自動読み込みを表していません。長寿命の入口でストアを再利用しても、再起動後に完全な会話が自動復元されるわけではありません。"]],
+    "nodes": {
+      "attempt": [40,100,340,150,["本次 attempt","This attempt","今回のattempt"],["空的临时记忆库","Empty temporary store","空の一時ストア"],""],
+      "archive": [530,100,340,150,["结束后归档","Archive on completion","終了時にアーカイブ"],["保留记录","Keep the records","記録を保存"],""],
+      "next": [1020,100,340,150,["下一次 attempt","Next attempt","次のattempt"],["另建空库","A new empty store","別の空ストアを作成"],"issue"],
+      "session": [40,520,340,150,["长驻会话入口","Long-lived entry","長寿命セッションの入口"],["使用配置目录","Use configured directory","設定ディレクトリを使用"],""],
+      "shared": [530,520,340,150,["同一用户存储","Same user store","同じユーザーストア"],["可继续读写","Available for read / write","読み書きを継続可能"],"soft"],
+      "later": [1020,520,340,150,["后续访问","Later access","後続のアクセス"],["复用同一目录","Reuse that directory","同じディレクトリを再利用"],"result"]
+    },
+    "edges": [
+      ["attempt","archive",[[380,175],[530,175]],false],
+      ["session","shared",[[380,595],[530,595]],false],
+      ["shared","later",[[870,595],[1020,595]],false]
+    ],
+    "labels": [
+      [40,25,700,["A · 标准任务入口：每次隔离","A · Standard task entry: isolated attempts","A · 標準タスク入口：attemptごとに分離"],"lane"],
+      [40,440,900,["B · 长驻会话／直接配置入口：可复用存储","B · Long-lived / directly configured entry: reusable storage","B · 長寿命／直接設定の入口：ストアを再利用可能"],"lane"],
+      [780,320,550,["归档不会自动读回下一次 attempt","Archives are not automatically reloaded","次のattemptはアーカイブを自動で読まない"],""]
+    ],
+    "nodeDetails": {
+      "next": ["标准任务包装层覆盖记忆目录。即使用户 ID 相同，每个 attempt 也从新建空库开始。", "The standard task wrapper overrides the memory directory. Even with the same user ID, each attempt begins with a newly created empty store.", "標準タスクのラッパーが記憶ディレクトリを上書きします。同じユーザーIDでも各attemptは新しい空ストアから始まります。"],
+      "shared": ["长驻或直接配置入口可以复用宿主机上的用户目录；经验文件仍需对应 VM 或显式迁移。", "A long-lived or directly configured entry can reuse the host’s user directory. Experience files still depend on the corresponding VM or explicit migration.", "長寿命または直接設定の入口はホスト上のユーザーディレクトリを再利用できます。経験ファイルは対応するVMか明示的な移行が必要です。"]
+    }
+  }
+]

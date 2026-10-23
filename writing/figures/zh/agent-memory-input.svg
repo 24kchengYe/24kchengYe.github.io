@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660" lang="zh"><foreignObject width="1400" height="660"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="openai-blog" data-diagram-kind="flow"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1400px;height:660px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}.label.center{text-align:center}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="agent-memory-input"><div class="edge arrow" data-from="request" data-to="input" style="left:380px;top:140px;width:150px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="input" data-to="model" style="left:870px;top:140px;width:150px;transform:rotate(0deg)"></div><div class="edge" data-from="preferences" data-to="input" style="left:210px;top:440px;width:110px;transform:rotate(-90deg)"></div><div class="edge" data-from="preferences" data-to="input" style="left:210px;top:330px;width:390px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="preferences" data-to="input" style="left:600px;top:330px;width:110px;transform:rotate(-90deg)"></div><div class="edge arrow" data-from="store" data-to="retrieve" style="left:1020px;top:520px;width:150px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="retrieve" data-to="input" style="left:760px;top:440px;width:220px;transform:rotate(-90deg)"></div><div class="node " id="request" style="left:40px;top:60px;width:340px;height:160px"><strong>规则与请求</strong><span>System · User</span></div><div class="node soft" id="input" style="left:530px;top:60px;width:340px;height:160px"><strong>本轮输入</strong><span>近期消息 · 历史摘要</span><span data-node-detail="true" hidden="">当前输入还包括恢复的环境状态。压缩后的活动段替代旧活动段，原始轨迹另存。</span></div><div class="node result" id="model" style="left:1020px;top:60px;width:340px;height:160px"><strong>模型调用</strong><span>判断并继续行动</span></div><div class="node " id="preferences" style="left:40px;top:440px;width:340px;height:160px"><strong>活跃偏好</strong><span>有预算地自动注入</span><span data-node-detail="true" hidden="">统一记忆挂载后，活跃偏好按预算注入。只有 MainAgent 能修改偏好。</span></div><div class="node " id="retrieve" style="left:530px;top:440px;width:340px;height:160px"><strong>按需读取</strong><span>memory recall · Read</span><span data-node-detail="true" hidden="">recall 检索任务、日记等记录；Read 读取经验和 Skills。工具返回进入后续模型输入。</span></div><div class="node " id="store" style="left:1020px;top:440px;width:340px;height:160px"><strong>记忆库与文件</strong><span>任务 · 日记 · 经验 · Skills</span></div></div><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202520;
+  --diagram-muted:#5d635a;
+  --diagram-line:#3f493b;
+  --diagram-border:#53614c;
+  --diagram-accent:#729445;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f9faf6;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#243343;
+  --diagram-muted:#56677a;
+  --diagram-line:#53687b;
+  --diagram-border:#9aaabb;
+  --diagram-accent:#3b7c69;
+  --diagram-failure:#a37835;
+  --diagram-paper:#f5f7fa;
+  --diagram-soft:#edf6f2;
+  --diagram-warm:#fff6e8;
+  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
+  --diagram-vector-stroke:1.5px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.6px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node[data-type="tool"] { background-image:radial-gradient(#a8b69a .5px,transparent .5px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
+[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); fill:#fff!important; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
+[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
+</style></div></foreignObject></svg>

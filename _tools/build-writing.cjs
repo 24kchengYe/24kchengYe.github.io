@@ -12,7 +12,7 @@ const { attachWritingMaps } = require('./build-writing-maps.cjs');
 
 const root = path.join(__dirname, '..');
 const slugs = ['spec-generation', 'spec-repair', 'rubric-model'];
-const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms', 'coding-agent-trajectories', 'automation-blueprint'];
+const blogOnlySlugs = ['nimble-kev', 'attention-mechanisms', 'coding-agent-trajectories', 'automation-blueprint', 'agent-memory'];
 const requestedSlug = process.argv[2];
 if (requestedSlug && ![...slugs, ...blogOnlySlugs].includes(requestedSlug)) throw new Error(`Unknown writing: ${requestedSlug}`);
 if (requestedSlug !== 'automation-blueprint') buildCliFigures();
@@ -120,7 +120,7 @@ function build(slug, technical = false) {
   document.body.insertAdjacentHTML('afterbegin', navigation(slug, technical));
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = '/assets/css/writing-language.css?v=figure-i18n-1';
+  stylesheet.href = `/assets/css/writing-language.css?v=${createHash('sha256').update(fs.readFileSync(path.join(root,'assets/css/writing-language.css'))).digest('hex').slice(0,12)}`;
   document.head.append(stylesheet);
   const script = document.createElement('script');
   script.src = '/assets/js/minimal.js?v=writing-diagram-styles-1';

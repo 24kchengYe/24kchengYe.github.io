@@ -391,7 +391,6 @@
       }
       const viewControls = element('div','tm-tools');
       viewControls.append(select);
-      if (window.WritingDiagramStyle) viewControls.append(window.WritingDiagramStyle.createControl());
       toolbar.append(viewControls,controls);
       const breadcrumb = element('nav','tm-breadcrumb');
       breadcrumb.setAttribute('aria-label',translate('返回'));

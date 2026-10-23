@@ -27,34 +27,34 @@
 .chips{display:flex;gap:12px;padding:20px 0}.chip{width:16px;height:16px;border:1px solid #bec8c1;border-radius:50%}.chip.green{background:#83a957;border-color:#83a957}.chip.gray{background:#aab8af}.caption{font-size:21px;color:#7b827d;margin-top:26px}
 
 .diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:590px"><div class="node small" style="left: 70px; top: 55px; width: 330px; height: 80px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">3,999件</span></div><div class="node box" style="left: 70px; top: 205px; width: 330px; height: 80px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">3899 train + 100 test</span></div><div class="node box" style="left: 70px; top: 390px; width: 330px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">独立SFT · qh66q</span></div><div class="node small" style="left: 550px; top: 55px; width: 330px; height: 80px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">1,770件</span></div><div class="node box" style="left: 550px; top: 205px; width: 330px; height: 80px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">1670 train + 100 test</span></div><div class="node box" style="left: 550px; top: 390px; width: 330px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">独立SFT · 2f8v8</span></div><div class="node small" style="left: 1030px; top: 55px; width: 330px; height: 80px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">統合5,769件</span></div><div class="node box" style="left: 1030px; top: 205px; width: 330px; height: 80px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">5,669学習＋新100テスト</span></div><div class="node box accent" style="left: 1030px; top: 390px; width: 330px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Q2継続学習 · nm9gk</span></div><div class="wire" style="left:235px;top:135px;height:70px;border-left:1.25px solid #424942"></div><div class="tip" style="left:230px;top:190px;border-color:#424942;transform:rotate(135deg)"></div><div class="wire" style="left:235px;top:285px;height:105px;border-left:1.25px solid #424942"></div><div class="tip" style="left:230px;top:375px;border-color:#424942;transform:rotate(135deg)"></div><div class="wire" style="left:715px;top:135px;height:70px;border-left:1.25px solid #424942"></div><div class="tip" style="left:710px;top:190px;border-color:#424942;transform:rotate(135deg)"></div><div class="wire" style="left:715px;top:285px;height:105px;border-left:1.25px solid #424942"></div><div class="tip" style="left:710px;top:375px;border-color:#424942;transform:rotate(135deg)"></div><div class="wire" style="left:1195px;top:135px;height:70px;border-left:1.25px solid #424942"></div><div class="tip" style="left:1190px;top:190px;border-color:#424942;transform:rotate(135deg)"></div><div class="wire" style="left:1195px;top:285px;height:105px;border-left:1.25px solid #424942"></div><div class="tip" style="left:1190px;top:375px;border-color:#424942;transform:rotate(135deg)"></div><div class="label" style="left:880px;top:325px">Q2 checkpoint →</div><div class="label" style="left:285px;top:520px">Test100は三群で別分割</div></main><style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202422;
-  --diagram-muted:#59635b;
-  --diagram-line:#545c55;
-  --diagram-border:#656e66;
-  --diagram-accent:#688e42;
+  --diagram-ink:#202520;
+  --diagram-muted:#5d635a;
+  --diagram-line:#3f493b;
+  --diagram-border:#53614c;
+  --diagram-accent:#729445;
   --diagram-failure:#997140;
   --diagram-paper:#fff;
-  --diagram-soft:#f6f8f3;
+  --diagram-soft:#f9faf6;
   --diagram-warm:#fcf6ed;
   --diagram-grid:none;
-  --diagram-vector-stroke:1.1px;
+  --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
-  --diagram-box-width:1.5px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#1d2723;
-  --diagram-muted:#4d6055;
-  --diagram-line:#303432;
-  --diagram-border:#424843;
-  --diagram-accent:#537e36;
-  --diagram-failure:#936321;
-  --diagram-paper:#fff;
-  --diagram-soft:#edf3e8;
-  --diagram-warm:#fcf1df;
-  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
-  --diagram-vector-stroke:1.35px;
+  --diagram-ink:#243343;
+  --diagram-muted:#56677a;
+  --diagram-line:#53687b;
+  --diagram-border:#9aaabb;
+  --diagram-accent:#3b7c69;
+  --diagram-failure:#a37835;
+  --diagram-paper:#f5f7fa;
+  --diagram-soft:#edf6f2;
+  --diagram-warm:#fff6e8;
+  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
+  --diagram-vector-stroke:1.5px;
   --diagram-edge-width:2px;
-  --diagram-box-width:1.7px;
+  --diagram-box-width:1.6px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -81,8 +81,7 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
 [data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
@@ -90,15 +89,52 @@
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
 [data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
-[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
-.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
 [data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
 [data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
 [data-diagram-style] marker path { stroke:var(--diagram-line); }
 [data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
 [data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
 [data-diagram-style] .am-label { background:var(--diagram-paper); }
-[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
 [data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
-@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node[data-type="tool"] { background-image:radial-gradient(#a8b69a .5px,transparent .5px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
+[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); fill:#fff!important; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
+[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
 </style></div></foreignObject></svg>

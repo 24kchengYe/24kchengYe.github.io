@@ -4,7 +4,7 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const directory = path.join(root, '_data/writing/figures');
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-const readDiagrams = () => JSON.parse(fs.readFileSync(path.join(directory, 'research-workflows.json'), 'utf8'));
+const readDiagrams = () => ['research-workflows.json', 'agent-memory.json'].flatMap(file => JSON.parse(fs.readFileSync(path.join(directory, file), 'utf8')));
 
 function researchTranslations(slug) {
   return Object.fromEntries([['图注与口径', 'Figure notes', '図注と評価条件'], ...readDiagrams().filter(diagram => diagram.id.startsWith(slug + '-')).flatMap(diagram => [diagram.title, diagram.caption, ...(diagram.notes || [])])].map(values => [values[0], values.slice(1)]));
@@ -15,7 +15,7 @@ function attachResearchDiagrams(document, slug, technical) {
     const anchor = document.getElementById(diagram.anchors[technical ? 1 : 0]);
     if (!anchor) throw new Error(`Missing article anchor: ${diagram.id}`);
     const figure = document.createElement('figure');
-    figure.id = diagram.id.endsWith('full-workflow') ? 'full-workflow' : 'recorded-case';
+    figure.id = diagram.id.endsWith('full-workflow') ? 'full-workflow' : diagram.id.endsWith('recorded-case') ? 'recorded-case' : diagram.id;
     figure.className = 'figure-block';
     figure.innerHTML = `<img data-figure="${diagram.id}" alt="${escape(diagram.title[0])}" width="${diagram.width}" height="${diagram.height}" loading="lazy" decoding="async"><figcaption>${escape(diagram.caption[0])}</figcaption>`;
     if (diagram.notes?.length) figure.insertAdjacentHTML('beforeend', `<details class="figure-detail"><summary>图注与口径</summary>${diagram.notes.map(note => `<p>${escape(note[0])}</p>`).join('')}</details>`);
@@ -60,7 +60,7 @@ body{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hir
 .edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
 .edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
 .label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
-.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}.label.center{text-align:center}
 </style><div class="canvas" data-fixed-type="true" data-research-diagram="${id}">${lines}${blocks}${notes}</div></html>\n`;
     fs.writeFileSync(path.join(directory, id + '.html'), html);
     fs.writeFileSync(path.join(directory, id + '.i18n.json'), JSON.stringify(translations, null, 2) + '\n');

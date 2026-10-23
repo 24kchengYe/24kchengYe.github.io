@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 
 const root = path.join(__dirname,'..');
 const output = path.resolve(process.env.WRITING_MAP_REVIEW_DIR || '_preview/writing-maps');
-const routes = ['spec-generation','spec-generation/technical','spec-repair','spec-repair/technical','rubric-model','rubric-model/technical','nimble-kev','attention-mechanisms'];
+const routes = ['spec-generation','spec-generation/technical','spec-repair','spec-repair/technical','rubric-model','rubric-model/technical','nimble-kev','attention-mechanisms','agent-memory'];
 const results = [];
 
 function inspect(host) {

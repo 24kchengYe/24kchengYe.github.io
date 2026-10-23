@@ -167,7 +167,6 @@
     controls.append(button('缩小', () => zoomAt(1 / 1.2), '−'), zoomLabel, button('放大', () => zoomAt(1.2), '+'), button('全图', () => fit('all')), button('适应宽度', () => fit('width')), button('复位', () => fit('reset')), expandButton);
     const viewControls = element('div','am-tools');
     viewControls.append(select);
-    if (window.WritingDiagramStyle) viewControls.append(window.WritingDiagramStyle.createControl());
     toolbar.append(viewControls, controls);
     const breadcrumb = element('nav', 'am-breadcrumb');
     breadcrumb.setAttribute('aria-label', text('返回上一层'));

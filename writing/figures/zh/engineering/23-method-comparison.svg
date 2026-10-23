@@ -27,34 +27,34 @@
 .chips{display:flex;gap:12px;padding:20px 0}.chip{width:16px;height:16px;border:1px solid #bec8c1;border-radius:50%}.chip.green{background:#83a957;border-color:#83a957}.chip.gray{background:#aab8af}.caption{font-size:21px;color:#7b827d;margin-top:26px}
 
 .diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:945px"><div class="label" style="left:320px;top:35px">提案依据</div><div class="label" style="left:605px;top:35px">修改方式</div><div class="label" style="left:885px;top:35px">评估</div><div class="label" style="left:1160px;top:35px">反馈</div><div class="node small" style="left: 40px; top: 72.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">MASP</span></div><div class="node box small" style="left: 295px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">失败题 + SP</span></div><div class="node box small" style="left: 575px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">定点编辑</span></div><div class="node box small" style="left: 855px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">评审与目标检查<br />全量评测</span></div><div class="node box small" style="left: 1135px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">KEEP / DISCARD<br />写入 lessons</span></div><div class="wire" style="left:520px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:230px"></div><div class="node small" style="left: 40px; top: 237.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">MASPCombine</span></div><div class="node box small" style="left: 295px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">单域阻塞题</span></div><div class="node box small" style="left: 575px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">跨域影响检查<br />定点编辑</span></div><div class="node box small" style="left: 855px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Target<br />Collateral</span></div><div class="node box small" style="left: 1135px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">KEEP / DISCARD<br />写入 lessons</span></div><div class="wire" style="left:520px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:395px"></div><div class="node small" style="left: 40px; top: 402.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Guarded-Patch</span></div><div class="node box small" style="left: 295px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">多个候选</span></div><div class="node box small accent" style="left: 575px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">锚点插入<br />diff guard</span></div><div class="node box small" style="left: 855px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">重复配对评测</span></div><div class="node box small" style="left: 1135px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">候选排序</span></div><div class="wire" style="left:520px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:560px"></div><div class="node small" style="left: 40px; top: 567.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">自由归因 Free</span></div><div class="node box small" style="left: 295px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">失败归因</span></div><div class="node box small" style="left: 575px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">执行协议</span></div><div class="node box small" style="left: 855px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">目标检查<br />100题评测</span></div><div class="node box small" style="left: 1135px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">保存实验教训</span></div><div class="wire" style="left:520px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:725px"></div><div class="node small" style="left: 40px; top: 732.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">策略记忆 Data</span></div><div class="node box small" style="left: 295px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">动态 SP</span></div><div class="node box small" style="left: 575px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">查重 / 查冲突<br />执行协议</span></div><div class="node box small" style="left: 855px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">目标检查<br />100题评测</span></div><div class="node box small accent" style="left: 1135px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">更新策略状态</span></div><div class="wire" style="left:520px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:802px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:802px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:802px;border-color:#424942;transform:rotate(45deg)"></div></main><style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202422;
-  --diagram-muted:#59635b;
-  --diagram-line:#545c55;
-  --diagram-border:#656e66;
-  --diagram-accent:#688e42;
+  --diagram-ink:#202520;
+  --diagram-muted:#5d635a;
+  --diagram-line:#3f493b;
+  --diagram-border:#53614c;
+  --diagram-accent:#729445;
   --diagram-failure:#997140;
   --diagram-paper:#fff;
-  --diagram-soft:#f6f8f3;
+  --diagram-soft:#f9faf6;
   --diagram-warm:#fcf6ed;
   --diagram-grid:none;
-  --diagram-vector-stroke:1.1px;
+  --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
-  --diagram-box-width:1.5px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#1d2723;
-  --diagram-muted:#4d6055;
-  --diagram-line:#303432;
-  --diagram-border:#424843;
-  --diagram-accent:#537e36;
-  --diagram-failure:#936321;
-  --diagram-paper:#fff;
-  --diagram-soft:#edf3e8;
-  --diagram-warm:#fcf1df;
-  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
-  --diagram-vector-stroke:1.35px;
+  --diagram-ink:#243343;
+  --diagram-muted:#56677a;
+  --diagram-line:#53687b;
+  --diagram-border:#9aaabb;
+  --diagram-accent:#3b7c69;
+  --diagram-failure:#a37835;
+  --diagram-paper:#f5f7fa;
+  --diagram-soft:#edf6f2;
+  --diagram-warm:#fff6e8;
+  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
+  --diagram-vector-stroke:1.5px;
   --diagram-edge-width:2px;
-  --diagram-box-width:1.7px;
+  --diagram-box-width:1.6px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -81,8 +81,7 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
 [data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
@@ -90,15 +89,52 @@
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
 [data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
-[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
-.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
 [data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
 [data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
 [data-diagram-style] marker path { stroke:var(--diagram-line); }
 [data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
 [data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
 [data-diagram-style] .am-label { background:var(--diagram-paper); }
-[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
 [data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
-@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node[data-type="tool"] { background-image:radial-gradient(#a8b69a .5px,transparent .5px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
+[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); fill:#fff!important; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
+[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
 </style></div></foreignObject></svg>

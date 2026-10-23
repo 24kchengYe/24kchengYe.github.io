@@ -5,7 +5,7 @@ const { JSDOM } = require('jsdom');
 
 const root = path.join(__dirname,'..');
 const controller = fs.readFileSync(path.join(root,'assets/js/writing-diagram-style.js'),'utf8');
-const routes = ['spec-generation','spec-generation/technical','spec-generation/essay','spec-repair','spec-repair/technical','rubric-model','rubric-model/technical','nimble-kev','attention-mechanisms','coding-agent-trajectories','automation-blueprint'];
+const routes = ['spec-generation','spec-generation/technical','spec-generation/essay','spec-repair','spec-repair/technical','rubric-model','rubric-model/technical','nimble-kev','attention-mechanisms','coding-agent-trajectories','automation-blueprint','agent-memory'];
 const styles = ['openai-blog','engineering'];
 
 function canonicalFigure(source) {
@@ -19,35 +19,45 @@ function canonicalFigure(source) {
 }
 
 async function controllerChecks() {
-  const dom = new JSDOM('<!doctype html><html lang="en"><body><section data-diagram-style="openai-blog"></section><img data-diagram-image data-src-openai-blog-en="/blog-en.svg" data-src-engineering-en="/engineering-en.svg" data-src-engineering-ja="/engineering-ja.svg"></body></html>',{ url:'https://example.test/writing/',runScripts:'outside-only' });
+  const dom = new JSDOM('<!doctype html><html lang="en"><body><nav class="report-site-nav"><div class="languages"></div></nav><section data-diagram-style="openai-blog"></section><img data-diagram-image data-src-openai-blog-en="/blog-en.svg" data-src-engineering-en="/engineering-en.svg" data-src-engineering-ja="/engineering-ja.svg"></body></html>',{ url:'https://example.test/writing/',runScripts:'outside-only' });
   const { window } = dom;
   window.eval(controller);
   const api = window.WritingDiagramStyle;
   assert.equal(api.current(),'openai-blog');
-  const first = api.createControl();
-  const second = api.createControl();
-  window.document.body.append(first,second);
-  assert.deepEqual([...first.options].map(option => option.textContent),['OpenAI Blog','Engineering']);
-  first.value = 'engineering';
-  first.dispatchEvent(new window.Event('change'));
-  assert.equal(second.value,'engineering');
+  const control = window.document.querySelector('[data-diagram-style-control]');
+  const menu = window.document.getElementById('writing-style-menu');
+  assert.equal(window.document.querySelectorAll('[data-diagram-style-control]').length,1);
+  assert(control.closest('.report-site-nav'));
+  assert.equal(menu.hidden,true);
+  control.click();
+  assert.equal(menu.hidden,false);
+  assert.equal(control.getAttribute('aria-expanded'),'true');
+  assert.deepEqual([...menu.querySelectorAll('strong')].map(option => option.textContent),['OpenAI Blog','Engineering']);
+  menu.querySelector('[data-style-option="engineering"]').click();
+  assert.equal(menu.hidden,true);
+  assert.equal(control.querySelector('.diagram-style-name').textContent,'Engineering');
+  assert.equal(window.document.activeElement,control);
   assert.equal(window.localStorage.getItem('writing-diagram-style'),'engineering');
   assert.equal(window.document.querySelector('section').dataset.diagramStyle,'engineering');
   assert.equal(window.document.querySelector('img').getAttribute('src'),'/engineering-en.svg');
   window.document.documentElement.lang = 'ja';
   await Promise.resolve();
-  assert.equal(first.getAttribute('aria-label'),'図のスタイル');
+  assert.equal(control.getAttribute('aria-label'),'ページ全体の図のスタイル');
   assert.equal(window.document.querySelector('img').getAttribute('src'),'/engineering-ja.svg');
   const host = window.document.createElement('div');
   window.document.body.append(host);
   const shadow = host.attachShadow({ mode:'open' });
   shadow.innerHTML = '<div data-diagram-style="openai-blog"></div>';
-  shadow.append(api.createControl());
   api.apply(shadow);
   assert.equal(shadow.querySelector('[data-diagram-style]').dataset.diagramStyle,'engineering');
+  assert.equal(shadow.querySelector('[data-diagram-style-control]'),null);
   window.dispatchEvent(new window.StorageEvent('storage',{ key:'writing-diagram-style',newValue:'openai-blog' }));
   assert.equal(api.current(),'openai-blog');
-  assert.equal(second.value,'openai-blog');
+  assert.equal(control.querySelector('.diagram-style-name').textContent,'OpenAI Blog');
+  control.click();
+  menu.dispatchEvent(new window.KeyboardEvent('keydown',{ key:'Escape',bubbles:true }));
+  assert.equal(menu.hidden,true);
+  assert.equal(window.document.activeElement,control);
   window.dispatchEvent(new window.StorageEvent('storage',{ key:'unrelated',newValue:'engineering' }));
   assert.equal(api.current(),'openai-blog');
   window.dispatchEvent(new window.StorageEvent('storage',{ key:'writing-diagram-style',newValue:'invalid' }));
@@ -62,9 +72,7 @@ async function controllerChecks() {
   }
   const blocked = new JSDOM('<!doctype html><html lang="en"><body></body></html>',{ runScripts:'outside-only' });
   blocked.window.eval(controller);
-  const control = blocked.window.WritingDiagramStyle.createControl();
-  control.value = 'engineering';
-  control.dispatchEvent(new blocked.window.Event('change'));
+  blocked.window.WritingDiagramStyle.set('engineering');
   assert.equal(blocked.window.WritingDiagramStyle.current(),'engineering');
   blocked.window.close();
 }
@@ -102,6 +110,9 @@ async function main() {
       }
     }
     dom.window.close();
+  }
+  for (const renderer of ['trajectory-map.js','automation-blueprint.js','figure-viewer.js']) {
+    assert(!fs.readFileSync(path.join(root,'assets/js',renderer),'utf8').includes('createControl'),`${renderer}: style selector must only live in page navigation`);
   }
   console.log(`Diagram themes: ${figures} SVG variants, ${routes.length} routes, controller persistence/storage/language checks passed.`);
 }

@@ -57,28 +57,28 @@
     <path d="M 718.8 501.70880199999993  L 716.4 506.50880199999995  L 714 501.70880199999993  " clip-path="url(#pd0d7b3c12f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_14">
-    <path d="M 284.4 34.2  L 471.6 34.2  Q 478.80000000000007 34.2 478.80000000000007 41.4  L 478.80000000000007 73.8  Q 478.80000000000007 81 471.6 81  L 284.4 81  Q 277.2 81 277.2 73.8  L 277.2 41.4  Q 277.2 34.2 284.4 34.2  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 284.4 34.2  L 471.6 34.2  Q 478.80000000000007 34.2 478.80000000000007 41.4  L 478.80000000000007 73.8  Q 478.80000000000007 81 471.6 81  L 284.4 81  Q 277.2 81 277.2 73.8  L 277.2 41.4  Q 277.2 34.2 284.4 34.2  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_15">
-    <path d="M 277.2 153  L 478.8 153  Q 486 153 486 160.2  L 486 192.6  Q 486 199.8 478.8 199.8  L 277.2 199.8  Q 270 199.8 270 192.6  L 270 160.2  Q 270 153 277.2 153  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 277.2 153  L 478.8 153  Q 486 153 486 160.2  L 486 192.6  Q 486 199.8 478.8 199.8  L 277.2 199.8  Q 270 199.8 270 192.6  L 270 160.2  Q 270 153 277.2 153  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_16">
-    <path d="M 286.2 279  L 469.8 279  Q 477 279 477 286.2  L 477 318.6  Q 477 325.8 469.8 325.8  L 286.2 325.8  Q 279 325.8 279 318.6  L 279 286.2  Q 279 279 286.2 279  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 286.2 279  L 469.8 279  Q 477 279 477 286.2  L 477 318.6  Q 477 325.8 469.8 325.8  L 286.2 325.8  Q 279 325.8 279 318.6  L 279 286.2  Q 279 279 286.2 279  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_17">
-    <path d="M 27 272.8  L 217.8 272.8  Q 225 272.8 225 281.9076923076923  L 225 322.8923076923077  Q 225 332 217.8 332  L 27 332  Q 19.8 332 19.8 322.8923076923077  L 19.8 281.9076923076923  Q 19.8 272.8 27 272.8  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 27 272.8  L 217.8 272.8  Q 225 272.8 225 281.9076923076923  L 225 322.8923076923077  Q 225 332 217.8 332  L 27 332  Q 19.8 332 19.8 322.8923076923077  L 19.8 281.9076923076923  Q 19.8 272.8 27 272.8  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_18">
-    <path d="M 43.2 423  L 201.6 423  Q 225 423 225 446.4  L 225 446.4  Q 225 469.8 201.6 469.8  L 43.2 469.8  Q 19.8 469.8 19.8 446.4  L 19.8 446.4  Q 19.8 423 43.2 423  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 43.2 423  L 201.6 423  Q 225 423 225 446.4  L 225 446.4  Q 225 469.8 201.6 469.8  L 43.2 469.8  Q 19.8 469.8 19.8 446.4  L 19.8 446.4  Q 19.8 423 43.2 423  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_19">
-    <path d="M 277.2 423  L 478.8 423  Q 486 423 486 430.2  L 486 462.6  Q 486 469.8 478.8 469.8  L 277.2 469.8  Q 270 469.8 270 462.6  L 270 430.2  Q 270 423 277.2 423  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 277.2 423  L 478.8 423  Q 486 423 486 430.2  L 486 462.6  Q 486 469.8 478.8 469.8  L 277.2 469.8  Q 270 469.8 270 462.6  L 270 430.2  Q 270 423 277.2 423  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_20">
-    <path d="M 597.6 416.8  L 835.2 416.8  Q 842.4 416.8 842.4 425.9076923076923  L 842.4 466.8923076923077  Q 842.4 476 835.2 476  L 597.6 476  Q 590.4 476 590.4 466.8923076923077  L 590.4 425.9076923076923  Q 590.4 416.8 597.6 416.8  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 597.6 416.8  L 835.2 416.8  Q 842.4 416.8 842.4 425.9076923076923  L 842.4 466.8923076923077  Q 842.4 476 835.2 476  L 597.6 476  Q 590.4 476 590.4 466.8923076923077  L 590.4 425.9076923076923  Q 590.4 416.8 597.6 416.8  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="patch_21">
-    <path d="M 621 509.4  L 811.8 509.4  Q 835.2 509.4 835.2 532.8  L 835.2 532.8  Q 835.2 556.2 811.8 556.2  L 621 556.2  Q 597.6 556.2 597.6 532.8  L 597.6 532.8  Q 597.6 509.4 621 509.4  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+    <path d="M 621 509.4  L 811.8 509.4  Q 835.2 509.4 835.2 532.8  L 835.2 532.8  Q 835.2 556.2 811.8 556.2  L 621 556.2  Q 597.6 556.2 597.6 532.8  L 597.6 532.8  Q 597.6 509.4 621 509.4  z " clip-path="url(#pd0d7b3c12f)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
    </g>
    <g id="text_1"><text x="122.4" y="63.433125000000004" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Issues to review" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="122.4" dy="0">Issues to review</tspan></text></g>
    <g id="text_2"><text x="378" y="63.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_14" aria-label="Unresolved issues?" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="378" dy="0">Unresolved issues?</tspan></text></g>
@@ -107,34 +107,34 @@
   </clipPath>
  </defs>
 <style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202422;
-  --diagram-muted:#59635b;
-  --diagram-line:#545c55;
-  --diagram-border:#656e66;
-  --diagram-accent:#688e42;
+  --diagram-ink:#202520;
+  --diagram-muted:#5d635a;
+  --diagram-line:#3f493b;
+  --diagram-border:#53614c;
+  --diagram-accent:#729445;
   --diagram-failure:#997140;
   --diagram-paper:#fff;
-  --diagram-soft:#f6f8f3;
+  --diagram-soft:#f9faf6;
   --diagram-warm:#fcf6ed;
   --diagram-grid:none;
-  --diagram-vector-stroke:1.1px;
+  --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
-  --diagram-box-width:1.5px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#1d2723;
-  --diagram-muted:#4d6055;
-  --diagram-line:#303432;
-  --diagram-border:#424843;
-  --diagram-accent:#537e36;
-  --diagram-failure:#936321;
-  --diagram-paper:#fff;
-  --diagram-soft:#edf3e8;
-  --diagram-warm:#fcf1df;
-  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
-  --diagram-vector-stroke:1.35px;
+  --diagram-ink:#243343;
+  --diagram-muted:#56677a;
+  --diagram-line:#53687b;
+  --diagram-border:#9aaabb;
+  --diagram-accent:#3b7c69;
+  --diagram-failure:#a37835;
+  --diagram-paper:#f5f7fa;
+  --diagram-soft:#edf6f2;
+  --diagram-warm:#fff6e8;
+  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
+  --diagram-vector-stroke:1.5px;
   --diagram-edge-width:2px;
-  --diagram-box-width:1.7px;
+  --diagram-box-width:1.6px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -161,8 +161,7 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
 [data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
@@ -170,15 +169,52 @@
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
 [data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
-[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
-.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
 [data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
 [data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
 [data-diagram-style] marker path { stroke:var(--diagram-line); }
 [data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
 [data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
 [data-diagram-style] .am-label { background:var(--diagram-paper); }
-[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
 [data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
-@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node[data-type="tool"] { background-image:radial-gradient(#a8b69a .5px,transparent .5px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
+[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
+[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); fill:#fff!important; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
+[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
 </style></svg>

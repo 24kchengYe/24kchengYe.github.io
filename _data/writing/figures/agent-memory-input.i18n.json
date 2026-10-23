@@ -1,0 +1,66 @@
+{
+  "规则与请求": [
+    "Rules and request",
+    "規則と依頼"
+  ],
+  "System · User": [
+    "System · User",
+    "System · User"
+  ],
+  "本轮输入": [
+    "Current input",
+    "今回の入力"
+  ],
+  "近期消息 · 历史摘要": [
+    "Recent turns · Summary",
+    "直近の会話 · 履歴要約"
+  ],
+  "当前输入还包括恢复的环境状态。压缩后的活动段替代旧活动段，原始轨迹另存。": [
+    "The input also contains refreshed environment state. A compacted active segment replaces the old one; raw traces remain separate.",
+    "入力には更新された環境状態も含まれます。圧縮後の有効区間が以前の区間に置き換わり、元の軌跡は別に残ります。"
+  ],
+  "模型调用": [
+    "Model call",
+    "モデル呼び出し"
+  ],
+  "判断并继续行动": [
+    "Decide and act",
+    "判断して行動を続ける"
+  ],
+  "活跃偏好": [
+    "Active preferences",
+    "有効な好み"
+  ],
+  "有预算地自动注入": [
+    "Budgeted injection",
+    "上限内で自動注入"
+  ],
+  "统一记忆挂载后，活跃偏好按预算注入。只有 MainAgent 能修改偏好。": [
+    "With unified memory mounted, active preferences are injected within a budget. Only MainAgent can change preferences.",
+    "統合記憶の接続後、有効な好みを上限内で注入します。変更できるのはMainAgentだけです。"
+  ],
+  "按需读取": [
+    "Retrieve as needed",
+    "必要に応じて取得"
+  ],
+  "memory recall · Read": [
+    "memory recall · Read",
+    "memory recall · Read"
+  ],
+  "recall 检索任务、日记等记录；Read 读取经验和 Skills。工具返回进入后续模型输入。": [
+    "recall searches records such as tasks and daily notes; Read loads experience and Skills. Tool results enter subsequent model inputs.",
+    "recallはタスクや日記を検索し、Readは経験やSkillsを読み込みます。ツール結果は後続のモデル入力に入ります。"
+  ],
+  "记忆库与文件": [
+    "Memory and files",
+    "記憶ストアとファイル"
+  ],
+  "任务 · 日记 · 经验 · Skills": [
+    "Tasks · Notes · Guides",
+    "タスク · 日記 · 経験 · Skills"
+  ],
+  "记忆怎样回到输入": [
+    "How memory reaches the input",
+    "記憶が入力に届くまで"
+  ]
+}

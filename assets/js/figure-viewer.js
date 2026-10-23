@@ -14,7 +14,6 @@
   let opener = null;
   if (window.WritingDiagramStyle) {
     dialog.dataset.diagramStyle = window.WritingDiagramStyle.current();
-    dialog.querySelector('.figure-toolbar')?.prepend(window.WritingDiagramStyle.createControl());
     window.addEventListener('writing-diagram-style-change',() => { if (opener) image.src = opener.src; });
   }
 

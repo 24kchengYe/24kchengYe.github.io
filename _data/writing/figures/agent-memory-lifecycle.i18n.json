@@ -1,0 +1,74 @@
+{
+  "本次 attempt": [
+    "This attempt",
+    "今回のattempt"
+  ],
+  "空的临时记忆库": [
+    "Empty temporary store",
+    "空の一時ストア"
+  ],
+  "结束后归档": [
+    "Archive on completion",
+    "終了時にアーカイブ"
+  ],
+  "保留记录": [
+    "Keep the records",
+    "記録を保存"
+  ],
+  "下一次 attempt": [
+    "Next attempt",
+    "次のattempt"
+  ],
+  "另建空库": [
+    "A new empty store",
+    "別の空ストアを作成"
+  ],
+  "标准任务包装层覆盖记忆目录。即使用户 ID 相同，每个 attempt 也从新建空库开始。": [
+    "The standard task wrapper overrides the memory directory. Even with the same user ID, each attempt begins with a newly created empty store.",
+    "標準タスクのラッパーが記憶ディレクトリを上書きします。同じユーザーIDでも各attemptは新しい空ストアから始まります。"
+  ],
+  "长驻会话入口": [
+    "Long-lived entry",
+    "長寿命セッションの入口"
+  ],
+  "使用配置目录": [
+    "Use configured directory",
+    "設定ディレクトリを使用"
+  ],
+  "同一用户存储": [
+    "Same user store",
+    "同じユーザーストア"
+  ],
+  "可继续读写": [
+    "Available for read / write",
+    "読み書きを継続可能"
+  ],
+  "长驻或直接配置入口可以复用宿主机上的用户目录；经验文件仍需对应 VM 或显式迁移。": [
+    "A long-lived or directly configured entry can reuse the host’s user directory. Experience files still depend on the corresponding VM or explicit migration.",
+    "長寿命または直接設定の入口はホスト上のユーザーディレクトリを再利用できます。経験ファイルは対応するVMか明示的な移行が必要です。"
+  ],
+  "后续访问": [
+    "Later access",
+    "後続のアクセス"
+  ],
+  "复用同一目录": [
+    "Reuse that directory",
+    "同じディレクトリを再利用"
+  ],
+  "A · 标准任务入口：每次隔离": [
+    "A · Standard task entry: isolated attempts",
+    "A · 標準タスク入口：attemptごとに分離"
+  ],
+  "B · 长驻会话／直接配置入口：可复用存储": [
+    "B · Long-lived / directly configured entry: reusable storage",
+    "B · 長寿命／直接設定の入口：ストアを再利用可能"
+  ],
+  "归档不会自动读回下一次 attempt": [
+    "Archives are not automatically reloaded",
+    "次のattemptはアーカイブを自動で読まない"
+  ],
+  "记忆能否跨过任务边界": [
+    "Does memory cross task boundaries?",
+    "記憶はタスクの境界を越えるか"
+  ]
+}

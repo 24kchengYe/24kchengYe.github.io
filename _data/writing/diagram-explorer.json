@@ -57,5 +57,8 @@
   "spec-generation-full-workflow": {"kind":"flow","title":["Spec 生成 · 完整流程","Spec generation · Full workflow","Spec 生成 · 全体フロー"],"links":{"generate":"12-core-skills","attribute":"08-v3-memory","patch":"03-search-operators","confirm":"25-method-decisions"}},
   "spec-generation-recorded-case": {"kind":"flow","title":["真实案例 · 招聘筛选条件","Recorded case · recruitment filters","実例 · 採用の絞り込み条件"],"links":{}},
   "rubric-model-full-workflow": {"kind":"flow","title":["规则评审模型 · 完整流程","Rubric model · Full workflow","ルール評価モデル · 全体フロー"],"links":{"input":"rubric-model-03","split":"rubric-model-04","sft":"rubric-model-05","rl":"rubric-model-06","opd":"rubric-model-07","cot":"rubric-model-08"}},
-  "rubric-model-recorded-case": {"kind":"flow","title":["真实案例 · 找到问题，分对规则","Recorded case · find the issue, assign the rule","実例 · 問題の検出とルールの分類"],"links":{}}
+  "rubric-model-recorded-case": {"kind":"flow","title":["真实案例 · 找到问题，分对规则","Recorded case · find the issue, assign the rule","実例 · 問題の検出とルールの分類"],"links":{}},
+  "agent-memory-input": {"kind":"flow","title":["记忆怎样回到输入","How memory reaches the input","記憶が入力に届くまで"],"links":{}},
+  "agent-memory-compaction": {"kind":"flow","title":["上下文压缩的两条路径","Two paths through compaction","文脈圧縮の二つの経路"],"links":{}},
+  "agent-memory-lifecycle": {"kind":"flow","title":["记忆能否跨过任务边界","Does memory cross task boundaries?","記憶はタスクの境界を越えるか"],"links":{}}
 }

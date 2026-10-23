@@ -1,0 +1,62 @@
+{
+  "当前输入过长": [
+    "Input over budget",
+    "入力が上限を超過"
+  ],
+  "本地估算 > 200k tokens": [
+    "Local estimate > 200k tokens",
+    "ローカル推定 > 200k tokens"
+  ],
+  "试算工具过期": [
+    "Plan tool expiration",
+    "ツール本文の整理を試算"
+  ],
+  "保护近期轮次与工具信息": [
+    "Protect recent rounds\nand tool information",
+    "直近のラウンドと\nツール情報を保護"
+  ],
+  "仅替换符合条件的旧 tool-role 文本。保护近期约 40k tokens 的完整轮次、Skill 读取及工具发现结果。": [
+    "Only eligible old tool-role text is replaced. Protect about 40k tokens of recent complete rounds, Skill reads, and tool-discovery results.",
+    "対象となる古いtool-role本文だけを置換します。直近約40k tokensの完全なラウンド、Skill読み出し、ツール探索結果を保護します。"
+  ],
+  "应用过期替换": [
+    "Apply expiration",
+    "期限切れ置換を適用"
+  ],
+  "旧正文 → 占位标记": [
+    "Old bodies → Placeholders",
+    "古い本文 → プレースホルダー"
+  ],
+  "放弃草案 · 摘要": [
+    "Discard plan · Summarize",
+    "案を破棄して要約"
+  ],
+  "较早历史 → 摘要\n近期完整轮次保留原文": [
+    "Older history → Summary\nRecent rounds stay verbatim",
+    "古い履歴 → 要約\n直近のラウンドは原文保持"
+  ],
+  "用本次过期试算之前的历史总结。近期预算约 12k tokens，至少保留一轮；更早已过期的正文不会从原始日志恢复。": [
+    "Summarize history from before this expiration attempt. Keep about 12k tokens of recent history, at least one complete round. Previously expired bodies are not restored from raw logs.",
+    "今回の整理試算前の履歴を要約します。直近約12k tokens、少なくとも一つの完全なラウンドを保持。以前に期限切れとなった本文は元ログから復元しません。"
+  ],
+  "继续当前任务": [
+    "Continue the task",
+    "タスクを続行"
+  ],
+  "使用新的活动段": [
+    "Use the new active segment",
+    "新しい有効区間を使用"
+  ],
+  "节省 ≥ 2k\n且剩余 ≤ 120k tokens": [
+    "Save ≥ 2k\nand leave ≤ 120k tokens",
+    "2k以上削減\nかつ残量 ≤ 120k tokens"
+  ],
+  "未同时满足": [
+    "Either condition fails",
+    "いずれかを満たさない"
+  ],
+  "上下文压缩的两条路径": [
+    "Two paths through compaction",
+    "文脈圧縮の二つの経路"
+  ]
+}

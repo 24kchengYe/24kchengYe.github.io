@@ -520,5 +520,26 @@
     "height": 881,
     "format": "html-css",
     "translations": "rubric-model-recorded-case.i18n.json"
+  },
+  "agent-memory-input": {
+    "source": "agent-memory-input.html",
+    "width": 1400,
+    "height": 660,
+    "format": "html-css",
+    "translations": "agent-memory-input.i18n.json"
+  },
+  "agent-memory-compaction": {
+    "source": "agent-memory-compaction.html",
+    "width": 1440,
+    "height": 920,
+    "format": "html-css",
+    "translations": "agent-memory-compaction.i18n.json"
+  },
+  "agent-memory-lifecycle": {
+    "source": "agent-memory-lifecycle.html",
+    "width": 1400,
+    "height": 760,
+    "format": "html-css",
+    "translations": "agent-memory-lifecycle.i18n.json"
   }
 }

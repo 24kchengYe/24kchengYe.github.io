@@ -22,6 +22,9 @@
   for(const c of Object.values(copy)){
     for(const [key,stat] of [['core','core'],['online','online'],['selected','selected'],['all','reports']]) c[key]=c[key].replace(/\d+$/,String(data.stats[stat]));
   }
+  Object.assign(copy.en,{openDocument:'Open document ↗',available:'Read here',online:'Read here · '+data.stats.online,pilot:'Original reports and available Chinese editions.'});
+  Object.assign(copy.zh,{openDocument:'打开文档 ↗',original:'原文',available:'在线阅读',online:copy.zh.online.replace('在线试读','在线阅读'),pilot:'原文与现有中文译本。'});
+  Object.assign(copy.ja,{openDocument:'文書を開く ↗',original:'原文',available:'オンラインで読む',online:copy.ja.online.replace('試し読み','オンライン'),pilot:'原文と公開済みの中国語訳。'});
   const collectionCopy = {
     en:{reportsTab:'Technical reports',learningTab:'AI learning',researchersTab:'Researchers',learningSearch:'Search topics, methods, papers',researcherSearch:'Search names, topics, writing',empty:'No matches. Try another search.',learningNote:'A topic index from the Foundation Models reading collection. Links open public sources.',researchersNote:'Personal blogs and selected essays.',chapters:'Contents',blog:'Personal blog ↗',articles:'Selected writing',unlinked:'Source pending',related:'Report',close:'Close',items:n=>`${n} entries`,volumes:(n,c)=>`${n} topics · ${c} entries`,people:(n,c)=>`${n} researchers · ${c} essays`,basics:'Models & systems',training:'Training & evaluation',applications:'Agents & applications'},
     zh:{reportsTab:'基模技术报告',learningTab:'AI 技术学习',researchersTab:'研究者',learningSearch:'搜索主题、方法、论文',researcherSearch:'搜索姓名、主题、文章',empty:'没有匹配结果，试试其他关键词。',learningNote:'按 Foundation Models 合集整理的主题目录，链接指向公开原文。',researchersNote:'个人博客与精选文章。',chapters:'章节目录',blog:'个人博客 ↗',articles:'精选文章',unlinked:'来源待补',related:'报告',close:'收起',items:n=>`${n} 条`,volumes:(n,c)=>`${n} 个主题 · ${c} 条`,people:(n,c)=>`${n} 位 · ${c} 篇文章`,basics:'模型与系统',training:'训练与评测',applications:'智能体与应用'},
@@ -122,15 +125,21 @@
     const extras=urls.slice(1).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${i+2} ↗</a>`).join(' ');
     return `<li><span class="chapter-number">${String(index+1).padStart(2,'0')}</span><div>${urls.length?`<a href="${esc(urls[0])}" target="_blank" rel="noopener">${esc(c.title)} <span aria-hidden="true">↗</span></a>`:`<span>${esc(c.title)}</span> <small>${t().unlinked}</small>`}${extras?` <span class="chapter-extra">${extras}</span>`:''}${related.map(id=>` <a class="chapter-report" href="${esc(url({collection:'reports',book:id,report:'',q:'',topic:'',scope:'all',tech:'',path:''}))}" data-related="${id}">${t().related} ↗</a>`).join('')}</div></li>`;
   }
+  function placeShelfDetail(button,panel){
+    const grid=$('library-shelves'),groups=Array.from(grid.querySelectorAll(':scope > .shelf-group'));
+    const index=groups.indexOf(button.closest('.shelf-group'));
+    const columns=getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+    groups[Math.min(groups.length-1,Math.floor(index/columns)*columns+columns-1)]?.after(panel);
+  }
   function renderDetail(){
     const panel=$('book-detail');panel.classList.toggle('collection-detail',state.collection!=='reports');
     if(state.collection!=='reports'){renderCollectionDetail();return;}
     const r=byId.get(state.book);panel.hidden=!r;
     if(!r)return;
     const issue=r.quality?.summary?.[language()]||'';
-    panel.innerHTML=`<div class="detail-cover" style="--book-color:${shade(r)}"><strong>${esc(title(r))}</strong><span>${esc(r.date)} / ${esc(r.company.split('（')[0])}</span></div><div class="detail-copy"><p class="detail-meta">${esc(r.company)} · ${esc(r.date)}${r.pages?' · '+t().pages(r.pages):''}</p><h2 id="detail-title" tabindex="-1">${esc(title(r))}</h2><p class="detail-title-long">${esc(r.title)}</p><p class="detail-terms">${esc(r.keywords.slice(0,4).join(' · '))}</p><div class="detail-links">${r.assets?`<a href="${esc(url({report:r.id,edition:'original'}))}" data-read="${r.id}" data-edition="original">${t().read}</a><a href="${esc(url({report:r.id,edition:'zh'}))}" data-read="${r.id}" data-edition="zh">${t().zh}</a><a href="${esc(url({report:r.id,edition:'dual'}))}" data-read="${r.id}" data-edition="dual">${t().dual}</a>`:''}<a href="${esc(r.source)}" target="_blank" rel="noopener">${t().source}</a></div><p class="detail-quality">${r.assets?esc(issue):esc(status(r))}</p></div>`;
+    panel.innerHTML=`<div class="detail-cover" style="--book-color:${shade(r)}"><strong>${esc(title(r))}</strong><span>${esc(r.date)} / ${esc(r.company.split('（')[0])}</span></div><div class="detail-copy"><p class="detail-meta">${esc(r.company)} · ${esc(r.date)}${r.pages?' · '+t().pages(r.pages):''}</p><h2 id="detail-title" tabindex="-1">${esc(title(r))}</h2><p class="detail-title-long">${esc(r.title)}</p><p class="detail-terms">${esc(r.keywords.slice(0,4).join(' · '))}</p><div class="detail-links">${r.assets?['original','zh','dual'].filter(k=>r.assets[k]).map(k=>`<a href="${esc(url({report:r.id,edition:k}))}" data-read="${r.id}" data-edition="${k}">${k==='original'?t().read:t()[k]}</a>`).join(''):''}<a href="${esc(r.source)}" target="_blank" rel="noopener">${t().source}</a></div><p class="detail-quality">${r.assets?esc(issue):esc(status(r))}</p></div>`;
     const button=$('library-shelves').querySelector(`[data-book="${r.id}"]`);
-    if(state.view==='shelf'&&button)button.closest('.shelf-group').after(panel);
+    if(state.view==='shelf'&&button)placeShelfDetail(button,panel);
     else $('library-more').after(panel);
   }
   function renderCollectionDetail(){
@@ -140,16 +149,17 @@
     const links=learning?r.sourceUrls:[],related=learning?r.reportIds.filter(id=>byId.has(id)):[];
     const sources=links.map(u=>{const domain=new URL(u).hostname.replace(/^www\./,'');const label=({'arxiv.org':'arXiv','github.com':'GitHub','nature.com':'Nature','huggingface.co':'Hugging Face'})[domain]||domain;return `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`;}).join('');
     const reports=related.map(id=>`<a href="${esc(url({collection:'reports',book:id,report:'',q:'',topic:'',scope:'all',tech:'',path:''}))}" data-related="${id}">${esc(title(byId.get(id)))} · ${t().related} →</a>`).join('');
-    const editions=related.filter(id=>byId.get(id).assets).map(id=>`<a href="${esc(url({report:id,edition:'zh',page:1}))}" data-read="${id}" data-edition="zh">${t().zh} →</a>`).join('');
+    const editions=related.filter(id=>byId.get(id).assets?.zh).map(id=>`<a href="${esc(url({report:id,edition:'zh',page:1}))}" data-read="${id}" data-edition="zh">${t().zh} →</a>`).join('');
     const metadata=learning?[local(r.topicTitle),local(r.section)].filter(Boolean).join(' · '):t().researchersTab;
-    panel.innerHTML=`<div class="detail-cover" style="--book-color:${shade(r)}"><strong>${esc(spineTitle(name))}</strong><span>${learning?t().learningTab:t().researchersTab}</span></div><div class="detail-copy"><div class="detail-topline"><p class="detail-meta">${esc(metadata)}</p><button type="button" data-close class="detail-close" aria-label="${t().close}">×</button></div><h2 id="detail-title" tabindex="-1">${esc(name)}</h2>${learning?`<div class="detail-links">${sources}${editions}${reports}</div>${!links.length?`<p class="detail-quality">${t().unlinked}</p>`:''}`:`<p class="detail-terms">${esc(r.topics.join(' · '))}</p><a href="${esc(r.url)}" target="_blank" rel="noopener" class="detail-blog">${t().blog}</a>`}</div>${!learning?`<div class="collection-contents"><h3>${t().articles}</h3><ol class="chapter-list">${childItems(r).map(chapterRow).join('')}</ol></div>`:''}`;
+    panel.innerHTML=`<div class="detail-cover" style="--book-color:${shade(r)}"><strong>${esc(name)}</strong><span>${learning?t().learningTab:t().researchersTab}</span></div><div class="detail-copy"><div class="detail-topline"><p class="detail-meta">${esc(metadata)}</p><button type="button" data-close class="detail-close" aria-label="${t().close}">×</button></div><h2 id="detail-title" tabindex="-1">${esc(name)}</h2>${learning?`<div class="detail-links">${sources}${editions}${reports}</div>${!links.length?`<p class="detail-quality">${t().unlinked}</p>`:''}`:`<p class="detail-terms">${esc(r.topics.join(' · '))}</p><a href="${esc(r.url)}" target="_blank" rel="noopener" class="detail-blog">${t().blog}</a>`}</div>${!learning?`<div class="collection-contents"><h3>${t().articles}</h3><ol class="chapter-list">${childItems(r).map(chapterRow).join('')}</ol></div>`:''}`;
     const button=$('library-shelves').querySelector(`[data-book="${r.id}"]`);
-    if(state.view==='shelf'&&button)button.closest('.shelf-group').after(panel);
+    if(state.view==='shelf'&&button)placeShelfDetail(button,panel);
     else if(state.view==='list')$('library-list').querySelector(`[data-book="${r.id}"]`)?.closest('article').after(panel);
   }
   function renderReader(){
     const el=$('library-reader'),r=byId.get(state.report);
     if(!r){el.innerHTML=`<a class="reader-back" href="${esc(url({report:''}))}" data-back>${t().back}</a><h1>${t().missing}</h1>`;return;}
+    if(r.assets&&!r.assets[state.edition])state.edition='original';
     const asset=r.assets?.[state.edition];
     const issue=r.quality?.summary?.[language()]||t().quality;
     const current=el.querySelector('.pdf-document');
@@ -157,8 +167,10 @@
     // Changing the interface language should not reload a long PDF.
     const reuse=current?.dataset.key===key?current:null;
     if(reuse)reuse.remove();else{disposePDF?.();disposePDF=null;}
-    el.innerHTML=`<a class="reader-back" href="${esc(url({report:''}))}" data-back>${t().back}</a><header class="reader-heading"><h1>${esc(title(r))}</h1><p class="reader-subtitle">${esc(r.title)}</p><p class="reader-meta">${esc(r.company)} · ${esc(r.version)}${r.pages?' · '+t().pages(r.pages):''} · <a href="${esc(r.source)}" target="_blank" rel="noopener">${t().source}</a></p></header>${r.assets?`<nav class="edition-bar" aria-label="Edition"><div class="edition-tabs">${['original','zh','dual'].filter(k=>r.assets[k]).map(k=>`<a href="${esc(url({edition:k}))}" data-edition="${k}" data-read="${r.id}" aria-current="${state.edition===k}">${esc(t()[k])}</a>`).join('')}</div><a class="reader-external" href="${esc(asset?.url||r.source)}" target="_blank" rel="noopener">${t().open}${asset?' · '+(asset.bytes/1e6).toFixed(1)+' MB':''}</a></nav><p class="reader-quality">${state.edition==='original'?'':esc(issue)}</p><div id="reader-document"></div><p class="reader-fallback">${t().fallback}</p>`:`<p>${t().noFile}</p>`}`;
-    if(asset){
+    el.innerHTML=`<a class="reader-back" href="${esc(url({report:''}))}" data-back>${t().back}</a><header class="reader-heading"><h1>${esc(title(r))}</h1><p class="reader-subtitle">${esc(r.title)}</p><p class="reader-meta">${esc(r.company)} · ${esc(r.version)}${r.pages?' · '+t().pages(r.pages):''} · <a href="${esc(r.source)}" target="_blank" rel="noopener">${t().source}</a></p></header>${r.assets?`<nav class="edition-bar" aria-label="Edition"><div class="edition-tabs">${['original','zh','dual'].filter(k=>r.assets[k]).map(k=>`<a href="${esc(url({edition:k}))}" data-edition="${k}" data-read="${r.id}" aria-current="${state.edition===k}">${esc(t()[k])}</a>`).join('')}</div><a class="reader-external" href="${esc(asset?.url||r.source)}" target="_blank" rel="noopener">${asset?.format==='html'?t().openDocument:t().open}${asset?' · '+(asset.bytes/1e6).toFixed(1)+' MB':''}</a></nav><p class="reader-quality">${state.edition==='original'?'':esc(issue)}</p><div id="reader-document"></div><p class="reader-fallback">${asset?.format==='html'?'':t().fallback}</p>`:`<p>${t().noFile}</p>`}`;
+    if(asset?.format==='html'){
+      const frame=document.createElement('iframe');frame.className='reader-frame document-frame';frame.title=title(r);frame.src=asset.url;frame.setAttribute('sandbox','allow-popups allow-popups-to-escape-sandbox');$('reader-document').append(frame);
+    }else if(asset){
       const frame=reuse||document.createElement('div');frame.className='pdf-document';frame.title=`${title(r)} · ${t()[state.edition]} · ${t().loading}`;
       frame.dataset.key=key;
       $('reader-document').append(frame);
@@ -222,6 +234,7 @@
   $('library-reset').addEventListener('click',()=>{limit=30;navigate({q:'',tech:'',scope:'core',book:'',path:'',topic:''});});
   $('library-more').addEventListener('click',()=>{limit+=30;try{history.replaceState({limit},'',url());}catch{}render();});
   window.addEventListener('popstate',()=>{limit=Number.isInteger(history.state?.limit)?history.state.limit:30;state=readLocation();render();});
+  window.addEventListener('resize',()=>{const button=$('library-shelves').querySelector('[aria-pressed="true"]');if(button&&!$('book-detail').hidden&&state.view==='shelf')placeShelfDetail(button,$('book-detail'));});
   new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   state=readLocation();render();
 })();

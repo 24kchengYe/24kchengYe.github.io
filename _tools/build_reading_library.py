@@ -1,4 +1,4 @@
-"""Export the public reading library and a two-report PDF pilot.
+"""Export the public reading library with verified server assets or the PDF pilot.
 
 Reads only the bibliography, translation terminal records and explicitly selected
 public reports. Internal notes, credentials, logs and cache contents are never copied.
@@ -51,6 +51,11 @@ def main():
     report_topics = load_report_topics(public['reports'], ROOT)
     publication = json.loads((ROOT / '_data/reading-publication.json').read_text(encoding='utf-8'))
     pilot = {r['id']:r for r in publication['reports']}
+    asset_manifest_path=ROOT/'_data/reading-assets.json'
+    remote=json.loads(asset_manifest_path.read_text(encoding='utf-8')) if asset_manifest_path.exists() else None
+    if remote:
+        assert remote['catalog_sha256']==digest(catalog_path), 'Rebuild the server asset manifest for this catalog'
+        assert set(remote['reports'])=={r['id'] for r in catalog}
     base_url = publication['asset_base_url']
     assert base_url.startswith('https://') or base_url in {'files/', '/reading/library-preview/files/'}
     by_id = {r['id']:r for r in catalog}
@@ -63,7 +68,7 @@ def main():
             records[record['id']] = record
     assert set(records).issubset(by_id)
     timestamp = datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(timespec='seconds')
-    inventory = {'created_at':timestamp,'guide':'Guide: no material change','scope':'Public catalog, finished editions, two-report layout pilot',
+    inventory = {'created_at':timestamp,'guide':'Guide: no material change','scope':'Public catalog and verified server document manifest' if remote else 'Public catalog, finished editions, two-report layout pilot',
                  'input_hashes':{'catalog':digest(catalog_path),'public_metadata':digest(public_path),
                                  'report_topics':digest(ROOT/'_data/reading-report-topics.json'),
                                  'shared_taxonomy':digest(ROOT/'_data/reading-learning.json')},'sources':[], 'editions':[]}
@@ -78,7 +83,7 @@ def main():
     stats = {'reports':len(catalog),'translated':len(records),'untranslated':len(catalog)-len(records),
              'selected':sum(r['selected'] for r in public['reports']),
              'selected_translated':sum(r['selected'] and r['id'] in records for r in public['reports']),
-             'core':len(public['core']),'online':len(pilot),'companies':len({r['company'] for r in catalog}),
+             'core':len(public['core']),'online':len(remote['reports']) if remote else len(pilot),'companies':len({r['company'] for r in catalog}),
              'original_bytes':sum(r['bytes'] for r in inventory['sources']),
              'zh_bytes':sum(r['bytes'] for r in inventory['editions'] if r['kind']=='zh'),
              'dual_bytes':sum(r['bytes'] for r in inventory['editions'] if r['kind']=='dual'),
@@ -88,7 +93,23 @@ def main():
         r=dict(report); source_record=by_id[r['id']]
         r.update(topicId=report_topics[r['id']],pages=source_record.get('pages'),version=source_record.get('downloaded_version') or source_record.get('version') or '',
                  translation='generated' if r['id'] in records else 'none',assets=None,quality=None)
-        if r['id'] in pilot:
+        if remote:
+            entry=remote['reports'][r['id']]
+            assert entry['source_sha256']==source_record['sha256'] and entry['version']==r['version']
+            assert 'original' in entry['assets']
+            assert set(entry['assets']).issubset({'original','zh','dual'})
+            for kind, asset in entry['assets'].items():
+                assert re.fullmatch(r'https://yechengzhang\.duqi\.top/reading/files/[a-z0-9.-]+',asset['url'])
+                assert re.fullmatch(r'[a-f0-9]{64}',asset['sha256']) and asset['bytes']>0
+                assert asset['format'] in {'pdf','html','md'}
+                if kind in {'zh','dual'}:
+                    assert asset['sha256']==records[r['id']]['output_sha256'][kind]
+                elif asset['format']!='html':
+                    assert asset['sha256']==source_record['sha256']
+                else:
+                    assert asset['source_sha256']==source_record['sha256']
+            r['assets']=entry['assets']
+        elif r['id'] in pilot:
             publication_record=pilot[r['id']]
             assert r['version']==publication_record['source_version'], 'Source version changed; review the publication manifest'
             record=records[r['id']]
@@ -108,6 +129,7 @@ def main():
                 assert digest(destination)==expected
                 assets[kind]={'url':base_url.rstrip('/')+'/'+name,'bytes':destination.stat().st_size,'sha256':expected}
             r['assets']=assets
+        if r['assets'] and any(k in r['assets'] for k in ['zh','dual']):
             r['quality']=({'state':'sampled_with_issues','reviewed_at':'2026-10-21','summary':QUALITY[r['id']]}
                           if r['id'] in QUALITY else {'state':'not_reviewed','summary':{'en':'Machine translation; not reviewed.','zh':'机器译文，尚未校对。','ja':'機械翻訳・未校閲。'}})
         published.append(r)
@@ -119,8 +141,8 @@ def main():
     inventory['stats']=stats
     inventory['published_assets']=[{'id':r['id'],'assets':r['assets']} for r in published if r['assets']]
     inventory['public_output_sha256']=digest(ROOT/'assets/js/reading-library-data.js')
-    inventory['pilot_bytes']=sum(a['bytes'] for r in published if r['assets'] for a in r['assets'].values())
+    inventory['published_bytes']=sum(a['bytes'] for r in published if r['assets'] for a in r['assets'].values())
     write_json(ROOT/'_preview/library/inventory.json',inventory)
-    print(json.dumps({'stats':stats,'pilot_bytes':inventory['pilot_bytes'],'export_bytes':len(serialized.encode())},ensure_ascii=True))
+    print(json.dumps({'stats':stats,'published_bytes':inventory['published_bytes'],'export_bytes':len(serialized.encode())},ensure_ascii=True))
 
 if __name__=='__main__':main()

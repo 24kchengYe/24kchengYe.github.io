@@ -1,8 +1,26 @@
-# Academic homepage server pilot
+# Academic homepage and reading library
 
-Deploy only the verified GitHub Pages output, not this repository or a local
-working directory. The pilot includes the academic site and six R1/V3 PDFs
-(original, Chinese, bilingual). All other reports remain public-source links.
+Deploy the verified GitHub Pages output, not this repository or a local
+working directory. The site stays small; the full document library lives in
+server storage, outside Git and outside individual site releases.
+
+`_tools/export_reading_assets.py` validates catalog hashes and finished translation
+outputs, creates inert previews for Markdown model cards, and writes two manifests:
+`assets-public.json` has public URLs and hashes; `upload-plan.json` has local paths
+and must stay outside the public web root and Git. Copy the former into
+`_data/reading-assets.json` only for an authorized publication. Run
+`_tools/build_reading_library.py` to rebuild the public bibliography asset links.
+
+Upload the manifest's exact files into `releases/library-files` using
+`upload_assets.py`. `fetch_originals.py` can retrieve the same official originals
+on the server; it accepts a download only when its SHA256 matches the local file.
+Fallback to local upload for changed/unavailable originals. Verify the complete
+manifest before activating new metadata. Partial files are not served. Hashes
+in file URLs allow immutable caching and safe future incremental updates.
+
+Only catalog originals and completed editions belong in the public document
+store. The Foundation Models knowledge-base directory has its own publication
+and access decision; do not copy its whole tree, archives or internal logs.
 
 Runtime: `/opt/yechengzhang-academic`. Keep `compose.yaml`, `nginx.conf`, and
 `releases/<commit>/site` here; `releases/current` points to the selected release.
@@ -12,9 +30,10 @@ translation worker belongs in this service.
 
 Before a release, reject symlinks, paths outside the artifact, logs, private
 configuration, and unexpected pilot PDFs. Record every published file's SHA256.
-Replace internal GitHub Pages origins in generated HTML/XML with the pilot
+Replace internal GitHub Pages origins in generated HTML/XML with the server
 origin; retain external research-source and repository links. Validate relative
-links, PDF hashes, JavaScript MIME, HTTP Range, and all three languages.
+links, document hashes, JavaScript MIME, HTTP Range, CORS for GitHub Pages readers,
+and all three interface languages. Bookshelf entry must not request any PDFs.
 
 For first deployment, create the DNSPod A record for the named host. Append only
 the fragment to `/opt/caddy/Caddyfile` after making an operational backup. Validate

@@ -1,1 +1,3 @@
 writing/assets/* binary
+assets/vendor/pdfjs/** -text -diff linguist-vendored
+reading/library-preview/files/*.pdf binary

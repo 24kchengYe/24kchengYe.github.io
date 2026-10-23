@@ -137,7 +137,7 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 - 再現可能な方向応答と同時に、数値範囲、局所変動、視覚的多様性の縮小を確認。**Qwen2.5-VL-72B**の**Profile–Probe–Intervene**分析により、一部の都市関係が中間表現から解読でき、局所的な出力に影響することを検証。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/ai4us.png' alt="AI4US" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/ai4us.png' alt="AI4US" width="1224" height="1584" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -171,7 +171,7 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 - **精度72.2%** を達成（κ = 0.45；未校正VLM比+16.3pp、教師ありベースライン比+15.1pp向上）、**次元レベルの解釈可能性**を提供。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/urbanalign.png' alt="UrbanAlign" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/urbanalign.png' alt="UrbanAlign" width="1224" height="1584" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -202,7 +202,7 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 - マルチスケール統一モデリング、包括的建築データ基盤、生成AI診断、ボトムアップ都市シミュレーションの4本柱を提示。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/building-scale-urban.png' alt="Towards building-scale urban analytics and simulation" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/building-scale-urban.png' alt="Towards building-scale urban analytics and simulation" width="908" height="1200" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -236,7 +236,7 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 - [**清華大学公式Facebookアカウント**](https://www.facebook.com/permalink.php?story_fbid=1050269787304015&id=1489805271325213)にて研究成果が紹介。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png' alt="CMAB" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png' alt="CMAB" width="1191" height="1565" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -267,7 +267,7 @@ I build large-scale urban datasets, evaluate generative AI for scientific discov
 - 社会科学分野の **ESI高被引用論文** に認定。研究成果が米国の有力科学メディア [**Popular Mechanics**](https://www.popularmechanics.com/) に報道される。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png' alt="GloGCI" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png' alt="GloGCI" width="1191" height="1588" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -298,7 +298,7 @@ Wenyue Li&dagger;, **Yecheng Zhang**&dagger;, Mengxing Li, Ying Long*
 - 各国間の比較都市化研究のために一貫した都市・農村境界を提供する**グローバル統一都市定義データセット（GloPPRUA）** を構築。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/04Li et al 2024 iScience-GloPPRUA.png' alt="GloPPRUA" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/04Li et al 2024 iScience-GloPPRUA.png' alt="GloPPRUA" width="1206" height="1566" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -326,7 +326,7 @@ Wenyue Li&dagger;, **Yecheng Zhang**&dagger;, Mengxing Li, Ying Long*
 - **GANベースの深層学習**を用いて感染症下の都市空間リスク予測とPOI最適化を実施、時空間モデリングと都市計画への応用を融合。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/01Zhang et al 2022 JAG-GAN.png' alt="JAG-GAN" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/01Zhang et al 2022 JAG-GAN.png' alt="JAG-GAN" width="1191" height="1588" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>
@@ -354,7 +354,7 @@ Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, **Yecheng Zhang**, D
 - 気象リモートセンシングにおける衛星-レーダー反射率反転のためのウェーブレット駆動粗密階層学習フレームワークを提案。
 </div>
 
-<div class='paper-box-image'><div><img src='images/papers/wavec2r.png' alt="WaveC2R" width="100%"></div></div>
+<div class='paper-box-image'><div><img src='images/papers/wavec2r.png' alt="WaveC2R" width="1920" height="1080" loading="lazy" decoding="async"></div></div>
 
 </details>
 </div>

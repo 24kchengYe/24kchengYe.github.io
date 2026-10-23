@@ -59,7 +59,8 @@
       if(location.protocol==='file:'){holder.querySelector('.pdf-controls').hidden=true;scroll.hidden=true;return;}
       const lib=await import(new URL('build/pdf.mjs',vendor).href);if(disposed)return;
       lib.GlobalWorkerOptions.workerSrc=new URL('build/pdf.worker.mjs',vendor).href;
-      documentTask=lib.getDocument({url:new URL(url,location.href).href,cMapUrl:new URL('cmaps/',vendor).href,cMapPacked:true,standardFontDataUrl:new URL('standard_fonts/',vendor).href,wasmUrl:new URL('wasm/',vendor).href});
+      // Fetch only the required PDF ranges. PDF.js falls back to a full download when the host does not support ranges.
+      documentTask=lib.getDocument({url:new URL(url,location.href).href,disableAutoFetch:true,disableStream:true,cMapUrl:new URL('cmaps/',vendor).href,cMapPacked:true,standardFontDataUrl:new URL('standard_fonts/',vendor).href,wasmUrl:new URL('wasm/',vendor).href});
       pdf=await documentTask.promise;if(disposed)return;
       await draw(currentPage);
     })().catch(e=>{if(!disposed){status='error';localize();console.warn('PDF load:',e.message);}});

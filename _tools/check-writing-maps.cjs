@@ -149,7 +149,7 @@ async function main() {
       for (const language of ['zh','en','ja']) {
         await page.locator(`[data-language="${language}"]`).click();
         for (const id of views) {
-          await map.locator('select').selectOption(id);
+          await map.locator('select[data-view-control]').selectOption(id);
           await settle();
           assert.equal(await map.getAttribute('data-view'),id,'Selected view must render');
           const issues = await map.evaluate(inspect);
@@ -176,7 +176,7 @@ async function main() {
               await map.locator('.tm-aside').getByRole('button', { name:title, exact:true }).first().click();
               assert.equal(await map.getAttribute('data-view'), target);
             }
-            await map.locator('select').selectOption(id);
+            await map.locator('select[data-view-control]').selectOption(id);
           }
         }
       }
@@ -185,7 +185,7 @@ async function main() {
       if (linkedView) {
         const [id,view] = linkedView;
         const [node,target] = Object.entries(view.links)[0];
-        await map.locator('select').selectOption(id);
+        await map.locator('select[data-view-control]').selectOption(id);
         await settle();
         await map.locator(`[id="${node}"]`).focus();
         await page.keyboard.press('Enter');
@@ -195,7 +195,7 @@ async function main() {
       }
       const connected = await page.evaluate(() => Object.entries(window.WritingDiagramData.views).find(([,view]) => view.localized.en.html.includes('class="connection"'))?.[0]);
       if (connected) {
-        await map.locator('select').selectOption(connected);
+        await map.locator('select[data-view-control]').selectOption(connected);
         await settle();
         const first = map.locator('.connection').first();
         await first.focus();
@@ -211,7 +211,7 @@ async function main() {
       for (const language of ['zh','en','ja']) {
         await page.locator(`[data-language="${language}"]`).click();
         for (const mobileView of [views[0], ...views.filter(id => id.endsWith('-full-workflow') || id.endsWith('-recorded-case'))]) {
-          await map.locator('select').selectOption(mobileView);
+          await map.locator('select[data-view-control]').selectOption(mobileView);
           await settle();
           assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),`${route} horizontal overflow`);
           await map.locator('[data-expand]').click();

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 790" width="1440" height="790" lang="ja"><foreignObject width="1440" height="790"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1440px;overflow:hidden;background:#fff}.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border:1.5px solid #a4afa5;background:#fff;border-radius:4px;padding:10px 16px;font-size:24px;line-height:1.4;z-index:2}.node.soft{background:#eff4ec;border-color:#9eaf94}.math{font-size:.86em;color:#56645b}.title{position:absolute;left:40px;top:28px;font-size:29px;font-weight:500}.legend{position:absolute;top:36px;font-size:18px;color:#6a766d}.legend:before{content:"";display:inline-block;width:30px;border-top:1.5px solid #91a08f;vertical-align:middle;margin-right:12px}.legend.control:before{border-top-style:dashed}.edge{position:absolute;height:0;border-top:1.5px solid #91a08f;transform-origin:0 0;z-index:1}.edge.control{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #91a08f;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;width:1360px;font-size:20px;line-height:1.5;color:#68766c;border-top:1px solid #e0e6dc;padding-top:20px}.annotation{position:absolute;font-size:22px;color:#68766c}
+.diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:790px">
+<div class="title">Gated DeltaNet</div><div class="legend" style="left:760px">実線：テンソル</div><div class="legend control" style="left:1070px">破線：選択・ゲート</div>
+<div class="edge arrow" data-from="previous" data-to="decay" style="left:270px;top:220px;width:90px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="decay" data-to="residual" style="left:660px;top:220px;width:100px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="residual" data-to="write" style="left:1060px;top:220px;width:40px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="decay" data-to="write" style="left:510px;top:160px;width:60px;transform:rotate(-90deg)"></div>
+<div class="edge" data-from="decay" data-to="write" style="left:510px;top:100px;width:740px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="decay" data-to="write" style="left:1250px;top:100px;width:60px;transform:rotate(90deg)"></div>
+<div class="edge control arrow" data-from="alpha" data-to="decay" style="left:510px;top:470px;width:190px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="kv" data-to="residual" style="left:910px;top:470px;width:190px;transform:rotate(-90deg)"></div>
+<div class="edge" data-from="kv" data-to="write" style="left:1060px;top:525px;width:20px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="kv" data-to="write" style="left:1080px;top:525px;width:255px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="kv" data-to="write" style="left:1080px;top:270px;width:20px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="write" data-to="read" style="left: 1250px; top: 310px; width: 150px; transform: rotate(90deg);"></div>
+<div class="node soft" id="previous" style="left: 40px; top: 170px; width: 230px; height: 100px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">前時刻の状態<br /><span class="math">Sₜ₋₁</span></span></div>
+<div class="node soft" id="decay" style="left: 360px; top: 160px; width: 300px; height: 120px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">前状態を減衰<br /><span class="math">S̄ₜ = αₜ Sₜ₋₁</span></span></div>
+<div class="node " id="residual" style="left: 760px; top: 160px; width: 300px; height: 120px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">値の予測残差<br /><span class="math">rₜ = vₜ − S̄ₜ kₜ</span></span></div>
+<div class="node soft" id="write" style="left: 1100px; top: 160px; width: 300px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Delta 書き込み<br /><span class="math">Sₜ = S̄ₜ + βₜ rₜ kₜᵀ</span></span></div>
+<div class="node " id="alpha" style="left: 360px; top: 470px; width: 300px; height: 130px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">スカラー忘却ゲート<br /><span class="math">xₜ → αₜ</span></span></div>
+<div class="node " id="kv" style="left: 760px; top: 470px; width: 300px; height: 130px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">現在状態の投影<br /><span class="math">xₜ → kₜ, vₜ, βₜ</span></span></div>
+<div class="node " id="read" style="left: 1100px; top: 460px; width: 300px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">読出し・正規化・出力門<br /><span class="math">xₜ → qₜ<br />oₜ = Sₜ qₜ</span></span></div>
+
+<div class="annotation" style="left:1050px;top:355px;background:white;padding:4px">kₜ, βₜ</div>
+<div class="note" style="top:695px">S の行は value、列は key。α はヘッドごとに 1 つ、β は残差の書き込みを制御。</div>
+</main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></div></foreignObject></svg>

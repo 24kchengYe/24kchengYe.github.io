@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 540" width="1440" height="540" lang="en"><foreignObject width="1440" height="540"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>
+*{box-sizing:border-box}
+.diagram-root{margin:0;background:#fff;color:#202321;font-family:ui-monospace,SFMono-Regular,Menlo,"PingFang SC",sans-serif;font-weight:400}
+.canvas{position:relative;width:1440px;background:white;overflow:hidden}
+.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-size:26px;line-height:1.5;background:#fff;z-index:2;padding:8px 14px}
+.node.box{border:1.25px solid #363b36;border-radius:23px;background-image:radial-gradient(#4b504b20 .65px,transparent .7px);background-size:5px 5px}
+.node.accent{color:#4d6e2b;border-color:#85a65c;background-color:#fff;background-image:radial-gradient(#83a95738 .65px,transparent .7px);background-size:5px 5px}
+.node.small{font-size:22px}
+.label{position:absolute;font-size:20px;color:#737972;background:#fff;z-index:3;padding:2px 8px;line-height:1.6}
+.wire{position:absolute;z-index:1}
+.tip{position:absolute;width:8px;height:8px;border-top:1.25px solid #424942;border-right:1.25px solid #424942;z-index:1}
+.rule{position:absolute;height:1px;background:#e0e5e1}
+.group{position:absolute;border:1px solid #d4dbd0;border-radius:5px;background-image:radial-gradient(#82917c19 .6px,transparent .65px);background-size:6px 6px}
+.group.draft{border-style:dashed;background-image:none}
+.group-title{position:absolute;left:22px;top:-16px;background:white;padding:0 10px;font-size:22px;line-height:30px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.lifeline{position:absolute;border-left:1px solid #cbd3c5}
+.chart{padding:38px 70px 48px}.chart h2{font-size:23px;font-weight:400;margin:0 0 30px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.chart-row{display:grid;grid-template-columns:185px 1fr 100px;gap:18px;align-items:center;min-height:66px;font-size:22px}
+.track{position:relative;height:9px;background:#f0f2f0}.bar{height:9px;background:#aeb5aa}.bar.green{background:#83a957}.val{text-align:right;font-size:21px}
+.axis{display:flex;justify-content:space-between;margin-left:203px;margin-right:118px;color:#8b918d;font-size:17px}.small-note{font-size:20px;color:#79827b}
+.matrix{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:0;padding:35px 80px}.matrix&gt;div{padding:28px 18px;border-bottom:1px solid #dce3dd;font-size:24px}.matrix .muted{font-size:21px;color:#7c847d}.number{font-size:42px}.green{color:#5d7e3b}
+.spark{display:flex;gap:20px;align-items:end;height:160px}.spark&gt;div{width:70px;background:#d9e5dd;position:relative;min-height:1px}.spark span{position:absolute;top:-35px;left:0;right:0;text-align:center;font-size:23px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:65px 80px 20px}.stat-grid .number{margin:12px 0}.stat-grid p{font-size:23px;line-height:1.7;margin:7px 0}.small{font-size:20px}
+.plot{padding:45px 70px}.plot-row{display:grid;grid-template-columns:260px 1fr 230px;gap:25px;align-items:center;font-size:24px;margin:42px 0}.plot-track{height:20px;display:flex;position:relative;background:#f0f3f1}.plot-track&gt;div{height:20px;background:#ccd8bd}.plot-track&gt;div:last-child{background:#83a957}
+.legend{font-size:20px;color:#79827b;display:flex;gap:40px;margin:30px 0}.legend i{display:inline-block;width:18px;height:10px;background:#ccd8bd;margin-right:10px}.legend i.dark{background:#83a957}
+.chips{display:flex;gap:12px;padding:20px 0}.chip{width:16px;height:16px;border:1px solid #bec8c1;border-radius:50%}.chip.green{background:#83a957;border-color:#83a957}.chip.gray{background:#aab8af}.caption{font-size:21px;color:#7b827d;margin-top:26px}
+
+.diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:540px"><div class="node box" style="left: 50px; top: 190px; width: 230px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Local prompt search</span></div><div class="node box" style="left: 390px; top: 190px; width: 250px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Generation protocol</span></div><div class="node box" style="left: 750px; top: 190px; width: 250px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Data &amp; model training</span></div><div class="node box accent" style="left: 1110px; top: 190px; width: 270px; height: 90px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Built-artifact validation</span></div><div class="wire" style="left:280px;top:235px;width:110px;border-top:1.25px solid #424942"></div><div class="tip" style="left:375px;top:230px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:640px;top:235px;width:110px;border-top:1.25px solid #424942"></div><div class="tip" style="left:735px;top:230px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1000px;top:235px;width:110px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1095px;top:230px;border-color:#424942;transform:rotate(45deg)"></div><div class="label" style="left:80px;top:80px">June · PE search</div><div class="label" style="left:420px;top:80px">July · Information flow</div><div class="label" style="left:780px;top:80px">Aug–Sep · SFT</div><div class="label" style="left:1140px;top:80px">October · E2E</div><div class="node small" style="left: 40px; top: 335px; width: 250px; height: 100px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">MASP / Combine<br />Guarded-Patch</span></div><div class="node small" style="left: 375px; top: 335px; width: 280px; height: 100px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Compact rules → layered PE<br />Free / strategy memory</span></div><div class="node small" style="left: 735px; top: 320px; width: 280px; height: 130px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Format rewrite &amp; release<br />Fresh / continued training</span></div><div class="node small" style="left: 1095px; top: 335px; width: 300px; height: 100px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Spec → Code → Base<br />Case-level attribution</span></div></main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></div></foreignObject></svg>

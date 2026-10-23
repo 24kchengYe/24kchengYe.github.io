@@ -1,4 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 450" width="1440" height="450" lang="zh"><foreignObject width="1440" height="450"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root"><style>*{box-sizing:border-box}.diagram-root{margin:0;color:#303c38;background:white;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1440px;background:white;overflow:hidden}.head{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;background:white;border:1.5px solid #8c9a90;border-radius:3px;padding:10px 4px;font-size:22px;line-height:1.4}.soft{background:#edf3e9;border-color:#8a9c7d}.quiet{background:#f7f8f6;border-color:#d6dcd5}.label{position:absolute;font-size:23px;line-height:1.45;color:#65736a}.title{font-size:29px;color:#303c38;font-weight:500}.center{text-align:center}.small{font-size:21px}.mono{font-family:ui-monospace,Menlo,monospace;font-size:22px}.line{position:absolute;height:0;border-top:1.5px solid #8c9a90}.arrow:after{content:"";position:absolute;right:-1px;top:-4.5px;border-left:7px solid #8c9a90;border-top:4px solid transparent;border-bottom:4px solid transparent}.vertical{width:0;border-top:0;border-left:1.5px solid #8c9a90}.down:after{content:"";position:absolute;bottom:-1px;left:-4.5px;border-top:7px solid #8c9a90;border-left:4px solid transparent;border-right:4px solid transparent}.dashed{border-style:dashed}.rule{border-color:#e0e5dd;border-width:1px}.cells{position:absolute;display:grid}.cells i{display:block;background:#f4f6f2;border:1px solid #e0e5dd;border-radius:1px}.cells i.on{background:#ceddc4;border-color:#afc39f}.canvas{height:450px}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 450" width="1440" height="450" lang="zh"><foreignObject width="1440" height="450"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="openai-blog" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;color:#303c38;background:white;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1440px;background:white;overflow:hidden}.head{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;background:white;border:1.5px solid #8c9a90;border-radius:3px;padding:10px 4px;font-size:22px;line-height:1.4}.soft{background:#edf3e9;border-color:#8a9c7d}.quiet{background:#f7f8f6;border-color:#d6dcd5}.label{position:absolute;font-size:23px;line-height:1.45;color:#65736a}.title{font-size:29px;color:#303c38;font-weight:500}.center{text-align:center}.small{font-size:21px}.mono{font-family:ui-monospace,Menlo,monospace;font-size:22px}.line{position:absolute;height:0;border-top:1.5px solid #8c9a90}.arrow:after{content:"";position:absolute;right:-1px;top:-4.5px;border-left:7px solid #8c9a90;border-top:4px solid transparent;border-bottom:4px solid transparent}.vertical{width:0;border-top:0;border-left:1.5px solid #8c9a90}.down:after{content:"";position:absolute;bottom:-1px;left:-4.5px;border-top:7px solid #8c9a90;border-left:4px solid transparent;border-right:4px solid transparent}.dashed{border-style:dashed}.rule{border-color:#e0e5dd;border-width:1px}.cells{position:absolute;display:grid}.cells i{display:block;background:#f4f6f2;border:1px solid #e0e5dd;border-radius:1px}.cells i.on{background:#ceddc4;border-color:#afc39f}.canvas{height:450px}
 .diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas">
 <div class="label title center" style="left:40px;top:24px;width:420px">MHA</div><div class="label center small" style="left:40px;top:78px;width:420px">六个查询头</div><div class="head quiet mono" style="left:40px;top:126px;width:56px;height:52px">Q1</div><div class="line vertical down" style="left:68px;top:178px;height:96px"></div><div class="head quiet mono" style="left:110px;top:126px;width:56px;height:52px">Q2</div><div class="line vertical down" style="left:138px;top:178px;height:96px"></div><div class="head quiet mono" style="left:180px;top:126px;width:56px;height:52px">Q3</div><div class="line vertical down" style="left:208px;top:178px;height:96px"></div><div class="head quiet mono" style="left:250px;top:126px;width:56px;height:52px">Q4</div><div class="line vertical down" style="left:278px;top:178px;height:96px"></div><div class="head quiet mono" style="left:320px;top:126px;width:56px;height:52px">Q5</div><div class="line vertical down" style="left:348px;top:178px;height:96px"></div><div class="head quiet mono" style="left:390px;top:126px;width:56px;height:52px">Q6</div><div class="line vertical down" style="left:418px;top:178px;height:96px"></div><div class="head soft mono" style="left:40px;top:274px;width:56px;height:60px">KV1</div><div class="head soft mono" style="left:110px;top:274px;width:56px;height:60px">KV2</div><div class="head soft mono" style="left:180px;top:274px;width:56px;height:60px">KV3</div><div class="head soft mono" style="left:250px;top:274px;width:56px;height:60px">KV4</div><div class="head soft mono" style="left:320px;top:274px;width:56px;height:60px">KV5</div><div class="head soft mono" style="left:390px;top:274px;width:56px;height:60px">KV6</div><div class="label center" style="left:40px;top:366px;width:420px">6 组 KV</div><div class="line vertical rule" style="left:483px;top:24px;height:398px"></div><div class="label title center" style="left:510px;top:24px;width:420px">GQA</div><div class="label center small" style="left:510px;top:78px;width:420px">六个查询头</div><div class="head quiet mono" style="left:510px;top:126px;width:56px;height:52px">Q1</div><div class="line vertical down" style="left:538px;top:178px;height:96px"></div><div class="head quiet mono" style="left:580px;top:126px;width:56px;height:52px">Q2</div><div class="line vertical down" style="left:608px;top:178px;height:96px"></div><div class="head quiet mono" style="left:650px;top:126px;width:56px;height:52px">Q3</div><div class="line vertical down" style="left:678px;top:178px;height:96px"></div><div class="head quiet mono" style="left:720px;top:126px;width:56px;height:52px">Q4</div><div class="line vertical down" style="left:748px;top:178px;height:96px"></div><div class="head quiet mono" style="left:790px;top:126px;width:56px;height:52px">Q5</div><div class="line vertical down" style="left:818px;top:178px;height:96px"></div><div class="head quiet mono" style="left:860px;top:126px;width:56px;height:52px">Q6</div><div class="line vertical down" style="left:888px;top:178px;height:96px"></div><div class="head soft mono" style="left:510px;top:274px;width:196px;height:60px">KV1</div><div class="head soft mono" style="left:720px;top:274px;width:196px;height:60px">KV2</div><div class="label center" style="left:510px;top:366px;width:420px">2 组 KV</div><div class="line vertical rule" style="left:953px;top:24px;height:398px"></div><div class="label title center" style="left:980px;top:24px;width:420px">MQA</div><div class="label center small" style="left:980px;top:78px;width:420px">六个查询头</div><div class="head quiet mono" style="left:980px;top:126px;width:56px;height:52px">Q1</div><div class="line vertical down" style="left:1008px;top:178px;height:96px"></div><div class="head quiet mono" style="left:1050px;top:126px;width:56px;height:52px">Q2</div><div class="line vertical down" style="left:1078px;top:178px;height:96px"></div><div class="head quiet mono" style="left:1120px;top:126px;width:56px;height:52px">Q3</div><div class="line vertical down" style="left:1148px;top:178px;height:96px"></div><div class="head quiet mono" style="left:1190px;top:126px;width:56px;height:52px">Q4</div><div class="line vertical down" style="left:1218px;top:178px;height:96px"></div><div class="head quiet mono" style="left:1260px;top:126px;width:56px;height:52px">Q5</div><div class="line vertical down" style="left:1288px;top:178px;height:96px"></div><div class="head quiet mono" style="left:1330px;top:126px;width:56px;height:52px">Q6</div><div class="line vertical down" style="left:1358px;top:178px;height:96px"></div><div class="head soft mono" style="left:980px;top:274px;width:406px;height:60px">KV</div><div class="label center" style="left:980px;top:366px;width:420px">1 组 KV</div>
-</main></div></foreignObject></svg>
+</main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></div></foreignObject></svg>

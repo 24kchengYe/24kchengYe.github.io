@@ -1,0 +1,259 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="849.6pt" height="525.6pt" viewBox="0 0 849.6 525.6" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja" data-diagram-style="engineering" data-diagram-kind="data">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 525.6  L 849.6 525.6  L 849.6 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 50.976 52.56  L 807.12 52.56  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 50.976 115.632  L 807.12 115.632  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.55; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 50.976 168.192  L 807.12 168.192  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.55; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 50.976 226.008  L 807.12 226.008  " clip-path="url(#p0700244af2)" style="fill: none; stroke: #eeeeee; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="text_1"><text x="81.47200000000001" y="36.459672000000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="学習目標" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="81.47200000000001" dy="0">学習目標</tspan></text></g>
+   <g id="text_2"><text x="429.808" y="36.459672000000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="推論モード" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="429.808" dy="0">推論モード</tspan></text></g>
+   <g id="text_3"><text x="585.732" y="36.459672000000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="学習step" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="585.732" dy="0">学習step</tspan></text></g>
+   <g id="text_4"><text x="736.168" y="36.658188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="採点可能 / 792" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="736.168" dy="0">採点可能 / 792</tspan></text></g>
+   <g id="text_5"><text x="112.97200000000001" y="94.306484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="回答：理由＋裁定" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="112.97200000000001" dy="0">回答：理由＋裁定</tspan></text></g>
+   <g id="text_6"><text x="419.808" y="94.306484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="解消" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="419.808" dy="0">解消</tspan></text></g>
+   <g id="text_7"><text x="579.232" y="94.306484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="354" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="579.232" dy="0">354</tspan></text></g>
+   <g id="text_8"><text x="715.168" y="94.306484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="786" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="715.168" dy="0">786</tspan></text></g>
+   <g id="text_9"><text x="136.472" y="146.866484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="推論：理由、回答：裁定" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="136.472" dy="0">推論：理由、回答：裁定</tspan></text></g>
+   <g id="text_10"><text x="419.808" y="146.866484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="有効" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="419.808" dy="0">有効</tspan></text></g>
+   <g id="text_11"><text x="579.232" y="146.866484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="362" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="579.232" dy="0">362</tspan></text></g>
+   <g id="text_12"><text x="715.168" y="146.866484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="792" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="715.168" dy="0">792</tspan></text></g>
+   <g id="text_13"><text x="77.47200000000001" y="199.42648400000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="裁定のみ" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="77.47200000000001" dy="0">裁定のみ</tspan></text></g>
+   <g id="text_14"><text x="419.808" y="199.42648400000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="解消" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="419.808" dy="0">解消</tspan></text></g>
+   <g id="text_15"><text x="579.232" y="199.42648400000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="342" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="579.232" dy="0">342</tspan></text></g>
+   <g id="text_16"><text x="715.168" y="199.42648400000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="784" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="715.168" dy="0">784</tspan></text></g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 174.168 452.016  L 412.056 452.016  L 412.056 283.824  L 174.168 283.824  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_5">
+      <path d="M 174.168 452.016  L 174.168 283.824  " clip-path="url(#p195b1ce1e1)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_17"><text x="174.343625" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="174.343625" dy="0">0</tspan></text></g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_7">
+      <path d="M 247.364308 452.016  L 247.364308 283.824  " clip-path="url(#p195b1ce1e1)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_18"><text x="247.715558" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="20" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="247.715558" dy="0">20</tspan></text></g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_9">
+      <path d="M 320.560615 452.016  L 320.560615 283.824  " clip-path="url(#p195b1ce1e1)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_19"><text x="320.911865" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="40" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="320.911865" dy="0">40</tspan></text></g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_11">
+      <path d="M 393.756923 452.016  L 393.756923 283.824  " clip-path="url(#p195b1ce1e1)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_20"><text x="394.108173" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="394.108173" dy="0">60</tspan></text></g>
+    </g>
+    <g id="text_21"><text x="293.227625" y="493.52912499999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" aria-label="誤り型F1（%）" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="293.227625" dy="0">誤り型F1（%）</tspan></text></g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13"/>
+     <g id="text_22"><text x="138.668" y="319.37201600000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="回答内理由" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="138.668" dy="0">回答内理由</tspan></text></g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14"/>
+     <g id="text_23"><text x="132.668" y="373.6275" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="推論欄理由" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="132.668" dy="0">推論欄理由</tspan></text></g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15"/>
+     <g id="text_24"><text x="150.168" y="427.882984" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="裁定のみ" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="150.168" dy="0">裁定のみ</tspan></text></g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 174.168 452.016  L 412.056 452.016  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 174.168 309.595355  L 326.196731 309.595355  L 326.196731 317.733677  L 174.168 317.733677  z " clip-path="url(#p195b1ce1e1)" style="fill: #7a7a7a"/>
+   </g>
+   <g id="text_25"><text x="346.320473" y="318.62670399999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="41.54" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="346.320473" dy="0">41.54</tspan></text></g>
+   <g id="patch_5">
+    <path d="M 174.168 363.850839  L 331.320473 363.850839  L 331.320473 371.989161  L 174.168 371.989161  z " clip-path="url(#p195b1ce1e1)" style="fill: #7a7a7a"/>
+   </g>
+   <g id="text_26"><text x="351.444214" y="372.882188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="42.94" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="351.444214" dy="0">42.94</tspan></text></g>
+   <g id="patch_6">
+    <path d="M 174.168 418.106323  L 362.721689 418.106323  L 362.721689 426.244645  L 174.168 426.244645  z " clip-path="url(#p195b1ce1e1)" style="fill: #78a641"/>
+   </g>
+   <g id="text_27"><text x="382.84543" y="427.13767099999995" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="51.52" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="382.84543" dy="0">51.52</tspan></text></g>
+   <g id="text_28"><text x="194.668" y="271.26864" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="Sol参照" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="194.668" dy="0">Sol参照</tspan></text></g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_7">
+    <path d="M 573.48 452.016  L 811.368 452.016  L 811.368 283.824  L 573.48 283.824  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_16">
+      <path d="M 573.48 452.016  L 573.48 283.824  " clip-path="url(#p911202069f)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_17"/>
+     <g id="text_29"><text x="573.655625" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="573.655625" dy="0">0</tspan></text></g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_18">
+      <path d="M 646.676308 452.016  L 646.676308 283.824  " clip-path="url(#p911202069f)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_19"/>
+     <g id="text_30"><text x="647.027558" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="20" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="647.027558" dy="0">20</tspan></text></g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_20">
+      <path d="M 719.872615 452.016  L 719.872615 283.824  " clip-path="url(#p911202069f)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_21"/>
+     <g id="text_31"><text x="720.223865" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="40" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="720.223865" dy="0">40</tspan></text></g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_22">
+      <path d="M 793.068923 452.016  L 793.068923 283.824  " clip-path="url(#p911202069f)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="neutral"/>
+     </g>
+     <g id="line2d_23"/>
+     <g id="text_32"><text x="793.420173" y="469.63599999999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="793.420173" dy="0">60</tspan></text></g>
+    </g>
+    <g id="text_33"><text x="692.539625" y="493.52912499999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" aria-label="誤り型F1（%）" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="692.539625" dy="0">誤り型F1（%）</tspan></text></g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_24"/>
+     <g id="text_34"><text x="537.98" y="319.37201600000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="回答内理由" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="537.98" dy="0">回答内理由</tspan></text></g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_25"/>
+     <g id="text_35"><text x="531.98" y="373.6275" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="推論欄理由" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="531.98" dy="0">推論欄理由</tspan></text></g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_26"/>
+     <g id="text_36"><text x="549.48" y="427.882984" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="裁定のみ" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="549.48" dy="0">裁定のみ</tspan></text></g>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 573.48 452.016  L 811.368 452.016  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 573.48 309.595355  L 745.637716 309.595355  L 745.637716 317.733677  L 573.48 317.733677  z " clip-path="url(#p911202069f)" style="fill: #7a7a7a"/>
+   </g>
+   <g id="text_37"><text x="765.761457" y="318.62670399999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="47.04" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="765.761457" dy="0">47.04</tspan></text></g>
+   <g id="patch_10">
+    <path d="M 573.48 363.850839  L 745.418127 363.850839  L 745.418127 371.989161  L 573.48 371.989161  z " clip-path="url(#p911202069f)" style="fill: #7a7a7a"/>
+   </g>
+   <g id="text_38"><text x="765.541868" y="372.882188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="46.98" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="765.541868" dy="0">46.98</tspan></text></g>
+   <g id="patch_11">
+    <path d="M 573.48 418.106323  L 780.479158 418.106323  L 780.479158 426.244645  L 573.48 426.244645  z " clip-path="url(#p911202069f)" style="fill: #78a641"/>
+   </g>
+   <g id="text_39"><text x="800.6029" y="427.13767099999995" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="56.56" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="800.6029" dy="0">56.56</tspan></text></g>
+   <g id="text_40"><text x="615.98" y="271.26864" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="DeepSeek参照" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="615.98" dy="0">DeepSeek参照</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p0700244af2">
+   <rect x="0" y="0" width="849.6" height="525.6"/>
+  </clipPath>
+  <clipPath id="p195b1ce1e1">
+   <rect x="174.168" y="283.824" width="237.888" height="168.192"/>
+  </clipPath>
+  <clipPath id="p911202069f">
+   <rect x="573.48" y="283.824" width="237.888" height="168.192"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

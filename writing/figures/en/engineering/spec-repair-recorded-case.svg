@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 957" width="1440" height="957" lang="en"><foreignObject width="1440" height="957"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:957px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-repair-recorded-case"><div class="edge arrow" data-from="request" data-to="g-spec" style="left:345px;top:237px;width:75px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="request" data-to="k-judge" style="left:1095px;top:237px;width:43px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-spec" data-to="g-code" style="left:345px;top:457px;width:63px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="g-code" data-to="g-e2e" style="left:345px;top:665px;width:47px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-judge" data-to="k-fix" style="left:1095px;top:425px;width:39px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="k-fix" data-to="k-code" style="left:1095px;top:609px;width:63px;transform:rotate(90deg)"></div><div class="node " id="request" style="left:60px;top:92px;width:1320px;height:145px"><strong>Store inspections · Case 41</strong><span>Shared input: administrator can edit seven tables</span><span data-node-detail="true" hidden="">Building 50 · Case 41: store inspection management
+The request includes an administrator role; the shared input Spec grants edit access to seven business tables</span></div><div class="node " id="g-spec" style="left:60px;top:312px;width:570px;height:145px"><strong>G: retains edits</strong><span>Spec retains administrator duties</span><span data-node-detail="true" hidden="">G: edit access retained
+Final Spec retains administrator edits
+Document release fails semantic recheck</span></div><div class="node issue" id="k-judge" style="left:810px;top:280px;width:570px;height:145px"><strong>K: recommends read-only</strong><span>Judge: write duties not explicit</span><span data-node-detail="true" hidden="">K: Judge recommends read-only
+Access reduced because write duties were not explicit
+G and K share the Permission Judge version</span></div><div class="node issue" id="k-fix" style="left:810px;top:464px;width:570px;height:145px"><strong>Fix accepts candidate</strong><span>Seven tables: edit → read-only</span><span data-node-detail="true" hidden="">Fix accepts reduced access
+Non-Table visit 2, round 1
+Seven tables: edit → read-only
+Final document still not released</span></div><div class="node " id="g-code" style="left:60px;top:520px;width:570px;height:145px"><strong>Code → Base</strong><span>Editable · execution succeeds</span><span data-node-detail="true" hidden="">CodeAgent: execution succeeds
+Code retains administrator edit access
+The Base supports record maintenance</span></div><div class="node issue" id="k-code" style="left:810px;top:672px;width:570px;height:145px"><strong>Code → Base</strong><span>Read-only · executes · E2E fails</span><span data-node-detail="true" hidden="">CodeAgent: runs, but access regresses
+Seven tables configured as read
+E2E: administrator cannot maintain records → fail</span></div><div class="node result" id="g-e2e" style="left:60px;top:712px;width:570px;height:145px"><strong>E2E passes</strong><span>Administrator can maintain records</span><span data-node-detail="true" hidden="">E2E: pass
+Document and built-artifact verdicts reported separately</span></div><div class="label title" style="left:54px;top:24px;width:1300px">Recorded case · administrator access regression</div></div><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></div></foreignObject></svg>

@@ -143,8 +143,10 @@
     resizeObserver?.disconnect();
     const graph = graphFor(currentView);
     root.replaceChildren();
+    root.dataset.diagramStyle = window.WritingDiagramStyle?.current() || 'openai-blog';
     const toolbar = element('div', 'am-toolbar');
     const select = element('select');
+    select.dataset.viewControl = '';
     select.setAttribute('aria-label', text('流程视图'));
     const choices = [['overview', '统一流程图'], ['unified-o1-10', '自动开发／修复'], ['unified-o1-12', 'CI：构建与测试'], ['unified-o1-13', '代码评审与风险分类'], ['unified-o1-16', 'CD 与上线验收'], ['unified-o1-2', '每日巡检与实时故障监控']];
     for (const [value, title] of choices) {
@@ -163,7 +165,10 @@
     zoomLabel = element('span', 'am-zoom');
     expandButton = button(expanded ? '收起画布' : '展开画布', () => setExpanded(!expanded));
     controls.append(button('缩小', () => zoomAt(1 / 1.2), '−'), zoomLabel, button('放大', () => zoomAt(1.2), '+'), button('全图', () => fit('all')), button('适应宽度', () => fit('width')), button('复位', () => fit('reset')), expandButton);
-    toolbar.append(select, controls);
+    const viewControls = element('div','am-tools');
+    viewControls.append(select);
+    if (window.WritingDiagramStyle) viewControls.append(window.WritingDiagramStyle.createControl());
+    toolbar.append(viewControls, controls);
     const breadcrumb = element('nav', 'am-breadcrumb');
     breadcrumb.setAttribute('aria-label', text('返回上一层'));
     trail.forEach((id, index) => {
@@ -351,6 +356,10 @@
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   window.addEventListener('popstate', () => { const view = viewFromUrl(); navigate(view, canonicalTrail(view), false); });
   currentView = viewFromUrl();
+  window.addEventListener('writing-diagram-style-change',() => {
+    root.dataset.diagramStyle = window.WritingDiagramStyle.current();
+    window.WritingDiagramStyle.apply(root);
+  });
   trail = canonicalTrail(currentView);
   render();
 })();

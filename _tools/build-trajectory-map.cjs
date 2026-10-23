@@ -34,7 +34,7 @@ function buildTrajectoryMap() {
         const events = [...canvas.querySelectorAll('.event')];
         if (events.length !== 15 || events.filter(event => event.dataset.disposition === 'retained').length !== 13) throw new Error('Case attempt / turn count changed');
       }
-      localized[language] = { css: document.querySelector('style').textContent, html: canvas.outerHTML };
+      localized[language] = { css: [...document.querySelectorAll('style')].map(style => style.textContent).join('\n'), html: canvas.outerHTML };
       dom.window.close();
     }
     const manifest = manifests[view.figure];

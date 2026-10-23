@@ -359,8 +359,11 @@
       theme.rel = 'stylesheet';
       theme.href = stylesheet;
       const shell = element('section',viewId === 'case' ? 'tm-shell tm-case' : 'tm-shell');
+      shell.dataset.diagramStyle = window.WritingDiagramStyle?.current() || 'openai-blog';
+      shell.dataset.diagramKind = view().kind === 'replay' ? 'flow' : view().kind;
       const toolbar = element('div','tm-toolbar');
       const select = element('select');
+      select.dataset.viewControl = '';
       select.setAttribute('aria-label',translate('流程视图'));
       for (const [id, graph] of Object.entries(data.views)) {
         const option = element('option','',translate(graph.title));
@@ -386,7 +389,10 @@
         motion.setAttribute('aria-pressed',String(flowing));
         controls.append(motion);
       }
-      toolbar.append(select,controls);
+      const viewControls = element('div','tm-tools');
+      viewControls.append(select);
+      if (window.WritingDiagramStyle) viewControls.append(window.WritingDiagramStyle.createControl());
+      toolbar.append(viewControls,controls);
       const breadcrumb = element('nav','tm-breadcrumb');
       breadcrumb.setAttribute('aria-label',translate('返回'));
       breadcrumb.hidden = trail.length < 2;
@@ -489,6 +495,7 @@
       controls.append(help);
       shell.append(body,status);
       shadow.replaceChildren(original,theme,shell);
+      window.WritingDiagramStyle?.apply(shadow);
       bindCanvas(); bindViewport();
       host.dataset.view = viewId;
       const ready = () => {
@@ -525,6 +532,7 @@
       observer.observe(viewport);
     };
     render();
+    window.addEventListener('writing-diagram-style-change',() => window.WritingDiagramStyle?.apply(shadow));
     new MutationObserver(() => {
       if (language === document.documentElement.lang) return;
       pause();

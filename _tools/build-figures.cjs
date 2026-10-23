@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
 const { JSDOM } = require('jsdom');
+const { themeFigure } = require('./figure-themes.cjs');
 
 const root = path.join(__dirname, '..');
 const sourceDirectory = path.join(root, '_data/writing/figures');
@@ -244,11 +245,14 @@ function buildFigures() {
     const sourceWithOverrides = item.source.startsWith('cli-') && item.source.endsWith('.html')
       ? source.replace('</style>', `${fs.readFileSync(path.join(sourceDirectory, item.source === 'cli-case-format.html' ? 'cli-case-format-overrides.css' : 'cli-flow-theme.css'), 'utf8')}</style>`)
       : source;
-    figures[asset] = { ...item, localized: {} };
+    figures[asset] = { ...item, localized: {}, engineering: {} };
     for (const language of ['zh', 'en', 'ja']) {
       const directory = path.join(outputDirectory, language);
       fs.mkdirSync(directory, { recursive: true });
-      const output = item.format === 'svg' ? localizeVector(sourceWithOverrides, language, item) : localizeLayout(sourceWithOverrides, item, language);
+      const layout = item.format === 'svg' ? localizeVector(sourceWithOverrides, language, item) : localizeLayout(sourceWithOverrides, item, language);
+      const kind = name.startsWith('cli-') ? 'flow' : explorer[name]?.kind || 'data';
+      const output = themeFigure(layout,kind,'openai-blog');
+      const engineering = themeFigure(layout,kind,'engineering');
       const validation = new JSDOM(output, { contentType: 'image/svg+xml' });
       if (validation.window.document.querySelector('parsererror,script,image')) throw new Error(`Unsafe or invalid SVG: ${name}`);
       for (const element of validation.window.document.querySelectorAll('*')) {
@@ -264,6 +268,10 @@ function buildFigures() {
       fs.writeFileSync(path.join(directory, `${name}.svg`), output + '\n');
       const revision = createHash('sha256').update(output).digest('hex').slice(0, 12);
       figures[asset].localized[language] = `/writing/figures/${language}/${name}.svg?v=${revision}`;
+      fs.mkdirSync(path.join(directory,'engineering'),{ recursive:true });
+      fs.writeFileSync(path.join(directory,'engineering',`${name}.svg`),engineering + '\n');
+      const engineeringRevision = createHash('sha256').update(engineering).digest('hex').slice(0,12);
+      figures[asset].engineering[language] = `/writing/figures/${language}/engineering/${name}.svg?v=${engineeringRevision}`;
     }
   }
   return figures;

@@ -1,53 +1,53 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="360pt" viewBox="0 0 1008 360" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en">
- 
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="360pt" viewBox="0 0 1008 360" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en" data-diagram-style="openai-blog" data-diagram-kind="flow">
+
  <defs>
   <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 360  L 1008 360  L 1008 0  L 0 0  z " style="fill: #ffffff"/>
+   <path d="M 0 360  L 1008 360  L 1008 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 218.04839999999996 180  L 253.717868 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 249.31786799999998 177.8  L 253.717868 180  L 249.31786799999998 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 218.04839999999996 180  L 253.717868 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 249.31786799999998 177.8  L 253.717868 180  L 249.31786799999998 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_3">
-    <path d="M 378.81999999999994 180  L 445.867868 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 441.467868 177.8  L 445.867868 180  L 441.467868 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 378.81999999999994 180  L 445.867868 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 441.467868 177.8  L 445.867868 180  L 441.467868 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_4">
-    <path d="M 561.0700000000002 180  L 636.170268 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 631.770268 177.8  L 636.170268 180  L 631.770268 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 561.0700000000002 180  L 636.170268 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 631.770268 177.8  L 636.170268 180  L 631.770268 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_5">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 172.08  L 795.6 79.92  Q 795.6 72 803.52 72  L 810.757204 72  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 806.357204 69.8  L 810.757204 72  L 806.357204 74.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 172.08  L 795.6 79.92  Q 795.6 72 803.52 72  L 810.757204 72  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 806.357204 69.8  L 810.757204 72  L 806.357204 74.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_6">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 803.52 180  L 833.7894680000002 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 829.3894680000002 177.8  L 833.7894680000002 180  L 829.3894680000002 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 803.52 180  L 833.7894680000002 180  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 829.3894680000002 177.8  L 833.7894680000002 180  L 829.3894680000002 182.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_7">
-    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 187.92  L 795.6 280.08  Q 795.6 288 803.52 288  L 821.7166679999999 288  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
-    <path d="M 817.3166679999999 285.8  L 821.7166679999999 288  L 817.3166679999999 290.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round"/>
+    <path d="M 752.3676 180  L 787.68 180  Q 795.6 180 795.6 187.92  L 795.6 280.08  Q 795.6 288 803.52 288  L 821.7166679999999 288  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 817.3166679999999 285.8  L 821.7166679999999 288  L 817.3166679999999 290.2  " clip-path="url(#p92f2fe0554)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_8">
-    <path d="M 266.9866590126292 209.6  L 366.61334098737086 209.6  Q 378.82 209.6 378.82 193.26896551724138  L 378.82 166.73103448275862  Q 378.82 150.4 366.61334098737086 150.4  L 266.9866590126292 150.4  Q 254.77999999999997 150.4 254.77999999999997 166.73103448275862  L 254.77999999999997 193.26896551724138  Q 254.77999999999997 209.6 266.9866590126292 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
+    <path d="M 266.9866590126292 209.6  L 366.61334098737086 209.6  Q 378.82 209.6 378.82 193.26896551724138  L 378.82 166.73103448275862  Q 378.82 150.4 366.61334098737086 150.4  L 266.9866590126292 150.4  Q 254.77999999999997 150.4 254.77999999999997 166.73103448275862  L 254.77999999999997 193.26896551724138  Q 254.77999999999997 209.6 266.9866590126292 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
    </g>
    <g id="patch_9">
-    <path d="M 458.16240938166317 209.6  L 549.837590618337 209.6  Q 561.07 209.6 561.07 198.87698113207549  L 561.07 161.12301886792451  Q 561.07 150.4 549.837590618337 150.4  L 458.16240938166317 150.4  Q 446.93000000000006 150.4 446.93000000000006 161.12301886792451  L 446.93000000000006 198.87698113207549  Q 446.93000000000006 209.6 458.16240938166317 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
+    <path d="M 458.16240938166317 209.6  L 549.837590618337 209.6  Q 561.07 209.6 561.07 198.87698113207549  L 561.07 161.12301886792451  Q 561.07 150.4 549.837590618337 150.4  L 458.16240938166317 150.4  Q 446.93000000000006 150.4 446.93000000000006 161.12301886792451  L 446.93000000000006 198.87698113207549  Q 446.93000000000006 209.6 458.16240938166317 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
    </g>
    <g id="patch_10">
-    <path d="M 645.8724 209.6  L 743.7276 209.6  Q 752.3676 209.6 752.3676 198.87698113207549  L 752.3676 161.12301886792451  Q 752.3676 150.4 743.7276 150.4  L 645.8724 150.4  Q 637.2324 150.4 637.2324 161.12301886792451  L 637.2324 198.87698113207549  Q 637.2324 209.6 645.8724 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter"/>
+    <path d="M 645.8724 209.6  L 743.7276 209.6  Q 752.3676 209.6 752.3676 198.87698113207549  L 752.3676 161.12301886792451  Q 752.3676 150.4 743.7276 150.4  L 645.8724 150.4  Q 637.2324 150.4 637.2324 161.12301886792451  L 637.2324 198.87698113207549  Q 637.2324 209.6 645.8724 209.6  z " clip-path="url(#p92f2fe0554)" style="fill: #ffffff; stroke: #202124; stroke-width: 0.95; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
    </g>
-   <g id="text_1"><text x="115.55" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Query · Design · Rules" data-type-role="primary" text-anchor="middle"><tspan x="115.55" dy="0">Query · Design · Rules</tspan></text></g>
-   <g id="text_2"><text x="316.79999999999995" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_8" aria-label="Independent reviews" data-type-role="primary" text-anchor="middle"><tspan x="316.79999999999995" dy="0">Independent </tspan><tspan x="316.79999999999995" dy="21.599999999999998">reviews</tspan></text></g>
-   <g id="text_3"><text x="504.00000000000006" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_9" aria-label="Merge candidates" data-type-role="primary" text-anchor="middle"><tspan x="504.00000000000006" dy="0">Merge </tspan><tspan x="504.00000000000006" dy="21.599999999999998">candidates</tspan></text></g>
-   <g id="text_4"><text x="694.8" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_10" aria-label="Check evidence" data-type-role="primary" text-anchor="middle"><tspan x="694.8" dy="0">Check </tspan><tspan x="694.8" dy="21.599999999999998">evidence</tspan></text></g>
-   <g id="text_5"><text x="903.731336" y="65.183844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Full labels / no issues" data-type-role="primary" text-anchor="middle"><tspan x="903.731336" dy="0">Full labels / no </tspan><tspan x="903.731336" dy="21.599999999999998">issues</tspan></text></g>
-   <g id="text_6"><text x="903.7" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Partial labels" data-type-role="primary" text-anchor="middle"><tspan x="903.7" dy="0">Partial labels</tspan></text></g>
-   <g id="text_7"><text x="903.85" y="291.98384400000003" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Pending records" data-type-role="primary" text-anchor="middle"><tspan x="903.85" dy="0">Pending records</tspan></text></g>
+   <g id="text_1"><text x="115.55" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Query · Design · Rules" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="115.55" dy="0">Query · Design · Rules</tspan></text></g>
+   <g id="text_2"><text x="316.79999999999995" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_8" aria-label="Independent reviews" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="316.79999999999995" dy="0">Independent </tspan><tspan x="316.79999999999995" dy="21.599999999999998">reviews</tspan></text></g>
+   <g id="text_3"><text x="504.00000000000006" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_9" aria-label="Merge candidates" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="504.00000000000006" dy="0">Merge </tspan><tspan x="504.00000000000006" dy="21.599999999999998">candidates</tspan></text></g>
+   <g id="text_4"><text x="694.8" y="175.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_10" aria-label="Check evidence" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="694.8" dy="0">Check </tspan><tspan x="694.8" dy="21.599999999999998">evidence</tspan></text></g>
+   <g id="text_5"><text x="903.731336" y="65.183844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Full labels / no issues" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="903.731336" dy="0">Full labels / no </tspan><tspan x="903.731336" dy="21.599999999999998">issues</tspan></text></g>
+   <g id="text_6"><text x="903.7" y="183.983844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Partial labels" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="903.7" dy="0">Partial labels</tspan></text></g>
+   <g id="text_7"><text x="903.85" y="291.98384400000003" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Pending records" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="903.85" dy="0">Pending records</tspan></text></g>
   </g>
  </g>
  <defs>
@@ -55,4 +55,79 @@
    <rect x="0" y="0" width="1008" height="360"/>
   </clipPath>
  </defs>
-</svg>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

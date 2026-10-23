@@ -39,6 +39,10 @@ Check all three language variants at article width and in the image dialog. Insp
 
 ## Interactive presentation
 
+Every writing shares two display themes: **OpenAI Blog** (the default: white space, restrained fills and clear charcoal connectors) and **Engineering** (stronger boundaries, a subtle grid and more visible state fills). The diagram-style selector is separate from the workflow selector. Changing style updates all diagrams on the page and is remembered across articles and tabs; it preserves the current workflow, zoom, selection and case-replay position. Both styles retain the same nodes, edges, wording and experiment values in Chinese, English and Japanese.
+
+`assets/css/writing-diagram-themes.css` is the common visual source; `assets/js/writing-diagram-style.js` owns preference persistence. `_tools/figure-themes.cjs` applies these styles to both editable SVG and HTML/CSS figures. Generated standalone SVGs use `writing/figures/{lang}/` for OpenAI Blog and `writing/figures/{lang}/engineering/` for Engineering. Static image fallbacks and image dialogs follow the same preference. `npm run check:diagram-themes` checks asset parity, language paths, script order, persistence and unavailable-storage behavior.
+
 Use clear thin borders, a white canvas and one restrained accent. Keep one current-view title in the selector; breadcrumbs show navigation history only. Hide duplicate panel headings only after the interactive diagram is ready. Preserve substantive captions, static figures and print output. The `?` control reveals reading help on demand. Node selection opens the detailed explanation without repeating its heading. Hover tracing, related-diagram navigation, zoom, fullscreen and optional connection animation remain available.
 
 `check-writing-maps.cjs` also checks native SVG text against other labels, node boundaries and sampled connector paths in all three languages. Rendering tests preserve the source text, values and directed edge identities; visual simplification must not change the computational or experimental flow.

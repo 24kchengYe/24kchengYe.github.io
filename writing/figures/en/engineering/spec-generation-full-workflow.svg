@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 857" width="1440" height="857" lang="en"><foreignObject width="1440" height="857"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:857px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-generation-full-workflow"><div class="edge arrow" data-from="pe" data-to="generate" style="left:470px;top:177px;width:100px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="generate" data-to="judge" style="left:1155px;top:249px;width:87px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="judge" data-to="attribute" style="left:940px;top:410px;width:100px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="attribute" data-to="patch" style="left:500px;top:390px;width:100px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="patch" data-to="paired" style="left:230px;top:501px;width:91px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="paired" data-to="confirm" style="left:400px;top:643px;width:120px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="confirm" data-to="decision" style="left:900px;top:652px;width:130px;transform:rotate(0deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:1200px;top:757px;width:59px;transform:rotate(90deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:1200px;top:816px;width:1175px;transform:rotate(180deg)"></div><div class="edge feedback" data-from="decision" data-to="pe" style="left:25px;top:816px;width:648px;transform:rotate(-90deg)"></div><div class="edge arrow feedback" data-from="decision" data-to="pe" style="left:25px;top:168px;width:35px;transform:rotate(0deg)"></div><div class="node " id="pe" style="left:60px;top:104px;width:410px;height:165px"><strong>PE + Skills</strong><span>Core + Shared + four domains</span><span data-node-detail="true" hidden="">Freeze PE &amp; configuration
+Core + Shared + four-domain Skills
+Generator / Judge / dataset versions</span></div><div class="node soft" id="generate" style="left:570px;top:104px;width:800px;height:145px"><strong>Generate SpecDoc · one call</strong><span>Query → plan → audit → render</span><span data-node-detail="true" hidden="">UserQuery → one model call → SpecDoc
+Understand → register entities → plan domains → audit → render
+All inside one call; generate each case under matched settings</span></div><div class="node " id="judge" style="left:940px;top:336px;width:430px;height:165px"><strong>Review the Spec</strong><span>Save verdicts &amp; failure evidence</span><span data-node-detail="true" hidden="">Judge the generated Spec
+Save domain verdicts, failures and artifacts
+Keep evaluation criteria fixed</span></div><div class="node " id="attribute" style="left:500px;top:336px;width:340px;height:165px"><strong>Attribute failures</strong><span>One search route per run</span><span data-node-detail="true" hidden="">Attribute failures
+Choose one search route
+Rules / patch / free / memory</span></div><div class="node " id="patch" style="left:60px;top:336px;width:340px;height:165px"><strong>Edit PE / Skills</strong><span>Bounded scope · generality review</span><span data-node-detail="true" hidden="">Propose PE / Skills edits
+Edit only the permitted scope
+Review generality and product limits</span></div><div class="node " id="paired" style="left:60px;top:592px;width:340px;height:165px"><strong>Paired evaluation</strong><span>Same cases &amp; model settings</span><span data-node-detail="true" hidden="">Paired generation &amp; eval
+Candidate and baseline: same cases and settings
+Screen, then run regression</span></div><div class="node " id="confirm" style="left:520px;top:592px;width:380px;height:165px"><strong>Full regression</strong><span>Check gains &amp; regressions</span><span data-node-detail="true" hidden="">Full regression &amp; KEEP gate
+Use the run’s registered acceptance rule
+Check gains and regressions together</span></div><div class="node result" id="decision" style="left:1030px;top:592px;width:340px;height:165px"><strong>KEEP / DISCARD</strong><span>Update or restore baseline</span><span data-node-detail="true" hidden="">Keep or discard candidate
+KEEP: update baseline
+DISCARD: restore it, log failures</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Spec generation · Full workflow</div></div><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></div></foreignObject></svg>

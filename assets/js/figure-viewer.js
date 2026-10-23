@@ -12,6 +12,11 @@
   let mode = 'fit';
   let drag = null;
   let opener = null;
+  if (window.WritingDiagramStyle) {
+    dialog.dataset.diagramStyle = window.WritingDiagramStyle.current();
+    dialog.querySelector('.figure-toolbar')?.prepend(window.WritingDiagramStyle.createControl());
+    window.addEventListener('writing-diagram-style-change',() => { if (opener) image.src = opener.src; });
+  }
 
   function fitScale() {
     return Math.min(1, Math.max(1, viewport.clientWidth - 24) / naturalWidth, Math.max(1, viewport.clientHeight - 24) / naturalHeight);

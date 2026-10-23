@@ -1,0 +1,172 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="374.4pt" viewBox="0 0 864 374.4" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en" data-diagram-style="engineering" data-diagram-kind="flow">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 374.4  L 864 374.4  L 864 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 201.797644 57.6  Q 229.498555 57.6 256.305039 57.6  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 251.505039 55.2  L 256.305039 57.6  L 251.505039 60  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 498.79681999999997 57.6  Q 553.497182 57.6 607.3031170000002 57.6  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 602.5031170000001 55.2  L 607.3031170000002 57.6  L 602.5031170000001 60  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 378 89.20127000000002  Q 378 124.199997 378 164.50429700000004  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 380.4 159.70429700000003  L 378 164.50429700000004  L 375.6 159.70429700000003  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 712.8 87.19999999999999  L 712.8 117.36  Q 712.8 126 704.16 126  L 541.44 126  Q 532.8 126 532.8 134.64  L 532.8 182.16  Q 532.8 190.8 524.16 190.8  L 479.6944270000001 190.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 484.49442700000003 193.2  L 479.6944270000001 190.8  L 484.49442700000003 188.4  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 712.8 89.20127000000002  Q 712.8 124.199997 712.8 164.50429700000004  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 715.2 159.70429700000003  L 712.8 164.50429700000004  L 710.4 159.70429700000003  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 378 216.196436  Q 378 253.79689 378 284.3029170000001  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 380.4 279.5029170000001  L 378 284.3029170000001  L 375.6 279.5029170000001  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 712.8 214.2  L 712.8 243.36  Q 712.8 252 704.16 252  L 386.64 252  Q 378 252 378 260.64  L 378 286.305573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 380.4 281.50557299999997  L 378 286.305573  L 375.6 281.50557299999997  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 115.2 214.2  L 115.2 243.36  Q 115.2 252 123.84 252  L 369.36 252  Q 378 252 378 260.64  L 378 286.305573  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 380.4 281.50557299999997  L 378 286.305573  L 375.6 281.50557299999997  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 268.001587 316.8  Q 239.399893 316.8 211.69262499999996 316.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="accent"/>
+    <path d="M 216.49262499999998 319.2  L 211.69262499999996 316.8  L 216.49262499999998 314.4  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="accent"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 488.000995 316.8  Q 551.69944 316.8 614.503458 316.8  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 609.703458 314.4  L 614.503458 316.8  L 609.703458 319.2  " clip-path="url(#p88c59137fd)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 54 34.2  L 176.4 34.2  Q 199.8 34.2 199.8 57.6  L 199.8 57.6  Q 199.8 81 176.4 81  L 54 81  Q 30.6 81 30.6 57.6  L 30.6 57.6  Q 30.6 34.2 54 34.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 266.4 28.000000000000004  L 489.6 28.000000000000004  Q 496.8 28.000000000000004 496.8 37.107692307692304  L 496.8 78.0923076923077  Q 496.8 87.2 489.6 87.2  L 266.4 87.2  Q 259.2 87.2 259.2 78.0923076923077  L 259.2 37.107692307692304  Q 259.2 28.000000000000004 266.4 28.000000000000004  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 617.4 28.000000000000004  L 808.2 28.000000000000004  Q 815.4 28.000000000000004 815.4 37.107692307692304  L 815.4 78.0923076923077  Q 815.4 87.2 808.2 87.2  L 617.4 87.2  Q 610.2 87.2 610.2 78.0923076923077  L 610.2 37.107692307692304  Q 610.2 28.000000000000004 617.4 28.000000000000004  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 284.4 167.4  L 471.6 167.4  Q 478.80000000000007 167.4 478.80000000000007 174.6  L 478.80000000000007 207  Q 478.80000000000007 214.2 471.6 214.2  L 284.4 214.2  Q 277.2 214.2 277.2 207  L 277.2 174.6  Q 277.2 167.4 284.4 167.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 617.4 167.4  L 808.2 167.4  Q 815.4 167.4 815.4 174.6  L 815.4 207  Q 815.4 214.2 808.2 214.2  L 617.4 214.2  Q 610.2 214.2 610.2 207  L 610.2 174.6  Q 610.2 167.4 617.4 167.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 277.2 287.2  L 478.8 287.2  Q 486 287.2 486 296.3076923076924  L 486 337.2923076923077  Q 486 346.4 478.8 346.4  L 277.2 346.4  Q 270 346.4 270 337.2923076923077  L 270 296.3076923076924  Q 270 287.2 277.2 287.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 624.6 287.2  L 801 287.2  Q 808.2 287.2 808.2 296.3076923076924  L 808.2 337.2923076923077  Q 808.2 346.4 801 346.4  L 624.6 346.4  Q 617.4 346.4 617.4 337.2923076923077  L 617.4 296.3076923076924  Q 617.4 287.2 624.6 287.2  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 45 293.4  L 185.4 293.4  Q 208.8 293.4 208.8 316.8  L 208.8 316.8  Q 208.8 340.2 185.4 340.2  L 45 340.2  Q 21.6 340.2 21.6 316.8  L 21.6 316.8  Q 21.6 293.4 45 293.4  z " clip-path="url(#p88c59137fd)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="node"/>
+   </g>
+   <g id="text_1"><text x="115.2" y="63.9" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_12" aria-label="Local Judge" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="115.2" dy="0">Local Judge</tspan></text></g>
+   <g id="text_2"><text x="378" y="53.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_13" aria-label="Local pass, format handback?" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="378" dy="0">Local pass, format </tspan><tspan x="378" dy="21.599999999999998">handback?</tspan></text></g>
+   <g id="text_3"><text x="712.8" y="53.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_14" aria-label="Original format gap closed?" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="712.8" dy="0">Original format gap </tspan><tspan x="712.8" dy="21.599999999999998">closed?</tspan></text></g>
+   <g id="text_4"><text x="378" y="197.10000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_15" aria-label="Rank candidates" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="378" dy="0">Rank candidates</tspan></text></g>
+   <g id="text_5"><text x="712.8" y="197.10000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_16" aria-label="Reject this candidate" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="712.8" dy="0">Reject this candidate</tspan></text></g>
+   <g id="text_6"><text x="115.2" y="183.933125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Protocol-invalid candidates" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="115.2" dy="0">Protocol-invalid </tspan><tspan x="115.2" dy="21.599999999999998">candidates</tspan></text></g>
+   <g id="text_7"><text x="378" y="312.29999999999995" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_17" aria-label="More candidates? N_fix=3" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="378" dy="0">More candidates? </tspan><tspan x="378" dy="21.599999999999998">N_fix=3</tspan></text></g>
+   <g id="text_8"><text x="712.8" y="312.29999999999995" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_18" aria-label="Any eligible candidate?" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="712.8" dy="0">Any eligible </tspan><tspan x="712.8" dy="21.599999999999998">candidate?</tspan></text></g>
+   <g id="text_9"><text x="115.2" y="323.09999999999997" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-node-box="patch_19" aria-label="Next candidate" data-type-role="primary" text-anchor="middle" data-diagram-text="accent"><tspan x="115.2" dy="0">Next candidate</tspan></text></g>
+   <g id="text_10"><text x="553.5" y="50.231249999999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Yes" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="553.5" dy="0">Yes</tspan></text></g>
+   <g id="text_11"><text x="403.2" y="130.87125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="No" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="403.2" dy="0">No</tspan></text></g>
+   <g id="text_12"><text x="583" y="169.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" data-layout-label="true" aria-label="Closed" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="583" dy="0">Closed</tspan></text></g>
+   <g id="text_13"><text x="770.4" y="130.87125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="Still open" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="770.4" dy="0">Still open</tspan></text></g>
+   <g id="text_14"><text x="239.4" y="309.43125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="Yes" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="239.4" dy="0">Yes</tspan></text></g>
+   <g id="text_15"><text x="551.7" y="309.43125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="No" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="551.7" dy="0">No</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p88c59137fd">
+   <rect x="0" y="0" width="864" height="374.4"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

@@ -1,0 +1,214 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="777.6pt" viewBox="0 0 864 777.6" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="zh" data-diagram-style="engineering" data-diagram-kind="data">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 777.6  L 864 777.6  L 864 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 223.2 57.6  L 756 57.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 223.2 57.6  L 500.256 57.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 223.2 97.2  L 756 97.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 223.2 97.2  L 496.704 97.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 223.2 136.8  L 756 136.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 223.2 136.8  L 537.552 136.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 223.2 237.6  L 756 237.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 223.2 237.6  L 649.44 237.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 223.2 277.2  L 756 277.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 223.2 277.2  L 681.408 277.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 223.2 316.8  L 756 316.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 223.2 316.8  L 681.408 316.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 223.2 356.4  L 756 356.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 223.2 356.4  L 660.096 356.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 223.2 396  L 756 396  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 223.2 396  L 617.472 396  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 223.2 435.6  L 756 435.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 223.2 435.6  L 660.096 435.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 223.2 554.4  L 756 554.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 223.2 554.4  L 423 554.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 223.2 594  L 756 594  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 223.2 594  L 289.8 594  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 223.2 633.6  L 756 633.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 223.2 633.6  L 289.8 633.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_25">
+    <path d="M 223.2 673.2  L 756 673.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_26">
+    <path d="M 223.2 673.2  L 689.4 673.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 223.2 712.8  L 756 712.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_28">
+    <path d="M 223.2 712.8  L 356.4 712.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="text_1"><text x="36" y="31.072266" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A  限制修改范围 · Fix阶段通过数" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">A  限制修改范围 · Fix阶段通过数</tspan></text></g>
+   <g id="text_2"><text x="36" y="62.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="原版" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">原版</tspan></text></g>
+   <g id="text_3"><text x="793.46" y="62.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="156/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="793.46" dy="0">156/300</tspan></text></g>
+   <g id="text_4"><text x="36" y="102.102187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="增加能力说明" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">增加能力说明</tspan></text></g>
+   <g id="text_5"><text x="793.46" y="102.102187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="154/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="793.46" dy="0">154/300</tspan></text></g>
+   <g id="text_6"><text x="36" y="141.7225" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="保护合格段落" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">保护合格段落</tspan></text></g>
+   <g id="text_7"><text x="793.46" y="141.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="177/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="793.46" dy="0">177/300</tspan></text></g>
+   <g id="text_8"><text x="223.652656" y="170.44031299999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_9"><text x="756.357969" y="170.44031299999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.357969" dy="0">300</tspan></text></g>
+   <g id="text_10"><text x="36" y="211.11679700000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="B  六种修复策略 · 链路准出数" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">B  六种修复策略 · 链路准出数</tspan></text></g>
+   <g id="text_11"><text x="36" y="242.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Seed局部补丁" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Seed局部补丁</tspan></text></g>
+   <g id="text_12"><text x="786.46" y="242.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="40/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">40/50</tspan></text></g>
+   <g id="text_13"><text x="36" y="282.121484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="末轮Luna" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">末轮Luna</tspan></text></g>
+   <g id="text_14"><text x="786.46" y="282.102188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="43/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="786.46" dy="0">43/50</tspan></text></g>
+   <g id="text_15"><text x="36" y="321.72148400000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="末轮Luna＋历史" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">末轮Luna＋历史</tspan></text></g>
+   <g id="text_16"><text x="786.46" y="321.70218800000004" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="43/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="786.46" dy="0">43/50</tspan></text></g>
+   <g id="text_17"><text x="36" y="361.321484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="全文＋审核" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">全文＋审核</tspan></text></g>
+   <g id="text_18"><text x="786.46" y="361.302188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="41/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">41/50</tspan></text></g>
+   <g id="text_19"><text x="36" y="400.921484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="全文＋审核＋历史" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">全文＋审核＋历史</tspan></text></g>
+   <g id="text_20"><text x="786.46" y="400.902188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="37/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">37/50</tspan></text></g>
+   <g id="text_21"><text x="36" y="440.50218800000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="局部＋历史＋新规则" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">局部＋历史＋新规则</tspan></text></g>
+   <g id="text_22"><text x="786.46" y="440.50218800000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="41/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">41/50</tspan></text></g>
+   <g id="text_23"><text x="223.652656" y="469.240313" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_24"><text x="756.405313" y="469.240313" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.405313" dy="0">50</tspan></text></g>
+   <g id="text_25"><text x="36" y="527.954297" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="C  工作流难例对照 · 链路准出数" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">C  工作流难例对照 · 链路准出数</tspan></text></g>
+   <g id="text_26"><text x="36" y="559.334688" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="原文精确补丁" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">原文精确补丁</tspan></text></g>
+   <g id="text_27"><text x="779.46" y="559.302188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="3/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">3/8</tspan></text></g>
+   <g id="text_28"><text x="36" y="598.986484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="对象定位" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">对象定位</tspan></text></g>
+   <g id="text_29"><text x="779.46" y="598.902188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="1/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">1/8</tspan></text></g>
+   <g id="text_30"><text x="36" y="638.586484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="对象定位＋回滚" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">对象定位＋回滚</tspan></text></g>
+   <g id="text_31"><text x="779.46" y="638.502188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="1/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">1/8</tspan></text></g>
+   <g id="text_32"><text x="36" y="678.173281" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="原补丁＋业务规则" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">原补丁＋业务规则</tspan></text></g>
+   <g id="text_33"><text x="779.46" y="678.1021870000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="7/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="779.46" dy="0">7/8</tspan></text></g>
+   <g id="text_34"><text x="36" y="717.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="全文候选＋保护" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">全文候选＋保护</tspan></text></g>
+   <g id="text_35"><text x="779.46" y="717.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="2/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">2/8</tspan></text></g>
+   <g id="text_36"><text x="223.652656" y="746.4403130000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_37"><text x="756.452656" y="746.4403130000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.452656" dy="0">8</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe7bafa8f3b">
+   <rect x="0" y="0" width="864" height="777.6"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

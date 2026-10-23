@@ -1,50 +1,50 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="252pt" viewBox="0 0 864 252" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja">
- 
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="252pt" viewBox="0 0 864 252" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja" data-diagram-style="openai-blog" data-diagram-kind="flow">
+
  <defs>
   <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 252  L 864 252  L 864 0  L 0 0  z " style="fill: #ffffff"/>
+   <path d="M 0 252  L 864 252  L 864 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 201.80127 64.8  Q 221.401093 64.8 240.106489 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 235.306489 62.4  L 240.106489 64.8  L 235.306489 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 201.80127 64.8  Q 221.401093 64.8 240.106489 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 235.306489 62.4  L 240.106489 64.8  L 235.306489 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_3">
-    <path d="M 414.196436 64.8  Q 431.999832 64.8 448.908802 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 444.108802 62.4  L 448.908802 64.8  L 444.108802 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 414.196436 64.8  Q 431.999832 64.8 448.908802 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 444.108802 62.4  L 448.908802 64.8  L 444.108802 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_4">
-    <path d="M 623.00127 64.8  Q 642.601093 64.8 661.306489 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 656.506489 62.4  L 661.306489 64.8  L 656.506489 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 623.00127 64.8  Q 642.601093 64.8 661.306489 64.8  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 656.506489 62.4  L 661.306489 64.8  L 656.506489 67.2  " clip-path="url(#p544d92fd93)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_5">
-    <path d="M 115.2 90.197974  Q 115.2 125.999448 115.2 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 117.6 156.106494  L 115.2 160.906494  L 112.8 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 115.2 90.197974  Q 115.2 125.999448 115.2 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 117.6 156.106494  L 115.2 160.906494  L 112.8 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_6">
-    <path d="M 327.6 90.197974  Q 327.6 125.999448 327.6 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 330 156.106494  L 327.6 160.906494  L 325.2 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 327.6 90.197974  Q 327.6 125.999448 327.6 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 330 156.106494  L 327.6 160.906494  L 325.2 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_7">
-    <path d="M 748.8 90.197974  Q 748.8 125.999448 748.8 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
-    <path d="M 751.2 156.106494  L 748.8 160.906494  L 746.4 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 748.8 90.197974  Q 748.8 125.999448 748.8 160.906494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 751.2 156.106494  L 748.8 160.906494  L 746.4 156.106494  " clip-path="url(#p544d92fd93)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_8">
-    <path d="M 250.2 41.4  L 405 41.4  Q 412.2 41.4 412.2 48.6  L 412.2 81  Q 412.2 88.2 405 88.2  L 250.2 88.2  Q 243 88.2 243 81  L 243 48.6  Q 243 41.4 250.2 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 250.2 41.4  L 405 41.4  Q 412.2 41.4 412.2 48.6  L 412.2 81  Q 412.2 88.2 405 88.2  L 250.2 88.2  Q 243 88.2 243 81  L 243 48.6  Q 243 41.4 250.2 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
    </g>
    <g id="patch_9">
-    <path d="M 687.6 41.4  L 810 41.4  Q 833.4 41.4 833.4 64.8  L 833.4 64.8  Q 833.4 88.2 810 88.2  L 687.6 88.2  Q 664.2 88.2 664.2 64.8  L 664.2 64.8  Q 664.2 41.4 687.6 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter"/>
+    <path d="M 687.6 41.4  L 810 41.4  Q 833.4 41.4 833.4 64.8  L 833.4 64.8  Q 833.4 88.2 810 88.2  L 687.6 88.2  Q 664.2 88.2 664.2 64.8  L 664.2 64.8  Q 664.2 41.4 687.6 41.4  z " clip-path="url(#p544d92fd93)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node"/>
    </g>
-   <g id="text_1"><text x="114.60875" y="70.76" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query＋最終Spec" data-type-role="primary" text-anchor="middle"><tspan x="114.60875" dy="0">Query＋最終Spec</tspan></text></g>
-   <g id="text_2"><text x="327.6" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_8" aria-label="コード生成・実行" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">コード生成・実行</tspan></text></g>
-   <g id="text_3"><text x="536.085" y="70.675781" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="実際のBase" data-type-role="primary" text-anchor="middle"><tspan x="536.085" dy="0">実際のBase</tspan></text></g>
-   <g id="text_4"><text x="748.8" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_9" aria-label="Building Mix" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">Building Mix</tspan></text></g>
-   <g id="text_5"><text x="115.2" y="184.015922" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="設計不足" data-type-role="primary" text-anchor="middle"><tspan x="115.2" dy="0">設計不足</tspan></text></g>
-   <g id="text_6"><text x="327.6" y="184.07170299999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="実装・実行失敗" data-type-role="primary" text-anchor="middle"><tspan x="327.6" dy="0">実装・実行失敗</tspan></text></g>
-   <g id="text_7"><text x="748.8" y="183.76233599999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="審査証拠の不一致" data-type-role="primary" text-anchor="middle"><tspan x="748.8" dy="0">審査証拠の不一致</tspan></text></g>
+   <g id="text_1"><text x="114.60875" y="70.76" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query＋最終Spec" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="114.60875" dy="0">Query＋最終Spec</tspan></text></g>
+   <g id="text_2"><text x="327.6" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_8" aria-label="コード生成・実行" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="327.6" dy="0">コード生成・実行</tspan></text></g>
+   <g id="text_3"><text x="536.085" y="70.675781" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="実際のBase" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="536.085" dy="0">実際のBase</tspan></text></g>
+   <g id="text_4"><text x="748.8" y="71.1" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_9" aria-label="Building Mix" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="748.8" dy="0">Building Mix</tspan></text></g>
+   <g id="text_5"><text x="115.2" y="184.015922" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="設計不足" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="115.2" dy="0">設計不足</tspan></text></g>
+   <g id="text_6"><text x="327.6" y="184.07170299999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="実装・実行失敗" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="327.6" dy="0">実装・実行失敗</tspan></text></g>
+   <g id="text_7"><text x="748.8" y="183.76233599999998" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="審査証拠の不一致" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="748.8" dy="0">審査証拠の不一致</tspan></text></g>
   </g>
  </g>
  <defs>
@@ -52,4 +52,79 @@
    <rect x="0" y="0" width="864" height="252"/>
   </clipPath>
  </defs>
-</svg>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

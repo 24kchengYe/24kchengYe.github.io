@@ -15,6 +15,7 @@
     document.querySelectorAll('img[data-src-en]').forEach(image => {
       image.src = image.getAttribute(`data-src-${language}`);
     });
+    window.WritingDiagramStyle?.refreshImages();
     document.querySelectorAll('dialog[open]').forEach(dialog => dialog.close());
     document.querySelectorAll('[data-site-link]').forEach(link => {
       const url = new URL(link.getAttribute('href'), location.href);

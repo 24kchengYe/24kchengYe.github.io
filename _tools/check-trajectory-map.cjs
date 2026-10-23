@@ -89,13 +89,13 @@ async function main() {
     await page.goto(`${origin}/writing/coding-agent-trajectories/?lang=zh`);
     const map = page.locator('#trajectory-map-1');
     await map.locator('.tm-shell').waitFor();
-    assert.equal(await map.locator('select').inputValue(),'overview','First figure opens the overview');
-    assert.equal(await page.locator('#trajectory-map-2 select').inputValue(),'complete','Second figure opens the full workflow');
+    assert.equal(await map.locator('select[data-view-control]').inputValue(),'overview','First figure opens the overview');
+    assert.equal(await page.locator('#trajectory-map-2 select[data-view-control]').inputValue(),'complete','Second figure opens the full workflow');
     const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     for (const language of ['zh','en','ja']) {
       await page.locator(`[data-language="${language}"]`).click();
       for (const id of Object.keys(config.views)) {
-        await map.locator('select').selectOption(id);
+        await map.locator('select[data-view-control]').selectOption(id);
         await settle();
         const issues = await map.evaluate(inspectMap);
         report.push({ view:id,language,issues });
@@ -110,7 +110,7 @@ async function main() {
     const other = page.locator('#trajectory-map-2');
     const otherEntry = await other.getAttribute('data-entry');
     await page.locator('[data-language="en"]').click();
-    await map.locator('select').selectOption('overview');
+    await map.locator('select[data-view-control]').selectOption('overview');
     await settle();
     await map.locator('#harness').hover();
     assert(await map.locator('.connection.is-active').count() > 0,'Hover must trace connections');
@@ -121,7 +121,7 @@ async function main() {
     assert.equal(await other.getAttribute('data-view'),otherEntry,'Each inline map navigates independently');
     await map.locator('.tm-breadcrumb button[aria-label="Back"]').click();
     assert.equal(await map.getAttribute('data-view'),'harness');
-    await map.locator('select').selectOption('offline');
+    await map.locator('select[data-view-control]').selectOption('offline');
     await map.locator('#CR').click();
     assert.equal(await map.getAttribute('data-view'),'online');
     await map.locator('.port[data-port="2"]').click();
@@ -131,7 +131,7 @@ async function main() {
     await page.keyboard.press('Enter');
     assert.equal(await map.getAttribute('data-view'),'offline','Panel boundary links open their destination');
     assert(!(await map.locator('.tm-aside').innerText()).includes('BO →'),'Cross-panel links use translated titles');
-    await map.locator('select').selectOption('case');
+    await map.locator('select[data-view-control]').selectOption('case');
     await settle();
     assert(await map.locator('.tm-aside').evaluate(node => node.hidden),'Replay details start collapsed to preserve canvas width');
     assert.equal(await map.locator('.tm-viewport').evaluate(node => getComputedStyle(node).overflowY),'auto','Long cases have native scrolling');
@@ -181,7 +181,7 @@ async function main() {
     await page.keyboard.press('Escape');
     await page.locator('dialog.trajectory-dialog').waitFor({ state:'detached' });
     assert.equal(await page.locator('dialog.trajectory-dialog').count(),0);
-    await map.locator('select').selectOption('overview');
+    await map.locator('select[data-view-control]').selectOption('overview');
     await settle();
     const viewport = map.locator('.tm-viewport');
     await viewport.focus();
@@ -206,11 +206,11 @@ async function main() {
     await page.setViewportSize({ width:390,height:844 });
     for (const language of ['zh','en','ja']) {
       await page.locator(`[data-language="${language}"]`).click();
-      await map.locator('select').selectOption('overview');
+      await map.locator('select[data-view-control]').selectOption('overview');
       await settle();
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),'Mobile horizontal overflow');
       await map.screenshot({ path:path.join(output,`mobile-overview-${language}.png`) });
-      await map.locator('select').selectOption('case');
+      await map.locator('select[data-view-control]').selectOption('case');
       const details = map.getByRole('button',{name:language === 'zh' ? '事件详情' : language === 'en' ? 'Event details' : 'イベントの詳細',exact:true});
       if (await details.getAttribute('aria-expanded') === 'true') await details.click();
       await settle();
@@ -231,7 +231,7 @@ async function main() {
       await checkVisible(map,'#restore5');
       await page.keyboard.press('Escape');
       await page.locator('dialog.trajectory-dialog').waitFor({ state:'detached' });
-      await map.locator('select').selectOption('complete');
+      await map.locator('select[data-view-control]').selectOption('complete');
       await map.locator('[data-expand]').click();
       await map.getByRole('button',{ name:language === 'zh' ? '全图' : language === 'en' ? 'Fit all' : '全体表示',exact:true }).click();
       await settle();

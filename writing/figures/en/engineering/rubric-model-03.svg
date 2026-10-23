@@ -1,0 +1,122 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="331.2pt" viewBox="0 0 1008 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en" data-diagram-style="engineering" data-diagram-kind="flow">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2  L 1008 331.2  L 1008 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 198.88839999999996 90  L 244.08 90  Q 252 90 252 97.92  L 252 161.28  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 203.6504 169.2  L 244.08 169.2  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 188.83759999999998 248.4  L 244.08 248.4  Q 252 248.4 252 240.48  L 252 177.12  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 161.28  L 626.4 119.52  Q 626.4 111.6 634.32 111.6  L 778.0650679999999 111.6  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 773.6650679999999 109.4  L 778.0650679999999 111.6  L 773.6650679999999 113.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 177.12  L 626.4 218.88  Q 626.4 226.8 634.32 226.8  L 724.670268 226.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 720.270268 224.6  L 724.670268 226.8  L 720.270268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 403.9416 198.8  L 474.4584 198.8  Q 483.0984 198.8 483.0984 182.46896551724137  L 483.0984 155.93103448275863  Q 483.0984 139.6 474.4584 139.6  L 403.9416 139.6  Q 395.3016 139.6 395.3016 155.93103448275863  L 395.3016 182.46896551724137  Q 395.3016 198.8 403.9416 198.8  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="node"/>
+   </g>
+   <g id="text_1"><text x="108.1" y="94.079102" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="User requirements" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.1" dy="0">User requirements</tspan></text></g>
+   <g id="text_2"><text x="108.05" y="162.383844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Exact design version" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.05" dy="0">Exact design </tspan><tspan x="108.05" dy="21.599999999999998">version</tspan></text></g>
+   <g id="text_3"><text x="108.4" y="252.383844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Full domain rules" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.4" dy="0">Full domain rules</tspan></text></g>
+   <g id="text_4"><text x="439.20000000000005" y="164.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_7" aria-label="Review model" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="439.20000000000005" dy="0">Review </tspan><tspan x="439.20000000000005" dy="21.599999999999998">model</tspan></text></g>
+   <g id="text_5"><text x="835.531336" y="115.583844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Pass / fail" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="835.531336" dy="0">Pass / fail</tspan></text></g>
+   <g id="text_6"><text x="835.35" y="220.066258" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Object · Rule · Evidence" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="835.35" dy="0">Object · Rule · </tspan><tspan x="835.35" dy="21.599999999999998">Evidence</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p00e306ffd5">
+   <rect x="0" y="0" width="1008" height="331.2"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202422;
+  --diagram-muted:#59635b;
+  --diagram-line:#545c55;
+  --diagram-border:#656e66;
+  --diagram-accent:#688e42;
+  --diagram-failure:#997140;
+  --diagram-paper:#fff;
+  --diagram-soft:#f6f8f3;
+  --diagram-warm:#fcf6ed;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.1px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.5px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#1d2723;
+  --diagram-muted:#4d6055;
+  --diagram-line:#303432;
+  --diagram-border:#424843;
+  --diagram-accent:#537e36;
+  --diagram-failure:#936321;
+  --diagram-paper:#fff;
+  --diagram-soft:#edf3e8;
+  --diagram-warm:#fcf1df;
+  --diagram-grid:radial-gradient(#dce3d8 .65px,transparent .65px);
+  --diagram-vector-stroke:1.35px;
+  --diagram-edge-width:2px;
+  --diagram-box-width:1.7px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style="engineering"] .canvas :is(.node.soft,.node.accent) { background-color:var(--diagram-paper)!important; border-color:var(--diagram-border)!important; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .diagram-style-control { max-width:150px; font-weight:400; }
+.diagram-style-dialog &gt; .diagram-style-control { position:fixed; top:22px; left:22px; z-index:1; padding:8px 12px; color:#202422; background:#fff; border:1px solid #656e66; border-radius:6px; font:14px Arial,sans-serif; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style="engineering"] .am-node { background:var(--diagram-soft); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+@media print { [data-diagram-style] .diagram-style-control { display:none; } }
+</style></svg>

@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
+const { createHash } = require('node:crypto');
 const { buildResearchDiagrams, attachResearchDiagrams, researchTranslations } = require('./build-research-diagrams.cjs');
 buildResearchDiagrams();
 const { buildFigures } = require('./build-figures.cjs');
@@ -41,6 +42,11 @@ function localizeFigures(document) {
     image.width = figure.width;
     image.height = figure.height;
     for (const language of ['en', 'zh', 'ja']) image.setAttribute(`data-src-${language}`, figure.localized[language]);
+    image.setAttribute('data-diagram-image','');
+    for (const language of ['en','zh','ja']) {
+      image.setAttribute(`data-src-openai-blog-${language}`,figure.localized[language]);
+      image.setAttribute(`data-src-engineering-${language}`,figure.engineering[language]);
+    }
     image.src = figure.localized.zh;
     const container = image.closest('.figure-panel') || image.closest('figure');
     if (container) {
@@ -64,6 +70,12 @@ function build(slug, technical = false) {
   };
   const dom = new JSDOM(source.trimEnd());
   const { document, NodeFilter } = dom.window;
+  for (const file of ['assets/js/writing-diagram-style.js','assets/css/writing-diagram-themes.css']) {
+    const revision = createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex').slice(0,12);
+    const asset = document.createElement(file.endsWith('.js') ? 'script' : 'link');
+    if (file.endsWith('.js')) { asset.src = `/${file}?v=${revision}`; asset.defer = true; document.head.insertBefore(asset,document.head.querySelector('script')); }
+    else { asset.rel = 'stylesheet'; asset.href = `/${file}?v=${revision}`; document.head.append(asset); }
+  }
   attachResearchDiagrams(document, slug, technical);
   document.querySelector('.report-site-nav')?.remove();
   document.querySelectorAll('.figure-source').forEach(element => element.remove());
@@ -111,9 +123,13 @@ function build(slug, technical = false) {
   stylesheet.href = '/assets/css/writing-language.css?v=figure-i18n-1';
   document.head.append(stylesheet);
   const script = document.createElement('script');
-  script.src = '/assets/js/minimal.js?v=writing-i18n-3';
+  script.src = '/assets/js/minimal.js?v=writing-diagram-styles-1';
   script.defer = true;
   document.head.append(script);
+  for (const asset of document.querySelectorAll('script[src*="automation-blueprint.js"],script[src*="figure-viewer.js"]')) {
+    const file = asset.getAttribute('src').split('?')[0].slice(1);
+    asset.src = `/${file}?v=${createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex').slice(0,12)}`;
+  }
   const output = dom.serialize() + '\n';
   fs.mkdirSync(path.join(root, route), { recursive: true });
   fs.writeFileSync(path.join(root, route, 'index.html'), output);

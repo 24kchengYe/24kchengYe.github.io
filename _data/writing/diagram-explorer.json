@@ -61,6 +61,8 @@
   "agent-memory-input": {"kind":"flow","title":["记忆怎样回到输入","How memory reaches the input","記憶が入力に届くまで"],"links":{}},
   "agent-memory-compaction": {"kind":"flow","title":["上下文压缩的两条路径","Two paths through compaction","文脈圧縮の二つの経路"],"links":{}},
   "agent-memory-lifecycle": {"kind":"flow","title":["记忆能否跨过任务边界","Does memory cross task boundaries?","記憶はタスクの境界を越えるか"],"links":{}},
-  "rubric-model-two-judges": {"kind":"flow","title":["从设计评审到产物验收","From design review to artifact acceptance","設計審査から成果物の検収へ"],"links":{"judge":"rubric-model-full-workflow","artifactJudge":"rubric-model-artifact-training"}},
-  "rubric-model-artifact-training": {"kind":"flow","title":["Artifact-RJM · 标注、训练与评测","Artifact-RJM · Label, train, evaluate","Artifact-RJM · 注釈・学習・評価"],"links":{}}
+  "rubric-model-two-judges": {"kind":"flow","title":["从设计评审到产物验收","From design review to artifact acceptance","設計審査から成果物の検収へ"],"links":{"judge":"rubric-model-spec-io","artifactJudge":"rubric-model-artifact-io"}},
+  "rubric-model-artifact-training": {"kind":"flow","title":["Artifact-RJM · 标注、训练与评测","Artifact-RJM · Label, train, evaluate","Artifact-RJM · 注釈・学習・評価"],"links":{}},
+  "rubric-model-spec-io": {"kind":"flow","title":["Spec Judge · 输入与输出","Spec Judge · inputs and outputs","Spec Judge · 入力と出力"],"links":{"judge":"rubric-model-full-workflow"}},
+  "rubric-model-artifact-io": {"kind":"flow","title":["产物 Judge · 输入与输出","Artifact Judge · inputs and outputs","成果物 Judge · 入力と出力"],"links":{"judge":"rubric-model-artifact-training"}}
 }

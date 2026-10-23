@@ -1,0 +1,70 @@
+{
+  "原始 Query": [
+    "Original Query",
+    "元の Query"
+  ],
+  "用户需求": [
+    "User requirements",
+    "ユーザーの要求"
+  ],
+  "当前 Spec": [
+    "Current Spec",
+    "現在の Spec"
+  ],
+  "待评设计文档": [
+    "Design under review",
+    "評価対象の設計書"
+  ],
+  "领域规则": [
+    "Domain rules",
+    "領域ルール"
+  ],
+  "产品边界 · 评审标准": [
+    "Product limits · review criteria",
+    "製品の制約 · 評価基準"
+  ],
+  "Spec-RJM": [
+    "Spec-RJM",
+    "Spec-RJM"
+  ],
+  "需求覆盖 · 能力边界\n设计一致性": [
+    "Requirement coverage\nFeasibility · consistency",
+    "要求の網羅 · 製品の制約\n設計の整合性"
+  ],
+  "一次输入一个评审领域：domain + query + spec。\nSystem 提供该领域的规则；User 提供原始 Query 和当前完整 Spec。\n关联图展示 Spec-RJM 的训练流程。": [
+    "One domain per review: domain + query + spec.\nThe system message supplies domain rules; the user message supplies the original Query and the full current Spec.\nThe linked figure shows the Spec-RJM training workflow.",
+    "1回につき1領域を評価：domain + query + spec。\nSystem は領域ルール、User は元の Query と現在の Spec 全文を提供する。\n関連図で Spec-RJM の学習フローを示す。"
+  ],
+  "领域裁决": [
+    "Domain verdict",
+    "領域の判定"
+  ],
+  "通过 / 不通过": [
+    "Pass / fail",
+    "合格 / 不合格"
+  ],
+  "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。": [
+    "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+    "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+  ],
+  "分类问题列表": [
+    "Issues by category",
+    "カテゴリ別の問題"
+  ],
+  "规则 · 问题类型\n严重度 · 理由": [
+    "Rule · issue type\nSeverity · reason",
+    "ルール · 問題の種類\n重大度 · 理由"
+  ],
+  "输入": [
+    "Inputs",
+    "入力"
+  ],
+  "结构化输出": [
+    "Structured output",
+    "構造化された出力"
+  ],
+  "Spec Judge · 输入与输出": [
+    "Spec Judge · inputs and outputs",
+    "Spec Judge · 入力と出力"
+  ]
+}

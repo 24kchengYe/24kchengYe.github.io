@@ -555,5 +555,19 @@
     "height": 905,
     "format": "html-css",
     "translations": "rubric-model-artifact-training.i18n.json"
+  },
+  "rubric-model-spec-io": {
+    "source": "rubric-model-spec-io.html",
+    "width": 1440,
+    "height": 600,
+    "format": "html-css",
+    "translations": "rubric-model-spec-io.i18n.json"
+  },
+  "rubric-model-artifact-io": {
+    "source": "rubric-model-artifact-io.html",
+    "width": 1440,
+    "height": 600,
+    "format": "html-css",
+    "translations": "rubric-model-artifact-io.i18n.json"
   }
 }

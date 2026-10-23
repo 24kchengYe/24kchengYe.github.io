@@ -86,7 +86,6 @@ table p:last-child{margin-bottom:0}
 <h2 id="technical-section-3">2　任务、数据和评测</h2>
 <h3 id="technical-subsection-1">2.1　评审任务及统计单位</h3>
 <p>模型读入用户需求、一版待评设计，以及一个业务域的完整规则。输出包含是否通过、具体问题、所违反的规则、严重程度及判断依据。业务域限定检查范围，规则进一步说明什么情况下属于错误。</p>
-<figure id="figure-figure_01_task_io" class="blog-figure"><img src="/writing/assets/0c8f03219e746892457f.svg" alt="评审输入输出" width="1008" height="331" loading="lazy" decoding="async"><figcaption>评审输入输出</figcaption></figure>
 
 <p><strong>一个评审样本对应“一条需求 × 一版设计 × 一个业务域”。</strong> 同一需求可以有多个版本、多个评审样本；一条样本也可以包含多个问题。后期统一数据按原始需求整组切分，避免同一需求的不同版本同时进入训练和测试。</p>
 <h3 id="technical-subsection-2">2.2　历史输入的版本对齐</h3>

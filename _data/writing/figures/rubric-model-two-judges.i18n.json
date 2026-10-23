@@ -23,9 +23,9 @@
     "Query + Spec",
     "Query + Spec"
   ],
-  "评审输入：原始 Query、当前 Spec、领域规则\n输出：问题证据与裁决，指导下一轮修复\nSpec-RJM 学习这类评审能力，关联图展示训练方法。": [
-    "Review input: original Query, current Spec, domain rules\nOutput: issue evidence and verdict to guide repair\nSpec-RJM learns this review task; the linked figure shows its training methods.",
-    "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く問題の証拠と判定\nSpec-RJM はこの評価を学習し、関連図で学習方式を示す。"
+  "评审输入：原始 Query、当前 Spec、领域规则\n输出：领域裁决与问题列表，指导下一轮修复\n关联图展开 Spec-RJM 的输入与输出。": [
+    "Review input: original Query, current Spec, domain rules\nOutput: domain verdict and issues to guide repair\nThe linked figure expands the Spec-RJM inputs and outputs.",
+    "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く領域判定と問題一覧\n関連図で Spec-RJM の入力と出力を詳しく示す。"
   ],
   "修复 Spec": [
     "Fix Spec",

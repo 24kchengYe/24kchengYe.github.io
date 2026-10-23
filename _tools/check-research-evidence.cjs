@@ -74,6 +74,8 @@ assert.equal(issues(sft.ground_truth).length, 2);
 assert.equal(referenceModes.length, 1);
 assert(referenceModes[0].endsWith('/invalid_dashboard_source_reference'));
 assert(modes(sft.prediction)[0].endsWith('/dashboard_business_filter_mismatch'));
+const specRequest = sft.request_messages.find(message => message.role === 'user');
+assert.match(specRequest.content, /<domain>[\s\S]*<query>[\s\S]*<spec>/);
 
 const artifactRuns = 'data/judge_infra/artifact/runs/';
 const artifactInputs = rows(artifactRuns + '2026-09-06_test97_query_only_dual_judge_comparison/input/artifact_test485.jsonl');
@@ -98,6 +100,14 @@ assert.equal(artifactReference.provenance.messages_sha256, artifactPrediction.pr
 assert.equal(artifactReference.judgment.verdict, 'pass');
 assert.equal(artifactPrediction.judgment.verdict, 'fail');
 assert.deepEqual(issues(artifactPrediction.judgment).map(issue => issue.mode), ['missing_automation']);
+for (const review of [sft.prediction, artifactPrediction.judgment]) {
+  assert.deepEqual(Object.keys(review).sort(), ['category_reviews', 'domain', 'verdict']);
+  assert(['pass', 'fail'].includes(review.verdict));
+  for (const category of review.category_reviews) {
+    assert.deepEqual(Object.keys(category).sort(), ['category', 'issues', 'status']);
+    for (const issue of category.issues) assert.deepEqual(Object.keys(issue).sort(), ['mode', 'reason', 'rubric_id', 'severity']);
+  }
+}
 const artifactReport = read(artifactRuns + '2026-09-07_artifact_rjm_v1_3_sft_test485_eval/REPORT.md');
 for (const value of ['4,360', '484/485', '32.45%', '53.98%', '40.53%', '78.31%', '57.14%', '61.86%', '74.48%', '49.48%', '62.60%']) assert(artifactReport.includes(value), value);
 

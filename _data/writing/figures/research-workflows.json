@@ -2431,14 +2431,14 @@
       ]
     ],
     "links": {
-      "judge": "rubric-model-full-workflow",
-      "artifactJudge": "rubric-model-artifact-training"
+      "judge": "rubric-model-spec-io",
+      "artifactJudge": "rubric-model-artifact-io"
     },
     "nodeDetails": {
       "judge": [
-        "评审输入：原始 Query、当前 Spec、领域规则\n输出：问题证据与裁决，指导下一轮修复\nSpec-RJM 学习这类评审能力，关联图展示训练方法。",
-        "Review input: original Query, current Spec, domain rules\nOutput: issue evidence and verdict to guide repair\nSpec-RJM learns this review task; the linked figure shows its training methods.",
-        "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く問題の証拠と判定\nSpec-RJM はこの評価を学習し、関連図で学習方式を示す。"
+        "评审输入：原始 Query、当前 Spec、领域规则\n输出：领域裁决与问题列表，指导下一轮修复\n关联图展开 Spec-RJM 的输入与输出。",
+        "Review input: original Query, current Spec, domain rules\nOutput: domain verdict and issues to guide repair\nThe linked figure expands the Spec-RJM inputs and outputs.",
+        "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く領域判定と問題一覧\n関連図で Spec-RJM の入力と出力を詳しく示す。"
       ],
       "artifactJudge": [
         "产物层的两种评审实现\n既有 E2E：子域评审 + Mix\nArtifact-RJM：五域规则标签 + 各域 verdict\n两者在固定快照上独立对照。",
@@ -2738,5 +2738,523 @@
         "参照は Luna の1回の判定で、人手の正解ラベルではない。内部テスト97 Case は学習にアップロードしていないが、ルール開発には使用されている。"
       ]
     ]
+  },
+  {
+    "id": "rubric-model-spec-io",
+    "width": 1440,
+    "height": 600,
+    "anchors": [
+      "rubric-model-two-judges",
+      "rubric-model-two-judges"
+    ],
+    "title": [
+      "Spec Judge · 输入与输出",
+      "Spec Judge · inputs and outputs",
+      "Spec Judge · 入力と出力"
+    ],
+    "caption": [
+      "先审设计：用原始需求和领域规则检查当前 Spec，返回领域裁决与问题列表。",
+      "Review the design: check the current Spec against the original request and domain rules, then return a domain verdict and issues.",
+      "まず設計を審査する。現在の Spec を元の要求と領域ルールに照らし、領域判定と問題一覧を返す。"
+    ],
+    "nodes": {
+      "query": [
+        40,
+        185,
+        340,
+        120,
+        [
+          "原始 Query",
+          "Original Query",
+          "元の Query"
+        ],
+        [
+          "用户需求",
+          "User requirements",
+          "ユーザーの要求"
+        ]
+      ],
+      "target": [
+        40,
+        375,
+        340,
+        130,
+        [
+          "当前 Spec",
+          "Current Spec",
+          "現在の Spec"
+        ],
+        [
+          "待评设计文档",
+          "Design under review",
+          "評価対象の設計書"
+        ]
+      ],
+      "rules": [
+        520,
+        35,
+        400,
+        130,
+        [
+          "领域规则",
+          "Domain rules",
+          "領域ルール"
+        ],
+        [
+          "产品边界 · 评审标准",
+          "Product limits · review criteria",
+          "製品の制約 · 評価基準"
+        ]
+      ],
+      "judge": [
+        520,
+        285,
+        400,
+        190,
+        [
+          "Spec-RJM",
+          "Spec-RJM",
+          "Spec-RJM"
+        ],
+        [
+          "需求覆盖 · 能力边界\n设计一致性",
+          "Requirement coverage\nFeasibility · consistency",
+          "要求の網羅 · 製品の制約\n設計の整合性"
+        ],
+        "soft"
+      ],
+      "verdict": [
+        1060,
+        215,
+        340,
+        120,
+        [
+          "领域裁决",
+          "Domain verdict",
+          "領域の判定"
+        ],
+        [
+          "通过 / 不通过",
+          "Pass / fail",
+          "合格 / 不合格"
+        ],
+        "result"
+      ],
+      "issues": [
+        1060,
+        390,
+        340,
+        160,
+        [
+          "分类问题列表",
+          "Issues by category",
+          "カテゴリ別の問題"
+        ],
+        [
+          "规则 · 问题类型\n严重度 · 理由",
+          "Rule · issue type\nSeverity · reason",
+          "ルール · 問題の種類\n重大度 · 理由"
+        ]
+      ]
+    },
+    "edges": [
+      [
+        "query",
+        "judge",
+        [
+          [
+            380,
+            245
+          ],
+          [
+            440,
+            245
+          ],
+          [
+            440,
+            330
+          ],
+          [
+            520,
+            330
+          ]
+        ]
+      ],
+      [
+        "target",
+        "judge",
+        [
+          [
+            380,
+            440
+          ],
+          [
+            520,
+            440
+          ]
+        ]
+      ],
+      [
+        "rules",
+        "judge",
+        [
+          [
+            720,
+            165
+          ],
+          [
+            720,
+            285
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "verdict",
+        [
+          [
+            920,
+            330
+          ],
+          [
+            1000,
+            330
+          ],
+          [
+            1000,
+            275
+          ],
+          [
+            1060,
+            275
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "issues",
+        [
+          [
+            920,
+            430
+          ],
+          [
+            1000,
+            430
+          ],
+          [
+            1000,
+            470
+          ],
+          [
+            1060,
+            470
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        40,
+        50,
+        340,
+        [
+          "输入",
+          "Inputs",
+          "入力"
+        ],
+        "lane"
+      ],
+      [
+        1060,
+        50,
+        340,
+        [
+          "结构化输出",
+          "Structured output",
+          "構造化された出力"
+        ],
+        "lane"
+      ]
+    ],
+    "links": {
+      "judge": "rubric-model-full-workflow"
+    },
+    "nodeDetails": {
+      "judge": [
+        "一次输入一个评审领域：domain + query + spec。\nSystem 提供该领域的规则；User 提供原始 Query 和当前完整 Spec。\n关联图展示 Spec-RJM 的训练流程。",
+        "One domain per review: domain + query + spec.\nThe system message supplies domain rules; the user message supplies the original Query and the full current Spec.\nThe linked figure shows the Spec-RJM training workflow.",
+        "1回につき1領域を評価：domain + query + spec。\nSystem は領域ルール、User は元の Query と現在の Spec 全文を提供する。\n関連図で Spec-RJM の学習フローを示す。"
+      ],
+      "verdict": [
+        "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。",
+        "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+        "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+      ],
+      "issues": [
+        "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。",
+        "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+        "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+      ]
+    }
+  },
+  {
+    "id": "rubric-model-artifact-io",
+    "width": 1440,
+    "height": 600,
+    "anchors": [
+      "rubric-model-spec-io",
+      "rubric-model-spec-io"
+    ],
+    "title": [
+      "产物 Judge · 输入与输出",
+      "Artifact Judge · inputs and outputs",
+      "成果物 Judge · 入力と出力"
+    ],
+    "caption": [
+      "再审实现：将产物配置导出为 Markdown，与原始需求对照；Spec 不作为额外的验收要求。",
+      "Review the implementation: compare the artifact configuration, exported as Markdown, with the original request. The Spec does not add acceptance requirements.",
+      "次に実装を審査する。成果物の設定を Markdown に変換し、元の要求と照合する。Spec を追加の検収要件にはしない。"
+    ],
+    "nodes": {
+      "query": [
+        40,
+        185,
+        340,
+        120,
+        [
+          "原始 Query",
+          "Original Query",
+          "元の Query"
+        ],
+        [
+          "用户需求",
+          "User requirements",
+          "ユーザーの要求"
+        ]
+      ],
+      "target": [
+        40,
+        375,
+        340,
+        130,
+        [
+          "产物 Markdown",
+          "Artifact Markdown",
+          "成果物の Markdown"
+        ],
+        [
+          "实际配置的导出",
+          "Exported configuration",
+          "実際の設定をエクスポート"
+        ]
+      ],
+      "rules": [
+        520,
+        35,
+        400,
+        130,
+        [
+          "领域规则",
+          "Domain rules",
+          "領域ルール"
+        ],
+        [
+          "产品边界 · 评审标准",
+          "Product limits · review criteria",
+          "製品の制約 · 評価基準"
+        ]
+      ],
+      "judge": [
+        520,
+        285,
+        400,
+        190,
+        [
+          "Artifact-RJM",
+          "Artifact-RJM",
+          "Artifact-RJM"
+        ],
+        [
+          "需求落实\n实际配置正确性",
+          "Requirement fulfillment\nConfiguration correctness",
+          "要求の実現\n実際の設定の正しさ"
+        ],
+        "soft"
+      ],
+      "verdict": [
+        1060,
+        215,
+        340,
+        120,
+        [
+          "领域裁决",
+          "Domain verdict",
+          "領域の判定"
+        ],
+        [
+          "通过 / 不通过",
+          "Pass / fail",
+          "合格 / 不合格"
+        ],
+        "result"
+      ],
+      "issues": [
+        1060,
+        390,
+        340,
+        160,
+        [
+          "分类问题列表",
+          "Issues by category",
+          "カテゴリ別の問題"
+        ],
+        [
+          "规则 · 问题类型\n严重度 · 理由",
+          "Rule · issue type\nSeverity · reason",
+          "ルール · 問題の種類\n重大度 · 理由"
+        ]
+      ]
+    },
+    "edges": [
+      [
+        "query",
+        "judge",
+        [
+          [
+            380,
+            245
+          ],
+          [
+            440,
+            245
+          ],
+          [
+            440,
+            330
+          ],
+          [
+            520,
+            330
+          ]
+        ]
+      ],
+      [
+        "target",
+        "judge",
+        [
+          [
+            380,
+            440
+          ],
+          [
+            520,
+            440
+          ]
+        ]
+      ],
+      [
+        "rules",
+        "judge",
+        [
+          [
+            720,
+            165
+          ],
+          [
+            720,
+            285
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "verdict",
+        [
+          [
+            920,
+            330
+          ],
+          [
+            1000,
+            330
+          ],
+          [
+            1000,
+            275
+          ],
+          [
+            1060,
+            275
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "issues",
+        [
+          [
+            920,
+            430
+          ],
+          [
+            1000,
+            430
+          ],
+          [
+            1000,
+            470
+          ],
+          [
+            1060,
+            470
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        40,
+        50,
+        340,
+        [
+          "输入",
+          "Inputs",
+          "入力"
+        ],
+        "lane"
+      ],
+      [
+        1060,
+        50,
+        340,
+        [
+          "结构化输出",
+          "Structured output",
+          "構造化された出力"
+        ],
+        "lane"
+      ]
+    ],
+    "links": {
+      "judge": "rubric-model-artifact-training"
+    },
+    "nodeDetails": {
+      "judge": [
+        "一次输入一个评审领域：domain + query + artifact_markdown。\nSystem 提供该领域的规则；User 提供原始 Query 和该领域的产物 Markdown，不输入 Spec。\n覆盖 Table、Dashboard、Workflow、Permission、View 五域；本图展示 Artifact-RJM 的评审格式。",
+        "One domain per review: domain + query + artifact_markdown.\nThe system message supplies domain rules; the user message supplies the original Query and that domain’s artifact Markdown, without a Spec.\nCovers Table, Dashboard, Workflow, Permission and View. This figure shows the Artifact-RJM review format.",
+        "1回につき1領域を評価：domain + query + artifact_markdown。\nSystem は領域ルール、User は元の Query と該当領域の成果物 Markdown を提供し、Spec は入力しない。\nTable、Dashboard、Workflow、Permission、View の5領域を扱う。本図は Artifact-RJM の評価形式を示す。"
+      ],
+      "verdict": [
+        "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。",
+        "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+        "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+      ],
+      "issues": [
+        "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。",
+        "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+        "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+      ]
+    }
   }
 ]

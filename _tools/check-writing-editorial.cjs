@@ -50,6 +50,18 @@ for (const route of routes) {
     }
   }
   if (route === 'attention-mechanisms') assert(document.querySelectorAll('a[href*="arxiv.org"]').length >= 8, 'Keep primary paper references');
+  if (route === 'rubric-model' || route === 'rubric-model/technical') {
+    const overview = document.getElementById('rubric-model-two-judges');
+    const specInputs = document.getElementById('rubric-model-spec-io');
+    const artifactInputs = document.getElementById('rubric-model-artifact-io');
+    assert(overview && specInputs && artifactInputs, `${route}: both Judge input/output figures are required`);
+    assert.equal(overview.nextElementSibling, specInputs, `${route}: Spec Judge inputs belong below the overview`);
+    assert.equal(specInputs.nextElementSibling, artifactInputs, `${route}: artifact Judge inputs follow Spec Judge inputs`);
+    assert(!document.getElementById('figure-figure_01_task_io'), `${route}: superseded input/output diagram must not repeat`);
+    for (const figure of [specInputs, artifactInputs]) {
+      for (const language of languages) assert(figure.querySelector(`figcaption [lang="${language}"]`)?.textContent.trim(), `${route}/${language}: input/output caption missing`);
+    }
+  }
   if (route === 'spec-generation' || route === 'spec-generation/technical') {
     const appendix = document.querySelector('details.name-key');
     assert(appendix && !appendix.open && appendix.querySelector('table'), `${route}: keep the PE index in a collapsed appendix`);

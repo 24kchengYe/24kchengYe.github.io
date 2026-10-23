@@ -1,0 +1,70 @@
+{
+  "原始 Query": [
+    "Original Query",
+    "元の Query"
+  ],
+  "用户需求": [
+    "User requirements",
+    "ユーザーの要求"
+  ],
+  "产物 Markdown": [
+    "Artifact Markdown",
+    "成果物の Markdown"
+  ],
+  "实际配置的导出": [
+    "Exported configuration",
+    "実際の設定をエクスポート"
+  ],
+  "领域规则": [
+    "Domain rules",
+    "領域ルール"
+  ],
+  "产品边界 · 评审标准": [
+    "Product limits · review criteria",
+    "製品の制約 · 評価基準"
+  ],
+  "Artifact-RJM": [
+    "Artifact-RJM",
+    "Artifact-RJM"
+  ],
+  "需求落实\n实际配置正确性": [
+    "Requirement fulfillment\nConfiguration correctness",
+    "要求の実現\n実際の設定の正しさ"
+  ],
+  "一次输入一个评审领域：domain + query + artifact_markdown。\nSystem 提供该领域的规则；User 提供原始 Query 和该领域的产物 Markdown，不输入 Spec。\n覆盖 Table、Dashboard、Workflow、Permission、View 五域；本图展示 Artifact-RJM 的评审格式。": [
+    "One domain per review: domain + query + artifact_markdown.\nThe system message supplies domain rules; the user message supplies the original Query and that domain’s artifact Markdown, without a Spec.\nCovers Table, Dashboard, Workflow, Permission and View. This figure shows the Artifact-RJM review format.",
+    "1回につき1領域を評価：domain + query + artifact_markdown。\nSystem は領域ルール、User は元の Query と該当領域の成果物 Markdown を提供し、Spec は入力しない。\nTable、Dashboard、Workflow、Permission、View の5領域を扱う。本図は Artifact-RJM の評価形式を示す。"
+  ],
+  "领域裁决": [
+    "Domain verdict",
+    "領域の判定"
+  ],
+  "通过 / 不通过": [
+    "Pass / fail",
+    "合格 / 不合格"
+  ],
+  "JSON：domain、category_reviews、verdict。\n每个类别包含 category、status、issues；每条问题包含 rubric_id、mode、severity、reason。\n总体裁决按领域规则判定；存在问题记录不一定代表不通过。": [
+    "JSON: domain, category_reviews, verdict.\nEach category contains category, status, issues; each issue contains rubric_id, mode, severity, reason.\nThe domain rules determine the verdict; an issue entry does not necessarily mean failure.",
+    "JSON：domain、category_reviews、verdict。\n各カテゴリは category、status、issues、各問題は rubric_id、mode、severity、reason を持つ。\n領域ルールに基づいて判定するため、問題の記録があっても不合格とは限らない。"
+  ],
+  "分类问题列表": [
+    "Issues by category",
+    "カテゴリ別の問題"
+  ],
+  "规则 · 问题类型\n严重度 · 理由": [
+    "Rule · issue type\nSeverity · reason",
+    "ルール · 問題の種類\n重大度 · 理由"
+  ],
+  "输入": [
+    "Inputs",
+    "入力"
+  ],
+  "结构化输出": [
+    "Structured output",
+    "構造化された出力"
+  ],
+  "产物 Judge · 输入与输出": [
+    "Artifact Judge · inputs and outputs",
+    "成果物 Judge · 入力と出力"
+  ]
+}

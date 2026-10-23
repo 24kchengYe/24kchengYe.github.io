@@ -54,7 +54,24 @@ function localizeVector(source, language, item) {
   const layout = vectorLayouts[name] || {};
   const nodeIds = new Set((explorer[name]?.vectorEdges || []).flatMap(([from, to]) => [from, to]));
   const labels = [...svg.querySelectorAll('text')];
+  for (const label of labels) {
+    const frame = layout[label.parentElement.id]?.frame;
+    if (!frame) continue;
+    const group = document.createElementNS(svgNamespace, 'g');
+    group.id = `node-frame-${label.parentElement.id}`;
+    const shape = document.createElementNS(svgNamespace, 'rect');
+    for (const [key, value] of Object.entries(frame)) shape.setAttribute(key, value);
+    shape.setAttribute('rx', '7.2');
+    shape.setAttribute('style', 'fill:#ffffff;stroke:#161616;stroke-width:0.8');
+    group.append(shape);
+    label.parentElement.before(group);
+  }
   const closedBounds = shape => {
+    if (shape.localName === 'rect') {
+      const left = Number(shape.getAttribute('x'));
+      const top = Number(shape.getAttribute('y'));
+      return { left, top, right:left + Number(shape.getAttribute('width')), bottom:top + Number(shape.getAttribute('height')) };
+    }
     const commands = shape.getAttribute('d') || '';
     if (!/[zZ]/.test(commands) || !/[qQ]/.test(commands)) return null;
     const coordinates = commands.match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
@@ -66,8 +83,9 @@ function localizeVector(source, language, item) {
     const bounds = closedBounds(shape);
     return bounds ? [{ element:shape, ...bounds }] : [];
   });
-  const boxes = [...svg.querySelectorAll('path')].flatMap(shape => {
+  const boxes = [...svg.querySelectorAll('path,rect')].flatMap(shape => {
     if (shape.closest('defs') || /fill:\s*none/.test(shape.getAttribute('style') || '')) return [];
+    if (shape.localName === 'rect' && !shape.parentElement.id.startsWith('node-frame-')) return [];
     const bounds = closedBounds(shape);
     if (!bounds) return [];
     const matchingOutlines = outlines.filter(outline => ['left','right','top','bottom'].every(side => Math.abs(outline[side] - bounds[side]) < 0.01));
@@ -188,6 +206,10 @@ function localizeVector(source, language, item) {
     const before = originalBoxes[index];
     for (const shape of [box.element, ...box.outlines]) {
       if (shape !== box.element) shape.setAttribute('data-node-outline',box.element.parentElement.id);
+      if (shape.localName === 'rect') {
+        for (const [key, value] of Object.entries({ x:box.left, y:box.top, width:box.right - box.left, height:box.bottom - box.top })) shape.setAttribute(key,value);
+        continue;
+      }
       rewriteCoordinates(shape, (value, coordinate) => coordinate % 2 ? box.top + (value - before.top) * (box.bottom - box.top) / (before.bottom - before.top) : box.left + (value - before.left) * (box.right - box.left) / (before.right - before.left));
     }
   }

@@ -27,34 +27,36 @@
 .chips{display:flex;gap:12px;padding:20px 0}.chip{width:16px;height:16px;border:1px solid #bec8c1;border-radius:50%}.chip.green{background:#83a957;border-color:#83a957}.chip.gray{background:#aab8af}.caption{font-size:21px;color:#7b827d;margin-top:26px}
 
 .diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:710px"><div class="chart pair"><section><h2>Dev150 · strict pass</h2><div class="chart-row"><div>薄规则原型</div><div class="track"><div class="bar " style="width:2%"></div></div><div class="val">3/150</div></div><div class="chart-row"><div>分层生成PE</div><div class="track"><div class="bar green" style="width:10.666666666666668%"></div></div><div class="val">16/150</div></div><div class="chart-row"><div>策略记忆PE</div><div class="track"><div class="bar " style="width:5.333333333333334%"></div></div><div class="val">8/150</div></div><div class="chart-row"><div>旧Lite PE</div><div class="track"><div class="bar " style="width:4.666666666666667%"></div></div><div class="val">7/150</div></div><div class="chart-row"><div>历史MASP保留PE</div><div class="track"><div class="bar " style="width:7.333333333333333%"></div></div><div class="val">11/150</div></div><div class="axis"><span>0%</span><span>50%</span><span>100%</span></div></section><section><h2>Former50 · strict pass</h2><div class="chart-row"><div>薄规则原型</div><div class="track"><div class="bar " style="width:22%"></div></div><div class="val">11/50</div></div><div class="chart-row"><div>分层生成PE</div><div class="track"><div class="bar green" style="width:62%"></div></div><div class="val">31/50</div></div><div class="chart-row"><div>策略记忆PE</div><div class="track"><div class="bar " style="width:57.99999999999999%"></div></div><div class="val">29/50</div></div><div class="chart-row"><div>旧Lite PE</div><div class="track"><div class="bar " style="width:57.99999999999999%"></div></div><div class="val">29/50</div></div><div class="chart-row"><div>历史MASP保留PE</div><div class="track"><div class="bar " style="width:54%"></div></div><div class="val">27/50</div></div><div class="axis"><span>0%</span><span>50%</span><span>100%</span></div></section></div><div class="rule" style="left:70px;right:70px;top:505px"></div><div class="node small accent" style="left: 65px; top: 545px; width: 300px; height: 90px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">分层生成PE<br />8,799 输入 token</span></div><div class="node small" style="left: 530px; top: 545px; width: 300px; height: 90px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">策略记忆PE<br />19,312 输入 token</span></div><div class="node small" style="left: 995px; top: 545px; width: 300px; height: 90px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">旧Lite PE<br />28,871 输入 token</span></div></main><style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202520;
-  --diagram-muted:#5d635a;
-  --diagram-line:#3f493b;
-  --diagram-border:#53614c;
-  --diagram-accent:#729445;
-  --diagram-failure:#997140;
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
   --diagram-paper:#fff;
-  --diagram-soft:#f9faf6;
-  --diagram-warm:#fcf6ed;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
   --diagram-grid:none;
   --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
   --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#243343;
-  --diagram-muted:#56677a;
-  --diagram-line:#53687b;
-  --diagram-border:#9aaabb;
-  --diagram-accent:#3b7c69;
-  --diagram-failure:#a37835;
-  --diagram-paper:#f5f7fa;
-  --diagram-soft:#edf6f2;
-  --diagram-warm:#fff6e8;
-  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
-  --diagram-vector-stroke:1.5px;
-  --diagram-edge-width:2px;
-  --diagram-box-width:1.6px;
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -81,11 +83,16 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style] [data-diagram-fill="soft"] { fill:var(--diagram-soft)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
-[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
 [data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
@@ -108,34 +115,35 @@
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
 [data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
 [data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
 [data-diagram-style="openai-blog"] .am-node-icon { display:none; }
 [data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
 [data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
-[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
 [data-diagram-style="engineering"].tm-shell,
-[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
-[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
-[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
-[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
-[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
 [data-diagram-style="engineering"] .canvas .vector-canvas,
 [data-diagram-style="engineering"] .vector-canvas { background:#fff; }
-[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); }
-[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
-[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
 [data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
-[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
-[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
 </style></div></foreignObject></svg>

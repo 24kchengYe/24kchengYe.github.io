@@ -29,10 +29,13 @@ html[lang|="ja"] [lang="en"], html[lang|="ja"] [lang="zh"] {
 .diagram-style-menu strong { font-size:14px; font-weight:550; }
 .diagram-style-menu small { font-size:11px; line-height:1.5; color:#657060; }
 .diagram-style-menu .style-swatch { display:flex; flex:none; align-items:center; width:76px; height:48px; padding:9px; border:1px solid #e1e4dc; border-radius:4px; background:#fff; }
-.style-swatch i { width:19px; height:18px; border:1px solid #343e31; border-radius:2px; }
-.style-swatch b { width:18px; border-top:1px solid #343e31; }
-.style-swatch.engineering { background:radial-gradient(#bec8d4 .6px,transparent .6px) 0 0/5px 5px,#f4f6f9; }
-.style-swatch.engineering i { height:24px; border:1px solid #a2aebc; border-top:4px solid #8eabbf; border-radius:4px; background:#fff; box-shadow:1px 2px 2px #24354d20; }
+.style-swatch i { width:19px; height:18px; border:1px solid #343434; border-radius:2px; }
+.style-swatch b { width:18px; border-top:1px solid #343434; }
+.style-swatch.openai-blog i { border-radius:6px; background:radial-gradient(#70a33d50 .5px,transparent .6px) 0 0/4px 4px,#f5faef; }
+.style-swatch.openai-blog i:last-child { border-color:#699c35; }
+.style-swatch.openai-blog b { border-color:#699c35; }
+.style-swatch.engineering { background:#fff; }
+.style-swatch.engineering i { border-radius:2px; background:#fff; }
 .diagram-style-picker button:focus-visible { outline:2px solid #507645; outline-offset:3px; }
 .report-site-nav span { margin: 0; font: inherit; color: inherit; }
 .report-site-nav .writing-back { justify-self: start; }

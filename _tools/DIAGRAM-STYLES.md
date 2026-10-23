@@ -4,16 +4,16 @@ Every article has one style picker in the top-right page navigation, next to the
 
 | | OpenAI Blog | Engineering |
 |---|---|---|
-| Presentation | Editorial illustration integrated into the article | Bounded workbench with a persistent toolbar |
-| Surface | White, no canvas grid | Cool neutral dot grid |
-| Nodes | Flat, small-radius outlines with solid, quiet fills | Rounded, elevated cards with an inset header strip |
-| Groups | Light, flat boundaries | Tinted containers with explicit separation |
+| Presentation | Editorial illustration with restrained texture and feedback accents | Minimal engineering schematic with explicit boundaries |
+| Surface | White; light stippling inside selected regions only | Pure white, no grid or texture |
+| Nodes | Rounded outlines; selected nodes use faint dots and soft color | Plain white nodes, small corners, no shadows or header strips |
+| Groups | Fine boundaries and subtle neutral stippling | White groups with simple gray boundaries |
 | Controls | Quiet text controls | Boxed controls on a distinct toolbar |
-| Status | Restrained green / warm accents | Consistent state accents and card strips |
+| Status | Green feedback and warm failure accents | Restrained line accents; no colored node fills |
 
 The two styles share the same text, numerical results, graph topology and layout geometry. Theme changes must preserve the current view, selected node, replay cursor and camera. Do not turn semantic shapes or state colors into arbitrary decorations. Charts retain their original encodings.
 
-Keep node text on a solid background. Decorative stippling in imported flow nodes is replaced by a quiet fill; chart encodings are preserved. SVG definitions (patterns, clip paths, markers) must not receive node/connector theme attributes. When translated text expands a composite SVG node, resize its fill and separate outline together. The theme check covers these three regressions using the imported repair diagrams.
+Keep node text legible. OpenAI Blog uses generated low-opacity dots (radius 0.45, opacity 0.24, 5-unit spacing), not the dense imported pattern; Engineering uses solid white fills. Texture never covers the whole canvas. Chart encodings are preserved. Original SVG definitions (patterns, clip paths, markers) must not receive node/connector theme attributes. When translated text expands a composite SVG node, resize its fill and separate outline together. Explicit `frame` entries in `vector-layouts.json` give process and output nodes a visible boundary without boxing edge labels or adding workflow steps. Regression checks cover texture density, node frames and paired outlines.
 
 ## Source files
 

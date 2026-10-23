@@ -25,7 +25,11 @@ function vectorChecks() {
     const original = new JSDOM(source,{ contentType:'image/svg+xml' });
     for (const theme of styles) {
       const themed = new JSDOM(themeFigure(source,'flow',theme),{ contentType:'image/svg+xml' });
-      assert.deepEqual([...themed.window.document.querySelectorAll('defs')].map(node => node.outerHTML),[...original.window.document.querySelectorAll('defs')].map(node => node.outerHTML),`${name}: definitions must not inherit node stroke styling`);
+      assert.deepEqual([...themed.window.document.querySelectorAll('defs:not([data-diagram-textures])')].map(node => node.outerHTML),[...original.window.document.querySelectorAll('defs')].map(node => node.outerHTML),`${name}: definitions must not inherit node stroke styling`);
+      for (const dot of themed.window.document.querySelectorAll('[data-diagram-textures] circle')) {
+        assert(Number(dot.getAttribute('r')) <= 0.5 && Number(dot.getAttribute('opacity')) <= 0.25,`${name}: node textures must stay subtle`);
+        assert(!dot.hasAttribute('data-diagram-stroke'),`${name}: texture dots must not inherit connector strokes`);
+      }
       themed.window.close();
     }
     original.window.close();
@@ -34,7 +38,7 @@ function vectorChecks() {
       const generated = new JSDOM(fs.readFileSync(file,'utf8'),{ contentType:'image/svg+xml' });
       const document = generated.window.document;
       const patternedNodes = [...document.querySelectorAll('[data-diagram-fill="soft"]')];
-      assert(patternedNodes.length,`${name}/${language}: patterned nodes need a legible solid fill`);
+      assert(patternedNodes.length,`${name}/${language}: patterned nodes need a controlled theme fill`);
       const bounds = shape => {
         const values = shape.getAttribute('d').match(/-?\d+(?:\.\d+)?/g).map(Number);
         const horizontal = values.filter((value,index) => index % 2 === 0);
@@ -45,6 +49,13 @@ function vectorChecks() {
         const outlines = [...document.querySelectorAll('[data-node-outline]')].filter(shape => shape.getAttribute('data-node-outline') === fill.parentElement.id);
         assert(outlines.length,`${name}/${language}: paired node outline missing`);
         for (const outline of outlines) assert(bounds(outline).every((value,index) => Math.abs(value - bounds(fill)[index]) < 0.001),`${name}/${language}: fill and outline must resize together`);
+      }
+      if (name === 'spec-repair-06') {
+        for (const id of ['text_1','text_2','text_3','text_4','text_5']) {
+          const label = document.querySelector(`#${id} text`);
+          const box = document.getElementById(label.getAttribute('data-node-box'));
+          assert(box?.querySelector('[data-diagram-node]'),`${name}/${language}: ${id} needs a visible node frame`);
+        }
       }
       generated.window.close();
     }
@@ -148,7 +159,7 @@ async function main() {
   for (const renderer of ['trajectory-map.js','automation-blueprint.js','figure-viewer.js']) {
     assert(!fs.readFileSync(path.join(root,'assets/js',renderer),'utf8').includes('createControl'),`${renderer}: style selector must only live in page navigation`);
   }
-  console.log(`Diagram themes: ${figures} SVG variants, ${routes.length} routes; controller, SVG definitions, solid node fills and paired-outline checks passed.`);
+  console.log(`Diagram themes: ${figures} SVG variants, ${routes.length} routes; controller, SVG definitions, bounded textures, node frames and paired-outline checks passed.`);
 }
 
 main().then(() => process.exit(0)).catch(error => { console.error(error); process.exit(1); });

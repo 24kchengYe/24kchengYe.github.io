@@ -9,12 +9,12 @@
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 230.59764399999997 79.2  Q 287.998973 79.2 344.505874 79.2  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
-    <path d="M 339.705874 76.8  L 344.505874 79.2  L 339.705874 81.6  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 230.59764399999997 79.2  Q 287.998973 79.2 344.50587400000006 79.2  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 339.70587400000005 76.8  L 344.50587400000006 79.2  L 339.70587400000005 81.6  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_3">
-    <path d="M 518.59682 79.2  Q 573.297182 79.2 627.103117 79.2  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
-    <path d="M 622.303117 76.8  L 627.103117 79.2  L 622.303117 81.6  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 518.59682 79.2  Q 573.297182 79.2 627.1031170000001 79.2  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 622.3031170000002 76.8  L 627.1031170000001 79.2  L 622.3031170000002 81.6  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_4">
     <path d="M 144 104.59973099999999  Q 144 136.800863 144 168.10756700000002  " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #76a943; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="accent"/>
@@ -31,14 +31,14 @@
     <path d="M 66.6 55.8  L 221.4 55.8  Q 228.6 55.8 228.6 63  L 228.6 95.4  Q 228.6 102.6 221.4 102.6  L 66.6 102.6  Q 59.4 102.6 59.4 95.4  L 59.4 63  Q 59.4 55.8 66.6 55.8  L 66.6 55.8  z " clip-path="url(#pa4dd84a71f)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-node-outline="patch_6" data-diagram-stroke="neutral"/>
    </g>
    <g id="patch_8">
-    <path d="M 77.4 171  L 210.6 171  Q 234 171 234 194.4  L 234 194.4  Q 234 217.8 210.6 217.8  L 77.4 217.8  Q 54 217.8 54 194.4  L 54 194.4  Q 54 171 77.4 171  z " clip-path="url(#pa4dd84a71f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="node" data-diagram-node=""/>
+    <path d="M 77.4 171  L 210.6 171  Q 234 171 234 194.4  L 234 194.4  Q 234 217.8 210.6 217.8  L 77.4 217.8  Q 54 217.8 54 194.4  L 54 194.4  Q 54 171 77.4 171  z " clip-path="url(#pa4dd84a71f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="accent" data-diagram-node=""/>
    </g>
    <g id="patch_9">
-    <path d="M 356.4 171  L 507.6 171  Q 531 171 531 194.4  L 531 194.4  Q 531 217.8 507.6 217.8  L 356.4 217.8  Q 333 217.8 333 194.4  L 333 194.4  Q 333 171 356.4 171  z " clip-path="url(#pa4dd84a71f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="node" data-diagram-node=""/>
+    <path d="M 356.4 171  L 507.6 171  Q 531 171 531 194.4  L 531 194.4  Q 531 217.8 507.6 217.8  L 356.4 217.8  Q 333 217.8 333 194.4  L 333 194.4  Q 333 171 356.4 171  z " clip-path="url(#pa4dd84a71f)" style="fill: #ffffff; stroke: #76a943; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="accent" data-diagram-node=""/>
    </g>
    <g id="text_1"><text x="144" y="85.49999999999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_6" aria-label="形式出荷判定" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="144" dy="0">形式出荷判定</tspan></text></g>
-   <g id="text_2"><text x="433.96" y="83.13312499999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Final Result" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="433.96" dy="0">Final Result</tspan></text></g>
-   <g id="text_3"><text x="720.381563" y="83.174688" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="結果 / 全文 / 軌跡" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="720.381563" dy="0">結果 / 全文 / 軌跡</tspan></text></g>
+   <g id="node-frame-text_2"><rect x="347.4" y="55.8" width="169.19999999999993" height="46.8" rx="7.2" style="fill:#ffffff;stroke:#161616;stroke-width:0.8" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/></g><g id="text_2"><text x="431.99999999999994" y="85.49999999999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="node-frame-text_2" aria-label="Final Result" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="431.99999999999994" dy="0">Final Result</tspan></text></g>
+   <g id="node-frame-text_3"><rect x="630" y="55.8" width="180" height="46.8" rx="7.2" style="fill:#ffffff;stroke:#161616;stroke-width:0.8" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/></g><g id="text_3"><text x="720" y="85.49999999999999" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="node-frame-text_3" aria-label="結果 / 全文 / 軌跡" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="720" dy="0">結果 / 全文 / 軌跡</tspan></text></g>
    <g id="text_4"><text x="144" y="200.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-node-box="patch_8" aria-label="通常Table Fix" data-type-role="primary" text-anchor="middle" data-diagram-text="accent"><tspan x="144" dy="0">通常Table Fix</tspan></text></g>
    <g id="text_5"><text x="432" y="200.70000000000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" data-node-box="patch_9" aria-label="通常Non-Table Fix" data-type-role="primary" text-anchor="middle" data-diagram-text="accent"><tspan x="432" dy="0">通常Non-Table Fix</tspan></text></g>
    <g id="text_6"><text x="288.377813" y="58.871249999999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="合格 / 失敗" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="288.377813" dy="0">合格 / 失敗</tspan></text></g>
@@ -58,34 +58,36 @@
   </pattern>
  </defs>
 <style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202520;
-  --diagram-muted:#5d635a;
-  --diagram-line:#3f493b;
-  --diagram-border:#53614c;
-  --diagram-accent:#729445;
-  --diagram-failure:#997140;
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
   --diagram-paper:#fff;
-  --diagram-soft:#f9faf6;
-  --diagram-warm:#fcf6ed;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
   --diagram-grid:none;
   --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
   --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#243343;
-  --diagram-muted:#56677a;
-  --diagram-line:#53687b;
-  --diagram-border:#9aaabb;
-  --diagram-accent:#3b7c69;
-  --diagram-failure:#a37835;
-  --diagram-paper:#f5f7fa;
-  --diagram-soft:#edf6f2;
-  --diagram-warm:#fff6e8;
-  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
-  --diagram-vector-stroke:1.5px;
-  --diagram-edge-width:2px;
-  --diagram-box-width:1.6px;
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -112,11 +114,16 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style] [data-diagram-fill="soft"] { fill:var(--diagram-soft)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
-[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
 [data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
@@ -139,34 +146,35 @@
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
 [data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
 [data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
 [data-diagram-style="openai-blog"] .am-node-icon { display:none; }
 [data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
 [data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
-[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
 [data-diagram-style="engineering"].tm-shell,
-[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
-[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
-[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
-[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
-[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
 [data-diagram-style="engineering"] .canvas .vector-canvas,
 [data-diagram-style="engineering"] .vector-canvas { background:#fff; }
-[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); }
-[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
-[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
 [data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
-[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
-[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
-</style></svg>
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style><defs data-diagram-textures=""><pattern id="writing-dot-neutral" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fafaf8"/><circle cx="1.5" cy="1.5" r="0.45" fill="#777770" opacity="0.24"/></pattern><pattern id="writing-dot-accent" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#f5faef"/><circle cx="1.5" cy="1.5" r="0.45" fill="#70a33d" opacity="0.24"/></pattern></defs></svg>

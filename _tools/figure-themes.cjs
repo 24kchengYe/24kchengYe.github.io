@@ -24,6 +24,21 @@ function themeFigure(source,kind,theme) {
   style.textContent = stylesheet;
   wrapper.append(style);
   if (wrapper === svg) {
+    if (kind === 'flow') {
+      const definitions = document.createElementNS(svg.namespaceURI,'defs');
+      definitions.setAttribute('data-diagram-textures','');
+      for (const [name,background,ink] of [['neutral','#fafaf8','#777770'],['accent','#f5faef','#70a33d']]) {
+        const pattern = document.createElementNS(svg.namespaceURI,'pattern');
+        for (const [key,value] of Object.entries({ id:`writing-dot-${name}`,patternUnits:'userSpaceOnUse',width:5,height:5 })) pattern.setAttribute(key,value);
+        const base = document.createElementNS(svg.namespaceURI,'rect');
+        for (const [key,value] of Object.entries({ width:5,height:5,fill:background })) base.setAttribute(key,value);
+        const dot = document.createElementNS(svg.namespaceURI,'circle');
+        for (const [key,value] of Object.entries({ cx:1.5,cy:1.5,r:0.45,fill:ink,opacity:0.24 })) dot.setAttribute(key,value);
+        pattern.append(base,dot);
+        definitions.append(pattern);
+      }
+      svg.append(definitions);
+    }
     const nodeBoxes = new Set([...svg.querySelectorAll('[data-node-box]')].map(label => label.getAttribute('data-node-box')));
     for (const shape of svg.querySelectorAll('path,line,polyline,rect,circle,ellipse,polygon')) {
       if (shape.closest('defs')) continue;
@@ -34,7 +49,8 @@ function themeFigure(source,kind,theme) {
       if (fill === '#ffffff' || fill === '#fff' || fill === 'white') shape.setAttribute('data-diagram-fill',role && kind === 'flow' ? 'node' : 'paper');
       if (nodeBoxes.has(shape.parentElement.id)) {
         if (kind === 'flow' && /^url\(/.test(fill || '')) shape.setAttribute('data-diagram-fill','soft');
-        if (['node','soft'].includes(shape.getAttribute('data-diagram-fill'))) shape.setAttribute('data-diagram-node','');
+        if (kind === 'flow' && role === 'accent' && shape.getAttribute('data-diagram-fill') === 'node') shape.setAttribute('data-diagram-fill','accent');
+        if (['node','soft','accent'].includes(shape.getAttribute('data-diagram-fill'))) shape.setAttribute('data-diagram-node','');
       }
     }
     for (const text of svg.querySelectorAll('text')) {

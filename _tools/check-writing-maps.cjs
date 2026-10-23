@@ -84,7 +84,7 @@ function inspect(host) {
     for (const [index,label] of labels.entries()) {
       for (const other of labels.slice(index + 1)) if (overlaps(label.box,other.box)) errors.push(`Overlapping vector text: ${label.id}/${other.id}`);
       for (const id of nodeIds) {
-        const shape = vector.querySelector(`[id="${id}"]>path`);
+        const shape = vector.querySelector(`[id="${id}"]>path,[id="${id}"]>rect`);
         const box = shape.getBoundingClientRect();
         if (label.element.dataset.nodeBox === id) {
           if (label.box.left < box.left + factor * 2 || label.box.right > box.right - factor * 2 || label.box.top < box.top + factor * 2 || label.box.bottom > box.bottom - factor * 2) errors.push(`Vector text outside node: ${label.id}/${id}`);

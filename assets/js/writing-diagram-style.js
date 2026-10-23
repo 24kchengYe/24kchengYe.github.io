@@ -5,8 +5,8 @@
   const eventName = 'writing-diagram-style-change';
   const labels = { en:'Figure style · entire page', zh:'全页图形风格', ja:'ページ全体の図のスタイル' };
   const descriptions = {
-    'openai-blog': { en:'Editorial · flat shapes · quiet controls', zh:'文章插图 · 平面线框 · 简洁控件', ja:'記事の挿図 · フラットな図形 · 控えめな操作部' },
-    engineering: { en:'Workbench · layered cards · visible boundaries', zh:'工程画布 · 分层卡片 · 明确边界', ja:'作業画面 · カードの階層 · 明確な境界' }
+    'openai-blog': { en:'Soft textures · color accents · feedback paths', zh:'轻点阵 · 少量配色 · 突出反馈', ja:'淡いドット · 色のアクセント · フィードバック' },
+    engineering: { en:'White canvas · plain nodes · crisp outlines', zh:'纯白画布 · 简洁节点 · 清晰线框', ja:'白いキャンバス · 簡潔なノード · 明確な輪郭' }
   };
   const language = () => ['zh','ja'].includes(document.documentElement.lang) ? document.documentElement.lang : 'en';
   let current = 'openai-blog';

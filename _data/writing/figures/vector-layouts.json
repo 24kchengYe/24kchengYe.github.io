@@ -21,6 +21,8 @@
     "text_20": { "x": 335, "y": 450, "width": 230 }
   },
   "spec-repair-06": {
+    "text_2": { "frame": { "x": 347.4, "y": 55.8, "width": 169.2, "height": 46.8 } },
+    "text_3": { "frame": { "x": 630, "y": 55.8, "width": 180, "height": 46.8 } },
     "text_7": { "x": 72, "y": 131, "width": 120 },
     "text_8": { "x": 365, "y": 122, "width": 210 }
   },

@@ -12,34 +12,36 @@
 </style><div class="canvas" data-fixed-type="true" data-research-diagram="agent-memory-compaction"><div class="edge arrow" data-from="trigger" data-to="plan" style="left:720px;top:190px;width:90px;transform:rotate(90deg)"></div><div class="edge" data-from="plan" data-to="expire" style="left:540px;top:355px;width:290px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="plan" data-to="expire" style="left:250px;top:355px;width:205px;transform:rotate(90deg)"></div><div class="edge" data-from="plan" data-to="summary" style="left:900px;top:355px;width:290px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="plan" data-to="summary" style="left:1190px;top:355px;width:205px;transform:rotate(90deg)"></div><div class="edge" data-from="expire" data-to="resume" style="left:250px;top:710px;width:120px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="expire" data-to="resume" style="left:250px;top:830px;width:290px;transform:rotate(0deg)"></div><div class="edge" data-from="summary" data-to="resume" style="left:1190px;top:710px;width:120px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="summary" data-to="resume" style="left:1190px;top:830px;width:290px;transform:rotate(180deg)"></div><div class="node " id="trigger" style="left:540px;top:40px;width:360px;height:150px"><strong>当前输入过长</strong><span>本地估算 &gt; 200k tokens</span></div><div class="node soft" id="plan" style="left:540px;top:280px;width:360px;height:150px"><strong>试算工具过期</strong><span>保护近期轮次与工具信息</span><span data-node-detail="true" hidden="">仅替换符合条件的旧 tool-role 文本。保护近期约 40k tokens 的完整轮次、Skill 读取及工具发现结果。</span></div><div class="node result" id="expire" style="left:50px;top:560px;width:400px;height:150px"><strong>应用过期替换</strong><span>旧正文 → 占位标记</span></div><div class="node " id="summary" style="left:990px;top:560px;width:400px;height:150px"><strong>放弃草案 · 摘要</strong><span>较早历史 → 摘要
 近期完整轮次保留原文</span><span data-node-detail="true" hidden="">用本次过期试算之前的历史总结。近期预算约 12k tokens，至少保留一轮；更早已过期的正文不会从原始日志恢复。</span></div><div class="node soft" id="resume" style="left:540px;top:770px;width:360px;height:120px"><strong>继续当前任务</strong><span>使用新的活动段</span></div><div class="label center" style="left:55px;top:445px;width:390px">节省 ≥ 2k
 且剩余 ≤ 120k tokens</div><div class="label center" style="left:1030px;top:450px;width:320px">未同时满足</div></div><style>[data-diagram-style="openai-blog"] {
-  --diagram-ink:#202520;
-  --diagram-muted:#5d635a;
-  --diagram-line:#3f493b;
-  --diagram-border:#53614c;
-  --diagram-accent:#729445;
-  --diagram-failure:#997140;
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
   --diagram-paper:#fff;
-  --diagram-soft:#f9faf6;
-  --diagram-warm:#fcf6ed;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
   --diagram-grid:none;
   --diagram-vector-stroke:1.3px;
   --diagram-edge-width:1.8px;
   --diagram-box-width:1.4px;
 }
 [data-diagram-style="engineering"] {
-  --diagram-ink:#243343;
-  --diagram-muted:#56677a;
-  --diagram-line:#53687b;
-  --diagram-border:#9aaabb;
-  --diagram-accent:#3b7c69;
-  --diagram-failure:#a37835;
-  --diagram-paper:#f5f7fa;
-  --diagram-soft:#edf6f2;
-  --diagram-warm:#fff6e8;
-  --diagram-grid:radial-gradient(#c8d2dc .85px,transparent .85px);
-  --diagram-vector-stroke:1.5px;
-  --diagram-edge-width:2px;
-  --diagram-box-width:1.6px;
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
 }
 [data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
   background-color:var(--diagram-paper);
@@ -66,11 +68,16 @@
 [data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
 [data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
-[data-diagram-style] [data-diagram-fill="soft"] { fill:var(--diagram-soft)!important; }
-[data-diagram-style="engineering"] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
 [data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
 [data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
-[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
 [data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
 [data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
 [data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
@@ -93,34 +100,35 @@
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
 [data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="openai-blog"] .am-node { border-radius:3px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
 [data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
 [data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
 [data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
 [data-diagram-style="openai-blog"] .am-node-icon { display:none; }
 [data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
 [data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
-[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#acb89f!important; border-radius:2px; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
 [data-diagram-style="engineering"].tm-shell,
-[data-diagram-style="engineering"].automation-map { border:1px solid #c4ced9; border-radius:12px; box-shadow:0 5px 22px #3448600a; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#eaf0f6; border-bottom:1px solid #c4ced9; padding:14px; }
-[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#c4cfda; border-radius:7px; box-shadow:0 1px 2px #30475f0a; }
-[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#f0f4f8; border-color:#d3dce5; }
-[data-diagram-style="engineering"] .canvas { background-image:var(--diagram-grid); background-size:20px 20px; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
-[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:12px!important; box-shadow:0 4px 9px #2c40521a,inset 0 5px #d5e2ee!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.result,.node.output,.event.repaired),
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] { box-shadow:0 4px 9px #2c40521a,inset 0 5px #9dc6b7!important; }
-[data-diagram-style="engineering"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { box-shadow:0 4px 9px #2c40521a,inset 0 5px #e3bc7d!important; }
-[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#eef3f8b3!important; border-color:#a4b5c5!important; border-radius:10px; box-shadow:inset 0 6px #cfdae5; }
-[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#f5f7fa; }
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
 [data-diagram-style="engineering"] .canvas .vector-canvas,
 [data-diagram-style="engineering"] .vector-canvas { background:#fff; }
-[data-diagram-style="engineering"] [data-diagram-node] { filter:drop-shadow(0 2px 2px #34465d20); }
-[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#f0f4f8; border-color:#c4ced9; }
-[data-diagram-style="engineering"] .am-node-icon { border-radius:7px; border:0; background:#dce9f4; color:#395a79; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
 [data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
-[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#f5e6c6; color:#8c672c; }
-[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#d8ece3; color:#326c59; }
-[data-diagram-style="engineering"] .am-label { background:#f5f7fa; }
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
 </style></div></foreignObject></svg>

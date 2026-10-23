@@ -104,7 +104,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 </tr>
 </tbody></table></div>
 <p>早期Goal执行出现策略误标、收尾理由漂移等问题；A1将更多裁决交给代码，统一记录候选、评测与回滚状态。该阶段六轮终局均为DISCARD。 </p>
-<p>A1后续冒烟遇到历史候选占据排序的问题，清理后完成端到端执行，候选仍被DISCARD。Viewer同步统一run schema、发现worktree并修正KEEP统计，使不同运行的状态和裁决可以集中查看。 </p>
+<p>驱动器曾将历史候选混入当前排序，导致实验比较对象出错；清理候选状态后，循环能够完成评测与回滚，候选仍未通过验收。运行状态与 KEEP 统计由同一份结构化记录提供，便于核对每次裁决使用的候选和证据。</p>
 <figure><img src="/writing/assets/90d1fddc3d5285460aaa.png" alt="内外循环" loading="lazy" decoding="async" width="2160" height="870"><figcaption>生成与离线优化</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <p>Pro策略库包含SP-1a～1i与SP-2～21，共29项；Lite/Standard后续使用SP-1～12。实验配置记录具体策略库与版本，成本按实际请求usage统计。</p>
 <h2 id="section-6">3　主线：PE修改的结果与取舍</h2>

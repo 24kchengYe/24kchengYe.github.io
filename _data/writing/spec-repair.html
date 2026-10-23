@@ -342,12 +342,12 @@ body[data-publication-genre=blog] .article-body h2{font-size:28px}
 <p>一项固定 10 份文档、四域共 40 个判断单元的实验中，原方案由 Gemini 分析并评分，替代方案先让 Sol 分析、再由 Gemini 评分。参考一致数从 33 增至 38，问题类型 F1 从 56.3% 增至 88.4%。这项实验没有执行修复，且参考评审也来自 Sol；两组评分 token 上限存在差异，不能把全部变化归到同一个因素。</p>
 <p>另一组 10 条完整修复对照却得到相反结果：生产 Judge–Fix 的独立参考通过数为 4 条，Verifier 只有 1 条。原始 145 个问题分别关闭了 133 个和 15 个。</p>
 <figure class="figure-block result-figure" data-figure="verifier_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e2ea43c24fe2e6402600.svg" alt="Verifier 两项独立对照" width="1200" height="520" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 7　Verifier 两项独立对照</figcaption></figure>
-<p>Verifier 的 153 次 Fix 中有 66 次重复候选、53 次补丁无法应用，32 个候选进入后续接纳比较。最终 6 条仍保留初始文档，第 4 轮之后一直增加到第 24 轮，也没有增加内部准出。新增问题虽少，原问题却大多还在。</p>
+<p>瓶颈出在修改没有真正落下去：大量候选重复，或补丁无法应用，最终 10 份文档中有 6 份仍是初稿。第 4 轮后继续跑到第 24 轮，通过内部检查的文档数也没有增加。较少引入新问题，主要是因为文档没怎么变；应先修候选生成和补丁写入，再考虑增加轮数。</p>
 <p>结构化修复目标的单次对照也暴露了相似问题。N02 把净现金流改成收入，N04 用创建人替代业务负责人：报错可能消失了，需求却变了。这组 10 个修复事务的 token 减少约 25.6%，可安全接纳的候选从 6 个降到 5 个。下一步必须确认目标真的实现，而不是只检查旧问题是否还出现在新列表中。</p>
 
 <h2 id="blog-6">格式通过以后，还要看业务</h2>
 <p>格式模块处理下游无法可靠读取的表达问题。若修复需要改变字段来源、授权范围或业务资源，就应交回业务域，而不能当成标点或结构整理。</p>
-<p>1,312 条历史未准出样本继续修复后，831 条准出，与此前 3,168 条合并形成 3,999 条交付数据。这是多轮累计结果，不是同一配置从原始输入出发的一次通过率。剩余 481 条中，补丁无法写入和严格格式未过各占 108 条；其他还包括语义预算、复核协议、语义不等价等原因。</p>
+<p>对 1,312 份历史未准出的文档继续修复，831 份最终准出。余下问题中，补丁写不进去、写入后格式仍不合规各有 108 份：前者要修写入过程，后者要修表达规则，不能都交给模型再改一遍。与此前数据合并后累计交付 3,999 份；这个总量包含多轮修复。</p>
 <p>交付后扫描也需要核对规则。94 条“工作流非标准 Key”里，88 条是当前规则允许的通知正文 Key；另外 6 条确有非标准 Key，旧准出 2 条，恢复后准出 4 条。不能把规则差异全部算成漏判，也不能因为多数是误报而忽略真实错误。</p>
 
 <h2 id="blog-7">文档准出不等于建表通过</h2>
@@ -356,7 +356,7 @@ body[data-publication-genre=blog] .article-body h2{font-size:28px}
 <figure class="figure-block result-figure" data-figure="e2e_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/d74f771387ca6ecd7601.svg" alt="同期 G / K 对照" width="1200" height="590" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 8　同期 G / K 对照</figcaption></figure>
 <p>逐例追查才能判断责任。Case 41 的原始管理员可编辑，K 的 Judge 建议缩为只读，Fix 接受后，代码把七张表设为只读，退化确实发生在设计阶段。Case 14 则是 G、K 都有同样退化，只在 K 的 E2E 中报出，不能全部归给新增提示词。</p>
 <p>Case 38 用 Lookup 替代不支持的关联下钻，却没交代单值或集合以及比较含义。Case 50 补了配置表，却没补齐维护权限和状态更新。它们要求的是合法且完整的替代设计，不是删除能力限制或多写一句“保持闭环”。</p>
-<p>后续 M 的 E2E 降到 18/50，但评审仓库同时更新了 136 个文件，不能把全部降幅归到提示词。10 月另一次 CodeAgent 遇到限流，未得到完整业务结果，也不应按 0% 准确率比较。</p>
+<p>后续候选的 E2E 降到 18/50，但同时更换了评审版本，已无法单独衡量提示词的影响。另一次 CodeAgent 因限流未完成执行，只留下运行故障，没有得到可比较的业务结果。这两次都需要先恢复可比的运行条件。</p>
 
 <h2 id="blog-8">接下来只改确认有问题的判断</h2>
 <p>Judge–Fix 首先应统一 Workflow Judge 和 Fix 的能力表述：记录筛选的左右值都不能沿关联字段下钻；替代方式必须保留原记录范围、字段类型和比较含义。其他位置合法的引用，不因这条规则一并禁止。</p>

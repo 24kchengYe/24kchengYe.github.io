@@ -41,10 +41,7 @@
     "Both failed attempts remain in the audit log and cost totals; the final trajectory retains the 13 corrected turns. T10 and T11 read back six products and six stock movements. The completion statement at T13 is a model response; the Judge separately assesses whether the business requirements are met. This record follows the complete Online runtime-correction process.",
     "2回の失敗試行は監査ログとコスト集計に残し、最終軌跡には修正後の13ターンを保持する。T10とT11では商品6件と入出庫記録6件をそれぞれ読み返した。T13の完了宣言はモデルの応答であり、業務要件の充足はJudgeが別途判断する。この記録はOnline実行時修正の全過程を示している。"
   ],
-  "本批 Rollout 实际开放 5 个工具：Bash、Read、Write、Edit、present_files。本例调用了 Read、Bash、present_files，未调用 Write 或 Edit。更完整的线上工具定义还包含 Glob、Grep、TaskOutput、TaskStop、TodoWrite 等，但它们没有启用在这批轨迹的 tools[] 中。": [
-    "This rollout exposes five tools: Bash, Read, Write, Edit, and present_files. The example uses Read, Bash, and present_files, but not Write or Edit. The broader online definitions also include Glob, Grep, TaskOutput, TaskStop, and TodoWrite, among others; these are not enabled in this batch’s tools[] schema.",
-    "このRolloutで公開されているツールはBash・Read・Write・Edit・present_filesの5つ。本例はRead・Bash・present_filesを使用し、WriteとEditは使っていない。より広いオンラインのツール定義にはGlob・Grep・TaskOutput・TaskStop・TodoWriteなどもあるが、このバッチのtools[]では有効化されていない。"
-  ],
+  "这批 Rollout 开放 Bash、Read、Write、Edit 和 present_files：读操作手册、准备文件、执行命令、交付产物。下面的真实案例只用到 Read、Bash、present_files。TodoWrite 等规划与任务管理工具属于另一套线上配置，不能用来解释这批轨迹中的动作。": ["This rollout exposes Bash, Read, Write, Edit, and present_files: tools for reading guides, preparing files, running commands, and delivering artifacts. The case below uses only Read, Bash, and present_files. Planning and task-management tools such as TodoWrite belong to a different production configuration and do not explain actions in this batch.","このRolloutで使えるのはBash、Read、Write、Edit、present_filesです。操作手順を読み、ファイルを用意し、コマンドを実行して成果物を渡します。以下の実例はRead、Bash、present_filesだけを使っています。TodoWriteなどの計画・タスク管理ツールは別の本番設定に属し、このバッチの動作には使われていません。"],
   "Online 生成与修复共用执行底座": [
     "One runtime for Online generation and repair",
     "Online の生成と修復を支える共通実行基盤"
@@ -401,10 +398,7 @@
     "Semantics · 5",
     "意味 · 5"
   ],
-  "分数为冻结的 1–5 分档聚合结果；成本变化比较定向与无指导后缀生成，不是整条教师与 Judge 链路成本。20 个新分支中 5 个预算失败，均保留在统计内；共完成 90 次有效评审。": [
-    "Scores are frozen aggregates on the 1–5 rubric. Cost changes compare guided and unguided suffix generation, not the full teacher-and-judge pipeline. Five of twenty new branches hit their budgets and remain included; all 90 valid evaluations were completed.",
-    "スコアは確定済みの1–5段階評価。コストは後半の生成における指示あり・なしの比較で、教師とJudgeを含む全工程の費用ではない。新しい20分岐中5つは予算上限に達したが、統計に含めた。有効な評価は90回完了した。"
-  ],
+  "比较关注两个问题：指导能否避免重犯目标错误，以及续跑要花多少生成 token。轨迹按固定的 1–5 分标准评审；成本只计受影响后缀的生成，不包含教师和 Judge。20 个续跑分支中有 5 个耗尽预算，仍计入结果。": ["The comparison asks whether guidance prevents the target mistake from recurring and how many generation tokens continuation takes. Trajectories use a fixed 1–5 grading scheme. Cost covers generation of the affected suffix, excluding the teacher and Judge. Five of the 20 continuation branches exhausted their budgets and remain in the results.","比較するのは、指導によって対象の誤りを繰り返さずに済むかと、続行に何tokenかかるかです。軌跡は固定の1〜5段階で評価し、コストには影響を受ける後半部分の生成だけを含め、教師とJudgeは含めません。20分岐のうち予算を使い切った5分岐も結果に含めています。"],
   "定向指导减少了重复尝试，但收益要沿具体行为核验：代码组的 5 个目标错误，在原轨迹后段都已经自行修复；指导避免了重犯，其中 4 条仍出现其他参数错误。语义组补好了部分公式和字段，也留下了筛选与余额口径问题。": [
     "Guidance reduced repeated attempts, but its effect needs to be checked against actual behavior. All five targeted code errors had already self-corrected later in the original trajectories. Guidance avoided repeating them, while four cases still encountered other argument errors. Semantic repairs restored some formulas and fields, but left filtering and balance-definition problems.",
     "指示は試行の繰り返しを減らしたが、効果は実際の行動で確かめる必要がある。コードの対象エラー5件は、元の軌跡でも後続で自己修正されていた。指示により再発を防げた一方、4件では別の引数エラーが発生した。意味上の修復では一部の式やフィールドを補えたが、絞り込みと残高定義の問題が残った。"
@@ -489,10 +483,7 @@
     "The current release rubric aggregates issue-level majority votes: severe issues yield 2, minor-only issues yield 3, and no issues yield 4. An issue-free trajectory earns 5 when at least two efficiency reviews rate it high. Scores 4/5 then require authenticity and format checks. Scoring, artifact acceptance, and training-format validation serve different purposes.",
     "現在の受け入れ基準は問題単位の多数決で段階を決める。重大な問題があれば2、軽微のみなら3、問題がなければ4。問題がなく、効率評価が2回以上highなら5となる。4/5点の軌跡にも真正性と形式の確認を行う。スコア、成果物の検収、学習形式の検証はそれぞれ役割が異なる。"
   ],
-  "一批已提交训练的数据包含 207 条轨迹、206 个 Query 组，按 Query 分组拆为 186 条训练与 21 条独立测试。训练侧展开为 5,458 个 assistant 目标：每个目标保留完整、未截断的历史上下文，原生思考只保留当前目标轮。测试数据不提交训练或选 checkpoint。": [
-    "One submitted training dataset contains 207 trajectories across 206 Query groups, split by Query into 186 training and 21 independent test trajectories. Training expands into 5,458 assistant targets. Each target retains the complete, untruncated conversation history, with native reasoning kept only for the target turn. Test data is not submitted for training or checkpoint selection.",
-    "提出済みの学習データは207軌跡、206のQueryグループを含む。Query単位で186軌跡を学習、21軌跡を独立テストに分けた。学習側は5,458のassistantターゲットに展開し、各ターゲットには切り詰めていない全履歴を保持する。ネイティブの推論は対象ターンのみ残し、テストデータを学習やcheckpoint選択に提出しない。"
-  ],
+  "训练时，把一条多轮轨迹展开成多道“看到这里，下一步该做什么”的样本。每道样本保留完整历史，只训练当前 assistant 轮；原生思考也只保留当前轮。一批 207 条轨迹按原始 Query 分为 186 条训练与 21 条测试，训练侧展开为 5,458 个目标轮。按 Query 切分可以让同一任务的不同轨迹留在一侧，测试不参与训练或选模型。": ["Training expands each multi-turn trajectory into examples of “given the history so far, what comes next?” Each retains the full history and trains only the current assistant turn, with native reasoning kept only for that turn. A batch of 207 trajectories was split by original Query into 186 training and 21 test trajectories, yielding 5,458 training targets. Grouping by Query keeps variants of one task on the same side; the test set is excluded from training and model selection.","学習では、多ターンの軌跡を「ここまでの履歴を見て、次に何をするか」というサンプルに展開します。各サンプルに完全な履歴を残し、現在のassistantターンだけを学習対象にします。ネイティブな思考も現在のターンだけを残します。207軌跡を元のQuery単位で学習186件・テスト21件に分け、学習側から5,458の対象ターンを作りました。同じタスクの別軌跡は片側にまとめ、テストを学習やモデル選択には使いません。"],
   "新一轮在线对照从同一 Query 各自 fresh 生成：普通生成，对比教师纠偏及后验修复，先检查 10 对再扩到 100 对。这样可以把重新生成本身的收益，与修复机制的收益分开。接下来的判断标准是：同一需求上的功能保留、可用轨迹比例，以及包含教师和 Judge 的完整成本。": [
     "The next online comparison starts fresh from the same Query in each arm: ordinary generation versus teacher correction and post-trajectory repair, checking ten pairs before expanding to one hundred. This separates the benefit of regeneration itself from the repair mechanism. The next measures are retained functionality on the same requests, the share of usable trajectories, and full cost including teacher and judge calls.",
     "次のオンライン比較では、同じQueryから各条件を新規生成する。通常生成と、教師による修正および全体評価後の修復を比較し、10組を確認してから100組へ広げる。再生成自体の効果と修復機構の効果を分けるためである。今後は同じ要求での機能維持、利用可能な軌跡の割合、教師とJudgeを含む全コストを測る。"

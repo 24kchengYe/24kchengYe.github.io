@@ -541,5 +541,19 @@
     "height": 760,
     "format": "html-css",
     "translations": "agent-memory-lifecycle.i18n.json"
+  },
+  "rubric-model-two-judges": {
+    "source": "rubric-model-two-judges.html",
+    "width": 1440,
+    "height": 940,
+    "format": "html-css",
+    "translations": "rubric-model-two-judges.i18n.json"
+  },
+  "rubric-model-artifact-training": {
+    "source": "rubric-model-artifact-training.html",
+    "width": 1440,
+    "height": 905,
+    "format": "html-css",
+    "translations": "rubric-model-artifact-training.i18n.json"
   }
 }

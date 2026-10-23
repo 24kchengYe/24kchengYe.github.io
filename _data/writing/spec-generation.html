@@ -30,14 +30,14 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <p>6月接手Spec生成任务时，仓库里已有多轮优化的Prompt、SDK Skills和SP策略库。工作目标是提高SpecDoc对用户需求和产品能力的符合程度，并整理出豆包可以直接使用的生成提示词。PE在本文中指实际送给生成模型的提示词与规则内容。</p>
 <p>PE优化主线尝试了定点编辑、受保护的补丁搜索、自由归因和动态策略库，并逐步重构规则组织方式。分域生成、自我修订和候选选择作为旁支，用来检查额外生成与选择步骤是否值得加入交付。后期工作延伸到训练数据、SFT和实际搭建效果。本文按这些实验问题梳理方法、结果与保留的设计。</p>
 <figure><img src="/writing/assets/5930efdb0f0a6acb35b1.png" alt="研究对象的扩展" loading="lazy" decoding="async"><figcaption>Spec 生成研究路线</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
-<p>文中的通过率按题集和Judge分组，历史最高分与重复平均值分别列出。正文用结构或用途命名PE；“分层生成PE”指最后冻结的人工初始化方案，历史编号与文件对应关系放在文末。</p>
+<p>同一份 PE 换一批题、换一个 Judge，分数都可能变化。下面只在相同题集和评审设置内比较，并把单轮最好成绩与重复运行的平均表现分开。</p>
 <h2 id="section-1">PE自动优化主线与对照旁支</h2>
 <p>AutoResearch主线反复修改Prompt或Skills，再按固定生成协议评测候选PE，保留有效修改。实际运行的方法包括MASP、MASPCombine、Guarded-Patch，以及人工PE的Free/Data双线。 </p>
 <figure><img src="/writing/assets/b81e14139103f022d7a8.png" alt="PE自动优化主线与对照旁支" loading="lazy" decoding="async"><figcaption>PE自动优化主线与对照旁支</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <p>图中主线沿“改PE→生成Spec→评测→反馈”循环。旁支检验额外领域生成、同模型自我修订、固定产物检查和多候选选择。最终Lite交付采用一次模型调用，直接输出SpecDoc。</p>
 <p>方法调研覆盖DSPy/MIPRO、OPRO、GEPA、ProTeGi、EvoPrompt等工作。本项目的实现围绕失败归因、局部编辑、候选评测和反馈记忆展开。</p>
 <p>Lite、Standard、Pro是生成模式；MASP、MASPCombine、Guarded-Patch是搜索方法；长会话Agent或Bash驱动器则决定谁持有循环。驱动方式与生成质量需要分别验证。 </p>
-<p>代码化把选候选、评审、回滚和状态写入变成明确步骤。早期A1驱动器记录了六轮裁决，全部DISCARD；后续清理历史候选后，又完成端到端冒烟。工程上的进展是让循环能执行、能回退、能追踪每轮决定。 </p>
+<p>让 Agent 自行循环时，曾出现策略标错、结束理由与评测结果对不上的情况。后来由程序统一管理候选、评测和回滚，减少运行状态的混乱。这解决的是实验能否可靠执行；PE 有没有变好，仍由相同题集上的评测决定。</p>
 <figure><img src="/writing/assets/90d1fddc3d5285460aaa.png" alt="两个循环" loading="lazy" decoding="async"><figcaption>生成与离线优化</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <figure><img src="/writing/assets/463d2f003571a452c919.png" alt="Goal 与 Loop 的调度方式" loading="lazy" decoding="async"><figcaption>Goal 与 Loop 的调度方式</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <p>离线优化中的多个Agent负责分析、修改和评审，最终交付物是一份可供单次生成使用的PE。</p>
@@ -346,7 +346,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <td>42/100、37/99、36/100；均值38.46%</td>
 </tr>
 </tbody></table></div>
-<p>Data第二次有一题Judge空响应，按99个有效结果计算；三次共有99题可比，其中39题的通过状态发生变化。Free还曾41/100却DISCARD：预期修复的Dashboard没有生成。另一轮实现源记录极值路由，才以41/100得到KEEP。验收因此同时检查得分和修改是否按预期生效。   </p>
+<p>相近的总分，可能掩盖逐题结果的变化。Data 三次运行中有 99 题可比，其中 39 题的通过状态发生过变化；另一次 Judge 空响应单独排除。Free 则曾拿到 41/100 却被退回，因为计划补上的 Dashboard 没有生成。保留一项修改，需要同时确认分数改善和目标机制确实生效。</p>
 <p>动态策略库保存策略状态、适用条件、冲突和失败记录，供下一轮选择修改方向。</p>
 <h2 id="section-17">主 Harness：从薄规则到分层生成</h2>
 <p>主Harness另建数据组织：新200中150用于开发、50保留Holdout，Former50独立做历史回归。Dev150结果来自完整150题，与人工PE专项100题分开统计。新题更长，Q&amp;A和跨域责任更多，两套分布的成绩相差很大。</p>
@@ -371,7 +371,7 @@ dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:a
 <h2 id="section-20">训练数据与端到端验证</h2>
 <p>后期工作将问题推进到设计如何被执行器消费。HostPlan45题中，案例030原来只在解释段落写“本月已交”，组件还是泛化总篇数、总稿费；把时间与状态筛选明确绑定到两个组件，Base才保留筛选，案例7.8→10。整批结果为20→21/45；两轮同时使用了不同Judge入口，格式改动的作用主要通过逐题产物追踪。</p>
 <figure><img src="/writing/assets/95169ef5533d8f0b4548.png" alt="设计交接" loading="lazy" decoding="async"><figcaption>组件筛选条件的交接</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
-<p>领域重写、Judge–Fix轨迹和训练包成为另一条研究线。3999与1770分别做独立SFT，合成5769继续训练Q2。训练样本由历史自动Judge筛选，三组各自建立Test100，并按各自题集报告结果。训练侧采用独立的训练规范PE，保留能力边界与完整格式示例。  </p>
+<p>后续也把通过历史自动 Judge 的设计用于训练生成模型：两批数据分别做 SFT，再合并用于继续训练。训练目标是最终 SpecDoc，输入保留用户需求、产品能力边界和完整格式示例。三组各用自己的 100 题测试集评估，跨组的分数不能直接当作模型进步；模型与提示词的交付效果另用下述同题对照检查。</p>
 <p>Building0.7同50题的配对实验中，原始Q2＋旧SP32/50，继续训练＋训练规范PE 35/50，8赢5输。两组同时更换了模型和SP，比较的是两套生成配置的端到端效果。</p>
 <figure><img src="/writing/assets/185843a5d98011461c98.png" alt="下游配对" loading="lazy" decoding="async"><figcaption>Building0.7 配对结果</figcaption><details class="figure-source"><summary>图源</summary></details></figure>
 <h2 id="section-21">阶段结果与后续问题</h2>

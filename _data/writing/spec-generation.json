@@ -79,10 +79,7 @@
     "Figure source",
     "図の出典"
   ],
-  "文中的通过率按题集和Judge分组，历史最高分与重复平均值分别列出。正文用结构或用途命名PE；“分层生成PE”指最后冻结的人工初始化方案，历史编号与文件对应关系放在文末。": [
-    "Pass rates are grouped by dataset and Judge; historical peaks and repeat-run means are reported separately. PE names describe their structure or purpose. Layered-generation PE denotes the final frozen, manually designed initialization; historical identifiers are mapped at the end.",
-    "合格率は題集とJudgeごとに分け、過去最高と反復平均を別々に示す。PE名は構造や用途で区別する。「階層化生成PE」は最後に固定した手動設計の初期化を指し、過去の識別子は末尾で対応付ける。"
-  ],
+  "同一份 PE 换一批题、换一个 Judge，分数都可能变化。下面只在相同题集和评审设置内比较，并把单轮最好成绩与重复运行的平均表现分开。": ["The same PE can score differently when the questions or Judge change. Comparisons below stay within the same dataset and evaluation setup, and distinguish the best single run from average performance across repeated runs.","同じPEでも、問題やJudgeが変われば点数は変わります。以下では同じ問題集・評価設定の中で比較し、単発の最高値と反復実行の平均を分けて示します。"],
   "AutoResearch主线反复修改Prompt或Skills，再按固定生成协议评测候选PE，保留有效修改。实际运行的方法包括MASP、MASPCombine、Guarded-Patch，以及人工PE的Free/Data双线。": [
     "The AutoResearch loop repeatedly edits Prompt or Skills, evaluates candidate PEs under a fixed generation protocol, and retains effective changes. Implemented methods include MASP, MASPCombine, Guarded-Patch, and the Free/Data tracks starting from a human-authored PE.",
     "AutoResearchはPromptまたはSkillsを繰り返し変更し、固定生成手順で候補PEを評価して有効な変更を残す。実行した方式はMASP、MASPCombine、Guarded-Patch、人工PEから始めるFree/Dataの二系統である。"
@@ -99,10 +96,7 @@
     "Lite, Standard, and Pro are generation modes; MASP, MASPCombine, and Guarded-Patch are search methods. A long-running agent or Bash driver determines who controls the loop. Orchestration and generation quality need separate validation.",
     "Lite、Standard、Proは生成モード、MASP、MASPCombine、Guarded-Patchは探索方式である。長い会話AgentかBashドライバーかは循環の制御主体を決める。駆動方式と生成品質は別に検証する必要がある。"
   ],
-  "代码化把选候选、评审、回滚和状态写入变成明确步骤。早期A1驱动器记录了六轮裁决，全部DISCARD；后续清理历史候选后，又完成端到端冒烟。工程上的进展是让循环能执行、能回退、能追踪每轮决定。": [
-    "Codifying the loop makes candidate choice, review, rollback, and state recording explicit. The early A1 driver recorded six decisions, all DISCARD. After cleaning historical candidates, an end-to-end smoke test also completed. The engineering gain was an executable, reversible loop with traceable decisions.",
-    "コード化は候補選択、審査、復元、状態記録を明示的な手順にする。初期A1ドライバーは6回すべてDISCARDを記録し、過去候補を整理した後にはE2E冒煙も完了した。実行でき、戻せて、毎回の判断を追える循環が工学的な成果だった。"
-  ],
+  "让 Agent 自行循环时，曾出现策略标错、结束理由与评测结果对不上的情况。后来由程序统一管理候选、评测和回滚，减少运行状态的混乱。这解决的是实验能否可靠执行；PE 有没有变好，仍由相同题集上的评测决定。": ["When the agent managed its own loop, strategy labels and stopping reasons sometimes disagreed with the evaluation record. Moving candidate tracking, evaluation, and rollback into code made runs easier to control. That improves experiment execution; whether the PE improves still depends on evaluation on the same questions.","Agent自身にループを任せた際には、戦略名の誤記や、終了理由と評価結果の食い違いがありました。候補、評価、ロールバックをコードで一元管理し、実行状態の混乱を減らしました。これは実験を確実に進めるための改善です。PEの品質向上は、同じ問題集での評価によって判断します。"],
   "生成与离线优化": [
     "Generation and offline optimization",
     "生成とオフライン最適化"
@@ -831,10 +825,7 @@
     "42/100, 37/99, 36/100; mean 38.46%",
     "42/100、37/99、36/100、平均38.46%"
   ],
-  "Data第二次有一题Judge空响应，按99个有效结果计算；三次共有99题可比，其中39题的通过状态发生变化。Free还曾41/100却DISCARD：预期修复的Dashboard没有生成。另一轮实现源记录极值路由，才以41/100得到KEEP。验收因此同时检查得分和修改是否按预期生效。": [
-    "Data's second repeat had one empty Judge response, leaving 99 valid results. Across the 99 shared cases, 39 changed pass status. Free also discarded a 41/100 candidate because its intended Dashboard was not generated; a later source-record extrema edit earned KEEP at 41/100. Acceptance thus checks both the score and whether the intended mechanism actually occurred.",
-    "Dataの第2回はJudge空応答1題で99有効結果となり、三回共通99題のうち39題が反転した。Freeにも41/100で棄却した候補があり、意図したDashboardが生成されていなかった。後に源レコード極値ルートを実装した候補が41/100でKEEPとなった。採用では得点と意図した機構の実現をともに確認する。"
-  ],
+  "相近的总分，可能掩盖逐题结果的变化。Data 三次运行中有 99 题可比，其中 39 题的通过状态发生过变化；另一次 Judge 空响应单独排除。Free 则曾拿到 41/100 却被退回，因为计划补上的 Dashboard 没有生成。保留一项修改，需要同时确认分数改善和目标机制确实生效。": ["Similar totals can hide changes in which cases pass. Across three Data runs, 99 cases were comparable and 39 changed pass status; one empty Judge response was excluded separately. A Free candidate scoring 41/100 was rejected because the intended Dashboard was never generated. Keeping an edit requires both a score improvement and evidence that the intended mechanism took effect.","合計点が近くても、通過する問題は変わり得ます。Dataの3回の実行で比較できた99問のうち、39問は合否が変わりました。Judgeの空応答1件は別途除外しています。Freeでは41/100でも、追加するはずのDashboardが生成されず不採用になった候補がありました。変更を残すには、点数の改善と狙った仕組みの実現を両方確認します。"],
   "动态策略库保存策略状态、适用条件、冲突和失败记录，供下一轮选择修改方向。": [
     "Dynamic strategy memory stores status, applicability, conflicts, and failures to guide the next edit.",
     "動的戦略メモリは状態、適用条件、衝突、失敗履歴を保存し、次の編集方向を選ぶ。"
@@ -915,10 +906,7 @@
     "Passing component filters to the executor",
     "部品の絞り込み条件を実行器へ渡す"
   ],
-  "领域重写、Judge–Fix轨迹和训练包成为另一条研究线。3999与1770分别做独立SFT，合成5769继续训练Q2。训练样本由历史自动Judge筛选，三组各自建立Test100，并按各自题集报告结果。训练侧采用独立的训练规范PE，保留能力边界与完整格式示例。": [
-    "Domain rewriting, Judge–Fix traces, and training packages formed another research track. Separate SFT used 3,999 and 1,770 samples; their union of 5,769 continued training Q2. Historical automated Judges selected the data. Each of the three groups built its own Test100 and reports its own results. Training used an independent standardized PE with capability boundaries and complete format examples.",
-    "領域書き直し、Judge–Fix履歴、訓練パッケージは別系統となった。3,999と1,770で独立SFTし、合計5,769でQ2を継続訓練した。データは過去自動Judgeが選別し、三群は各Test100を作って個別報告する。訓練には能力境界と完全な形式例を持つ独立した訓練標準PEを使った。"
-  ],
+  "后续也把通过历史自动 Judge 的设计用于训练生成模型：两批数据分别做 SFT，再合并用于继续训练。训练目标是最终 SpecDoc，输入保留用户需求、产品能力边界和完整格式示例。三组各用自己的 100 题测试集评估，跨组的分数不能直接当作模型进步；模型与提示词的交付效果另用下述同题对照检查。": ["Later work used designs accepted by historical automated Judges to train the generator: two datasets were used for separate SFT runs, then combined for continued training. The target was the final SpecDoc; inputs retained the user request, product constraints, and complete format examples. Each group used its own 100-case test set, so cross-group scores do not directly measure model progress. The paired comparison below instead tests the delivered model-and-prompt configurations on the same questions.","後半では、過去の自動Judgeを通過した設計を生成モデルの学習にも使いました。二つのデータセットで個別にSFTを行い、その後に統合して追加学習しました。学習目標は最終SpecDocで、入力にはユーザー要求、製品の制約、完全な書式例を残しました。各群はそれぞれ異なる100問で評価しているため、群間の点数差をそのままモデルの進歩とは扱えません。モデルとプロンプトの組み合わせは、次の同一問題による対照で検証します。"],
   "Building0.7同50题的配对实验中，原始Q2＋旧SP32/50，继续训练＋训练规范PE 35/50，8赢5输。两组同时更换了模型和SP，比较的是两套生成配置的端到端效果。": [
     "On the same Building0.7 50 cases, original Q2 with old SP passed 32/50; continued training with the training-standard PE passed 35/50, with eight wins and five losses. Both model and SP changed, so this compares two end-to-end generation configurations.",
     "同じBuilding0.7の50題で、元Q2＋旧SPは32/50、継続訓練＋訓練標準PEは35/50、8勝5敗だった。モデルとSPを両方変えたため、二つの生成構成のE2E比較である。"

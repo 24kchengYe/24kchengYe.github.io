@@ -767,10 +767,7 @@
     "This short-rationale route is rejection-sampling fine-tuning (RFT). Assisted by teacher analysis, the student samples four answers per input. Code checks structure, labels, and same-type issue counts, selecting the earliest passing answer. Both arms exclude 62 inputs failing all four. Teacher assistance is removed to produce short-rationale+verdict and verdict-only targets. Filtering does not validate every rationale's evidence; training gains remain untested.",
     "短理由系統は選別後微調整（RFT）と呼ぶ。教師分析を補助に学生が各入力四回生成し、構造・ラベル・同型件数をコード確認して最初の合格を選ぶ。四回全失敗62入力を両群共通除外し、補助教師分析を除いて短理由＋裁定と裁定のみを作る。全理由の証拠を検証したわけではなく、学習効果は未検証である。"
   ],
-  "另行启动的Pro同次回答采集于10月14日按用户要求停止，留下11套结果；原计划的全量采集和六组训练取消。": [
-    "A separate Pro same-response collection was stopped on October 14 at the user's request, leaving 11 result sets; the planned full collection and six training groups were canceled.",
-    "別途開始したPro同時回答収集は10月14日にユーザー指示で停止し、11結果組を残した。予定全量収集と六群学習は中止した。"
-  ],
+  "另一路同次回答采集未完成，也未进入训练对照，因此本节的训练结论来自已经完成的三组 CoT 实验。": ["A separate same-response collection was not completed and did not enter a training comparison. Training conclusions in this section therefore come from the three completed CoT experiments.","別途進めた同一応答の収集は完了せず、学習対照にも進んでいません。本節の学習に関する結論は、完了した三つのCoT実験に基づきます。"],
   "8　实际产物评审及标签生产方法": [
     "8  Built-artifact review and label production",
     "8　実成果物審査とラベル生成"
@@ -1186,5 +1183,101 @@
   "实际产物评审完成了数据构建及一次模型评测，DSH完成了框架和部分流程试运行。ATMS支持集合管理及因果配对合成提出了检查判断前提的方法，后续需要通过完整流程和训练对照验证。下一步围绕对象定位及证据成立性建立独立测试，使模型的标签判断、问题数量和具体依据能够分别核验。": [
     "Built-artifact review completed data construction and one evaluation; DSH completed its framework and part of its trial. ATMS supports and causal pairs propose a way to examine judgment premises, requiring full-flow and training controls. Next, independent object/evidence tests should separately verify labels, counts, and specific grounds.",
     "実成果物審査はデータ構築と一回評価、DSHは枠組みと部分試行を完了した。ATMS支持集合と因果ペアは判断前提を調べる案で、全系統と学習対照が必要である。次は対象定位・証拠成立性の独立テストを作り、ラベル・件数・具体根拠を別検証する。"
+  ],
+  "从设计到产物：训练规则评审模型": [
+    "From designs to artifacts: training rubric judges",
+    "設計から成果物へ：ルール評価モデルの訓練"
+  ],
+  "设计与产物规则评审模型技术报告": [
+    "Rubric judges for designs and artifacts: technical report",
+    "設計・成果物のルール評価モデル：技術レポート"
+  ],
+  "一份设计通过评审，落地的系统仍可能遗漏字段、接错工作流或放宽访问范围。我们把评审放在两个位置：先检查 Query + Spec，用 Judge–Fix 修好设计；再让 Code Agent 按 Spec 搭建产物，将实际产物解析成 Markdown，重新对照原始 Query 验收。": [
+    "A design can pass review while the built system still omits a field, wires a workflow incorrectly, or grants too much access. We review at two points: first Query + Spec, using Judge–Fix to repair the design; then Code Agent builds from the Spec, the actual artifact is parsed into Markdown, and the result is checked against the original Query.",
+    "設計が審査を通過しても、実装ではフィールドの欠落、ワークフローの誤接続、アクセス範囲の過大設定が起こり得る。評価点を2つ置く。まず Query + Spec を Judge–Fix で審査・修正する。次に Code Agent が Spec から構築し、実際の成果物を Markdown に変換して、元の Query に照らして検収する。"
+  ],
+  "Judge Infra Model 包含这两类专用评审模型：Spec-RJM 学习设计评审，Artifact-RJM 学习产物评审。它们共享规则分层与结构化裁决的思路，但输入、规则和训练标签分别构建。产物侧还保留既有 E2E Judge，作为独立流程对照。": [
+    "Judge Infra Model covers two specialist judges: Spec-RJM for designs and Artifact-RJM for built artifacts. They share hierarchical rubrics and structured judgments, while inputs, rules, and training labels are constructed separately. The existing E2E Judge remains a separate comparison pipeline on the artifact side.",
+    "Judge Infra Model は、設計を評価する Spec-RJM と、実際の成果物を評価する Artifact-RJM を含む。ルールの階層化と構造化判定という考え方を共有し、入力・ルール・学習ラベルはそれぞれ構築する。成果物側では、既存の E2E Judge も独立した比較パイプラインとして残す。"
+  ],
+  "2026年7—10月，Spec-RJM 从历史数据和业务规则开始，依次尝试监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT）。后期比较使用按原始需求隔离的7,127条训练样本、792条测试样本。实验逐渐明确了几个选择：完整规则仍有必要；多问题RL在四组实验中有三组提高了错误类型F1；加入教师显式理由的三组对照中，仅学习裁决的方案表现更好。": [
+    "From July to October 2026, Spec-RJM progressed from historical data and business rules through supervised fine-tuning (SFT), reinforcement learning (RL), on-policy distillation (OPD), and rationale supervision (CoT). Later comparisons used 7,127 training units and 792 test units grouped by original request. Full rules remained useful; multi-issue RL improved error-mode F1 in three of four experiments; and verdict-only training outperformed explicit teacher rationales in the three-arm comparison.",
+    "2026年7〜10月、Spec-RJM では過去データと業務ルールを整備し、教師あり微調整（SFT）、強化学習（RL）、確率蒸留（OPD）、理由の監督（CoT）を比較した。後半は元の要求ごとに分離した学習7,127単位・テスト792単位を使用。詳細なルールは有用で、複数問題の RL は4組中3組でエラーモード F1 を改善し、教師の明示的理由を比較した3条件では判定のみの学習が優れた。"
+  ],
+  "本研究构建设计与产物两类规则评审模型。Spec-RJM 根据 Query + Spec 检查需求覆盖、产品能力及设计一致性；Artifact-RJM 根据 Query + 最终产物 Markdown 检查实际配置、对象引用和需求实现。2026年7—10月，设计侧比较了 SFT、RL、OPD 和理由监督；产物侧独立构建五域数据并完成一轮 SFT 及固定快照评测。": [
+    "This study develops rubric judges for both designs and artifacts. Spec-RJM checks requirement coverage, product capabilities, and design consistency from Query + Spec. Artifact-RJM checks actual configuration, object references, and requirement fulfillment from Query + final-artifact Markdown. Between July and October 2026, the design track compared SFT, RL, OPD, and rationale supervision; the artifact track independently built five-domain data and completed an SFT run and fixed-snapshot evaluation.",
+    "本研究では設計と成果物の2種類のルール評価モデルを構築する。Spec-RJM は Query + Spec から要求の網羅性、製品機能、設計の整合性を評価する。Artifact-RJM は Query + 最終成果物の Markdown から実際の設定、オブジェクト参照、要求の実現を評価する。2026年7〜10月、設計側では SFT・RL・OPD・理由監督を比較し、成果物側では独立した5領域データを作成して SFT と固定スナップショット評価を実施した。"
+  ],
+  "两类评审都以用户需求为准。Spec Judge 检查方案是否说清楚、能否实现；产物 Judge 要找到已经创建的对象与实际配置，核对字段类型、引用、筛选范围及动作依赖。更高的验收要求体现在实现证据：设计中写了“提醒负责人”，不能替代工作流里的接收人配置；静态配置本身也不能证明消息已经送达。": [
+    "Both judges use the user request as the standard. The Spec Judge checks whether the design is explicit and feasible. The artifact Judge must find created objects and actual configuration, checking field types, references, filter scopes, and action dependencies. The stronger acceptance requirement is implementation evidence: writing “notify the owner” in a design cannot substitute for a configured recipient, and static configuration alone does not prove delivery.",
+    "どちらもユーザーの要求を基準とする。Spec Judge は設計が明確で実現可能かを確認し、成果物 Judge は作成済みのオブジェクトと実設定を探し、フィールド型、参照、絞り込み範囲、アクションの依存関係を確認する。検収で追加されるのは実装の証拠だ。設計に「担当者へ通知」と書かれていても受信者設定の代わりにはならず、静的設定だけでは通知の到達も証明できない。"
+  ],
+  "Artifact-RJM 每次只评一个域。System Prompt 提供该域的产品能力、输入解释、规则卡和输出协议；User Message 只含 domain、原始 query、当前域 artifact_markdown。Spec 留在 Code Agent 的生成输入中，不作为产物评审的额外需求；这样不会把模型自行扩写的设计当成用户必须接受的要求。": [
+    "Artifact-RJM reviews one domain per call. The system prompt supplies that domain’s product capabilities, input semantics, rubric cards, and output protocol. The user message contains only domain, original query, and the current domain’s artifact_markdown. The Spec remains an input to Code Agent, not an extra requirement for artifact review, so a model-expanded design cannot silently become a user obligation.",
+    "Artifact-RJM は1回の呼び出しで1領域を評価する。System Prompt は当該領域の製品機能、入力の解釈、ルールカード、出力形式を定める。User Message は domain、元の query、当該領域の artifact_markdown のみ。Spec は Code Agent の生成入力に置き、成果物審査の追加要求にはしない。モデルが補った設計をユーザーの必須要求に変えてしまうことを防ぐ。"
+  ],
+  "五域分别是 Table、Dashboard、Workflow、Permission、View。Formula、Lookup、Link 归 Table，表视图与 Form 归 View。每条问题必须满足规则前提、违规条件及证据要求，同一最小失败事实只归到一条最具体的规则；不同对象上的独立问题仍逐条保留。模型一次输出 Category → Rubric → Mode、固定严重度、理由及该域 verdict。": [
+    "The five domains are Table, Dashboard, Workflow, Permission, and View. Formula, Lookup, and Link belong to Table; table views and Forms belong to View. Each reported issue must meet the rule’s prerequisites, violation conditions, and evidence requirements. One minimal failure fact is assigned to its most specific rule, while independent issues on different objects remain separate. One response contains Category → Rubric → Mode, fixed severity, reasons, and a domain verdict.",
+    "5領域は Table・Dashboard・Workflow・Permission・View。Formula・Lookup・Link は Table、テーブルビューと Form は View に含める。各問題はルールの前提、違反条件、必要な証拠を満たす必要がある。同一の最小の違反事実には最も具体的なルールを1つ割り当て、異なる対象の独立した問題は別々に残す。1回の応答で Category → Rubric → Mode、固定の重大度、理由、領域判定を出力する。"
+  ],
+  "训练样本按“一条 Query × 一个产物域”组织。969 个 Case 按原始 Query 分组：872 个用于训练，97 个用于内部测试，对应 4,360 / 485 个评审单元。Luna medium 用完整规则生成单轮参考标签，Seed2 Lite 在同样的规则与输入结构下做两轮 LoRA SFT。Case 的作用是切分和聚合，实际训练单位是领域评审单元。": [
+    "Training examples are organized as one Query × one artifact domain. The 969 cases are grouped by original Query: 872 for training and 97 for internal testing, giving 4,360 / 485 review units. Luna medium produces single-review reference labels under the full rules; Seed2 Lite receives two epochs of LoRA SFT with the same rule and input structure. Cases govern splitting and aggregation; domain review units are the training examples.",
+    "学習例は「1つの Query × 1つの成果物領域」で構成する。969 Case を元の Query でグループ分割し、872 Case を学習、97 Case を内部テストに用いる。評価単位はそれぞれ4,360 / 485。Luna medium が完全なルールで1回ずつ参照ラベルを生成し、同じルールと入力構造で Seed2 Lite を2エポック LoRA SFT する。Case は分割・集約の単位であり、学習単位は領域ごとの評価例となる。"
+  ],
+  "Artifact-RJM 与既有 E2E Judge 在同一份产物上对照。前者输出五域细粒度规则标签，再以“任一域 fail”聚合 Case；后者执行自己的子域评审和 Mix 全局仲裁。相同输入对象不代表相同规则或相同裁决机制。这里的 97 个 Case 使用固定 Markdown 重放，比较的是评审结果，不是重新搭建产物后的成功率。": [
+    "Artifact-RJM and the existing E2E Judge are compared on the same artifacts. The former produces fine-grained labels for five domains, with any failing domain making the case fail; the latter uses its own domain reviews and a global Mix adjudicator. Sharing an artifact does not imply identical rules or decision procedures. The 97 cases replay fixed Markdown snapshots: these comparisons measure judgments, not the success rate of newly rebuilt artifacts.",
+    "Artifact-RJM と既存の E2E Judge を同じ成果物で比較する。前者は5領域の細粒度ラベルを出力し、1領域でも fail なら Case を fail と集約する。後者は独自の領域審査と Mix による全体判定を行う。対象が同じでもルールや判定手順は同一ではない。97 Case は固定 Markdown の再評価であり、新たに構築した成果物の成功率ではない。"
+  ],
+  "一个真实测试例说明了这个边界：用户要求先建主表、再填子表，并录入一道完整试题。产物没有 Workflow；Luna 判该域 pass，学生却报 missing_automation。学生把一次性的搭建顺序误读成了持续自动化需求。这个例子提示我们补充“需要自动化 / 只需完成搭建”的配对样本，同时继续检查真正的触发、引用和写入缺陷。": [
+    "One recorded test case makes the boundary concrete. The user asked for parent tables first, child records next, and one complete exam question as an example. The artifact had no Workflow. Luna returned pass for that domain, while the student reported missing_automation, interpreting a one-time construction order as an ongoing automation requirement. This motivates paired examples of “automation required” versus “complete the build,” alongside checks for genuine trigger, reference, and write defects.",
+    "実際のテスト例では、親テーブルを先に作り、子レコードを入力して、試験問題を1件完成例として登録するよう要求されていた。成果物に Workflow はなく、Luna はこの領域を pass としたが、学生は missing_automation を報告した。一度限りの構築手順を継続的な自動化要求と誤読した例だ。「自動化が必要」と「構築を完了すればよい」の対になる例を補い、実際のトリガー・参照・書き込みの欠陥も検査する必要がある。"
+  ],
+  "Artifact-RJM：检查已经建好的产物": [
+    "Artifact-RJM: reviewing what was actually built",
+    "Artifact-RJM：実際に構築されたものを評価する"
+  ],
+  "该轮配置为 batch 16、学习率 1e-5、LoRA rank 32 / alpha 4、序列长度 32,768；训练平台从 Train 中划出 10% validation，485 条 Test 未上传训练。评测使用最后的 step 256。参考来自单轮模型标注；Test 又曾参与规则开发，结果用于内部诊断，不作为新需求上的泛化估计。": [
+    "This run used batch size 16, learning rate 1e-5, LoRA rank 32 / alpha 4, and sequence length 32,768. The training service held out 10% of Train for validation; Test485 was not uploaded. Evaluation used the final step-256 checkpoint. References came from single model reviews, and the test cases had informed rule development, so the results support internal diagnosis rather than a generalization estimate on new requests.",
+    "設定は batch 16、学習率 1e-5、LoRA rank 32 / alpha 4、系列長32,768。学習サービスは Train の10%を validation に分け、Test485 は学習にアップロードしていない。評価には最終 step 256 を使用した。参照はモデルによる1回の判定であり、Test はルール開発にも使われているため、結果は内部診断用で、新しい要求への汎化推定には用いない。"
+  ],
+  "对照对象": [
+    "Comparison reference",
+    "比較参照"
+  ],
+  "统计单位": [
+    "Evaluation unit",
+    "評価単位"
+  ],
+  "准确率": [
+    "Accuracy",
+    "正解率"
+  ],
+  "问题类 F1": [
+    "Problem-positive F1",
+    "問題ありを正例とした F1"
+  ],
+  "Artifact-Luna 参考标签": [
+    "Artifact-Luna reference labels",
+    "Artifact-Luna 参照ラベル"
+  ],
+  "484 个可解析领域单元": [
+    "484 parseable domain units",
+    "解析可能な484領域単位"
+  ],
+  "E2E Luna：子域 high / Mix medium": [
+    "E2E Luna: domains high / Mix medium",
+    "E2E Luna：領域 high / Mix medium"
+  ],
+  "E2E GPT-5.5：子域 high / Mix medium": [
+    "E2E GPT-5.5: domains high / Mix medium",
+    "E2E GPT-5.5：領域 high / Mix medium"
+  ],
+  "表中被评模型均为同一 Artifact-RJM SFT checkpoint，fail 为正类。第一行比较 Domain verdict；后两行比较聚合后的 Case verdict。学生判了 82/97 个 Case 失败，Artifact-Luna 为 60，E2E Luna / GPT-5.5 为 63 / 49。较高召回伴随更多失败预测，因此必须同时看精确率、准确率和细粒度标签；这些指标也不与 Spec 的 Test792 合并。": [
+    "Every row evaluates the same Artifact-RJM SFT checkpoint, with fail as positive. The first compares domain verdicts; the other two compare aggregated case verdicts. The student marked 82/97 cases as failing, versus 60 for Artifact-Luna and 63 / 49 for E2E Luna / GPT-5.5. Greater recall came with more failure predictions, so precision, accuracy, and fine-grained labels must be read together. These results are separate from Spec Test792.",
+    "各行の評価対象は同じ Artifact-RJM SFT checkpoint で、fail を正例とする。1行目は領域判定、後の2行は集約した Case 判定を比較する。学生は82/97 Case を fail とし、Artifact-Luna は60、E2E Luna / GPT-5.5 は63 / 49だった。再現率の増加には fail 予測の増加も伴うため、適合率・正解率・細粒度ラベルを併せて見る。Spec の Test792 とは別に報告する。"
+  ],
+  "训练覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。补数应优先覆盖需求适用与排除条件、同一规则的多对象问题，以及对象间的执行依赖。固定快照支持配置层判断；真实送达、执行结果及修改过程需要相应运行证据。": [
+    "Training covered 84 of 235 registered error modes; multi-issue units accounted for 4.98%. Exact agreement was 4/22 for test units with 2–3 issues and 1/11 for those with 4+. Additional data should target applicability and exclusions, repeated issues across objects, and execution dependencies. Fixed snapshots support configuration-level judgments; actual delivery, execution outcomes, and modification history require corresponding runtime evidence.",
+    "学習で観測されたエラーモードは登録235種中84種、複数問題の単位は4.98%。テストの完全一致は2〜3問題で4/22、4件以上で1/11だった。追加データでは適用・除外条件、同一ルールの複数対象、実行依存関係を優先する。固定スナップショットは設定の評価に使えるが、実際の到達・実行結果・変更履歴には対応する実行証拠が必要となる。"
   ]
 }

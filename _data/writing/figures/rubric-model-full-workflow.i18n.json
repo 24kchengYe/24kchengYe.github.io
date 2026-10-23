@@ -95,9 +95,9 @@
     "Fixed test inputs, separate reference reports\nValid-output rate / exact match / Category–Rubric–Mode F1 / cost\nSeparate Sol and DeepSeek references; keep Test792 apart from other sets",
     "テスト入力を固定し、参照ラベル別に報告\n出力妥当率・完全一致・Category–Rubric–Mode F1・コスト\nSol と DeepSeek を別表にし、Test792 と他の集合も分ける"
   ],
-  "规则评审模型 · 完整流程": [
-    "Rubric model · Full workflow",
-    "ルール評価モデル · 全体フロー"
+  "Spec-RJM · 训练方法对照": [
+    "Spec-RJM · Training comparisons",
+    "Spec-RJM · 学習方式の比較"
   ],
   "仅 Train 进入训练分支": [
     "Train only → training branches",

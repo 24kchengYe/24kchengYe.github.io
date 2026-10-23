@@ -41,7 +41,12 @@ for (const route of routes) {
     assert(resources.querySelector(`summary [lang="${language}"]`)?.textContent.trim(), `${route}/${language}: source summary missing`);
     if (route === 'agent-memory') {
       const evidence = visible.textContent;
-      for (const value of ['303', '98', '10,138', '56,945', '200,000', '120,000', '40,000']) assert(evidence.includes(value), `${route}/${language}: missing ${value}`);
+      for (const value of ['303', '98', '200,000', '120,000', '40,000']) assert(evidence.includes(value), `${route}/${language}: missing ${value}`);
+      assert(!/10,138|56,945|user-role/.test(evidence), `${route}/${language}: low-signal message inventory remains`);
+      for (const selector of ['#input-path', '#compression-path', '#lifecycle-path']) assert(visible.querySelector(selector)?.textContent.trim(), `${route}/${language}: missing mechanism ${selector}`);
+      const narrative = visible.cloneNode(true);
+      narrative.querySelectorAll('details').forEach(element => element.remove());
+      assert(!/200,000|120,000|40,000/.test(narrative.textContent), `${route}/${language}: implementation budgets belong in collapsed details`);
     }
   }
   if (route === 'attention-mechanisms') assert(document.querySelectorAll('a[href*="arxiv.org"]').length >= 8, 'Keep primary paper references');
@@ -52,6 +57,16 @@ for (const route of routes) {
   sourceLinks += hrefs.length;
   dom.window.close();
 }
+
+const homepage = new JSDOM(fs.readFileSync(path.join(root, '_includes/writing.html'), 'utf8'));
+const writing = homepage.window.document.querySelector('#writing');
+const more = writing.querySelector('details#more-writing');
+assert(more && !more.open, 'More writing must be collapsed by default');
+assert.equal(writing.querySelectorAll(':scope > a.writing-row').length, 4, 'Keep four featured articles');
+assert.equal(writing.querySelectorAll('a[href="/writing/agent-memory/"]').length, 1, 'Agent Memory has one homepage entry');
+assert(more.querySelector('a[href="/writing/agent-memory/"]'), 'Agent Memory belongs in More writing');
+assert.equal(Number(more.querySelector('.more-count').textContent), more.querySelectorAll('a.writing-row').length, 'More writing count matches its articles');
+homepage.window.close();
 
 assert.equal(fs.readFileSync(path.join(root, 'writing/spec-generation/essay/index.html'), 'utf8'), fs.readFileSync(path.join(root, 'writing/spec-generation/index.html'), 'utf8'), 'Keep the essay alias synchronized');
 console.log(`Editorial checks passed: ${routes.length} routes × 3 languages; one source entry per article; ${sourceLinks} valid source links.`);

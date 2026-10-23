@@ -75,7 +75,33 @@ assert.equal(referenceModes.length, 1);
 assert(referenceModes[0].endsWith('/invalid_dashboard_source_reference'));
 assert(modes(sft.prediction)[0].endsWith('/dashboard_business_filter_mismatch'));
 
+const artifactRuns = 'data/judge_infra/artifact/runs/';
+const artifactInputs = rows(artifactRuns + '2026-09-06_test97_query_only_dual_judge_comparison/input/artifact_test485.jsonl');
+const artifactLabels = rows(artifactRuns + '2026-09-06_v1_3_luna_medium_query_only/output/luna_medium_labels.jsonl');
+const artifactPredictions = rows(artifactRuns + '2026-09-07_artifact_rjm_v1_3_sft_test485_eval/prediction/labels.jsonl');
+assert.equal(artifactInputs.length, 485);
+assert.equal(new Set(artifactInputs.map(row => row.case_id)).size, 97);
+for (const unit of artifactInputs) {
+  assert.match(unit.judge_input, /<query>[\s\S]*<artifact_markdown/);
+  assert.doesNotMatch(unit.judge_input, /<spec>|<requirement>/);
+}
+const artifactUnit = 'C0012.workflow';
+const artifactInput = artifactInputs.find(row => row.review_unit_id === artifactUnit);
+const artifactReference = artifactLabels.find(row => row.review_unit_id === artifactUnit);
+const artifactPrediction = artifactPredictions.find(row => row.review_unit_id === artifactUnit);
+assert.match(artifactInput.query, /主表先建、子表后填/);
+assert.doesNotMatch(artifactInput.query, /自动/);
+assert.match(artifactInput.artifact_markdown, /无工作流配置/);
+assert.equal(artifactReference.input_sha256, artifactInput.input_sha256);
+assert.equal(artifactPrediction.input_sha256, artifactInput.input_sha256);
+assert.equal(artifactReference.provenance.messages_sha256, artifactPrediction.provenance.messages_sha256);
+assert.equal(artifactReference.judgment.verdict, 'pass');
+assert.equal(artifactPrediction.judgment.verdict, 'fail');
+assert.deepEqual(issues(artifactPrediction.judgment).map(issue => issue.mode), ['missing_automation']);
+const artifactReport = read(artifactRuns + '2026-09-07_artifact_rjm_v1_3_sft_test485_eval/REPORT.md');
+for (const value of ['4,360', '484/485', '32.45%', '53.98%', '40.53%', '78.31%', '57.14%', '61.86%', '74.48%', '49.48%', '62.60%']) assert(artifactReport.includes(value), value);
+
 const output = path.join(__dirname, '../_preview/research-evidence-audit.json');
 fs.mkdirSync(path.dirname(output), { recursive:true });
-fs.writeFileSync(output, JSON.stringify({ checked:true, caseIds:['41','link50_007',unit], e2eScoreDisplayMultiplier:10, modeScores, artifacts:evidence }, null, 2) + '\n');
-console.log(`Verified three recorded cases against ${evidence.length} source artifacts; no model calls.`);
+fs.writeFileSync(output, JSON.stringify({ checked:true, caseIds:['41','link50_007',unit,artifactUnit], e2eScoreDisplayMultiplier:10, modeScores, artifacts:evidence }, null, 2) + '\n');
+console.log(`Verified four recorded cases against ${evidence.length} source artifacts; no model calls.`);

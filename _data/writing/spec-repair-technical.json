@@ -871,10 +871,7 @@
     "Tokens per reference-qualified document",
     "参照合格文書一件当たりtoken"
   ],
-  "153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，32 个候选进入后续接纳比较。最终 6 条保留初始文档，从第 4 轮增加到第 24 轮也没有增加内部准出。新增问题少，主要伴随修改没有被采用；原来的 130 个问题仍在。": [
-    "Among 153 Fix calls, 66 repeated candidates and 53 unapplied patches were recorded; 32 candidates reached acceptance comparison. Six cases retained their original document. Extending from round 4 to 24 added no internal releases. Fewer new defects accompanied many unapplied edits; the original 130 issues remained.",
-    "Fix153回のうち重複候補66、適用不能パッチ53を記録し、32候補が採否比較へ進んだ。最終6件は初期文書を維持し、4回から24回へ増やしても内部出荷は増えなかった。新問題が少ない一方で多くの変更が不採用となり、元の130問題は残った。"
-  ],
+  "整链的主要阻塞发生在候选接纳之前。153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，只有 32 个候选进入后续接纳比较；最终 10 份文档中 6 份仍是初稿，130 个原有问题未解决。第 4 轮之后继续到第 24 轮也没有增加内部准出，因此优先检查重复生成和补丁应用，不能把“新增问题少”单独当作修复有效。": ["The main blockage occurred before candidate acceptance. Across 153 Fix attempts, the run recorded 66 duplicate candidates and 53 inapplicable patches; only 32 candidates reached subsequent acceptance comparison. Six of the 10 documents stayed at their initial version, with 130 original issues unresolved. Continuing from round 4 to round 24 added no releases. Duplicate generation and patch application therefore take priority; few new issues alone are not evidence of effective repair.","主な詰まりは候補の採否判断より前にありました。153回のFixで重複候補66件、適用できないパッチ53件が記録され、後続の採否比較に進んだのは32候補でした。10文書中6文書が初稿のままで、元の問題130件が未解決でした。第4ラウンド以降、第24ラウンドまで続けても通過数は増えませんでした。重複生成とパッチ適用を優先して調べるべきで、新しい問題が少ないだけでは修復の有効性を示せません。"],
   "图 9　Verifier 两项独立对照": [
     "Figure 9  Two independent Verifier comparisons",
     "図9　Verifierの独立した二比較"

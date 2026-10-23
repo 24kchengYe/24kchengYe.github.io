@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>训练评审 Spec 的 Rubric Judge · Yecheng Zhang</title><style id="edition-styles">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>从设计到产物：训练规则评审模型 · Yecheng Zhang</title><style id="edition-styles">
 :root{color-scheme:light;--ink:#202123;--muted:#73767b;--line:#e9eaec;--link:#44484d}
 *{box-sizing:border-box}
 html{background:#fff;scroll-behavior:smooth;scroll-padding-top:36px}
@@ -65,13 +65,15 @@ table p:last-child{margin-bottom:0}
 @media(max-width:760px){.blog-article>.figure-block{margin:30px auto 34px}.edition-library .evidence-library{max-width:100%;margin-top:52px}.blog-article>.figure-block>figcaption{font-size:11px}}
 @media print{.blog-article>.figure-block{max-width:100%;width:100%;margin:22pt 0;transform:none}.edition-library .evidence-library{max-width:none}.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit}.edition-library pre{max-height:none}}
 
-</style><meta name="description" content="训练评审 Spec 的 Rubric Judge：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/rubric-model/"><meta property="og:title" content="训练评审 Spec 的 Rubric Judge"><meta property="og:description" content="训练评审 Spec 的 Rubric Judge：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/rubric-model/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body class="edition-minimal"><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/rubric-model/technical/">技术报告 →</a><span>Yecheng Zhang · 中文</span></nav><a class="skip-link" href="#edition-start">跳到正文</a><div class="blog-layout"><aside class="blog-sidebar"><nav id="edition-toc" aria-label="文章目录"><p>目录</p><ol><li><a href="#blog-section-1" aria-current="location">1 模型要学会怎样评审</a></li><li><a href="#blog-section-2">2 从数据和规则开始</a></li><li><a href="#blog-section-3">3 SFT建立了基线，主要短板是漏报</a></li><li><a href="#blog-section-4">4 RL怎样奖励模型找全问题</a></li><li><a href="#blog-section-5">5 OPD能否让学生少读一些规则</a></li><li><a href="#blog-section-6">6 学习教师理由，是否更容易判断正确</a></li><li><a href="#blog-section-7">7 从设计评审到判断依据</a></li><li><a href="#blog-section-8">8 接下来优先解决什么</a></li></ol></nav></aside><main class="blog-main"><article id="edition-article" class="blog-article"><h1 id="edition-start">训练评审 Spec 的 Rubric Judge</h1>
-<p>给定一份多维表格设计，模型能否准确指出它没有满足哪些需求？这个问题比给方案打分更具体：需要找出遗漏的条件、错误的对象或不成立的实现方式，还要说明依据。</p>
-<p>2026年7—10月，我们从历史数据和业务规则开始，依次尝试监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT）。后期比较使用按原始需求隔离的7,127条训练样本、792条测试样本。实验逐渐明确了几个选择：完整规则仍有必要；多问题RL在四组实验中有三组提高了错误类型F1；加入教师显式理由的三组对照中，仅学习裁决的方案表现更好。</p>
+</style><meta name="description" content="从设计到产物：训练规则评审模型：实验设计、结果与方法总结。"><link rel="canonical" href="https://24kchengye.github.io/writing/rubric-model/"><meta property="og:title" content="从设计到产物：训练规则评审模型"><meta property="og:description" content="从设计到产物：训练规则评审模型：实验设计、结果与方法总结。"><meta property="og:type" content="article"><meta property="og:url" content="https://24kchengye.github.io/writing/rubric-model/"><link rel="stylesheet" href="/assets/css/report-navigation.css"></head><body class="edition-minimal"><nav class="report-site-nav" aria-label="文章导航"><a href="/#writing">← Selected writing</a><a href="/writing/rubric-model/technical/">技术报告 →</a><span>Yecheng Zhang · 中文</span></nav><a class="skip-link" href="#edition-start">跳到正文</a><div class="blog-layout"><aside class="blog-sidebar"><nav id="edition-toc" aria-label="文章目录"><p>目录</p><ol><li><a href="#blog-section-1" aria-current="location">1 模型要学会怎样评审</a></li><li><a href="#blog-section-2">2 从数据和规则开始</a></li><li><a href="#blog-section-3">3 SFT建立了基线，主要短板是漏报</a></li><li><a href="#blog-section-4">4 RL怎样奖励模型找全问题</a></li><li><a href="#blog-section-5">5 OPD能否让学生少读一些规则</a></li><li><a href="#blog-section-6">6 学习教师理由，是否更容易判断正确</a></li><li><a href="#blog-section-7">7 从设计评审到判断依据</a></li><li><a href="#blog-section-8">8 接下来优先解决什么</a></li></ol></nav></aside><main class="blog-main"><article id="edition-article" class="blog-article"><h1 id="edition-start">从设计到产物：训练规则评审模型</h1>
+<p>一份设计通过评审，落地的系统仍可能遗漏字段、接错工作流或放宽访问范围。我们把评审放在两个位置：先检查 Query + Spec，用 Judge–Fix 修好设计；再让 Code Agent 按 Spec 搭建产物，将实际产物解析成 Markdown，重新对照原始 Query 验收。</p>
+<p id="judge-scope">Judge Infra Model 包含这两类专用评审模型：Spec-RJM 学习设计评审，Artifact-RJM 学习产物评审。它们共享规则分层与结构化裁决的思路，但输入、规则和训练标签分别构建。产物侧还保留既有 E2E Judge，作为独立流程对照。</p>
+<p>2026年7—10月，Spec-RJM 从历史数据和业务规则开始，依次尝试监督微调（SFT）、强化学习（RL）、概率蒸馏（OPD）及理由监督（CoT）。后期比较使用按原始需求隔离的7,127条训练样本、792条测试样本。实验逐渐明确了几个选择：完整规则仍有必要；多问题RL在四组实验中有三组提高了错误类型F1；加入教师显式理由的三组对照中，仅学习裁决的方案表现更好。</p>
 <p>这些结果还没有解决评审的全部问题。专用模型仍容易漏报，同类问题发生在多个对象上时尤其如此。实际产物评审则暴露出较多误报。研究后半段因此开始关注判断依据：怎样检查一个结论用了哪些事实，哪些前提尚未确认，以及前提改变后需要重审什么。</p>
 <figure id="figure-figure_research_timeline" class="blog-figure"><img src="/writing/assets/646239c884a492ee1ee2.svg" alt="研究路线时间线" width="1080" height="792" loading="lazy" decoding="async"><figcaption>研究路线时间线</figcaption></figure>
 
 <h2 id="blog-section-1">1　模型要学会怎样评审</h2>
+<p>两类评审都以用户需求为准。Spec Judge 检查方案是否说清楚、能否实现；产物 Judge 要找到已经创建的对象与实际配置，核对字段类型、引用、筛选范围及动作依赖。更高的验收要求体现在实现证据：设计中写了“提醒负责人”，不能替代工作流里的接收人配置；静态配置本身也不能证明消息已经送达。</p>
 <p>多维表格的设计包括表结构、视图、仪表盘、工作流和权限。例如，“订单逾期后提醒负责人”需要到期时间、逾期判断、提醒对象和触发流程配合。只写了“发送提醒”，并不能说明方案已经满足需求。</p>
 <p>我们把这些检查整理成逐条业务规则，称为rubric。每条规则写清适用条件、违规情形和例外。模型读入用户需求、一版待评设计、一个业务域的完整规则，输出是否通过、具体问题、错误类型、严重程度及判断依据。</p>
 <figure id="figure-figure_01_task_io" class="blog-figure"><img src="/writing/assets/0c8f03219e746892457f.svg" alt="评审输入输出" width="1008" height="331" loading="lazy" decoding="async"><figcaption>评审输入输出</figcaption></figure>
@@ -83,7 +85,7 @@ table p:last-child{margin-bottom:0}
 <figure id="figure-technical_training_signals" class="blog-figure"><img src="/writing/assets/56fee8fae1475d39af31.svg" alt="四种训练信号" width="850" height="475" loading="lazy" decoding="async"><figcaption>四种训练信号</figcaption></figure>
 
 <h2 id="blog-section-2">2　从数据和规则开始</h2>
-<p>最早可追溯的数据盘点在7月21日，涉及6,457条原始需求。一条需求经过“设计、评审、修复、再评审”，会留下多个版本。如果把最终设计配上早期的问题标签，模型就会学到错误对应关系。我们的第一步是按需求、精确设计版本、业务域重新对齐。修复也可能引入新问题，因此每一版都需要单独核对。</p>
+<p>训练数据首先遇到的是版本错配。一条需求经过修复会留下多版设计，旧评审指出的问题可能已经在新版里消失。如果把新版设计配上旧标签，模型就会被教成“这里还有错”。因此，每份标签都要绑定它实际评过的设计版本和业务域；修复后的版本重新评审。</p>
 <p>早期数据实验尝试增加正常设计、扩大独立需求覆盖、调整多问题输出及重采样。在共同200条测试上，扩大需求覆盖的一组细规则F1为63.67%，早期单层规则训练为53.82%。增加正常设计后，模型开始能够放行正常样本，但问题召回下降；四组的多问题全命中率都为0。训练规模和输出形式同时变化，这一阶段主要发现了数据需要补足的方向。</p>
 <p>规则本身也影响模型判断。我们一方面补充适用前提、例外和问题归属，另一方面要求先列出对象，再逐项扫描，发现一处问题后继续检查。</p>
 <div class="blog-table-scroll"><table>
@@ -114,12 +116,12 @@ table p:last-child{margin-bottom:0}
 <p>标签生产也经历了调整。多轮评审投票会保留共同遗漏，直接让复核模型改答案又可能删掉成立的问题。后来的流程先合并候选，再核对证据、前提和例外，最后补查遗漏；未解决的分歧单独保留。</p>
 <figure id="figure-figure_05_label_pipeline" class="blog-figure"><img src="/writing/assets/213571d6c4a8fb88aa7c.svg" alt="标签生产" width="1008" height="360" loading="lazy" decoding="async"><figcaption>标签生产</figcaption></figure>
 
-<p>后期数据从另一批设计、评审、修复轨迹中分层选样。历史问题仅用于选样，Sol按当前完整规则独立复审时看不到旧标签。首轮获得7,638份合法标签，覆盖190种错误类型；继续回捞、构造或修改设计并复审后，从464条补充候选中采纳281条，最终得到7,919条数据，覆盖249种错误类型。</p>
-<p>按需求切分后，训练集为7,127条，覆盖2,139条原始需求；测试集为792条，覆盖229条需求。训练中的无问题、单问题、多问题样本分别为3,396、1,897、1,834条，测试分别为391、192、209条。训练覆盖249种登记错误，每种至少3条；测试只覆盖其中116种。数据已能支持统一比较，稀有错误和复杂条件组合仍需要更充分的测试。</p>
+<p>补数据时，我们优先寻找训练里缺少的错误类型。历史问题用于定位候选，Sol 重新标注时只看需求、设计和当前完整规则，不看旧标签。经过补样和复审，错误类型覆盖从 190 种扩大到 249 种，得到 7,919 个领域评审样本。</p>
+<p>按原始需求整组切分，7,127 条用于训练，792 条用于测试；同一需求的不同设计不会跨到两侧。训练同时保留正常、单问题和多问题设计，让模型既学会找错，也学会放行。测试覆盖 249 种训练错误中的 116 种，因此后面的总体 F1 还不能回答其余类型学得怎样。</p>
 <h2 id="blog-section-3">3　SFT建立了基线，主要短板是漏报</h2>
 <p>SFT的训练输入包含完整规则、需求和设计，目标是完整JSON评审答案：每类检查给出状态，每条问题包含规则、错误类型、严重程度及一句话依据。后面的CoT实验是在这个基础上额外加入整段判断理由。</p>
 <p>最后一轮比较三个起点：Seed2 Lite基础模型；先做中间训练、再学旧版评审的模型；做过中间训练、直接学本轮评审的模型。中间训练指本次评审微调之前的额外训练经历。三组最终都使用同一批7,127条Sol标签及完整规则。</p>
-<p>共同设置为Seed2 Lite 260428、两轮LoRA训练、rank 32、alpha 4、每批16条、学习率0.00001、长度上限32,768 token。LoRA冻结主体参数，只训练新增参数。平台从训练文件内部划10%作过程验证，外部792条用于最终评测。</p>
+<p>三组保持相同的 LoRA 训练设置，只比较模型起点：冻结主体参数，在同一批数据上训练两轮。训练文件内部另划验证集，外部 792 条用于最终评测；详细超参数见技术报告。</p>
 <div class="blog-table-scroll"><table>
 <thead>
 <tr>
@@ -177,19 +179,23 @@ table p:last-child{margin-bottom:0}
 <figure id="figure-technical_cot_design" class="blog-figure"><img src="/writing/assets/518173faf6bb5f7a6524.svg" alt="CoT对照设计及结果" width="850" height="526" loading="lazy" decoding="async"><figcaption>CoT对照设计及结果</figcaption></figure>
 
 <p>仅裁决方案在两套参考下都更好。Sol参考下，回答内理由、推理字段理由、仅裁决三组F1为41.54%、42.94%、51.52%；DeepSeek参考下为47.04%、46.98%、56.56%。以原始需求为单位配对重复抽样，仅裁决相对两组理由方案的四个差值，95%区间均高于0。</p>
-<p>下降的原因尚未分开：三组实际训练354、362、342步，可评分输出为786、792、784条；推理字段组开启推理模式，另外两组关闭。理由内容、目标长度和推理模式都可能影响结果。因此，后续理由研究需要保留仅裁决基线，并分别控制这些差异。</p>
+<p>这组结果支持保留“仅裁决”的训练基线，但还不能把下降归因于理由内容。加入理由也拉长了训练目标，推理字段组还开启了不同的推理模式。下一次对照需要分别控制目标长度、训练步数和推理模式，才能知道模型究竟在哪一步受了影响。</p>
 <p>我们也探索过更适合训练的理由。原生理由50条小试中，47条有合法裁决、3条截断；原文在两种格式下分别有12、11条超32k，整理后都能容纳，但仍有理由和裁决冲突、整理遗漏条件。固定10条修改提示词后修正了一条冲突，合法裁决却从9条变为8条，另有漏判未解决。</p>
 <p>另一条路线让学生借助教师分析生成短理由，每条尝试4次，检查结构、标签及同类问题次数，取最早通过的一份。62条均未通过，由两组共同排除，最终形成7,065条“短理由＋裁决”和“仅裁决”配对数据。自动筛选未检查全部理由证据，后续SFT尚未提交。</p>
 <h2 id="blog-section-7">7　从设计评审到判断依据</h2>
-<h3 id="blog-subsection-1">实际产物暴露了另一类错误</h3>
-<p>评审已经建好的对象时，我们用表、视图、仪表盘、工作流和权限结构替代设计文档。969条需求按需求切分为872条训练、97条测试，再拆成五个业务域，得到4,360个训练单元和485个测试单元。Seed2 Lite做两轮LoRA训练，以Luna单轮评审为冻结参考。</p>
+<h3 id="blog-subsection-1">Artifact-RJM：检查已经建好的产物</h3>
+<p id="artifact-model-input">Artifact-RJM 每次只评一个域。System Prompt 提供该域的产品能力、输入解释、规则卡和输出协议；User Message 只含 domain、原始 query、当前域 artifact_markdown。Spec 留在 Code Agent 的生成输入中，不作为产物评审的额外需求；这样不会把模型自行扩写的设计当成用户必须接受的要求。</p>
+<p>五域分别是 Table、Dashboard、Workflow、Permission、View。Formula、Lookup、Link 归 Table，表视图与 Form 归 View。每条问题必须满足规则前提、违规条件及证据要求，同一最小失败事实只归到一条最具体的规则；不同对象上的独立问题仍逐条保留。模型一次输出 Category → Rubric → Mode、固定严重度、理由及该域 verdict。</p>
+<p>训练样本按“一条 Query × 一个产物域”组织。969 个 Case 按原始 Query 分组：872 个用于训练，97 个用于内部测试，对应 4,360 / 485 个评审单元。Luna medium 用完整规则生成单轮参考标签，Seed2 Lite 在同样的规则与输入结构下做两轮 LoRA SFT。Case 的作用是切分和聚合，实际训练单位是领域评审单元。</p>
 <p>484条输出可解析，错误类型精确率32.45%、召回率53.98%、F1为40.53%。参考判定90个业务域失败，学生判定155个。模型容易把“管理”“模板”等词解释成必须创建自动化、表单或视图，同时漏掉Lookup唯一性、AI节点输入和重复触发问题。</p>
-<p>训练仅覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。下一步需要补足需求到实现方式的正反例，以及对象间的执行条件。静态结构正确、真实运行成功，也需要分别评测。</p>
+<p>训练覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。补数应优先覆盖需求适用与排除条件、同一规则的多对象问题，以及对象间的执行依赖。固定快照支持配置层判断；真实送达、执行结果及修改过程需要相应运行证据。</p>
+<p>一个真实测试例说明了这个边界：用户要求先建主表、再填子表，并录入一道完整试题。产物没有 Workflow；Luna 判该域 pass，学生却报 missing_automation。学生把一次性的搭建顺序误读成了持续自动化需求。这个例子提示我们补充“需要自动化 / 只需完成搭建”的配对样本，同时继续检查真正的触发、引用和写入缺陷。</p>
+<p>Artifact-RJM 与既有 E2E Judge 在同一份产物上对照。前者输出五域细粒度规则标签，再以“任一域 fail”聚合 Case；后者执行自己的子域评审和 Mix 全局仲裁。相同输入对象不代表相同规则或相同裁决机制。这里的 97 个 Case 使用固定 Markdown 重放，比较的是评审结果，不是重新搭建产物后的成功率。</p>
 <h3 id="blog-subsection-2">DSH记录评审过程，ATMS管理判断前提</h3>
 <p>多路评审可能依赖同一个错误前提。DSH（DeepSeek Harness）提供模型会话、路由及调用记录，我们在其上搭建数据管线：有分歧的先复核，之后所有结果都检查事实、产品能力和待确认假设，交人工确认；规则改变后，重新检查受影响案例。</p>
 <figure id="figure-figure_15_dsh_pipeline" class="blog-figure"><img src="/writing/assets/5af2c39fe8fa60e6a221.svg" alt="双路评审管线" width="1008" height="490" loading="lazy" decoding="async"><figcaption>双路评审管线</figcaption></figure>
 
-<p>首轮3条需求拆成15个业务域单元，30次请求中21份输出被系统采纳；6个单元获得双路一致结果，9个执行失败，复核和规则分析还没有有效业务输出。当前完成的是框架及部分流程试运行，标签质量和人工复核成本的改善仍待验证。</p>
+<p>首轮试运行只跑通了部分双路评审，分歧复核和规则分析尚未产出有效结果。因此，当前可以展示的是标签管线的实现；要检验它能否减少错标或人工工作量，还需要让同一批样本走完复核和人工确认。</p>
 <p>同一条“方案有问题”的判断，可能依赖不同依据。某项依据撤回后，判断是否还成立？我们提出用基于假设的真值维护系统（Assumption-Based Truth Maintenance System，ATMS）记录这些依赖。</p>
 <p>输入用户需求、待评方案，以及已确认的产品能力和规则。AI提取明确需求及方案事实，把有依据的内容同待确认假设分开，记录推导关系。系统校验引用和依赖结构，再计算每条结论所需的最小假设组合，按已登记的冲突规则排除矛盾组合。人工复核时，可以同时看到判断、依据、待审假设及冲突状态。</p>
 <p>下面用一个示例说明。已核验的事实F是“方案未限制客户数据访问”；待确认的A是“客户归属规则在本案例生效”，B是“客户保密条款在本案例生效”。两项规则都要求这一访问限制，因此登记两条推导：<code>F ∧ A ⇒ V</code>、<code>F ∧ B ⇒ V</code>。V表示“方案缺少应有的访问限制”。</p>

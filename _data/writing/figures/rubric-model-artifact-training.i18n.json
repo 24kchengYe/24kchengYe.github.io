@@ -1,0 +1,78 @@
+{
+  "产物评审单元": [
+    "Artifact review unit",
+    "成果物の評価単位"
+  ],
+  "969 Case × 5 个领域": [
+    "969 cases × 5 domains",
+    "969 Case × 5領域"
+  ],
+  "每个域使用自己的 System Prompt\nUser：domain + 原始 query + artifact_markdown\n不含 Spec 或历史 E2E verdict。": [
+    "Each domain has its own system prompt\nUser: domain + original query + artifact_markdown\nNo Spec or historical E2E verdict.",
+    "領域ごとに専用の System Prompt\nUser：domain + 元 query + artifact_markdown\nSpec と過去の E2E 判定は含めない。"
+  ],
+  "Luna · medium": [
+    "Luna · medium",
+    "Luna · medium"
+  ],
+  "完整规则 · 单轮标注": [
+    "Full rules · single review",
+    "完全なルール・1回の判定"
+  ],
+  "冻结参考标签": [
+    "Freeze reference labels",
+    "参照ラベルを固定"
+  ],
+  "按原始 Query 分组切分": [
+    "Split by original Query",
+    "元の Query で分割"
+  ],
+  "Train · 4,360": [
+    "Train · 4,360",
+    "Train · 4,360"
+  ],
+  "872 Case · 五域样本": [
+    "872 cases · five domains",
+    "872 Case・5領域"
+  ],
+  "Seed2 Lite · SFT": [
+    "Seed2 Lite · SFT",
+    "Seed2 Lite · SFT"
+  ],
+  "LoRA · 2 epochs": [
+    "LoRA · 2 epochs",
+    "LoRA · 2 epochs"
+  ],
+  "Test · 485": [
+    "Test · 485",
+    "Test · 485"
+  ],
+  "97 Case · 固定快照": [
+    "97 cases · fixed snapshots",
+    "97 Case・固定スナップショット"
+  ],
+  "测试集推理与计分": [
+    "Test inference and scoring",
+    "テスト推論と採点"
+  ],
+  "Mode F1 · Domain / Case verdict": [
+    "Mode F1 · Domain / Case verdict",
+    "Mode F1・領域 / Case の判定"
+  ],
+  "参考标签只供评分，不输入学生\n484/485 输出可解析\nMode P / R / F1：32.45 / 53.98 / 40.53%\n与 E2E 的对照单独按 97 Case 统计。": [
+    "Reference labels are used for scoring, not student input\n484/485 parseable outputs\nMode P / R / F1: 32.45 / 53.98 / 40.53%\nComparison with E2E is reported separately over 97 cases.",
+    "参照ラベルは採点専用で学生には渡さない\n484/485 の出力を解析可能\nMode P / R / F1：32.45 / 53.98 / 40.53%\nE2E との比較は97 Case で別途集計。"
+  ],
+  "训练后模型": [
+    "Trained model",
+    "学習済みモデル"
+  ],
+  "测试输入 + 参考": [
+    "Test input + reference",
+    "テスト入力 + 参照"
+  ],
+  "Artifact-RJM · 标注、训练与评测": [
+    "Artifact-RJM · Label, train, evaluate",
+    "Artifact-RJM · 注釈・学習・評価"
+  ]
+}

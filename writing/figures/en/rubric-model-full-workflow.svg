@@ -25,7 +25,7 @@ C: same labels, verdict only</span></div><div class="node soft" id="rl" style="l
 Group sampling → reward against labels
 Labels stay on the scoring side</span></div><div class="node result" id="eval" style="left:540px;top:832px;width:840px;height:145px"><strong>Fixed-test evaluation</strong><span>Validity · exact match · F1 · cost</span><span data-node-detail="true" hidden="">Fixed test inputs, separate reference reports
 Valid-output rate / exact match / Category–Rubric–Mode F1 / cost
-Separate Sol and DeepSeek references; keep Test792 apart from other sets</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Rubric model · Full workflow</div><div class="label " style="left:54px;top:282px;width:900px">Train only → training branches</div></div><style>[data-diagram-style="openai-blog"] {
+Separate Sol and DeepSeek references; keep Test792 apart from other sets</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Spec-RJM · Training comparisons</div><div class="label " style="left:54px;top:282px;width:900px">Train only → training branches</div></div><style>[data-diagram-style="openai-blog"] {
   --diagram-ink:#202020;
   --diagram-muted:#62625e;
   --diagram-line:#30332e;

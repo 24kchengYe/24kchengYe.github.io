@@ -747,7 +747,7 @@ body[data-publication-genre=blog] .article-body h2{font-size:28px}
 <td align="right">7,045,365</td>
 </tr>
 </tbody></table></div>
-<p>153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，32 个候选进入后续接纳比较。最终 6 条保留初始文档，从第 4 轮增加到第 24 轮也没有增加内部准出。新增问题少，主要伴随修改没有被采用；原来的 130 个问题仍在。</p>
+<p>整链的主要阻塞发生在候选接纳之前。153 次 Fix 中记录了 66 次重复候选、53 次补丁无法应用，只有 32 个候选进入后续接纳比较；最终 10 份文档中 6 份仍是初稿，130 个原有问题未解决。第 4 轮之后继续到第 24 轮也没有增加内部准出，因此优先检查重复生成和补丁应用，不能把“新增问题少”单独当作修复有效。</p>
 <figure class="figure-block result-figure" data-figure="verifier_comparison" data-reconstructed="true"><div class="figure-panel"><img src="/writing/assets/e2ea43c24fe2e6402600.svg" alt="Verifier 两项独立对照" width="1200" height="520" data-natural-width="1200" data-zoom="true" loading="lazy" decoding="async"></div><figcaption>图 9　Verifier 两项独立对照</figcaption></figure>
 <p>这两项实验给出不同层次的结论：前置分析能帮助找问题，但完整链路还受 Fix 候选和接纳判断制约。整链中更少的新增问题伴随大量回退，不能单独作为修复质量提高的证据。预算从第 4 轮增加到第 24 轮不再新增准出，也不支持先增加循环次数。</p>
 

@@ -25,7 +25,7 @@ C：同じラベルで判定のみ</span></div><div class="node soft" id="rl" st
 グループ内生成 → ラベルで報酬計算
 ラベルは採点側だけで使用</span></div><div class="node result" id="eval" style="left:540px;top:832px;width:840px;height:145px"><strong>固定テストで評価</strong><span>妥当率・完全一致・F1・コスト</span><span data-node-detail="true" hidden="">テスト入力を固定し、参照ラベル別に報告
 出力妥当率・完全一致・Category–Rubric–Mode F1・コスト
-Sol と DeepSeek を別表にし、Test792 と他の集合も分ける</span></div><div class="label title" style="left:54px;top:24px;width:1320px">ルール評価モデル · 全体フロー</div><div class="label " style="left:54px;top:282px;width:900px">学習分岐には Train のみ</div></div><style>[data-diagram-style="openai-blog"] {
+Sol と DeepSeek を別表にし、Test792 と他の集合も分ける</span></div><div class="label title" style="left:54px;top:24px;width:1320px">Spec-RJM · 学習方式の比較</div><div class="label " style="left:54px;top:282px;width:900px">学習分岐には Train のみ</div></div><style>[data-diagram-style="openai-blog"] {
   --diagram-ink:#202020;
   --diagram-muted:#62625e;
   --diagram-line:#30332e;

@@ -42,7 +42,7 @@
 <h2>GRPO 在概率空间里探索</h2>
 <p>这里的 GRPO 直接扰动三类 logits。每条 query 产生 8 个高斯扰动候选，经过 Softmax 得到概率，再计算奖励和组内相对优势。候选是概率向量，训练没有生成推理文本。</p>
 <figure><img data-figure="nimble-kev-grpo" alt="连续概率策略的 GRPO 更新流程" loading="lazy"><figcaption>扰动用于训练探索。Brier 奖励比较概率与目标 t：早期 Nimble 使用 one-hot，后期 KEV 使用 Agent 分布 q。RLCR 是早期 Nimble 的另一种奖励，联合评价选对与否和所选类别概率。</figcaption></figure>
-<p>Nimble 的约 39%–48% 探索组奖励几乎相同，这些组的策略优势被置零，稳定项仍可更新参数。KEV 软目标实验中的低方差组为 0/3,000，却仍低于直接蒸馏。相同的结果方向，不能套用同一种机制解释。</p>
+<p>GRPO 需要在同一请求的候选中分出好坏。Nimble 有约 39%–48% 的探索组奖励几乎一样，无法提供区分候选的更新信号，只有稳定项仍可更新参数。KEV 的软目标实验没有出现这类低方差组，却也落后于直接蒸馏；奖励分不开候选解释了前者的一项训练障碍，不能解释后者。</p>
 <details><summary>训练目标与主要参数</summary><div class="table-scroll"><table><thead><tr><th>设置</th><th>Nimble 早期 GRPO</th><th>KEV 软目标 GRPO</th></tr></thead><tbody>
 <tr><td>目标与奖励</td><td>r = −Σ(pᵢ − tᵢ)²; t = one-hot<br>RLCR: r = c − (u − c)²</td><td>r = −Σ(pᵢ − qᵢ)²</td></tr>
 <tr><td>探索组数 / σ</td><td>8 / 2.4</td><td>8 / 0.3</td></tr>

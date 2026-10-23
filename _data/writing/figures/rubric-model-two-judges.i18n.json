@@ -1,0 +1,86 @@
+{
+  "原始需求": [
+    "Original Query",
+    "元の要求"
+  ],
+  "两处评审共用": [
+    "Shared by both judges",
+    "両方の評価で使用"
+  ],
+  "生成 Spec": [
+    "Generate Spec",
+    "Spec を生成"
+  ],
+  "待评设计版本": [
+    "Current design version",
+    "評価対象の設計版"
+  ],
+  "Spec Judge": [
+    "Spec Judge",
+    "Spec Judge"
+  ],
+  "Query + Spec": [
+    "Query + Spec",
+    "Query + Spec"
+  ],
+  "评审输入：原始 Query、当前 Spec、领域规则\n输出：问题证据与裁决，指导下一轮修复\nSpec-RJM 学习这类评审能力，关联图展示训练方法。": [
+    "Review input: original Query, current Spec, domain rules\nOutput: issue evidence and verdict to guide repair\nSpec-RJM learns this review task; the linked figure shows its training methods.",
+    "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く問題の証拠と判定\nSpec-RJM はこの評価を学習し、関連図で学習方式を示す。"
+  ],
+  "修复 Spec": [
+    "Fix Spec",
+    "Spec を修正"
+  ],
+  "问题 → 新版本": [
+    "Issues → new version",
+    "問題 → 新しい版"
+  ],
+  "Code Agent": [
+    "Code Agent",
+    "Code Agent"
+  ],
+  "按通过的 Spec 搭建": [
+    "Build from the accepted Spec",
+    "合格した Spec から構築"
+  ],
+  "产物 → Markdown": [
+    "Artifact → Markdown",
+    "成果物 → Markdown"
+  ],
+  "解析实际配置": [
+    "Parse actual configuration",
+    "実際の設定を解析"
+  ],
+  "产物 Judge": [
+    "Artifact Judge",
+    "成果物 Judge"
+  ],
+  "Query + Artifact": [
+    "Query + Artifact",
+    "Query + Artifact"
+  ],
+  "产物层的两种评审实现\n既有 E2E：子域评审 + Mix\nArtifact-RJM：五域规则标签 + 各域 verdict\n两者在固定快照上独立对照。": [
+    "Two artifact-side review implementations\nExisting E2E: domain reviews + Mix\nArtifact-RJM: five-domain rule labels + verdicts\nCompared independently on fixed snapshots.",
+    "成果物側の2つの評価方式\n既存 E2E：領域審査 + Mix\nArtifact-RJM：5領域のルールラベル + 判定\n固定スナップショットで独立に比較。"
+  ],
+  "未通过": [
+    "Needs repair",
+    "要修正"
+  ],
+  "重评新版本": [
+    "Rejudge new version",
+    "新版を再評価"
+  ],
+  "设计通过 → 搭建": [
+    "Design passes → build",
+    "設計合格 → 構築"
+  ],
+  "仍以原始需求验收": [
+    "Evaluate against the original request",
+    "元の要求を検収基準にする"
+  ],
+  "从设计评审到产物验收": [
+    "From design review to artifact acceptance",
+    "設計審査から成果物の検収へ"
+  ]
+}

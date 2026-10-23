@@ -1395,9 +1395,9 @@
       "入力とラベルを正確に対応させ、要求グループで分割。SFT→RL は継承関係、OPD と理由監督は独立の対照。参照ラベルは監督・採点側だけに渡す。"
     ],
     "title": [
-      "规则评审模型 · 完整流程",
-      "Rubric model · Full workflow",
-      "ルール評価モデル · 全体フロー"
+      "Spec-RJM · 训练方法对照",
+      "Spec-RJM · Training comparisons",
+      "Spec-RJM · 学習方式の比較"
     ],
     "links": {
       "input": "rubric-model-03",
@@ -1741,9 +1741,9 @@
         24,
         1320,
         [
-          "规则评审模型 · 完整流程",
-          "Rubric model · Full workflow",
-          "ルール評価モデル · 全体フロー"
+          "Spec-RJM · 训练方法对照",
+          "Spec-RJM · Training comparisons",
+          "Spec-RJM · 学習方式の比較"
         ],
         "title"
       ],
@@ -2091,6 +2091,651 @@
         "图中 F1 为这个单元的去重标签集合计算；整套模型的 Test792 结果仍在正文按参考分别报告。",
         "The displayed F1 is computed from this unit’s unique label set; full Test792 model results remain reported separately by reference in the article.",
         "図の F1 はこの単位の重複除去ラベル集合から計算。モデル全体の Test792 結果は本文で参照別に報告する。"
+      ]
+    ]
+  },
+  {
+    "id": "rubric-model-two-judges",
+    "width": 1440,
+    "height": 940,
+    "anchors": [
+      "judge-scope",
+      "judge-scope"
+    ],
+    "title": [
+      "从设计评审到产物验收",
+      "From design review to artifact acceptance",
+      "設計審査から成果物の検収へ"
+    ],
+    "caption": [
+      "Spec Judge 驱动设计修复；产物 Judge 对照原始 Query 检查实际实现。通过设计评审，不会直接继承为产物通过。",
+      "The Spec Judge guides design repair; the artifact Judge checks the implementation against the original Query. A passing design does not automatically make the artifact pass.",
+      "Spec Judge が設計修正を導き、成果物 Judge は元の Query と実装を照合する。設計の合格を成果物へそのまま引き継ぐことはできない。"
+    ],
+    "nodes": {
+      "query": [
+        60,
+        90,
+        300,
+        130,
+        [
+          "原始需求",
+          "Original Query",
+          "元の要求"
+        ],
+        [
+          "两处评审共用",
+          "Shared by both judges",
+          "両方の評価で使用"
+        ]
+      ],
+      "spec": [
+        520,
+        90,
+        340,
+        130,
+        [
+          "生成 Spec",
+          "Generate Spec",
+          "Spec を生成"
+        ],
+        [
+          "待评设计版本",
+          "Current design version",
+          "評価対象の設計版"
+        ]
+      ],
+      "judge": [
+        1040,
+        90,
+        340,
+        130,
+        [
+          "Spec Judge",
+          "Spec Judge",
+          "Spec Judge"
+        ],
+        [
+          "Query + Spec",
+          "Query + Spec",
+          "Query + Spec"
+        ],
+        "soft"
+      ],
+      "fix": [
+        1040,
+        315,
+        340,
+        130,
+        [
+          "修复 Spec",
+          "Fix Spec",
+          "Spec を修正"
+        ],
+        [
+          "问题 → 新版本",
+          "Issues → new version",
+          "問題 → 新しい版"
+        ],
+        "issue"
+      ],
+      "agent": [
+        520,
+        560,
+        340,
+        130,
+        [
+          "Code Agent",
+          "Code Agent",
+          "Code Agent"
+        ],
+        [
+          "按通过的 Spec 搭建",
+          "Build from the accepted Spec",
+          "合格した Spec から構築"
+        ]
+      ],
+      "artifact": [
+        1040,
+        560,
+        340,
+        130,
+        [
+          "产物 → Markdown",
+          "Artifact → Markdown",
+          "成果物 → Markdown"
+        ],
+        [
+          "解析实际配置",
+          "Parse actual configuration",
+          "実際の設定を解析"
+        ]
+      ],
+      "artifactJudge": [
+        1040,
+        785,
+        340,
+        130,
+        [
+          "产物 Judge",
+          "Artifact Judge",
+          "成果物 Judge"
+        ],
+        [
+          "Query + Artifact",
+          "Query + Artifact",
+          "Query + Artifact"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "query",
+        "spec",
+        [
+          [
+            360,
+            155
+          ],
+          [
+            520,
+            155
+          ]
+        ]
+      ],
+      [
+        "spec",
+        "judge",
+        [
+          [
+            860,
+            155
+          ],
+          [
+            1040,
+            155
+          ]
+        ]
+      ],
+      [
+        "judge",
+        "fix",
+        [
+          [
+            1210,
+            220
+          ],
+          [
+            1210,
+            315
+          ]
+        ]
+      ],
+      [
+        "fix",
+        "spec",
+        [
+          [
+            1040,
+            380
+          ],
+          [
+            690,
+            380
+          ],
+          [
+            690,
+            220
+          ]
+        ],
+        true
+      ],
+      [
+        "judge",
+        "agent",
+        [
+          [
+            1380,
+            155
+          ],
+          [
+            1410,
+            155
+          ],
+          [
+            1410,
+            505
+          ],
+          [
+            690,
+            505
+          ],
+          [
+            690,
+            560
+          ]
+        ]
+      ],
+      [
+        "agent",
+        "artifact",
+        [
+          [
+            860,
+            625
+          ],
+          [
+            1040,
+            625
+          ]
+        ]
+      ],
+      [
+        "artifact",
+        "artifactJudge",
+        [
+          [
+            1210,
+            690
+          ],
+          [
+            1210,
+            785
+          ]
+        ]
+      ],
+      [
+        "query",
+        "judge",
+        [
+          [
+            210,
+            90
+          ],
+          [
+            210,
+            40
+          ],
+          [
+            1210,
+            40
+          ],
+          [
+            1210,
+            90
+          ]
+        ],
+        true
+      ],
+      [
+        "query",
+        "artifactJudge",
+        [
+          [
+            210,
+            220
+          ],
+          [
+            210,
+            850
+          ],
+          [
+            1040,
+            850
+          ]
+        ],
+        true
+      ]
+    ],
+    "labels": [
+      [
+        1225,
+        253,
+        150,
+        [
+          "未通过",
+          "Needs repair",
+          "要修正"
+        ]
+      ],
+      [
+        800,
+        344,
+        210,
+        [
+          "重评新版本",
+          "Rejudge new version",
+          "新版を再評価"
+        ]
+      ],
+      [
+        950,
+        462,
+        400,
+        [
+          "设计通过 → 搭建",
+          "Design passes → build",
+          "設計合格 → 構築"
+        ]
+      ],
+      [
+        260,
+        798,
+        600,
+        [
+          "仍以原始需求验收",
+          "Evaluate against the original request",
+          "元の要求を検収基準にする"
+        ]
+      ]
+    ],
+    "links": {
+      "judge": "rubric-model-full-workflow",
+      "artifactJudge": "rubric-model-artifact-training"
+    },
+    "nodeDetails": {
+      "judge": [
+        "评审输入：原始 Query、当前 Spec、领域规则\n输出：问题证据与裁决，指导下一轮修复\nSpec-RJM 学习这类评审能力，关联图展示训练方法。",
+        "Review input: original Query, current Spec, domain rules\nOutput: issue evidence and verdict to guide repair\nSpec-RJM learns this review task; the linked figure shows its training methods.",
+        "評価入力：元の Query、現在の Spec、領域ルール\n出力：修正を導く問題の証拠と判定\nSpec-RJM はこの評価を学習し、関連図で学習方式を示す。"
+      ],
+      "artifactJudge": [
+        "产物层的两种评审实现\n既有 E2E：子域评审 + Mix\nArtifact-RJM：五域规则标签 + 各域 verdict\n两者在固定快照上独立对照。",
+        "Two artifact-side review implementations\nExisting E2E: domain reviews + Mix\nArtifact-RJM: five-domain rule labels + verdicts\nCompared independently on fixed snapshots.",
+        "成果物側の2つの評価方式\n既存 E2E：領域審査 + Mix\nArtifact-RJM：5領域のルールラベル + 判定\n固定スナップショットで独立に比較。"
+      ]
+    },
+    "notes": [
+      [
+        "Spec 是生成指导，不进入本轮产物 Judge 的需求输入。产物评审只依据可观察配置；运行结果需要运行证据。",
+        "The Spec guides generation; it is not an additional requirement input to this artifact Judge. Artifact review uses observable configuration; execution claims need runtime evidence.",
+        "Spec は生成の指針であり、本実験の成果物 Judge の要求入力には加えない。成果物評価は観測可能な設定に基づき、実行結果には実行証拠が必要となる。"
+      ]
+    ]
+  },
+  {
+    "id": "rubric-model-artifact-training",
+    "width": 1440,
+    "height": 905,
+    "anchors": [
+      "artifact-model-input",
+      "artifact-model-input"
+    ],
+    "title": [
+      "Artifact-RJM · 标注、训练与评测",
+      "Artifact-RJM · Label, train, evaluate",
+      "Artifact-RJM · 注釈・学習・評価"
+    ],
+    "caption": [
+      "标注、训练和推理共用完整领域规则。按 Query 分组后，Train 用于参数更新，Test 只在评测侧提供输入和参考标签。",
+      "Annotation, training, and inference use the full domain rules. After grouping by Query, Train updates parameters and Test supplies evaluation inputs and reference labels.",
+      "注釈・学習・推論で完全な領域ルールを共用する。Query で分割した後、Train はパラメータ更新、Test は評価入力と参照ラベルに使う。"
+    ],
+    "nodes": {
+      "input": [
+        60,
+        85,
+        380,
+        150,
+        [
+          "产物评审单元",
+          "Artifact review unit",
+          "成果物の評価単位"
+        ],
+        [
+          "969 Case × 5 个领域",
+          "969 cases × 5 domains",
+          "969 Case × 5領域"
+        ]
+      ],
+      "teacher": [
+        540,
+        85,
+        360,
+        150,
+        [
+          "Luna · medium",
+          "Luna · medium",
+          "Luna · medium"
+        ],
+        [
+          "完整规则 · 单轮标注",
+          "Full rules · single review",
+          "完全なルール・1回の判定"
+        ],
+        "soft"
+      ],
+      "labels": [
+        1020,
+        85,
+        360,
+        150,
+        [
+          "冻结参考标签",
+          "Freeze reference labels",
+          "参照ラベルを固定"
+        ],
+        [
+          "按原始 Query 分组切分",
+          "Split by original Query",
+          "元の Query で分割"
+        ]
+      ],
+      "train": [
+        60,
+        410,
+        380,
+        155,
+        [
+          "Train · 4,360",
+          "Train · 4,360",
+          "Train · 4,360"
+        ],
+        [
+          "872 Case · 五域样本",
+          "872 cases · five domains",
+          "872 Case・5領域"
+        ]
+      ],
+      "model": [
+        540,
+        410,
+        360,
+        155,
+        [
+          "Seed2 Lite · SFT",
+          "Seed2 Lite · SFT",
+          "Seed2 Lite · SFT"
+        ],
+        [
+          "LoRA · 2 epochs",
+          "LoRA · 2 epochs",
+          "LoRA · 2 epochs"
+        ],
+        "soft"
+      ],
+      "test": [
+        1020,
+        410,
+        360,
+        155,
+        [
+          "Test · 485",
+          "Test · 485",
+          "Test · 485"
+        ],
+        [
+          "97 Case · 固定快照",
+          "97 cases · fixed snapshots",
+          "97 Case・固定スナップショット"
+        ]
+      ],
+      "eval": [
+        540,
+        730,
+        840,
+        140,
+        [
+          "测试集推理与计分",
+          "Test inference and scoring",
+          "テスト推論と採点"
+        ],
+        [
+          "Mode F1 · Domain / Case verdict",
+          "Mode F1 · Domain / Case verdict",
+          "Mode F1・領域 / Case の判定"
+        ],
+        "result"
+      ]
+    },
+    "edges": [
+      [
+        "input",
+        "teacher",
+        [
+          [
+            440,
+            160
+          ],
+          [
+            540,
+            160
+          ]
+        ]
+      ],
+      [
+        "teacher",
+        "labels",
+        [
+          [
+            900,
+            160
+          ],
+          [
+            1020,
+            160
+          ]
+        ]
+      ],
+      [
+        "labels",
+        "train",
+        [
+          [
+            1120,
+            235
+          ],
+          [
+            1120,
+            320
+          ],
+          [
+            250,
+            320
+          ],
+          [
+            250,
+            410
+          ]
+        ]
+      ],
+      [
+        "labels",
+        "test",
+        [
+          [
+            1280,
+            235
+          ],
+          [
+            1280,
+            410
+          ]
+        ]
+      ],
+      [
+        "train",
+        "model",
+        [
+          [
+            440,
+            487
+          ],
+          [
+            540,
+            487
+          ]
+        ]
+      ],
+      [
+        "model",
+        "eval",
+        [
+          [
+            720,
+            565
+          ],
+          [
+            720,
+            730
+          ]
+        ]
+      ],
+      [
+        "test",
+        "eval",
+        [
+          [
+            1200,
+            565
+          ],
+          [
+            1200,
+            730
+          ]
+        ]
+      ]
+    ],
+    "labels": [
+      [
+        760,
+        620,
+        210,
+        [
+          "训练后模型",
+          "Trained model",
+          "学習済みモデル"
+        ]
+      ],
+      [
+        1220,
+        600,
+        190,
+        [
+          "测试输入 + 参考",
+          "Test input + reference",
+          "テスト入力 + 参照"
+        ]
+      ]
+    ],
+    "nodeDetails": {
+      "input": [
+        "每个域使用自己的 System Prompt\nUser：domain + 原始 query + artifact_markdown\n不含 Spec 或历史 E2E verdict。",
+        "Each domain has its own system prompt\nUser: domain + original query + artifact_markdown\nNo Spec or historical E2E verdict.",
+        "領域ごとに専用の System Prompt\nUser：domain + 元 query + artifact_markdown\nSpec と過去の E2E 判定は含めない。"
+      ],
+      "eval": [
+        "参考标签只供评分，不输入学生\n484/485 输出可解析\nMode P / R / F1：32.45 / 53.98 / 40.53%\n与 E2E 的对照单独按 97 Case 统计。",
+        "Reference labels are used for scoring, not student input\n484/485 parseable outputs\nMode P / R / F1: 32.45 / 53.98 / 40.53%\nComparison with E2E is reported separately over 97 cases.",
+        "参照ラベルは採点専用で学生には渡さない\n484/485 の出力を解析可能\nMode P / R / F1：32.45 / 53.98 / 40.53%\nE2E との比較は97 Case で別途集計。"
+      ]
+    },
+    "notes": [
+      [
+        "这里是单轮 Luna 参考，不是人工金标。97 个内部测试 Case 未上传训练，但曾参与规则开发。",
+        "These are single-review Luna references, not human gold labels. The 97 internal test cases were not uploaded for training but had informed rule development.",
+        "参照は Luna の1回の判定で、人手の正解ラベルではない。内部テスト97 Case は学習にアップロードしていないが、ルール開発には使用されている。"
       ]
     ]
   }

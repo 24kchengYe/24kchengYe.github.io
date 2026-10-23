@@ -14,6 +14,8 @@ _preview/
 
 # AI project guide (keep locally, not needed for website)
 CLAUDE.md
+AGENTS.md
+session-log.jsonl
 
 # Local scripts
 run_server.sh

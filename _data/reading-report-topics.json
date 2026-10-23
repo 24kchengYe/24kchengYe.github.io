@@ -1,0 +1,2586 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-23",
+  "taxonomy": "reading-learning.json:books",
+  "policy": [
+    "One primary reading topic per report; titles, existing curated technical keywords, and source abstracts/descriptions for ambiguous entries are the classification evidence.",
+    "General model-family releases belong to Foundation models; reports centered on a named architecture, training method, system, or task use that topic.",
+    "Code, audio/vision, embodied, and tool-use reports retain their subject even when published as model cards or system cards.",
+    "General system cards and explicit safety/evaluation reports belong to Evaluation & verification.",
+    "No report is assigned by fallback. New report IDs or changed titles stop the library build until this mapping is reviewed."
+  ],
+  "reports": {
+    "42efe675cf3c": {
+      "topicId": "sec-001",
+      "title": "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
+    },
+    "71c5692bf45f": {
+      "topicId": "sec-002",
+      "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
+    },
+    "7f03d8c3f8ae": {
+      "topicId": "sec-007",
+      "title": "DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence"
+    },
+    "af0ec679eebb": {
+      "topicId": "sec-004",
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models"
+    },
+    "34c656e76996": {
+      "topicId": "sec-009",
+      "title": "DeepSeek-VL: Towards Real-World Vision-Language Understanding"
+    },
+    "d34b21f52753": {
+      "topicId": "sec-002",
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    },
+    "c153d143d34a": {
+      "topicId": "sec-004",
+      "title": "DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data"
+    },
+    "210075d3b4bb": {
+      "topicId": "sec-007",
+      "title": "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence"
+    },
+    "6a3d1a05af85": {
+      "topicId": "sec-004",
+      "title": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search"
+    },
+    "ea8d73b075e1": {
+      "topicId": "sec-009",
+      "title": "Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation"
+    },
+    "b31ccbbb1a60": {
+      "topicId": "sec-009",
+      "title": "JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation"
+    },
+    "c63cf61bae33": {
+      "topicId": "sec-009",
+      "title": "DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding"
+    },
+    "0eac14151cad": {
+      "topicId": "sec-001",
+      "title": "DeepSeek-V3 Technical Report"
+    },
+    "d88dbc069c2f": {
+      "topicId": "sec-004",
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    },
+    "67105e549798": {
+      "topicId": "sec-009",
+      "title": "Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling"
+    },
+    "7c2ca4c382cc": {
+      "topicId": "sec-004",
+      "title": "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition"
+    },
+    "fb9283f4aa9d": {
+      "topicId": "sec-003",
+      "title": "Insights into DeepSeek-V3: Scaling Challenges and Reflections on Hardware for AI Architectures"
+    },
+    "9b9502572a3b": {
+      "topicId": "sec-001",
+      "title": "DeepSeek-V3.1 official model card"
+    },
+    "f45f3c90740b": {
+      "topicId": "sec-009",
+      "title": "DeepSeek-OCR: Contexts Optical Compression"
+    },
+    "bc6ea548802a": {
+      "topicId": "sec-004",
+      "title": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning"
+    },
+    "254bbfddb727": {
+      "topicId": "sec-002",
+      "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models"
+    },
+    "6df83839cbfd": {
+      "topicId": "sec-002",
+      "title": "mHC: Manifold-Constrained Hyper-Connections"
+    },
+    "f99b9a67753e": {
+      "topicId": "sec-002",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models"
+    },
+    "49d19e387627": {
+      "topicId": "sec-009",
+      "title": "DeepSeek-OCR 2: Visual Causal Flow"
+    },
+    "c070ef2cded0": {
+      "topicId": "sec-003",
+      "title": "DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference"
+    },
+    "48c811be74c2": {
+      "topicId": "sec-002",
+      "title": "DeepSeek V3.2 Technical Documentation (Model Card)"
+    },
+    "81af6fc1437e": {
+      "topicId": "sec-001",
+      "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence"
+    },
+    "8e4dd2448904": {
+      "topicId": "sec-001",
+      "title": "DeepSeek V4 Technical Documentation (Model Card)"
+    },
+    "f1332fa3337e": {
+      "topicId": "sec-002",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression"
+    },
+    "7fdf9643cf5d": {
+      "topicId": "sec-002",
+      "title": "DeepSeek-V3.2-Exp: Boosting Long-Context Efficiency with DeepSeek Sparse Attention"
+    },
+    "0287ec0c0427": {
+      "topicId": "sec-003",
+      "title": "Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving"
+    },
+    "6d96409126d5": {
+      "topicId": "sec-004",
+      "title": "Kimi k1.5: Scaling Reinforcement Learning with LLMs"
+    },
+    "637941bc443c": {
+      "topicId": "sec-002",
+      "title": "MoBA: Mixture of Block Attention for Long-Context LLMs"
+    },
+    "1183c03526f1": {
+      "topicId": "sec-004",
+      "title": "Muon is Scalable for LLM Training"
+    },
+    "33144eaf41d2": {
+      "topicId": "sec-009",
+      "title": "Kimi-VL Technical Report"
+    },
+    "28303abc3e9f": {
+      "topicId": "sec-004",
+      "title": "Kimina-Prover Preview: Towards Large Formal Reasoning Models with Reinforcement Learning"
+    },
+    "bcc81853449e": {
+      "topicId": "sec-009",
+      "title": "Kimi-Audio Technical Report"
+    },
+    "af9031968d8e": {
+      "topicId": "sec-001",
+      "title": "Kimi K2: Open Agentic Intelligence"
+    },
+    "4a9d6ec982b5": {
+      "topicId": "sec-007",
+      "title": "Kimi-Dev: Agentless Training as Skill Prior for SWE-Agents"
+    },
+    "12c6aeb6aa29": {
+      "topicId": "sec-002",
+      "title": "Kimi Linear: An Expressive, Efficient Attention Architecture"
+    },
+    "28f47142928f": {
+      "topicId": "sec-004",
+      "title": "Kimi K2 Thinking official model card"
+    },
+    "7617e05240ea": {
+      "topicId": "sec-006",
+      "title": "Kimi K2.5 Technical Report"
+    },
+    "69fa1759bb65": {
+      "topicId": "sec-001",
+      "title": "Kimi K2.6 official model card"
+    },
+    "b7fc7fd69f16": {
+      "topicId": "sec-001",
+      "title": "Kimi K3 Technical Report"
+    },
+    "e4e9f5a3bf1c": {
+      "topicId": "sec-009",
+      "title": "M6: A Chinese Multimodal Pretrainer"
+    },
+    "8fae0c66f9df": {
+      "topicId": "sec-002",
+      "title": "M6-10T: A Sharing-Delinking Paradigm for Efficient Multi-Trillion Parameter Pretraining"
+    },
+    "7eec9c62d8c1": {
+      "topicId": "sec-009",
+      "title": "Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond"
+    },
+    "7e22b25ebd96": {
+      "topicId": "sec-001",
+      "title": "Qwen Technical Report"
+    },
+    "f6ec74c7a59e": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio: Advancing Universal Audio Understanding via Unified Large-Scale Audio-Language Models"
+    },
+    "2f25bede2bc5": {
+      "topicId": "sec-001",
+      "title": "Qwen1.5 official model release"
+    },
+    "68498046f277": {
+      "topicId": "sec-009",
+      "title": "FunAudioLLM: Voice Understanding and Generation Foundation Models for Natural Interaction Between Humans and LLMs"
+    },
+    "da641ed26d7b": {
+      "topicId": "sec-009",
+      "title": "CosyVoice: A Scalable Multilingual Zero-shot Text-to-speech Synthesizer based on Supervised Semantic Tokens"
+    },
+    "097b9ce317e0": {
+      "topicId": "sec-001",
+      "title": "Qwen2 Technical Report"
+    },
+    "298dd79d3be3": {
+      "topicId": "sec-009",
+      "title": "Qwen2-Audio Technical Report"
+    },
+    "4507cbb1c521": {
+      "topicId": "sec-009",
+      "title": "Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution"
+    },
+    "6022da22ddf4": {
+      "topicId": "sec-007",
+      "title": "Qwen2.5-Coder Technical Report"
+    },
+    "704e377fae0d": {
+      "topicId": "sec-004",
+      "title": "Qwen2.5-Math Technical Report: Toward Mathematical Expert Model via Self-Improvement"
+    },
+    "58ac20a09f1f": {
+      "topicId": "sec-009",
+      "title": "CosyVoice 2: Scalable Streaming Speech Synthesis with Large Language Models"
+    },
+    "c218be4902d0": {
+      "topicId": "sec-001",
+      "title": "Qwen2.5 Technical Report"
+    },
+    "3d6198986ba5": {
+      "topicId": "sec-009",
+      "title": "Qwen2.5-VL Technical Report"
+    },
+    "49e3b6d68ba2": {
+      "topicId": "sec-004",
+      "title": "QwQ-32B official model card"
+    },
+    "2def55d2ad33": {
+      "topicId": "sec-009",
+      "title": "VACE: All-in-One Video Creation and Editing"
+    },
+    "27a338420c17": {
+      "topicId": "sec-009",
+      "title": "Qwen2.5-Omni Technical Report"
+    },
+    "263ccd7e6dfd": {
+      "topicId": "sec-009",
+      "title": "Wan: Open and Advanced Large-Scale Video Generative Models"
+    },
+    "e61712df4b8b": {
+      "topicId": "sec-001",
+      "title": "Qwen3 Technical Report"
+    },
+    "2e8be24f03e4": {
+      "topicId": "sec-004",
+      "title": "WorldPM: Scaling Human Preference Modeling"
+    },
+    "8ee67735bc7d": {
+      "topicId": "sec-009",
+      "title": "CosyVoice 3: Towards In-the-wild Speech Generation via Scaling-up and Post-training"
+    },
+    "abf36f7d7979": {
+      "topicId": "sec-001",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models"
+    },
+    "f92124b98d5c": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image Technical Report"
+    },
+    "69dc772ba3bb": {
+      "topicId": "sec-009",
+      "title": "Wan-S2V: Audio-Driven Cinematic Video Generation"
+    },
+    "f92bfaf24ea7": {
+      "topicId": "sec-009",
+      "title": "Wan-Animate: Unified Character Animation and Replacement with Holistic Replication"
+    },
+    "d326809a4afb": {
+      "topicId": "sec-009",
+      "title": "Qwen3-Omni Technical Report"
+    },
+    "f53e30a2fd2f": {
+      "topicId": "sec-005",
+      "title": "Qwen3Guard Technical Report"
+    },
+    "bf6a2af2fae4": {
+      "topicId": "sec-006",
+      "title": "Tongyi DeepResearch Technical Report"
+    },
+    "7280df9d128f": {
+      "topicId": "sec-009",
+      "title": "Qwen3-VL Technical Report"
+    },
+    "596b2a660616": {
+      "topicId": "sec-009",
+      "title": "Wan-Move: Motion-controllable Video Generation via Latent Trajectory Guidance"
+    },
+    "2852acf57280": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition"
+    },
+    "646be3c6d6fd": {
+      "topicId": "sec-009",
+      "title": "Qwen3-VL-Embedding and Qwen3-VL-Reranker Technical Report"
+    },
+    "4bea9e7a4fde": {
+      "topicId": "sec-009",
+      "title": "Qwen3-TTS Technical Report"
+    },
+    "ae68be94e43b": {
+      "topicId": "sec-009",
+      "title": "Qwen3-ASR Technical Report"
+    },
+    "b27e94c0e444": {
+      "topicId": "sec-001",
+      "title": "Qwen3.5 official model repository"
+    },
+    "0b6c5715eff1": {
+      "topicId": "sec-007",
+      "title": "Qwen3-Coder-Next Technical Report"
+    },
+    "0f3c9b3e509b": {
+      "topicId": "sec-009",
+      "title": "Qwen3.5-Omni Technical Report"
+    },
+    "dcc2a4e23e3b": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image-2.0 Technical Report"
+    },
+    "b1ea8ef99aa6": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image-VAE-2.0 Technical Report"
+    },
+    "1b1d9002e5c1": {
+      "topicId": "sec-010",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments"
+    },
+    "da8a91b854c8": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image-Flash: Rethinking the Training Recipe for Few-Step Distillation"
+    },
+    "18aee1e312c7": {
+      "topicId": "sec-010",
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation"
+    },
+    "38b021a25c9d": {
+      "topicId": "sec-010",
+      "title": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models"
+    },
+    "47de10a51c61": {
+      "topicId": "sec-010",
+      "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System"
+    },
+    "377ca9181b2f": {
+      "topicId": "sec-006",
+      "title": "Qwen-AgentWorld: Language World Models for General Agents"
+    },
+    "6afff7ece7c7": {
+      "topicId": "sec-009",
+      "title": "Qwen-Image-2.0-RL Technical Report"
+    },
+    "818d0f6952d5": {
+      "topicId": "sec-006",
+      "title": "Qwen-Image-Agent: Bridging the Context Gap in Real-World Image Generation"
+    },
+    "c7a42ec7b633": {
+      "topicId": "sec-009",
+      "title": "Wan-Dancer: A Hierarchical Framework for Minute-scale Coherent Music-to-Dance Generation"
+    },
+    "bd9676771f4e": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio-VAE Technical Report"
+    },
+    "748614bd541a": {
+      "topicId": "sec-009",
+      "title": "Qwen-Music Technical Report"
+    },
+    "7226c52126c6": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm"
+    },
+    "dedba839071b": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio-3.0-Gen-Preview Technical Report"
+    },
+    "367a3839bdce": {
+      "topicId": "sec-006",
+      "title": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents"
+    },
+    "dec9078e52fd": {
+      "topicId": "sec-006",
+      "title": "Qwen-CUA: Native Computer Use for (almost) Everything"
+    },
+    "1dc1bdd96b31": {
+      "topicId": "sec-009",
+      "title": "Qwen-3D: A Generalist 3D Vision-Language Model for Spatial Understanding"
+    },
+    "8176e1c778f0": {
+      "topicId": "sec-009",
+      "title": "Wan-Animate-2: Pushing the Application Boundaries of Character Animation"
+    },
+    "18cd381d3ece": {
+      "topicId": "sec-002",
+      "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability"
+    },
+    "9a235dd7a329": {
+      "topicId": "sec-010",
+      "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving"
+    },
+    "76509a785bb5": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio-3.0-ASR Technical Report"
+    },
+    "61b2078e593f": {
+      "topicId": "sec-009",
+      "title": "Qwen-Audio-3.1-Realtime: Towards Reliable Agentic Voice Interaction"
+    },
+    "3376b6574e45": {
+      "topicId": "sec-006",
+      "title": "Qwen-Audio-Agent Technical Report"
+    },
+    "209f2a74a248": {
+      "topicId": "sec-001",
+      "title": "Qwen3.8 — 官方仓库说明（网页）"
+    },
+    "edf749da8166": {
+      "topicId": "sec-009",
+      "title": "Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding"
+    },
+    "b498bf3e0bd3": {
+      "topicId": "sec-001",
+      "title": "Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent"
+    },
+    "d6555a6ba492": {
+      "topicId": "sec-009",
+      "title": "Hunyuan3D 1.0: A Unified Framework for Text-to-3D and Image-to-3D Generation"
+    },
+    "a120bb5611ae": {
+      "topicId": "sec-009",
+      "title": "HunyuanVideo: A Systematic Framework For Large Video Generative Models"
+    },
+    "979d4d9ac517": {
+      "topicId": "sec-009",
+      "title": "Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation"
+    },
+    "3d6e281ca404": {
+      "topicId": "sec-009",
+      "title": "Hunyuan-Game: Industrial-grade Intelligent Game Creation Model"
+    },
+    "6226d10704d2": {
+      "topicId": "sec-002",
+      "title": "Hunyuan-TurboS: Advancing Large Language Models through Mamba-Transformer Synergy and Adaptive Chain-of-Thought"
+    },
+    "9ee9dc099523": {
+      "topicId": "sec-009",
+      "title": "Hunyuan3D 2.1: From Images to High-Fidelity 3D Assets with Production-Ready PBR Material"
+    },
+    "b365abc67f43": {
+      "topicId": "sec-009",
+      "title": "Hunyuan-GameCraft: High-dynamic Interactive Game Video Generation with Hybrid History Condition"
+    },
+    "898a5c42af61": {
+      "topicId": "sec-001",
+      "title": "Hunyuan-A13B Technical Report"
+    },
+    "493da7e05265": {
+      "topicId": "sec-009",
+      "title": "ARC-Hunyuan-Video-7B: Structured Video Comprehension of Real-World Shorts"
+    },
+    "6912e6ef27ce": {
+      "topicId": "sec-009",
+      "title": "HunyuanWorld 1.0: Generating Immersive, Explorable, and Interactive 3D Worlds from Words or Pixels"
+    },
+    "da0d6a3ab201": {
+      "topicId": "sec-001",
+      "title": "Hunyuan-MT Technical Report"
+    },
+    "352e4ecd7900": {
+      "topicId": "sec-009",
+      "title": "HunyuanImage 3.0 Technical Report"
+    },
+    "967a200deea8": {
+      "topicId": "sec-009",
+      "title": "WorldMirror: Universal 3D World Reconstruction with Any-Prior Prompting"
+    },
+    "7ac2ba5a0a50": {
+      "topicId": "sec-009",
+      "title": "HunyuanOCR Technical Report"
+    },
+    "79eacd6cdc71": {
+      "topicId": "sec-009",
+      "title": "HunyuanVideo 1.5 Technical Report"
+    },
+    "9e7d2ce8c6e5": {
+      "topicId": "sec-009",
+      "title": "Hunyuan-GameCraft-2: Instruction-following Interactive Game World Model"
+    },
+    "0fc91710a872": {
+      "topicId": "sec-009",
+      "title": "WorldPlay: Towards Long-Term Geometric Consistency for Real-Time Interactive World Modeling"
+    },
+    "60a78957af43": {
+      "topicId": "sec-009",
+      "title": "HY-Motion 1.0: Scaling Flow Matching Models for Text-To-Motion Generation"
+    },
+    "bd656ff3f251": {
+      "topicId": "sec-001",
+      "title": "HY-MT1.5 Technical Report"
+    },
+    "3e93e2892701": {
+      "topicId": "sec-010",
+      "title": "HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents"
+    },
+    "a80abb0e1245": {
+      "topicId": "sec-009",
+      "title": "HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds"
+    },
+    "f4ddd5e5364f": {
+      "topicId": "sec-001",
+      "title": "Hy-MT2: A Family of Fast, Efficient and Powerful Multilingual Translation Models in the Wild"
+    },
+    "6d243b79c1c9": {
+      "topicId": "sec-010",
+      "title": "Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack"
+    },
+    "6e7a78af74fa": {
+      "topicId": "sec-009",
+      "title": "HunyuanOCR-1.5: Making Lightweight OCR VLMs Faster and Better"
+    },
+    "94a7f913a9fb": {
+      "topicId": "sec-010",
+      "title": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents"
+    },
+    "9908c29b9a85": {
+      "topicId": "sec-010",
+      "title": "RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination"
+    },
+    "a00287722edd": {
+      "topicId": "sec-009",
+      "title": "Hunyuan3D-Buffalo 1.0: A Unified Multimodal Model for Scalable 3D Generation, Understanding, and Editing"
+    },
+    "b6ee77da3011": {
+      "topicId": "sec-006",
+      "title": "WorldClaw: Agentic 3D Open-World Generation at Scale"
+    },
+    "daf5a0e98aba": {
+      "topicId": "sec-009",
+      "title": "WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing"
+    },
+    "0d9a53dd0cb7": {
+      "topicId": "sec-004",
+      "title": "Hy-Memory-30B-A3B: Attributed Reinforcement Learning for Long-Term Memory Writing"
+    },
+    "c7bd7f7aba75": {
+      "topicId": "sec-010",
+      "title": "Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation"
+    },
+    "77fc5edf83a4": {
+      "topicId": "sec-009",
+      "title": "Seed-TTS: A Family of High-Quality Versatile Speech Generation Models"
+    },
+    "9963aa9ba289": {
+      "topicId": "sec-009",
+      "title": "Seed-ASR: Understanding Diverse Speech and Contexts with LLM-based Speech Recognition"
+    },
+    "f2f9949fa97b": {
+      "topicId": "sec-009",
+      "title": "Seed-Music: A Unified Framework for High Quality and Controlled Music Generation"
+    },
+    "8057f5565935": {
+      "topicId": "sec-010",
+      "title": "GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation"
+    },
+    "16fd3d71ebc1": {
+      "topicId": "sec-009",
+      "title": "Seedream 2.0: A Native Chinese-English Bilingual Image Generation Foundation Model"
+    },
+    "d67c4d0d386e": {
+      "topicId": "sec-004",
+      "title": "Seed1.5-Thinking: Advancing Superb Reasoning Models with Reinforcement Learning"
+    },
+    "8935b711b9e5": {
+      "topicId": "sec-009",
+      "title": "Seedream 3.0 Technical Report"
+    },
+    "9bfffa0d04a4": {
+      "topicId": "sec-009",
+      "title": "Seed1.5-VL Technical Report"
+    },
+    "739e7eef1507": {
+      "topicId": "sec-009",
+      "title": "Seedance 1.0: Exploring the Boundaries of Video Generation Models"
+    },
+    "c21261e4597e": {
+      "topicId": "sec-001",
+      "title": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters"
+    },
+    "1e29147b8642": {
+      "topicId": "sec-010",
+      "title": "GR-3 Technical Report"
+    },
+    "b65c2f8e0856": {
+      "topicId": "sec-009",
+      "title": "Seed LiveInterpret 2.0: End-to-end Simultaneous Speech-to-speech Translation with Your Voice"
+    },
+    "5b03135b1c91": {
+      "topicId": "sec-002",
+      "title": "Seed Diffusion: A Large-Scale Diffusion Language Model with High-Speed Inference"
+    },
+    "148c951d94d9": {
+      "topicId": "sec-009",
+      "title": "Seedream 4.0: Toward Next-generation Multimodal Image Generation"
+    },
+    "45e1c836e3e5": {
+      "topicId": "sec-009",
+      "title": "Seed3D 1.0: From Images to High-Fidelity Simulation-Ready 3D Assets"
+    },
+    "db95014b5ca0": {
+      "topicId": "sec-010",
+      "title": "GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation"
+    },
+    "704771f54eca": {
+      "topicId": "sec-009",
+      "title": "Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model"
+    },
+    "42cfb568089f": {
+      "topicId": "sec-001",
+      "title": "Seed1.8 Model Card: Towards Generalized Real-World Agency"
+    },
+    "47742b52bf93": {
+      "topicId": "sec-010",
+      "title": "GR-Dexter Technical Report"
+    },
+    "1713a9828c9f": {
+      "topicId": "sec-009",
+      "title": "Seedance 2.0: Advancing Video Generation for World Complexity"
+    },
+    "a04e6d9c3d86": {
+      "topicId": "sec-009",
+      "title": "Seed3D 2.0: Advancing High-Fidelity Simulation-Ready 3D Content Generation"
+    },
+    "ef742a03b510": {
+      "topicId": "sec-001",
+      "title": "Seed-OSS — 官方仓库说明（网页）"
+    },
+    "ab649fc24e62": {
+      "topicId": "sec-001",
+      "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity"
+    },
+    "7e857a5efd37": {
+      "topicId": "sec-001",
+      "title": "Seed2.1 Model Card: Agentic Intelligence for Productivity"
+    },
+    "0f2861fbc99f": {
+      "topicId": "sec-009",
+      "title": "Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model"
+    },
+    "8959f4c11e7c": {
+      "topicId": "sec-009",
+      "title": "Step-Audio: Unified Understanding and Generation in Intelligent Speech Interaction"
+    },
+    "3f19f78a0e51": {
+      "topicId": "sec-009",
+      "title": "Step-Video-TI2V Technical Report: A State-of-the-Art Text-Driven Image-to-Video Generation Model"
+    },
+    "7cb893e1460f": {
+      "topicId": "sec-009",
+      "title": "Step1X-Edit: A Practical Framework for General Image Editing"
+    },
+    "7e269c8b34b1": {
+      "topicId": "sec-009",
+      "title": "Step1X-3D: Towards High-Fidelity and Controllable Generation of Textured 3D Assets"
+    },
+    "6e25b274b24a": {
+      "topicId": "sec-009",
+      "title": "Step-Audio-AQAA: a Fully End-to-End Expressive Large Audio Language Model"
+    },
+    "09d6d96fd540": {
+      "topicId": "sec-009",
+      "title": "Step-Audio 2 Technical Report"
+    },
+    "de8a535de78e": {
+      "topicId": "sec-003",
+      "title": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding"
+    },
+    "acadc16e31a1": {
+      "topicId": "sec-009",
+      "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale"
+    },
+    "7f3f24e82683": {
+      "topicId": "sec-009",
+      "title": "Step-Audio-EditX Technical Report"
+    },
+    "1cc678c3aa70": {
+      "topicId": "sec-009",
+      "title": "Step-Audio-R1 Technical Report"
+    },
+    "4b8a0400dd67": {
+      "topicId": "sec-009",
+      "title": "ReasonEdit: Towards Reasoning-Enhanced Image Editing Models"
+    },
+    "c3dadac20e5e": {
+      "topicId": "sec-006",
+      "title": "Step-DeepResearch Technical Report"
+    },
+    "4a24f5938bf3": {
+      "topicId": "sec-009",
+      "title": "STEP3-VL-10B Technical Report"
+    },
+    "f19a493e3486": {
+      "topicId": "sec-002",
+      "title": "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters"
+    },
+    "bfd4d69d558e": {
+      "topicId": "sec-009",
+      "title": "Step-Audio-R1.5 Technical Report"
+    },
+    "209c8bae0762": {
+      "topicId": "sec-009",
+      "title": "StepAudio 2.5 Technical Report"
+    },
+    "4e5d0925112a": {
+      "topicId": "sec-009",
+      "title": "StepAudio 3 Gen Technical Report"
+    },
+    "053a4ce8e7b2": {
+      "topicId": "sec-009",
+      "title": "StepAudio 3 Music Technical Report"
+    },
+    "8435708c557a": {
+      "topicId": "sec-009",
+      "title": "StepAudio 3 Realtime Technical Report"
+    },
+    "f98e6e271c54": {
+      "topicId": "sec-009",
+      "title": "StepAudio 3 Realtime Technical Report"
+    },
+    "1351eaeb1e42": {
+      "topicId": "sec-001",
+      "title": "Step-3.7-Flash Model Card"
+    },
+    "398b02f18f14": {
+      "topicId": "sec-002",
+      "title": "MiniMax-01: Scaling Foundation Models with Lightning Attention"
+    },
+    "e532ecc1ca44": {
+      "topicId": "sec-009",
+      "title": "MiniMax-Speech: Intrinsic Zero-Shot Text-to-Speech with a Learnable Speaker Encoder"
+    },
+    "10f25589d5ab": {
+      "topicId": "sec-004",
+      "title": "MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention"
+    },
+    "ce7d8c76b802": {
+      "topicId": "sec-009",
+      "title": "Towards Scalable Pre-training of Visual Tokenizers for Generation"
+    },
+    "ddb5a7dbf011": {
+      "topicId": "sec-006",
+      "title": "The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence"
+    },
+    "ef6face2e688": {
+      "topicId": "sec-002",
+      "title": "MiniMax Sparse Attention"
+    },
+    "f44242cf7c09": {
+      "topicId": "sec-001",
+      "title": "MiniMax-H3 Model Card"
+    },
+    "3fe6e7c6d4a4": {
+      "topicId": "sec-001",
+      "title": "MiniMax-H3 — 官方仓库说明（网页）"
+    },
+    "4b724dd4b4e7": {
+      "topicId": "sec-001",
+      "title": "MiniMax-M2.1 — 官方仓库说明（网页）"
+    },
+    "3e64ce27a4d1": {
+      "topicId": "sec-001",
+      "title": "MiniMax-M3 Model Card"
+    },
+    "bebe3618af6b": {
+      "topicId": "sec-009",
+      "title": "MiniMax-Music3 Model Card"
+    },
+    "e708b053b6c5": {
+      "topicId": "sec-004",
+      "title": "A General Language Assistant as a Laboratory for Alignment"
+    },
+    "ef8a3d67384f": {
+      "topicId": "sec-004",
+      "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback"
+    },
+    "cf2d197ad533": {
+      "topicId": "sec-004",
+      "title": "Constitutional AI: Harmlessness from AI Feedback"
+    },
+    "444f15fd8434": {
+      "topicId": "sec-001",
+      "title": "Introducing Claude (Claude 1 release)"
+    },
+    "fcfaa66fde11": {
+      "topicId": "sec-001",
+      "title": "Claude 2 Model Card"
+    },
+    "2cd6b3583933": {
+      "topicId": "sec-001",
+      "title": "Claude 3 Model Card"
+    },
+    "33a38c43ea18": {
+      "topicId": "sec-001",
+      "title": "Claude Sonnet 3.5 Model Card"
+    },
+    "44f7f2341414": {
+      "topicId": "sec-001",
+      "title": "Model Card Addendum: Claude 3.5 Haiku and Upgraded Claude 3.5 Sonnet"
+    },
+    "f8a76ffb4115": {
+      "topicId": "sec-005",
+      "title": "Claude Sonnet 3.7 System Card"
+    },
+    "dd2c7dd6cac6": {
+      "topicId": "sec-005",
+      "title": "Claude Sonnet 4 and Opus 4 System Card"
+    },
+    "d79944b4a21c": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 4.1 System Card"
+    },
+    "61dfa7944a44": {
+      "topicId": "sec-005",
+      "title": "Claude Sonnet 4.5 System Card"
+    },
+    "5bc83e3dec05": {
+      "topicId": "sec-005",
+      "title": "Claude Haiku 4.5 System Card"
+    },
+    "264f0c065b87": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 4.5 System Card"
+    },
+    "030abc7979ba": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 4.6 System Card"
+    },
+    "0b5e8f019693": {
+      "topicId": "sec-005",
+      "title": "Claude Sonnet 4.6 System Card"
+    },
+    "6bfd8d27d4db": {
+      "topicId": "sec-005",
+      "title": "Mythos Preview System Card"
+    },
+    "b33dfd598f41": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 4.7 System Card"
+    },
+    "f605261ef498": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 4.8 System Card"
+    },
+    "58898f09f20d": {
+      "topicId": "sec-005",
+      "title": "Claude Fable 5 and Mythos 5 System Card"
+    },
+    "13594648ba1a": {
+      "topicId": "sec-005",
+      "title": "Claude Sonnet 5 System Card"
+    },
+    "a51195ddaa58": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 5 System Card"
+    },
+    "650bc85fd172": {
+      "topicId": "sec-005",
+      "title": "Claude Fable 5.1 and Mythos 5.1 System Card"
+    },
+    "b49aa485e87e": {
+      "topicId": "sec-005",
+      "title": "Claude Opus 5.5 System Card"
+    },
+    "e2ec47021438": {
+      "topicId": "sec-005",
+      "title": "System Card: Claude Sonnet 5.5"
+    },
+    "26afbe3ace9f": {
+      "topicId": "sec-005",
+      "title": "Claude Haiku 5.5 System Card"
+    },
+    "4e4f38028fa4": {
+      "topicId": "sec-001",
+      "title": "Learning to Generate Reviews and Discovering Sentiment"
+    },
+    "6647a4662ba3": {
+      "topicId": "sec-001",
+      "title": "Improving Language Understanding by Generative Pre-Training (GPT-1)"
+    },
+    "50adf2da37a8": {
+      "topicId": "sec-001",
+      "title": "Language Models are Unsupervised Multitask Learners (GPT-2)"
+    },
+    "9a40f5284efe": {
+      "topicId": "sec-004",
+      "title": "Fine-Tuning Language Models from Human Preferences"
+    },
+    "29864daaa4da": {
+      "topicId": "sec-001",
+      "title": "Language Models are Few-Shot Learners"
+    },
+    "80304e9f28be": {
+      "topicId": "sec-004",
+      "title": "Learning to summarize from human feedback"
+    },
+    "f64f93c93082": {
+      "topicId": "sec-009",
+      "title": "Zero-Shot Text-to-Image Generation"
+    },
+    "6e061face39c": {
+      "topicId": "sec-009",
+      "title": "Learning Transferable Visual Models From Natural Language Supervision"
+    },
+    "cec4b97dc130": {
+      "topicId": "sec-007",
+      "title": "Evaluating Large Language Models Trained on Code"
+    },
+    "9f3abee4a489": {
+      "topicId": "sec-006",
+      "title": "WebGPT: Browser-assisted question-answering with human feedback"
+    },
+    "339895873692": {
+      "topicId": "sec-004",
+      "title": "Training language models to follow instructions with human feedback"
+    },
+    "1bd57e72a483": {
+      "topicId": "sec-009",
+      "title": "Hierarchical Text-Conditional Image Generation with CLIP Latents"
+    },
+    "42910eacce87": {
+      "topicId": "sec-001",
+      "title": "Introducing ChatGPT (GPT-3.5 launch)"
+    },
+    "ca5632629b78": {
+      "topicId": "sec-009",
+      "title": "Robust Speech Recognition via Large-Scale Weak Supervision"
+    },
+    "714d23d0dcd4": {
+      "topicId": "sec-005",
+      "title": "GPT-4 System Card"
+    },
+    "c63c9f165cf3": {
+      "topicId": "sec-001",
+      "title": "GPT-4 Technical Report"
+    },
+    "8e958fb5083a": {
+      "topicId": "sec-009",
+      "title": "GPT-4V(ision) System Card"
+    },
+    "b97e87c6d23d": {
+      "topicId": "sec-009",
+      "title": "DALL-E 3 System Card"
+    },
+    "7b5d0d76922d": {
+      "topicId": "sec-009",
+      "title": "Sora: Video generation models as world simulators"
+    },
+    "92a2b3b63c06": {
+      "topicId": "sec-005",
+      "title": "GPT-4o System Card"
+    },
+    "02a01264ab20": {
+      "topicId": "sec-005",
+      "title": "OpenAI o1-preview and o1-mini System Card"
+    },
+    "9e18ccf8fed3": {
+      "topicId": "sec-005",
+      "title": "OpenAI o1 System Card"
+    },
+    "60af31ffc37c": {
+      "topicId": "sec-009",
+      "title": "Sora System Card"
+    },
+    "ee3e0cae3d96": {
+      "topicId": "sec-006",
+      "title": "Operator System Card"
+    },
+    "620de1ba255e": {
+      "topicId": "sec-005",
+      "title": "OpenAI o3-mini System Card"
+    },
+    "c163902d8561": {
+      "topicId": "sec-006",
+      "title": "Deep Research System Card"
+    },
+    "eba80de9862b": {
+      "topicId": "sec-005",
+      "title": "OpenAI GPT-4.5 System Card"
+    },
+    "5a0f6fc08502": {
+      "topicId": "sec-009",
+      "title": "Addendum to GPT-4o System Card: Native image generation"
+    },
+    "89987b74864c": {
+      "topicId": "sec-005",
+      "title": "OpenAI o3 and o4-mini System Card"
+    },
+    "8760de6743a0": {
+      "topicId": "sec-007",
+      "title": "Addendum to OpenAI o3 and o4-mini system card: Codex"
+    },
+    "4c9d64ae4c7e": {
+      "topicId": "sec-006",
+      "title": "ChatGPT Agent System Card"
+    },
+    "ffaf3e41328b": {
+      "topicId": "sec-005",
+      "title": "GPT-5 System Card"
+    },
+    "99c6e202ffec": {
+      "topicId": "sec-001",
+      "title": "gpt-oss-120b & gpt-oss-20b Model Card"
+    },
+    "936ecb6382ac": {
+      "topicId": "sec-007",
+      "title": "Addendum to GPT-5 system card: GPT-5-Codex"
+    },
+    "b4b53ed0a180": {
+      "topicId": "sec-009",
+      "title": "Sora 2 System Card"
+    },
+    "8bf84a916327": {
+      "topicId": "sec-005",
+      "title": "Addendum to GPT-5 System Card: Sensitive Conversations"
+    },
+    "9d962f2eba3a": {
+      "topicId": "sec-005",
+      "title": "Technical Report: Performance and baseline evaluations of gpt-oss-safeguard-120b and gpt-oss-safeguard-20b"
+    },
+    "db3293289826": {
+      "topicId": "sec-005",
+      "title": "GPT-5.1 Instant and GPT-5.1 Thinking System Card Addendum"
+    },
+    "6d7b69c2e328": {
+      "topicId": "sec-007",
+      "title": "GPT-5.1-Codex-Max System Card"
+    },
+    "d55da9bff4ca": {
+      "topicId": "sec-005",
+      "title": "Update to GPT-5 System Card: GPT-5.2"
+    },
+    "3b0f1e199b50": {
+      "topicId": "sec-007",
+      "title": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex"
+    },
+    "702b90bf9c5b": {
+      "topicId": "sec-007",
+      "title": "GPT-5.3-Codex System Card"
+    },
+    "03e9969458c1": {
+      "topicId": "sec-005",
+      "title": "GPT-5.3 Instant System Card"
+    },
+    "b06d67761baa": {
+      "topicId": "sec-005",
+      "title": "GPT-5.4 Thinking System Card"
+    },
+    "0d9aac791b2d": {
+      "topicId": "sec-009",
+      "title": "ChatGPT Images 2.0 System Card"
+    },
+    "5e3bfb1c60c3": {
+      "topicId": "sec-005",
+      "title": "GPT-5.5 System Card"
+    },
+    "b61c1137c6b6": {
+      "topicId": "sec-005",
+      "title": "GPT-5.5 Instant System Card"
+    },
+    "9b11eadaad28": {
+      "topicId": "sec-005",
+      "title": "GPT-Rosalind-5.5 System Card"
+    },
+    "ef37a5777047": {
+      "topicId": "sec-005",
+      "title": "GPT-5.6 Preview System Card"
+    },
+    "e002b727bfba": {
+      "topicId": "sec-009",
+      "title": "GPT-Live System Card"
+    },
+    "e32f03ceafa2": {
+      "topicId": "sec-005",
+      "title": "GPT-5.6 System Card"
+    },
+    "9db1f8223c13": {
+      "topicId": "sec-005",
+      "title": "GPT-5.6 — August Updates"
+    },
+    "b4f507f0a1df": {
+      "topicId": "sec-005",
+      "title": "GPT-6 Astra System Card"
+    },
+    "c14e1d99c401": {
+      "topicId": "sec-009",
+      "title": "ChatGPT Images 2.5 System Card"
+    },
+    "95718135e316": {
+      "topicId": "sec-005",
+      "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol"
+    },
+    "f2ab2bcd252f": {
+      "topicId": "sec-001",
+      "title": "GPT-6 Sol and GPT-6 Luna: October 2026 update"
+    },
+    "9c89f0433d41": {
+      "topicId": "sec-009",
+      "title": "Improving Image Generation with Better Captions"
+    },
+    "fffe3a68fde7": {
+      "topicId": "sec-002",
+      "title": "Attention Is All You Need"
+    },
+    "089636b0af5f": {
+      "topicId": "sec-001",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+    },
+    "3ac789d9d2e4": {
+      "topicId": "sec-001",
+      "title": "XLNet: Generalized Autoregressive Pretraining for Language Understanding"
+    },
+    "17008e3c8ad7": {
+      "topicId": "sec-002",
+      "title": "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations"
+    },
+    "8f6c2a5708e1": {
+      "topicId": "sec-001",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"
+    },
+    "fe5f915ea9ed": {
+      "topicId": "sec-001",
+      "title": "Towards a Human-like Open-Domain Chatbot"
+    },
+    "768d68390fc0": {
+      "topicId": "sec-004",
+      "title": "ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators"
+    },
+    "d64b9c65eb46": {
+      "topicId": "sec-003",
+      "title": "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding"
+    },
+    "6bf06fc30a71": {
+      "topicId": "sec-001",
+      "title": "mT5: A massively multilingual pre-trained text-to-text transformer"
+    },
+    "9711487dd15e": {
+      "topicId": "sec-002",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity"
+    },
+    "8b2aca8129d7": {
+      "topicId": "sec-004",
+      "title": "Finetuned Language Models Are Zero-Shot Learners"
+    },
+    "5c4c0a3a0e25": {
+      "topicId": "sec-001",
+      "title": "Scaling Language Models: Methods, Analysis & Insights from Training Gopher"
+    },
+    "c1537b7059bb": {
+      "topicId": "sec-002",
+      "title": "GLaM: Efficient Scaling of Language Models with Mixture-of-Experts"
+    },
+    "e323d8939bf6": {
+      "topicId": "sec-001",
+      "title": "LaMDA: Language Models for Dialog Applications"
+    },
+    "cc4cfcab8ab8": {
+      "topicId": "sec-007",
+      "title": "Competition-Level Code Generation with AlphaCode"
+    },
+    "062b6f36b6d9": {
+      "topicId": "sec-004",
+      "title": "Training Compute-Optimal Large Language Models"
+    },
+    "6f18e71de4f9": {
+      "topicId": "sec-001",
+      "title": "PaLM: Scaling Language Modeling with Pathways"
+    },
+    "0b816dd0d1c7": {
+      "topicId": "sec-009",
+      "title": "Flamingo: a Visual Language Model for Few-Shot Learning"
+    },
+    "804b3608c7ba": {
+      "topicId": "sec-001",
+      "title": "UL2: Unifying Language Learning Paradigms"
+    },
+    "36957d41ddac": {
+      "topicId": "sec-009",
+      "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding"
+    },
+    "3f28c33d459b": {
+      "topicId": "sec-009",
+      "title": "Scaling Autoregressive Models for Content-Rich Text-to-Image Generation"
+    },
+    "14d709542af0": {
+      "topicId": "sec-009",
+      "title": "PaLI: A Jointly-Scaled Multilingual Language-Image Model"
+    },
+    "1bf340cd3133": {
+      "topicId": "sec-009",
+      "title": "Imagen Video: High Definition Video Generation with Diffusion Models"
+    },
+    "ef9a97981624": {
+      "topicId": "sec-004",
+      "title": "Scaling Instruction-Finetuned Language Models"
+    },
+    "22db185bd812": {
+      "topicId": "sec-010",
+      "title": "RT-1: Robotics Transformer for Real-World Control at Scale"
+    },
+    "ec15236e4f0f": {
+      "topicId": "sec-009",
+      "title": "MusicLM: Generating Music From Text"
+    },
+    "57829fe805de": {
+      "topicId": "sec-010",
+      "title": "PaLM-E: An Embodied Multimodal Language Model"
+    },
+    "8c62474f16b4": {
+      "topicId": "sec-001",
+      "title": "PaLM 2 Technical Report"
+    },
+    "45e687b688d0": {
+      "topicId": "sec-010",
+      "title": "RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation"
+    },
+    "25318ad84639": {
+      "topicId": "sec-010",
+      "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control"
+    },
+    "638a86ff9fa0": {
+      "topicId": "sec-010",
+      "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models"
+    },
+    "48e0e7132a4e": {
+      "topicId": "sec-009",
+      "title": "PaLI-3 Vision Language Models: Smaller, Faster, Stronger"
+    },
+    "d55263de9dd8": {
+      "topicId": "sec-010",
+      "title": "RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches"
+    },
+    "df5fed72f86f": {
+      "topicId": "sec-010",
+      "title": "SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention"
+    },
+    "9a6ebeb3da56": {
+      "topicId": "sec-007",
+      "title": "AlphaCode 2 Technical Report"
+    },
+    "3ab751d9256f": {
+      "topicId": "sec-001",
+      "title": "Gemini 1.0 Technical Report"
+    },
+    "630574cbd125": {
+      "topicId": "sec-010",
+      "title": "AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents"
+    },
+    "c8af3806cd3c": {
+      "topicId": "sec-010",
+      "title": "RT-H: Action Hierarchies Using Language"
+    },
+    "5f6e1d531e71": {
+      "topicId": "sec-001",
+      "title": "Gemini 1.5 Technical Report"
+    },
+    "51608ccfca16": {
+      "topicId": "sec-001",
+      "title": "Gemma: Open Models Based on Gemini Research and Technology"
+    },
+    "f60549ddb73e": {
+      "topicId": "sec-007",
+      "title": "CodeGemma: Open Code Models Based on Gemma"
+    },
+    "c7527265601b": {
+      "topicId": "sec-001",
+      "title": "Gemma 2 Technical Report"
+    },
+    "dc7d714a5430": {
+      "topicId": "sec-009",
+      "title": "PaliGemma: A versatile 3B VLM for transfer"
+    },
+    "44610d8bd7c5": {
+      "topicId": "sec-009",
+      "title": "PaliGemma 2: A Family of Versatile VLMs for Transfer"
+    },
+    "624e57175467": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics: Bringing AI into the Physical World"
+    },
+    "82ba8a979992": {
+      "topicId": "sec-001",
+      "title": "Gemma 3 Technical Report"
+    },
+    "ada03664c674": {
+      "topicId": "sec-002",
+      "title": "Encoder-Decoder Gemma: Improving the Quality-Efficiency Trade-Off via Adaptation"
+    },
+    "ae590003d5a1": {
+      "topicId": "sec-006",
+      "title": "TxGemma: Efficient and Agentic LLMs for Therapeutics"
+    },
+    "c95324669aaf": {
+      "topicId": "sec-001",
+      "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities"
+    },
+    "84b0e59cec18": {
+      "topicId": "sec-009",
+      "title": "MedGemma Technical Report"
+    },
+    "21e71c640ac4": {
+      "topicId": "sec-001",
+      "title": "EmbeddingGemma: Powerful and Lightweight Text Representations"
+    },
+    "8c3639d8a415": {
+      "topicId": "sec-010",
+      "title": "SIMA 2: A Generalist Embodied Agent for Virtual Worlds"
+    },
+    "fb5a2a8027e9": {
+      "topicId": "sec-001",
+      "title": "T5Gemma 2: Seeing, Reading, and Understanding Longer"
+    },
+    "d814c4eb78e5": {
+      "topicId": "sec-001",
+      "title": "TranslateGemma Technical Report"
+    },
+    "2e6b970077bb": {
+      "topicId": "sec-009",
+      "title": "MedGemma 1.5 Technical Report"
+    },
+    "4ac10cc551e2": {
+      "topicId": "sec-009",
+      "title": "Gemini Embedding 2: A Native Multimodal Embedding Model from Gemini"
+    },
+    "365da12ee2ce": {
+      "topicId": "sec-001",
+      "title": "Gemma 4 Technical Report"
+    },
+    "2f57ce2e4503": {
+      "topicId": "sec-005",
+      "title": "Gemini Robotics 2: Safety Evaluations"
+    },
+    "9e1800020744": {
+      "topicId": "sec-001",
+      "title": "WeatherNext 3: Increasing resolution and performance of global weather models with raw observations"
+    },
+    "56db5d34f6c1": {
+      "topicId": "sec-009",
+      "title": "Nano Banana 2.1 Model Card"
+    },
+    "a7371929fdb7": {
+      "topicId": "sec-001",
+      "title": "Gemini 4 Argon Model Card"
+    },
+    "33a3b5424d41": {
+      "topicId": "sec-005",
+      "title": "Gemini 4 Argon Safety and Security Report"
+    },
+    "416d4198c273": {
+      "topicId": "sec-007",
+      "title": "CodeGemma Model Card"
+    },
+    "64eaab62d646": {
+      "topicId": "sec-002",
+      "title": "DiffusionGemma Model Card"
+    },
+    "83f3a3dc98ce": {
+      "topicId": "sec-001",
+      "title": "EmbeddingGemma 2 Model Card"
+    },
+    "be11adff01d6": {
+      "topicId": "sec-001",
+      "title": "EmbeddingGemma 2 Model Card"
+    },
+    "8d2fa9df465e": {
+      "topicId": "sec-001",
+      "title": "EmbeddingGemma Model Card"
+    },
+    "ef341fe7bdbf": {
+      "topicId": "sec-006",
+      "title": "FunctionGemma Model Card"
+    },
+    "7e0eaa713231": {
+      "topicId": "sec-001",
+      "title": "Gemini 2.0 Flash Model Card"
+    },
+    "e156c9d87724": {
+      "topicId": "sec-001",
+      "title": "Gemini 2.0 Flash-Lite Model Card"
+    },
+    "bab8f7f59398": {
+      "topicId": "sec-006",
+      "title": "Gemini 2.5 Computer Use Model Card"
+    },
+    "4b812d9df852": {
+      "topicId": "sec-004",
+      "title": "Gemini 2.5 Deep Think Model Card"
+    },
+    "ae9af674722b": {
+      "topicId": "sec-009",
+      "title": "Gemini 2.5 Flash and Gemini 2.5 Flash Image Model Card"
+    },
+    "82eedb066f0e": {
+      "topicId": "sec-001",
+      "title": "Gemini 2.5 Flash-Lite Model Card"
+    },
+    "a573cfcec4e3": {
+      "topicId": "sec-001",
+      "title": "Gemini 2.5 Pro Model Card"
+    },
+    "8306d3eb7224": {
+      "topicId": "sec-001",
+      "title": "Gemini 3 Flash Model Card"
+    },
+    "4a5f17838038": {
+      "topicId": "sec-009",
+      "title": "Gemini 3 Pro Image Model Card"
+    },
+    "9d775764a77f": {
+      "topicId": "sec-001",
+      "title": "Gemini 3 Pro Model Card"
+    },
+    "bf9221437e5e": {
+      "topicId": "sec-009",
+      "title": "Gemini 3.1 Flash Audio (Flash Live, TTS) Model Card"
+    },
+    "9a661134da49": {
+      "topicId": "sec-009",
+      "title": "Gemini 3.1 Flash Image Model Card"
+    },
+    "3cfb048c5a7a": {
+      "topicId": "sec-009",
+      "title": "Gemini 3.1 Flash-Lite Image Model Card"
+    },
+    "3af61982e688": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.1 Flash-Lite Model Card"
+    },
+    "260e754092bd": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.1 Pro Model Card"
+    },
+    "868e35012fa4": {
+      "topicId": "sec-009",
+      "title": "Gemini 3.5 Audio (Live Translate, Transcribe, Transcribe Live) Model Card"
+    },
+    "895f771c750e": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.5 Flash Model Card"
+    },
+    "353dfe86827d": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.5 Flash-Lite Model Card"
+    },
+    "daa912877bd2": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.6 Flash Model Card"
+    },
+    "831522ced61c": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.7 Flash Model Card"
+    },
+    "db11fe942637": {
+      "topicId": "sec-009",
+      "title": "Gemini 3.8 Audio (Live, Live Extended Thinking, Flash TTS, Flash-Lite TTS) Model Card"
+    },
+    "bd1ee02746bd": {
+      "topicId": "sec-001",
+      "title": "Gemini 3.8 Flash Model Card"
+    },
+    "704c3cc06b0e": {
+      "topicId": "sec-001",
+      "title": "Gemini Omni Flash Model Card"
+    },
+    "2ae30be54240": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics 1.5 Technical Report"
+    },
+    "98c3de807d7f": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics On-Device 2 Model Card"
+    },
+    "e1fe1e2ab4f2": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics On-Device Model Card"
+    },
+    "1f864539f3b8": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics-ER 1.6 Model Card"
+    },
+    "48bf23a4d62b": {
+      "topicId": "sec-010",
+      "title": "Gemini Robotics-ER 2 Model Card"
+    },
+    "61b2ff8998b7": {
+      "topicId": "sec-001",
+      "title": "Gemma 1 Model Card"
+    },
+    "7a5dede03edf": {
+      "topicId": "sec-001",
+      "title": "Gemma 3 Model Card"
+    },
+    "8560b97f1829": {
+      "topicId": "sec-001",
+      "title": "Gemma 3n Model Card"
+    },
+    "6f8eb7579f51": {
+      "topicId": "sec-001",
+      "title": "Gemma 4 Model Card"
+    },
+    "103a46a16f79": {
+      "topicId": "sec-009",
+      "title": "Imagen 4 Model Card"
+    },
+    "d8bf2adb6814": {
+      "topicId": "sec-009",
+      "title": "Lyria 3 Model Card"
+    },
+    "bd34f827c0e7": {
+      "topicId": "sec-009",
+      "title": "Lyria 3.5 Model Card"
+    },
+    "f3155b278230": {
+      "topicId": "sec-009",
+      "title": "MedGemma 1 Model Card"
+    },
+    "6a88f29126d4": {
+      "topicId": "sec-009",
+      "title": "MedGemma 1.5 Model Card"
+    },
+    "f2dc31982b30": {
+      "topicId": "sec-009",
+      "title": "PaliGemma 1 Model Card"
+    },
+    "cc7852a5f6cd": {
+      "topicId": "sec-009",
+      "title": "PaliGemma 2 Model Card"
+    },
+    "5b8138dd8ac6": {
+      "topicId": "sec-002",
+      "title": "RecurrentGemma Model Card"
+    },
+    "9d2942940d67": {
+      "topicId": "sec-002",
+      "title": "RecurrentGemma: Moving Past Transformers for Efficient Open Language Models"
+    },
+    "a05c236c789b": {
+      "topicId": "sec-005",
+      "title": "ShieldGemma 2 Model Card"
+    },
+    "06f7846f2838": {
+      "topicId": "sec-005",
+      "title": "ShieldGemma: Generative AI Content Moderation Based on Gemma"
+    },
+    "836c916e672a": {
+      "topicId": "sec-001",
+      "title": "T5Gemma Model Card"
+    },
+    "a74e5af229b6": {
+      "topicId": "sec-001",
+      "title": "TranslateGemma Model Card"
+    },
+    "095b88ef8f7c": {
+      "topicId": "sec-001",
+      "title": "TxGemma Model Card"
+    },
+    "277cab7cbde4": {
+      "topicId": "sec-009",
+      "title": "Veo 3 Model Card"
+    },
+    "4dbf56dc6e16": {
+      "topicId": "sec-009",
+      "title": "Veo 3.1 Lite Model Card"
+    },
+    "195590ea20b3": {
+      "topicId": "sec-001",
+      "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach"
+    },
+    "9f1aec172efa": {
+      "topicId": "sec-001",
+      "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension"
+    },
+    "21da665315f0": {
+      "topicId": "sec-001",
+      "title": "Recipes for building an open-domain chatbot"
+    },
+    "0d7e4dc4aa67": {
+      "topicId": "sec-002",
+      "title": "Beyond Goldfish Memory: Long-Term Open-Domain Conversation"
+    },
+    "aa12bdc6bb39": {
+      "topicId": "sec-001",
+      "title": "OPT: Open Pre-trained Transformer Language Models"
+    },
+    "7c5c16e03cee": {
+      "topicId": "sec-001",
+      "title": "No Language Left Behind: Scaling Human-Centered Machine Translation"
+    },
+    "f9b36bbc58c4": {
+      "topicId": "sec-001",
+      "title": "BlenderBot 3: a deployed conversational agent that continually learns to responsibly engage"
+    },
+    "2abad751771c": {
+      "topicId": "sec-001",
+      "title": "Galactica: A Large Language Model for Science"
+    },
+    "256aff6da7f6": {
+      "topicId": "sec-001",
+      "title": "LLaMA: Open and Efficient Foundation Language Models"
+    },
+    "b9355852177d": {
+      "topicId": "sec-009",
+      "title": "Segment Anything"
+    },
+    "1b7f39795088": {
+      "topicId": "sec-009",
+      "title": "DINOv2: Learning Robust Visual Features without Supervision"
+    },
+    "632857d0f863": {
+      "topicId": "sec-009",
+      "title": "ImageBind: One Embedding Space To Bind Them All"
+    },
+    "b1b17d739873": {
+      "topicId": "sec-009",
+      "title": "Scaling Speech Technology to 1,000+ Languages"
+    },
+    "43f1cdccc868": {
+      "topicId": "sec-009",
+      "title": "Simple and Controllable Music Generation"
+    },
+    "fb292d428011": {
+      "topicId": "sec-001",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models"
+    },
+    "d170c9f428d0": {
+      "topicId": "sec-009",
+      "title": "SeamlessM4T: Massively Multilingual & Multimodal Machine Translation"
+    },
+    "5d2ff6e99d49": {
+      "topicId": "sec-007",
+      "title": "Code Llama: Open Foundation Models for Code"
+    },
+    "f595ab27c394": {
+      "topicId": "sec-005",
+      "title": "Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations"
+    },
+    "132721d65a66": {
+      "topicId": "sec-009",
+      "title": "Seamless: Multilingual Expressive and Streaming Speech Translation"
+    },
+    "45750de366a9": {
+      "topicId": "sec-009",
+      "title": "Revisiting Feature Prediction for Learning Visual Representations from Video"
+    },
+    "3f3ef70edcb6": {
+      "topicId": "sec-009",
+      "title": "Chameleon: Mixed-Modal Early-Fusion Foundation Models"
+    },
+    "ae05c3745b70": {
+      "topicId": "sec-001",
+      "title": "The Llama 3 Herd of Models"
+    },
+    "17f53d922440": {
+      "topicId": "sec-009",
+      "title": "SAM 2: Segment Anything in Images and Videos"
+    },
+    "76563b99e803": {
+      "topicId": "sec-009",
+      "title": "Movie Gen: A Cast of Media Foundation Models"
+    },
+    "e6f6ae2d9397": {
+      "topicId": "sec-005",
+      "title": "Llama Guard 3-1B-INT4: Compact and Efficient Safeguard for Human-AI Conversations"
+    },
+    "39bf128ec714": {
+      "topicId": "sec-002",
+      "title": "Large Concept Models: Language Modeling in a Sentence Representation Space"
+    },
+    "987a72862413": {
+      "topicId": "sec-009",
+      "title": "Perception Encoder: The best visual embeddings are not at the output of the network"
+    },
+    "0d22a39ce3c8": {
+      "topicId": "sec-009",
+      "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning"
+    },
+    "c8a7576db9f3": {
+      "topicId": "sec-009",
+      "title": "DINOv3"
+    },
+    "ac74858d7b6c": {
+      "topicId": "sec-009",
+      "title": "SAM 3: Segment Anything with Concepts"
+    },
+    "e0a070cf4ab6": {
+      "topicId": "sec-009",
+      "title": "SAM 3D: 3Dfy Anything in Images"
+    },
+    "35510a6e1af0": {
+      "topicId": "sec-009",
+      "title": "SAM Audio: Segment Anything in Audio"
+    },
+    "a448fe3306d6": {
+      "topicId": "sec-009",
+      "title": "Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning"
+    },
+    "c4a7d6ba3a26": {
+      "topicId": "sec-009",
+      "title": "SAM 3D Body: Robust Full-Body Human Mesh Recovery"
+    },
+    "0c8bbee91963": {
+      "topicId": "sec-009",
+      "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning"
+    },
+    "36a5f348aff3": {
+      "topicId": "sec-005",
+      "title": "Muse Spark Safety & Preparedness Report"
+    },
+    "9acb8eca88a9": {
+      "topicId": "sec-001",
+      "title": "Llama 2 Model Card"
+    },
+    "aae681099148": {
+      "topicId": "sec-001",
+      "title": "Llama 3 Model Card"
+    },
+    "5a3e626f3ac0": {
+      "topicId": "sec-001",
+      "title": "Llama 3.1 Model Card"
+    },
+    "1e24d7aa1867": {
+      "topicId": "sec-001",
+      "title": "Llama 3.2 Text and Quantized Model Card"
+    },
+    "17429fbfee2f": {
+      "topicId": "sec-009",
+      "title": "Llama 3.2 Vision Model Card"
+    },
+    "049d04cfffb6": {
+      "topicId": "sec-001",
+      "title": "Llama 3.3 Model Card"
+    },
+    "4ba167d96c7e": {
+      "topicId": "sec-001",
+      "title": "Llama 4 Model Card"
+    },
+    "2cf0209b5679": {
+      "topicId": "sec-001",
+      "title": "Muse Glimmer 30B Model Card"
+    },
+    "8b29e5cada52": {
+      "topicId": "sec-005",
+      "title": "Muse Spark 1.1 Evaluation Report"
+    },
+    "d17355282d7f": {
+      "topicId": "sec-001",
+      "title": "GLM: General Language Model Pretraining with Autoregressive Blank Infilling"
+    },
+    "4e62950c773e": {
+      "topicId": "sec-009",
+      "title": "CogView: Mastering Text-to-Image Generation via Transformers"
+    },
+    "eab8c110f7db": {
+      "topicId": "sec-009",
+      "title": "CogView2: Faster and Better Text-to-Image Generation via Hierarchical Transformers"
+    },
+    "2632392d6761": {
+      "topicId": "sec-009",
+      "title": "CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers"
+    },
+    "242efd4fb8da": {
+      "topicId": "sec-001",
+      "title": "GLM-130B: An Open Bilingual Pre-trained Model"
+    },
+    "759c7ff2bb85": {
+      "topicId": "sec-007",
+      "title": "CodeGeeX: A Pre-Trained Model for Code Generation with Multilingual Benchmarking on HumanEval-X"
+    },
+    "b75d4bb474a1": {
+      "topicId": "sec-009",
+      "title": "CogVLM: Visual Expert for Pretrained Language Models"
+    },
+    "ade4d7cfc004": {
+      "topicId": "sec-006",
+      "title": "CogAgent: A Visual Language Model for GUI Agents"
+    },
+    "9677fd0e3988": {
+      "topicId": "sec-009",
+      "title": "CogCoM: A Visual Language Model with Chain-of-Manipulations Reasoning"
+    },
+    "76c6eb0bb28c": {
+      "topicId": "sec-009",
+      "title": "CogView3: Finer and Faster Text-to-Image Generation via Relay Diffusion"
+    },
+    "a913cbf8cf22": {
+      "topicId": "sec-009",
+      "title": "Inf-DiT: Upsampling Any-Resolution Image with Memory-Efficient Diffusion Transformer"
+    },
+    "0f367bb13341": {
+      "topicId": "sec-001",
+      "title": "ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools"
+    },
+    "197b91926123": {
+      "topicId": "sec-009",
+      "title": "CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer"
+    },
+    "391529554cc3": {
+      "topicId": "sec-009",
+      "title": "CogVLM2: Visual Language Models for Image and Video Understanding"
+    },
+    "f804db717743": {
+      "topicId": "sec-009",
+      "title": "GLM-4-Voice: Towards Intelligent and Human-Like End-to-End Spoken Chatbot"
+    },
+    "3b524432e536": {
+      "topicId": "sec-009",
+      "title": "GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning"
+    },
+    "6394f7e95a09": {
+      "topicId": "sec-001",
+      "title": "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models"
+    },
+    "49296acdabb2": {
+      "topicId": "sec-009",
+      "title": "GLM-TTS Technical Report"
+    },
+    "e253f6a15654": {
+      "topicId": "sec-007",
+      "title": "GLM-5: from Vibe Coding to Agentic Engineering"
+    },
+    "9681ce619072": {
+      "topicId": "sec-009",
+      "title": "GLM-OCR Technical Report"
+    },
+    "92437272c923": {
+      "topicId": "sec-001",
+      "title": "GLM-5.3 Model Card"
+    },
+    "c6280416bdde": {
+      "topicId": "sec-001",
+      "title": "GLM-5.3-Flash Model Card"
+    },
+    "1f15fad3e984": {
+      "topicId": "sec-001",
+      "title": "ERNIE: Enhanced Representation through Knowledge Integration"
+    },
+    "34cb2608b356": {
+      "topicId": "sec-001",
+      "title": "ERNIE 2.0: A Continual Pre-training Framework for Language Understanding"
+    },
+    "b2bb26e11470": {
+      "topicId": "sec-001",
+      "title": "ERNIE-GEN: An Enhanced Multi-Flow Pre-training and Fine-tuning Framework for Natural Language Generation"
+    },
+    "033bbaa9c8a4": {
+      "topicId": "sec-009",
+      "title": "ERNIE-ViL: Knowledge Enhanced Vision-Language Representations Through Scene Graph"
+    },
+    "bca9a138afb4": {
+      "topicId": "sec-001",
+      "title": "ERNIE-Gram: Pre-Training with Explicitly N-Gram Masked Language Modeling for Natural Language Understanding"
+    },
+    "5ed1310d573d": {
+      "topicId": "sec-002",
+      "title": "ERNIE-Doc: A Retrospective Long-Document Modeling Transformer"
+    },
+    "65b7d5c22746": {
+      "topicId": "sec-001",
+      "title": "ERNIE-M: Enhanced Multilingual Representation by Aligning Cross-lingual Semantics with Monolingual Corpora"
+    },
+    "a3f3757469ea": {
+      "topicId": "sec-001",
+      "title": "ERNIE 3.0: Large-scale Knowledge Enhanced Pre-training for Language Understanding and Generation"
+    },
+    "a10465e70343": {
+      "topicId": "sec-001",
+      "title": "ERNIE 3.0 Titan: Exploring Larger-scale Knowledge Enhanced Pre-training for Language Understanding and Generation"
+    },
+    "d0104ca8a2f4": {
+      "topicId": "sec-009",
+      "title": "ERNIE-ViLG: Unified Generative Pre-training for Bidirectional Vision-Language Generation"
+    },
+    "e8639b281bb3": {
+      "topicId": "sec-009",
+      "title": "ERNIE-ViL 2.0: Multi-view Contrastive Learning for Image-Text Pre-training"
+    },
+    "381ae7d325ad": {
+      "topicId": "sec-009",
+      "title": "ERNIE-Layout: Layout Knowledge Enhanced Pre-training for Visually-rich Document Understanding"
+    },
+    "2366272d92c1": {
+      "topicId": "sec-009",
+      "title": "ERNIE-ViLG 2.0: Improving Text-to-Image Diffusion Model with Knowledge-Enhanced Mixture-of-Denoising-Experts"
+    },
+    "1783e1f94ad3": {
+      "topicId": "sec-009",
+      "title": "ERNIE-SAT: Speech and Text Joint Pretraining for Cross-Lingual Multi-Speaker Text-to-Speech"
+    },
+    "c96e8e613abb": {
+      "topicId": "sec-009",
+      "title": "ERNIE-UniX2: A Unified Cross-lingual Cross-modal Framework for Understanding and Generation"
+    },
+    "536d0f79cadb": {
+      "topicId": "sec-007",
+      "title": "ERNIE-Code: Beyond English-Centric Cross-lingual Pretraining for Programming Languages"
+    },
+    "65658858a187": {
+      "topicId": "sec-004",
+      "title": "ERNIE 3.0 Tiny: Frustratingly Simple Method to Improve Task-Agnostic Distillation Generalization"
+    },
+    "3b55828dfede": {
+      "topicId": "sec-009",
+      "title": "ERNIE-Music: Text-to-Waveform Music Generation with Diffusion Models"
+    },
+    "2b3ec16ee9aa": {
+      "topicId": "sec-001",
+      "title": "ERNIE 4.5 Technical Report"
+    },
+    "4254a0cd8053": {
+      "topicId": "sec-001",
+      "title": "ERNIE 5.0 Technical Report"
+    },
+    "51d207dfd1ec": {
+      "topicId": "sec-009",
+      "title": "ERNIE-Image Technical Report"
+    },
+    "587db7980d60": {
+      "topicId": "sec-001",
+      "title": "Unified Language Model Pre-training for Natural Language Understanding and Generation"
+    },
+    "bf0ea9c0ef11": {
+      "topicId": "sec-001",
+      "title": "UniLMv2: Pseudo-Masked Language Models for Unified Language Model Pre-Training"
+    },
+    "8ef7fcd6fb6b": {
+      "topicId": "sec-009",
+      "title": "Language Is Not All You Need: Aligning Perception with Language Models"
+    },
+    "8deea4f5b798": {
+      "topicId": "sec-007",
+      "title": "Textbooks Are All You Need"
+    },
+    "2655084a7339": {
+      "topicId": "sec-009",
+      "title": "Kosmos-2: Grounding Multimodal Large Language Models to the World"
+    },
+    "c71fbb56c175": {
+      "topicId": "sec-001",
+      "title": "Textbooks Are All You Need II: phi-1.5 technical report"
+    },
+    "0ed149d82927": {
+      "topicId": "sec-009",
+      "title": "KOSMOS-2.5: A Multimodal Literate Model"
+    },
+    "bf34ab59da00": {
+      "topicId": "sec-001",
+      "title": "Phi-2 official model card"
+    },
+    "75d88253c00d": {
+      "topicId": "sec-001",
+      "title": "Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone"
+    },
+    "cc8cffc21ed9": {
+      "topicId": "sec-001",
+      "title": "Phi-3.5 official model card"
+    },
+    "85f0266d83a5": {
+      "topicId": "sec-004",
+      "title": "Phi-4 Technical Report"
+    },
+    "3ed6aae2b5ff": {
+      "topicId": "sec-006",
+      "title": "Magma: A Foundation Model for Multimodal AI Agents"
+    },
+    "327de3b436ec": {
+      "topicId": "sec-009",
+      "title": "Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs"
+    },
+    "325c894808fc": {
+      "topicId": "sec-004",
+      "title": "Phi-4-reasoning Technical Report"
+    },
+    "d23c566f2270": {
+      "topicId": "sec-002",
+      "title": "Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation"
+    },
+    "2760c0305198": {
+      "topicId": "sec-010",
+      "title": "FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies"
+    },
+    "0742d34107f0": {
+      "topicId": "sec-009",
+      "title": "Phi-4-reasoning-vision-15B Technical Report"
+    },
+    "8edc8c30f504": {
+      "topicId": "sec-004",
+      "title": "MAI-Thinking-1: Building a Hill-Climbing Machine"
+    },
+    "23a8908e7eaf": {
+      "topicId": "sec-010",
+      "title": "Rho: A Foundation for Efficiently Adaptable VLA Models"
+    },
+    "d6030208ae6b": {
+      "topicId": "sec-007",
+      "title": "MAI-Code-1.1-Flash Model Card"
+    },
+    "ddce5b415c79": {
+      "topicId": "sec-007",
+      "title": "MAI-Cyber-1-Flash Model Card"
+    },
+    "e93c0f84c3d2": {
+      "topicId": "sec-009",
+      "title": "MAI-Image-2.6 / MAI-Image-2.6-Flash Model Card"
+    },
+    "9495b81a40b7": {
+      "topicId": "sec-004",
+      "title": "MAI-Thinking-1 Model Card"
+    },
+    "b91dfa0e1226": {
+      "topicId": "sec-009",
+      "title": "MAI-Transcribe-2 Model Card"
+    },
+    "2ec17b329628": {
+      "topicId": "sec-009",
+      "title": "MAI-Transcribe-2-Streaming Model Card"
+    },
+    "3e7bbe6b77dd": {
+      "topicId": "sec-009",
+      "title": "MAI-Voice-2 Model Card"
+    },
+    "b73f4eeb79bf": {
+      "topicId": "sec-009",
+      "title": "MAI-Voice-2.1 Model Card"
+    },
+    "dfafccfe1641": {
+      "topicId": "sec-009",
+      "title": "MAI-Voice-2.1-Flash Model Card"
+    },
+    "f136305461ac": {
+      "topicId": "sec-002",
+      "title": "Mistral 7B"
+    },
+    "3062b56ccb5c": {
+      "topicId": "sec-002",
+      "title": "Mixtral of Experts"
+    },
+    "96498cbc566b": {
+      "topicId": "sec-009",
+      "title": "Pixtral 12B"
+    },
+    "eda4843a0d43": {
+      "topicId": "sec-004",
+      "title": "Magistral"
+    },
+    "06e3e9b3376f": {
+      "topicId": "sec-009",
+      "title": "Voxtral"
+    },
+    "b75492c4da83": {
+      "topicId": "sec-001",
+      "title": "Ministral 3"
+    },
+    "a98177a01bc2": {
+      "topicId": "sec-009",
+      "title": "Voxtral Realtime"
+    },
+    "7be48f2243fe": {
+      "topicId": "sec-009",
+      "title": "Voxtral TTS"
+    },
+    "bb77fa38613c": {
+      "topicId": "sec-004",
+      "title": "Leanstral"
+    },
+    "77f5d96bf83b": {
+      "topicId": "sec-010",
+      "title": "Robostral Navigate"
+    },
+    "8aa6dabef70d": {
+      "topicId": "sec-005",
+      "title": "Shieldstral"
+    },
+    "dcc729a569ae": {
+      "topicId": "sec-007",
+      "title": "Devstral-2-123B-Instruct-2512 Model Card"
+    },
+    "0ca11a1dc9ef": {
+      "topicId": "sec-004",
+      "title": "Leanstral-1.5-119B-A6B Model Card"
+    },
+    "f55f70690a45": {
+      "topicId": "sec-001",
+      "title": "Mistral Medium 3.5 Model Card"
+    },
+    "4d6b6f119574": {
+      "topicId": "sec-001",
+      "title": "Mistral-Large-3-675B-Instruct-2512 Model Card"
+    },
+    "3f0096b91c6d": {
+      "topicId": "sec-001",
+      "title": "Mistral-Small-4-119B-2603 Model Card"
+    },
+    "1d04badab72a": {
+      "topicId": "sec-001",
+      "title": "Grok-1 Model Card"
+    },
+    "804b969321e4": {
+      "topicId": "sec-001",
+      "title": "Grok 4.1 Model Card"
+    },
+    "ab351190ff12": {
+      "topicId": "sec-005",
+      "title": "Grok 4.20 System Card"
+    },
+    "9f3a9dd53ee0": {
+      "topicId": "sec-001",
+      "title": "Grok 4.5 Model Card"
+    },
+    "65d41ec08a2c": {
+      "topicId": "sec-001",
+      "title": "Grok 4.6 Model Card"
+    },
+    "08a6ea93c6b0": {
+      "topicId": "sec-005",
+      "title": "Grok 4.7 Model Card"
+    },
+    "9791375e4e15": {
+      "topicId": "sec-001",
+      "title": "Grok 4 Fast Model Card"
+    },
+    "00cea88e657f": {
+      "topicId": "sec-001",
+      "title": "Grok 4 Model Card"
+    },
+    "ed328a58f8ff": {
+      "topicId": "sec-007",
+      "title": "Grok Code Fast 1 Model Card"
+    },
+    "010ae27742ec": {
+      "topicId": "sec-001",
+      "title": "Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model"
+    },
+    "cd582f9f9b88": {
+      "topicId": "sec-001",
+      "title": "Command R official model card"
+    },
+    "3f9ff9146af9": {
+      "topicId": "sec-001",
+      "title": "Command R Plus official model card"
+    },
+    "1194f7748d17": {
+      "topicId": "sec-001",
+      "title": "Aya 23: Open Weight Releases to Further Multilingual Progress"
+    },
+    "5bf091a21212": {
+      "topicId": "sec-001",
+      "title": "Aya Expanse: Combining Research Breakthroughs for a New Multilingual Frontier"
+    },
+    "18fd09a6a376": {
+      "topicId": "sec-006",
+      "title": "Command A: An Enterprise-Ready Large Language Model"
+    },
+    "c2d42e42be1a": {
+      "topicId": "sec-009",
+      "title": "Aya Vision: Advancing the Frontier of Multilingual Multimodality"
+    },
+    "b1b8c0b15b6f": {
+      "topicId": "sec-001",
+      "title": "Command-A-Translate: Raising the Bar of Machine Translation with Difficulty Filtering"
+    },
+    "d29f6a83630f": {
+      "topicId": "sec-001",
+      "title": "Tiny Aya: Bridging Scale and Multilingual Depth"
+    },
+    "df42dee698f7": {
+      "topicId": "sec-001",
+      "title": "North Small Translate: Advanced Cost-Effective Translation (Cohere CAT+)"
+    },
+    "7f70306133ab": {
+      "topicId": "sec-009",
+      "title": "Cohere Transcribe Arabic Model Card"
+    },
+    "9fb0b314cf5f": {
+      "topicId": "sec-009",
+      "title": "Cohere Transcribe Model Card"
+    },
+    "cf7b3673bb47": {
+      "topicId": "sec-001",
+      "title": "Command A+ Model Card"
+    },
+    "c7837a846e45": {
+      "topicId": "sec-009",
+      "title": "North Micro Vision Instruct Model Card"
+    },
+    "19100dafa65b": {
+      "topicId": "sec-007",
+      "title": "North Mini Code 1.0 Model Card"
+    },
+    "3e149564920c": {
+      "topicId": "sec-003",
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism"
+    },
+    "0792dce8935b": {
+      "topicId": "sec-003",
+      "title": "Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model"
+    },
+    "2fce01986d02": {
+      "topicId": "sec-001",
+      "title": "Nemotron-4 15B Technical Report"
+    },
+    "878737bec1dc": {
+      "topicId": "sec-001",
+      "title": "Nemotron-4 340B Technical Report"
+    },
+    "6a39102470e9": {
+      "topicId": "sec-010",
+      "title": "Cosmos World Foundation Model Platform for Physical AI"
+    },
+    "5615f0d723e5": {
+      "topicId": "sec-010",
+      "title": "Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning"
+    },
+    "56d1e6ffba57": {
+      "topicId": "sec-009",
+      "title": "Cosmos-Transfer1: Conditional World Generation with Adaptive Multimodal Control"
+    },
+    "3a2231650cbc": {
+      "topicId": "sec-010",
+      "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots"
+    },
+    "39580b642f5f": {
+      "topicId": "sec-002",
+      "title": "Nemotron-H: A Family of Accurate and Efficient Hybrid Mamba-Transformer Models"
+    },
+    "808c6a29fd39": {
+      "topicId": "sec-004",
+      "title": "Llama-Nemotron: Efficient Reasoning Models"
+    },
+    "2053ce0ca74d": {
+      "topicId": "sec-010",
+      "title": "DreamGen: Unlocking Generalization in Robot Learning through Video World Models"
+    },
+    "af1a782393d9": {
+      "topicId": "sec-004",
+      "title": "AceReason-Nemotron: Advancing Math and Code Reasoning through Reinforcement Learning"
+    },
+    "d2ff082fb4f3": {
+      "topicId": "sec-004",
+      "title": "AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy"
+    },
+    "e04e3fef0989": {
+      "topicId": "sec-002",
+      "title": "NVIDIA Nemotron Nano 2: An Accurate and Efficient Hybrid Mamba-Transformer Reasoning Model"
+    },
+    "2038fc159466": {
+      "topicId": "sec-002",
+      "title": "Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search"
+    },
+    "11c96cba53d7": {
+      "topicId": "sec-010",
+      "title": "Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail"
+    },
+    "df18c2d0a7e2": {
+      "topicId": "sec-001",
+      "title": "NVIDIA Nemotron 3: Efficient and Open Intelligence"
+    },
+    "f6dc52ce2d90": {
+      "topicId": "sec-002",
+      "title": "Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning"
+    },
+    "1a3fc9d99c1c": {
+      "topicId": "sec-004",
+      "title": "Nemotron-Cascade: Scaling Cascaded Reinforcement Learning for General-Purpose Reasoning Models"
+    },
+    "8588f166f705": {
+      "topicId": "sec-010",
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos"
+    },
+    "335c7b86a56e": {
+      "topicId": "sec-004",
+      "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation"
+    },
+    "58561d34fc29": {
+      "topicId": "sec-009",
+      "title": "Nemotron 3 Nano Omni: Efficient and Open Multimodal Intelligence"
+    },
+    "57d43353385a": {
+      "topicId": "sec-010",
+      "title": "Cosmos 3: Omnimodal World Models for Physical AI"
+    },
+    "880ffe6b8f01": {
+      "topicId": "sec-002",
+      "title": "Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs"
+    },
+    "135b9e1d8ab1": {
+      "topicId": "sec-009",
+      "title": "Unified Audio Intelligence Without Regressing on Text Intelligence"
+    },
+    "f936397fd787": {
+      "topicId": "sec-007",
+      "title": "Post-Training Language Models for Gold-Medal Performance in Coding Competitions"
+    },
+    "8b74c0c0840e": {
+      "topicId": "sec-010",
+      "title": "Cosmos-Reason1 7B Model Card"
+    },
+    "ec0db00bd4e6": {
+      "topicId": "sec-001",
+      "title": "NVIDIA Nemotron 3 Nano 30B A3B Model Card"
+    },
+    "3d5d1a4d087e": {
+      "topicId": "sec-001",
+      "title": "NVIDIA Nemotron 3 Ultra Technical Report"
+    },
+    "a443c0bdcbf6": {
+      "topicId": "sec-009",
+      "title": "NVIDIA Nemotron Nano V2 VL"
+    },
+    "61bed72b2c0b": {
+      "topicId": "sec-002",
+      "title": "Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning"
+    },
+    "690e55140064": {
+      "topicId": "sec-001",
+      "title": "The Amazon Nova Family of Models: Technical Report and Model Card"
+    },
+    "2eb123395d02": {
+      "topicId": "sec-009",
+      "title": "Amazon Nova Sonic: Technical Report and Model Card"
+    },
+    "ae353cecc687": {
+      "topicId": "sec-001",
+      "title": "Amazon Nova Premier: Technical Report and Model Card"
+    },
+    "6b4edec89d99": {
+      "topicId": "sec-005",
+      "title": "Evaluating the Critical Risks of Amazon's Nova Premier under the Frontier Model Safety Framework"
+    },
+    "ac7e77db39ff": {
+      "topicId": "sec-009",
+      "title": "Amazon Nova Multimodal Embeddings: Technical Report and Model Card"
+    },
+    "19bbd783eb51": {
+      "topicId": "sec-001",
+      "title": "Amazon Nova 2: Multimodal Reasoning and Generation Models"
+    },
+    "b2948114521d": {
+      "topicId": "sec-005",
+      "title": "Evaluating Nova 2.0 Lite model under Amazon's Frontier Model Safety Framework"
+    },
+    "06ca7280be40": {
+      "topicId": "sec-006",
+      "title": "AWS AI Service Cards: Amazon Nova Act"
+    },
+    "14912a3e38c4": {
+      "topicId": "sec-001",
+      "title": "AWS AI Service Cards: Amazon Nova Micro, Lite, Pro, and Premier"
+    },
+    "d0465b31d968": {
+      "topicId": "sec-009",
+      "title": "Amazon Nova 2.5 Sonic AI Service Card"
+    },
+    "5f960be8614b": {
+      "topicId": "sec-007",
+      "title": "Granite Code Models: A Family of Open Foundation Models for Code Intelligence"
+    },
+    "3a8fa09fbc39": {
+      "topicId": "sec-006",
+      "title": "Granite-Function Calling Model: Introducing Function Calling Abilities via Multi-task Learning of Granular Tasks"
+    },
+    "dd3dc1c9f96a": {
+      "topicId": "sec-007",
+      "title": "Scaling Granite Code Models to 128K Context"
+    },
+    "bb858fbca4f7": {
+      "topicId": "sec-001",
+      "title": "Granite 3.0 Language Models Technical Report"
+    },
+    "ede6e5e8c5b6": {
+      "topicId": "sec-005",
+      "title": "Granite Guardian"
+    },
+    "16b830ef8da4": {
+      "topicId": "sec-009",
+      "title": "Granite Vision: a lightweight, open-source multimodal model for enterprise Intelligence"
+    },
+    "9b985beeabf4": {
+      "topicId": "sec-001",
+      "title": "Granite Embedding Models"
+    },
+    "2b592aa93578": {
+      "topicId": "sec-009",
+      "title": "Granite-speech: open-source speech-aware LLMs with strong English ASR capabilities"
+    },
+    "e5c75df770c6": {
+      "topicId": "sec-001",
+      "title": "Granite Embedding R2 Models"
+    },
+    "8dba2f4b776e": {
+      "topicId": "sec-001",
+      "title": "Granite 4.0 Language Models official documentation"
+    },
+    "97ed8fcf9457": {
+      "topicId": "sec-001",
+      "title": "Granite Embedding Multilingual R2 Models"
+    },
+    "42e0bfa60a2f": {
+      "topicId": "sec-009",
+      "title": "Design of the IBM Granite 5.0 TurboCTC ASR Model"
+    },
+    "d6b0b61d1d27": {
+      "topicId": "sec-001",
+      "title": "Jurassic-1: Technical Details and Evaluation"
+    },
+    "1ef206774194": {
+      "topicId": "sec-002",
+      "title": "Jamba: A Hybrid Transformer-Mamba Language Model"
+    },
+    "19ec2fbbbf27": {
+      "topicId": "sec-002",
+      "title": "Jamba-1.5: Hybrid Transformer-Mamba Models at Scale"
+    },
+    "da02e4567734": {
+      "topicId": "sec-001",
+      "title": "Baichuan-7B official model repository"
+    },
+    "bf2b12c0c69f": {
+      "topicId": "sec-001",
+      "title": "Baichuan 2: Open Large-scale Language Models"
+    },
+    "52d0a7c339c9": {
+      "topicId": "sec-004",
+      "title": "BaichuanSEED: Sharing the Potential of ExtensivE Data Collection and Deduplication by Introducing a Competitive Large Language Model Baseline"
+    },
+    "d13d5f18fbf7": {
+      "topicId": "sec-009",
+      "title": "Baichuan-Omni Technical Report"
+    },
+    "d47c5fc3013d": {
+      "topicId": "sec-004",
+      "title": "Baichuan Alignment Technical Report"
+    },
+    "faa192b3eb61": {
+      "topicId": "sec-009",
+      "title": "Baichuan-Omni-1.5 Technical Report"
+    },
+    "3aece1b211e8": {
+      "topicId": "sec-001",
+      "title": "Baichuan-M1: Pushing the Medical Capability of Large Language Models"
+    },
+    "f80babac4e99": {
+      "topicId": "sec-009",
+      "title": "Baichuan-Audio: A Unified Framework for End-to-End Speech Interaction"
+    },
+    "d816a18ed802": {
+      "topicId": "sec-005",
+      "title": "Baichuan-M2: Scaling Medical Capability with Large Verifier System"
+    },
+    "9a81552c2334": {
+      "topicId": "sec-001",
+      "title": "Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making"
+    },
+    "353792dd8dbc": {
+      "topicId": "sec-006",
+      "title": "Baichuan-M4: A Clinical-Grade Medical Agent System for Continuous Care"
+    },
+    "6d4822e467de": {
+      "topicId": "sec-001",
+      "title": "Yi: Open Foundation Models by 01.AI"
+    },
+    "763a48be60ac": {
+      "topicId": "sec-007",
+      "title": "Yi-Coder official model documentation"
+    },
+    "2f07bbfd8da5": {
+      "topicId": "sec-001",
+      "title": "Yi-Lightning Technical Report"
+    },
+    "f1fc6108744b": {
+      "topicId": "sec-004",
+      "title": "MiMo: Unlocking the Reasoning Potential of Language Model -- From Pretraining to Posttraining"
+    },
+    "8966f26e6b46": {
+      "topicId": "sec-009",
+      "title": "MiMo-VL Technical Report"
+    },
+    "272d50a59eb3": {
+      "topicId": "sec-010",
+      "title": "MiMo-Embodied: X-Embodied Foundation Model Technical Report"
+    },
+    "8701f61bfde9": {
+      "topicId": "sec-009",
+      "title": "MiMo-Audio: Audio Language Models are Few-Shot Learners"
+    },
+    "69ba02ebfb71": {
+      "topicId": "sec-001",
+      "title": "MiMo-V2-Flash Technical Report"
+    },
+    "2fa61c0cc577": {
+      "topicId": "sec-004",
+      "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement"
+    },
+    "ee6cc52a3b87": {
+      "topicId": "sec-002",
+      "title": "LongCat-Flash Technical Report"
+    },
+    "44ae499b40fe": {
+      "topicId": "sec-004",
+      "title": "Introducing LongCat-Flash-Thinking: A Technical Report"
+    },
+    "ddd0bbfeb045": {
+      "topicId": "sec-009",
+      "title": "LongCat-Audio-Codec: An Audio Tokenizer and Detokenizer Solution Designed for Speech Large Language Models"
+    },
+    "6eb5178b0776": {
+      "topicId": "sec-009",
+      "title": "LongCat-Video Technical Report"
+    },
+    "fc0bbb1b1a11": {
+      "topicId": "sec-009",
+      "title": "LongCat-Flash-Omni Technical Report"
+    },
+    "0043ab2aca56": {
+      "topicId": "sec-009",
+      "title": "LongCat-Image Technical Report"
+    },
+    "43cca9916c1b": {
+      "topicId": "sec-002",
+      "title": "Efficient Context Scaling with LongCat ZigZag Attention"
+    },
+    "065e7f7768cc": {
+      "topicId": "sec-004",
+      "title": "LongCat-Flash-Thinking-2601 Technical Report"
+    },
+    "1ec07ca4e579": {
+      "topicId": "sec-004",
+      "title": "LongCat-Flash-Prover: Advancing Native Formal Reasoning via Agentic Tool-Integrated Reinforcement Learning"
+    },
+    "6d7b3363dde4": {
+      "topicId": "sec-009",
+      "title": "LongCat-Next: Lexicalizing Modalities as Discrete Tokens"
+    },
+    "d754c36c1b46": {
+      "topicId": "sec-009",
+      "title": "LongCat-AudioDiT: High-Fidelity Diffusion Text-to-Speech in the Waveform Latent Space"
+    },
+    "6675cdefeb6f": {
+      "topicId": "sec-009",
+      "title": "LongCat-Video-Avatar 1.5 Technical Report"
+    },
+    "dea3c66d7e0d": {
+      "topicId": "sec-002",
+      "title": "LongCat Sparse Attention: Taming the Lightning via Streaming-aware Hierarchical Cross-Layer Indexing"
+    },
+    "cb5f60006344": {
+      "topicId": "sec-006",
+      "title": "LongCat-DeepResearch Technical Report"
+    }
+  }
+}

@@ -15,6 +15,7 @@ import re
 import shutil
 import subprocess
 from zoneinfo import ZoneInfo
+from validate_reading_report_topics import load_report_topics
 
 ROOT = Path(__file__).resolve().parents[1]
 QUALITY = {
@@ -47,6 +48,7 @@ def main():
     catalog = json.loads(catalog_path.read_text(encoding='utf-8-sig'))
     public_path = ROOT / '_data/reading.json'
     public = json.loads(public_path.read_text(encoding='utf-8'))
+    report_topics = load_report_topics(public['reports'], ROOT)
     publication = json.loads((ROOT / '_data/reading-publication.json').read_text(encoding='utf-8'))
     pilot = {r['id']:r for r in publication['reports']}
     base_url = publication['asset_base_url']
@@ -62,7 +64,9 @@ def main():
     assert set(records).issubset(by_id)
     timestamp = datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(timespec='seconds')
     inventory = {'created_at':timestamp,'guide':'Guide: no material change','scope':'Public catalog, finished editions, two-report layout pilot',
-                 'input_hashes':{'catalog':digest(catalog_path),'public_metadata':digest(public_path)},'sources':[], 'editions':[]}
+                 'input_hashes':{'catalog':digest(catalog_path),'public_metadata':digest(public_path),
+                                 'report_topics':digest(ROOT/'_data/reading-report-topics.json'),
+                                 'shared_taxonomy':digest(ROOT/'_data/reading-learning.json')},'sources':[], 'editions':[]}
     for row in catalog:
         file = source / row['local_path']
         assert file.is_file(), file
@@ -82,7 +86,7 @@ def main():
     published=[]
     for report in public['reports']:
         r=dict(report); source_record=by_id[r['id']]
-        r.update(pages=source_record.get('pages'),version=source_record.get('downloaded_version') or source_record.get('version') or '',
+        r.update(topicId=report_topics[r['id']],pages=source_record.get('pages'),version=source_record.get('downloaded_version') or source_record.get('version') or '',
                  translation='generated' if r['id'] in records else 'none',assets=None,quality=None)
         if r['id'] in pilot:
             publication_record=pilot[r['id']]

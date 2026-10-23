@@ -54,13 +54,24 @@ function localizeVector(source, language, item) {
   const layout = vectorLayouts[name] || {};
   const nodeIds = new Set((explorer[name]?.vectorEdges || []).flatMap(([from, to]) => [from, to]));
   const labels = [...svg.querySelectorAll('text')];
-  const boxes = [...svg.querySelectorAll('path')].flatMap(shape => {
+  const closedBounds = shape => {
     const commands = shape.getAttribute('d') || '';
-    if (!/[zZ]/.test(commands) || !/[qQ]/.test(commands) || /fill:\s*none/.test(shape.getAttribute('style') || '')) return [];
+    if (!/[zZ]/.test(commands) || !/[qQ]/.test(commands)) return null;
     const coordinates = commands.match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
     const horizontal = coordinates.filter((value, index) => index % 2 === 0);
     const vertical = coordinates.filter((value, index) => index % 2 === 1);
-    return [{ element: shape, left: Math.min(...horizontal), right: Math.max(...horizontal), top: Math.min(...vertical), bottom: Math.max(...vertical) }];
+    return { left:Math.min(...horizontal), right:Math.max(...horizontal), top:Math.min(...vertical), bottom:Math.max(...vertical) };
+  };
+  const outlines = [...svg.querySelectorAll('path')].filter(shape => !shape.closest('defs') && /fill:\s*none/.test(shape.getAttribute('style') || '')).flatMap(shape => {
+    const bounds = closedBounds(shape);
+    return bounds ? [{ element:shape, ...bounds }] : [];
+  });
+  const boxes = [...svg.querySelectorAll('path')].flatMap(shape => {
+    if (shape.closest('defs') || /fill:\s*none/.test(shape.getAttribute('style') || '')) return [];
+    const bounds = closedBounds(shape);
+    if (!bounds) return [];
+    const matchingOutlines = outlines.filter(outline => ['left','right','top','bottom'].every(side => Math.abs(outline[side] - bounds[side]) < 0.01));
+    return [{ element:shape, ...bounds, outlines:matchingOutlines.map(outline => outline.element) }];
   });
   const labelBoxes = labels.map(label => {
     const center = Number(label.getAttribute('x')) + Number(label.getAttribute('data-original-width')) / 2;
@@ -175,7 +186,10 @@ function localizeVector(source, language, item) {
   for (const [index, box] of boxes.entries()) {
     if (!box.element) continue;
     const before = originalBoxes[index];
-    rewriteCoordinates(box.element, (value, coordinate) => coordinate % 2 ? box.top + (value - before.top) * (box.bottom - box.top) / (before.bottom - before.top) : box.left + (value - before.left) * (box.right - box.left) / (before.right - before.left));
+    for (const shape of [box.element, ...box.outlines]) {
+      if (shape !== box.element) shape.setAttribute('data-node-outline',box.element.parentElement.id);
+      rewriteCoordinates(shape, (value, coordinate) => coordinate % 2 ? box.top + (value - before.top) * (box.bottom - box.top) / (before.bottom - before.top) : box.left + (value - before.left) * (box.right - box.left) / (before.right - before.left));
+    }
   }
   svg.setAttribute('lang', language);
   const output = svg.outerHTML;

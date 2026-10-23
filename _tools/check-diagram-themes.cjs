@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
+const { themeFigure } = require('./figure-themes.cjs');
 
 const root = path.join(__dirname,'..');
 const controller = fs.readFileSync(path.join(root,'assets/js/writing-diagram-style.js'),'utf8');
@@ -16,6 +17,38 @@ function canonicalFigure(source) {
   const result = document.documentElement.outerHTML;
   dom.window.close();
   return result;
+}
+
+function vectorChecks() {
+  for (const name of ['spec-repair-06','spec-repair-07','spec-repair-15']) {
+    const source = fs.readFileSync(path.join(root,'_data/writing/figures',name + '.svg'),'utf8');
+    const original = new JSDOM(source,{ contentType:'image/svg+xml' });
+    for (const theme of styles) {
+      const themed = new JSDOM(themeFigure(source,'flow',theme),{ contentType:'image/svg+xml' });
+      assert.deepEqual([...themed.window.document.querySelectorAll('defs')].map(node => node.outerHTML),[...original.window.document.querySelectorAll('defs')].map(node => node.outerHTML),`${name}: definitions must not inherit node stroke styling`);
+      themed.window.close();
+    }
+    original.window.close();
+    for (const language of ['zh','en','ja']) for (const theme of styles) {
+      const file = path.join(root,'writing/figures',language,theme === 'engineering' ? 'engineering' : '',name + '.svg');
+      const generated = new JSDOM(fs.readFileSync(file,'utf8'),{ contentType:'image/svg+xml' });
+      const document = generated.window.document;
+      const patternedNodes = [...document.querySelectorAll('[data-diagram-fill="soft"]')];
+      assert(patternedNodes.length,`${name}/${language}: patterned nodes need a legible solid fill`);
+      const bounds = shape => {
+        const values = shape.getAttribute('d').match(/-?\d+(?:\.\d+)?/g).map(Number);
+        const horizontal = values.filter((value,index) => index % 2 === 0);
+        const vertical = values.filter((value,index) => index % 2 === 1);
+        return [Math.min(...horizontal),Math.max(...horizontal),Math.min(...vertical),Math.max(...vertical)];
+      };
+      for (const fill of patternedNodes) {
+        const outlines = [...document.querySelectorAll('[data-node-outline]')].filter(shape => shape.getAttribute('data-node-outline') === fill.parentElement.id);
+        assert(outlines.length,`${name}/${language}: paired node outline missing`);
+        for (const outline of outlines) assert(bounds(outline).every((value,index) => Math.abs(value - bounds(fill)[index]) < 0.001),`${name}/${language}: fill and outline must resize together`);
+      }
+      generated.window.close();
+    }
+  }
 }
 
 async function controllerChecks() {
@@ -79,6 +112,7 @@ async function controllerChecks() {
 
 async function main() {
   await controllerChecks();
+  vectorChecks();
   let figures = 0;
   for (const language of ['zh','en','ja']) {
     const directory = path.join(root,'writing/figures',language);
@@ -114,7 +148,7 @@ async function main() {
   for (const renderer of ['trajectory-map.js','automation-blueprint.js','figure-viewer.js']) {
     assert(!fs.readFileSync(path.join(root,'assets/js',renderer),'utf8').includes('createControl'),`${renderer}: style selector must only live in page navigation`);
   }
-  console.log(`Diagram themes: ${figures} SVG variants, ${routes.length} routes, controller persistence/storage/language checks passed.`);
+  console.log(`Diagram themes: ${figures} SVG variants, ${routes.length} routes; controller, SVG definitions, solid node fills and paired-outline checks passed.`);
 }
 
 main().then(() => process.exit(0)).catch(error => { console.error(error); process.exit(1); });

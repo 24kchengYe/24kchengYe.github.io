@@ -26,14 +26,19 @@ function themeFigure(source,kind,theme) {
   if (wrapper === svg) {
     const nodeBoxes = new Set([...svg.querySelectorAll('[data-node-box]')].map(label => label.getAttribute('data-node-box')));
     for (const shape of svg.querySelectorAll('path,line,polyline,rect,circle,ellipse,polygon')) {
+      if (shape.closest('defs')) continue;
       const stroke = shape.style.stroke || shape.getAttribute('stroke');
       const fill = shape.style.fill || shape.getAttribute('fill');
       const role = colorRole(stroke);
       if (role) shape.setAttribute('data-diagram-stroke',role);
       if (fill === '#ffffff' || fill === '#fff' || fill === 'white') shape.setAttribute('data-diagram-fill',role && kind === 'flow' ? 'node' : 'paper');
-      if (nodeBoxes.has(shape.parentElement.id) && shape.getAttribute('data-diagram-fill') === 'node') shape.setAttribute('data-diagram-node','');
+      if (nodeBoxes.has(shape.parentElement.id)) {
+        if (kind === 'flow' && /^url\(/.test(fill || '')) shape.setAttribute('data-diagram-fill','soft');
+        if (['node','soft'].includes(shape.getAttribute('data-diagram-fill'))) shape.setAttribute('data-diagram-node','');
+      }
     }
     for (const text of svg.querySelectorAll('text')) {
+      if (text.closest('defs')) continue;
       const role = colorRole(text.style.fill || text.getAttribute('fill'));
       if (role) text.setAttribute('data-diagram-text',role === 'accent' ? 'accent' : text.getAttribute('data-type-role') === 'secondary' ? 'secondary' : 'primary');
     }

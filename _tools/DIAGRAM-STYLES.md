@@ -6,12 +6,14 @@ Every article has one style picker in the top-right page navigation, next to the
 |---|---|---|
 | Presentation | Editorial illustration integrated into the article | Bounded workbench with a persistent toolbar |
 | Surface | White, no canvas grid | Cool neutral dot grid |
-| Nodes | Flat, small-radius outlines; selected groups use sparse stippling | Rounded, elevated cards with an inset header strip |
+| Nodes | Flat, small-radius outlines with solid, quiet fills | Rounded, elevated cards with an inset header strip |
 | Groups | Light, flat boundaries | Tinted containers with explicit separation |
 | Controls | Quiet text controls | Boxed controls on a distinct toolbar |
 | Status | Restrained green / warm accents | Consistent state accents and card strips |
 
 The two styles share the same text, numerical results, graph topology and layout geometry. Theme changes must preserve the current view, selected node, replay cursor and camera. Do not turn semantic shapes or state colors into arbitrary decorations. Charts retain their original encodings.
+
+Keep node text on a solid background. Decorative stippling in imported flow nodes is replaced by a quiet fill; chart encodings are preserved. SVG definitions (patterns, clip paths, markers) must not receive node/connector theme attributes. When translated text expands a composite SVG node, resize its fill and separate outline together. The theme check covers these three regressions using the imported repair diagrams.
 
 ## Source files
 

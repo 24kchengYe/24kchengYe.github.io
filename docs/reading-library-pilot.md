@@ -1,9 +1,28 @@
 # Reading library pilot
 
-The library preview lives at `/reading/library-preview/`. The existing `/reading/`
-index remains available and links to the pilot. It uses the homepage's shared
-font, width, navigation and language switch. CSS book spines provide a shelf view;
-the list view, search and technology filter use the same bibliography.
+The bookshelf is now the default `/reading/` page. The old
+`/reading/library-preview/` URL redirects here with its query and fragment intact;
+the six PDF assets keep their existing URLs. The old separate list landing page
+is replaced by the bookshelf's Index view. It uses the homepage's shared font,
+width, navigation and language switch.
+
+Three collections share one interface:
+
+- **Technical reports**: the existing 643-entry bibliography, core/selected/all
+  scopes, technology search and the R1/V3 reader.
+- **AI learning**: 480 catalog entries arranged on ten topical shelves. A book
+  represents one paper/resource entry, not an entire subject. The overview shows
+  one row per topic; opening a topic exposes its full collection with pagination.
+  Search includes explicit method names and common acronyms such as GRPO/PPO.
+- **Researchers**: six personal blogs and twelve selected essays, presented as
+  authors' collected writing. No current employer claims are inferred.
+
+The learning catalog preserves the selected Foundation Models document's order.
+480 is the number of catalog entries, not deduplicated papers: some entries group
+several resources and some papers occur in several topics. 444 entries have a
+public source link; 36 keep their title with a source-pending label. 26 entries
+link to an existing technical report. These are metadata projections, not copies
+of internal notes or claims that all source URLs have been independently checked.
 
 The reference is [Michel Johnson's bookshelf](https://micheljohnson.top/#blog).
 Its Three.js shelf inspired the interaction, not the visual assets or code. This
@@ -68,6 +87,22 @@ Direct file serving from the user's server is the intended next option.
   online, and `quality` records review state. These are separate fields.
 - `_preview/library/inventory.json`: ignored local inventory with original paths,
   exact byte counts, source hashes and published asset hashes.
+- `_data/reading-learning.json`: public titles, theme/subsection names, paper
+  links and report IDs. `_tools/export_reading_learning.py` regenerates it from
+  the selected local Markdown using explicit metadata fields only. The separate
+  audit contains source hashes, source lines, exclusions and corrections.
+- `_data/reading-researchers.json`: reviewed public blog and article links.
+- `_tools/build_reading_collections.py`: checks IDs, allowed fields, links and
+  report associations before generating `reading-collections-data.js`.
+
+To update learning metadata, run `export_reading_learning.py --source <selected-md>
+--reports _data/reading.json --output _data/reading-learning.json
+--audit _preview/learning-collection/learning-audit.json`, review the diff, then
+run `build_reading_collections.py`. Never export the existing private hub's
+`search`, note bodies, local reader links or internal document URLs. Four upstream
+source conflicts are corrected explicitly in the exporter: Phi-4's arXiv ID,
+Transformers without Normalization's arXiv ID, Qwen3's repository, and the DPO
+survey's title/source. The original local Markdown is unchanged.
 
 To refresh the catalog, run the existing `_tools/export_reading.py --source
 <archive>` and then `_tools/build_reading_library.py --source <archive>`. Review the
@@ -104,3 +139,9 @@ filtering, empty states, edition switching, quality notices, language changes,
 browser history, page deep links and 320/390/1440 px widths. Screenshots and raw
 results live alongside the inventory. This is a UI/storage pilot, not a new
 translation quality audit. `Guide: no material change`.
+
+`_preview/library/collections.cjs` additionally checks the ten topical shelves,
+480-entry total, complete architecture/training scopes, pagination, GRPO source
+and report links, researcher essays, history, legacy routes and 18 combinations
+of collection/language/viewport plus their detail panels. Translation jobs and
+the PDF publication allowlist are unchanged.

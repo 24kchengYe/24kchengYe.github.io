@@ -50,7 +50,7 @@ def main():
     publication = json.loads((ROOT / '_data/reading-publication.json').read_text(encoding='utf-8'))
     pilot = {r['id']:r for r in publication['reports']}
     base_url = publication['asset_base_url']
-    assert base_url.startswith('https://') or base_url == 'files/'
+    assert base_url.startswith('https://') or base_url in {'files/', '/reading/library-preview/files/'}
     by_id = {r['id']:r for r in catalog}
     assert len(by_id)==len(catalog)
     assert set(by_id)=={r['id'] for r in public['reports']}, 'Refresh the bibliography with export_reading.py first'

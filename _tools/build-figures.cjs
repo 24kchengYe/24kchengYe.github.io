@@ -241,8 +241,8 @@ function buildFigures() {
   for (const [asset, item] of Object.entries(manifest)) {
     const source = fs.readFileSync(path.join(sourceDirectory, item.source), 'utf8');
     const name = path.basename(item.source, path.extname(item.source));
-    const sourceWithOverrides = item.source === 'cli-case-format.html'
-      ? source.replace('</style>', `${fs.readFileSync(path.join(sourceDirectory, 'cli-case-format-overrides.css'), 'utf8')}</style>`)
+    const sourceWithOverrides = item.source.startsWith('cli-') && item.source.endsWith('.html')
+      ? source.replace('</style>', `${fs.readFileSync(path.join(sourceDirectory, item.source === 'cli-case-format.html' ? 'cli-case-format-overrides.css' : 'cli-flow-theme.css'), 'utf8')}</style>`)
       : source;
     figures[asset] = { ...item, localized: {} };
     for (const language of ['zh', 'en', 'ja']) {

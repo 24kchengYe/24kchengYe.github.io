@@ -375,7 +375,7 @@
       expanded.dataset.expand = '';
       controls.append(button('缩小', () => { pause(); zoom(1 / 1.2); }, '−'),scaleLabel,button('放大', () => { pause(); zoom(1.2); }, '+'),button('全图', () => { pause(); fit('all'); }),button('适合宽度', () => { pause(); fit('width'); }),expanded);
       const hasConnections = view().localized[language].html.includes('class="connection"');
-      if (data.generic && view().kind === 'flow' && hasConnections) {
+      if (view().kind === 'flow' && hasConnections) {
         const motion = button(flowing ? '停止动效' : '连线动效', () => {
           flowing = !flowing;
           canvas.classList.toggle('tm-flowing',flowing);

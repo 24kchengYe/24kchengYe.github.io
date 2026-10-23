@@ -17,6 +17,16 @@ function inspectMap(host) {
   const outside = (inner, outer) => inner.left < outer.left - scale || inner.top < outer.top - scale || inner.right > outer.right + scale || inner.bottom > outer.bottom + scale;
   const overlaps = (first, second) => Math.min(first.right,second.right) - Math.max(first.left,second.left) > scale && Math.min(first.bottom,second.bottom) - Math.max(first.top,second.top) > scale;
   const selector = '.node,.event,.checkpoint,.restore,.bundle';
+  for (const node of canvas.querySelectorAll('.event')) {
+    const style = getComputedStyle(node);
+    if (['borderTopWidth','borderRightWidth','borderBottomWidth','borderLeftWidth'].some(side => parseFloat(style[side]) < 1)) errors.push(['missing-event-border',node.id]);
+  }
+  if (host.dataset.view !== 'case') {
+    const motion = [...shadow.querySelectorAll('.tm-tools button')].find(control => control.hasAttribute('aria-pressed'));
+    if (!motion) errors.push(['missing-flow-animation']);
+    for (const node of canvas.querySelectorAll('.node')) if (getComputedStyle(node).fontSize !== '28px') errors.push(['inconsistent-node-type',node.id]);
+    for (const secondary of canvas.querySelectorAll('.sub')) if (getComputedStyle(secondary).fontSize !== '24px') errors.push(['inconsistent-secondary-type',secondary.textContent]);
+  }
   const walker = document.createTreeWalker(canvas,NodeFilter.SHOW_TEXT);
   const texts = [];
   while (walker.nextNode()) {

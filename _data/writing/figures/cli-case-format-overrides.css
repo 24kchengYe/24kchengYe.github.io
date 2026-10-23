@@ -1,4 +1,6 @@
-.event:not(.failed):not(.repaired){border-left:1px solid #dfe7dc;border-radius:0 5px 5px 0}
-.event.failed,.event.repaired{border-top:0;border-right:0;border-bottom:0;border-radius:0 5px 5px 0}
-.detail{font-size:23px}
-.key{font-size:21px}
+.event { border:1.6px solid #a5afa5; border-radius:8px; }
+.event.failed { border-color:#bf9662; background:#fcf5eb; }
+.event.repaired { border-color:#8b9e7b; background:#f3f6ef; }
+.checkpoint,.restore { border-width:1.6px; border-radius:8px; }
+.detail { font-size:24px; }
+.key { font-size:22px; }

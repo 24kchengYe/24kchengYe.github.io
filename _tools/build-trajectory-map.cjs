@@ -38,7 +38,7 @@ function buildTrajectoryMap() {
       dom.window.close();
     }
     const manifest = manifests[view.figure];
-    views[id] = { ...view, width: manifest.width, height: manifest.height, localized };
+    views[id] = { ...view, kind: id === 'case' ? 'replay' : 'flow', width: manifest.width, height: manifest.height, localized };
   }
   for (const [key, translations] of Object.entries(config.strings)) {
     if (translations.length !== 2 || translations.some(value => typeof value !== 'string' || !value.trim())) throw new Error(`Incomplete map translation: ${key}`);

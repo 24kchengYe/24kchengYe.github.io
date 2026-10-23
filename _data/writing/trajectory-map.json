@@ -11,6 +11,8 @@
     "complete": {"figure": "cli-combined", "title": "完整流程", "links": {"AM": "harness", "AT": "rollout", "AO": "model", "BG": "online", "BT": "case", "BO": "offline", "CD": "offline", "CR": "online"}, "related": ["overview", "planning", "case"]}
   },
   "strings": {
+    "连线动效": ["Animate connections", "接続をアニメーション"],
+    "停止动效": ["Stop animation", "アニメーションを停止"],
     "读图帮助": ["Diagram help", "図の操作"],
     "总览": ["Overview", "全体像"],
     "共享 Harness": ["Shared Harness", "共有Harness"],

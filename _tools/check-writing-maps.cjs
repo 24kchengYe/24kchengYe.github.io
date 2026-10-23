@@ -69,6 +69,11 @@ function inspect(host) {
   }
   const vector = canvas.querySelector('svg');
   if (canvas.classList.contains('vector-canvas') && vector) {
+    for (const connector of vector.querySelectorAll('path[data-axis]')) {
+      const axis = connector.dataset.axis === 'vertical' ? 0 : 1;
+      const positions = connector.getAttribute('d').match(/-?\d+(?:\.\d+)?/g).map(Number).filter((value,index) => index % 2 === axis);
+      if (Math.max(...positions) - Math.min(...positions) > 0.01) errors.push(`Slanted axis-aligned connector: ${connector.parentElement.id}`);
+    }
     const frame = vector.getBoundingClientRect();
     const viewBox = vector.getAttribute('viewBox').split(/\s+/).map(Number);
     const factor = Math.min(frame.width / viewBox[2], frame.height / viewBox[3]);

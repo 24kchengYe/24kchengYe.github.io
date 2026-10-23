@@ -1,0 +1,18 @@
+.canvas { color:#303c38; }
+.node,.bundle,.checkpoint,.restore { border-width:1.6px; border-color:#87938a; border-radius:8px; box-shadow:none; }
+.region,.workspace { border-color:#d5ddd5; border-radius:8px; }
+.workspace { background:#fafbf9; }
+.node { font-size:28px; }
+.title,.heading { font-size:30px; }
+.sub,.bundle .small,.dependency-row { font-size:24px; color:#667269; }
+.edge-label,.note { font-size:22px; color:#667269; }
+.edge { border-top-width:1.6px; border-top-color:#748176; }
+.edge.arrow:after { border-left-color:#748176; }
+.edge.handoff { border-color:#7e9668; }
+.edge.handoff.arrow:after { border-left-color:#7e9668; }
+.edge.failure { border-color:#98a196; }
+.edge.failure.arrow:after { border-left-color:#98a196; }
+.node.plan { border-style:dashed; }
+.node.output,.node.soft { background:#f3f6ef; }
+.node.pending { background:#f7f8f6; }
+.node.failed { background:#fcf7ef; border-color:#b99970; }

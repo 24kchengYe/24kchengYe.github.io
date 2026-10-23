@@ -158,3 +158,11 @@ body.is-reading .pdf-scroll{flex:1;min-height:0}
 @media(max-width:600px){body.is-reading .site-shell{width:calc(100% - 24px)}body.is-reading .reader-heading h1{font-size:23px}body.is-reading .reader-subtitle{display:none}body.is-reading .reader-meta{font-size:11px}body.is-reading .pdf-viewer{height:calc(100dvh - 210px);min-height:380px}.pdf-controls{gap:8px}.pdf-controls select{margin-left:0}.pdf-scroll{padding:8px}}
 
 .pdf-first-preview{display:block;width:100%;height:auto;margin:0 auto;background:white;box-shadow:0 1px 5px #272b3014}.pdf-sheet[hidden]{display:none!important}
+.pdf-continuous .pdf-scroll{position:relative;overflow-anchor:none;scroll-behavior:auto}
+.pdf-pages{position:relative;min-height:100%}
+.pdf-continuous .pdf-sheet{margin:0 auto 20px;overflow:hidden}
+.pdf-continuous .pdf-sheet:last-child{margin-bottom:0}
+.pdf-continuous .pdf-first-preview{position:absolute;inset:0;box-shadow:none}
+.pdf-page-placeholder{position:absolute;top:28px;left:24px;color:var(--muted);font-size:13px}
+.pdf-page-retry{position:absolute;top:64px;left:24px;z-index:4;background:none;border:1px solid var(--line);padding:5px 12px;color:var(--ink);cursor:pointer}
+.pdf-continuous .pdf-message{padding:8px 16px;margin:0;font-size:12px}

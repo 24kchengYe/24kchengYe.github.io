@@ -196,7 +196,7 @@
       const frame=reuse||document.createElement('div');frame.className='pdf-document';frame.title=`${title(r)} · ${t()[state.edition]} · ${t().loading}`;
       frame.dataset.key=key;
       $('reader-document').append(frame);
-      if(!reuse)disposePDF=window.ReadingPDF.mount(frame,asset.url,state.page,n=>{state.page=n;try{history.replaceState({limit},'',url());}catch{}},asset.preview);
+      if(!reuse)disposePDF=window.ReadingPDF.mount(frame,asset.url,state.page,n=>{state.page=n;try{history.replaceState({limit},'',url());}catch{}},asset.preview,r.pages);
     }
     document.title=`${title(r)} · Yecheng Zhang`;
   }

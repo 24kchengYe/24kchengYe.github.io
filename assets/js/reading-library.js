@@ -31,6 +31,9 @@
   Object.assign(copy.en,{allTopics:'All topics',topicLabel:'Topic',topicAll:n=>`All ${n} →`,overview:(n,c)=>`${n} shelves · ${c} entries`,learningNote:'Each book is a paper or resource. Organized by topic from the Foundation Models collection.'});
   Object.assign(copy.zh,{allTopics:'全部主题',topicLabel:'主题',topicAll:n=>`全部 ${n} 条 →`,overview:(n,c)=>`${n} 个书架 · ${c} 条`,learningNote:'每本书对应一篇论文或资料，按 Foundation Models 合集的主题编排。'});
   Object.assign(copy.ja,{allTopics:'すべてのテーマ',topicLabel:'テーマ',topicAll:n=>`全 ${n} 件 →`,overview:(n,c)=>`${n} 棚 · ${c} 件`,learningNote:'一冊が論文や資料に対応。Foundation Models 文献集をテーマ別に整理。'});
+  Object.assign(copy.en,{previousBooks:'Previous books',nextBooks:'Next books'});
+  Object.assign(copy.zh,{previousBooks:'向前浏览',nextBooks:'向后浏览'});
+  Object.assign(copy.ja,{previousBooks:'前の本',nextBooks:'次の本'});
   const language = () => copy[document.documentElement.lang] ? document.documentElement.lang : 'en';
   const t = () => copy[language()];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -76,18 +79,14 @@
     const name=title(r),idx=all.indexOf(r),length=[...name].length;
     return `<button type="button" class="shelf-book" data-book="${r.id}" aria-pressed="${state.book===r.id}" aria-label="${esc(name+' · '+status(r))}" title="${esc(r.title)}" style="--book-color:${shade(r)};--book-width:${56+idx%4*5}px;--book-height:${178+idx%5*8}px;--spine-size:${length>25?10:length>14?12:16}px"><span class="book-year">${esc(r.date||'')}</span><span class="book-spine">${esc(name)}</span><span class="book-mark ${r.assets?'online':''}" aria-hidden="true"></span></button>`;
   }
+  function shelfMarkup(group,label,books,button){
+    if(!books.length)return '';
+    const key=JSON.stringify([state.collection,state.scope,state.path,state.tech,state.q,group]);
+    const id='shelf-'+group;
+    return `<section class="shelf-group"><div class="shelf-caption"><h2 class="shelf-subject" id="${id}-label">${esc(label)}</h2><div class="shelf-navigation"><span class="shelf-position">${books.length}</span><button type="button" data-slide="prev" aria-label="${esc(t().previousBooks+' · '+label)}" aria-controls="${id}" disabled>←</button><button type="button" data-slide="next" aria-label="${esc(t().nextBooks+' · '+label)}" aria-controls="${id}">→</button></div></div><div class="shelf-stage"><div id="${id}" class="shelf-track" role="region" aria-labelledby="${id}-label" data-position-key="${esc(key)}"><div class="book-row">${books.map(button).join('')}</div></div></div></section>`;
+  }
   function renderShelves(rows){
-    const width=$('library-shelves').clientWidth;
-    const per=Math.max(3,Math.min(10,Math.floor((width-36)/(innerWidth<=640?53:75))));
-    let markup='';
-    for(const group of ['foundations','architecture','posttraining']){
-      const books=rows.filter(r=>groupKey(r)===group);
-      for(let start=0;start<books.length;start+=per){
-        const slice=books.slice(start,start+per);
-        markup+=`<section class="shelf-group"><h2 class="shelf-caption"><span class="shelf-subject">${esc(t()[group])}${start?' · '+(Math.floor(start/per)+1):''}</span><span>${slice.length.toString().padStart(2,'0')}</span></h2><div class="book-row">${slice.map(shelfButton).join('')}</div></section>`;
-      }
-    }
-    $('library-shelves').innerHTML=markup;
+    $('library-shelves').innerHTML=['foundations','architecture','posttraining'].map(group=>shelfMarkup(group,t()[group],rows.filter(r=>groupKey(r)===group),shelfButton)).join('');
   }
   function renderList(rows){
     $('library-list').innerHTML=rows.map((r,i)=>`<article class="library-list-row"><span class="list-number">${String(i+1).padStart(2,'0')}</span><div><h2><a href="${esc(url({book:r.id}))}" data-book="${r.id}">${esc(title(r))}</a></h2><p class="list-meta">${esc(r.company)} · ${esc(r.date||'')} ${r.technologies.length?' · '+esc(r.technologies.slice(0,4).join(' · ')):''}</p></div><span class="list-status ${r.assets?'online':''}">${esc(status(r))}</span></article>`).join('');
@@ -122,18 +121,12 @@
     return `<button type="button" class="shelf-book" data-book="${esc(r.id)}" aria-pressed="${state.book===r.id}" aria-label="${esc(name)}" title="${esc(name)}" style="--book-color:${shade(r)};--book-width:${60+i%3*7}px;--book-height:${185+i%4*9}px;--spine-size:${spine.length>22?10:spine.length>13?12:16}px"><span class="book-year">${learning?String(i+1).padStart(2,'0'):String(r.articles.length).padStart(2,'0')}</span><span class="book-spine">${esc(spine)}</span><span class="book-mark" aria-hidden="true"></span></button>`;
   }
   function renderCollection(rows){
-    const learning=state.collection==='learning',overview=learning&&!state.topic&&!state.q;
-    const width=$('library-shelves').clientWidth;
-    const per=Math.max(3,Math.min(10,Math.floor((width-44)/(innerWidth<=640?53:79))));
-    const groups=learning?collections.books:[{id:'researchers',title:t().researchersTab}];
-    $('library-shelves').innerHTML=groups.map(group=>{
-      const matches=rows.filter(r=>!learning||r.topicId===group.id);
-      const books=overview?matches.slice(0,Math.min(per,8)):matches;let html='';
-      for(let start=0;start<books.length;start+=per){
-        const more=overview&&matches.length>books.length?`<a href="${esc(url({topic:group.id,book:''}))}" data-topic="${group.id}">${t().topicAll(matches.length)}</a>`:`<span>${matches.length}</span>`;
-        html+=`<section class="shelf-group"><h2 class="shelf-caption"><span class="shelf-subject">${esc(local(group.title))}</span>${start?'':more}</h2><div class="book-row">${books.slice(start,start+per).map((r,i)=>collectionBook(r,start+i)).join('')}</div></section>`;
-      }return html;
-    }).join('');
+    const learning=state.collection==='learning';
+    if(state.view==='shelf'){
+      const groups=learning?collections.books:[{id:'researchers',title:t().researchersTab}];
+      $('library-shelves').innerHTML=groups.map(group=>shelfMarkup(group.id,local(group.title),rows.filter(r=>!learning||r.topicId===group.id),collectionBook)).join('');
+      $('library-list').replaceChildren();return;
+    }
     $('library-list').innerHTML=rows.map((r,i)=>`<article class="library-list-row"><span class="list-number">${String(i+1).padStart(2,'0')}</span><div><h2><a href="${esc(url({book:r.id}))}" data-book="${esc(r.id)}">${esc(collectionName(r))}</a></h2><p class="list-meta">${esc(learning?[local(r.topicTitle),local(r.section)].filter(Boolean).join(' · '):r.topics.join(' · '))}</p></div><span class="list-status">${learning?'':t().items(childItems(r).length)}</span></article>`).join('');
   }
   function chapterRow(c,index){
@@ -187,6 +180,7 @@
     document.title=`${title(r)} · Yecheng Zhang`;
   }
   function render(){
+    window.ReadingShelves.remember($('library-shelves'));
     document.querySelectorAll('[data-copy]').forEach(el=>{const value=t()[el.dataset.copy];if(typeof value==='string')el.textContent=value;});
     const reportCollection=state.collection==='reports';
     const searchLabel=reportCollection?t().searchLabel:state.collection==='learning'?t().learningSearch:t().researcherSearch;
@@ -203,18 +197,19 @@
     const matchingRows=reportCollection?matching():collectionMatching(),overview=state.collection==='learning'&&!state.topic&&!state.q&&state.view==='shelf';
     const selectedIndex=matchingRows.findIndex(r=>r.id===state.book);
     if(selectedIndex>=limit)limit=Math.ceil((selectedIndex+1)/30)*30;
-    const rows=overview||state.collection==='researchers'?matchingRows:matchingRows.slice(0,limit);
+    const rows=state.view==='shelf'||state.collection==='researchers'?matchingRows:matchingRows.slice(0,limit);
     $('library-search').value=state.q;$('library-scope').value=state.scope;$('library-tech').value=state.tech;
     document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===state.view)));
     $('library-shelves').hidden=state.view!=='shelf';$('library-list').hidden=state.view!=='list';
     // Keep the detail node alive when it was inserted between shelf rows.
     $('library-more').after($('book-detail'));
     if(!reportCollection)renderCollection(rows);else if(state.view==='shelf')renderShelves(rows);else renderList(rows);
-    $('library-count').textContent=reportCollection?(matchingRows.length>limit?t().shown(rows.length,matchingRows.length):t().reports(matchingRows.length)):state.collection==='learning'?(overview?t().overview(collections.books.length,matchingRows.length):matchingRows.length>limit?t().shown(rows.length,matchingRows.length):t().items(matchingRows.length)):t().people(rows.length,rows.reduce((n,r)=>n+childItems(r).length,0));
-    $('library-empty').hidden=matchingRows.length>0;$('library-more').hidden=rows.length>=matchingRows.length;
+    $('library-count').textContent=reportCollection?(state.view==='list'&&matchingRows.length>limit?t().shown(rows.length,matchingRows.length):t().reports(matchingRows.length)):state.collection==='learning'?(overview?t().overview(collections.books.length,matchingRows.length):state.view==='list'&&matchingRows.length>limit?t().shown(rows.length,matchingRows.length):t().items(matchingRows.length)):t().people(rows.length,rows.reduce((n,r)=>n+childItems(r).length,0));
+    $('library-empty').hidden=matchingRows.length>0;$('library-more').hidden=state.view==='shelf'||rows.length>=matchingRows.length;
     $('library-reset').hidden=!state.q&&!state.topic&&(!reportCollection||!state.tech&&!state.path&&state.scope==='core');
     $('library-note-text').textContent=reportCollection?t().pilot:state.collection==='learning'?t().learningNote:t().researchersNote;
     renderDetail();
+    if(state.view==='shelf')window.ReadingShelves.mount($('library-shelves'));
     document.title=`${language()==='zh'?'阅读':language()==='ja'?'読書':'Reading'} · Yecheng Zhang`;
   }
   host.addEventListener('click',event=>{
@@ -241,6 +236,5 @@
   $('library-more').addEventListener('click',()=>{limit+=30;try{history.replaceState({limit},'',url());}catch{}render();});
   window.addEventListener('popstate',()=>{limit=Number.isInteger(history.state?.limit)?history.state.limit:30;state=readLocation();render();});
   new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-  let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!state.report&&state.view==='shelf')render();},180);});
   state=readLocation();render();
 })();

@@ -11,8 +11,10 @@ Three collections share one interface:
 - **Technical reports**: the existing 643-entry bibliography, core/selected/all
   scopes, technology search and the R1/V3 reader.
 - **AI learning**: 480 catalog entries arranged on ten topical shelves. A book
-  represents one paper/resource entry, not an entire subject. The overview shows
-  one row per topic; opening a topic exposes its full collection with pagination.
+  represents one paper/resource entry, not an entire subject. Each topic occupies
+  one horizontally scrollable shelf containing its full collection. Arrows,
+  native touch/trackpad scrolling, and keyboard navigation expose later books.
+  Shelf mode has no Show more step; the text Index keeps pagination.
   Search includes explicit method names and common acronyms such as GRPO/PPO.
 - **Researchers**: six personal blogs and twelve selected essays, presented as
   authors' collected writing. No current employer claims are inferred.
@@ -145,3 +147,10 @@ translation quality audit. `Guide: no material change`.
 and report links, researcher essays, history, legacy routes and 18 combinations
 of collection/language/viewport plus their detail panels. Translation jobs and
 the PDF publication allowlist are unchanged.
+
+`_preview/library/sliding-shelves.cjs` verifies one row per topic, complete shelf
+counts, arrow boundaries, horizontal and vertical wheel behavior, keyboard
+navigation, selected-book deep links, independent scroll positions, language and
+history restoration, resizing, Index pagination, search, and the R1 reader.
+`reading-shelves.js` owns shelf interaction and preserves offsets during rerenders;
+resizing reveals the selected book without rebuilding the shelf DOM.

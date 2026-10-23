@@ -1,0 +1,8 @@
+{
+  "package": "pdfjs-dist",
+  "version": "6.4.299",
+  "source": "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.4.299.tgz",
+  "archive_sha256": "86269b40170eb41740ea05ad2102d71d33de4f122b34eb2f478be0ea7779c415",
+  "license": "Apache-2.0",
+  "purpose": "Self-hosted PDF renderer; no external CDN requests"
+}

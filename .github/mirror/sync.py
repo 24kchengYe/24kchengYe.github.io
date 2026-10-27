@@ -41,7 +41,9 @@ def fetch(url, limit, attempts=3):
 
 
 def code_sha():
-    return sha(canonical({p.name: sha(p.read_bytes()) for p in sorted(HERE.glob('*.py'))}))
+    # Git checks out LF on Linux and may use CRLF on Windows; semantics agree.
+    return sha(canonical({p.name: sha(p.read_text('utf-8').encode('utf-8'))
+                          for p in sorted(HERE.glob('*.py'))}))
 
 
 def outputs(**values):

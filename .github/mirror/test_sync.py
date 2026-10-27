@@ -107,6 +107,12 @@ class MirrorTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             remote_url('/cv/Yecheng_CV.pdf', 'index.html')
 
+    def test_encoded_private_cv_links_are_rejected(self):
+        for path in ('/cv/%59echeng_CV.pdf', '/%63v/Yecheng_CV.pdf', '/cv/Yecheng_CV%2epdf',
+                     '/cv/%2e/Yecheng_CV.pdf', '/cv/%2559echeng_CV.pdf'):
+            with self.subTest(path=path), self.assertRaises(ValueError):
+                remote_url(path, 'index.html')
+
 
 if __name__ == '__main__':
     unittest.main()

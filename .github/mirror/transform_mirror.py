@@ -9,10 +9,11 @@ import argparse
 import collections
 import hashlib
 import json
+import posixpath
 import re
 import urllib.request
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 
@@ -42,9 +43,16 @@ def remote_url(value: str, relative_page: str) -> str:
         return value
     parsed = urlsplit(urljoin(CANONICAL + '/' + relative_page, value))
     if parsed.hostname and parsed.hostname.lower() in SITE_HOSTS:
-        if parsed.path.lower() in PRIVATE:
+        decoded = parsed.path
+        for _ in range(4):
+            normalized = unquote(decoded)
+            if normalized == decoded:
+                break
+            decoded = normalized
+        normalized = posixpath.normpath('/' + decoded.replace('\\', '/').lstrip('/'))
+        if normalized.lower() in PRIVATE:
             raise ValueError(f'Private CV link found in {relative_page}: {parsed.path}')
-        if needs_server(parsed.path):
+        if needs_server(normalized):
             return urlunsplit(('https', 'yechengzhang.duqi.top', parsed.path, parsed.query, parsed.fragment))
     return value
 

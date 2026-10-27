@@ -1,0 +1,21 @@
+[Unit]
+Description=Publish verified lightweight academic website manifest
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/academic-pages-sync/server_manifest.py
+User=root
+Group=root
+UMask=0022
+Nice=10
+CPUQuota=20%
+MemoryMax=128M
+TimeoutStartSec=120
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateNetwork=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/yechengzhang-academic/releases /var/lib/academic-pages-sync
+RestrictAddressFamilies=AF_UNIX

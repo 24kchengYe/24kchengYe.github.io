@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for new academic website releases
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+AccuracySec=10s
+Unit=academic-pages-manifest.service
+
+[Install]
+WantedBy=timers.target

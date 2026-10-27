@@ -1,0 +1,124 @@
+name: Sync lightweight website
+
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+    - cron: '23 3 1 * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/mirror/**'
+      - '.github/workflows/lightweight-pages-sync.yml'
+
+concurrency:
+  group: lightweight-pages-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.event.schedule != '23 3 1 * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      changed: ${{ steps.probe.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github/mirror
+          persist-credentials: false
+      - name: Check canonical lightweight content
+        id: probe
+        run: python .github/mirror/sync.py probe
+      - uses: actions/cache/restore@v4
+        if: steps.probe.outputs.changed == 'true'
+        with:
+          path: .mirror-cache/objects
+          key: lightweight-public-v1-${{ steps.probe.outputs.cache_key }}
+          restore-keys: lightweight-public-v1-
+      - name: Install mirror parser
+        if: steps.probe.outputs.changed == 'true'
+        run: python -m pip install --disable-pip-version-check beautifulsoup4==4.14.3
+      - name: Test export boundaries and cache validation
+        if: steps.probe.outputs.changed == 'true'
+        run: python -m unittest discover -s .github/mirror -p 'test_*.py' -v
+      - name: Build and verify lightweight mirror
+        if: steps.probe.outputs.changed == 'true'
+        run: python .github/mirror/sync.py build
+      - uses: actions/cache/save@v4
+        if: steps.probe.outputs.changed == 'true'
+        with:
+          path: .mirror-cache/objects
+          key: lightweight-public-v1-${{ steps.probe.outputs.cache_key }}
+      - name: Upload verified Pages artifact
+        if: steps.probe.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: mirror-work/site
+      - name: Retain verification report
+        if: steps.probe.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mirror-verification
+          path: |
+            mirror-work/build-report.json
+            mirror-work/transform.json
+          retention-days: 30
+
+  deploy:
+    if: needs.build.outputs.changed == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy verified lightweight website
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  maintenance:
+    if: github.event_name != 'schedule' || github.event.schedule == '23 3 1 * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Maintain monthly repository activity on its own branch
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const branch = 'automation-heartbeat';
+            const month = new Date().toISOString().slice(0, 7);
+            let previous;
+            try {
+              const result = await github.rest.repos.getContent({ owner, repo, path: 'heartbeat.json', ref: branch });
+              const value = JSON.parse(Buffer.from(result.data.content, 'base64').toString('utf8'));
+              if (value.month === month) { core.info('Monthly maintenance already recorded.'); return; }
+              previous = (await github.rest.git.getRef({ owner, repo, ref: 'heads/' + branch })).data.object.sha;
+            } catch (error) {
+              if (error.status !== 404) throw error;
+            }
+            const content = JSON.stringify({ month, purpose: 'Keep canonical website mirror scheduling active' }) + '\n';
+            const tree = await github.rest.git.createTree({ owner, repo, tree: [
+              { path: 'heartbeat.json', mode: '100644', type: 'blob', content }
+            ] });
+            const commit = await github.rest.git.createCommit({ owner, repo,
+              message: 'Record website mirror maintenance for ' + month,
+              tree: tree.data.sha, parents: previous ? [previous] : [],
+              author: { name: 'github-actions[bot]', email: '41898282+github-actions[bot]@users.noreply.github.com' }
+            });
+            if (previous) {
+              await github.rest.git.updateRef({ owner, repo, ref: 'heads/' + branch, sha: commit.data.sha, force: false });
+            } else {
+              await github.rest.git.createRef({ owner, repo, ref: 'refs/heads/' + branch, sha: commit.data.sha });
+            }
+            core.info('Recorded monthly maintenance on the separate automation-heartbeat branch.');

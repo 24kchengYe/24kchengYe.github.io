@@ -1,0 +1,168 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="331.2pt" viewBox="0 0 1008 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en" data-diagram-style="engineering" data-diagram-kind="flow">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2  L 1008 331.2  L 1008 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 198.88839999999996 90  L 244.08 90  Q 252 90 252 97.92  L 252 161.28  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 203.6504 169.2  L 244.08 169.2  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 188.83759999999998 248.4  L 244.08 248.4  Q 252 248.4 252 240.48  L 252 177.12  Q 252 169.2 259.92 169.2  L 394.239468 169.2  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 389.839468 167  L 394.239468 169.2  L 389.839468 171.4  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 161.28  L 626.4 119.52  Q 626.4 111.6 634.32 111.6  L 778.0650679999999 111.6  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 773.6650679999999 109.4  L 778.0650679999999 111.6  L 773.6650679999999 113.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 483.0984 169.2  L 618.48 169.2  Q 626.4 169.2 626.4 177.12  L 626.4 218.88  Q 626.4 226.8 634.32 226.8  L 724.670268 226.8  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 720.270268 224.6  L 724.670268 226.8  L 720.270268 229  " clip-path="url(#p00e306ffd5)" style="fill: none; stroke: #202124; stroke-width: 0.95; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 403.9416 198.8  L 474.4584 198.8  Q 483.0984 198.8 483.0984 182.46896551724137  L 483.0984 155.93103448275863  Q 483.0984 139.6 474.4584 139.6  L 403.9416 139.6  Q 395.3016 139.6 395.3016 155.93103448275863  L 395.3016 182.46896551724137  Q 395.3016 198.8 403.9416 198.8  z " clip-path="url(#p00e306ffd5)" style="fill: #ffffff; stroke: #78a641; stroke-width: 0.95; stroke-linejoin: miter" data-diagram-stroke="accent" data-diagram-fill="accent" data-diagram-node=""/>
+   </g>
+   <g id="text_1"><text x="108.1" y="94.079102" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="User requirements" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.1" dy="0">User requirements</tspan></text></g>
+   <g id="text_2"><text x="108.05" y="162.383844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Exact design version" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.05" dy="0">Exact design </tspan><tspan x="108.05" dy="21.599999999999998">version</tspan></text></g>
+   <g id="text_3"><text x="108.4" y="252.383844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Full domain rules" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="108.4" dy="0">Full domain rules</tspan></text></g>
+   <g id="text_4"><text x="439.20000000000005" y="164.7" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" data-node-box="patch_7" aria-label="Review model" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="439.20000000000005" dy="0">Review </tspan><tspan x="439.20000000000005" dy="21.599999999999998">model</tspan></text></g>
+   <g id="text_5"><text x="835.531336" y="115.583844" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Pass / fail" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="835.531336" dy="0">Pass / fail</tspan></text></g>
+   <g id="text_6"><text x="835.35" y="220.066258" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Object · Rule · Evidence" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="835.35" dy="0">Object · Rule · </tspan><tspan x="835.35" dy="21.599999999999998">Evidence</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p00e306ffd5">
+   <rect x="0" y="0" width="1008" height="331.2"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style><defs data-diagram-textures=""><pattern id="writing-dot-neutral" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fafaf8"/><circle cx="1.5" cy="1.5" r="0.45" fill="#777770" opacity="0.24"/></pattern><pattern id="writing-dot-accent" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#f5faef"/><circle cx="1.5" cy="1.5" r="0.45" fill="#70a33d" opacity="0.24"/></pattern></defs></svg>

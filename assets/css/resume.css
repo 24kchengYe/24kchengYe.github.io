@@ -1,0 +1,63 @@
+/* Same document typography as the homepage, with a quiet section column. */
+.site-nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
+.resume-header { margin: 64px 0 46px; }
+.resume-heading-row { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 24px; }
+.resume-kicker { margin: 0; color: var(--muted); font-size: .9rem; }
+.resume-print { padding: 4px 0; background: none; border: 0; color: var(--link); font-size: .83rem; cursor: pointer; }
+.resume-print:hover { text-decoration: underline; text-underline-offset: .2em; }
+.resume h1 { margin-bottom: 12px; }
+.resume-focus { font-size: 1rem; margin-bottom: 14px; }
+.resume-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: .86rem; }
+.resume-meta { color: var(--muted); font-size: .78rem; margin: 12px 0 0; }
+.resume-section { display: grid; grid-template-columns: 132px minmax(0,1fr); gap: 36px; padding: 28px 0 32px; border-top: 1px solid var(--line); }
+.resume-section h2 { font-size: .9rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin: 3px 0 0; }
+.resume-section-body { min-width: 0; font-size: .9rem; line-height: 1.8; overflow-wrap: anywhere; }
+.resume-section-intro { margin-bottom: 24px; }
+.resume-entry + .resume-entry { margin-top: 28px; }
+.resume-entry-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 3px 18px; margin-bottom: 3px; }
+.resume-entry h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+.resume-entry h3 a { color: var(--ink); }
+.resume-date { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.resume-role { color: var(--muted); margin-bottom: 12px; }
+.resume-entry p:last-child { margin-bottom: 0; }
+.resume-project { margin-top: 20px; }
+.resume-project h4 { font-size: .9rem; font-weight: 600; margin: 0 0 6px; }
+.resume-references { font-size: .82rem; margin-top: 12px; }
+.resume-references p { margin-bottom: 10px; }
+.resume-section-footer { margin: 24px 0 0; }
+.resume-group + .resume-group { margin-top: 26px; }
+.resume-group h3 { font-size: .9rem; font-weight: 600; margin: 0 0 12px; }
+.resume-compact-list { list-style: none; margin: 0; padding: 0; }
+.resume-compact-list li { display: grid; grid-template-columns: 78px minmax(0,1fr); gap: 14px; margin: 0 0 11px; }
+.resume-compact-list li:last-child { margin-bottom: 0; }
+html[lang="ja"] .resume { font-family: "Helvetica Neue", "Segoe UI", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+@media (max-width: 680px) {
+  .resume-header { margin: 38px 0 30px; }
+  .resume-heading-row { margin-bottom: 20px; }
+  .resume h1 { font-size: 1.85rem; }
+  .resume h1 .name-cn { display: inline; margin-left: 10px; }
+  .resume-section { grid-template-columns: 1fr; gap: 16px; padding: 24px 0 28px; }
+  .resume-section h2 { margin: 0; font-size: .82rem; }
+  .resume-section-body { font-size: .9rem; }
+  .resume-entry-heading { display: block; }
+  .resume-entry-heading .resume-date { display: block; margin-top: 3px; }
+  .resume-contact { gap: 4px 16px; }
+  .resume-contact a:first-child { flex-basis: 100%; }
+}
+@page { size: A4; margin: 16mm 15mm; }
+@media print {
+  html { font-size: 12px; }
+  .resume-header { margin: 0 0 22px; }
+  .resume-heading-row { margin-bottom: 10px; }
+  .resume-print { display: none; }
+  .resume h1 { font-size: 25px; margin-bottom: 6px; }
+  .resume-section { display: block; padding: 16px 0; }
+  .resume-section h2 { margin-bottom: 10px; font-size: 10pt; color: var(--ink); }
+  .resume-section-body { font-size: 9.5pt; line-height: 1.5; }
+  .resume-entry + .resume-entry { margin-top: 16px; }
+  .resume-project { margin-top: 12px; }
+  .resume-entry-heading, .resume-project h4, .resume-section h2 { break-after: avoid; }
+  .resume-entry p, .resume-entry li { orphans: 3; widows: 3; }
+  .resume-compact-list li { break-inside: avoid; margin-bottom: 6px; }
+  .resume a { color: inherit; }
+}

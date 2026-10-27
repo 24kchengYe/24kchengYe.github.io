@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<script src="/assets/js/site-theme.js?v=51b41e61e6a0"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>设计与产物规则评审模型技术报告 · Yecheng Zhang</title><style id="edition-styles">
+
+:root{color-scheme:light;--ink:#202123;--muted:#73767b;--line:#e9eaec;--link:#44484d}
+
+*{box-sizing:border-box}
+
+html{background:#fff;scroll-behavior:smooth;scroll-padding-top:36px}
+
+body{margin:0;padding:72px 40px 112px;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+a{color:var(--link);text-underline-offset:4px;text-decoration-thickness:1px}
+
+a:hover{color:#000}
+
+a:focus-visible{outline:2px solid #6f747b;outline-offset:4px}
+
+.skip-link{position:absolute;left:24px;top:-80px;padding:8px 12px;background:#fff;color:#202123;z-index:2}
+
+.skip-link:focus{top:12px}
+
+.blog-layout{display:grid;grid-template-columns:180px minmax(0,1040px);gap:44px;max-width:1264px;margin:0 auto;align-items:start}
+
+.blog-sidebar{position:sticky;top:44px;max-height:calc(100vh - 88px);overflow:auto;padding:2px 0}
+
+.blog-sidebar nav>p{font-size:12px;font-weight:400;color:#999da2;margin:0 0 16px}
+
+.blog-sidebar ol{list-style:none;padding:0;margin:0}
+
+.blog-sidebar li{margin:0 0 10px}
+
+.blog-sidebar a{display:block;text-decoration:none;font-size:13px;font-weight:400;line-height:1.65;color:#96999e;padding-left:11px;border-left:1px solid transparent;overflow-wrap:anywhere}
+
+.blog-sidebar a:hover,.blog-sidebar a[aria-current="location"]{color:#27292d;border-left-color:#656970}
+
+.blog-main,.blog-article{min-width:0;width:100%}
+
+.blog-article>*{max-width:720px;margin-left:auto;margin-right:auto}
+
+.blog-article h1{margin-top:0;margin-bottom:40px;font-size:clamp(38px,3.7vw,52px);font-weight:500;line-height:1.2;letter-spacing:-.035em;text-wrap:balance;text-align:center}
+
+.blog-article h2{margin-top:68px;margin-bottom:22px;font-size:30px;font-weight:500;line-height:1.4;letter-spacing:-.02em;scroll-margin-top:36px}
+
+.blog-article h3{margin-top:36px;margin-bottom:14px;font-size:23px;font-weight:500;line-height:1.5;letter-spacing:-.01em}
+
+.blog-article h4{margin-top:28px;margin-bottom:12px;font-size:19px;font-weight:500}
+
+.blog-article p{margin-top:0;margin-bottom:23px}
+
+.blog-article strong,.blog-article b{font-weight:500}
+
+.blog-article ul,.blog-article ol{margin-top:14px;margin-bottom:26px;padding-left:1.4em}
+
+.blog-article li{margin:7px 0;padding-left:.15em}
+
+.blog-article li>p{margin:0 0 8px}
+
+.blog-article blockquote{padding:0 0 0 20px;border-left:2px solid #dedfe2;color:#62666c;margin-top:28px;margin-bottom:30px}
+
+.blog-article hr{height:1px;border:0;background:var(--line);margin-top:42px;margin-bottom:42px}
+
+.blog-article code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:.86em;overflow-wrap:anywhere}
+
+.blog-article sub,.blog-article sup{font-size:.75em;line-height:0}
+
+.blog-article .math-equation{font-family:inherit;line-height:1.9;text-align:center;margin-top:28px;margin-bottom:28px}
+
+.blog-article>.blog-figure{width:100%;max-width:1040px;margin:42px auto 46px;padding:0;border:0;background:transparent;box-shadow:none;scroll-margin-top:36px}
+
+.blog-figure img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;border-radius:0;box-shadow:none}
+
+.blog-figure figcaption{margin:11px 0 0;color:#898c91;font-size:12px;font-weight:400;line-height:1.6}
+
+.blog-article>.blog-table-scroll{max-width:920px;overflow-x:auto;margin-top:28px;margin-bottom:32px;overscroll-behavior-x:contain}
+
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7;font-variant-numeric:tabular-nums;text-align:left}
+
+thead{border-top:1px solid #d8dadd;border-bottom:1px solid #d8dadd}
+
+th{font-weight:500;color:#34373b}
+
+th,td{padding:11px 13px;vertical-align:top}
+
+tbody tr{border-bottom:1px solid #edeef0}
+
+table p:last-child{margin-bottom:0}
+
+@media(max-width:1199px){body{padding-top:56px}.blog-layout{display:block;max-width:1040px}.blog-sidebar{display:none}}
+
+@media(max-width:760px){body{padding:36px 24px 76px;font-size:17px;line-height:1.85}.blog-article h1{font-size:36px;line-height:1.3;letter-spacing:-.03em;margin-bottom:30px}.blog-article h2{font-size:27px;margin-top:52px}.blog-article h3{font-size:21px}.blog-article>.blog-figure{margin:30px auto 34px}.blog-figure figcaption{font-size:11px}.blog-article>.blog-table-scroll{margin:24px auto}table{min-width:600px;font-size:13px}th,td{padding:9px 10px}}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media print{html{scroll-behavior:auto}body{padding:0;font-size:11pt;line-height:1.7;color:#000}.blog-layout{display:block;max-width:none}.blog-sidebar,.skip-link{display:none!important}.blog-article>*{max-width:none}.blog-article h1{font-size:28pt;max-width:none}.blog-article h2{font-size:19pt;margin-top:30pt}.blog-article h3{font-size:15pt}h1,h2,h3,figcaption{break-after:avoid}.blog-article>.blog-figure{max-width:100%;margin:22pt 0;break-inside:avoid}.blog-figure img{break-inside:avoid}.blog-figure figcaption{font-size:8pt}.blog-article>.blog-table-scroll{overflow:visible;max-width:none}table{min-width:0;font-size:9pt}a{color:inherit;text-decoration:none}}
+
+
+
+/* Shared reading layout; the evidence library retains its original styles. */
+
+.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit;margin:0;color:inherit}
+
+.blog-article h1 span,.blog-article h2 span,.blog-article h3 span{scroll-margin-top:36px}
+
+.blog-article>.figure-block{width:100%;max-width:1040px;margin:42px auto 46px;transform:none;padding:0;border:0;box-shadow:none}
+
+.blog-article>.figure-block>figcaption{font-size:12px;font-weight:400;color:#898c91;line-height:1.6;margin:0 0 11px}
+
+.blog-article>.figure-block>p>img{display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;box-shadow:none}
+
+.blog-article>.figure-block>.figure-evidence-v25{margin-top:7px;font-size:14px}
+
+.blog-article>.figure-block>.figure-evidence-v25>summary{font-size:12px;color:#898c91;font-weight:400}
+
+.blog-article .figure-block img,.blog-article .vector-preview img,.edition-library img{max-width:100%;height:auto}
+
+.blog-article .table-scroll,.edition-library .table-scroll{max-width:100%;overflow-x:auto}
+
+.edition-library{min-width:0;width:100%}
+
+.edition-library .evidence-library{max-width:780px;margin:76px auto 0}
+
+.edition-library .document-library>summary{font-size:19px;font-weight:500}
+
+.edition-library summary{overflow-wrap:anywhere}
+
+.edition-library pre{max-width:100%;overflow:auto;overflow-wrap:anywhere;white-space:pre-wrap}
+
+.edition-library details,.blog-article details{min-width:0}
+
+@media(max-width:760px){.blog-article>.figure-block{margin:30px auto 34px}.edition-library .evidence-library{max-width:100%;margin-top:52px}.blog-article>.figure-block>figcaption{font-size:11px}}
+
+@media print{.blog-article>.figure-block{max-width:100%;width:100%;margin:22pt 0;transform:none}.edition-library .evidence-library{max-width:none}.blog-article #report-start{font:inherit;line-height:inherit;letter-spacing:inherit}.edition-library pre{max-height:none}}
+
+
+
+</style><meta content="设计与产物规则评审模型技术报告：实验设计、结果与方法总结。" name="description"/><link href="https://yechengzhang.duqi.top/writing/rubric-model/technical/" rel="canonical"/><meta content="设计与产物规则评审模型技术报告" property="og:title"/><meta content="设计与产物规则评审模型技术报告：实验设计、结果与方法总结。" property="og:description"/><meta content="article" property="og:type"/><meta content="https://yechengzhang.duqi.top/writing/rubric-model/technical/" property="og:url"/><link href="/assets/css/report-navigation.css" rel="stylesheet"/><script defer="" src="/assets/js/writing-diagram-style.js?v=7824b2169605"></script><link href="/assets/css/writing-diagram-themes.css?v=999537865d73" rel="stylesheet"/><style>.writing-map-figure .trajectory-map{max-width:1200px;margin:0 auto}.writing-map-figure .figure-panel{padding:0!important;background:none!important;border:0!important}.trajectory-map[hidden]{display:none}.trajectory-static{margin:12px 0;font-size:13px;color:#71767e}.trajectory-static>summary{cursor:pointer;padding:8px 0}.trajectory-static img{margin-top:16px}@media print{.trajectory-map{display:none}.trajectory-static>summary{display:none}}</style><style>.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:none}.writing-map-figure .trajectory-static{font-size:12px;margin:6px 0 12px}.writing-map-figure .trajectory-static>summary{padding:4px 0}@media print{.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:block}}</style><script defer="" src="/assets/js/writing-maps/rubric-model-technical.js?v=877bf48f779d"></script><script data-stylesheet="/assets/css/trajectory-map.css?v=968d17696f44" defer="" src="/assets/js/trajectory-map.js?v=00fa8c6d6ccc"></script><link href="/assets/css/writing-language.css?v=bc2f6f68bf5b" rel="stylesheet"/><script defer="" src="/assets/js/minimal.js?v=9e94e73097c5"></script><link href="/assets/css/writing-reader.css?v=ac6fd2319583" rel="stylesheet"/>
+<link href="/assets/css/writing-context.css?v=b22bc081cefb" rel="stylesheet"/>
+<script defer="" src="/assets/js/writing-reader.js?v=8cc175ba84f3"></script>
+<script defer="" src="/assets/js/writing-context.js?v=fe6f9c6f937f"></script>
+<link href="/assets/css/poetic-chapters.css?v=2eb17366fbd2" rel="stylesheet"/>
+<link href="/assets/css/poetic-writing-entry.css?v=67b07644679e" rel="stylesheet"/>
+<script defer="" src="/assets/js/poetic-writing-entry.js?v=306c557feaf4"></script>
+<script defer="" src="/assets/js/poetic-chapters.js?v=1455031d9719"></script>
+<link href="/assets/css/site-theme.css?v=3f7d383fde73" rel="stylesheet"/>
+<link href="/assets/css/editorial-reader.css?v=71c3e704108e" rel="stylesheet"/>
+<script defer="" src="/assets/js/editorial-reader.js?v=eeeabd18a914"></script>
+<link href="/assets/css/poetic-composition.css?v=f60b6eaf8a9a" rel="stylesheet"/>
+</head><body class="edition-minimal"><nav aria-label="Writing" class="report-site-nav">
+<a class="writing-back" data-site-link="" href="/#writing"><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+<div aria-label="Article version" class="edition-switch">
+<a data-site-link="" href="/writing/rubric-model/">Blog</a>
+<a aria-current="page" data-site-link="" href="/writing/rubric-model/technical/"><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>
+</div>
+<div aria-label="Language" class="languages" role="group">
+<button aria-label="English" data-language="en" type="button">EN</button>
+<button aria-label="中文" data-language="zh" type="button">中</button>
+<button aria-label="日本語" data-language="ja" type="button">日</button>
+</div>
+</nav><a class="skip-link" href="#edition-start"><span lang="zh">跳到正文</span><span lang="en">Skip to content</span><span lang="ja">本文へ</span></a><div class="blog-layout"><aside class="blog-sidebar"><nav aria-label="文章目录" data-aria-label-en="Article contents" data-aria-label-ja="記事の目次" data-aria-label-zh="文章目录" id="edition-toc"><p><span lang="zh">目录</span><span lang="en">Contents</span><span lang="ja">目次</span></p><ol><li><a aria-current="location" href="#technical-section-1"><span lang="zh">摘要（Abstract）</span><span lang="en">Abstract</span><span lang="ja">概要</span></a></li><li><a href="#technical-section-2"><span lang="zh">1 引言（Introduction）</span><span lang="en">1 Introduction</span><span lang="ja">1 はじめに</span></a></li><li><a href="#technical-section-3"><span lang="zh">2 任务、数据和评测</span><span lang="en">2 Task, data, and evaluation</span><span lang="ja">2 タスク・データ・評価</span></a></li><li><a href="#technical-section-4"><span lang="zh">3 规则及提示词实验</span><span lang="en">3 Rules and prompt experiments</span><span lang="ja">3 ルールとプロンプト実験</span></a></li><li><a href="#technical-section-5"><span lang="zh">4 监督微调（SFT）</span><span lang="en">4 Supervised fine-tuning (SFT)</span><span lang="ja">4 教師あり微調整（SFT）</span></a></li><li><a href="#technical-section-6"><span lang="zh">5 强化学习（RL）</span><span lang="en">5 Reinforcement learning (RL)</span><span lang="ja">5 強化学習（RL）</span></a></li><li><a href="#technical-section-7"><span lang="zh">6 概率蒸馏（OPD）</span><span lang="en">6 On-policy distillation (OPD)</span><span lang="ja">6 オンポリシー蒸留（OPD）</span></a></li><li><a href="#technical-section-8"><span lang="zh">7 理由监督（CoT）</span><span lang="en">7 Rationale supervision (CoT)</span><span lang="ja">7 理由による教師信号（CoT）</span></a></li><li><a href="#technical-section-9"><span lang="zh">8 实际产物评审及标签生产方法</span><span lang="en">8 Built-artifact review and label production</span><span lang="ja">8 実成果物の審査とラベル生成</span></a></li><li><a href="#technical-section-10"><span lang="zh">9 讨论与局限</span><span lang="en">9 Discussion and limitations</span><span lang="ja">9 考察と限界</span></a></li><li><a href="#technical-section-11"><span lang="zh">10 结论</span><span lang="en">10 Conclusion</span><span lang="ja">10 結論</span></a></li></ol></nav></aside><main class="blog-main"><article class="blog-article" id="edition-article"><h1 data-page-title="" id="edition-start"><span lang="zh">设计与产物规则评审模型技术报告</span><span lang="en">Rubric judges for designs and artifacts: technical report</span><span lang="ja">設計・成果物のルール評価モデル：技術レポート</span></h1>
+<h2 id="technical-section-1"><span lang="zh">摘要（Abstract）</span><span lang="en">Abstract</span><span lang="ja">概要</span></h2>
+<p><span lang="zh">本研究构建设计与产物两类规则评审模型。Spec-RJM 根据 Query + Spec 检查需求覆盖、产品能力及设计一致性；Artifact-RJM 根据 Query + 最终产物 Markdown 检查实际配置、对象引用和需求实现。2026年7—10月，设计侧比较了 SFT、RL、OPD 和理由监督；产物侧独立构建五域数据并完成一轮 SFT 及固定快照评测。</span><span lang="en">This study develops rubric judges for both designs and artifacts. Spec-RJM checks requirement coverage, product capabilities, and design consistency from Query + Spec. Artifact-RJM checks actual configuration, object references, and requirement fulfillment from Query + final-artifact Markdown. Between July and October 2026, the design track compared SFT, RL, OPD, and rationale supervision; the artifact track independently built five-domain data and completed an SFT run and fixed-snapshot evaluation.</span><span lang="ja">本研究では設計と成果物の2種類のルール評価モデルを構築する。Spec-RJM は Query + Spec から要求の網羅性、製品機能、設計の整合性を評価する。Artifact-RJM は Query + 最終成果物の Markdown から実際の設定、オブジェクト参照、要求の実現を評価する。2026年7〜10月、設計側では SFT・RL・OPD・理由監督を比較し、成果物側では独立した5領域データを作成して SFT と固定スナップショット評価を実施した。</span></p>
+<p><span lang="zh">后期统一数据包含7,127个训练单元、792个测试单元，按原始需求隔离。三个SFT模型按Sol参考计算的错误类型F1为55.72%—56.97%，主要不足是漏报。后续四组多问题RL实验有三组提高，其中一组在这批792条测试上从56.97%提高到58.91%。OPD对照中，教师同样获得标签提示时，保留完整学生规则比精简规则高16.09个百分点。CoT三组共用输入和裁决，仅学习裁决的方案在两套参考下均优于加入显式理由的方案。</span><span lang="en">The later unified dataset has 7,127 training and 792 test units, split by original query. Three SFT models scored 55.72%–56.97% error-type F1 against Sol references, with misses the main weakness. Three of four later multi-issue RL runs improved; one rose 56.97%→58.91% on the 792 tests. In OPD, with label hints provided to both teachers, full student rules beat compact rules by 16.09 percentage points. Across three CoT targets sharing inputs and verdicts, verdict-only training beat explicit rationales under both references.</span><span lang="ja">後期統一データは元Queryで分離した学習7,127・テスト792単位を持つ。三SFTモデルのSol参照誤り型F1は55.72%〜56.97%で、主な弱点は見逃しだった。後の多問題RL四実験中三つが改善し、一群は同792件で56.97%→58.91%。OPDでは両教師へラベル手掛かりを渡す条件で、完全学生規則が簡略版を16.09ポイント上回った。入力と裁定を共通にした三CoT目標では、裁定のみ学習が明示理由付きより両参照で良かった。</span></p>
+<p><span lang="zh">这些实验支持继续使用完整规则、兼顾正常设计及多问题的数据，并保留仅裁决训练作为理由研究的基线。多个同类问题能否逐一定位、判断依据是否指向正确对象，仍需进一步验证。报告还总结了实际产物评审和DSH数据管线：前者已完成一次模型评测，误报较多；后者已搭建框架并试运行，ATMS支持集合管理及因果配对合成仍处于方案阶段。</span><span lang="en">The results favor full rules, data covering valid and multi-issue designs, and verdict-only training as the rationale baseline. Locating every instance of repeated issue types and grounding evidence in the correct object still need validation. The report also covers built-artifact review, which completed one evaluation with many false positives, and the DSH label pipeline, whose framework and partial trial are implemented. ATMS support sets and causal-pair synthesis remain proposals.</span><span lang="ja">完全規則、正常・多問題設計を含むデータ、理由研究の基準となる裁定のみ学習を支持する。同種問題の各対象の定位と根拠の対応は追加検証が必要である。実成果物審査は一回の評価で誤検出が多く、DSHラベル系統は枠組みと部分試行を実装済み。ATMS支持集合と因果ペア合成は提案段階である。</span></p>
+<h2 id="technical-section-2"><span lang="zh">1　引言（Introduction）</span><span lang="en">1  Introduction</span><span lang="ja">1　はじめに</span></h2>
+<p><span lang="zh">一份设计通过评审，落地的系统仍可能遗漏字段、接错工作流或放宽访问范围。我们把评审放在两个位置：先检查 Query + Spec，用 Judge–Fix 修好设计；再让 Code Agent 按 Spec 搭建产物，将实际产物解析成 Markdown，重新对照原始 Query 验收。</span><span lang="en">A design can pass review while the built system still omits a field, wires a workflow incorrectly, or grants too much access. We review at two points: first Query + Spec, using Judge–Fix to repair the design; then Code Agent builds from the Spec, the actual artifact is parsed into Markdown, and the result is checked against the original Query.</span><span lang="ja">設計が審査を通過しても、実装ではフィールドの欠落、ワークフローの誤接続、アクセス範囲の過大設定が起こり得る。評価点を2つ置く。まず Query + Spec を Judge–Fix で審査・修正する。次に Code Agent が Spec から構築し、実際の成果物を Markdown に変換して、元の Query に照らして検収する。</span></p>
+<p id="judge-scope"><span lang="zh">Judge Infra Model 包含这两类专用评审模型：Spec-RJM 学习设计评审，Artifact-RJM 学习产物评审。它们共享规则分层与结构化裁决的思路，但输入、规则和训练标签分别构建。产物侧还保留既有 E2E Judge，作为独立流程对照。</span><span lang="en">Judge Infra Model covers two specialist judges: Spec-RJM for designs and Artifact-RJM for built artifacts. They share hierarchical rubrics and structured judgments, while inputs, rules, and training labels are constructed separately. The existing E2E Judge remains a separate comparison pipeline on the artifact side.</span><span lang="ja">Judge Infra Model は、設計を評価する Spec-RJM と、実際の成果物を評価する Artifact-RJM を含む。ルールの階層化と構造化判定という考え方を共有し、入力・ルール・学習ラベルはそれぞれ構築する。成果物側では、既存の E2E Judge も独立した比較パイプラインとして残す。</span></p><figure class="figure-block writing-map-figure" id="rubric-model-two-judges"><div class="trajectory-map" data-entry="rubric-model-two-judges" hidden="" id="writing-map-1"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="从设计评审到产物验收" data-alt-en="From design review to artifact acceptance" data-alt-ja="設計審査から成果物の検収へ" data-alt-zh="从设计评审到产物验收" data-diagram-image="" data-figure="rubric-model-two-judges" data-figure-key="rubric-model-two-judges" data-src-en="/writing/figures/en/rubric-model-two-judges.svg?v=77c6b79275d0" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-two-judges.svg?v=5bff0676552e" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-two-judges.svg?v=274bc81cf9ae" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-two-judges.svg?v=9ed2712f5db2" data-src-ja="/writing/figures/ja/rubric-model-two-judges.svg?v=31cf43ad647b" data-src-openai-blog-en="/writing/figures/en/rubric-model-two-judges.svg?v=77c6b79275d0" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-two-judges.svg?v=31cf43ad647b" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-two-judges.svg?v=520684cbd074" data-src-zh="/writing/figures/zh/rubric-model-two-judges.svg?v=520684cbd074" decoding="async" height="940" loading="eager" src="/writing/figures/zh/rubric-model-two-judges.svg?v=520684cbd074" width="1440"/></details><figcaption><span lang="zh">Spec Judge 驱动设计修复；产物 Judge 对照原始 Query 检查实际实现。通过设计评审，不会直接继承为产物通过。</span><span lang="en">The Spec Judge guides design repair; the artifact Judge checks the implementation against the original Query. A passing design does not automatically make the artifact pass.</span><span lang="ja">Spec Judge が設計修正を導き、成果物 Judge は元の Query と実装を照合する。設計の合格を成果物へそのまま引き継ぐことはできない。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">Spec 是生成指导，不进入本轮产物 Judge 的需求输入。产物评审只依据可观察配置；运行结果需要运行证据。</span><span lang="en">The Spec guides generation; it is not an additional requirement input to this artifact Judge. Artifact review uses observable configuration; execution claims need runtime evidence.</span><span lang="ja">Spec は生成の指針であり、本実験の成果物 Judge の要求入力には加えない。成果物評価は観測可能な設定に基づき、実行結果には実行証拠が必要となる。</span></p></details></figure><figure class="figure-block writing-map-figure" id="rubric-model-spec-io"><div class="trajectory-map" data-entry="rubric-model-spec-io" hidden="" id="writing-map-2"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Spec Judge · 输入与输出" data-alt-en="Spec Judge · inputs and outputs" data-alt-ja="Spec Judge · 入力と出力" data-alt-zh="Spec Judge · 输入与输出" data-diagram-image="" data-figure="rubric-model-spec-io" data-figure-key="rubric-model-spec-io" data-src-en="/writing/figures/en/rubric-model-spec-io.svg?v=b80733d96f71" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-spec-io.svg?v=673edec8673c" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-spec-io.svg?v=59171e1fb6a3" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-spec-io.svg?v=84e7e781a0fb" data-src-ja="/writing/figures/ja/rubric-model-spec-io.svg?v=7da3b908ba5d" data-src-openai-blog-en="/writing/figures/en/rubric-model-spec-io.svg?v=b80733d96f71" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-spec-io.svg?v=7da3b908ba5d" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-spec-io.svg?v=564ca71e38eb" data-src-zh="/writing/figures/zh/rubric-model-spec-io.svg?v=564ca71e38eb" decoding="async" height="600" loading="lazy" src="/writing/figures/zh/rubric-model-spec-io.svg?v=564ca71e38eb" width="1440"/></details><figcaption><span lang="zh">先审设计：用原始需求和领域规则检查当前 Spec，返回领域裁决与问题列表。</span><span lang="en">Review the design: check the current Spec against the original request and domain rules, then return a domain verdict and issues.</span><span lang="ja">まず設計を審査する。現在の Spec を元の要求と領域ルールに照らし、領域判定と問題一覧を返す。</span></figcaption></figure><figure class="figure-block writing-map-figure" id="rubric-model-artifact-io"><div class="trajectory-map" data-entry="rubric-model-artifact-io" hidden="" id="writing-map-3"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="产物 Judge · 输入与输出" data-alt-en="Artifact Judge · inputs and outputs" data-alt-ja="成果物 Judge · 入力と出力" data-alt-zh="产物 Judge · 输入与输出" data-diagram-image="" data-figure="rubric-model-artifact-io" data-figure-key="rubric-model-artifact-io" data-src-en="/writing/figures/en/rubric-model-artifact-io.svg?v=f51e9d22ce60" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-artifact-io.svg?v=487854261891" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-artifact-io.svg?v=8beb2e113866" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-artifact-io.svg?v=e24c58c5658a" data-src-ja="/writing/figures/ja/rubric-model-artifact-io.svg?v=5fe68576ccc6" data-src-openai-blog-en="/writing/figures/en/rubric-model-artifact-io.svg?v=f51e9d22ce60" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-artifact-io.svg?v=5fe68576ccc6" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-artifact-io.svg?v=e479fab79d24" data-src-zh="/writing/figures/zh/rubric-model-artifact-io.svg?v=e479fab79d24" decoding="async" height="600" loading="lazy" src="/writing/figures/zh/rubric-model-artifact-io.svg?v=e479fab79d24" width="1440"/></details><figcaption><span lang="zh">再审实现：将产物配置导出为 Markdown，与原始需求对照；Spec 不作为额外的验收要求。</span><span lang="en">Review the implementation: compare the artifact configuration, exported as Markdown, with the original request. The Spec does not add acceptance requirements.</span><span lang="ja">次に実装を審査する。成果物の設定を Markdown に変換し、元の要求と照合する。Spec を追加の検収要件にはしない。</span></figcaption></figure>
+<p><span lang="zh">两类评审都以用户需求为准。Spec Judge 检查方案是否说清楚、能否实现；产物 Judge 要找到已经创建的对象与实际配置，核对字段类型、引用、筛选范围及动作依赖。更高的验收要求体现在实现证据：设计中写了“提醒负责人”，不能替代工作流里的接收人配置；静态配置本身也不能证明消息已经送达。</span><span lang="en">Both judges use the user request as the standard. The Spec Judge checks whether the design is explicit and feasible. The artifact Judge must find created objects and actual configuration, checking field types, references, filter scopes, and action dependencies. The stronger acceptance requirement is implementation evidence: writing “notify the owner” in a design cannot substitute for a configured recipient, and static configuration alone does not prove delivery.</span><span lang="ja">どちらもユーザーの要求を基準とする。Spec Judge は設計が明確で実現可能かを確認し、成果物 Judge は作成済みのオブジェクトと実設定を探し、フィールド型、参照、絞り込み範囲、アクションの依存関係を確認する。検収で追加されるのは実装の証拠だ。設計に「担当者へ通知」と書かれていても受信者設定の代わりにはならず、静的設定だけでは通知の到達も証明できない。</span></p>
+<p><span lang="zh">多维表格的设计涉及表结构、视图、仪表盘、工作流和权限。一份设计即使覆盖了这些模块，也可能不满足用户需求。例如，“订单逾期后提醒负责人”需要到期时间、逾期判断、提醒对象和触发流程配合；缺少其中一个条件，方案就不能按要求工作。评审因此需要指出具体缺口，让后续修改有据可依。</span><span lang="en">Table-system designs span schemas, views, dashboards, workflows, and permissions. Covering these modules does not ensure requirements are met. “Notify the owner when an order is overdue” needs a due date, overdue condition, recipient, and trigger working together. Missing any part breaks the requirement. Review must identify concrete gaps so later repairs have evidence.</span><span lang="ja">設計は表構造、ビュー、ダッシュボード、処理、権限に及ぶ。モジュールを全て書いても要求達成とは限らない。「注文遅延時に担当者へ通知」には期限、遅延判定、受信者、起動処理の連携が必要で、一つ欠ければ機能しない。審査は後の修正に根拠を与える具体的欠落を示す必要がある。</span></p>
+<p><span lang="zh">项目把业务知识整理成逐条评审规则，称为rubric。每条规则说明适用条件、违规情形和例外，并给错误命名。规则明确以后，仍有两个难点：模型可能误解适用范围，把正常设计判错；也可能发现一处问题后就停止检查，漏掉其他对象。历史标签还来自不同版本的设计和不同轮次的评审，不能直接拼成训练集。</span><span lang="en">Business knowledge is organized into rubrics, each specifying applicability, violations, exceptions, and named errors. Two difficulties remain: models can misread scope and flag valid designs, or stop after one issue and miss other objects. Historical labels also come from different design versions and review rounds and cannot simply be concatenated.</span><span lang="ja">業務知識をrubricへ整理し、適用条件、違反、例外、誤り名を定めた。それでも適用範囲の誤解による誤検出、一件発見後の検査停止による他対象の見逃しが残る。過去ラベルも異なる設計版・審査回に由来し、単純結合できない。</span></p>
+<p><span lang="zh">研究先解决数据及规则问题，再训练专用评审模型。SFT学习完整参考答案；RL根据模型自己生成的答案计分，试图提高问题召回。OPD检验能否把详细规则教进模型，从而缩短使用时的输入。CoT则检验学习教师理由是否有助于裁决。提供答案或指导的模型称为教师，接受训练的模型称为学生。</span><span lang="en">We first address data and rules, then train specialized reviewers. SFT learns complete reference answers. RL scores the student's own outputs to improve recall. OPD tests whether detailed rules can be learned into weights to shorten inference input. CoT tests whether teacher rationales help verdicts. The model providing answers or guidance is the teacher; the trained model is the student.</span><span lang="ja">先にデータと規則を整え、その後専用審査器を学習する。SFTは完全参照回答、RLは学生自身の出力への報酬で再現率向上を狙う。OPDは詳細規則を重みに学び入力を短縮できるか、CoTは教師理由が裁定を助けるかを調べる。答えや指導を与えるモデルを教師、学ぶモデルを学生と呼ぶ。</span></p>
+<p><span lang="zh">本报告围绕四个训练问题展开：SFT能否学会完整评审，以及既有训练经历是否有帮助；RL能否提高多问题召回；OPD能否在缩短学生规则的同时保持判断质量；CoT是否能通过教师理由改善裁决。数据构建和规则修订提供共同基础，实际产物评审及DSH管线则扩展了输入对象和标签生产方式。</span><span lang="en">The report asks four training questions: can SFT learn complete review, and does prior training help; can RL improve multi-issue recall; can OPD preserve quality with shorter student rules; and can teacher rationales improve CoT verdicts? Data construction and rule revision form the common base. Artifact review and DSH extend the reviewed objects and label-production methods.</span><span lang="ja">四つの学習課題を扱う。SFTは完全審査を学べるか・既存学習は有効か、RLは多問題再現率を改善するか、OPDは学生規則短縮と品質を両立するか、CoTは教師理由で裁定を改善するか。データ構築と規則改訂を共通基盤とし、成果物審査とDSHで対象・ラベル生成法を拡張する。</span></p>
+<p><span lang="zh">本研究的主要结果是确定了几项可继续采用的设计：对齐精确输入版本、保留完整业务规则、兼顾正常及多问题样本，并为理由训练保留仅裁决基线。以下按任务、方法、实验设置和对照结果组织证据，讨论会改变结果解释的比较条件。</span><span lang="en">The experiments establish several designs worth retaining: exact input-version alignment, full business rules, valid and multi-issue samples, and a verdict-only baseline for rationale training. Evidence is organized by task, method, setup, and comparison, with conditions that affect interpretation made explicit.</span><span lang="ja">維持すべき設計として、厳密な入力版整合、完全業務規則、正常と多問題サンプル、理由学習の裁定のみ基準を確認した。以下はタスク、方法、設定、比較結果の順に証拠を示し、解釈を左右する条件を論じる。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-figure_research_timeline"><div class="trajectory-map" data-entry="rubric-model-01" hidden="" id="writing-map-4"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="研究路线时间线" data-alt-en="Research timeline" data-alt-ja="研究の時系列" data-alt-zh="研究路线时间线" data-diagram-image="" data-figure-key="/writing/assets/646239c884a492ee1ee2.svg" data-src-en="/writing/figures/en/rubric-model-01.svg?v=05b748019050" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-01.svg?v=d83385aa8a0b" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-01.svg?v=5bdbeddcd844" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-01.svg?v=c95781aa93d7" data-src-ja="/writing/figures/ja/rubric-model-01.svg?v=419c3d43044d" data-src-openai-blog-en="/writing/figures/en/rubric-model-01.svg?v=05b748019050" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-01.svg?v=419c3d43044d" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-01.svg?v=0543fff83c02" data-src-zh="/writing/figures/zh/rubric-model-01.svg?v=0543fff83c02" decoding="async" height="792" loading="eager" src="/writing/figures/zh/rubric-model-01.svg?v=0543fff83c02" width="1080"/></details><figcaption class="map-duplicate-caption"><span lang="zh">研究路线时间线</span><span lang="en">Research timeline</span><span lang="ja">研究の時系列</span></figcaption></figure>
+<figure class="blog-figure writing-map-figure" id="figure-technical_training_signals"><div class="trajectory-map" data-entry="rubric-model-02" hidden="" id="writing-map-5"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="四种训练信号" data-alt-en="Four training signals" data-alt-ja="四種類の学習信号" data-alt-zh="四种训练信号" data-diagram-image="" data-figure-key="/writing/assets/56fee8fae1475d39af31.svg" data-src-en="/writing/figures/en/rubric-model-02.svg?v=e06b76679e40" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-02.svg?v=501db300e9b4" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-02.svg?v=6eb907bb26c7" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-02.svg?v=34dcef4d9f69" data-src-ja="/writing/figures/ja/rubric-model-02.svg?v=76d5377b6efc" data-src-openai-blog-en="/writing/figures/en/rubric-model-02.svg?v=e06b76679e40" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-02.svg?v=76d5377b6efc" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-02.svg?v=bb9107c1fefb" data-src-zh="/writing/figures/zh/rubric-model-02.svg?v=bb9107c1fefb" decoding="async" height="475" loading="lazy" src="/writing/figures/zh/rubric-model-02.svg?v=bb9107c1fefb" width="849"/></details><figcaption class="map-duplicate-caption"><span lang="zh">四种训练信号</span><span lang="en">Four training signals</span><span lang="ja">四種類の学習信号</span></figcaption></figure>
+<h2 id="technical-section-3"><span lang="zh">2　任务、数据和评测</span><span lang="en">2  Task, data, and evaluation</span><span lang="ja">2　タスク・データ・評価</span></h2><figure class="figure-block writing-map-figure" id="full-workflow"><div class="trajectory-map" data-entry="rubric-model-full-workflow" hidden="" id="writing-map-6"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Spec-RJM · 训练方法对照" data-alt-en="Spec-RJM · Training comparisons" data-alt-ja="Spec-RJM · 学習方式の比較" data-alt-zh="Spec-RJM · 训练方法对照" data-diagram-image="" data-figure="rubric-model-full-workflow" data-figure-key="rubric-model-full-workflow" data-src-en="/writing/figures/en/rubric-model-full-workflow.svg?v=1dc8c952aef2" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-full-workflow.svg?v=73b428a693b3" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-full-workflow.svg?v=6c2d1cc649d3" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-full-workflow.svg?v=bf04a3f7e12b" data-src-ja="/writing/figures/ja/rubric-model-full-workflow.svg?v=d50da3222b90" data-src-openai-blog-en="/writing/figures/en/rubric-model-full-workflow.svg?v=1dc8c952aef2" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-full-workflow.svg?v=d50da3222b90" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-full-workflow.svg?v=1cd2c8523cbb" data-src-zh="/writing/figures/zh/rubric-model-full-workflow.svg?v=1cd2c8523cbb" decoding="async" height="1077" loading="lazy" src="/writing/figures/zh/rubric-model-full-workflow.svg?v=1cd2c8523cbb" width="1440"/></details><figcaption><span lang="zh">精确对齐输入与标签，按需求整组切分。SFT→RL 是继承关系；OPD、理由监督分别作为独立对照，参考标签只进入监督或评分侧。</span><span lang="en">Align exact inputs and labels, then split by request group. SFT→RL is a lineage; OPD and rationale supervision are separate controls. Reference labels enter only supervision or scoring.</span><span lang="ja">入力とラベルを正確に対応させ、要求グループで分割。SFT→RL は継承関係、OPD と理由監督は独立の対照。参照ラベルは監督・採点側だけに渡す。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">路线按各实验配置取数和初始化；SFT → RL 有继承关系，OPD 与理由监督不接在 RL 之后。</span><span lang="en">Each route uses its registered data and initialization. SFT → RL is a lineage; OPD and rationale supervision do not follow RL as later stages.</span><span lang="ja">各方式は実験で定めたデータと初期化を使用。SFT → RL は継承関係だが、OPD と理由監督は RL の後続段階ではない。</span></p></details></figure>
+<h3 id="technical-subsection-1"><span lang="zh">2.1　评审任务及统计单位</span><span lang="en">2.1  Review task and units</span><span lang="ja">2.1　審査タスクと集計単位</span></h3>
+<p><span lang="zh">模型读入用户需求、一版待评设计，以及一个业务域的完整规则。输出包含是否通过、具体问题、所违反的规则、严重程度及判断依据。业务域限定检查范围，规则进一步说明什么情况下属于错误。</span><span lang="en">The model receives user requirements, one design version, and full rules for one domain. Output includes pass/fail, specific issues, violated rules, severity, and evidence. The domain bounds the review; rules specify when something is an error.</span><span lang="ja">入力は要求、設計一版、一領域の完全規則。出力は合否、具体問題、違反規則、重大度、根拠を含む。領域が審査範囲を定め、規則が誤りの成立条件を示す。</span></p>
+<p><strong><span lang="zh">一个评审样本对应“一条需求 × 一版设计 × 一个业务域”。</span><span lang="en">One review sample is one query × one design version × one domain.</span><span lang="ja">審査一サンプルは「一要求×一設計版×一業務領域」である。</span></strong><span lang="zh"> 同一需求可以有多个版本、多个评审样本；一条样本也可以包含多个问题。后期统一数据按原始需求整组切分，避免同一需求的不同版本同时进入训练和测试。</span><span lang="en"> A query may have multiple versions and review samples; a sample may contain several issues. The unified dataset splits by original query group so versions of one query never straddle training and test.</span><span lang="ja"> 一要求に複数版・複数審査、一サンプルに複数問題があり得る。統一データは元要求群で分割し、同要求の異なる版を学習とテストへ跨がせない。</span></p>
+<h3 id="technical-subsection-2"><span lang="zh">2.2　历史输入的版本对齐</span><span lang="en">2.2  Aligning historical input versions</span><span lang="ja">2.2　過去入力の版整合</span></h3>
+<p><span lang="zh">最早可追溯的记录是7月21日的数据盘点，涉及6,457条原始需求。一条需求经过“设计、评审、修复、再评审”会留下多个版本。若把最终设计配上早期的问题标签，训练目标就会出错。因此，数据首先按需求、精确设计版本、业务域重新对齐，每个版本分别保留标签。</span><span lang="en">The earliest traceable inventory is July 21, covering 6,457 original queries. Design → review → repair → re-review leaves several versions. Pairing a final design with early defect labels creates incorrect targets. Data is therefore aligned by query, exact design version, and domain, retaining labels for each version.</span><span lang="ja">追跡可能な最初の棚卸しは7月21日、元要求6,457件だった。設計→審査→修復→再審査で複数版が残る。最終設計へ初期問題ラベルを付けると誤教師になるため、要求・正確な設計版・領域で揃え、版ごとにラベルを保存した。</span></p>
+<p><span lang="zh">修复后的设计也不一定全面变好。配对复查中既有问题消失，也有退步或引入新问题的情况。历史评审可作为找回问题的线索，最终标签仍要回到对应版本重新核对。</span><span lang="en">Repaired designs do not always improve everywhere. Paired review found resolved issues, regressions, and new defects. Historical reviews help retrieve candidates, but final labels must be rechecked against the corresponding version.</span><span lang="ja">修復版が全面改善するとは限らない。ペア確認では解消、悪化、新規問題が混在した。過去審査は問題候補の回収に使い、最終ラベルは対応版で再確認する。</span></p>
+<p><span lang="zh">早期训练还试过增加正常设计、扩大独立需求覆盖、调整多问题输出及重采样。在共同200条测试上，扩大需求覆盖的一组细规则F1达到63.67%，高于早期单层规则训练的53.82%；增加正常设计的一组开始能够放行正常样本，但问题召回下降。四组多问题全命中率都为0。这些比较涉及训练规模和输出形式的变化，指向的改进方向是同时控制业务覆盖、正常样本及问题数量。</span><span lang="en">Early training varied valid-design data, independent-query coverage, multi-issue output, and resampling. On a common 200-case test, wider query coverage reached fine-rule F1 63.67% versus early single-layer training's 53.82%. Added valid designs enabled valid-case release but lowered issue recall. All four groups had zero full multi-issue matches. Because size and output form also changed, the lesson was to jointly control business coverage, valid samples, and issue counts.</span><span lang="ja">初期は正常設計追加、独立要求拡大、多問題出力、再標本化を試した。共通200テストで要求範囲拡大群は細規則F1 63.67%、初期単層群53.82%だった。正常追加群は正常放行できるようになったが問題再現率が低下し、四群の多問題全一致は全て0だった。規模と出力形式も変わる比較であり、業務範囲・正常例・問題数を同時管理する方向を得た。</span></p>
+<h3 id="technical-subsection-3"><span lang="zh">2.3　标签生产及统一数据集</span><span lang="en">2.3  Label production and unified data</span><span lang="ja">2.3　ラベル生成と統一データ</span></h3>
+<p><span lang="zh">多次评审不能自动消除漏判。只投票会保留各轮共同的遗漏；让复核模型直接改答案，又可能删掉原本成立的问题。后来的标签流程先合并候选，再核对证据、前提和例外，最后补查遗漏类型。未解决的分歧单独保留。</span><span lang="en">Repeated reviews do not automatically remove misses. Voting preserves shared omissions; allowing a reviewer to rewrite answers can delete valid issues. The later workflow merges candidates, verifies evidence, prerequisites, and exceptions, then checks omitted error types. Unresolved disagreements remain separate.</span><span lang="ja">反復審査だけでは見逃しは消えない。投票は共通欠落を残し、再審査モデルに答えを直接改稿させると正しい指摘を削る場合がある。後期は候補統合、証拠・前提・例外確認、漏れ型再確認を行い、未解決不一致は別保持した。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-figure_05_label_pipeline"><div class="trajectory-map" data-entry="rubric-model-04" hidden="" id="writing-map-7"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="标签生产" data-alt-en="Label production" data-alt-ja="ラベル生成" data-alt-zh="标签生产" data-diagram-image="" data-figure-key="/writing/assets/213571d6c4a8fb88aa7c.svg" data-src-en="/writing/figures/en/rubric-model-04.svg?v=f5e6c7109107" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-04.svg?v=88c0fc99608a" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-04.svg?v=acb1de35d4f5" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-04.svg?v=39b51a78aae1" data-src-ja="/writing/figures/ja/rubric-model-04.svg?v=fa09daca3ef5" data-src-openai-blog-en="/writing/figures/en/rubric-model-04.svg?v=f5e6c7109107" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-04.svg?v=fa09daca3ef5" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-04.svg?v=8a80a351b46d" data-src-zh="/writing/figures/zh/rubric-model-04.svg?v=8a80a351b46d" decoding="async" height="360" loading="lazy" src="/writing/figures/zh/rubric-model-04.svg?v=8a80a351b46d" width="1008"/></details><figcaption class="map-duplicate-caption"><span lang="zh">标签生产</span><span lang="en">Label production</span><span lang="ja">ラベル生成</span></figcaption></figure>
+<p><span lang="zh">后期统一数据来自另一批设计生成、评审、修复轨迹。项目按业务域、历史问题数量和标题分层选样，再由Sol按当前完整规则独立复审；旧问题只用于选样，不进入新标注请求。首轮获得7,638份合法标签，覆盖190种错误类型。随后回捞历史材料，必要时构造或修改设计，再按同一规则复审；464条补充候选中采纳281条，形成7,919条、覆盖249种错误类型的数据池。</span><span lang="en">The unified data comes from another design/review/repair batch. Sampling is stratified by domain, historical issue count, and title, then Sol independently reviews with current full rules; old issues inform sampling only, never annotation requests. The first pass produced 7,638 valid labels covering 190 error types. Historical retrieval and, where needed, constructed or modified designs added 281 accepted items from 464 candidates, yielding 7,919 items covering 249 types.</span><span lang="ja">統一データは別の生成・審査・修復軌跡から得た。領域、過去問題数、題名で層別抽出し、Solが現行完全規則で独立再審査する。旧問題は抽出専用で新注釈入力へ入れない。初回7,638有効ラベル・190型、過去資料回収と必要な設計構築/修正で464候補中281を採用し、7,919件・249型となった。</span></p>
+<p><span lang="zh">切分按原始需求进行，并保证训练侧每种登记错误至少有3条样本。</span><span lang="en">Splitting is by original query, with at least three training examples for every registered error type.</span><span lang="ja">元要求単位で分割し、登録誤り型ごとに学習例を三件以上確保した。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">数据部分</span><span lang="en">Split</span><span lang="ja">区分</span></th>
+<th align="right"><span lang="zh">评审样本</span><span lang="en">Review samples</span><span lang="ja">審査サンプル</span></th>
+<th align="right"><span lang="zh">原始需求</span><span lang="en">Original queries</span><span lang="ja">元要求</span></th>
+<th align="right"><span lang="zh">无问题</span><span lang="en">No issues</span><span lang="ja">問題なし</span></th>
+<th align="right"><span lang="zh">单问题</span><span lang="en">One issue</span><span lang="ja">単問題</span></th>
+<th align="right"><span lang="zh">多问题</span><span lang="en">Multiple issues</span><span lang="ja">多問題</span></th>
+<th align="right"><span lang="zh">错误类型覆盖</span><span lang="en">Error-type coverage</span><span lang="ja">誤り型網羅</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">训练</span><span lang="en">Training</span><span lang="ja">学習</span></td>
+<td align="right">7,127</td>
+<td align="right">2,139</td>
+<td align="right">3,396</td>
+<td align="right">1,897</td>
+<td align="right">1,834</td>
+<td align="right">249 / 249</td>
+</tr>
+<tr>
+<td><span lang="zh">外部测试</span><span lang="en">External test</span><span lang="ja">外部テスト</span></td>
+<td align="right">792</td>
+<td align="right">229</td>
+<td align="right">391</td>
+<td align="right">192</td>
+<td align="right">209</td>
+<td align="right">116 / 249</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">这条路线建立了可追溯标签、统一训练格式和按需求隔离的比较数据。训练集中每种登记错误都有样本，但稀有错误的测试覆盖、复杂条件组合仍不足。下一步补样需要更关注多问题设计、规则边界和对象定位。</span><span lang="en">This produces traceable labels, a unified training format, and query-isolated comparisons. Every registered training type has examples, but rare-error test coverage and complex condition combinations remain limited. Further data should emphasize multi-issue designs, rule boundaries, and object localization.</span><span lang="ja">追跡可能ラベル、統一学習形式、要求分離の比較データを得た。登録型には学習例がある一方、希少型のテストと複雑条件組合せは不足する。次は多問題設計、規則境界、対象定位を重点に補う。</span></p>
+<h3 id="technical-subsection-4"><span lang="zh">2.4　评测指标和比较范围</span><span lang="en">2.4  Metrics and comparison scope</span><span lang="ja">2.4　指標と比較範囲</span></h3>
+<p><span lang="zh">主要指标是错误类型F1，综合精确率和召回率：模型报出的问题有多少符合参考，参考问题又找回多少。计分时按业务域、问题大类、规则及错误类型匹配标签，并在每条样本内去重；同一种错误出现在三个对象上，外部F1仍只计一个标签。是否列全这三个对象，还要检查问题数量、严格匹配和具体证据。</span><span lang="en">The main metric is error-type F1, balancing precision and recall. Labels match by domain, issue category, rubric, and error type, deduplicated within each sample. The same error on three objects still counts once in external F1. Enumerating all three requires count checks, strict matching, and evidence review.</span><span lang="ja">主指標は適合率と再現率を統合する誤り型F1である。領域・大分類・規則・誤り型で照合し、サンプル内で重複除去する。同型が三対象にあっても外部F1では一つと数える。三対象全てを列挙したかは件数・厳密一致・具体証拠で確認する。</span></p>
+<p><span lang="zh">后期统一测试分别使用Sol、DeepSeek生成的两套参考，检查结果是否依赖标签来源。它们衡量参考一致性；对语义争议另做复核。</span><span lang="en">The unified test uses separate Sol and DeepSeek references to inspect label-source dependence. They measure reference agreement; semantic disputes receive separate review.</span><span lang="ja">統一テストはSolとDeepSeekの二参照を使いラベル源への依存を調べる。参照一致を測り、意味上の争点は別審査する。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">比较范围</span><span lang="en">Comparison scope</span><span lang="ja">比較範囲</span></th>
+<th><span lang="zh">测试条件</span><span lang="en">Test conditions</span><span lang="ja">テスト条件</span></th>
+<th><span lang="zh">主要回答的问题</span><span lang="en">Main question</span><span lang="ja">主な問い</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">后期SFT、RL及CoT</span><span lang="en">Later SFT, RL, and CoT</span><span lang="ja">後期SFT・RL・CoT</span></td>
+<td><span lang="zh">792条共同测试；Sol、DeepSeek两套参考</span><span lang="en">792 shared tests; Sol and DeepSeek references</span><span lang="ja">共通792件、Sol・DeepSeek二参照</span></td>
+<td><span lang="zh">专用模型能力、继续RL的增益、三种理由目标</span><span lang="en">Specialized-model ability, continued-RL gains, three rationale targets</span><span lang="ja">専用能力、継続RL効果、三理由目標</span></td>
+</tr>
+<tr>
+<td><span lang="zh">较早两组多问题RL、后三组OPD</span><span lang="en">Two earlier multi-issue RL runs and three later OPD runs</span><span lang="ja">初期多問題RL二群、後期OPD三群</span></td>
+<td><span lang="zh">1,056条共同测试；该批冻结参考</span><span lang="en">1,056 shared tests with frozen batch references</span><span lang="ja">共通1,056件、当該固定参照</span></td>
+<td><span lang="zh">RL相对各自SFT起点的增益；OPD教师线索及学生规则长度</span><span lang="en">RL gains over each SFT start; OPD teacher hints and student rule length</span><span lang="ja">各SFT起点比RL効果、OPD教師手掛かり・学生規則長</span></td>
+</tr>
+<tr>
+<td><span lang="zh">提示词研究</span><span lang="en">Prompt studies</span><span lang="ja">Prompt研究</span></td>
+<td><span lang="zh">固定50条措辞对照、400条扫描对照、100条难例；分别计分</span><span lang="en">50 fixed wording cases, 400 scanning tests, 100 hard cases; separate scoring</span><span lang="ja">措辞50、走査400、難例100を別採点</span></td>
+<td><span lang="zh">规则表达、检查步骤、重复评审稳定性</span><span lang="en">Rule wording, checking steps, repeated-review stability</span><span lang="ja">規則表現、確認手順、反復審査安定性</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">F1按可评分输出计算，有效输出数量同时报告。792条中有50条曾用于提示词开发。不同测试集分别呈现，同一次对照沿用相同输入和参考。</span><span lang="en">F1 uses scoreable outputs, with valid-output counts reported alongside. Fifty of the 792 cases had informed prompt development. Different tests remain separate; each comparison uses identical inputs and references.</span><span lang="ja">F1は採点可能出力で計算し有効数も報告する。792件中50件はPrompt開発に使用済み。異なるテストは分け、各比較では入力と参照を統一する。</span></p>
+<h3 id="technical-subsection-5"><span lang="zh">2.5　通用模型参照</span><span lang="en">2.5  General-model reference points</span><span lang="ja">2.5　汎用モデルとの比較</span></h3>
+<p><span lang="zh">专用模型还需要同直接使用通用模型的结果比较。四组直接评审使用相同792条输入及完整业务规则，不提供参考标签。Sol、Luna通过CLI执行；DeepSeek通过API执行，模型及运行配置分别记录。</span><span lang="en">Specialized models are also compared with direct general-model review. Four groups use the same 792 inputs and full rules without reference labels. Sol/Luna run through CLI, DeepSeek through API; model and runtime settings are recorded separately.</span><span lang="ja">専用モデルを汎用モデル直接審査とも比較した。四群は同792入力と完全規則を使い、参照ラベルは渡さない。Sol/LunaはCLI、DeepSeekはAPIで実行し、モデルと設定を別記録した。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">直接评审模型</span><span lang="en">Direct-review model</span><span lang="ja">直接審査モデル</span></th>
+<th align="right"><span lang="zh">可评分 / 792</span><span lang="en">Scoreable / 792</span><span lang="ja">採点可能 / 792</span></th>
+<th align="right"><span lang="zh">Sol参考F1</span><span lang="en">F1 vs. Sol reference</span><span lang="ja">Sol参照F1</span></th>
+<th align="right"><span lang="zh">DeepSeek参考F1</span><span lang="en">F1 vs. DeepSeek reference</span><span lang="ja">DeepSeek参照F1</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sol High</td>
+<td align="right">792</td>
+<td align="right">68.28%</td>
+<td align="right">64.77%</td>
+</tr>
+<tr>
+<td>Luna Medium</td>
+<td align="right">784</td>
+<td align="right">65.01%</td>
+<td align="right">54.98%</td>
+</tr>
+<tr>
+<td>DeepSeek V4.1 Flash</td>
+<td align="right">756</td>
+<td align="right">60.61%</td>
+<td align="right">68.72%</td>
+</tr>
+<tr>
+<td>DeepSeek V4 Pro</td>
+<td align="right">792</td>
+<td align="right">65.12%</td>
+<td align="right">72.42%</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">参考变化会改变模型排序：Sol参考下Sol High较高，DeepSeek参考下Pro较高。Sol参考下四组均高于本次专用训练模型，说明专用模型仍有质量差距。Luna的8条异常、Flash的36条截断保留在失败统计中；严格一致按全部792条计分。</span><span lang="en">Reference choice changes ranking: Sol High leads with Sol labels, Pro with DeepSeek labels. All four exceed these specialized models on Sol references, showing a remaining quality gap. Luna's eight failures and Flash's 36 truncations remain in failure counts; strict agreement uses all 792 cases.</span><span lang="ja">参照変更で順位も変わり、Sol参照ではSol High、DeepSeek参照ではProが高い。Sol参照では四群全てが今回の専用モデルを上回り品質差が残る。Luna異常8、Flash切断36は失敗集計に残し、厳密一致は全792件を分母とする。</span></p>
+<h2 id="technical-section-4"><span lang="zh">3　规则及提示词实验</span><span lang="en">3  Rules and prompt experiments</span><span lang="ja">3　ルールとプロンプト実験</span></h2>
+<h3 id="technical-subsection-6"><span lang="zh">3.1　研究问题与比较因素</span><span lang="en">3.1  Questions and factors</span><span lang="ja">3.1　課題と比較要因</span></h3>
+<p><span lang="zh">明确的规则和检查步骤能否改善评审？本节分别检查规则措辞、逐项扫描、难例边界修订，以及额外证据字段。各项比较保留其自身的模型、样本和参考条件，按对应测试解释结果。</span><span lang="en">Can clearer rules and checking steps improve review? We separately test wording, item-by-item scans, hard-case boundary revisions, and extra evidence fields, preserving each study's model, samples, and reference conditions.</span><span lang="ja">明確な規則と確認手順は審査を改善するか。措辞、逐項走査、難例境界改訂、証拠欄追加を分け、各実験のモデル・集合・参照条件で解釈する。</span></p>
+<h3 id="technical-subsection-7"><span lang="zh">3.2　实验设置及对照结果</span><span lang="en">3.2  Setup and results</span><span lang="ja">3.2　設定と結果</span></h3>
+<p><span lang="zh">提示词研究分两部分。规则侧补充适用前提、违规条件、例外和归属，减少误读；检查侧要求先列出对象，再逐项扫描，发现问题后继续检查，最后回查遗漏。例如，“缺少循环”要区分处理多条记录的流程，以及只处理唯一记录等例外。</span><span lang="en">Prompt work has two parts. Rules clarify prerequisites, violations, exceptions, and attribution. Checking instructions enumerate objects, scan each one, continue after finding an issue, and revisit omissions. For example, “missing a loop” must distinguish multi-record processing from exceptions handling one unique record.</span><span lang="ja">Prompt研究は二部からなる。規則側は前提・違反・例外・帰属を明確化し、確認側は対象列挙、逐項走査、発見後も継続、見落とし再確認を指示する。例えばループ不足は複数レコード処理と一意レコード処理の例外を区別する。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">对照</span><span lang="en">Comparison</span><span lang="ja">比較</span></th>
+<th><span lang="zh">实验设置</span><span lang="en">Experimental setup</span><span lang="ja">実験設定</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">单域规则措辞</span><span lang="en">Single-domain rule wording</span><span lang="ja">単領域規則の措辞</span></td>
+<td><span lang="zh">相同Flash模型、规则清单、评审流程和50条输入；按固定参考中可明确裁决的样本计分</span><span lang="en">Same Flash, rule list, review process, and 50 inputs; score clearly adjudicable fixed-reference cases</span><span lang="ja">同Flash・規則一覧・審査手順・50入力。固定参照で明確に裁定できる例を採点</span></td>
+<td><span lang="zh">错误类型F1：55.38% → 64.62%</span><span lang="en">Error-type F1: 55.38% → 64.62%</span><span lang="ja">誤り型F1：55.38%→64.62%</span></td>
+</tr>
+<tr>
+<td><span lang="zh">逐项扫描</span><span lang="en">Item-by-item scanning</span><span lang="ja">逐項走査</span></td>
+<td><span lang="zh">同为Seed2起点，比较普通、逐项扫描训练提示；400条测试均使用普通提示</span><span lang="en">Same Seed2 start; ordinary vs. scan-style training prompts; all 400 tests use ordinary prompts</span><span lang="ja">同Seed2起点、通常/逐項走査学習Promptを比較。400テストは全て通常Prompt</span></td>
+<td><span lang="zh">F1：54.03% → 55.50%；问题存在性召回：72.08% → 78.45%</span><span lang="en">F1: 54.03% → 55.50%; issue-existence recall: 72.08% → 78.45%</span><span lang="ja">F1：54.03%→55.50%、問題有無の再現率：72.08%→78.45%</span></td>
+</tr>
+<tr>
+<td><span lang="zh">难例规则边界修订</span><span lang="en">Hard-case rule-boundary revisions</span><span lang="ja">難例の規則境界改訂</span></td>
+<td><span lang="zh">同一模型对100条难例分别评审3次，比较旧、新规则</span><span lang="en">Same model, 100 hard cases, three reviews each under old and new rules</span><span lang="ja">同モデル・難例100件を旧新規則で各三回審査</span></td>
+<td><span lang="zh">三轮裁决一致：62 → 73条；具体问题及条数一致：36 → 59条</span><span lang="en">Three-run verdict agreement: 62→73; issue identity/count agreement: 36→59</span><span lang="ja">三回裁定一致62→73、具体問題と件数一致36→59</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">措辞修改提高了参考一致性；逐项扫描训练带来小幅收益；边界修订提高了重复稳定性。额外要求填写对象、需求证据和设计证据也做过比较，在该轮相同规则下F1从90.32%变为89.43%。证据字段方便复核，但这次没有提高细标签得分。</span><span lang="en">Wording improved reference agreement; scan-style training brought a small gain; boundary revisions improved repeated stability. Adding object, requirement-evidence, and design-evidence fields changed F1 from 90.32% to 89.43% under the same rules. Evidence fields help auditing but did not improve fine-label scores in this run.</span><span lang="ja">措辞で参照一致、走査学習で小幅精度、境界改訂で反復安定性が改善した。対象・要求証拠・設計証拠欄を加える比較は同規則でF1 90.32%→89.43%だった。証拠欄は確認を助けるが今回の細ラベル得点は上げなかった。</span></p>
+<h3 id="technical-subsection-8"><span lang="zh">3.3　结果解释</span><span lang="en">3.3  Interpretation</span><span lang="ja">3.3　結果の解釈</span></h3>
+<p><span lang="zh">三类修改分别改善了参考一致性、问题存在性召回和重复评审稳定性。证据字段有助于复核，但其得分没有提高。后续规则设计因此继续明确适用条件及例外，并将检查顺序和证据质量分别验证。</span><span lang="en">The three changes improve reference agreement, issue-existence recall, and repeat stability, respectively. Evidence fields aid inspection without higher scores. Later rule design therefore retains explicit applicability and exceptions while testing scan order and evidence quality separately.</span><span lang="ja">三変更はそれぞれ参照一致、問題有無の再現率、反復安定性を改善した。証拠欄は審査に有用だが得点を上げなかった。以降は適用条件と例外を明記し、走査順と証拠品質を分けて検証する。</span></p>
+<h2 id="technical-section-5"><span lang="zh">4　监督微调（SFT）</span><span lang="en">4  Supervised fine-tuning (SFT)</span><span lang="ja">4　教師あり微調整（SFT）</span></h2><figure class="figure-block writing-map-figure" id="recorded-case"><div class="trajectory-map" data-entry="rubric-model-recorded-case" hidden="" id="writing-map-8"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="真实案例 · 找到问题，分对规则" data-alt-en="Recorded case · find the issue, assign the rule" data-alt-ja="実例 · 問題の検出とルールの分類" data-alt-zh="真实案例 · 找到问题，分对规则" data-diagram-image="" data-figure="rubric-model-recorded-case" data-figure-key="rubric-model-recorded-case" data-src-en="/writing/figures/en/rubric-model-recorded-case.svg?v=c136e33cc6fb" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-recorded-case.svg?v=07b2fbfa531a" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-recorded-case.svg?v=c2e46c8f2569" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-recorded-case.svg?v=0cb1011733ad" data-src-ja="/writing/figures/ja/rubric-model-recorded-case.svg?v=19ae4e5726d3" data-src-openai-blog-en="/writing/figures/en/rubric-model-recorded-case.svg?v=c136e33cc6fb" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-recorded-case.svg?v=19ae4e5726d3" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-recorded-case.svg?v=e9af1ddc425a" data-src-zh="/writing/figures/zh/rubric-model-recorded-case.svg?v=e9af1ddc425a" decoding="async" height="881" loading="lazy" src="/writing/figures/zh/rubric-model-recorded-case.svg?v=e9af1ddc425a" width="1440"/></details><figcaption><span lang="zh">这个固定测试单元中，SFT 与 RL 都找到两处错误并判 fail，只有 RL 与冻结 Sol 参考的错误类型一致。去重 Mode 标签 F1 分别为 0 和 1；问题数量均为 2。</span><span lang="en">On this fixed test unit, SFT and RL both find two errors and return fail, but only RL matches the frozen Sol reference’s error type. Unique-Mode-label F1 is 0 and 1 respectively; both report two issue instances.</span><span lang="ja">この固定テスト単位で SFT と RL はともに2件を検出して fail と判定するが、固定 Sol 参照と同じ分類は RL のみ。重複除去 Mode ラベル F1 は0と1、問題件数はいずれも2。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">SFT-v48 与其继续训练的 RL-v48（step 80），复用已保存预测。参考只用于离线计分，不在学生输入中。</span><span lang="en">SFT-v48 and its continued RL-v48 (step 80), using saved predictions. The reference is used only for offline scoring, never as student input.</span><span lang="ja">SFT-v48 とその継続学習版 RL-v48（step 80）の保存済み予測を使用。参照はオフライン採点にのみ使い、学生の入力には含めない。</span></p><p><span lang="zh">图中 F1 为这个单元的去重标签集合计算；整套模型的 Test792 结果仍在正文按参考分别报告。</span><span lang="en">The displayed F1 is computed from this unit’s unique label set; full Test792 model results remain reported separately by reference in the article.</span><span lang="ja">図の F1 はこの単位の重複除去ラベル集合から計算。モデル全体の Test792 結果は本文で参照別に報告する。</span></p></details></figure>
+<h3 id="technical-subsection-9"><span lang="zh">4.1　研究问题</span><span lang="en">4.1  Research question</span><span lang="ja">4.1　研究課題</span></h3>
+<p><span lang="zh">在输入及标签固定后，学生能否学习完整的业务域评审？此前的中间训练，以及先学旧版评审的经历，是否能改善最后一轮微调结果？</span><span lang="en">With inputs and labels fixed, can the student learn complete domain review? Does intermediate training or prior learning of older review rules improve the final fine-tuning round?</span><span lang="ja">入力・ラベル固定下で学生は完全な領域審査を学べるか。中間学習や旧審査学習の経験が最終微調整を改善するか。</span></p>
+<h3 id="technical-subsection-10"><span lang="zh">4.2　训练方法</span><span lang="en">4.2  Training method</span><span lang="ja">4.2　学習方式</span></h3>
+<p><span lang="zh">SFT用参考答案训练学生：系统消息放完整业务规则，用户消息放需求和设计，目标回答是完整JSON。每类检查都要给状态，每条问题包含规则、错误类型、严重程度和一句话依据。</span><span lang="en">SFT trains on reference answers: full rules in the system message, query/design in the user message, and complete JSON as the target. Every check gets a status; every issue has a rule, error type, severity, and one-sentence rationale.</span><span lang="ja">SFTはsystemへ完全規則、userへ要求と設計、目標へ完全JSONを置く。全確認項目に状態、全問題に規則・誤り型・重大度・一文根拠を付ける。</span></p>
+<p><span lang="zh">训练提高学生生成目标token的概率；评测时只给规则和待评材料。这里的一句话依据已属于普通SFT答案，后面的CoT实验是在此基础上加入整段判断理由。</span><span lang="en">Training increases target-token likelihood; evaluation provides only rules and review inputs. The one-sentence rationale is already part of ordinary SFT; later CoT adds an extended judgment rationale.</span><span lang="ja">学習は目標tokenの確率を高め、評価には規則と対象だけを渡す。一文根拠は通常SFTにも含まれ、後のCoTはさらに長い判断理由を加える。</span></p>
+<h3 id="technical-subsection-11"><span lang="zh">4.3　实验设置</span><span lang="en">4.3  Experimental setup</span><span lang="ja">4.3　実験設定</span></h3>
+<p><span lang="zh">最后一轮比较三个起点：Seed2 Lite基础模型；先做中间训练、再学旧版评审的模型；做过中间训练、直接学本轮评审的模型。中间训练指本次评审微调之前的额外训练经历。三组最后一轮使用相同7,127条数据、Sol标签和完整规则，从而比较中间训练的作用，以及先学旧规则再学新版的作用。</span><span lang="en">The final round compares Seed2 Lite base, an intermediately trained model that then learned old reviews, and an intermediately trained model learning the new task directly. Intermediate training means additional training before this review fine-tuning. All three finish on the same 7,127 items, Sol labels, and full rules, isolating prior-training histories.</span><span lang="ja">最終回はSeed2 Lite基盤、中間学習後に旧審査を学んだモデル、中間学習後に今回審査を直接学ぶモデルを比較する。中間学習は今回微調整以前の追加学習を指す。三群の最終回は同7,127件・Solラベル・完全規則を使い、既存学習履歴を比較する。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">共同设置</span><span lang="en">Shared setting</span><span lang="ja">共通設定</span></th>
+<th><span lang="zh">取值</span><span lang="en">Value</span><span lang="ja">値</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">模型系列</span><span lang="en">Model family</span><span lang="ja">モデル系列</span></td>
+<td>Seed2 Lite 260428</td>
+</tr>
+<tr>
+<td><span lang="zh">训练方式</span><span lang="en">Training method</span><span lang="ja">学習法</span></td>
+<td><span lang="zh">LoRA：冻结主体参数，训练新增参数；rank 32，alpha 4</span><span lang="en">LoRA: freeze base weights and train added parameters; rank 32, alpha 4</span><span lang="ja">LoRA：本体固定、追加パラメータを学習。rank 32、alpha 4</span></td>
+</tr>
+<tr>
+<td><span lang="zh">训练量</span><span lang="en">Training volume</span><span lang="ja">学習量</span></td>
+<td><span lang="zh">2轮；每批16条；学习率0.00001</span><span lang="en">2 epochs; batch 16; learning rate 0.00001</span><span lang="ja">2 epoch、batch 16、学習率0.00001</span></td>
+</tr>
+<tr>
+<td><span lang="zh">长度上限</span><span lang="en">Length limit</span><span lang="ja">長さ上限</span></td>
+<td>32,768 token</td>
+</tr>
+<tr>
+<td><span lang="zh">过程验证</span><span lang="en">In-training validation</span><span lang="ja">学習中検証</span></td>
+<td><span lang="zh">平台从训练文件内部划10%；外部792条用于最终评测</span><span lang="en">Platform holds out 10% internally; external 792 used for final evaluation</span><span lang="ja">学習ファイル内10%をプラットフォーム検証へ、外部792件は最終評価</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="technical-subsection-12"><span lang="zh">4.4　对照结果及解释</span><span lang="en">4.4  Results and interpretation</span><span lang="ja">4.4　結果と解釈</span></h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">进入本轮训练前的经历</span><span lang="en">Prior training history</span><span lang="ja">今回以前の学習履歴</span></th>
+<th align="right"><span lang="zh">Sol参考F1</span><span lang="en">F1 vs. Sol reference</span><span lang="ja">Sol参照F1</span></th>
+<th align="right"><span lang="zh">DeepSeek参考F1</span><span lang="en">F1 vs. DeepSeek reference</span><span lang="ja">DeepSeek参照F1</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">基础模型</span><span lang="en">Base model</span><span lang="ja">基盤モデル</span></td>
+<td align="right">55.72%</td>
+<td align="right">52.40%</td>
+</tr>
+<tr>
+<td><span lang="zh">中间训练，再学旧版评审</span><span lang="en">Intermediate training, then older reviews</span><span lang="ja">中間訓練後に旧審査</span></td>
+<td align="right">56.97%</td>
+<td align="right">51.67%</td>
+</tr>
+<tr>
+<td><span lang="zh">中间训练</span><span lang="en">Intermediate training</span><span lang="ja">中間訓練</span></td>
+<td align="right">56.19%</td>
+<td align="right">53.97%</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">按Sol参考，三个起点相差1.25个百分点；换用DeepSeek参考，排名随之变化。共同问题是召回不足：按Sol参考，精确率为71.28%—76.09%，召回率只有44.54%—47.44%。SFT已建立能生成细粒度评审结果的专用基线，中间训练组比基础组略高，但先学旧版评审的一组并未在两套参考下都领先。后续重点是让模型继续检查并找全问题。</span><span lang="en">The three starts differ by 1.25 pp under Sol references; rankings change with DeepSeek. Recall is the shared weakness: Sol precision is 71.28%–76.09%, recall only 44.54%–47.44%. SFT establishes a detailed-review baseline. Intermediate training is slightly above base, but prior old-rule training does not lead under both references. The next priority is continued scanning and complete issue retrieval.</span><span lang="ja">Sol参照で三起点の差は1.25ポイント、DeepSeekでは順位が変わる。共通弱点は再現率で、Sol適合率71.28%〜76.09%に対し再現率44.54%〜47.44%。SFTで細粒度審査基準を作れた。中間学習は基盤より僅かに良いが、旧規則先行群は両参照で首位ではない。次は検査継続と問題網羅を重視する。</span></p>
+<h2 id="technical-section-6"><span lang="zh">5　强化学习（RL）</span><span lang="en">5  Reinforcement learning (RL)</span><span lang="ja">5　強化学習（RL）</span></h2>
+<h3 id="technical-subsection-13"><span lang="zh">5.1　研究问题</span><span lang="en">5.1  Research question</span><span lang="ja">5.1　研究課題</span></h3>
+<p><span lang="zh">SFT的主要不足是召回。RL实验检验：以模型自己生成的答案计算奖励，能否让模型列出更多成立的问题，同时保持正常设计的放行能力？首轮比较数据组成，后续联合调整多问题数据和奖励计数方式。</span><span lang="en">Recall is SFT's main weakness. RL asks whether rewarding the student's generated answers can recover more valid issues while still accepting normal designs. The first round varies data composition; later work changes multi-issue data and reward counting together.</span><span lang="ja">SFTの弱点は再現率である。RLは自己生成答案への報酬で正しい問題を増やしつつ正常設計を放行できるかを問う。初回はデータ組成、後期は多問題データと報酬件数を併せて変える。</span></p>
+<h3 id="technical-subsection-14"><span lang="zh">5.2　首轮数据组成对照</span><span lang="en">5.2  First data-composition comparison</span><span lang="ja">5.2　初回のデータ組成比較</span></h3>
+<p><span lang="zh">RL从SFT模型继续训练，让模型先生成答案，再按答案质量计算奖励。首轮比较“问题和正常设计混合”及“只用问题样本”两种数据，奖励根据去重后的大类、规则、错误类型计分。两组均训练到200步，在共同500条测试上评估。</span><span lang="en">RL continues from SFT, generating answers before assigning rewards. The first comparison mixes defective/valid designs versus defects only; rewards score deduplicated categories, rules, and error types. Both train for 200 steps and use the same 500-case test.</span><span lang="ja">SFTからRLを継続し、回答生成後に品質報酬を計算する。初回は問題・正常混合と問題のみを比較し、重複除去した大分類・規則・誤り型で報酬を付けた。両群200 step、共通500テストを使う。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">条件</span><span lang="en">Condition</span><span lang="ja">条件</span></th>
+<th align="right"><span lang="zh">错误类型F1</span><span lang="en">Error-type F1</span><span lang="ja">誤り型F1</span></th>
+<th align="right"><span lang="zh">参考无问题样本仍判无问题</span><span lang="en">Reference-valid samples still judged valid</span><span lang="ja">参照正常例を正常と判定</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">SFT起点</span><span lang="en">SFT starting point</span><span lang="ja">SFT起点</span></td>
+<td align="right">46.20%</td>
+<td align="right">64.34%</td>
+</tr>
+<tr>
+<td><span lang="zh">混合问题、无问题数据的RL</span><span lang="en">RL with defective and valid designs</span><span lang="ja">問題・正常混合RL</span></td>
+<td align="right">42.65%</td>
+<td align="right">78.29%</td>
+</tr>
+<tr>
+<td><span lang="zh">只用问题数据的RL</span><span lang="en">RL with defects only</span><span lang="ja">問題のみRL</span></td>
+<td align="right">38.25%</td>
+<td align="right">0.78%</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">混合数据更容易放行正常设计，却漏掉更多问题；只用问题数据则几乎不再放行正常设计。两组外部F1均下降，促使后续同时修改样本组成和奖励。</span><span lang="en">Mixed data accepts normal designs more readily but misses more issues; defects-only data almost stops accepting normal designs. Both lower external F1, motivating joint changes to sampling and rewards.</span><span lang="ja">混合は正常を放行しやすいが問題を多く見逃し、問題のみはほぼ正常放行しなくなる。両群とも外部F1が下がり、組成と報酬の同時修正へ進んだ。</span></p>
+<h3 id="technical-subsection-15"><span lang="zh">5.3　多问题数据及训练设置</span><span lang="en">5.3  Multi-issue data and training</span><span lang="ja">5.3　多問題データと学習設定</span></h3>
+<p><span lang="zh">后续按错误类型覆盖无问题、1个问题、2—3个问题、4个以上问题。正常样本尽量取同一需求修复后的设计；多问题答案完整保留，不拆成多条单问题训练。同一样本可以覆盖多种错误，训练文件按输入去重。</span><span lang="en">Later sampling covers zero, one, two–three, and four-plus issues by error type. Normal examples preferentially use repaired designs for the same query. Multi-issue answers remain complete, not split into single-issue rows. One sample may cover multiple errors; training inputs are deduplicated.</span><span lang="ja">後期は型別に0、1、2〜3、4以上の問題を覆う。正常例は同要求の修復後設計を優先し、多問題答案を単問題へ分割しない。一例で複数型を覆い、入力単位で重複除去する。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">批次</span><span lang="en">Batch</span><span lang="ja">バッチ</span></th>
+<th align="right"><span lang="zh">RL训练</span><span lang="en">RL training</span><span lang="ja">RL学習</span></th>
+<th align="right"><span lang="zh">过程验证</span><span lang="en">In-training validation</span><span lang="ja">学習中検証</span></th>
+<th align="right"><span lang="zh">外部测试</span><span lang="en">External test</span><span lang="ja">外部テスト</span></th>
+<th><span lang="zh">训练中无问题 / 单问题 / 2—3问题 / 4+问题</span><span lang="en">Training: zero / one / 2–3 / 4+ issues</span><span lang="ja">学習内：0 / 1 / 2〜3 / 4+問題</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">较早规则，两种SFT起点</span><span lang="en">Earlier rules, two SFT starts</span><span lang="ja">初期規則、二SFT起点</span></td>
+<td align="right">810</td>
+<td align="right">242</td>
+<td align="right">1,056</td>
+<td>245 / 245 / 187 / 133</td>
+</tr>
+<tr>
+<td><span lang="zh">统一规则，两种SFT起点</span><span lang="en">Unified rules, two SFT starts</span><span lang="ja">統一規則、二SFT起点</span></td>
+<td align="right">795</td>
+<td align="right">215</td>
+<td align="right">792</td>
+<td>249 / 247 / 169 / 130</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">验证数据来自各自SFT训练池中未用于RL训练的部分，外部测试沿用各自SFT测试集。</span><span lang="en">Validation uses each SFT training pool's unused-for-RL portion; external tests retain each SFT's test set.</span><span lang="ja">検証は各SFT学習プールのRL未使用部分、外部テストは各SFTのテスト集合を継続する。</span></p>
+<p><span lang="zh">四组采用GRPO：每步选32条输入，每条生成8份答案，分别计分，再用同一输入下的相对得分更新模型。共同运行80步，学习率0.000001，KL约束系数0.001，每10步验证；生成温度0.7，单份答案上限10,000 token。参考标签只在奖励侧，学生作答时看不到。</span><span lang="en">All four use GRPO: 32 inputs per step, eight answers per input, scores normalized relative to answers for the same input. They run 80 steps at learning rate 0.000001, KL coefficient 0.001, validation every 10 steps, temperature 0.7, and at most 10,000 answer tokens. Labels are visible only to the reward side, not the student.</span><span lang="ja">四群はGRPOで、各step32入力・各入力8回答を採点し、同入力内の相対得点で更新する。共通80 step、学習率0.000001、KL係数0.001、10 stepごと検証、temperature 0.7、回答上限10,000 token。ラベルは報酬側のみが見て学生には渡さない。</span></p>
+<h3 id="technical-subsection-16"><span lang="zh">5.4　计数奖励</span><span lang="en">5.4  Count-aware reward</span><span lang="ja">5.4　件数を考慮する報酬</span></h3>
+<p><span lang="zh">早期奖励去掉重复标签，三个对象犯同一种错，报告一处或三处可能同分。后续奖励保留出现次数：先检查JSON、标签、严重度和状态是否合法，再计算三层计数F1，并奖励全部错误类型及数量完全匹配。</span><span lang="en">Early deduplicated rewards could score one report and three reports equally when three objects shared an error. Later rewards retain multiplicity: validate JSON, labels, severity, and status, then compute count-F1 at three levels and reward exact error-type/count matches.</span><span lang="ja">初期はラベル重複を除くため、同型を三対象中一つだけ報告しても三つ報告しても同点になり得た。後期は出現数を残し、JSON・ラベル・重大度・状態を検証後、三層件数F1と型・件数完全一致報酬を計算する。</span></p>
+<div class="reward-formula">
+<p><span lang="zh">综合得分 = 0.2 × 大类F1 + 0.3 × 规则F1 + 0.4 × 错误类型F1 + 0.1 × 完全匹配</span><span lang="en">Combined score = 0.2 × category F1 + 0.3 × rule F1 + 0.4 × error-type F1 + 0.1 × exact match</span><span lang="ja">総合点 = 0.2 × 大分類F1 + 0.3 × ルールF1 + 0.4 × エラータイプF1 + 0.1 × 完全一致</span></p>
+<p><span lang="zh">最终奖励 = 2 × 综合得分 − 1</span><span lang="en">Final reward = 2 × combined score − 1</span><span lang="ja">最終報酬 = 2 × 総合点 − 1</span></p>
+</div>
+<p><span lang="zh">计数F1为“2 × 命中条数 ÷（预测条数＋参考条数）”。双方都无问题时奖励为1；只有一方有问题，或答案未通过格式校验时，为−1。</span><span lang="en">Count-F1 is 2 × matched count / (predicted count + reference count). Both empty earns 1; only one side empty or invalid output earns −1.</span><span lang="ja">件数F1は2×一致件数/(予測件数＋参照件数)。双方問題なしは1、片方のみ問題ありまたは形式不正は−1。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-technical_rl_count_reward"><div class="trajectory-map" data-entry="rubric-model-05" hidden="" id="writing-map-9"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="RL计数奖励算例" data-alt-en="Worked example of count-aware RL rewards" data-alt-ja="件数を考慮したRL報酬の例" data-alt-zh="RL计数奖励算例" data-diagram-image="" data-figure-key="/writing/assets/2a78cfaa5c8b1d541369.svg" data-src-en="/writing/figures/en/rubric-model-05.svg?v=f7ce5123ec77" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-05.svg?v=ea0f3db0cbe6" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-05.svg?v=c68e6cf50a87" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-05.svg?v=95440498e5c2" data-src-ja="/writing/figures/ja/rubric-model-05.svg?v=f1a7962d0439" data-src-openai-blog-en="/writing/figures/en/rubric-model-05.svg?v=f7ce5123ec77" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-05.svg?v=f1a7962d0439" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-05.svg?v=9ef85c566e01" data-src-zh="/writing/figures/zh/rubric-model-05.svg?v=9ef85c566e01" decoding="async" height="345" loading="lazy" src="/writing/figures/zh/rubric-model-05.svg?v=9ef85c566e01" width="849"/></details><figcaption class="map-duplicate-caption"><span lang="zh">RL计数奖励算例</span><span lang="en">Worked example of count-aware RL rewards</span><span lang="ja">件数を考慮したRL報酬の例</span></figcaption></figure>
+<p><strong><span lang="zh">训练奖励保留数量，外部F1则去重计标签。</span><span lang="en">Training rewards preserve counts; external F1 deduplicates labels.</span><span lang="ja">学習報酬は件数を残し、外部F1はラベルを重複除去する。</span></strong><span lang="zh"> 因此，外部F1提高说明错误类型更贴近参考，不能单独证明同类问题对应的多个对象全部找齐。奖励还只检查理由是否非空、是否字面重复，不检查依据是否成立、对象是否对应。</span><span lang="en"> External F1 gains therefore mean closer error-type agreement, not proof that every same-type object is found. The reward checks only nonempty/nonidentical rationale strings, not whether evidence is valid or points to the right object.</span><span lang="ja"> 外部F1改善は型の参照一致向上を意味し、同型の全対象定位を証明しない。報酬は理由の非空・文字列非重複だけを確認し、証拠の成立や対象対応を検査しない。</span></p>
+<h3 id="technical-subsection-17"><span lang="zh">5.5　对照结果及训练诊断</span><span lang="en">5.5  Results and training diagnostics</span><span lang="ja">5.5　結果と学習診断</span></h3>
+<figure class="blog-figure writing-map-figure" id="figure-result_01_sft_rl"><div class="trajectory-map" data-entry="rubric-model-06" hidden="" id="writing-map-10"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="监督微调后继续强化学习" data-alt-en="Reinforcement learning after supervised fine-tuning" data-alt-ja="教師あり微調整後の強化学習" data-alt-zh="监督微调后继续强化学习" data-diagram-image="" data-figure-key="/writing/assets/c74430396580fa5c87e9.svg" data-src-en="/writing/figures/en/rubric-model-06.svg?v=39ccb5204d59" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-06.svg?v=709f651f77a8" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-06.svg?v=bcfa7ece20e4" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-06.svg?v=57f914538553" data-src-ja="/writing/figures/ja/rubric-model-06.svg?v=a75377ec707f" data-src-openai-blog-en="/writing/figures/en/rubric-model-06.svg?v=39ccb5204d59" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-06.svg?v=a75377ec707f" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-06.svg?v=b1852220def7" data-src-zh="/writing/figures/zh/rubric-model-06.svg?v=b1852220def7" decoding="async" height="446" loading="lazy" src="/writing/figures/zh/rubric-model-06.svg?v=b1852220def7" width="849"/></details><figcaption class="map-duplicate-caption"><span lang="zh">监督微调后继续强化学习</span><span lang="en">Reinforcement learning after supervised fine-tuning</span><span lang="ja">教師あり微調整後の強化学習</span></figcaption></figure>
+<p><span lang="zh">后续四次多问题训练有三次提高F1。较早规则的两组分别提高约3.45、2.77个百分点；统一数据上，一组56.97% → 58.91%，另一组56.19% → 55.81%。这些结果支持继续研究包含正常设计、多问题样本及计数奖励的训练方案。数据、奖励和设置一起变化，现有实验尚未分别测出每项改进的贡献。</span><span lang="en">Three of four later multi-issue runs improved F1. The earlier-rule starts gained about 3.45 and 2.77 pp; on unified data one rose 56.97%→58.91%, the other fell 56.19%→55.81%. This supports studying valid/multi-issue data with count rewards. Data, reward, and settings changed together, so their individual contributions are not yet isolated.</span><span lang="ja">後期多問題四実験中三つでF1が上昇した。初期規則二群は約3.45・2.77ポイント増、統一データでは56.97%→58.91%と56.19%→55.81%だった。正常・多問題と件数報酬の組合せを支持するが、データ・報酬・設定を同時変更したため個別寄与は未分離である。</span></p>
+<p><span lang="zh">后期两种起点一升一降，也留下了训练停止位置的检查线索。直接学习新版规则的一组，第50步验证奖励0.4629，最终第80步降至0.4184；当前外部测试使用第80步。中间模型是否更好，需要在同一外部测试上比较。对象及证据的语义核验，则是现有奖励需要补上的能力。</span><span lang="en">The later starts' opposite outcomes also suggest investigating stopping points. The direct-new-rule group reached validation reward 0.4629 at step 50, then 0.4184 at step 80, which is the current external-test checkpoint. Intermediate checkpoints need the same external test. Semantic verification of objects and evidence is also missing from the reward.</span><span lang="ja">後期起点の一増一減は停止位置の検証も促す。新版直接学習群はstep50で検証報酬0.4629、step80で0.4184へ低下し、現在の外部評価はstep80を使う。中間版も同外部テストで比較すべきで、対象・証拠の意味検証も報酬へ補う必要がある。</span></p>
+<h2 id="technical-section-7"><span lang="zh">6　概率蒸馏（OPD）</span><span lang="en">6  On-policy distillation (OPD)</span><span lang="ja">6　オンポリシー蒸留（OPD）</span></h2>
+<h3 id="technical-subsection-18"><span lang="zh">6.1　研究问题</span><span lang="en">6.1  Research question</span><span lang="ja">6.1　研究課題</span></h3>
+<p><span lang="zh">SFT和RL都要求学生阅读完整规则。OPD接着检验：教师保留详细规则，学生能否通过训练学会其中的判断条件，从而缩短使用时的输入？精简提示保留规则大纲、合法标签和输出格式，删除适用前提、排除条件和证据要求。</span><span lang="en">SFT and RL both require full student rules. OPD asks whether a teacher retaining detailed rules can teach their conditions into the student, shortening inference input. The compact prompt keeps the outline, legal labels, and output format but removes prerequisites, exceptions, and evidence requirements.</span><span lang="ja">SFT・RLは学生に完全規則を読ませる。OPDは教師に詳細を残し、判断条件を学生へ学ばせ推論入力を縮められるかを問う。簡略Promptは規則概要、合法ラベル、出力形式を保ち、前提・例外・証拠要求を削る。</span></p>
+<h3 id="technical-subsection-19"><span lang="zh">6.2　蒸馏方法及共同设置</span><span lang="en">6.2  Distillation and shared setup</span><span lang="ja">6.2　蒸留方式と共通設定</span></h3>
+<p><span lang="zh">OPD全称On-policy Distillation。当前学生先生成答案，固定教师读自己的上下文，并沿学生已经写出的前缀，计算后续token的概率。学生据此调整概率分配，再用更新后的参数生成下一批答案。</span><span lang="en">In on-policy distillation, the current student generates an answer. A fixed teacher reads its own context and scores next-token probabilities along the student's prefixes. The student adjusts its distribution and generates the next batch with updated weights.</span><span lang="ja">OPDでは現学生が回答を生成し、固定教師が自分の文脈と学生の既出prefixに沿って次token確率を計算する。学生は分布を更新し、新重みで次バッチを生成する。</span></p>
+<p><span lang="zh">每个输入生成1份答案，每批32条；选取学生概率最高的64个候选token，在该范围内重新归一化，用反向KL衡量概率差异，按token平均计算。最终裁决的额外奖励关闭。教师获得的标签提示不进入学生输入。</span><span lang="en">Each input gets one answer, with batch size 32. The student's top 64 tokens are renormalized and compared using reverse KL averaged per token. Extra verdict reward is disabled. Teacher label hints never enter student inputs.</span><span lang="ja">一入力一回答、batch32。学生上位64 token内で再正規化し、token平均のreverse KLを使う。追加裁定報酬は無効で、教師ラベル手掛かりは学生入力へ入れない。</span></p>
+<h3 id="technical-subsection-20"><span lang="zh">6.3　精简规则条件下的教师对照</span><span lang="en">6.3  Teachers with compact student rules</span><span lang="ja">6.3　簡略学生規則での教師比較</span></h3>
+<p><span lang="zh">首轮固定7,127条训练输入、Seed2 Lite基础学生和精简规则，训练223步。三个基础模型教师分别获得数量和扫描方向、参考理由、逐条标签，按Sol参考计算的792条测试F1分别为20.98%、20.69%、22.01%。改用专用SFT教师的一组为16.09%，657条输出为空问题集合。这一阶段没有达到压缩学生规则的目标。</span><span lang="en">The first round fixes 7,127 inputs, base Seed2 Lite student, and compact rules for 223 steps. Three base-model teachers receive count/scan hints, reference rationales, or item labels, scoring 20.98%, 20.69%, and 22.01% Sol-reference F1 on 792 tests. A specialized SFT teacher scores 16.09%, with 657 empty issue outputs. This stage did not achieve useful rule compression.</span><span lang="ja">初回は7,127入力、基盤Seed2 Lite学生、簡略規則で223 step。三基盤教師へ件数/走査方向、参照理由、逐項ラベルを与え、792テストのSol F1は20.98%、20.69%、22.01%。専用SFT教師群は16.09%で空問題出力657件。実用的な規則圧縮には届かなかった。</span></p>
+<h3 id="technical-subsection-21"><span lang="zh">6.4　教师线索和学生规则长度对照</span><span lang="en">6.4  Teacher hints and student rule length</span><span lang="ja">6.4　教師手掛かりと学生規則長</span></h3>
+<p><span lang="zh">下一轮改用同一个RL教师、6,580条训练输入，学生都从Seed2 Lite基础模型开始，训练206步。在共同1,056条测试上，比较教师是否额外看到问题标签、学生是否保留完整规则。</span><span lang="en">The next round uses one RL teacher and 6,580 inputs; all students start from Seed2 Lite base and train 206 steps. A common 1,056-case test compares teacher label hints and full versus compact student rules.</span><span lang="ja">次は同RL教師・6,580入力、全学生Seed2 Lite基盤から206 step学習。共通1,056テストで教師ラベル手掛かりの有無と学生完全/簡略規則を比較する。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-technical_opd_design"><div class="trajectory-map" data-entry="rubric-model-07" hidden="" id="writing-map-11"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="OPD对照设计及结果" data-alt-en="OPD comparison design and results" data-alt-ja="OPDの比較設計と結果" data-alt-zh="OPD对照设计及结果" data-diagram-image="" data-figure-key="/writing/assets/8573383b051e4aa43c38.svg" data-src-en="/writing/figures/en/rubric-model-07.svg?v=6ca08622a61d" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-07.svg?v=6df124afa12e" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-07.svg?v=1f36944c63ee" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-07.svg?v=b85327883765" data-src-ja="/writing/figures/ja/rubric-model-07.svg?v=faedc75763b9" data-src-openai-blog-en="/writing/figures/en/rubric-model-07.svg?v=6ca08622a61d" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-07.svg?v=faedc75763b9" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-07.svg?v=20e0cd1dbbb8" data-src-zh="/writing/figures/zh/rubric-model-07.svg?v=20e0cd1dbbb8" decoding="async" height="367" loading="lazy" src="/writing/figures/zh/rubric-model-07.svg?v=20e0cd1dbbb8" width="849"/></details><figcaption class="map-duplicate-caption"><span lang="zh">OPD对照设计及结果</span><span lang="en">OPD comparison design and results</span><span lang="ja">OPDの比較設計と結果</span></figcaption></figure>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">教师额外标签提示</span><span lang="en">Extra teacher label hints</span><span lang="ja">教師への追加ラベル</span></th>
+<th><span lang="zh">学生规则</span><span lang="en">Student rules</span><span lang="ja">学生規則</span></th>
+<th align="right"><span lang="zh">错误类型F1</span><span lang="en">Error-type F1</span><span lang="ja">誤り型F1</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">不提供</span><span lang="en">Absent</span><span lang="ja">なし</span></td>
+<td><span lang="zh">完整</span><span lang="en">Full</span><span lang="ja">完全</span></td>
+<td align="right">52.85%</td>
+</tr>
+<tr>
+<td><span lang="zh">提供</span><span lang="en">Present</span><span lang="ja">あり</span></td>
+<td><span lang="zh">完整</span><span lang="en">Full</span><span lang="ja">完全</span></td>
+<td align="right">51.12%</td>
+</tr>
+<tr>
+<td><span lang="zh">提供</span><span lang="en">Present</span><span lang="ja">あり</span></td>
+<td><span lang="zh">精简</span><span lang="en">Compact</span><span lang="ja">簡略</span></td>
+<td align="right">35.03%</td>
+</tr>
+<tr>
+<td><span lang="zh">不提供</span><span lang="en">Absent</span><span lang="ja">なし</span></td>
+<td><span lang="zh">精简</span><span lang="en">Compact</span><span lang="ja">簡略</span></td>
+<td align="right"><span lang="zh">未运行</span><span lang="en">Not run</span><span lang="ja">未実行</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">这是两个因素下完成的三个条件，</span><span lang="en">Three conditions of a two-factor design were run;</span><span lang="ja">二要因設計の三条件を実行し、</span><strong><span lang="zh">无额外教师标签＋精简学生规则</span><span lang="en">no teacher labels + compact student rules</span><span lang="ja">教師ラベルなし＋学生簡略規則</span></strong><span lang="zh">这一格未运行。已有对照给出两个直接结果：教师都有标签时，完整学生规则高16.09个百分点；学生都用完整规则时，增加教师标签没有提高结果。三组仍低于同集SFT的59.49%和RL的62.25%。</span><span lang="en">was not run. With teacher labels, full student rules win by 16.09 pp. With full student rules, adding teacher labels does not improve results. All three remain below same-test SFT 59.49% and RL 62.25%.</span><span lang="ja">は未実行。教師ラベルありでは完全学生規則が16.09ポイント高く、完全学生規則下で教師ラベル追加は改善しなかった。三群とも同テストSFT 59.49%、RL 62.25%を下回った。</span></p>
+<p><span lang="zh">学生提示在训练及评测时同步改变，因此16.09个百分点比较的是两套完整使用方案。当前选择是继续给学生完整规则；精简输入尚未达到完整规则方案的效果。下一步应固定教师及训练设置，逐类删减规则，定位哪些条件必须留在输入中。</span><span lang="en">Student prompts change during both training and evaluation, so the 16.09 pp compares two complete usage configurations. Full rules are retained for now. Next, fix teacher/training settings and remove rule categories one at a time to identify indispensable conditions.</span><span lang="ja">学生Promptは学習・評価両方で変わるため、16.09ポイント差は二つの利用構成全体の比較である。当面完全規則を維持し、次は教師・学習設定を固定して規則群を一つずつ削り、必須条件を特定する。</span></p>
+<h2 id="technical-section-8"><span lang="zh">7　理由监督（CoT）</span><span lang="en">7  Rationale supervision (CoT)</span><span lang="ja">7　理由による教師信号（CoT）</span></h2>
+<h3 id="technical-subsection-22"><span lang="zh">7.1　研究问题</span><span lang="en">7.1  Research question</span><span lang="ja">7.1　研究課題</span></h3>
+<p><span lang="zh">学习教师的判断过程，是否能提高学生裁决质量？这轮用DeepSeek生成的同一批标签构造三种目标：理由放在普通回答里；同一段理由放在专用推理字段；只保留裁决。</span><span lang="en">Can learning a teacher's judgment process improve verdicts? The same DeepSeek label batch yields three targets: rationale in the ordinary answer, the same rationale in a dedicated reasoning field, or verdict only.</span><span lang="ja">教師の判断過程を学ぶと裁定は改善するか。同じDeepSeekラベルから、通常回答内理由、同理由を専用推論欄、裁定のみの三目標を作る。</span></p>
+<h3 id="technical-subsection-23"><span lang="zh">7.2　目标构造及实验设置</span><span lang="en">7.2  Targets and setup</span><span lang="ja">7.2　目標構築と設定</span></h3>
+<p><span lang="zh">理由取自教师按要求写出的</span><span lang="en">Rationales come from the teacher-requested</span><span lang="ja">理由は教師に指定して書かせた次の欄から取得する：</span><code>judge_reason</code><span lang="zh">，去除置信度字段；它不是接口原生推理文本。前两组共用同一段理由，三组共用7,127条输入、相同裁决及完整业务规则，从同一Seed2 Lite基础模型做2轮LoRA微调。理由属于训练目标，评测输入不含教师理由。</span><span lang="en">, removing confidence fields; they are not native API reasoning. The first two groups share identical rationales, and all three share 7,127 inputs, verdicts, and full rules. They use two-epoch LoRA from the same Seed2 Lite base. Rationales are training targets, not evaluation inputs.</span><span lang="ja">。確信度欄を除き、API原生推論文ではない。初二群は同理由、三群は7,127入力・裁定・完全規則を共通化し、同Seed2 Lite基盤から2 epoch LoRAを行う。理由は学習目標で、評価入力には含めない。</span></p>
+<p><span lang="zh">训练长度上限32,768 token；评测请求上限16,384，temperature为0.01。目标长度、实际训练步数及推理模式的差异如下。</span><span lang="en">Training length is capped at 32,768 tokens; evaluation at 16,384 with temperature 0.01. Target length, actual steps, and reasoning mode differ as follows.</span><span lang="ja">学習上限32,768 token、評価上限16,384、temperature 0.01。目標長、実step、推論モードの差を以下に示す。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-technical_cot_design"><div class="trajectory-map" data-entry="rubric-model-08" hidden="" id="writing-map-12"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="CoT对照设计及结果" data-alt-en="CoT comparison design and results" data-alt-ja="CoTの比較設計と結果" data-alt-zh="CoT对照设计及结果" data-diagram-image="" data-figure-key="/writing/assets/518173faf6bb5f7a6524.svg" data-src-en="/writing/figures/en/rubric-model-08.svg?v=e8ae3a3180bd" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-08.svg?v=eaec2faa054b" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-08.svg?v=2ac67895ba97" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-08.svg?v=ea40d00b097a" data-src-ja="/writing/figures/ja/rubric-model-08.svg?v=a92d8c0341e3" data-src-openai-blog-en="/writing/figures/en/rubric-model-08.svg?v=e8ae3a3180bd" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-08.svg?v=a92d8c0341e3" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-08.svg?v=cd868648b3ff" data-src-zh="/writing/figures/zh/rubric-model-08.svg?v=cd868648b3ff" decoding="async" height="525" loading="lazy" src="/writing/figures/zh/rubric-model-08.svg?v=cd868648b3ff" width="849"/></details><figcaption class="map-duplicate-caption"><span lang="zh">CoT对照设计及结果</span><span lang="en">CoT comparison design and results</span><span lang="ja">CoTの比較設計と結果</span></figcaption></figure>
+<h3 id="technical-subsection-24"><span lang="zh">7.3　对照结果及解释</span><span lang="en">7.3  Results and interpretation</span><span lang="ja">7.3　結果と解釈</span></h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">训练目标</span><span lang="en">Training target</span><span lang="ja">学習目標</span></th>
+<th align="right"><span lang="zh">实际步数</span><span lang="en">Actual steps</span><span lang="ja">実step</span></th>
+<th><span lang="zh">评测推理模式</span><span lang="en">Evaluation reasoning mode</span><span lang="ja">評価推論モード</span></th>
+<th align="right"><span lang="zh">可评分 / 792</span><span lang="en">Scoreable / 792</span><span lang="ja">採点可能 / 792</span></th>
+<th align="right"><span lang="zh">Sol参考F1</span><span lang="en">F1 vs. Sol reference</span><span lang="ja">Sol参照F1</span></th>
+<th align="right"><span lang="zh">DeepSeek参考F1</span><span lang="en">F1 vs. DeepSeek reference</span><span lang="ja">DeepSeek参照F1</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">普通回答内的理由＋裁决</span><span lang="en">Rationale + verdict in ordinary answer</span><span lang="ja">通常回答内の理由＋裁定</span></td>
+<td align="right">354</td>
+<td><span lang="zh">关闭</span><span lang="en">Off</span><span lang="ja">無効</span></td>
+<td align="right">786</td>
+<td align="right">41.54%</td>
+<td align="right">47.04%</td>
+</tr>
+<tr>
+<td><span lang="zh">推理字段理由＋普通回答裁决</span><span lang="en">Rationale in reasoning field; verdict in ordinary answer</span><span lang="ja">推論欄に理由、通常回答に裁定</span></td>
+<td align="right">362</td>
+<td><span lang="zh">开启</span><span lang="en">On</span><span lang="ja">有効</span></td>
+<td align="right">792</td>
+<td align="right">42.94%</td>
+<td align="right">46.98%</td>
+</tr>
+<tr>
+<td><span lang="zh">仅裁决</span><span lang="en">Verdict only</span><span lang="ja">裁定のみ</span></td>
+<td align="right">342</td>
+<td><span lang="zh">关闭</span><span lang="en">Off</span><span lang="ja">無効</span></td>
+<td align="right">784</td>
+<td align="right">51.52%</td>
+<td align="right">56.56%</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">仅裁决的方案在两套参考下均更好。按DeepSeek参考，它比回答内理由、推理字段理由分别高9.52、9.58个百分点；按Sol参考分别高9.98、8.58个百分点。以原始需求为单位做配对重复抽样，四个差值的95%区间均高于0。</span><span lang="en">Verdict-only is better under both references. Under DeepSeek, it beats answer-rationale and reasoning-field-rationale by 9.52 and 9.58 pp; under Sol by 9.98 and 8.58 pp. Query-level paired bootstrap 95% intervals for all four differences are above zero.</span><span lang="ja">裁定のみが両参照で優れる。DeepSeek参照では回答内理由・推論欄理由を9.52・9.58ポイント、Solでは9.98・8.58ポイント上回る。元要求単位のペアbootstrapで四差分の95%区間は全て0より上だった。</span></p>
+<p><span lang="zh">因此，后续理由研究应保留仅裁决基线。加入理由为何下降仍未确定：本次三组实际训练354、362、342步，推理字段组开启推理模式，其余关闭。理由内容、额外生成负担及推理方式各自的影响，需要进一步拆开验证。</span><span lang="en">Verdict-only should remain the baseline. Why rationales hurt is unresolved: actual training steps were 354, 362, and 342, and only the reasoning-field group enabled reasoning. Rationale content, generation burden, and inference mode need separate tests.</span><span lang="ja">裁定のみを基準に残す。理由追加で悪化する原因は未確定で、実stepは354・362・342、推論欄群だけ推論有効だった。理由内容、生成負担、推論方式を分離して検証する必要がある。</span></p>
+<h3 id="technical-subsection-25"><span lang="zh">7.4　理由素材的后续探索</span><span lang="en">7.4  Further rationale-data studies</span><span lang="ja">7.4　理由素材の追加検討</span></h3>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">探索</span><span lang="en">Study</span><span lang="ja">検討</span></th>
+<th><span lang="zh">研究目的</span><span lang="en">Purpose</span><span lang="ja">目的</span></th>
+<th><span lang="zh">已得到的结果</span><span lang="en">Result so far</span><span lang="ja">現在の結果</span></th>
+<th><span lang="zh">当前状态</span><span lang="en">Status</span><span lang="ja">状態</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">原生理由整理，50条</span><span lang="en">Native-rationale cleanup, 50 items</span><span lang="ja">原生理由の整理、50件</span></td>
+<td><span lang="zh">解决原生理由超长</span><span lang="en">Reduce overlong native rationales</span><span lang="ja">過長な原生理由の短縮</span></td>
+<td><span lang="zh">47条合法裁决、3条截断；原文两格式有12/11条超32k，整理后均能容纳</span><span lang="en">47 valid verdicts, 3 truncations; 12/11 original items exceeded 32k in two formats, all fit after cleanup</span><span lang="ja">有効裁定47、切断3。二形式で元12/11件が32k超、整理後は全て収まる</span></td>
+<td><span lang="zh">复查仍有理由和裁决冲突、整理遗漏条件</span><span lang="en">Review still finds rationale/verdict conflicts and omitted conditions</span><span lang="ja">再確認で理由・裁定矛盾と条件欠落が残る</span></td>
+</tr>
+<tr>
+<td><span lang="zh">修改原生提示，固定10条</span><span lang="en">Native prompt revision, fixed 10 items</span><span lang="ja">原生Prompt修正、固定10件</span></td>
+<td><span lang="zh">减少理由和裁决冲突</span><span lang="en">Reduce rationale/verdict contradictions</span><span lang="ja">理由と裁定の矛盾を減らす</span></td>
+<td><span lang="zh">修正一条冲突；合法裁决从旧条件9/10变为8/10，另有漏判未修复</span><span lang="en">One contradiction fixed; valid verdicts fell 9/10→8/10, with other misses unresolved</span><span lang="ja">矛盾一件修正、有効裁定9/10→8/10、他見逃し未解決</span></td>
+<td><span lang="zh">辅助提示词试验已完成，未扩大</span><span lang="en">Helper-prompt experiment complete, not expanded</span><span lang="ja">補助Prompt実験完了、拡大せず</span></td>
+</tr>
+<tr>
+<td><span lang="zh">学生短理由筛选</span><span lang="en">Filter student short rationales</span><span lang="ja">学生短理由の選別</span></td>
+<td><span lang="zh">获得学生可生成的较短目标</span><span lang="en">Obtain shorter targets the student can generate</span><span lang="ja">学生が生成可能な短い目標を得る</span></td>
+<td><span lang="zh">形成7,065条同输入、同裁决的两组配对数据</span><span lang="en">7,065 paired items with the same inputs and verdicts</span><span lang="ja">同入力・同裁定の二群ペア7,065件</span></td>
+<td><span lang="zh">数据已备好，后续SFT未提交</span><span lang="en">Data ready; follow-up SFT not submitted</span><span lang="ja">データ準備済み、後続SFT未投入</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">短理由路线称为筛选后微调（RFT）。学生借助教师分析，对每条输入生成4次；程序检查结构、标签及同类问题次数，每条取最早通过的一份，四次都失败的62条由两组共同排除。随后移除辅助教师分析，得到“短理由＋裁决”和“仅裁决”目标。自动筛选没有检验全部理由证据，模型收益仍待训练后验证。</span><span lang="en">This short-rationale route is rejection-sampling fine-tuning (RFT). Assisted by teacher analysis, the student samples four answers per input. Code checks structure, labels, and same-type issue counts, selecting the earliest passing answer. Both arms exclude 62 inputs failing all four. Teacher assistance is removed to produce short-rationale+verdict and verdict-only targets. Filtering does not validate every rationale's evidence; training gains remain untested.</span><span lang="ja">短理由系統は選別後微調整（RFT）と呼ぶ。教師分析を補助に学生が各入力四回生成し、構造・ラベル・同型件数をコード確認して最初の合格を選ぶ。四回全失敗62入力を両群共通除外し、補助教師分析を除いて短理由＋裁定と裁定のみを作る。全理由の証拠を検証したわけではなく、学習効果は未検証である。</span></p>
+<p><span lang="zh">另一路同次回答采集未完成，也未进入训练对照，因此本节的训练结论来自已经完成的三组 CoT 实验。</span><span lang="en">A separate same-response collection was not completed and did not enter a training comparison. Training conclusions in this section therefore come from the three completed CoT experiments.</span><span lang="ja">別途進めた同一応答の収集は完了せず、学習対照にも進んでいません。本節の学習に関する結論は、完了した三つのCoT実験に基づきます。</span></p>
+<h2 id="technical-section-9"><span lang="zh">8　实际产物评审及标签生产方法</span><span lang="en">8  Built-artifact review and label production</span><span lang="ja">8　実成果物審査とラベル生成</span></h2>
+<h3 id="technical-subsection-26"><span lang="zh">8.1　实际产物评审</span><span lang="en">8.1  Built-artifact review</span><span lang="ja">8.1　実成果物審査</span></h3>
+<p id="artifact-model-input"><span lang="zh">Artifact-RJM 每次只评一个域。System Prompt 提供该域的产品能力、输入解释、规则卡和输出协议；User Message 只含 domain、原始 query、当前域 artifact_markdown。Spec 留在 Code Agent 的生成输入中，不作为产物评审的额外需求；这样不会把模型自行扩写的设计当成用户必须接受的要求。</span><span lang="en">Artifact-RJM reviews one domain per call. The system prompt supplies that domain’s product capabilities, input semantics, rubric cards, and output protocol. The user message contains only domain, original query, and the current domain’s artifact_markdown. The Spec remains an input to Code Agent, not an extra requirement for artifact review, so a model-expanded design cannot silently become a user obligation.</span><span lang="ja">Artifact-RJM は1回の呼び出しで1領域を評価する。System Prompt は当該領域の製品機能、入力の解釈、ルールカード、出力形式を定める。User Message は domain、元の query、当該領域の artifact_markdown のみ。Spec は Code Agent の生成入力に置き、成果物審査の追加要求にはしない。モデルが補った設計をユーザーの必須要求に変えてしまうことを防ぐ。</span></p><figure class="figure-block writing-map-figure" id="rubric-model-artifact-training"><div class="trajectory-map" data-entry="rubric-model-artifact-training" hidden="" id="writing-map-13"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Artifact-RJM · 标注、训练与评测" data-alt-en="Artifact-RJM · Label, train, evaluate" data-alt-ja="Artifact-RJM · 注釈・学習・評価" data-alt-zh="Artifact-RJM · 标注、训练与评测" data-diagram-image="" data-figure="rubric-model-artifact-training" data-figure-key="rubric-model-artifact-training" data-src-en="/writing/figures/en/rubric-model-artifact-training.svg?v=4993c749ddae" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-artifact-training.svg?v=41199df39579" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-artifact-training.svg?v=aa4919108856" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-artifact-training.svg?v=4784254da1c9" data-src-ja="/writing/figures/ja/rubric-model-artifact-training.svg?v=e83b46e71c11" data-src-openai-blog-en="/writing/figures/en/rubric-model-artifact-training.svg?v=4993c749ddae" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-artifact-training.svg?v=e83b46e71c11" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-artifact-training.svg?v=81e14fa22974" data-src-zh="/writing/figures/zh/rubric-model-artifact-training.svg?v=81e14fa22974" decoding="async" height="905" loading="lazy" src="/writing/figures/zh/rubric-model-artifact-training.svg?v=81e14fa22974" width="1440"/></details><figcaption><span lang="zh">标注、训练和推理共用完整领域规则。按 Query 分组后，Train 用于参数更新，Test 只在评测侧提供输入和参考标签。</span><span lang="en">Annotation, training, and inference use the full domain rules. After grouping by Query, Train updates parameters and Test supplies evaluation inputs and reference labels.</span><span lang="ja">注釈・学習・推論で完全な領域ルールを共用する。Query で分割した後、Train はパラメータ更新、Test は評価入力と参照ラベルに使う。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">这里是单轮 Luna 参考，不是人工金标。97 个内部测试 Case 未上传训练，但曾参与规则开发。</span><span lang="en">These are single-review Luna references, not human gold labels. The 97 internal test cases were not uploaded for training but had informed rule development.</span><span lang="ja">参照は Luna の1回の判定で、人手の正解ラベルではない。内部テスト97 Case は学習にアップロードしていないが、ルール開発には使用されている。</span></p></details></figure>
+<p><span lang="zh">五域分别是 Table、Dashboard、Workflow、Permission、View。Formula、Lookup、Link 归 Table，表视图与 Form 归 View。每条问题必须满足规则前提、违规条件及证据要求，同一最小失败事实只归到一条最具体的规则；不同对象上的独立问题仍逐条保留。模型一次输出 Category → Rubric → Mode、固定严重度、理由及该域 verdict。</span><span lang="en">The five domains are Table, Dashboard, Workflow, Permission, and View. Formula, Lookup, and Link belong to Table; table views and Forms belong to View. Each reported issue must meet the rule’s prerequisites, violation conditions, and evidence requirements. One minimal failure fact is assigned to its most specific rule, while independent issues on different objects remain separate. One response contains Category → Rubric → Mode, fixed severity, reasons, and a domain verdict.</span><span lang="ja">5領域は Table・Dashboard・Workflow・Permission・View。Formula・Lookup・Link は Table、テーブルビューと Form は View に含める。各問題はルールの前提、違反条件、必要な証拠を満たす必要がある。同一の最小の違反事実には最も具体的なルールを1つ割り当て、異なる対象の独立した問題は別々に残す。1回の応答で Category → Rubric → Mode、固定の重大度、理由、領域判定を出力する。</span></p>
+<p><span lang="zh">训练样本按“一条 Query × 一个产物域”组织。969 个 Case 按原始 Query 分组：872 个用于训练，97 个用于内部测试，对应 4,360 / 485 个评审单元。Luna medium 用完整规则生成单轮参考标签，Seed2 Lite 在同样的规则与输入结构下做两轮 LoRA SFT。Case 的作用是切分和聚合，实际训练单位是领域评审单元。</span><span lang="en">Training examples are organized as one Query × one artifact domain. The 969 cases are grouped by original Query: 872 for training and 97 for internal testing, giving 4,360 / 485 review units. Luna medium produces single-review reference labels under the full rules; Seed2 Lite receives two epochs of LoRA SFT with the same rule and input structure. Cases govern splitting and aggregation; domain review units are the training examples.</span><span lang="ja">学習例は「1つの Query × 1つの成果物領域」で構成する。969 Case を元の Query でグループ分割し、872 Case を学習、97 Case を内部テストに用いる。評価単位はそれぞれ4,360 / 485。Luna medium が完全なルールで1回ずつ参照ラベルを生成し、同じルールと入力構造で Seed2 Lite を2エポック LoRA SFT する。Case は分割・集約の単位であり、学習単位は領域ごとの評価例となる。</span></p>
+<p><span lang="zh">该轮配置为 batch 16、学习率 1e-5、LoRA rank 32 / alpha 4、序列长度 32,768；训练平台从 Train 中划出 10% validation，485 条 Test 未上传训练。评测使用最后的 step 256。参考来自单轮模型标注；Test 又曾参与规则开发，结果用于内部诊断，不作为新需求上的泛化估计。</span><span lang="en">This run used batch size 16, learning rate 1e-5, LoRA rank 32 / alpha 4, and sequence length 32,768. The training service held out 10% of Train for validation; Test485 was not uploaded. Evaluation used the final step-256 checkpoint. References came from single model reviews, and the test cases had informed rule development, so the results support internal diagnosis rather than a generalization estimate on new requests.</span><span lang="ja">設定は batch 16、学習率 1e-5、LoRA rank 32 / alpha 4、系列長32,768。学習サービスは Train の10%を validation に分け、Test485 は学習にアップロードしていない。評価には最終 step 256 を使用した。参照はモデルによる1回の判定であり、Test はルール開発にも使われているため、結果は内部診断用で、新しい要求への汎化推定には用いない。</span></p>
+<p><span lang="zh">484条输出可解析，但具体判断误报较多：错误类型精确率32.45%、召回率53.98%、F1为40.53%；参考判定90个业务域失败，学生判定155个。复核发现，模型容易把“管理”“模板”等业务词理解为必须创建自动化、表单或视图，同时漏掉Lookup唯一性、AI节点输入及重复触发等问题。</span><span lang="en">484 outputs parsed, but false positives were frequent: precision 32.45%, recall 53.98%, F1 40.53%. References failed 90 domains; the student failed 155. Review found that “management” or “template” often triggered unjustified demands for automations, forms, or views, while Lookup uniqueness, AI-node inputs, and duplicate triggers were missed.</span><span lang="ja">484出力が解析可能だったが、適合率32.45%、再現率53.98%、F1 40.53%と誤検出が多い。参照不合格90領域に対し学生155。「管理」「テンプレート」から自動化・フォーム・ビューを必須と誤解し、Lookup一意性、AIノード入力、重複起動を見逃した。</span></p>
+<p><span lang="zh">训练覆盖235种登记错误中的84种，多问题单元占4.98%；测试中2—3问题的完整一致为4/22，4个以上为1/11。补数应优先覆盖需求适用与排除条件、同一规则的多对象问题，以及对象间的执行依赖。固定快照支持配置层判断；真实送达、执行结果及修改过程需要相应运行证据。</span><span lang="en">Training covered 84 of 235 registered error modes; multi-issue units accounted for 4.98%. Exact agreement was 4/22 for test units with 2–3 issues and 1/11 for those with 4+. Additional data should target applicability and exclusions, repeated issues across objects, and execution dependencies. Fixed snapshots support configuration-level judgments; actual delivery, execution outcomes, and modification history require corresponding runtime evidence.</span><span lang="ja">学習で観測されたエラーモードは登録235種中84種、複数問題の単位は4.98%。テストの完全一致は2〜3問題で4/22、4件以上で1/11だった。追加データでは適用・除外条件、同一ルールの複数対象、実行依存関係を優先する。固定スナップショットは設定の評価に使えるが、実際の到達・実行結果・変更履歴には対応する実行証拠が必要となる。</span></p>
+<p><span lang="zh">一个真实测试例说明了这个边界：用户要求先建主表、再填子表，并录入一道完整试题。产物没有 Workflow；Luna 判该域 pass，学生却报 missing_automation。学生把一次性的搭建顺序误读成了持续自动化需求。这个例子提示我们补充“需要自动化 / 只需完成搭建”的配对样本，同时继续检查真正的触发、引用和写入缺陷。</span><span lang="en">One recorded test case makes the boundary concrete. The user asked for parent tables first, child records next, and one complete exam question as an example. The artifact had no Workflow. Luna returned pass for that domain, while the student reported missing_automation, interpreting a one-time construction order as an ongoing automation requirement. This motivates paired examples of “automation required” versus “complete the build,” alongside checks for genuine trigger, reference, and write defects.</span><span lang="ja">実際のテスト例では、親テーブルを先に作り、子レコードを入力して、試験問題を1件完成例として登録するよう要求されていた。成果物に Workflow はなく、Luna はこの領域を pass としたが、学生は missing_automation を報告した。一度限りの構築手順を継続的な自動化要求と誤読した例だ。「自動化が必要」と「構築を完了すればよい」の対になる例を補い、実際のトリガー・参照・書き込みの欠陥も検査する必要がある。</span></p>
+<p><span lang="zh">Artifact-RJM 与既有 E2E Judge 在同一份产物上对照。前者输出五域细粒度规则标签，再以“任一域 fail”聚合 Case；后者执行自己的子域评审和 Mix 全局仲裁。相同输入对象不代表相同规则或相同裁决机制。这里的 97 个 Case 使用固定 Markdown 重放，比较的是评审结果，不是重新搭建产物后的成功率。</span><span lang="en">Artifact-RJM and the existing E2E Judge are compared on the same artifacts. The former produces fine-grained labels for five domains, with any failing domain making the case fail; the latter uses its own domain reviews and a global Mix adjudicator. Sharing an artifact does not imply identical rules or decision procedures. The 97 cases replay fixed Markdown snapshots: these comparisons measure judgments, not the success rate of newly rebuilt artifacts.</span><span lang="ja">Artifact-RJM と既存の E2E Judge を同じ成果物で比較する。前者は5領域の細粒度ラベルを出力し、1領域でも fail なら Case を fail と集約する。後者は独自の領域審査と Mix による全体判定を行う。対象が同じでもルールや判定手順は同一ではない。97 Case は固定 Markdown の再評価であり、新たに構築した成果物の成功率ではない。</span></p>
+<div class="blog-table-scroll"><table><thead><tr><th><span lang="zh">对照对象</span><span lang="en">Comparison reference</span><span lang="ja">比較参照</span></th><th><span lang="zh">统计单位</span><span lang="en">Evaluation unit</span><span lang="ja">評価単位</span></th><th><span lang="zh">准确率</span><span lang="en">Accuracy</span><span lang="ja">正解率</span></th><th><span lang="zh">问题类 F1</span><span lang="en">Problem-positive F1</span><span lang="ja">問題ありを正例とした F1</span></th></tr></thead><tbody><tr><td><span lang="zh">Artifact-Luna 参考标签</span><span lang="en">Artifact-Luna reference labels</span><span lang="ja">Artifact-Luna 参照ラベル</span></td><td><span lang="zh">484 个可解析领域单元</span><span lang="en">484 parseable domain units</span><span lang="ja">解析可能な484領域単位</span></td><td>78.31%</td><td>57.14%</td></tr><tr><td><span lang="zh">E2E Luna：子域 high / Mix medium</span><span lang="en">E2E Luna: domains high / Mix medium</span><span lang="ja">E2E Luna：領域 high / Mix medium</span></td><td>97 Case</td><td>61.86%</td><td>74.48%</td></tr><tr><td><span lang="zh">E2E GPT-5.5：子域 high / Mix medium</span><span lang="en">E2E GPT-5.5: domains high / Mix medium</span><span lang="ja">E2E GPT-5.5：領域 high / Mix medium</span></td><td>97 Case</td><td>49.48%</td><td>62.60%</td></tr></tbody></table></div>
+<p><span lang="zh">表中被评模型均为同一 Artifact-RJM SFT checkpoint，fail 为正类。第一行比较 Domain verdict；后两行比较聚合后的 Case verdict。学生判了 82/97 个 Case 失败，Artifact-Luna 为 60，E2E Luna / GPT-5.5 为 63 / 49。较高召回伴随更多失败预测，因此必须同时看精确率、准确率和细粒度标签；这些指标也不与 Spec 的 Test792 合并。</span><span lang="en">Every row evaluates the same Artifact-RJM SFT checkpoint, with fail as positive. The first compares domain verdicts; the other two compare aggregated case verdicts. The student marked 82/97 cases as failing, versus 60 for Artifact-Luna and 63 / 49 for E2E Luna / GPT-5.5. Greater recall came with more failure predictions, so precision, accuracy, and fine-grained labels must be read together. These results are separate from Spec Test792.</span><span lang="ja">各行の評価対象は同じ Artifact-RJM SFT checkpoint で、fail を正例とする。1行目は領域判定、後の2行は集約した Case 判定を比較する。学生は82/97 Case を fail とし、Artifact-Luna は60、E2E Luna / GPT-5.5 は63 / 49だった。再現率の増加には fail 予測の増加も伴うため、適合率・正解率・細粒度ラベルを併せて見る。Spec の Test792 とは別に報告する。</span></p>
+<h3 id="technical-subsection-27"><span lang="zh">8.2　DSH评审数据管线</span><span lang="en">8.2  DSH review-data pipeline</span><span lang="ja">8.2　DSH審査データパイプライン</span></h3>
+<p><span lang="zh">多路评审能暴露分歧，却可能共同依赖一个错误前提。DSH（DeepSeek Harness）提供模型会话、路由和调用记录，项目在其上搭建评审数据管线。有分歧的结果先复核；一致或复核后的结果都进入规则分析，检查事实、产品能力及待确认假设，再交人工确认。规则修改后，可以重新检查受影响的案例。</span><span lang="en">Multiple reviewers expose disagreement but may share a false premise. DSH (DeepSeek Harness) supplies sessions, routing, and call records. The data pipeline reviews disagreements, then sends both agreed and adjudicated results to rule analysis of facts, product capabilities, and unresolved assumptions, followed by human confirmation. Rule changes can trigger rechecking affected cases.</span><span lang="ja">複数審査は不一致を見つけても誤前提を共有し得る。DSH（DeepSeek Harness）の会話・経路・呼び出し記録上にデータ系統を構築した。不一致を再確認し、一致/裁定後の両結果を事実・製品能力・未確認仮定の分析へ送って人が確認する。規則変更後は影響例を再審査できる。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-figure_15_dsh_pipeline"><div class="trajectory-map" data-entry="rubric-model-09" hidden="" id="writing-map-14"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="双路评审管线" data-alt-en="Dual-review pipeline" data-alt-ja="二経路の審査管線" data-alt-zh="双路评审管线" data-diagram-image="" data-figure-key="/writing/assets/5af2c39fe8fa60e6a221.svg" data-src-en="/writing/figures/en/rubric-model-09.svg?v=5209f897fd23" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-09.svg?v=1ccff063a9c0" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-09.svg?v=df8b3eac6b54" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-09.svg?v=888f68d1c2d1" data-src-ja="/writing/figures/ja/rubric-model-09.svg?v=68d6dc8e651c" data-src-openai-blog-en="/writing/figures/en/rubric-model-09.svg?v=5209f897fd23" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-09.svg?v=68d6dc8e651c" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-09.svg?v=53cfaaaf7069" data-src-zh="/writing/figures/zh/rubric-model-09.svg?v=53cfaaaf7069" decoding="async" height="489" loading="lazy" src="/writing/figures/zh/rubric-model-09.svg?v=53cfaaaf7069" width="1008"/></details><figcaption class="map-duplicate-caption"><span lang="zh">双路评审管线</span><span lang="en">Dual-review pipeline</span><span lang="ja">二経路の審査管線</span></figcaption></figure>
+<p><span lang="zh">首轮只验证了流程的一部分：3条需求分成15个业务域单元，30次请求中21份输出被系统采纳；6个单元获得双路一致结果，9个执行失败，复核及规则分析还没有有效业务输出。接下来应让一小批材料走完人工审核，记录错误类型、复核工作量及最终可用标签，再判断管线是否改善标签生产。</span><span lang="en">The first trial verified only part of the flow: three queries became 15 domain units; 21 of 30 responses were accepted, six units had two-route agreement, and nine failed execution. Review and rule-analysis stages had no effective business output. Next, take a small batch through human review and record error types, review workload, and usable labels before claiming production gains.</span><span lang="ja">初回は一部のみ検証し、3要求→15領域単位、30要求中21応答採用、二経路一致6単位、実行失敗9単位だった。再審査・規則分析に有効業務出力はまだない。小バッチを人手確認まで完走し、誤り型、審査量、利用可能ラベルを記録してから効果を判断する。</span></p>
+<h3 id="technical-subsection-28"><span lang="zh">8.3　基于假设的真值维护</span><span lang="en">8.3  Assumption-based truth maintenance</span><span lang="ja">8.3　仮定に基づく真理維持</span></h3>
+<p><span lang="zh">研究问题是：一条评审结论依赖哪些前提；当规则或前提改变时，哪些结论仍有依据，哪些需要重新审查？这里提出基于假设的真值维护系统（Assumption-Based Truth Maintenance System，ATMS）的应用方案。</span><span lang="en">Which premises support a judgment, and after rules or premises change, which conclusions remain supported or need review? We propose applying an Assumption-Based Truth Maintenance System (ATMS).</span><span lang="ja">結論はどの前提に依存し、規則や前提が変わるとどの結論に根拠が残り、どれを再審査すべきか。このためATMS（Assumption-Based Truth Maintenance System）の応用を提案する。</span></p>
+<p><span lang="zh">输入用户Query、待评方案，以及已确认的产品能力和规则。AI提取用户明确表达的需求及方案事实，区分已有依据、待确认假设，建立它们到派生结论的推导关系。系统校验引用和依赖结构，通过支持集合传播，计算每条结论的最小假设支持组合，再依据明确登记的冲突规则排除矛盾组合。输出包括当前前提下的判断、支持依据、待审假设及冲突状态，供人工复核。</span><span lang="en">Inputs are Query, design, and confirmed capabilities/rules. AI extracts explicit requirements and design facts, separates supported facts from assumptions, and records derivations. The system validates references/dependencies, propagates support sets to compute minimal assumption environments, and excludes combinations under registered conflict rules. Output includes conditional judgments, evidence, pending assumptions, and conflicts for human review.</span><span lang="ja">入力はQuery、設計、確認済み能力・規則。AIが明示要求と設計事実を抽出し、根拠済み事実と未確認仮定を分け推論関係を作る。システムが参照・依存を検証し支持集合を伝播して最小仮定組合せを求め、登録済み矛盾規則で除外する。条件付き判断、根拠、未審仮定、矛盾状態を人へ渡す。</span></p>
+<p><span lang="zh">下图是解释机制的示例。事实F已经核验；A、B及C在本案例中是否适用，仍是待审假设。示例中的两项规则都要求限制客户数据访问。</span><span lang="en">The figure illustrates the mechanism. Fact F is verified; applicability of A, B, and C remains to be reviewed. Both example rules require restricting customer-data access.</span><span lang="ja">図は機構の例である。事実Fは確認済み、A・B・Cの適用性は未審。例の二規則はいずれも顧客データのアクセス制限を要求する。</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">标记</span><span lang="en">Symbol</span><span lang="ja">記号</span></th>
+<th><span lang="zh">示例内容</span><span lang="en">Example</span><span lang="ja">例の内容</span></th>
+<th><span lang="zh">在推导中的作用</span><span lang="en">Role in derivation</span><span lang="ja">推論内の役割</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F</td>
+<td><span lang="zh">方案未限制客户数据访问</span><span lang="en">The design lacks customer-data access restrictions</span><span lang="ja">設計が顧客データへのアクセスを制限しない</span></td>
+<td><span lang="zh">两条推导共用的已核验事实</span><span lang="en">Verified fact shared by both derivations</span><span lang="ja">両推論に共通する確認済み事実</span></td>
+</tr>
+<tr>
+<td>A</td>
+<td><span lang="zh">客户归属规则在本案例生效</span><span lang="en">Customer-ownership rule applies here</span><span lang="ja">この例に顧客帰属規則が適用される</span></td>
+<td><span lang="zh">接受A时，方案应提供访问限制</span><span lang="en">If A is accepted, access restrictions are required</span><span lang="ja">Aを受け入れるとアクセス制限が必要</span></td>
+</tr>
+<tr>
+<td>B</td>
+<td><span lang="zh">客户保密条款在本案例生效</span><span lang="en">Customer-confidentiality clause applies here</span><span lang="ja">この例に顧客秘密保持条項が適用される</span></td>
+<td><span lang="zh">接受B时，方案也应提供这一限制</span><span lang="en">If B is accepted, the same restriction is required</span><span lang="ja">Bを受け入れても同じ制限が必要</span></td>
+</tr>
+<tr>
+<td>C</td>
+<td><span lang="zh">本案例豁免上述两项要求</span><span lang="en">This case is exempt from both requirements</span><span lang="ja">この例は両要求を免除される</span></td>
+<td><span lang="zh">用于检查豁免同要求生效之间的冲突</span><span lang="en">Checks conflicts between exemption and active requirements</span><span lang="ja">免除と要求有効の矛盾を検査</span></td>
+</tr>
+<tr>
+<td>V</td>
+<td><span lang="zh">方案缺少应有的访问限制</span><span lang="en">The design lacks required access restrictions</span><span lang="ja">設計に必要なアクセス制限が欠ける</span></td>
+<td><span lang="zh">待维护的评审结论</span><span lang="en">Review conclusion to maintain</span><span lang="ja">維持対象の審査結論</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">登记推导</span><span lang="en">After registering derivations</span><span lang="ja">推論を登録すると、</span><code>F ∧ A ⇒ V</code>、<code>F ∧ B ⇒ V</code><span lang="zh">后，V有两组最小假设支持：</span><span lang="en">, V has two minimal assumption supports:</span><span lang="ja">、Vは二つの最小仮定支持を持つ：</span><code>{{A}, {B}}</code><span lang="zh">。集合只列待审假设，共同事实F及已登记推导另行保存。“最小”指一组支持中的假设已不能再删；不是只保留假设数量最少的一条路径。</span><span lang="en">. Sets list only pending assumptions; shared fact F and registered derivations are stored separately. “Minimal” means no assumption can be removed within a support, not keeping only the shortest path.</span><span lang="ja">。集合は未審仮定だけを列挙し、共通事実Fと登録推論は別保存する。「最小」は一支持から仮定をさらに除けない意味で、仮定数最少の経路だけを残す意味ではない。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-figure_17_atms_support_sets"><div class="trajectory-map" data-entry="rubric-model-10" hidden="" id="writing-map-15"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="判断依据及前提变化" data-alt-en="Judgment grounds and changing premises" data-alt-ja="判断根拠と前提の変化" data-alt-zh="判断依据及前提变化" data-diagram-image="" data-figure-key="/writing/assets/5aa7f3ceea98100373e0.svg" data-src-en="/writing/figures/en/rubric-model-10.svg?v=c33872c9d1fb" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-10.svg?v=ba3721c0ca22" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-10.svg?v=add42ab670db" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-10.svg?v=4089afd8d5e4" data-src-ja="/writing/figures/ja/rubric-model-10.svg?v=f8d4d682a4c0" data-src-openai-blog-en="/writing/figures/en/rubric-model-10.svg?v=c33872c9d1fb" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-10.svg?v=f8d4d682a4c0" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-10.svg?v=9caf440a7b3a" data-src-zh="/writing/figures/zh/rubric-model-10.svg?v=9caf440a7b3a" decoding="async" height="504" loading="lazy" src="/writing/figures/zh/rubric-model-10.svg?v=9caf440a7b3a" width="1008"/></details><figcaption class="map-duplicate-caption"><span lang="zh">判断依据及前提变化</span><span lang="en">Judgment grounds and changing premises</span><span lang="ja">判断根拠と前提の変化</span></figcaption></figure>
+<p><code>{{A}, {B}}</code><span lang="zh">表示两条替代路径，接受A或B任意一项即可支持V；</span><span lang="en">represents alternatives: either A or B supports V;</span><span lang="ja">は代替経路で、AまたはBのどちらかがVを支える。</span><code>{{A,B}}</code><span lang="zh">才表示必须同时接受两项。三种前提变化的预期结果如下：</span><span lang="en">requires both. Expected behavior under three premise changes follows:</span><span lang="ja">は両方を要求する。三つの前提変更の期待結果は以下である：</span></p>
+<ul>
+<li><strong><span lang="zh">撤回A，继续接受B</span><span lang="en">Withdraw A, retain B</span><span lang="ja">Aを撤回しBを維持</span></strong><span lang="zh">：当前支持变为</span><span lang="en">: current support becomes</span><span lang="ja">：現支持は</span><code>{{B}}</code><span lang="zh">，V仍有依据。</span><span lang="en">, so V remains supported.</span><span lang="ja">となり、Vには根拠が残る。</span></li>
+<li><strong><span lang="zh">A、B都撤回</span><span lang="en">Withdraw both A and B</span><span lang="ja">AとBを両方撤回する</span></strong><span lang="zh">：当前没有可用支持，V需重审。失去支持不构成“V为假”的证明，也不等于整个方案通过。</span><span lang="en">: no current support remains, so V needs review. Lack of support is not proof that V is false or that the entire design passes.</span><span lang="ja">：利用可能な支持がなくVは再審査対象となる。支持喪失はVが偽の証明でも設計全体の合格でもない。</span></li>
+<li><strong><span lang="zh">接受B及豁免C</span><span lang="en">Accept B and exemption C</span><span lang="ja">Bと免除Cを受け入れる</span></strong><span lang="zh">：只有在明确登记</span><span lang="en">: only after explicitly registering</span><span lang="ja">：次を明示的に排他的組合せとして登録した場合に限り、</span><code>{A,C}</code>、<code>{B,C}</code><span lang="zh">为互斥组合后，系统才将B、C同时成立的情境标为冲突。包含这些组合的更大前提集合也被排除；其他一致情境保留。人工需要核实规则适用性和豁免依据，而不是由系统任意选择其一。</span><span lang="en">as incompatible does the system flag simultaneous B/C as conflicting. Supersets are also excluded; other consistent environments remain. Humans must verify applicability and exemption evidence rather than having the system arbitrarily choose one.</span><span lang="ja">、B/C同時成立を矛盾とする。その上位集合も除外し、他の整合状況は残す。システムが任意に選ぶのでなく、人が適用性と免除根拠を確認する。</span></li>
+</ul>
+<p><span lang="zh">ATMS维护的是已给定事实、规则及假设之间的条件推导。事实真实性、假设适用性仍需证据和人工核验；若需要概率置信度，应另外引入经过验证、校准的方法。</span><span lang="en">ATMS maintains conditional derivations over supplied facts, rules, and assumptions. Fact validity and assumption applicability still need evidence and human checks; probabilities require a separately validated and calibrated method.</span><span lang="ja">ATMSは与えられた事実・規則・仮定の条件推論を維持する。事実の真偽と仮定適用性には証拠・人手確認が必要で、確率には別途検証・校正した方法が要る。</span></p>
+<p><span lang="zh">目前已实现引用哈希、缺失前提及循环依赖检查；支持集合传播、冲突组合管理、撤回前提后的影响查询仍待实现。后续实现应先用上述情景检验支持变化是否正确，再在真实复核案例中测量需重审的结论范围及人工工作量。</span><span lang="en">Reference hashes, missing-premise checks, and cycle checks exist. Support propagation, conflict-set management, and withdrawal-impact queries remain unimplemented. Validate support changes on these scenarios first, then measure affected conclusions and human workload on real cases.</span><span lang="ja">参照ハッシュ、前提欠落、循環依存検査は実装済み。支持伝播、矛盾組合せ管理、撤回影響照会は未実装である。まず例示状況で支持変化を検証し、実例で再審査範囲と人手負荷を測る。</span></p>
+<h3 id="technical-subsection-29"><span lang="zh">8.4　因果配对合成方案</span><span lang="en">8.4  Causal-pair synthesis proposal</span><span lang="ja">8.4　因果ペア合成案</span></h3>
+<p><span lang="zh">研究问题是：只改变一个有明确语义的条件，评审模型能否调整受影响的判断，同时保持无关判断？因果配对合成利用ATMS记录的依赖关系，构造这种单因素对照。目标是让模型学习规则的适用边界，并检查它是否把“负责人”等词直接当成必须配置权限的信号。</span><span lang="en">If one semantically explicit condition changes, can a reviewer change affected judgments while preserving unrelated ones? Causal pairs use ATMS dependencies for single-factor comparisons, teaching applicability boundaries and testing whether words such as “owner” spuriously imply permissions.</span><span lang="ja">意味が明確な一条件だけを変えた際、関連判断だけを変えて無関係判断を保てるか。ATMS依存を使う単因子ペアで適用境界を学び、「担当者」などの語だけで権限必須とみなすかを調べる。</span></p>
+<p><strong><span lang="zh">示例和唯一改动。</span><span lang="en">Example and sole intervention.</span><span lang="ja">例と唯一の介入。</span></strong><span lang="zh"> 沿用前节的客户访问场景，构造以下教学样本：</span><span lang="en"> Using the preceding customer-access scenario, construct:</span><span lang="ja"> 前節の顧客アクセス例を用い、次の教材を作る：</span></p>
+<ul>
+<li><span lang="zh">用户需求：建立客户跟进表，记录客户名称、负责人、联系电话。</span><span lang="en">Query: create a customer follow-up table recording name, owner, and phone number.</span><span lang="ja">要求：顧客名、担当者、電話番号を記録する顧客フォロー表を作る。</span></li>
+<li><span lang="zh">固定方案：已有客户名称及负责人字段，缺少联系电话，未限制客户数据访问。</span><span lang="en">Fixed design: customer name and owner exist; phone is missing; customer access is unrestricted.</span><span lang="ja">固定設計：顧客名と担当者は存在、電話番号は欠落、顧客アクセスは無制限。</span></li>
+<li><span lang="zh">固定规则条件：保密条款B明确不适用；其他可能要求访问限制的条款已核对，本例没有此类要求。负责人字段由用户需求直接要求，不依赖归属规则A。</span><span lang="en">Fixed rules: confidentiality B explicitly does not apply; other access-restriction clauses have been checked and none applies. The owner field is directly requested, independent of ownership rule A.</span><span lang="ja">固定規則：秘密保持Bは明示非適用、他の制限条項も確認し本例にはない。担当者フィールドは要求から直接必要で帰属規則Aに依存しない。</span></li>
+<li><span lang="zh">唯一改动：模型可见的规则上下文中，A的适用性从“适用”变为“明确不适用”。Query、方案、规则正文、主提示词和模型设置保持相同。</span><span lang="en">Sole change: in model-visible context, A changes from applicable to explicitly inapplicable. Query, design, rule text, main prompt, and model settings remain identical.</span><span lang="ja">唯一の変更：モデルに見える文脈でAの適用性を適用から明示非適用へ変える。Query、設計、規則本文、主Prompt、モデル設定は同一。</span></li>
+</ul>
+<p><span lang="zh">这里改变的是明确的适用性条件，不是把一项要求从输入中删掉。登记的预期判断如下，均待独立复核。</span><span lang="en">This changes an explicit applicability condition rather than deleting a requirement. Expected judgments are preregistered below and await independent review.</span><span lang="ja">要求を入力から消すのでなく明示適用条件を変える。以下の期待判断を事前登録し、独立確認を行う。</span></p>
+<figure class="blog-figure writing-map-figure" id="figure-figure_16_causal_synthesis"><div class="trajectory-map" data-entry="rubric-model-11" hidden="" id="writing-map-16"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="改变前提，检查判断" data-alt-en="Change a premise, check the judgment" data-alt-ja="前提を変えて判断を検査する" data-alt-zh="改变前提，检查判断" data-diagram-image="" data-figure-key="/writing/assets/7fe3941e7dc1726a52d4.svg" data-src-en="/writing/figures/en/rubric-model-11.svg?v=f1e992d6a6af" data-src-engineering-en="/writing/figures/en/engineering/rubric-model-11.svg?v=eda6bd27f84c" data-src-engineering-ja="/writing/figures/ja/engineering/rubric-model-11.svg?v=a25a0146406c" data-src-engineering-zh="/writing/figures/zh/engineering/rubric-model-11.svg?v=1695e76e1fae" data-src-ja="/writing/figures/ja/rubric-model-11.svg?v=20fb55ce511a" data-src-openai-blog-en="/writing/figures/en/rubric-model-11.svg?v=f1e992d6a6af" data-src-openai-blog-ja="/writing/figures/ja/rubric-model-11.svg?v=20fb55ce511a" data-src-openai-blog-zh="/writing/figures/zh/rubric-model-11.svg?v=5468cd61b24f" data-src-zh="/writing/figures/zh/rubric-model-11.svg?v=5468cd61b24f" decoding="async" height="504" loading="lazy" src="/writing/figures/zh/rubric-model-11.svg?v=5468cd61b24f" width="1008"/></details><figcaption class="map-duplicate-caption"><span lang="zh">改变前提，检查判断</span><span lang="en">Change a premise, check the judgment</span><span lang="ja">前提を変えて判断を検査する</span></figcaption></figure>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">判断项</span><span lang="en">Judgment</span><span lang="ja">判断項目</span></th>
+<th><span lang="zh">A适用</span><span lang="en">A applies</span><span lang="ja">A適用</span></th>
+<th><span lang="zh">A明确不适用</span><span lang="en">A explicitly does not apply</span><span lang="ja">A明示非適用</span></th>
+<th><span lang="zh">预期及依据</span><span lang="en">Expectation and evidence</span><span lang="ja">期待と根拠</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">访问限制缺失</span><span lang="en">Missing access restriction</span><span lang="ja">アクセス制限欠落</span></td>
+<td><span lang="zh">应报</span><span lang="en">Report</span><span lang="ja">報告する</span></td>
+<td><span lang="zh">本项不报</span><span lang="en">Do not report this issue</span><span lang="ja">この項目は報告しない</span></td>
+<td><span lang="zh">应变化：限制要求不再适用，且没有其他有效要求支持该项</span><span lang="en">Should change: requirement no longer applies, with no alternative active rule supporting it</span><span lang="ja">変化すべき：制限要求が非適用で他の有効要求も支えない</span></td>
+</tr>
+<tr>
+<td><span lang="zh">联系电话字段缺失</span><span lang="en">Missing phone-number field</span><span lang="ja">電話番号フィールド欠落</span></td>
+<td><span lang="zh">应报</span><span lang="en">Report</span><span lang="ja">報告する</span></td>
+<td><span lang="zh">应报</span><span lang="en">Report</span><span lang="ja">報告する</span></td>
+<td><span lang="zh">应保持：用户仍要求电话，方案仍然缺失</span><span lang="en">Should remain: phone is still requested and still absent</span><span lang="ja">維持すべき：電話要求と欠落は不変</span></td>
+</tr>
+<tr>
+<td><span lang="zh">负责人字段缺失</span><span lang="en">Missing owner field</span><span lang="ja">担当者フィールド欠落</span></td>
+<td><span lang="zh">不报</span><span lang="en">Do not report</span><span lang="ja">報告しない</span></td>
+<td><span lang="zh">不报</span><span lang="en">Do not report</span><span lang="ja">報告しない</span></td>
+<td><span lang="zh">应保持：用户要求负责人，方案已经配置</span><span lang="en">Should remain: owner is requested and already present</span><span lang="ja">維持すべき：担当者は要求され既設</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">第二份样本仍应报告联系电话缺失，不能因一项违规消失就判整个方案通过。访问限制的负标签来自适用性证据及相关规则核对，不由ATMS的“当前无支持”自动推出。</span><span lang="en">The second sample must still report missing phone, not pass the whole design because one violation disappeared. The negative access label comes from applicability evidence and rule checks, not automatically from ATMS's lack of current support.</span><span lang="ja">二つ目も電話欠落を報告し、一違反消滅で全体合格としてはならない。アクセスの負ラベルは適用証拠と規則確認から得て、ATMSの現支持なしから自動導出しない。</span></p>
+<p><strong><span lang="zh">ATMS如何参与。</span><span lang="en">ATMS's role.</span><span lang="ja">ATMSの役割。</span></strong><span lang="zh"> 先登记</span><span lang="en"> First register</span><span lang="ja"> まず次を登録する：</span><code>F ∧ A ⇒ V</code><span lang="zh">，同时保存两个字段判断的需求、方案依据。ATMS据此标出依赖A的候选受影响结论，并检查是否还存在替代支持；不依赖A的字段判断列为预期不变项。若保密条款B仍适用，V仍有支持，就不应把这一对样本标为相反标签。最终的应变清单、不变清单经人工确认后用于核对，不提供给待测模型；模型只看到各自条件下的需求、方案和规则上下文。</span><span lang="en">, also storing requirements and design evidence for both field judgments. ATMS marks conclusions potentially affected by A and checks alternative supports; independent field judgments are expected invariants. If B still applies, V remains supported and the pair must not get opposing labels. Human-confirmed change/invariant lists are for evaluation only, hidden from the tested model, which sees its condition's query, design, and rule context.</span><span lang="ja">。同時に二フィールド判断の要求・設計根拠を保存する。ATMSはA依存の影響候補と代替支持を調べ、非依存フィールドを不変項とする。Bが有効ならVは支持され反対ラベルにしてはならない。人手確認済みの変化/不変一覧は評価専用でモデルに見せず、各条件の要求・設計・規則文脈だけを渡す。</span></p>
+<p><strong><span lang="zh">形成数据及验证。</span><span lang="en">Data construction and validation.</span><span lang="ja">データ構築と検証。</span></strong><span lang="zh"> 每对材料保存原始案例标识、两份输入、唯一变更字段、预期变化、复核标签和逐项支持依据。发现前提冲突、其他内容被连带改写或标签无法确定时，保留为待审材料。按原始案例整体划分训练、测试；同一案例的原版及全部变体不能分到两侧。</span><span lang="en"> Each pair stores source-case ID, both inputs, the single changed field, expected changes, reviewed labels, and support evidence. Conflicting premises, collateral rewrites, or uncertain labels stay pending. Split by source case so originals and all variants remain on the same side of train/test.</span><span lang="ja"> ペアごとに元case ID、両入力、唯一変更欄、期待変化、確認ラベル、逐項根拠を保存する。前提矛盾、連動改稿、ラベル不明は保留し、元例単位で全変種を同じ学習/テスト側へ置く。</span></p>
+<p><span lang="zh">验证分两个阶段。第一阶段在每个条件下重复评审，估计模型自身波动。复核人员先依据输入独立判断，再核对预先登记的变化。分别报告“应变项正确变化的比例”和“不变项被错误改变的比例”，不能只统计两次答案是否不同。第二阶段再检验训练价值：固定初始化、主提示词及优化器，用配对样本替换部分普通样本，对照仅使用普通样本的训练，两组实际训练token量保持相当；在独立案例上比较上述两项指标、误报、漏报及未决率，并记录复核工作量和生成成本。</span><span lang="en">Validation has two stages. First, repeat reviews per condition to estimate model noise. Reviewers judge independently from inputs before consulting preregistered expectations. Report correct-change rate and erroneous-invariant-change rate, not merely whether answers differ. Second, test training value: fix initialization, main prompt, and optimizer; replace some ordinary samples with pairs versus ordinary-only training at comparable actual token budgets. On independent cases, compare these metrics, false positives/negatives, undecided rate, review workload, and generation cost.</span><span lang="ja">検証は二段階。まず条件ごとに反復審査しモデルの揺れを推定する。審査者は入力だけで独立判断後に事前期待と照合し、変化項の正変化率と不変項の誤変更率を報告する。次に初期化・主Prompt・optimizerを固定し、同程度の実学習tokenで一部をペアに替える群と通常のみ群を比較する。独立例で上記指標、誤検出・見逃し・保留率、確認負荷、生成費を測る。</span></p>
+<p><span lang="zh">这套设计首先检验模型对指定规则条件的响应；配对数据是否带来训练收益，需要第二阶段对照回答。目前尚未取得这项收益，ATMS支持传播及配对合成仍属于待实现、待验证方案。</span><span lang="en">The first stage tests response to specified rule conditions; only the second can establish training benefit. No such gain has yet been obtained. ATMS propagation and pair synthesis remain to be implemented and validated.</span><span lang="ja">第一段階は指定規則条件への応答を調べ、学習効果は第二段階で確かめる。現時点で効果は未取得で、ATMS伝播とペア合成は未実装・未検証である。</span></p>
+<h2 id="technical-section-10"><span lang="zh">9　讨论与局限</span><span lang="en">9  Discussion and limitations</span><span lang="ja">9　考察と限界</span></h2>
+<h3 id="technical-subsection-30"><span lang="zh">9.1　标签一致性、数量和语义正确性</span><span lang="en">9.1  Label agreement, counts, and semantics</span><span lang="ja">9.1　ラベル一致・件数・意味的正しさ</span></h3>
+<p><span lang="zh">本研究将错误类型F1、问题数量和证据复核分开考察。两套参考可以显示结果对标签来源的依赖；重复评审可以测量稳定性。它们不能替代对具体业务争议的核验。统一测试覆盖116种错误，而训练覆盖249种，稀有错误及复杂条件组合仍需要补充测试。</span><span lang="en">Error-type F1, issue counts, and evidence review are examined separately. Two references reveal label-source dependence; repeated reviews measure stability, not semantic truth. Unified tests cover 116 types versus 249 in training, leaving rare types and complex combinations for further tests.</span><span lang="ja">誤り型F1、問題数、証拠確認を分けて見る。二参照はラベル源依存、反復は安定性を示すが業務意味の真偽確認を代替しない。統一テスト116型対学習249型で、希少型と複雑組合せの追加が必要である。</span></p>
+<p><span lang="zh">计数奖励能够区分同类错误出现一次或多次，外部F1则在单条内去重。因而，RL的F1增益支持错误类型判断更贴近参考，尚不能据此判定多个对象全部定位正确。实际产物的误报也说明，需求语义和实现方式之间的对应关系需要独立评测。</span><span lang="en">Count rewards distinguish one versus several same-type issues; external F1 deduplicates per sample. RL's F1 gains therefore support better type agreement, not complete object localization. Artifact false positives also motivate a separate evaluation of requirements-to-implementation mapping.</span><span lang="ja">件数報酬は同型一件と複数を区別するが、外部F1はサンプル内重複除去する。RLのF1増は型一致向上で、全対象定位を保証しない。成果物の誤検出も要求と実装法の対応を独立評価する必要を示す。</span></p>
+<h3 id="technical-subsection-31"><span lang="zh">9.2　训练因素的可解释范围</span><span lang="en">9.2  Interpreting training factors</span><span lang="ja">9.2　学習要因の解釈範囲</span></h3>
+<p><span lang="zh">后续RL同时改变数据组成、奖励和训练设置，当前结果支持这一组合方案，不能单独归因于某一个因素。OPD完成的是两个因素下的三个条件，未运行的一格限制了完整交互分析；学生提示在训练及评测时同步变化，对照反映的是两种完整使用方案。CoT三组共用输入和裁决，但目标长度、实际步数及推理模式不同，理由内容与生成负担的贡献尚未分离。</span><span lang="en">Later RL changes data, reward, and training settings together, supporting the combination rather than one isolated factor. OPD completes three cells of two factors, limiting interaction analysis; student prompts change in training and evaluation, comparing complete configurations. CoT shares inputs/verdicts but differs in length, steps, and reasoning mode, leaving rationale content and generation burden entangled.</span><span lang="ja">後期RLはデータ・報酬・設定を同時変更し、個別要因でなく組合せを支持する。OPDは二要因三セルで交互作用分析に限界があり、学習・評価両Prompt変更は構成全体の比較である。CoTは入力・裁定共通でも長さ・step・推論モードが異なり、理由内容と生成負担が未分離である。</span></p>
+<p><span lang="zh">这些区别决定下一轮如何控制变量：RL比较中间检查点及固定数据下的奖励形式；OPD逐类删减规则；CoT分别控制训练步数和推理模式，再比较理由素材。现有实验已给出保留设计的依据，机制解释仍需对应对照。</span><span lang="en">Next controls follow directly: RL checkpoint comparisons and reward forms on fixed data; category-wise rule removal for OPD; fixed steps and reasoning modes before comparing CoT rationale material. Current experiments justify retained designs, while mechanism claims need matched controls.</span><span lang="ja">次はRL中間checkpointと固定データでの報酬比較、OPD規則群ごとの削除、CoTのstep・推論モード固定後の素材比較を行う。現実験は採用設計の根拠となるが、機構説明には対応する対照が必要である。</span></p>
+<h3 id="technical-subsection-32"><span lang="zh">9.3　方法状态和后续验证</span><span lang="en">9.3  Method status and next validation</span><span lang="ja">9.3　方法の状態と次の検証</span></h3>
+<p><span lang="zh">各条路线回答的问题及当前结论如下。</span><span lang="en">Questions and current conclusions by track:</span><span lang="ja">系統ごとの課題と現結論：</span></p>
+<div class="blog-table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">研究问题</span><span lang="en">Research question</span><span lang="ja">研究課題</span></th>
+<th><span lang="zh">已得到的结果</span><span lang="en">Result so far</span><span lang="ja">現在の結果</span></th>
+<th><span lang="zh">尚未解决的问题</span><span lang="en">Open issue</span><span lang="ja">未解決点</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">数据和规则能否支持比较</span><span lang="en">Can data and rules support comparison?</span><span lang="ja">データと規則は比較を支えられるか</span></td>
+<td><span lang="zh">标签对应精确输入；按需求隔离；训练覆盖249种错误；规则修订改善判断及稳定性</span><span lang="en">Exact-version labels; query isolation; 249 training error types; rule revisions improve judgment and stability</span><span lang="ja">正確版ラベル、要求分離、学習249型、規則改訂で判断と安定性改善</span></td>
+<td><span lang="zh">稀有错误测试不足，复杂条件组合和共同漏检仍需补样</span><span lang="en">Rare-error tests, complex conditions, and shared omissions need more examples</span><span lang="ja">希少型テスト、複雑条件、共通見逃しの補例が必要</span></td>
+</tr>
+<tr>
+<td><span lang="zh">专用模型能否执行评审</span><span lang="en">Can specialized models review?</span><span lang="ja">専用モデルは審査できるか</span></td>
+<td><span lang="zh">SFT建立完整JSON评审基线；后续四组多问题RL中三组提高F1</span><span lang="en">SFT establishes full-JSON review; three of four multi-issue RL runs improve F1</span><span lang="ja">SFTで完全JSON審査基準、多問題RL四群中三群F1増</span></td>
+<td><span lang="zh">多问题召回仍不足；不同起点收益不一，中间模型还需外部比较</span><span lang="en">Multi-issue recall remains low; gains vary by start; intermediate checkpoints need external tests</span><span lang="ja">多問題再現率不足、起点ごと効果差、中間版の外部比較が必要</span></td>
+</tr>
+<tr>
+<td><span lang="zh">学生能否省去详细规则</span><span lang="en">Can the student omit detailed rules?</span><span lang="ja">学生は詳細規則を省けるか</span></td>
+<td><span lang="zh">OPD三个条件显示保留完整规则更好</span><span lang="en">Three OPD conditions favor full rules</span><span lang="ja">OPD三条件は完全規則を支持</span></td>
+<td><span lang="zh">精简输入尚未达到完整规则方案的效果</span><span lang="en">Compact inputs have not matched full-rule quality</span><span lang="ja">簡略入力は完全規則の品質に未達</span></td>
+</tr>
+<tr>
+<td><span lang="zh">教师理由是否帮助裁决</span><span lang="en">Do teacher rationales improve verdicts?</span><span lang="ja">教師理由は裁定を助けるか</span></td>
+<td><span lang="zh">三种训练目标对照中，仅裁决在两套参考下更好</span><span lang="en">Verdict-only wins under both references in the three-target comparison</span><span lang="ja">三目標比較で裁定のみが両参照で優位</span></td>
+<td><span lang="zh">理由内容、长度负担和推理模式的影响尚未分离</span><span lang="en">Rationale content, length burden, and reasoning mode remain entangled</span><span lang="ja">理由内容、長さ負担、推論モードが未分離</span></td>
+</tr>
+<tr>
+<td><span lang="zh">评审依据能否可靠维护</span><span lang="en">Can review evidence be maintained reliably?</span><span lang="ja">審査根拠を信頼して維持できるか</span></td>
+<td><span lang="zh">产物评审完成首轮评测；DSH框架和引用依赖检查已搭建</span><span lang="en">Artifact review evaluated once; DSH framework and reference/dependency checks implemented</span><span lang="ja">成果物審査初回評価、DSH枠組み・参照依存検査は実装済み</span></td>
+<td><span lang="zh">产物误报、对象证据核验、ATMS传播及配对训练待验证</span><span lang="en">Artifact false positives, object evidence, ATMS propagation, and paired training await validation</span><span lang="ja">成果物誤検出、対象証拠、ATMS伝播、ペア学習は要検証</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">下一步最值得补的是</span><span lang="en">The most useful next addition is</span><span lang="ja">次に優先して補うべきは</span><strong><span lang="zh">对象和证据的正确性</span><span lang="en">object and evidence correctness</span><span lang="ja">対象と証拠の正しさ</span></strong><span lang="zh">。现有奖励会计标签、计数量，却可能接受指错对象的理由。可以先建立这类错误的独立复核样本，再检验应改奖励、补数据，还是改理由训练。实际产物评审还需要明确需求到实现方式的边界，减少把可选实现误判成必需能力的情况。</span><span lang="en">. Current rewards count labels and instances but may accept a rationale pointing at the wrong object. Build independent review examples of these errors before deciding between reward changes, more data, or rationale training. Artifact review also needs sharper boundaries between requirements and optional implementations.</span><span lang="ja">である。現報酬はラベル・件数を数えても誤対象の理由を受け入れ得る。独立確認例を作り、報酬・データ・理由学習のどこを直すか判断する。成果物審査では要求と任意実装の境界も明確にする。</span></p>
+<p><span lang="zh">ATMS和配对合成则先验证完整流程：记录前提、形成支持集合、撤回假设、检查受影响结论，再确认配对数据是否提高学生能力。</span><span lang="en">For ATMS and paired synthesis, first validate the full flow: record premises, form supports, withdraw assumptions, inspect affected conclusions, then test whether paired data improves the student.</span><span lang="ja">ATMSとペア合成は前提記録、支持集合構築、仮定撤回、影響結論確認を完走し、その後ペアデータが学生を改善するか検証する。</span></p>
+<h2 id="technical-section-11"><span lang="zh">10　结论</span><span lang="en">10  Conclusion</span><span lang="ja">10　結論</span></h2>
+<p><span lang="zh">本研究建立了按精确输入版本对齐、按原始需求隔离的业务评审数据，并在完整规则下比较SFT、RL、OPD及CoT。规则措辞、扫描方式和边界修订分别改善了判断及稳定性；SFT提供了统一基线，后续多问题RL四组中三组提高了错误类型F1。</span><span lang="en">The study builds review data aligned to exact input versions and isolated by original query, then compares SFT, RL, OPD, and CoT under full rules. Wording, scanning, and boundary revisions improve judgments and stability; SFT supplies a unified baseline, and three of four later multi-issue RL runs improve error-type F1.</span><span lang="ja">正確な入力版に整合し元要求で分離した審査データを作り、完全規則下でSFT・RL・OPD・CoTを比較した。措辞・走査・境界改訂が判断と安定性を改善し、SFTが統一基準、後期多問題RL四群中三群が誤り型F1を改善した。</span></p>
+<p><span lang="zh">OPD对照支持继续保留完整学生规则；三种理由目标的比较支持保留仅裁决训练作为基线。两项结果明确了当前可采用的输入和目标形式，也为进一步控制规则内容、理由长度和推理模式提供了比较起点。</span><span lang="en">OPD supports retaining full student rules; the three rationale targets support verdict-only as the baseline. These results identify practical input/target forms and starting points for controlling rule content, rationale length, and reasoning mode.</span><span lang="ja">OPDは完全学生規則の維持、三理由目標比較は裁定のみ基準の維持を支持する。実用的な入力・目標形式を定め、規則内容・理由長・推論モードを制御する次の比較起点となる。</span></p>
+<p><span lang="zh">实际产物评审完成了数据构建及一次模型评测，DSH完成了框架和部分流程试运行。ATMS支持集合管理及因果配对合成提出了检查判断前提的方法，后续需要通过完整流程和训练对照验证。下一步围绕对象定位及证据成立性建立独立测试，使模型的标签判断、问题数量和具体依据能够分别核验。</span><span lang="en">Built-artifact review completed data construction and one evaluation; DSH completed its framework and part of its trial. ATMS supports and causal pairs propose a way to examine judgment premises, requiring full-flow and training controls. Next, independent object/evidence tests should separately verify labels, counts, and specific grounds.</span><span lang="ja">実成果物審査はデータ構築と一回評価、DSHは枠組みと部分試行を完了した。ATMS支持集合と因果ペアは判断前提を調べる案で、全系統と学習対照が必要である。次は対象定位・証拠成立性の独立テストを作り、ラベル・件数・具体根拠を別検証する。</span></p>
+</article><details class="article-resources" id="figure-sources"><summary><span lang="zh">图源与代码</span><span lang="en">Figures and code</span><span lang="ja">図とコード</span></summary><ul class="article-resource-list"><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-two-judges.html"><span lang="zh">从设计评审到产物验收</span><span lang="en">From design review to artifact acceptance</span><span lang="ja">設計審査から成果物の検収へ</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-spec-io.html"><span lang="zh">Spec Judge · 输入与输出</span><span lang="en">Spec Judge · inputs and outputs</span><span lang="ja">Spec Judge · 入力と出力</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-artifact-io.html"><span lang="zh">产物 Judge · 输入与输出</span><span lang="en">Artifact Judge · inputs and outputs</span><span lang="ja">成果物 Judge · 入力と出力</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-01.svg"><span lang="zh">研究路线时间线</span><span lang="en">Research timeline</span><span lang="ja">研究の時系列</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-02.svg"><span lang="zh">四种训练信号</span><span lang="en">Four training signals</span><span lang="ja">四種類の学習信号</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-full-workflow.html"><span lang="zh">Spec-RJM · 训练方法对照</span><span lang="en">Spec-RJM · Training comparisons</span><span lang="ja">Spec-RJM · 学習方式の比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-04.svg"><span lang="zh">标签生产</span><span lang="en">Label production</span><span lang="ja">ラベル生成</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-recorded-case.html"><span lang="zh">真实案例 · 找到问题，分对规则</span><span lang="en">Recorded case · find the issue, assign the rule</span><span lang="ja">実例 · 問題の検出とルールの分類</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-05.svg"><span lang="zh">RL计数奖励算例</span><span lang="en">Worked example of count-aware RL rewards</span><span lang="ja">件数を考慮したRL報酬の例</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-06.svg"><span lang="zh">监督微调后继续强化学习</span><span lang="en">Reinforcement learning after supervised fine-tuning</span><span lang="ja">教師あり微調整後の強化学習</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-07.svg"><span lang="zh">OPD对照设计及结果</span><span lang="en">OPD comparison design and results</span><span lang="ja">OPDの比較設計と結果</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-08.svg"><span lang="zh">CoT对照设计及结果</span><span lang="en">CoT comparison design and results</span><span lang="ja">CoTの比較設計と結果</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-artifact-training.html"><span lang="zh">Artifact-RJM · 标注、训练与评测</span><span lang="en">Artifact-RJM · Label, train, evaluate</span><span lang="ja">Artifact-RJM · 注釈・学習・評価</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-09.svg"><span lang="zh">双路评审管线</span><span lang="en">Dual-review pipeline</span><span lang="ja">二経路の審査管線</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-10.svg"><span lang="zh">判断依据及前提变化</span><span lang="en">Judgment grounds and changing premises</span><span lang="ja">判断根拠と前提の変化</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/rubric-model-11.svg"><span lang="zh">改变前提，检查判断</span><span lang="en">Change a premise, check the judgment</span><span lang="ja">前提を変えて判断を検査する</span></a></li></ul><p class="article-resource-code"><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json"><span lang="zh">图中文字翻译</span><span lang="en">Figure translations</span><span lang="ja">図の翻訳</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/writing-maps/rubric-model-technical.js?v=877bf48f779d"><span lang="zh">流程与交互数据</span><span lang="en">Flow and interaction data</span><span lang="ja">フローと操作データ</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/trajectory-map.js"><span lang="zh">交互代码</span><span lang="en">Interaction code</span><span lang="ja">操作部分のコード</span></a></p></details></main></div><script id="edition-navigation">
+
+(() => {
+
+  const links = Array.from(document.querySelectorAll('#edition-toc a'));
+
+  const sections = links.map(link => document.getElementById(link.hash.slice(1)));
+
+  let scheduled = false;
+
+  function update() {
+
+    scheduled = false;
+
+    let current = 0;
+
+    const threshold = Math.min(180, window.innerHeight * 0.23);
+
+    sections.forEach((section, index) => { if (section && section.getBoundingClientRect().top <= threshold && section.getClientRects().length) current = index; });
+
+    links.forEach((link, index) => { if (index === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+
+  }
+
+  function schedule() { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } }
+
+  function openTarget(hash, scroll = true) {
+
+    if (!hash || hash === '#') return;
+
+    let id; try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+
+    const target = document.getElementById(id);
+
+    if (!target) return;
+
+    for (let node = target; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
+
+    if (scroll) requestAnimationFrame(() => { target.scrollIntoView({ block: 'start', behavior: 'auto' }); schedule(); });
+
+  }
+
+  document.addEventListener('click', event => {
+
+    const link = event.target.closest('a[href^="#"]');
+
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    if (!document.getElementById(decodeURIComponent(link.hash.slice(1)))) return;
+
+    event.preventDefault();
+
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+
+    openTarget(link.hash);
+
+  });
+
+  window.addEventListener('scroll', schedule, { passive: true });
+
+  window.addEventListener('resize', schedule);
+
+  window.addEventListener('hashchange', () => openTarget(location.hash));
+
+  window.addEventListener('popstate', () => openTarget(location.hash));
+
+  openTarget(location.hash);
+
+  update();
+
+})();
+
+</script>
+</body></html>

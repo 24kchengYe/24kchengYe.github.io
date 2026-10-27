@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" lang="zh"><foreignObject width="1200" height="900"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;background:#fff;overflow:hidden}.heading{position:absolute;left:40px;top:24px;font-size:30px;line-height:1.3}.node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 18px;text-align:center;border:1px solid #a6b1a1;border-radius:5px;background:#fff;font-size:28px;line-height:1.25;z-index:2}.node.soft{background:#f1f5ec}.node.plan{border-style:dashed}.node.failed{background:#faf3e9;border-color:#d8bf9f}.sub{font-size:24px;line-height:1.35;color:#687568}.label{position:absolute;font-size:22px;line-height:1.35;color:#687568;background:#fff;padding:3px 6px;text-align:center;z-index:3}.region{position:absolute;border:1px solid #d4ddcd;border-radius:6px}.region-title{position:absolute;top:-19px;left:20px;padding:0 10px;background:#fff;font-size:26px}.edge{position:absolute;height:0;border-top:1.6px solid #98a58c;transform-origin:0 0;z-index:1}.edge.feedback,.edge.support{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #98a58c;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;font-size:22px;line-height:1.5;color:#687568}.math{font-family:Georgia,serif;font-style:italic;font-size:30px}.canvas { color:#303c38; }
+.node,.bundle,.checkpoint,.restore { border-width:1.6px; border-color:#87938a; border-radius:8px; box-shadow:none; }
+.region,.workspace { border-color:#d5ddd5; border-radius:8px; }
+.workspace { background:#fafbf9; }
+.node { font-size:28px; }
+.title,.heading { font-size:30px; }
+.sub,.bundle .small,.dependency-row { font-size:24px; color:#667269; }
+.edge-label,.note { font-size:22px; color:#667269; }
+.edge { border-top-width:1.6px; border-top-color:#748176; }
+.edge.arrow:after { border-left-color:#748176; }
+.edge.handoff { border-color:#7e9668; }
+.edge.handoff.arrow:after { border-left-color:#7e9668; }
+.edge.failure { border-color:#98a196; }
+.edge.failure.arrow:after { border-left-color:#98a196; }
+.node.plan { border-style:dashed; }
+.node.output,.node.soft { background:#f3f6ef; }
+.node.pending { background:#f7f8f6; }
+.node.failed { background:#fcf7ef; border-color:#b99970; }
+</style><main class="canvas" data-fixed-type="" style="width:1200px;height:900px"><div class="heading">Spec → TodoList：计划随证据更新</div>
+<div id="query" class="node " style="left:60px;top:105px;width:230px;height:100px"><div>原始 Query</div><div class="sub">验收依据</div></div>
+<div id="spec" class="node " style="left: 400px; top: 85px; width: 330px; height: 140px;"><div>Spec</div><div class="sub">业务对象 · 约束 · 依赖</div></div>
+<div id="plan" class="node plan" style="left:400px;top:325px;width:330px;height:120px"><div>TodoList</div><div class="sub">任务 · 前置依赖 · 状态</div></div>
+<div id="execute" class="node " style="left: 60px; top: 570px; width: 300px; height: 170px;"><div>Online 执行</div><div class="sub">共享 Harness · 教师监督</div></div>
+<div id="judge" class="node " style="left: 430px; top: 570px; width: 300px; height: 170px;"><div>Judge–Fix</div><div class="sub">归因 · 局部编辑 / 真实执行</div></div>
+<div id="training" class="node soft" style="left: 870px; top: 570px; width: 270px; height: 170px;"><div>训练轨迹</div><div class="sub">计划 · 调用 · 回执</div></div>
+<div class="connection" data-from="query" data-to="spec" data-relation="flow"><div class="edge  arrow" style="left:290px;top:155px;width:110px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="spec" data-to="plan" data-relation="flow"><div class="edge  arrow" style="left: 565px; top: 225px; width: 100px; transform: rotate(90deg);"></div></div>
+<div class="connection" data-from="plan" data-to="execute" data-relation="flow"><div class="edge" style="left: 565px; top: 445px; width: 55px; transform: rotate(90deg);"></div><div class="edge" style="left: 565px; top: 500px; width: 355px; transform: rotate(180deg);"></div><div class="edge arrow" style="left: 210px; top: 500px; width: 70px; transform: rotate(90deg);"></div></div>
+<div class="connection" data-from="execute" data-to="judge" data-relation="flow"><div class="edge  arrow" style="left:360px;top:655px;width:70px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="judge" data-to="training" data-relation="flow"><div class="edge  arrow" style="left:730px;top:655px;width:140px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="execute" data-to="plan" data-relation="feedback"><div class="edge feedback" style="left:60px;top:655px;width:30px;transform:rotate(180deg)"></div><div class="edge feedback" style="left:30px;top:655px;width:270px;transform:rotate(-90deg)"></div><div class="edge feedback arrow" style="left:30px;top:385px;width:370px;transform:rotate(0deg)"></div></div>
+<div class="connection" data-from="judge" data-to="plan" data-relation="feedback"><div class="edge feedback" style="left: 580px; top: 570px; width: 30px; transform: rotate(-90deg);"></div><div class="edge feedback" style="left: 580px; top: 540px; width: 220px; transform: rotate(0deg);"></div><div class="edge feedback" style="left: 800px; top: 540px; width: 155px; transform: rotate(-90deg);"></div><div class="edge feedback arrow" style="left: 800px; top: 385px; width: 70px; transform: rotate(180deg);"></div></div>
+<div class="label" style="left:590px;top:250px;width:200px">拆分为任务</div>
+<div class="label" style="left:60px;top:335px;width:320px">真实返回更新状态</div>
+<div class="label" style="left:220px;top:505px;width:240px">按计划执行</div>
+<div class="label" style="left:825px;top:425px;width:300px">归因后修订计划</div>
+<div class="label" style="left:735px;top:600px;width:130px">核验通过</div>
+<div class="note" style="top:795px;width:1120px">需执行的问题返回 Online；已有轨迹的局部编辑交 Offline。沿用同一修复预算。</div>
+</main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

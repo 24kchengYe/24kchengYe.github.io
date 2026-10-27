@@ -1,0 +1,182 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="309.6pt" viewBox="0 0 864 309.6" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="zh" data-diagram-style="engineering" data-diagram-kind="flow">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 309.6  L 864 309.6  L 864 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 192.6 147.6  L 218.16 147.6  Q 226.8 147.6 226.8 138.96  L 226.8 80.64  Q 226.8 72 235.44 72  L 260.10557300000005 72  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 255.30557300000007 69.6  L 260.10557300000005 72  L 255.30557300000007 74.4  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 192.6 147.6  L 218.16 147.6  Q 226.8 147.6 226.8 156.24  L 226.8 214.56  Q 226.8 223.2 235.44 223.2  L 260.10557300000005 223.2  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 255.30557300000007 220.8  L 260.10557300000005 223.2  L 255.30557300000007 225.6  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 424.997974 72  Q 460.799448 72 495.706494 72  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 490.906494 69.6  L 495.706494 72  L 490.906494 74.4  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 423 223.2  L 452.16 223.2  Q 460.8 223.2 460.8 214.56  L 460.8 80.64  Q 460.8 72 469.44 72  L 497.705573 72  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 492.905573 69.6  L 497.705573 72  L 492.905573 74.4  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 579.6 99.202588  Q 579.6 147.601802 579.6 195.10658999999998  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 582 190.30658999999997  L 579.6 195.10658999999998  L 577.2 190.30658999999997  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 662.6040160000001 223.2  Q 693.902552 223.2 724.3066609999998 223.2  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+    <path d="M 719.5066609999999 220.8  L 724.3066609999998 223.2  L 719.5066609999999 225.6  " clip-path="url(#pbd6e8e839c)" style="fill: none; stroke: #161616; stroke-width: 0.8; stroke-linecap: round" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 268.2 46.8  L 415.8 46.8  Q 423 46.8 423 54  L 423 90  Q 423 97.20000000000002 415.8 97.20000000000002  L 268.2 97.20000000000002  Q 261 97.20000000000002 261 90  L 261 54  Q 261 46.8 268.2 46.8  z " clip-path="url(#pbd6e8e839c)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
+   </g>
+   <g id="patch_9">
+    <path d="M 268.2 198  L 415.8 198  Q 423 198 423 205.2  L 423 241.2  Q 423 248.4 415.8 248.4  L 268.2 248.4  Q 261 248.4 261 241.2  L 261 205.2  Q 261 198 268.2 198  z " clip-path="url(#pbd6e8e839c)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
+   </g>
+   <g id="patch_10">
+    <path d="M 505.8 198  L 653.4 198  Q 660.6 198 660.6 205.2  L 660.6 241.2  Q 660.6 248.4 653.4 248.4  L 505.8 248.4  Q 498.6 248.4 498.6 241.2  L 498.6 205.2  Q 498.6 198 505.8 198  z " clip-path="url(#pbd6e8e839c)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
+   </g>
+   <g id="patch_11">
+    <path d="M 752.4 198  L 802.8 198  Q 828 198 828 223.2  L 828 223.2  Q 828 248.4 802.8 248.4  L 752.4 248.4  Q 727.2 248.4 727.2 223.2  L 727.2 223.2  Q 727.2 198 752.4 198  z " clip-path="url(#pbd6e8e839c)" style="fill: #ffffff; stroke: #161616; stroke-width: 0.8; stroke-linejoin: miter" data-diagram-stroke="neutral" data-diagram-fill="node" data-diagram-node=""/>
+   </g>
+   <g id="text_1"><text x="111.60453100000001" y="151.533125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Query + Spec / Plan" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="111.60453100000001" dy="0">Query + Spec / Plan</tspan></text></g>
+   <g id="text_2"><text x="342" y="78.3" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_8" aria-label="Judge–Fix" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="342" dy="0">Judge–Fix</tspan></text></g>
+   <g id="text_3"><text x="342" y="229.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_9" aria-label="Verifier" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="342" dy="0">Verifier</tspan></text></g>
+   <g id="text_4"><text x="579.6" y="75.933125" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="文档质量" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="579.6" dy="0">文档质量</tspan></text></g>
+   <g id="text_5"><text x="579.6" y="229.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_10" aria-label="执行器 → Base" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="579.6" dy="0">执行器 → Base</tspan></text></g>
+   <g id="text_6"><text x="777.6" y="229.5" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" data-node-box="patch_11" aria-label="E2E" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="777.6" dy="0">E2E</tspan></text></g>
+   <g id="text_7"><text x="644.4" y="152.47125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="固定最终设计" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="644.4" dy="0">固定最终设计</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbd6e8e839c">
+   <rect x="0" y="0" width="864" height="309.6"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style><defs data-diagram-textures=""><pattern id="writing-dot-neutral" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fafaf8"/><circle cx="1.5" cy="1.5" r="0.45" fill="#777770" opacity="0.24"/></pattern><pattern id="writing-dot-accent" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#f5faef"/><circle cx="1.5" cy="1.5" r="0.45" fill="#70a33d" opacity="0.24"/></pattern></defs></svg>

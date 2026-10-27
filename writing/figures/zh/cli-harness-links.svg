@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1340" width="1200" height="1340" lang="zh"><foreignObject width="1200" height="1340"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="openai-blog" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;background:#fff;overflow:hidden}.heading{position:absolute;left:40px;top:24px;font-size:30px;line-height:1.3}.node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 18px;text-align:center;border:1px solid #a6b1a1;border-radius:5px;background:#fff;font-size:28px;line-height:1.25;z-index:2}.node.soft{background:#f1f5ec}.node.plan{border-style:dashed}.node.failed{background:#faf3e9;border-color:#d8bf9f}.sub{font-size:24px;line-height:1.35;color:#687568}.label{position:absolute;font-size:22px;line-height:1.35;color:#687568;background:#fff;padding:3px 6px;text-align:center;z-index:3}.region{position:absolute;border:1px solid #d4ddcd;border-radius:6px}.region-title{position:absolute;top:-19px;left:20px;padding:0 10px;background:#fff;font-size:26px}.edge{position:absolute;height:0;border-top:1.6px solid #98a58c;transform-origin:0 0;z-index:1}.edge.feedback,.edge.support{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #98a58c;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;font-size:22px;line-height:1.5;color:#687568}.math{font-family:Georgia,serif;font-style:italic;font-size:30px}.canvas { color:#303c38; }
+.node,.bundle,.checkpoint,.restore { border-width:1.6px; border-color:#87938a; border-radius:8px; box-shadow:none; }
+.region,.workspace { border-color:#d5ddd5; border-radius:8px; }
+.workspace { background:#fafbf9; }
+.node { font-size:28px; }
+.title,.heading { font-size:30px; }
+.sub,.bundle .small,.dependency-row { font-size:24px; color:#667269; }
+.edge-label,.note { font-size:22px; color:#667269; }
+.edge { border-top-width:1.6px; border-top-color:#748176; }
+.edge.arrow:after { border-left-color:#748176; }
+.edge.handoff { border-color:#7e9668; }
+.edge.handoff.arrow:after { border-left-color:#7e9668; }
+.edge.failure { border-color:#98a196; }
+.edge.failure.arrow:after { border-left-color:#98a196; }
+.node.plan { border-style:dashed; }
+.node.output,.node.soft { background:#f3f6ef; }
+.node.pending { background:#f7f8f6; }
+.node.failed { background:#fcf7ef; border-color:#b99970; }
+</style><main class="canvas" data-fixed-type="" style="width: 1200px; height: 1340px;"><div class="heading">规划、共享 Harness 与修复回流</div>
+<div class="region" style="left: 30px; top: 270px; width: 740px; height: 810px;"><div class="region-title">Online · 教师监督执行</div></div>
+<div class="region" style="left: 860px; top: 270px; width: 310px; height: 330px;"><div class="region-title">Offline · 编辑与核验</div></div>
+<div id="plan" class="node plan" style="left:70px;top:105px;width:660px;height:100px"><div>Spec → TodoList</div><div class="sub">计划指导执行，问题归因修订计划</div></div>
+<div id="execute" class="node " style="left: 50px; top: 330px; width: 320px; height: 220px;"><div>生成 / 续跑 / 重生成</div><div class="sub">教师纠偏覆盖每次执行</div></div>
+<div id="judge" class="node " style="left: 440px; top: 330px; width: 290px; height: 220px;"><div>Judge 与问题归因</div><div class="sub">三轮评审 · 路由</div></div>
+<div id="offline" class="node " style="left: 885px; top: 330px; width: 260px; height: 220px;"><div>局部编辑与核验</div><div class="sub">依赖 · 清洗 · 三评</div></div>
+<div id="budget" class="node " style="left: 440px; top: 670px; width: 290px; height: 170px;"><div>累计修复预算</div><div class="sub">同一 Case 的 N 不重置</div></div>
+<div id="harness" class="node soft" style="left: 70px; top: 910px; width: 660px; height: 120px;"><div>共享 Harness</div><div class="sub">上下文 · 工具环境 · 真实回执 · 检查点</div></div>
+<div id="release" class="node soft" style="left: 885px; top: 910px; width: 260px; height: 140px;"><div>训练准出</div><div class="sub">质量 · 真实性 · 格式</div></div>
+<div id="pending" class="node " style="left: 440px; top: 1160px; width: 290px; height: 120px;"><div>Pending</div><div class="sub">保留版本与原因</div></div>
+<div class="connection" data-from="plan" data-to="execute" data-relation="flow"><div class="edge  arrow" style="left:210px;top:205px;width:125px;transform:rotate(90deg)"></div></div>
+<div class="connection" data-from="judge" data-to="plan" data-relation="feedback"><div class="edge feedback" style="left:585px;top:330px;width:80px;transform:rotate(-90deg)"></div><div class="edge feedback" style="left:585px;top:250px;width:65px;transform:rotate(0deg)"></div><div class="edge feedback arrow" style="left:650px;top:250px;width:45px;transform:rotate(-90deg)"></div></div>
+<div class="connection" data-from="execute" data-to="judge" data-relation="flow"><div class="edge arrow" style="left: 370px; top: 440px; width: 70px; transform: rotate(0deg);"></div></div>
+<div class="connection" data-from="judge" data-to="offline" data-relation="flow"><div class="edge arrow" style="left: 730px; top: 440px; width: 155px; transform: rotate(0deg);"></div></div>
+<div class="connection" data-from="judge" data-to="budget" data-relation="flow"><div class="edge arrow" style="left: 585px; top: 550px; width: 120px; transform: rotate(90deg);"></div></div>
+<div class="connection" data-from="offline" data-to="budget" data-relation="feedback"><div class="edge feedback" style="left: 1015px; top: 550px; width: 230px; transform: rotate(90deg);"></div><div class="edge feedback" style="left: 1015px; top: 780px; width: 225px; transform: rotate(180deg);"></div><div class="edge feedback" style="left: 790px; top: 780px; width: 25px; transform: rotate(-90deg);"></div><div class="edge feedback arrow" style="left: 790px; top: 755px; width: 60px; transform: rotate(180deg);"></div></div>
+<div class="connection" data-from="budget" data-to="execute" data-relation="feedback"><div class="edge feedback" style="left: 440px; top: 755px; width: 230px; transform: rotate(180deg);"></div><div class="edge feedback arrow" style="left: 210px; top: 755px; width: 205px; transform: rotate(-90deg);"></div></div>
+<div class="connection" data-from="execute" data-to="harness" data-relation="support"><div class="edge support" style="left: 120px; top: 550px; width: 360px; transform: rotate(90deg);"></div></div>
+<div class="connection" data-from="offline" data-to="release" data-relation="flow"><div class="edge" style="left: 1145px; top: 550px; width: 310px; transform: rotate(90deg);"></div><div class="edge" style="left: 1145px; top: 860px; width: 130px; transform: rotate(180deg);"></div><div class="edge arrow" style="left: 1015px; top: 860px; width: 50px; transform: rotate(90deg);"></div></div>
+<div class="connection" data-from="budget" data-to="pending" data-relation="flow"><div class="edge" style="left: 585px; top: 840px; width: 30px; transform: rotate(90deg);"></div><div class="edge" style="left: 585px; top: 870px; width: 215px; transform: rotate(0deg);"></div><div class="edge" style="left: 800px; top: 870px; width: 350px; transform: rotate(90deg);"></div><div class="edge arrow" style="left: 800px; top: 1220px; width: 70px; transform: rotate(180deg);"></div></div>
+<div class="label" style="left: 740px; top: 370px; width: 135px;">完整轨迹</div>
+<div class="label" style="left: 840px; top: 700px; width: 170px;">需真实执行</div>
+<div class="label" style="left: 960px; top: 825px; width: 170px;">通过核验</div>
+<div class="label" style="left: 255px; top: 685px; width: 140px;">有余量</div>
+<div class="label" style="left: 820px; top: 1100px; width: 200px;">受阻 / 耗尽</div>
+<div class="note" style="top: 1295px; width: 1120px;">流程设计：Offline 携问题和证据回流；执行始终由共享 Harness 承载。</div>
+</main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

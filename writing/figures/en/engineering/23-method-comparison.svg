@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 945" width="1440" height="945" lang="en"><foreignObject width="1440" height="945"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>
+*{box-sizing:border-box}
+.diagram-root{margin:0;background:#fff;color:#202321;font-family:ui-monospace,SFMono-Regular,Menlo,"PingFang SC",sans-serif;font-weight:400}
+.canvas{position:relative;width:1440px;background:white;overflow:hidden}
+.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-size:26px;line-height:1.5;background:#fff;z-index:2;padding:8px 14px}
+.node.box{border:1.25px solid #363b36;border-radius:23px;background-image:radial-gradient(#4b504b20 .65px,transparent .7px);background-size:5px 5px}
+.node.accent{color:#4d6e2b;border-color:#85a65c;background-color:#fff;background-image:radial-gradient(#83a95738 .65px,transparent .7px);background-size:5px 5px}
+.node.small{font-size:22px}
+.label{position:absolute;font-size:20px;color:#737972;background:#fff;z-index:3;padding:2px 8px;line-height:1.6}
+.wire{position:absolute;z-index:1}
+.tip{position:absolute;width:8px;height:8px;border-top:1.25px solid #424942;border-right:1.25px solid #424942;z-index:1}
+.rule{position:absolute;height:1px;background:#e0e5e1}
+.group{position:absolute;border:1px solid #d4dbd0;border-radius:5px;background-image:radial-gradient(#82917c19 .6px,transparent .65px);background-size:6px 6px}
+.group.draft{border-style:dashed;background-image:none}
+.group-title{position:absolute;left:22px;top:-16px;background:white;padding:0 10px;font-size:22px;line-height:30px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.lifeline{position:absolute;border-left:1px solid #cbd3c5}
+.chart{padding:38px 70px 48px}.chart h2{font-size:23px;font-weight:400;margin:0 0 30px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.chart-row{display:grid;grid-template-columns:185px 1fr 100px;gap:18px;align-items:center;min-height:66px;font-size:22px}
+.track{position:relative;height:9px;background:#f0f2f0}.bar{height:9px;background:#aeb5aa}.bar.green{background:#83a957}.val{text-align:right;font-size:21px}
+.axis{display:flex;justify-content:space-between;margin-left:203px;margin-right:118px;color:#8b918d;font-size:17px}.small-note{font-size:20px;color:#79827b}
+.matrix{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:0;padding:35px 80px}.matrix&gt;div{padding:28px 18px;border-bottom:1px solid #dce3dd;font-size:24px}.matrix .muted{font-size:21px;color:#7c847d}.number{font-size:42px}.green{color:#5d7e3b}
+.spark{display:flex;gap:20px;align-items:end;height:160px}.spark&gt;div{width:70px;background:#d9e5dd;position:relative;min-height:1px}.spark span{position:absolute;top:-35px;left:0;right:0;text-align:center;font-size:23px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding:65px 80px 20px}.stat-grid .number{margin:12px 0}.stat-grid p{font-size:23px;line-height:1.7;margin:7px 0}.small{font-size:20px}
+.plot{padding:45px 70px}.plot-row{display:grid;grid-template-columns:260px 1fr 230px;gap:25px;align-items:center;font-size:24px;margin:42px 0}.plot-track{height:20px;display:flex;position:relative;background:#f0f3f1}.plot-track&gt;div{height:20px;background:#ccd8bd}.plot-track&gt;div:last-child{background:#83a957}
+.legend{font-size:20px;color:#79827b;display:flex;gap:40px;margin:30px 0}.legend i{display:inline-block;width:18px;height:10px;background:#ccd8bd;margin-right:10px}.legend i.dark{background:#83a957}
+.chips{display:flex;gap:12px;padding:20px 0}.chip{width:16px;height:16px;border:1px solid #bec8c1;border-radius:50%}.chip.green{background:#83a957;border-color:#83a957}.chip.gray{background:#aab8af}.caption{font-size:21px;color:#7b827d;margin-top:26px}
+
+.diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:945px"><div class="label" style="left:320px;top:35px">Proposal basis</div><div class="label" style="left:605px;top:35px">Edit method</div><div class="label" style="left:885px;top:35px">Evaluation</div><div class="label" style="left:1160px;top:35px">Feedback</div><div class="node small" style="left: 40px; top: 72.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">MASP</span></div><div class="node box small" style="left: 295px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Failures + SP</span></div><div class="node box small" style="left: 575px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Targeted edit</span></div><div class="node box small" style="left: 855px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Review &amp; target checks<br />Full-set evaluation</span></div><div class="node box small" style="left: 1135px; top: 72.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">KEEP / DISCARD<br />Record lessons</span></div><div class="wire" style="left:520px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:147px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:142px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:230px"></div><div class="node small" style="left: 40px; top: 237.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">MASPCombine</span></div><div class="node box small" style="left: 295px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Single-domain blockers</span></div><div class="node box small" style="left: 575px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Cross-domain checks<br />Targeted edit</span></div><div class="node box small" style="left: 855px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Target<br />Collateral</span></div><div class="node box small" style="left: 1135px; top: 237.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">KEEP / DISCARD<br />Record lessons</span></div><div class="wire" style="left:520px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:312px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:307px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:395px"></div><div class="node small" style="left: 40px; top: 402.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Guarded-Patch</span></div><div class="node box small" style="left: 295px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Multiple candidates</span></div><div class="node box small accent" style="left: 575px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Anchor insertion<br />diff guard</span></div><div class="node box small" style="left: 855px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Repeated paired tests</span></div><div class="node box small" style="left: 1135px; top: 402.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Rank candidates</span></div><div class="wire" style="left:520px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:477px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:472px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:560px"></div><div class="node small" style="left: 40px; top: 567.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Free attribution</span></div><div class="node box small" style="left: 295px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Analyze failures</span></div><div class="node box small" style="left: 575px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Execution protocol</span></div><div class="node box small" style="left: 855px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Target check<br />Evaluate 100 cases</span></div><div class="node box small" style="left: 1135px; top: 567.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Save experiment lessons</span></div><div class="wire" style="left:520px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:642px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:637px;border-color:#424942;transform:rotate(45deg)"></div><div class="rule" style="left:70px;right:70px;top:725px"></div><div class="node small" style="left: 40px; top: 732.5px; width: 230px; height: 150px; font-size: 24px; line-height: 1.25;" data-type-role="secondary"><span style="min-width: 0; overflow-wrap: anywhere;">Data strategy memory</span></div><div class="node box small" style="left: 295px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Dynamic SP</span></div><div class="node box small" style="left: 575px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Deduplicate / conflicts<br />Execution protocol</span></div><div class="node box small" style="left: 855px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Target check<br />Evaluate 100 cases</span></div><div class="node box small accent" style="left: 1135px; top: 732.5px; width: 225px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Update strategy state</span></div><div class="wire" style="left:520px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:560px;top:802px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:800px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:840px;top:802px;border-color:#424942;transform:rotate(45deg)"></div><div class="wire" style="left:1080px;top:807px;width:55px;border-top:1.25px solid #424942"></div><div class="tip" style="left:1120px;top:802px;border-color:#424942;transform:rotate(45deg)"></div></main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

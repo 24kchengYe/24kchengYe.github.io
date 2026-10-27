@@ -1,0 +1,15 @@
+/* The figure palette is shared by inline diagrams and their static fallback. */
+html[data-theme="dark"][data-diagram-style],
+html[data-theme="dark"] [data-diagram-style]{
+ --diagram-paper:#171d21;--diagram-ink:#e1e6dd;--diagram-muted:#b3bfb4;
+ --diagram-line:#a0ada0;--diagram-border:#83917f;--diagram-accent:#b0c596;
+ --diagram-accent-ink:#c0d6a5;--diagram-soft:#243226;--diagram-warm:#342d25;
+}
+html[data-theme="dark"][data-diagram-style="engineering"],
+html[data-theme="dark"] [data-diagram-style="engineering"]{--diagram-soft:#171d21;--diagram-warm:#171d21;--diagram-border:#9ba59e}
+html[data-theme="dark"] .canvas{background:var(--diagram-paper)!important;color:var(--diagram-ink)}
+html[data-theme="dark"] .canvas .node{background-color:var(--diagram-paper);color:var(--diagram-ink)}
+html[data-theme="dark"] .canvas :is(.label,.edge-label,.caption,.note){color:var(--diagram-muted);background-color:var(--diagram-paper)}
+html[data-theme="dark"] .canvas .wire{border-color:var(--diagram-line)!important}
+html[data-theme="dark"] .canvas .phase{color:var(--diagram-ink)!important}
+html[data-theme="dark"] .canvas .phase-rule{border-color:#49564a!important}

@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 945" width="1440" height="945" lang="en"><foreignObject width="1440" height="945"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="engineering" data-diagram-kind="flow"><style>
+.diagram-root{margin:0;background:#fff;color:#303b36;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}
+.canvas{position:relative;width:1440px;height:945px;background:#fff;box-sizing:border-box}
+.node{position:absolute;box-sizing:border-box;padding:18px 24px;border:1.5px solid #bfcac1;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center;z-index:2}
+.node strong{font-size:27px;line-height:1.23;font-weight:500;overflow-wrap:anywhere}
+.node span{font-size:23px;line-height:1.35;color:#626e66;white-space:pre-line;overflow-wrap:anywhere}
+.node.soft{background:#f3f6f1}.node.issue{background:#faf4ef;border-color:#d7c6b8}.node.result{background:#eff5ed;border-color:#9eaf96}
+.edge{position:absolute;height:0;border-top:1.5px solid #9caa98;transform-origin:0 0;z-index:1}.edge.feedback{border-top-style:dashed}
+.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #9caa98;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.label{position:absolute;font-size:21px;line-height:1.3;color:#687366;background:#fff;z-index:3;white-space:pre-line;box-sizing:border-box;padding:3px 6px}
+.label.title{font-size:31px;font-weight:500;color:#303b36}.label.lane{font-size:24px;color:#405142}.label.center{text-align:center}
+</style><div class="canvas" data-fixed-type="true" data-research-diagram="spec-repair-full-workflow"><div class="edge arrow" data-from="input" data-to="entry" style="left:390px;top:156px;width:160px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="input" data-to="preflight-error" style="left:225px;top:253px;width:57px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="entry" data-to="regular" style="left:730px;top:233px;width:79px;transform:rotate(90deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:550px;top:192px;width:90px;transform:rotate(180deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:460px;top:192px;width:432px;transform:rotate(90deg)"></div><div class="edge" data-from="entry" data-to="format" style="left:460px;top:624px;width:160px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="entry" data-to="format" style="left:620px;top:624px;width:56px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="regular" data-to="hard" style="left:910px;top:391px;width:100px;transform:rotate(0deg)"></div><div class="edge arrow" data-from="regular" data-to="format" style="left:730px;top:477px;width:203px;transform:rotate(90deg)"></div><div class="edge" data-from="hard" data-to="format" style="left:1120px;top:477px;width:107px;transform:rotate(90deg)"></div><div class="edge" data-from="hard" data-to="format" style="left:1120px;top:584px;width:280px;transform:rotate(180deg)"></div><div class="edge arrow" data-from="hard" data-to="format" style="left:840px;top:584px;width:96px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="hard" data-to="result" style="left:1280px;top:477px;width:203px;transform:rotate(90deg)"></div><div class="edge arrow" data-from="format" data-to="result" style="left:910px;top:763px;width:100px;transform:rotate(0deg)"></div><div class="edge feedback" data-from="format" data-to="regular" style="left:550px;top:768px;width:140px;transform:rotate(180deg)"></div><div class="edge feedback" data-from="format" data-to="regular" style="left:410px;top:768px;width:346px;transform:rotate(-90deg)"></div><div class="edge arrow feedback" data-from="format" data-to="regular" style="left:410px;top:422px;width:140px;transform:rotate(0deg)"></div><div class="node " id="input" style="left:60px;top:88px;width:330px;height:165px"><strong>Input checks</strong><span>Align Query + Spec</span><span data-node-detail="true" hidden="">Input &amp; preflight
+Query + Spec
+Validate input and prompt alignment</span></div><div class="node " id="entry" style="left:550px;top:88px;width:790px;height:145px"><strong>Four-domain Judge → Router</strong><span>Same-version votes · root-cause routing</span><span data-node-detail="true" hidden="">Four-domain Judge → entry router
+Add confirmation votes only after an all-pass first vote; route by root cause</span></div><div class="node issue" id="preflight-error" style="left:60px;top:310px;width:330px;height:165px"><strong>Stop</strong><span>No model calls</span><span data-node-detail="true" hidden="">Preflight failure
+Report the error
+No model calls</span></div><div class="node soft" id="regular" style="left:550px;top:312px;width:360px;height:165px"><strong>Regular repair</strong><span>Table first · retry budget 2</span><span data-node-detail="true" hidden="">Regular repair &amp; review
+Table causes first
+Four-domain recheck + votes
+Shared rollback budget: 2</span></div><div class="node soft" id="hard" style="left:1010px;top:312px;width:360px;height:165px"><strong>Hard repair</strong><span>2/3 votes · retry budget 3</span><span data-node-detail="true" hidden="">Hard repair &amp; review
+Carry failure context; route again
+New-version domain votes: 2/3
+Separate rollback budget: 3</span></div><div class="node " id="format" style="left:550px;top:680px;width:360px;height:165px"><strong>Release gate</strong><span>Format + semantic recheck</span><span data-node-detail="true" hidden="">Format release gate
+Check the complete document
+Reconfirm semantics after edits
+One format-driven repair return</span></div><div class="node result" id="result" style="left:1010px;top:680px;width:360px;height:165px"><strong>Pass / Fail</strong><span>Save Spec, votes &amp; trace</span><span data-node-detail="true" hidden="">Record final outcome
+Save pass or failure explicitly
+Spec, votes, calls and trace
+Terminal rewrite off by default</span></div><div class="label title" style="left:54px;top:24px;width:1250px">Judge–Fix · Full workflow</div><div class="label " style="left:390px;top:112px;width:150px">Valid</div><div class="label " style="left:90px;top:264px;width:240px">Invalid input</div><div class="label " style="left:740px;top:236px;width:220px">Repair needed</div><div class="label " style="left:470px;top:552px;width:220px">Entry votes pass</div><div class="label " style="left:920px;top:324px;width:86px">Fail,
+budget
+used</div><div class="label " style="left:740px;top:532px;width:210px">Regular votes pass</div><div class="label " style="left:1000px;top:548px;width:210px">Hard votes pass</div><div class="label " style="left:1288px;top:532px;width:130px">Still fails</div><div class="label " style="left:920px;top:704px;width:86px">Pass /
+stop</div><div class="label " style="left:65px;top:560px;width:330px">Format return ×1</div></div><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

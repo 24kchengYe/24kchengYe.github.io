@@ -1,0 +1,37 @@
+/* Quiet article context; the prose remains the primary reading surface. */
+.writing-series-top{position:relative;margin:0 auto 22px;color:#747973;font-family:inherit;font-size:13px;line-height:1.5;letter-spacing:0;text-align:left;max-width:720px}
+.writing-series-top .writing-series-toggle{display:inline-flex;align-items:center;gap:12px;padding:3px 0;border:0;border-radius:0;background:none;color:inherit;font:inherit;font-size:13px;line-height:1.5;cursor:pointer;box-shadow:none}
+.writing-series-position{font-variant-numeric:tabular-nums;color:#8c908a}
+.writing-series-chevron{transition:transform 160ms ease-out}
+.writing-series-toggle[aria-expanded="true"] .writing-series-chevron{transform:rotate(180deg)}
+.writing-series-top .writing-series-list{position:relative;list-style:none;margin:14px 0 2px;padding:9px 0 9px 14px;border-left:1px solid #e0e4dc;text-align:left}
+.writing-series-list[hidden]{display:none!important}
+.writing-series-list li{margin:0;padding:0;list-style:none}
+.writing-series-list .writing-series-link{display:flex;align-items:baseline;gap:12px;padding:7px 0;border:0;color:#797d77;text-decoration:none;font-size:13px;font-weight:400;line-height:1.55;max-width:100%}
+.writing-series-number{flex:0 0 20px;font-variant-numeric:tabular-nums;color:#92968f;font-size:11px}
+.writing-series-link[aria-current="page"]{color:#30392f;font-weight:500}
+.writing-series-title{overflow-wrap:anywhere;min-width:0}
+.writing-series-top .writing-series-link:hover,.writing-series-bottom a:hover{color:#35523a;text-decoration:none}
+.writing-series-format{font-size:11px;color:#81877d;font-weight:400;white-space:nowrap}
+.writing-series-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:720px;margin:72px auto 24px;padding:22px 0 0;border-top:1px solid #e3e6df;text-align:left}
+.writing-series-bottom .writing-series-neighbor{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0;color:#30352e;text-decoration:none;font-size:17px;line-height:1.55;font-weight:400;transition:color 160ms ease-out}
+.writing-series-bottom .is-next{grid-column:2}
+.writing-series-direction{font-size:12px;color:#82877e;letter-spacing:0;font-weight:400}
+.writing-series-bottom .writing-series-title{transition:transform 180ms cubic-bezier(.2,.65,.3,1)}
+@media(hover:hover){.writing-series-neighbor.is-next:hover .writing-series-title{transform:translateX(3px)}.writing-series-neighbor.is-previous:hover .writing-series-title{transform:translateX(-3px)}}
+.writing-series-toggle:focus-visible,.writing-series-link:focus-visible,.writing-series-neighbor:focus-visible{outline:2px solid #657e5c;outline-offset:5px}
+.writing-term{display:inline!important;padding:0!important;margin:0!important;border:0!important;border-bottom:1px dotted #899780!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;vertical-align:baseline!important;text-transform:none!important;text-decoration:none!important;cursor:help;user-select:text;-webkit-user-select:text}
+.writing-term:hover,.writing-term[aria-expanded="true"]{border-bottom-style:solid!important;border-bottom-color:#456142!important}
+.writing-term:focus-visible{outline:2px solid #708665!important;outline-offset:3px}
+.writing-note{position:fixed;z-index:90;width:336px;max-width:calc(100vw - 32px);padding:19px 22px 18px;background:#fcfdf9;border:1px solid #dbe1d5;border-radius:3px;box-shadow:0 5px 24px #21351c0e;color:#30362d;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans",sans-serif;text-align:left;overflow:auto;overscroll-behavior:contain;animation:writing-note-in 130ms ease-out}
+.writing-note[hidden]{display:none!important}
+.writing-note .writing-note-title{margin:0 28px 9px 0;font-size:13px;font-weight:550;line-height:1.5;color:#3b4833}
+.writing-note .writing-note-description{margin:0 0 11px;padding:0;font:inherit;color:inherit;line-height:1.7}
+.writing-note .writing-note-source{display:inline-block;font-size:12px;color:#69715f;text-decoration:none;text-underline-offset:3px}
+.writing-note .writing-note-source:hover{text-decoration:underline}
+.writing-note .writing-note-close{position:absolute;top:8px;right:7px;display:grid;place-items:center;width:32px;height:32px;margin:0;padding:0;border:0;background:transparent;color:#78836c;font:21px/1 sans-serif;cursor:pointer;box-shadow:none}
+.writing-note button:focus-visible,.writing-note a:focus-visible{outline:2px solid #708665;outline-offset:3px}
+@keyframes writing-note-in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.writing-series-top{margin-bottom:18px}.writing-series-bottom{grid-template-columns:1fr;gap:22px;margin-top:48px}.writing-series-bottom .is-next{grid-column:1}.writing-series-bottom .writing-series-neighbor{font-size:16px;gap:6px}.writing-series-list .writing-series-link{font-size:13px}.writing-series-format{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){.writing-series-chevron,.writing-series-bottom .writing-series-title,.writing-series-bottom .writing-series-neighbor{transition:none}.writing-note{animation:none}}
+@media print{.writing-series-top,.writing-series-bottom,.writing-note{display:none!important}.writing-term{border:0!important}}

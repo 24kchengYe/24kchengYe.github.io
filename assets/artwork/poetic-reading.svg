@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" fill="none" role="img" aria-labelledby="reading-title reading-desc">
+  <title id="reading-title">A river opening toward the stars</title>
+  <desc id="reading-desc">An original ink drawing of winding river banks, distant hills, and a few stars. The upper left is intentionally open.</desc>
+  <g stroke="#323831" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The continuous foreground gesture is the first stroke, not a frame. -->
+    <path data-start="0" data-duration="1100" data-phase="way-out" stroke-width="1.8" d="M38 413 C89 392 120 385 162 385 C207 385 226 395 265 391 C309 387 330 368 365 353 C407 335 449 333 487 319 C521 307 549 291 562 280 C575 269 568 264 548 258 C528 252 513 251 499 247"/>
+    <path data-start="900" data-duration="850" data-phase="way-out" stroke-width="1.7" d="M510 247 C537 250 562 251 582 258 C602 265 604 276 590 288 C572 304 548 314 539 326 C527 341 539 350 565 357 C598 365 638 366 677 371 C732 378 769 391 808 409 C846 426 885 437 951 435"/>
+    <!-- A low, irregular ridge; no geometric skyline. -->
+    <path data-start="900" data-duration="480" data-phase="low-ridge" stroke-width="1.5" d="M387 247 C416 241 434 230 459 225 C481 221 488 212 504 210 C518 207 530 216 544 213 C556 210 568 203 581 204 C599 204 609 211 625 215"/>
+    <path data-start="1180" data-duration="450" data-phase="middle-mountain" stroke-width="1.65" d="M581 204 C599 194 614 181 629 177 C642 174 647 164 661 162 C674 160 684 168 694 171 C711 176 719 185 729 192"/>
+    <path data-start="1410" data-duration="500" data-phase="high-mountain" stroke-width="1.9" d="M699 218 C728 205 740 190 758 181 C770 175 778 160 791 154 C803 150 803 138 813 135 C820 133 825 143 833 143 C843 144 845 155 854 156 C864 158 870 176 884 184 C901 194 923 198 950 208"/>
+    <path data-start="1710" data-duration="240" data-phase="distant-ridge" stroke-width="1.2" d="M919 198 C932 189 940 181 950 179 C958 177 965 183 972 181"/>
+    <!-- Small landforms sit below the ridges, leaving the river unfilled. -->
+    <path data-start="1370" data-duration="340" data-phase="open-ground" stroke-width="1.1" d="M566 241 C593 239 608 231 632 230 C650 230 665 236 681 235 C699 234 707 230 724 231"/>
+    <path data-start="1560" data-duration="340" data-phase="open-ground" stroke-width="1.1" d="M637 250 C668 246 688 246 710 240 C728 235 740 228 758 226 C782 222 808 228 829 226"/>
+    <path data-start="1790" data-duration="360" data-phase="open-ground" stroke-width="1.15" d="M727 265 C757 260 777 248 803 245 C827 243 850 249 870 247 C892 245 910 235 934 235 C948 235 961 240 978 240"/>
+    <!-- Sparse folds in the mountains, deliberately broken before the base. -->
+    <path data-start="1380" data-duration="200" data-phase="low-folds" stroke-width="0.9" d="M505 217 C494 221 490 229 480 232"/>
+    <path data-start="1450" data-duration="200" data-phase="low-folds" stroke-width="0.85" d="M545 220 C553 222 559 222 566 225"/>
+    <path data-start="1410" data-duration="180" data-phase="low-folds" stroke-width="0.8" d="M442 237 C450 233 456 233 465 232"/>
+    <path data-start="1630" data-duration="220" data-phase="middle-folds" stroke-width="1" d="M660 170 C651 178 649 189 640 194 C633 199 627 199 623 204"/>
+    <path data-start="1740" data-duration="180" data-phase="middle-folds" stroke-width="0.8" d="M675 177 C682 185 690 189 697 192"/>
+    <path data-start="1910" data-duration="220" data-phase="high-folds" stroke-width="1.05" d="M813 145 C809 158 801 161 798 173 C795 181 786 190 784 198"/>
+    <path data-start="2010" data-duration="180" data-phase="high-folds" stroke-width="0.85" d="M827 155 C828 166 837 172 840 185"/>
+    <path data-start="2080" data-duration="160" data-phase="high-folds" stroke-width="0.75" d="M851 167 C855 179 859 183 868 188"/>
+    <!-- The near bank carries a few hand-drawn strata, not a regular texture. -->
+    <path data-start="420" data-duration="430" data-phase="near-bank" stroke-width="0.95" d="M70 425 C118 409 143 406 175 408 C203 410 224 417 246 416"/>
+    <path data-start="620" data-duration="430" data-phase="near-bank" stroke-width="0.85" d="M277 405 C302 401 320 390 343 381 C365 372 386 371 409 363"/>
+    <path data-start="830" data-duration="300" data-phase="near-bank" stroke-width="0.85" d="M342 365 C360 353 374 350 390 344"/>
+    <path data-start="940" data-duration="300" data-phase="near-bank" stroke-width="0.8" d="M422 344 C448 338 470 334 493 324"/>
+    <path data-start="1060" data-duration="240" data-phase="near-bank" stroke-width="0.75" d="M507 308 C526 299 536 292 542 286"/>
+    <path data-start="1300" data-duration="260" data-phase="return-bank" stroke-width="0.9" d="M554 342 C576 350 596 351 623 354"/>
+    <path data-start="1450" data-duration="330" data-phase="return-bank" stroke-width="1" d="M643 359 C695 363 726 371 752 382"/>
+    <path data-start="1620" data-duration="250" data-phase="return-bank" stroke-width="0.8" d="M786 395 C815 409 835 415 855 418"/>
+    <path data-start="1730" data-duration="220" data-phase="return-bank" stroke-width="0.8" d="M887 427 C910 431 927 430 941 430"/>
+    <!-- A restrained set of ripples gives the open channel its scale. -->
+    <path data-start="1350" data-duration="220" data-phase="river-ripples" stroke-width="0.75" d="M568 295 C575 292 581 288 583 286"/>
+    <path data-start="1430" data-duration="250" data-phase="river-ripples" stroke-width="0.8" d="M512 333 C502 337 492 339 476 340"/>
+    <path data-start="1510" data-duration="250" data-phase="river-ripples" stroke-width="0.75" d="M469 355 C489 350 509 348 526 349"/>
+    <path data-start="1590" data-duration="250" data-phase="river-ripples" stroke-width="0.9" d="M427 375 C447 370 460 370 470 369"/>
+    <path data-start="1670" data-duration="240" data-phase="river-ripples" stroke-width="0.8" d="M512 380 C535 378 550 379 565 382"/>
+    <path data-start="1750" data-duration="280" data-phase="river-ripples" stroke-width="0.85" d="M362 409 C395 402 417 400 440 401"/>
+    <path data-start="1840" data-duration="220" data-phase="river-ripples" stroke-width="0.75" d="M475 418 C490 415 508 415 520 416"/>
+    <path data-start="1920" data-duration="280" data-phase="river-ripples" stroke-width="0.9" d="M599 409 C631 409 655 412 679 418"/>
+    <!-- Two tiny irregular stones, kept apart from the large gestures. -->
+    <path data-start="1600" data-duration="180" data-phase="river-stones" stroke-width="0.9" d="M307 380 C311 376 316 375 319 378 C320 381 312 383 307 380"/>
+    <path data-start="1840" data-duration="180" data-phase="river-stones" stroke-width="0.85" d="M693 358 C697 355 703 356 707 359 C703 361 697 361 693 358"/>
+    <!-- Stars arrive last and stay still. No twinkling loop. -->
+    <g data-stars="true" stroke="#686e62">
+      <path data-start="2300" data-duration="260" data-phase="stars" stroke-width="1.05" d="M688 51 C688 55 687 59 687 63 M682 57 C685 58 690 58 694 57"/>
+      <path data-start="2440" data-duration="260" data-phase="stars" stroke-width="0.85" d="M894 80 C893 83 894 87 894 89 M889 85 C892 84 897 84 899 85"/>
+      <path data-start="2560" data-duration="160" data-phase="stars" stroke-width="1.7" d="M751 93 L751.3 93.4"/>
+      <path data-start="2490" data-duration="180" data-phase="stars" stroke-width="1.65" d="M826 62 L826.25 62.4"/>
+      <path data-start="2530" data-duration="170" data-phase="stars" stroke-width="1.4" d="M603 108 L603.2 108.25"/>
+      <path data-start="2590" data-duration="180" data-phase="stars" stroke-width="1.45" d="M936 122 L936.2 122.35"/>
+      <path data-start="2620" data-duration="180" data-phase="stars" stroke-width="1.4" d="M717 125 L717.25 125.2"/>
+    </g>
+  </g>
+</svg>

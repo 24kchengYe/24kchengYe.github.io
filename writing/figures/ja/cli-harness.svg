@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2288 1007" width="2288" height="1007" lang="ja"><foreignObject width="2288" height="1007"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="openai-blog" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;background:#fff;overflow:hidden}.region{position:absolute;border:1px solid #dce2d5;border-radius:6px}.region-label{position:absolute;font-size:28px;background:#fff;padding:0 12px;color:#687568;z-index:3}.title{position:absolute;font-size:32px;line-height:1.25}.node{position:absolute;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:8px 14px;text-align:center;background:#fff;border:1px solid #a6b1a1;border-radius:5px;font-size:28px;line-height:1.2;z-index:2}.sub{font-size:22px;line-height:1.3;color:#687568}.source{border-radius:20px}.output{background:#eff4e9}.pending{border-radius:20px;background:#f7f8f5;color:#687568}.gate{border-radius:2px;border-color:#87977e}.workspace{position:absolute;border:1px solid #d3dccb;border-radius:6px;background:#fafbf8;z-index:0}.workspace&gt;span{position:absolute;left:20px;top:12px;font-size:24px;color:#687568}.bundle{position:absolute;border:1px solid #b9c6ad;border-radius:6px;padding:24px;background:#fff;font-size:26px;line-height:1.4;z-index:2}.bundle h3{font-size:28px;font-weight:400;margin:0 0 28px}.turns{display:flex;align-items:center;justify-content:space-between;font:italic 26px Georgia,serif;margin-bottom:32px;color:#65755c}.turns span{padding:8px 10px;border-bottom:1px solid #aab89e}.bundle p{margin:20px 0}.bundle .small{font-size:22px;color:#687568}.dependencies{gap:16px}.dependency-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;font-size:22px;line-height:1.35;width:100%;color:#687568}.dependency-row span+span{border-left:1px solid #dce2d5;padding-left:12px}.edge{position:absolute;height:0;border-top:1.6px solid #98a58c;transform-origin:0 0;z-index:1}.edge.feedback,.edge.context{border-top-style:dashed}.edge.failure{border-color:#bcc4b5}.edge.handoff{border-color:#879f70}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #98a58c;border-top:4px solid transparent;border-bottom:4px solid transparent}.edge.failure.arrow:after{border-left-color:#bcc4b5}.edge.handoff.arrow:after{border-left-color:#879f70}.edge-label{position:absolute;transform:translate(-50%,-50%);max-width:220px;padding:3px 5px;background:#fff;color:#687568;font-size:20px;line-height:1.2;text-align:center;z-index:3}.port{position:absolute;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid #a6b897;border-radius:50%;background:#fafcf7;color:#65755c;font-size:23px;z-index:3}.note{position:absolute;color:#687568;font-size:22px;line-height:1.45}.supervision-note{width:270px}.node&gt;div{flex-shrink:0;max-width:100%}.canvas { color:#303c38; }
+.node,.bundle,.checkpoint,.restore { border-width:1.6px; border-color:#87938a; border-radius:8px; box-shadow:none; }
+.region,.workspace { border-color:#d5ddd5; border-radius:8px; }
+.workspace { background:#fafbf9; }
+.node { font-size:28px; }
+.title,.heading { font-size:30px; }
+.sub,.bundle .small,.dependency-row { font-size:24px; color:#667269; }
+.edge-label,.note { font-size:22px; color:#667269; }
+.edge { border-top-width:1.6px; border-top-color:#748176; }
+.edge.arrow:after { border-left-color:#748176; }
+.edge.handoff { border-color:#7e9668; }
+.edge.handoff.arrow:after { border-left-color:#7e9668; }
+.edge.failure { border-color:#98a196; }
+.edge.failure.arrow:after { border-left-color:#98a196; }
+.node.plan { border-style:dashed; }
+.node.output,.node.soft { background:#f3f6ef; }
+.node.pending { background:#f7f8f6; }
+.node.failed { background:#fcf7ef; border-color:#b99970; }
+</style><main class="canvas" data-fixed-type="" style="width:2288px;height:1007px"><div class="title" style="left:52px;top:23.099999999999998px">a · 長期軌跡の合成</div><div class="region" style="left:435.5px;top:123.75px;width:1202.5px;height:833.25px"></div><div class="region-label" style="left:461.5px;top:95.69999999999999px">Harness</div><div class="note" style="left:52px;top:519.75px">テーブル · ビュー · ダッシュボード</div><div class="note" style="left:52px;top:585.75px">ワークフロー · 権限</div><div class="connection" data-from="AQ" data-to="AM" data-logical-edge="AQ&gt;AM"><div class="edge normal arrow" style="left:325px;top:437.25px;width:208px;transform:rotate(0deg)"></div></div><div class="connection" data-from="AC" data-to="AM" data-logical-edge="AC&gt;AM"><div class="edge context arrow" style="left:676px;top:264px;width:107.25px;transform:rotate(90deg)"></div></div><div class="connection" data-from="AD" data-to="AM" data-logical-edge="AD&gt;AM"><div class="edge context" style="left:994.5px;top:214.5px;width:58.5px;transform:rotate(180deg)"></div><div class="edge context" style="left:936px;top:214.5px;width:99px;transform:rotate(90deg)"></div><div class="edge context" style="left:936px;top:313.5px;width:260px;transform:rotate(180deg)"></div><div class="edge context arrow" style="left:676px;top:313.5px;width:57.75px;transform:rotate(90deg)"></div></div><div class="connection" data-from="AM" data-to="AT" data-logical-edge="AM&gt;AT"><div class="edge normal arrow" style="left:819px;top:412.5px;width:195px;transform:rotate(0deg)"></div></div><div class="edge-label" style="left:916.5px;top:379.5px">呼び出し</div><div class="connection" data-from="AT" data-to="AM" data-logical-edge="AT&gt;AM"><div class="edge feedback arrow" style="left:1014px;top:462px;width:195px;transform:rotate(180deg)"></div></div><div class="edge-label" style="left:916.5px;top:496.65px">実際の返り値</div><div class="connection" data-from="AT" data-to="AS" data-logical-edge="AT&gt;AS"><div class="edge normal" style="left:1079px;top:511.5px;width:74.25px;transform:rotate(90deg)"></div><div class="edge normal" style="left:1079px;top:585.75px;width:383.5px;transform:rotate(180deg)"></div><div class="edge normal arrow" style="left:695.5px;top:585.75px;width:148.5px;transform:rotate(90deg)"></div></div><div class="edge-label" style="left:832px;top:557.6999999999999px">Read</div><div class="connection" data-from="AT" data-to="AF" data-logical-edge="AT&gt;AF"><div class="edge normal" style="left:1261px;top:511.5px;width:115.5px;transform:rotate(90deg)"></div><div class="edge normal" style="left:1261px;top:627px;width:169px;transform:rotate(180deg)"></div><div class="edge normal arrow" style="left:1092px;top:627px;width:107.25px;transform:rotate(90deg)"></div></div><div class="edge-label" style="left:1176.5px;top:597.3px">Write / Edit</div><div class="connection" data-from="AT" data-to="AL" data-logical-edge="AT&gt;AL"><div class="edge normal" style="left:1443px;top:511.5px;width:82.5px;transform:rotate(90deg)"></div><div class="edge normal" style="left:1443px;top:594px;width:52px;transform:rotate(0deg)"></div><div class="edge normal arrow" style="left:1495px;top:594px;width:140.25px;transform:rotate(90deg)"></div></div><div class="edge-label" style="left:1532.7px;top:664.9499999999999px">Bash</div><div class="connection" data-from="AL" data-to="AB" data-logical-edge="AL&gt;AB"><div class="edge normal arrow" style="left:1612px;top:792px;width:156px;transform:rotate(0deg)"></div></div><div class="edge-label" style="left:1690px;top:759px">API</div><div class="connection" data-from="AT" data-to="AO" data-logical-edge="AT&gt;AO"><div class="edge handoff arrow" style="left:1508px;top:437.25px;width:143px;transform:rotate(0deg)"></div></div><div class="edge-label" style="left:1579.5px;top:404.25px">記録</div><div class="node source" id="AQ" style="left:52px;top:366.29999999999995px;width:273px;height:141.9px"><div>元のQuery</div></div>
+<div class="node process" id="AC" style="left:468px;top:165px;width:416px;height:99px"><div>システム指示 · Reminder</div></div>
+<div class="node process" id="AD" style="left:994.5px;top:158.39999999999998px;width:507px;height:112.19999999999999px"><div>ツール定義</div><div class="sub">名前 · 説明 · 引数スキーマ</div></div>
+<div class="node process" id="AM" style="left:533px;top:371.25px;width:286px;height:132px"><div>Seed</div><div class="sub">推論 · 判断</div></div>
+<div class="node process" id="AT" style="left:1014px;top:363px;width:494px;height:148.5px"><div>ツール実行</div><div class="sub">Read · Write · Edit · Bash · present_files</div></div>
+<div class="workspace" id="AE" style="left:494px;top:660px;width:806px;height:264px"><span>ローカルワークスペース</span></div>
+<div class="node process" id="AS" style="left:539.5px;top:734.25px;width:312px;height:115.5px"><div>Skills</div><div class="sub">読み取り専用の操作ガイド</div></div>
+<div class="node process" id="AF" style="left:936px;top:734.25px;width:312px;height:115.5px"><div>スクリプト / ファイル</div><div class="sub">パラメータ · 成果物</div></div>
+<div class="node process" id="AL" style="left:1378px;top:734.25px;width:234px;height:115.5px"><div>lark-cli</div><div class="sub">コマンドラインプログラム</div></div>
+<div class="node process" id="AB" style="left:1768px;top:734.25px;width:364px;height:115.5px"><div>クラウドBase</div></div>
+<div class="bundle" id="AO" style="left:1651px;top:123.75px;width:598px;height:561px"><h3>軌跡パッケージ</h3><div class="turns"><span>t₁</span><span>t₂</span><span>…</span><span>tᵢ</span><span>…</span><span>tT</span></div><p>思考 / 本文 → 呼び出し → 返却値</p><p class="small">実行記録 · 返却値 · 使用量 · バージョン</p><p class="small">成果物の参照 · Base · ファイル</p></div></main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

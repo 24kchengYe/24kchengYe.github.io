@@ -1,0 +1,164 @@
+/* Four quiet chapter openings. Motion is a bounded, interruptible scene transition. */
+[data-poetic-scene] {
+  --poetic-height: 190px;
+  --poetic-ink: #333832;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  column-gap: clamp(24px, 4vw, 64px);
+  min-height: var(--poetic-height);
+  margin: 12px 0 30px;
+  isolation: isolate;
+}
+[data-poetic-scene="writing"] { --poetic-height: 240px; }
+[data-poetic-size="entry"] { --poetic-height: 280px; }
+[data-poetic-scene="reading"][data-poetic-size="entry"] { --poetic-height: 175px; max-width: 1100px; width: 100%; }
+.poetic-copy { min-width: 0; padding: 10px 0; }
+.poetic-copy blockquote {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--poetic-ink);
+  font-family: "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+  font-weight: 400;
+  font-size: clamp(23px, 2.4vw, 30px);
+  line-height: 1.7;
+  letter-spacing: .015em;
+  text-wrap: balance;
+}
+.poetic-copy blockquote > span { display: block; }
+.poetic-copy blockquote [lang="en"] {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: .98em;
+  letter-spacing: -.025em;
+  line-height: 1.45;
+}
+.poetic-copy blockquote [lang="ja"] {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+  font-size: .87em;
+  line-height: 1.8;
+}
+[data-poetic-scene="research"] .poetic-copy blockquote { font-size: clamp(21px, 2vw, 26px); }
+.poetic-copy cite {
+  display: block;
+  margin-top: 15px;
+  color: #6a706b;
+  font: 400 12px/1.7 var(--body, "Helvetica Neue", sans-serif);
+  letter-spacing: .015em;
+}
+.poetic-copy cite a { color: inherit; text-decoration: none; overflow-wrap: normal; }
+.poetic-copy cite a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.poetic-copy cite a:focus-visible { outline: 2px solid #245c87; outline-offset: 5px; }
+.poetic-art { width: 100%; height: var(--poetic-height); min-width: 0; pointer-events: none; }
+.poetic-art svg, .poetic-art > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: visible;
+}
+[data-poetic-scene="reading"] .poetic-art svg { overflow: hidden; }
+[data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote { font-size: clamp(22px, 2vw, 29px); }
+/* Language follows the site's existing html[lang] switch, including without JS. */
+html[lang="en"] [data-poetic-scene] [lang="zh"], html[lang="en"] [data-poetic-scene] [lang="ja"],
+html[lang="zh"] [data-poetic-scene] [lang="en"], html[lang="zh"] [data-poetic-scene] [lang="ja"],
+html[lang="ja"] [data-poetic-scene] [lang="en"], html[lang="ja"] [data-poetic-scene] [lang="zh"] { display: none !important; }
+@media (max-width: 650px) {
+  [data-poetic-scene] {
+    --poetic-height: 155px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 12px 0 25px;
+    min-height: 0;
+  }
+  [data-poetic-scene="writing"] { --poetic-height: 170px; }
+  [data-poetic-size="entry"] { --poetic-height: 180px; }
+  [data-poetic-scene="reading"][data-poetic-size="entry"] { --poetic-height: 120px; }
+  .poetic-copy { padding: 0; max-width: 340px; }
+  .poetic-copy blockquote, [data-poetic-scene="research"] .poetic-copy blockquote {
+    font-size: 23px;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+  .poetic-copy blockquote [lang="en"] { font-size: 24px; }
+  .poetic-copy blockquote [lang="ja"] { font-size: 21px; }
+  .poetic-copy cite { font-size: 11px; margin-top: 10px; }
+  .poetic-art { margin-top: 4px; }
+  [data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote { font-size: 20px; }
+  [data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote [lang="en"] { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-poetic-scene] svg path { animation: none !important; transition: none !important; }
+}
+@media print {
+  [data-poetic-scene] { break-inside: avoid; }
+  .poetic-art svg path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+}
+
+/* Full-viewport edition: drawing and type are recomposed, not padded out. */
+body:has(.poetic-opening) .site-nav {position:relative;z-index:5}
+[data-poetic-scene][hidden] {display:none!important}
+body:has(#library-index[hidden]) .poetic-library-opening {display:none!important}
+html[data-poetic-hold] {scroll-behavior:auto!important;overscroll-behavior-y:none}
+[data-poetic-scene], [data-poetic-scene="reading"][data-poetic-size="entry"] {
+  position:relative;display:block;width:var(--poetic-viewport-width,calc(100vw - 16px));
+  max-width:none;height:100vh;height:100svh;min-height:460px;
+  margin:0 calc((100% - 100vw + 16px)/2);padding:0;overflow:hidden;background:#fff;
+  isolation:isolate;scroll-margin-top:0;
+}
+.poetic-copy {position:absolute;z-index:1;left:max(7.5vw,calc((100vw - 1200px)/2));top:19%;width:min(74vw,870px);max-width:none;padding:0}
+.poetic-copy blockquote, [data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote {font-size:clamp(40px,4.6vw,68px);line-height:1.6}
+.poetic-copy blockquote [lang="en"] {font-size:.98em;line-height:1.3;letter-spacing:-.035em}
+.poetic-copy blockquote [lang="ja"] {font-size:.86em;line-height:1.7}
+[data-poetic-scene="research"] .poetic-copy blockquote {font-size:clamp(34px,3.6vw,54px)}
+.poetic-copy cite {font-size:12px;margin-top:25px}
+.poetic-art {position:absolute;right:5.5%;bottom:6%;width:min(78vw,1250px);height:57%;margin:0}
+[data-poetic-scene="writing"] .poetic-art {width:min(83vw,1360px);height:61%;right:3%;bottom:5%}
+[data-poetic-scene="reading"] .poetic-art {height:64%;right:5%;bottom:5%}
+[data-poetic-scene="arrival"] .poetic-art {width:min(92vw,1570px);height:75%;right:2%;bottom:1.5%}
+.poetic-arrival-copy {top:18%;width:76%;z-index:2}
+.poetic-name {margin:0;color:var(--poetic-ink);font:400 clamp(64px,6.7vw,102px)/1.12 Georgia,"Songti SC",serif;letter-spacing:-.045em}
+.poetic-name [lang="zh"],.poetic-name [lang="ja"] {font-family:"Songti SC","Yu Mincho",serif;font-size:.9em;letter-spacing:.05em}
+.poetic-subtitle {margin:25px 0 0;color:#73786f;font:400 clamp(15px,1.3vw,18px)/1.7 var(--body,"Helvetica Neue",sans-serif);letter-spacing:.015em}
+@media(max-width:650px){
+  [data-poetic-scene], [data-poetic-scene="reading"][data-poetic-size="entry"] {min-height:440px}
+  .poetic-copy {left:24px;top:20%;width:calc(100% - 48px)}
+  .poetic-copy blockquote,[data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote {font-size:clamp(29px,8vw,43px);line-height:1.65}
+  .poetic-copy blockquote [lang="en"],[data-poetic-scene="reading"][data-poetic-size="entry"] .poetic-copy blockquote [lang="en"] {font-size:1.06em;line-height:1.4}
+  .poetic-copy blockquote [lang="ja"] {font-size:.9em}
+  [data-poetic-scene="research"] .poetic-copy blockquote {font-size:clamp(27px,6.9vw,36px)}
+  .poetic-copy cite {font-size:11px;margin-top:20px}
+  .poetic-art,[data-poetic-scene="writing"] .poetic-art,[data-poetic-scene="reading"] .poetic-art {right:0;bottom:9%;width:100%;height:43%}
+  [data-poetic-scene="reading"] .poetic-art {right:1%;height:47%;bottom:8%}
+  .poetic-arrival-copy {top:19%;width:calc(100% - 48px)}
+  .poetic-name {font-size:clamp(48px,12.5vw,72px);line-height:1.14;letter-spacing:-.045em}
+  .poetic-subtitle {max-width:300px;font-size:14px;line-height:1.7;margin-top:22px}
+  [data-poetic-scene="arrival"] .poetic-art {width:119%;right:-6%;height:53%;bottom:5%}
+}
+@media(max-height:560px) and (min-width:651px){
+  [data-poetic-scene] {min-height:360px}.poetic-copy {top:13%}.poetic-copy blockquote {font-size:36px}
+  [data-poetic-scene="research"] .poetic-copy blockquote {font-size:30px}.poetic-copy cite {margin-top:12px}
+}
+@media print{
+  [data-poetic-scene] {width:100%!important;height:260px!important;min-height:0!important;margin:0!important;break-inside:avoid}
+  .poetic-copy {left:0;top:15%;width:60%}.poetic-copy blockquote {font-size:23px!important}
+  .poetic-art {width:52%!important;height:70%!important;right:0!important}
+}
+
+/* The opening poem shares the chapter typography; its final line opens onto the sky. */
+.poetic-arrival-copy {top:16%;width:min(78vw,850px)}
+[data-poetic-scene="arrival"] .poetic-copy blockquote {font-size:clamp(44px,4.45vw,64px)}
+[data-poetic-scene="arrival"] .poetic-copy cite {margin-top:22px}
+@media(max-width:650px){
+  .poetic-arrival-copy {top:16%;width:calc(100% - 48px)}
+  [data-poetic-scene="arrival"] .poetic-copy blockquote {font-size:clamp(27px,7.65vw,33px);line-height:1.6}
+  [data-poetic-scene="arrival"] .poetic-copy blockquote [lang="en"] {font-size:1em;line-height:1.4}
+  [data-poetic-scene="arrival"] .poetic-copy cite {margin-top:20px}
+}
+@media(max-height:560px) and (min-width:651px){
+  .poetic-arrival-copy {top:12%}
+  [data-poetic-scene="arrival"] .poetic-copy blockquote {font-size:clamp(30px,3.5vw,40px)}
+  [data-poetic-scene="arrival"] .poetic-copy cite {margin-top:14px}
+}

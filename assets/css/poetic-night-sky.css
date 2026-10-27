@@ -1,0 +1,46 @@
+/* A quiet night over the arrival landscape. Everything is scoped to this cover. */
+.poetic-night-sky, .poetic-night-lights { display: none; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] {
+  --poetic-ink: #ece9dc;
+  background:
+    radial-gradient(ellipse at 82% 54%, #77867c13, transparent 44%),
+    linear-gradient(180deg, #101923 0%, #162129 58%, #1b2528 83%, var(--theme-page, #20231f) 100%);
+}
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-subtitle { color: #afbdbb; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art { z-index: 1; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [stroke] { stroke: #b5c5c4; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [stroke-width="1.75"],
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [stroke-width="1.6"] { stroke: #d6ded4; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [data-stars] { opacity: .55; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [data-appear] { fill: #e6be7b; fill-opacity: .85; }
+html[data-theme="dark"] .poetic-night-sky {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.poetic-night-sky > svg { display: block; width: 100%; height: 100%; }
+.night-sky-depth { opacity: 0; }
+.night-sky-shimmer { animation: sky-breathe var(--star-period, 7s) ease-in-out var(--star-phase, 0s) infinite alternate; }
+.poetic-night-sky *, .poetic-night-lights { animation-play-state: paused; }
+html[data-theme="dark"] [data-night-active] .poetic-night-sky *,
+html[data-theme="dark"] [data-night-active] .poetic-night-lights { animation-play-state: running; }
+html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-night-lights {
+  display: block;
+  opacity: 0;
+}
+@keyframes sky-breathe { from { opacity: .45; } to { opacity: .94; } }
+@media (prefers-reduced-motion: reduce) {
+  .poetic-night-sky *, .poetic-night-lights { animation: none !important; }
+  .night-sky-depth, .poetic-night-lights { opacity: 1 !important; }
+}
+@media print {
+  .poetic-night-sky, .poetic-night-lights { display: none !important; }
+  html[data-theme="dark"] [data-poetic-scene="arrival"] { background: #fff; --poetic-ink: #333832; }
+  html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-subtitle { color: #555; }
+  html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [stroke] { stroke: #40463e; }
+  html[data-theme="dark"] [data-poetic-scene="arrival"] .poetic-art svg [data-appear] { fill: #8d795b; }
+}

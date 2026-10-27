@@ -1,0 +1,260 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="777.6pt" viewBox="0 0 864 777.6" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="en" data-diagram-style="openai-blog" data-diagram-kind="data">
+
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 777.6  L 864 777.6  L 864 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 223.2 57.6  L 756 57.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 223.2 57.6  L 500.256 57.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 223.2 97.2  L 756 97.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 223.2 97.2  L 496.704 97.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 223.2 136.8  L 756 136.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 223.2 136.8  L 537.552 136.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 223.2 237.6  L 756 237.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 223.2 237.6  L 649.44 237.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 223.2 277.2  L 756 277.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 223.2 277.2  L 681.408 277.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 223.2 316.8  L 756 316.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 223.2 316.8  L 681.408 316.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 223.2 356.4  L 756 356.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 223.2 356.4  L 660.096 356.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 223.2 396  L 756 396  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 223.2 396  L 617.472 396  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 223.2 435.6  L 756 435.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 223.2 435.6  L 660.096 435.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 223.2 554.4  L 756 554.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 223.2 554.4  L 423 554.4  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 223.2 594  L 756 594  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 223.2 594  L 289.8 594  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 223.2 633.6  L 756 633.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 223.2 633.6  L 289.8 633.6  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_25">
+    <path d="M 223.2 673.2  L 756 673.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_26">
+    <path d="M 223.2 673.2  L 689.4 673.2  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #76a943; stroke-width: 5" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_27">
+    <path d="M 223.2 712.8  L 756 712.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #ededeb; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_28">
+    <path d="M 223.2 712.8  L 356.4 712.8  " clip-path="url(#pe7bafa8f3b)" style="fill: none; stroke: #161616; stroke-width: 5" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="text_1"><text x="36" y="31.072266" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="A  Edit scope · Fix-stage passes" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">A  Edit scope · Fix-stage passes</tspan></text></g>
+   <g id="text_2"><text x="36" y="62.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Original" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Original</tspan></text></g>
+   <g id="text_3"><text x="793.46" y="62.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="156/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="793.46" dy="0">156/300</tspan></text></g>
+   <g id="text_4"><text x="36" y="102.102187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Capability guidance" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Capability guidance</tspan></text></g>
+   <g id="text_5"><text x="793.46" y="102.102187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="154/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="793.46" dy="0">154/300</tspan></text></g>
+   <g id="text_6"><text x="36" y="141.7225" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Protect valid content" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Protect valid content</tspan></text></g>
+   <g id="text_7"><text x="793.46" y="141.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="177/300" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="793.46" dy="0">177/300</tspan></text></g>
+   <g id="text_8"><text x="223.652656" y="170.44031299999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_9"><text x="756.357969" y="170.44031299999997" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="300" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.357969" dy="0">300</tspan></text></g>
+   <g id="text_10"><text x="36" y="211.11679700000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="B  Six repair strategies · Releases" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">B  Six repair strategies · Releases</tspan></text></g>
+   <g id="text_11"><text x="36" y="242.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Seed local patch" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Seed local patch</tspan></text></g>
+   <g id="text_12"><text x="786.46" y="242.502187" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="40/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">40/50</tspan></text></g>
+   <g id="text_13"><text x="36" y="282.121484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Luna last round" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Luna last round</tspan></text></g>
+   <g id="text_14"><text x="786.46" y="282.102188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="43/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="786.46" dy="0">43/50</tspan></text></g>
+   <g id="text_15"><text x="36" y="321.72148400000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Luna last + history" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Luna last + history</tspan></text></g>
+   <g id="text_16"><text x="786.46" y="321.70218800000004" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="43/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="786.46" dy="0">43/50</tspan></text></g>
+   <g id="text_17"><text x="36" y="361.321484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Full text + review" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Full text + review</tspan></text></g>
+   <g id="text_18"><text x="786.46" y="361.302188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="41/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">41/50</tspan></text></g>
+   <g id="text_19"><text x="36" y="391.921484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Full text + review + history" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Full text + review + </tspan><tspan x="36" dy="18">history</tspan></text></g>
+   <g id="text_20"><text x="786.46" y="400.902188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="37/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">37/50</tspan></text></g>
+   <g id="text_21"><text x="36" y="431.50218800000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Local + history + new rules" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Local + history + new </tspan><tspan x="36" dy="18">rules</tspan></text></g>
+   <g id="text_22"><text x="786.46" y="440.50218800000005" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="41/50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="786.46" dy="0">41/50</tspan></text></g>
+   <g id="text_23"><text x="223.652656" y="469.240313" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_24"><text x="756.405313" y="469.240313" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.405313" dy="0">50</tspan></text></g>
+   <g id="text_25"><text x="36" y="527.954297" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="C  Hard Workflow cases · Releases" data-type-role="primary" text-anchor="start" data-diagram-text="primary"><tspan x="36" dy="0">C  Hard Workflow cases · Releases</tspan></text></g>
+   <g id="text_26"><text x="36" y="559.334688" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Exact-text patch" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Exact-text patch</tspan></text></g>
+   <g id="text_27"><text x="779.46" y="559.302188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="3/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">3/8</tspan></text></g>
+   <g id="text_28"><text x="36" y="598.986484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Object targeting" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Object targeting</tspan></text></g>
+   <g id="text_29"><text x="779.46" y="598.902188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="1/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">1/8</tspan></text></g>
+   <g id="text_30"><text x="36" y="629.586484" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Object targeting + rollback" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Object targeting + </tspan><tspan x="36" dy="18">rollback</tspan></text></g>
+   <g id="text_31"><text x="779.46" y="638.502188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="1/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">1/8</tspan></text></g>
+   <g id="text_32"><text x="36" y="678.173281" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Original patch + rules" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Original patch + rules</tspan></text></g>
+   <g id="text_33"><text x="779.46" y="678.1021870000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#76a943" aria-label="7/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="779.46" dy="0">7/8</tspan></text></g>
+   <g id="text_34"><text x="36" y="717.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="Full text + guards" data-type-role="secondary" text-anchor="start" data-diagram-text="secondary"><tspan x="36" dy="0">Full text + guards</tspan></text></g>
+   <g id="text_35"><text x="779.46" y="717.702188" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#161616" aria-label="2/8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="779.46" dy="0">2/8</tspan></text></g>
+   <g id="text_36"><text x="223.652656" y="746.4403130000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="0" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="223.652656" dy="0">0</tspan></text></g>
+   <g id="text_37"><text x="756.452656" y="746.4403130000001" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707070" aria-label="8" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="756.452656" dy="0">8</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe7bafa8f3b">
+   <rect x="0" y="0" width="864" height="777.6"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 640" width="1440" height="640" lang="ja"><foreignObject width="1440" height="640"><div xmlns="http://www.w3.org/1999/xhtml" class="diagram-root" data-diagram-style="openai-blog" data-diagram-kind="flow"><style>*{box-sizing:border-box}.diagram-root{margin:0;background:#fff;color:#303c38;font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.canvas{position:relative;width:1440px;overflow:hidden;background:#fff}.node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border:1.5px solid #a4afa5;background:#fff;border-radius:4px;padding:10px 16px;font-size:24px;line-height:1.4;z-index:2}.node.soft{background:#eff4ec;border-color:#9eaf94}.math{font-size:.86em;color:#56645b}.title{position:absolute;left:40px;top:28px;font-size:29px;font-weight:500}.legend{position:absolute;top:36px;font-size:18px;color:#6a766d}.legend:before{content:"";display:inline-block;width:30px;border-top:1.5px solid #91a08f;vertical-align:middle;margin-right:12px}.legend.control:before{border-top-style:dashed}.edge{position:absolute;height:0;border-top:1.5px solid #91a08f;transform-origin:0 0;z-index:1}.edge.control{border-top-style:dashed}.edge.arrow:after{content:"";position:absolute;right:-1px;top:-5px;border-left:8px solid #91a08f;border-top:4px solid transparent;border-bottom:4px solid transparent}.note{position:absolute;left:40px;width:1360px;font-size:20px;line-height:1.5;color:#68766c;border-top:1px solid #e0e6dc;padding-top:20px}.annotation{position:absolute;font-size:22px;color:#68766c}
+.diagram-root{font-family:Arial,"PingFang SC","Hiragino Sans",sans-serif}.label,.legend,.note,.annotation,.small-note,.caption,.axis{font-size:22px}.title,.label.title{font-size:30px}.group-title,.chart h2{font-size:26px}.chart-row,.plot-row,.matrix&gt;div,.stat-grid p,.val{font-size:26px}.matrix .muted,.math,.legend,.small{font-size:24px}</style><main class="canvas" style="height:640px">
+<div class="title">DSA</div><div class="legend" style="left:760px">実線：テンソル</div><div class="legend control" style="left:1070px">破線：選択・ゲート</div>
+<div class="edge" data-from="history" data-to="cache" style="left:260px;top:240px;width:40px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="history" data-to="cache" style="left:300px;top:240px;width:85px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="history" data-to="cache" style="left:300px;top:155px;width:60px;transform:rotate(0deg)"></div>
+<div class="edge" data-from="history" data-to="index-key" style="left: 150px; top: 320px; width: 75px; transform: rotate(90deg);"></div>
+<div class="edge arrow" data-from="history" data-to="index-key" style="left:150px;top:395px;width:210px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="cache" data-to="gather" style="left:650px;top:155px;width:90px;transform:rotate(0deg)"></div>
+<div class="edge arrow" data-from="index-key" data-to="indexer" style="left:650px;top:395px;width:90px;transform:rotate(0deg)"></div>
+<div class="edge control arrow" data-from="indexer" data-to="gather" style="left:880px;top:340px;width:130px;transform:rotate(-90deg)"></div>
+<div class="edge arrow" data-from="query" data-to="indexer" style="left:1100px;top:395px;width:80px;transform:rotate(180deg)"></div>
+<div class="edge arrow" data-from="query" data-to="attention" style="left: 1250px; top: 340px; width: 110px; transform: rotate(-90deg);"></div>
+<div class="edge arrow" data-from="gather" data-to="attention" style="left:1020px;top:155px;width:80px;transform:rotate(0deg)"></div>
+<div class="node " id="history" style="left: 40px; top: 200px; width: 220px; height: 120px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">履歴の隠れ状態<br /><span class="math">X</span></span></div>
+<div class="node soft" id="cache" style="left: 360px; top: 100px; width: 290px; height: 110px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">MLA の潜在 KV キャッシュ<br /><span class="math">X → cᴷⱽ, kᴿ</span></span></div>
+<div class="node " id="index-key" style="left: 360px; top: 340px; width: 290px; height: 110px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">独立した索引キー<br /><span class="math">X → Kᴵ</span></span></div>
+<div class="node soft" id="gather" style="left: 740px; top: 100px; width: 280px; height: 110px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">選択した token の KV を取得<br /><span class="math">KV[selected]</span></span></div>
+<div class="node " id="indexer" style="left: 740px; top: 340px; width: 280px; height: 110px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Lightning Indexer<br /><span class="math">score(Qᴵ, Kᴵ) → Top-k</span></span></div>
+<div class="node " id="query" style="left: 1100px; top: 340px; width: 300px; height: 110px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">現在状態の投影<br /><span class="math">xₜ → Q, Qᴵ</span></span></div>
+<div class="node soft" id="attention" style="left: 1100px; top: 80px; width: 300px; height: 150px; font-size: 28px; line-height: 1.25;" data-type-role="primary"><span style="min-width: 0; overflow-wrap: anywhere;">Sparse MLA<br /><span class="math">Attention(Q, KV[selected])<br />→ oₜ</span></span></div>
+
+<div class="note" style="top:545px">Qᴵ は位置を選び、Q はキャッシュを読む。未選択エントリもキャッシュに残る。</div>
+</main><style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></div></foreignObject></svg>

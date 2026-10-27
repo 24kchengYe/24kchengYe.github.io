@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" fill="none" role="img" aria-labelledby="poetic-research-title">
+  <title id="poetic-research-title">A river through a quiet city</title>
+  <g stroke="#41453f" stroke-linecap="round" stroke-linejoin="round">
+    <path data-start="0" data-duration="950" data-phase="river-scale" stroke-width="1.65" d="M37 305 C109 299 128 268 179 260 C225 252 248 266 278 249 C311 231 303 206 339 195 C376 184 411 189 450 176 C491 163 499 145 531 138 C562 131 589 134 611 121"/>
+    <path data-start="120" data-duration="980" data-phase="river-scale" stroke-width="1.45" d="M65 338 C128 329 158 290 198 285 C245 279 273 293 312 271 C350 250 338 224 371 216 C411 206 433 211 474 196 C512 182 527 163 554 157 C581 151 601 149 622 139"/>
+    <path data-start="200" data-duration="600" data-phase="near-terrain" stroke-width="1" d="M25 272 C91 265 108 236 149 231 C182 227 217 234 245 222 M70 227 C98 209 120 205 153 208 M100 193 C137 178 169 182 192 192"/>
+    <path data-start="590" data-duration="520" data-phase="middle-terrain" stroke-width=".85" d="M267 183 C306 169 329 177 359 166 C385 155 392 140 419 135 M287 154 C318 148 340 156 364 143"/>
+    <path data-start="1320" data-duration="620" data-phase="far-terrain" stroke-width=".9" d="M414 253 C448 240 487 246 522 234 C559 221 567 202 599 197 C638 191 663 204 703 192 C738 181 755 167 788 169"/>
+    <path data-start="1710" data-duration="540" data-phase="far-terrain" stroke-width=".8" d="M465 278 C498 267 525 267 546 257 C576 242 587 227 616 224 C652 220 673 230 703 224 M530 302 C559 287 579 269 604 260 C630 253 649 258 671 251"/>
+    <path data-start="700" data-duration="450" data-phase="near-buildings" stroke-width="1.2" d="M158 232 L157 197 L178 181 L201 196 L201 235 M157 197 L181 204 L201 196 M181 204 L181 237"/>
+    <path data-start="1150" data-duration="220" data-phase="near-windows" stroke-width=".85" d="M164 208 L173 210 L173 218 L165 216 Z M187 210 L195 207 L195 216 L187 219 Z M165 223 L173 225"/>
+    <path data-start="990" data-duration="420" data-phase="near-buildings" stroke-width="1.1" d="M217 221 L216 191 L235 181 L255 191 L255 211 M216 191 L237 198 L255 191 M237 198 L237 217"/>
+    <path data-start="1410" data-duration="220" data-phase="near-windows" stroke-width=".8" d="M222 200 L230 203 L230 210 M243 204 L250 202"/>
+    <path data-start="1230" data-duration="440" data-phase="middle-buildings" stroke-width="1.2" d="M416 173 L415 125 L432 113 L452 125 L453 170 M415 125 L435 132 L452 125 M435 132 L436 172"/>
+    <path data-start="1670" data-duration="250" data-phase="middle-windows" stroke-width=".8" d="M422 138 L428 140 M422 148 L428 150 M422 158 L428 160 M441 140 L447 138 M441 150 L447 148 M441 160 L447 158"/>
+    <path data-start="1500" data-duration="370" data-phase="middle-buildings" stroke-width="1.05" d="M464 163 L463 137 L478 129 L494 138 L494 152 M463 137 L480 143 L494 138 M480 143 L480 158"/>
+    <path data-start="1800" data-duration="350" data-phase="far-buildings" stroke-width="1.05" d="M619 190 L618 161 L642 151 L662 161 L663 194 M618 161 L640 170 L662 161 M640 170 L640 194"/>
+    <path data-start="2150" data-duration="250" data-phase="far-windows" stroke-width=".8" d="M625 174 L632 177 M625 183 L632 186 M647 175 L655 171 M647 184 L655 180"/>
+    <path data-start="1980" data-duration="330" data-phase="far-buildings" stroke-width="1" d="M681 191 L681 170 L697 163 L713 169 L713 186 M681 170 L698 176 L713 169 M698 176 L698 188"/>
+    <path data-start="2130" data-duration="500" data-phase="open-horizon" stroke-width=".8" d="M617 108 C649 101 665 88 691 85 C721 82 742 92 773 86"/>
+    <path data-start="2460" data-duration="340" data-phase="open-horizon" stroke-width=".7" d="M643 122 C670 116 692 106 710 108 M735 112 C750 115 764 111 777 108"/>
+    <path data-start="1420" data-duration="420" data-phase="river-detail" stroke-width=".8" d="M369 202 C386 200 398 201 409 198 M305 261 C318 253 324 244 325 238 M160 283 C174 277 186 275 197 275"/>
+    <path data-start="2170" data-duration="360" data-phase="river-detail" stroke-width=".75" d="M469 187 C486 183 500 176 509 169 M549 149 L568 145"/>
+    <path data-start="2250" data-duration="410" data-phase="life-at-scale" stroke-width=".8" d="M100 250 L102 235 M98 241 C91 241 91 231 97 230 C94 221 106 219 108 228 C115 229 114 239 106 239 M577 197 L579 183 M574 188 C567 187 569 179 575 179 C574 172 584 170 586 179 C592 180 590 187 584 187"/>
+  </g>
+</svg>

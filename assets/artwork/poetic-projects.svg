@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" fill="none" role="img" aria-labelledby="poetic-projects-title">
+  <title id="poetic-projects-title">A small bridge joining two river banks</title>
+  <g stroke="#41453f" stroke-linecap="round" stroke-linejoin="round">
+    <path data-start="180" data-duration="650" data-phase="banks" stroke-width="1.5" d="M31 244 C74 236 94 216 127 213 C162 210 183 224 215 217 C238 211 252 195 279 197 L299 201"/>
+    <path data-start="310" data-duration="580" data-phase="banks" stroke-width="1.45" d="M552 200 C575 200 597 211 626 208 C654 205 674 189 704 190 C738 191 756 201 790 192"/>
+    <path data-start="850" data-duration="650" data-phase="bridge-connection" stroke-width="1.7" d="M289 202 C323 185 345 154 382 145 C410 138 436 141 459 149 C493 162 512 190 552 200"/>
+    <path data-start="1020" data-duration="600" data-phase="bridge-connection" stroke-width="1.45" d="M292 215 C324 199 349 169 384 159 C413 152 436 154 458 162 C491 174 515 201 550 214"/>
+    <path data-start="1280" data-duration="600" data-phase="bridge-support" stroke-width="1.5" d="M318 225 C338 194 365 179 388 173 C421 165 447 173 469 184 C489 194 506 210 518 228 M318 225 L316 242 L326 244 M518 228 L519 243 L510 245"/>
+    <path data-start="1540" data-duration="350" data-phase="bridge-railing" stroke-width=".9" d="M307 194 L308 207 M330 178 L331 190 M355 161 L356 174 M382 146 L384 159 M410 141 L410 155 M436 142 L435 155 M462 151 L459 164 M487 166 L484 178 M513 184 L508 195 M537 195 L532 207"/>
+    <path data-start="1880" data-duration="300" data-phase="bridge-stones" stroke-width=".95" d="M326 214 L337 218 M340 196 L349 203 M359 183 L365 191 M380 176 L384 183 M405 171 L405 179 M430 174 L428 181 M453 180 L449 188 M474 191 L469 198 M492 205 L485 211 M509 221 L500 226"/>
+    <path data-start="1720" data-duration="400" data-phase="bank-echo" stroke-width="1.1" d="M51 268 C93 260 119 242 148 241 C178 241 195 248 219 243 C250 237 263 225 289 225 L314 230 M521 231 C557 227 581 241 611 240 C644 239 666 224 693 224 C729 225 749 236 780 231"/>
+    <path data-start="1960" data-duration="300" data-phase="bank-echo" stroke-width=".85" d="M82 284 C113 276 132 260 157 260 M182 267 C201 269 215 266 231 262 M256 247 C269 241 284 240 295 241 M554 249 C578 255 594 259 616 257 M649 249 C674 242 689 243 708 247"/>
+    <path data-start="2180" data-duration="350" data-phase="water-response" stroke-width=".85" d="M265 288 C294 286 312 279 331 274 M359 259 C386 253 409 254 430 258 M471 273 C502 277 518 275 538 270"/>
+    <path data-start="2420" data-duration="380" data-phase="water-response" stroke-width=".8" d="M314 310 C352 302 373 298 400 301 M427 318 C454 320 474 315 494 313 M540 300 C562 297 581 295 603 298"/>
+    <path data-start="2300" data-duration="320" data-phase="water-response" stroke-width=".75" d="M382 225 C394 223 406 223 417 225 M345 243 C353 240 363 239 370 239 M447 239 C459 242 469 243 480 242"/>
+    <path data-start="1840" data-duration="380" data-phase="growing-tree" stroke-width="1.05" d="M173 212 C174 199 172 180 176 164 M177 183 C165 177 158 170 156 160 M177 177 C190 173 197 164 198 155"/>
+    <path data-start="2220" data-duration="330" data-phase="growing-tree" stroke-width=".95" d="M156 160 C146 163 138 157 141 148 C134 143 138 133 146 133 C147 123 158 121 164 128 C171 117 184 124 184 132 C196 125 205 134 201 142 C212 149 208 159 198 159"/>
+    <path data-start="2540" data-duration="260" data-phase="growing-tree" stroke-width=".7" d="M149 146 C157 145 164 149 168 154 M181 140 C183 148 179 155 175 159"/>
+    <path data-start="100" data-duration="350" data-phase="lamp" stroke-width=".8" d="M585 202 L585 162 M581 161 L589 161 M584 152 L584 148"/>
+    <path data-start="2200" data-duration="230" data-phase="river-stones" stroke-width=".8" d="M220 234 C224 230 230 230 234 234 C233 238 224 238 220 234 M686 213 C691 210 696 212 698 215"/>
+  </g>
+  <path data-start="0" data-duration="260" data-phase="spark" data-appear="true" d="M581 152 L589 152 L590 161 L580 161 Z" fill="#bc9364" fill-opacity=".6"/>
+</svg>

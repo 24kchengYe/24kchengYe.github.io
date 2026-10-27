@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" fill="none" role="img" aria-labelledby="arrival-title arrival-desc">
+  <title id="arrival-title">A city between the river and the stars</title>
+  <desc id="arrival-desc">Original ink landscape: a river opens through layered terrain, a small imagined city rests on its bank, and a few stars appear above it.</desc>
+  <g stroke="#40463e" stroke-linecap="round" stroke-linejoin="round">
+    <path data-start="0" data-duration="650" data-phase="river" stroke-width="1.75" d="M28 552 C109 518 177 529 237 510 C299 490 327 449 392 446 C455 443 478 468 527 454 C575 440 591 404 642 397 C689 390 733 406 770 393 C804 381 812 365 841 357"/>
+    <path data-start="180" data-duration="650" data-phase="river" stroke-width="1.6" d="M51 594 C128 558 187 575 258 551 C324 529 349 487 407 485 C468 483 492 506 545 488 C599 470 615 437 665 434 C711 431 742 447 781 434 C815 423 832 402 858 393 C888 383 906 383 933 389"/>
+    <path data-start="520" data-duration="380" data-phase="river" stroke-width="1.45" d="M839 357 C812 351 785 351 774 339 C766 328 785 318 814 304 C837 293 853 283 857 272"/>
+    <path data-start="580" data-duration="360" data-phase="river" stroke-width="1.4" d="M865 276 C862 294 840 307 827 319 C815 330 826 341 856 346 C892 351 929 346 964 354 C1000 362 1025 387 1060 397 C1097 408 1126 409 1170 403"/>
+    <path data-start="660" data-duration="400" data-phase="land" stroke-width=".85" d="M45 516 C104 491 166 502 217 485 C268 468 289 440 324 428 M72 485 C122 468 159 478 199 468 M136 444 C186 438 225 449 257 430"/>
+    <path data-start="720" data-duration="400" data-phase="land" stroke-width=".8" d="M277 402 C316 385 348 391 382 382 C417 373 433 352 462 346 M314 418 C346 404 374 411 397 401 M416 421 C449 419 467 433 490 431"/>
+    <path data-start="800" data-duration="420" data-phase="land" stroke-width=".9" d="M493 412 C521 400 536 378 561 371 C585 364 601 368 621 359 C643 348 652 332 672 325 C693 319 713 321 734 309"/>
+    <path data-start="900" data-duration="350" data-phase="land" stroke-width=".75" d="M537 414 C566 398 583 389 606 389 M632 376 C650 367 664 349 682 346 M711 337 C730 333 742 324 756 319"/>
+    <path data-start="900" data-duration="350" data-phase="land" stroke-width=".85" d="M90 609 C133 590 175 602 214 589 M264 576 C309 561 335 526 370 518 M409 517 C443 516 464 534 492 527 M525 519 C562 511 576 490 599 479"/>
+    <path data-start="970" data-duration="320" data-phase="land" stroke-width=".8" d="M636 470 C668 461 695 467 714 470 M750 472 C784 471 805 456 829 448 M858 432 C883 420 903 417 928 421"/>
+    <path data-start="1030" data-duration="320" data-phase="land" stroke-width=".7" d="M559 549 C594 535 615 514 642 507 C675 498 699 508 727 505 M786 511 C814 500 832 481 855 476 M892 469 C921 465 947 476 970 472"/>
+    <path data-start="1080" data-duration="300" data-phase="land" stroke-width=".75" d="M324 478 C342 465 359 459 378 458 M416 461 C438 462 453 469 468 468 M577 435 C593 426 606 416 623 413 M688 411 C706 414 721 418 736 415"/>
+    <path data-start="1130" data-duration="300" data-phase="land" stroke-width=".7" d="M790 368 C804 369 816 366 825 364 M847 316 C854 311 860 305 863 299 M911 364 C931 361 947 366 961 369 M1000 394 C1020 408 1035 416 1053 419"/>
+    <path data-start="1400" data-duration="330" data-phase="city" stroke-width="1.2" d="M888 346 L886 286 L910 273 L939 286 L940 349 M886 286 L915 299 L939 286 M915 299 L916 348"/>
+    <path data-start="1450" data-duration="330" data-phase="city" stroke-width="1.15" d="M944 353 L944 308 L966 298 L988 308 L989 365 M944 308 L967 319 L988 308 M967 319 L969 358"/>
+    <path data-start="1500" data-duration="330" data-phase="city" stroke-width="1.2" d="M998 374 L997 278 L1015 265 L1036 278 L1038 393 M997 278 L1017 287 L1036 278 M1017 287 L1019 383"/>
+    <path data-start="1550" data-duration="330" data-phase="city" stroke-width="1.1" d="M1046 394 L1045 334 L1067 323 L1092 335 L1093 405 M1045 334 L1070 346 L1092 335 M1070 346 L1071 402"/>
+    <path data-start="1600" data-duration="330" data-phase="city" stroke-width="1" d="M1101 407 L1101 373 L1118 364 L1137 373 L1137 408 M1101 373 L1120 382 L1137 373 M1120 382 L1120 409"/>
+    <path data-start="1740" data-duration="220" data-phase="city-detail" stroke-width=".7" d="M894 302 L905 307 M894 315 L905 320 M894 329 L905 334 M922 304 L932 300 M922 318 L932 314 M922 332 L932 328"/>
+    <path data-start="1790" data-duration="200" data-phase="city-detail" stroke-width=".7" d="M952 324 L960 328 M952 338 L960 342 M974 325 L982 322 M975 340 L983 337"/>
+    <path data-start="1840" data-duration="190" data-phase="city-detail" stroke-width=".7" d="M1004 294 L1011 297 M1004 310 L1011 313 M1005 327 L1012 330 M1005 344 L1012 347 M1006 360 L1013 363 M1024 296 L1030 293 M1024 312 L1030 309 M1025 329 L1031 326 M1025 346 L1031 343 M1026 362 L1032 359"/>
+    <path data-start="1890" data-duration="140" data-phase="city-detail" stroke-width=".7" d="M1054 352 L1063 356 M1054 367 L1063 371 M1055 383 L1064 387 M1077 352 L1085 348 M1077 367 L1085 363 M1078 383 L1086 379 M1108 386 L1114 389 M1126 386 L1131 384"/>
+    <path data-start="1150" data-duration="300" data-phase="land" stroke-width=".95" d="M743 387 L744 363 M744 375 C733 374 730 365 735 360 C729 353 736 342 744 345 C750 337 759 342 758 349 C768 350 768 361 761 365 C766 374 754 379 748 373"/>
+    <path data-start="1200" data-duration="250" data-phase="land" stroke-width=".8" d="M1151 406 L1152 386 M1150 393 C1142 394 1139 386 1144 382 C1141 374 1150 370 1155 375 C1163 373 1167 382 1162 386 C1164 392 1158 395 1154 391"/>
+    <path data-start="1010" data-duration="360" data-phase="land" stroke-width=".85" d="M873 260 C895 251 911 237 931 234 C951 231 965 239 982 233 C1003 225 1016 210 1037 210 C1062 211 1079 225 1100 223 C1128 221 1144 211 1171 213"/>
+    <path data-start="1200" data-duration="250" data-phase="land" stroke-width=".65" d="M897 267 C916 262 929 251 945 252 M971 257 C994 254 1008 239 1026 237 M1060 242 C1087 252 1112 245 1131 242"/>
+    <path data-start="1150" data-duration="300" data-phase="land" stroke-width=".65" d="M573 583 C613 571 640 573 671 579 M734 556 C766 554 783 560 803 557 M860 529 C881 526 899 531 917 534"/>
+  </g>
+  <g data-stars="true" stroke="#8d795b" stroke-linecap="round">
+    <path data-start="2360" data-duration="300" data-phase="stars" stroke-width="1.15" d="M902 125 L902 138 M896 131 L908 131"/>
+    <path data-start="2400" data-duration="300" data-phase="stars" stroke-width=".95" d="M1104 99 L1104 108 M1100 103 L1108 103"/>
+    <path data-start="2450" data-duration="280" data-phase="stars" stroke-width="1.8" d="M1014 160 L1014.2 160.3"/>
+    <path data-start="2490" data-duration="270" data-phase="stars" stroke-width="1.5" d="M967 75 L967.2 75.3"/>
+    <path data-start="2520" data-duration="260" data-phase="stars" stroke-width="1.4" d="M1161 167 L1161.2 167.3"/>
+    <path data-start="2540" data-duration="260" data-phase="stars" stroke-width="1.4" d="M837 182 L837.2 182.3"/>
+  </g>
+  <g fill="#b49261" fill-opacity=".48">
+    <path data-start="2040" data-duration="300" data-phase="windows" data-appear="true" d="M1024 312 L1030 309 L1030 317 L1024 320 Z"/>
+    <path data-start="2070" data-duration="270" data-phase="windows" data-appear="true" d="M1054 367 L1063 371 L1063 379 L1054 375 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "ppo-long-horizon": {
+    "title": {
+      "en": "PPO, Along a Long-Horizon Trajectory",
+      "zh": "PPO：沿一条长程轨迹看训练",
+      "ja": "長い実行軌跡から理解するPPO"
+    },
+    "lead": {
+      "en": "Follow one code repair from tool calls to parameter updates: what the Actor, Reference, Reward Model and Critic see, predict and learn.",
+      "zh": "从一次代码修复出发，看 Actor、Reference、奖励模型与 Critic 分别读入什么、输出什么，以及参数如何更新。",
+      "ja": "一つのコード修正を、ツール呼び出しからパラメータ更新までたどる。Actor、Reference、報酬モデル、Criticは何を読み、何を出力し、何を学ぶのか。"
+    }
+  },
+  "terminal-rsi": {
+    "title": {
+      "en": "Terminal-RSI: From Execution to Recursive Training",
+      "zh": "Terminal-RSI：从终端执行到递归训练",
+      "ja": "Terminal-RSI：実行経験から再帰的な学習へ"
+    },
+    "lead": {
+      "en": "Successful runs become new demonstrations; fresh attempts provide the next training signal. RSR, RPR and turn-based credit assignment connect the two.",
+      "zh": "成功执行经过重写，成为新的示范；模型继续尝试，从验证结果中学习。RSR、RPR 与按回合回传的反馈，把两段训练连成循环。",
+      "ja": "成功した実行を新しい手本に整え、次の試行結果から学ぶ。RSR、RPR、ターン単位の信用割り当てが二つの学習をつなぐ。"
+    }
+  }
+}

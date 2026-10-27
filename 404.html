@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found · Yecheng Zhang</title>
+<script id="reading-canonical-bridge">(() => {
+  const path = location.pathname;
+  const entry = /^\/reading(?:\/index\.html)?\/?$/.test(path)
+    || /^\/reading\/(?:history|r1-web|v3-web|library-preview)(?:\/index\.html)?\/?$/.test(path);
+  const asset = /^\/reading\/(?:web|files|learning-files|previews|library-preview\/files)\/[A-Za-z0-9._~+-]+(?:\/[A-Za-z0-9._~+-]+)*$/.test(path)
+    && !path.split('/').some(part => part === '.' || part === '..');
+  if (entry || asset) {
+    location.replace('https://yechengzhang.duqi.top' + path + location.search + location.hash);
+  }
+})();</script>
+<style>body{font:18px/1.7 system-ui,sans-serif;max-width:44rem;margin:18vh auto;padding:0 1.5rem;color:#303632}a{color:inherit}</style>
+</head><body><h1>Page not found</h1><p><a href="/">Return to Yecheng Zhang</a></p></body></html>

@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "timezone": "Asia/Shanghai",
+  "metric": "articles-published-or-revised",
+  "coverageStart": "2026-10-20",
+  "articles": {
+    "agent-memory": {
+      "title": {
+        "zh": "Agent 是怎么记住事情的",
+        "en": "How an Agent Remembers",
+        "ja": "エージェントはどう記憶するのか"
+      },
+      "href": "/writing/agent-memory/"
+    },
+    "attention-mechanisms": {
+      "title": {
+        "zh": "注意力机制，按设计拆开看",
+        "en": "A Visual Guide to Attention",
+        "ja": "図で読む注意機構"
+      },
+      "href": "/writing/attention-mechanisms/"
+    },
+    "automation-blueprint": {
+      "title": {
+        "zh": "自动化开发的交互式流程蓝图",
+        "en": "An Interactive Blueprint for Agentic Development",
+        "ja": "自動開発のインタラクティブなフローマップ"
+      },
+      "href": "/writing/automation-blueprint/"
+    },
+    "coding-agent-trajectories": {
+      "title": {
+        "zh": "为 Coding Agent 构建训练轨迹",
+        "en": "Building Training Trajectories for Coding Agents",
+        "ja": "Coding Agentの学習軌跡を構築する"
+      },
+      "href": "/writing/coding-agent-trajectories/"
+    },
+    "nimble-kev": {
+      "title": {
+        "zh": "用软标签训练路由模型",
+        "en": "Training Routing Models with Soft Labels",
+        "ja": "ソフトラベルでルーティングモデルを訓練する"
+      },
+      "href": "/writing/nimble-kev/"
+    },
+    "rubric-model": {
+      "title": {
+        "zh": "从设计到产物：训练规则评审模型",
+        "en": "From designs to artifacts: training rubric judges",
+        "ja": "設計から成果物へ：ルール評価モデルの訓練"
+      },
+      "href": "/writing/rubric-model/"
+    },
+    "spec-generation": {
+      "title": {
+        "zh": "让模型写好 Spec",
+        "en": "Generating Better Specs",
+        "ja": "よりよいSpecを生成する"
+      },
+      "href": "/writing/spec-generation/"
+    },
+    "spec-repair": {
+      "title": {
+        "zh": "用评审反馈修复 Spec",
+        "en": "Repairing Specs with Feedback",
+        "ja": "評価フィードバックでSpecを修復する"
+      },
+      "href": "/writing/spec-repair/"
+    },
+    "ppo-long-horizon": {
+      "title": {
+        "en": "PPO, Along a Long-Horizon Trajectory",
+        "zh": "PPO：沿一条长程轨迹看训练",
+        "ja": "長い実行軌跡から理解するPPO"
+      },
+      "href": "/writing/ppo-long-horizon/"
+    },
+    "terminal-rsi": {
+      "title": {
+        "en": "Terminal-RSI: From Execution to Recursive Training",
+        "zh": "Terminal-RSI：从终端执行到递归训练",
+        "ja": "Terminal-RSI：実行経験から再帰的な学習へ"
+      },
+      "href": "/writing/terminal-rsi/"
+    }
+  },
+  "days": [
+    {
+      "date": "2026-10-20",
+      "articles": [
+        {
+          "id": "rubric-model",
+          "kind": "publication"
+        },
+        {
+          "id": "spec-generation",
+          "kind": "publication"
+        },
+        {
+          "id": "spec-repair",
+          "kind": "publication"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "articles": [
+        {
+          "id": "attention-mechanisms",
+          "kind": "publication"
+        },
+        {
+          "id": "coding-agent-trajectories",
+          "kind": "publication"
+        },
+        {
+          "id": "nimble-kev",
+          "kind": "publication"
+        },
+        {
+          "id": "rubric-model",
+          "kind": "publication"
+        },
+        {
+          "id": "spec-generation",
+          "kind": "publication"
+        },
+        {
+          "id": "spec-repair",
+          "kind": "publication"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "articles": [
+        {
+          "id": "automation-blueprint",
+          "kind": "publication"
+        },
+        {
+          "id": "coding-agent-trajectories",
+          "kind": "revision"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "articles": [
+        {
+          "id": "agent-memory",
+          "kind": "publication"
+        },
+        {
+          "id": "attention-mechanisms",
+          "kind": "revision"
+        },
+        {
+          "id": "automation-blueprint",
+          "kind": "revision"
+        },
+        {
+          "id": "coding-agent-trajectories",
+          "kind": "revision"
+        },
+        {
+          "id": "nimble-kev",
+          "kind": "revision"
+        },
+        {
+          "id": "rubric-model",
+          "kind": "revision"
+        },
+        {
+          "id": "spec-generation",
+          "kind": "revision"
+        },
+        {
+          "id": "spec-repair",
+          "kind": "revision"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "articles": [
+        {
+          "id": "ppo-long-horizon",
+          "kind": "publication"
+        },
+        {
+          "id": "terminal-rsi",
+          "kind": "publication"
+        }
+      ]
+    }
+  ]
+}

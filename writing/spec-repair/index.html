@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<script src="/assets/js/site-theme.js?v=51b41e61e6a0"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="default-src 'none'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://analytics.duqi.top; connect-src https://analytics.duqi.top; font-src 'none'; base-uri 'none'; form-action 'none'" http-equiv="Content-Security-Policy"/><title>用评审反馈修复 Spec · Yecheng Zhang</title><style>:root{color-scheme:light;--ink:#30343a;--heading:#20242a;--muted:#71767e;--line:#e2e5e8;--blue:#4f6f8c;--code:#f6f7f8}
+
+
+*{box-sizing:border-box}
+
+
+html{background:#fff;scroll-padding-top:28px}
+
+
+body{margin:0;padding:64px 24px 100px;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:18px;line-height:1.85;-webkit-font-smoothing:antialiased}
+
+
+.report-layout{display:grid;grid-template-columns:200px minmax(0,960px);gap:48px;max-width:1208px;margin:0 auto;align-items:start}
+
+
+.report-content{min-width:0;container-type:inline-size}
+
+
+.article-body{max-width:780px;margin:0 auto}
+
+
+h1,h2,h3,h4{color:var(--heading);line-height:1.45;font-weight:650;text-wrap:balance}
+
+
+#report-start{margin:0 0 28px;font-size:clamp(34px,3.5vw,45px);line-height:1.38;letter-spacing:-.025em;text-align:center}
+
+
+.article-body h2{margin:64px 0 24px;font-size:28px;letter-spacing:-.015em}
+
+
+.article-body h3{margin:34px 0 16px;font-size:22px}
+
+
+.article-body h4{margin:28px 0 14px;font-size:19px}
+
+
+p{margin:0 0 22px}
+
+
+strong{font-weight:620}
+
+
+em{font-style:normal;color:var(--muted)}
+
+
+ul,ol{margin:18px 0 26px;padding-left:1.5em}
+
+
+li{margin:8px 0}
+
+
+a{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}
+
+
+a:hover{color:#294c6c}
+
+
+a:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+
+
+blockquote{margin:28px 0;padding:0 0 0 22px;border-left:2px solid #c8d3de;color:#59616a}
+
+
+blockquote p:last-child{margin-bottom:0}
+
+
+hr{height:0;border:0;border-top:1px solid var(--line);margin:48px 0}
+
+
+.article-body>.figure-block{width:960px;max-width:calc(100vw - 48px);max-width:100cqw;margin:36px 0 42px 50%;transform:translateX(-50%)}
+
+
+.figure-block{min-width:0;margin:30px 0 36px}
+
+
+.figure-block img,.reference-image img{display:block;max-width:100%;height:auto;margin:16px auto}
+
+
+.figure-block>figcaption{margin:0 0 14px;color:#535b65;font-size:15px;font-weight:500;line-height:1.7}
+
+
+.figure-block>p:not(:has(img)){font-size:15px;line-height:1.8;color:var(--muted)}
+
+
+.figure-block>h2{margin:0 0 18px;font-size:24px}
+
+
+.figure-block>details{font-size:14px}
+
+
+.figure-block>details>summary{font-size:13px;font-weight:400;color:var(--muted)}
+
+
+.vector-preview{padding-top:18px}
+
+
+.vector-preview img{background:#fff}
+
+
+.reference-image{margin:24px 0}
+
+
+.reference-image figcaption{font-size:14px;color:var(--muted)}
+
+
+.table-scroll{max-width:100%;overflow-x:auto;margin:28px 0 32px}
+
+
+table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7}
+
+
+th,td{padding:12px 14px;vertical-align:top;text-align:left;border-bottom:1px solid var(--line)}
+
+
+th{color:var(--heading);font-weight:600;border-top:1px solid #bfc6cd;border-bottom-color:#bfc6cd}
+
+
+td:first-child,th:first-child{padding-left:0}
+
+
+td:last-child,th:last-child{padding-right:0}
+
+
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:var(--code);padding:.1em .25em;border-radius:3px}
+
+
+pre{max-width:100%;max-height:720px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;margin:22px 0;padding:18px 20px;border:1px solid var(--line);background:var(--code);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.7;tab-size:2}
+
+
+pre code{padding:0;background:none;font-size:inherit;border:0}
+
+
+details{min-width:0;margin:18px 0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent}
+
+
+summary{cursor:pointer;padding:12px 0;color:#4e5863;font-size:15px;font-weight:500;line-height:1.7}
+
+
+details[open]>summary{margin-bottom:10px}
+
+
+details[open]{padding-bottom:16px}
+
+
+.evidence-library{max-width:780px;margin:76px auto 0;padding-top:20px;border-top:1px solid #bcc4cc;font-size:16px;line-height:1.85}
+
+
+.document-library{margin:0;border-bottom:1px solid #d4d9de}
+
+
+.document-library>summary{padding:20px 0;color:var(--heading);font-size:19px;font-weight:600}
+
+
+.library-content{padding:4px 0 14px}
+
+
+.library-intro{font-size:14px;color:var(--muted)}
+
+
+.research-detail{margin:8px 0}
+
+
+.research-detail>summary{font-size:16px;font-weight:500}
+
+
+.research-detail-content{padding:14px 0 12px}
+
+
+.research-detail-content h2,.library-content>h2,#ancillary-files>h2{font-size:23px;margin:34px 0 18px}
+
+
+.research-detail-content h3{font-size:19px;margin:28px 0 14px}
+
+
+.research-detail-content h4{font-size:17px}
+
+
+.legacy-title{font-weight:600;font-size:23px;margin:0 0 16px}
+
+
+.report-header{margin:0 0 28px;text-align:left}
+
+
+.report-deck,.meta,.footnote{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+
+
+.moved-figure-link{font-size:14px;margin:24px 0}
+
+
+.section-takeaway{margin:28px 0;padding:0;background:none;border:0;border-radius:0}
+
+
+.section-takeaway p:last-child,.section-takeaway ul:last-child,.section-takeaway ol:last-child{margin-bottom:0}
+
+
+.source-document{margin:14px 0}
+
+
+.source-document>summary{font-size:15px;color:#3f4852}
+
+
+.source-document summary,.source-context summary{overflow-wrap:anywhere}
+
+
+.source-date{margin-left:8px;font-size:12px;font-weight:400;color:var(--muted)}
+
+
+.source-times{margin:8px 0 16px;color:var(--muted);font-size:12px;line-height:1.7}
+
+
+.source-context>summary,.source-provenance>summary{font-size:13px;font-weight:400}
+
+
+.source-context-intro{margin:18px 0;font-size:14px;color:var(--muted)}
+
+
+.reference-supplement{margin-top:24px;padding-top:8px;border-top:1px solid var(--line)}
+
+
+.reward-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:24px 0}
+
+
+.reward-steps li{margin:0;padding:12px 0;border-top:1px solid var(--line)}
+
+
+.reward-steps strong,.reward-steps span{display:block}
+
+
+.reward-steps strong{margin-bottom:8px;font-size:15px}
+
+
+.reward-steps span{font-size:13px;line-height:1.8}
+
+
+.reward-formula{margin:24px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+
+
+.reward-formula p:last-child{margin-bottom:0}
+
+
+.report-sidebar{position:sticky;top:34px;min-width:0}
+
+
+.toc-panel{margin:0;padding:0;border:0;max-height:calc(100vh - 68px);overflow-y:auto;overscroll-behavior:contain}
+
+
+.toc-panel>summary{padding:0 0 14px;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.05em}
+
+
+#report-toc ol{list-style:none;margin:0;padding:0}
+
+
+#report-toc li{margin:3px 0}
+
+
+#report-toc a{display:block;padding:7px 0 7px 12px;border-left:2px solid transparent;text-decoration:none;font-size:13px;line-height:1.65;color:#767d85}
+
+
+#report-toc a:hover{color:var(--heading)}
+
+
+#report-toc a[aria-current="location"]{border-left-color:var(--blue);color:#375a7a;font-weight:500}
+
+
+[id]{scroll-margin-top:28px}
+
+
+.navigation-target{outline:1px solid #96adbf;outline-offset:6px}
+
+
+.skip-link{position:fixed;top:-100px;left:20px;z-index:10;padding:10px 18px;background:#fff;border:1px solid var(--blue)}
+
+
+.skip-link:focus{top:12px}
+
+
+@media(max-width:1279px){body{padding-top:32px}.report-layout{display:block;max-width:960px}.report-sidebar{position:static;max-width:780px;margin:0 auto 32px}.toc-panel{max-height:60vh;border-bottom:1px solid var(--line)}.toc-panel>summary{padding:10px 0;font-size:14px}.toc-panel[open]{padding-bottom:14px}}
+
+
+@media(max-width:840px){.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.article-body,.evidence-library{max-width:100%}}
+
+
+@media(max-width:640px){body{padding:24px 20px 60px;font-size:17px;line-height:1.85}#report-start{font-size:32px;line-height:1.45;margin-bottom:24px}.article-body h2{font-size:25px;margin:46px 0 20px}.article-body h3{font-size:21px}.article-body p{margin-bottom:20px}.report-sidebar{margin-bottom:26px}.figure-block{margin:28px 0}.table-scroll{margin:22px 0}table{min-width:560px;font-size:13px}th,td{padding:10px}.evidence-library{margin-top:52px}.document-library>summary{font-size:18px}.source-date{display:block;margin-left:0}pre{padding:14px;font-size:12px}.reward-steps{grid-template-columns:1fr}}
+
+
+@media print{html{background:#fff}body{padding:0;font-size:11pt;line-height:1.7}.report-layout{display:block;max-width:none}.report-sidebar,.skip-link{display:none!important}.article-body,.evidence-library{max-width:none}.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.article-body h2{margin-top:32px;font-size:21pt}#report-start{font-size:28pt}h1,h2,h3,figcaption,summary{break-after:avoid}.figure-block,img{break-inside:avoid}a{color:inherit;text-decoration:none}.navigation-target{outline:0}.table-scroll,pre{overflow:visible;max-height:none}table{min-width:0}pre{font-size:8pt}.toc-panel{display:none}.evidence-library{margin-top:44px}.document-library{break-before:page}details:not([open])>*:not(summary){display:block!important}}
+
+
+
+
+
+/* Reader-facing abstract label; body text remains unboxed. */
+
+
+.article-body > .abstract-label{margin-top:2.2rem;margin-bottom:.45rem;font-size:1rem;font-weight:600;letter-spacing:.08em;color:var(--ink,#24303e)}
+
+
+
+
+
+:root{--accent:#4f6f8c;--paper:#fff}
+
+
+[hidden]{display:none!important}
+
+
+button,input,select{font:inherit;color:inherit}
+
+
+button{cursor:pointer;background:white;border:1px solid #c7ced6;border-radius:3px;padding:6px 10px;font-size:12px;line-height:1.5}
+
+
+button:hover{background:#f3f6f9}
+
+
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+
+.report-date{font-size:13px;color:var(--muted);text-align:center;margin-top:-12px;margin-bottom:32px}
+
+
+.reference-group{margin:22px 0 32px}
+
+
+.reference-group>summary{font-size:14px;color:var(--muted);font-weight:400}
+
+
+.evidence-list{padding-left:18px}
+
+
+.inline-evidence{margin:0}
+
+
+.inline-evidence>summary{display:list-item;font-size:14px;font-weight:400;padding:12px 0}
+
+
+.inline-evidence .evidence-date{font-size:12px;color:var(--muted);margin-right:12px}
+
+
+.evidence-action{display:none}
+
+
+.evidence-content,.source-content,.history-content{font-size:15px;line-height:1.85;overflow-wrap:anywhere;min-width:0}
+
+
+.original-tools{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:12px;margin:16px 0}
+
+
+.source-provenance>summary,.source-raw>summary{font-size:12px;color:var(--muted)}
+
+
+.metadata{padding:12px;background:var(--code);font-size:12px;overflow-wrap:anywhere}
+
+
+.evidence-content h1,.source-content h1,.history-content h1{font-size:25px;margin:28px 0 18px;text-align:left}
+
+
+.evidence-content h2,.source-content h2,.history-content h2{font-size:23px;margin:32px 0 18px}
+
+
+.evidence-content h3,.source-content h3,.history-content h3{font-size:19px;margin:26px 0 14px}
+
+
+.evidence-content h4,.source-content h4,.history-content h4{font-size:17px}
+
+
+.evidence-content table,.source-content table,.history-content table{display:block;max-width:100%;overflow:auto;font-size:13px}
+
+
+.evidence-content img,.source-content img,.history-content img{max-width:100%;height:auto}
+
+
+.source-raw pre{font-size:12px}
+
+
+.figure-block img[data-zoom]{cursor:zoom-in}
+
+
+.historical-figure figcaption,.result-figure figcaption{font-size:14px;color:var(--muted);margin:12px 0 0}
+
+
+.full-pipeline-figure{border:1px solid var(--line);background:#fff}
+
+
+.diagram-toolbar{padding:14px 18px;border-bottom:1px solid var(--line);background:#f7f9fc}
+
+
+.diagram-toolbar>div:first-child{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+
+
+.diagram-toolbar span{font-size:11px;color:var(--muted)}
+
+
+.diagram-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+
+.diagram-controls a{font-size:12px;margin-right:auto}
+
+
+.diagram-controls button[aria-pressed=true]{background:#e8eff5;border-color:#9aafc3}
+
+
+.diagram-controls label{font-size:11px;display:flex;align-items:center;gap:8px}
+
+
+.diagram-controls input{width:90px;accent-color:var(--blue)}
+
+
+.diagram-viewport{height:auto;overflow-x:auto;overscroll-behavior-x:contain;background:#fff}
+
+
+.full-pipeline-figure .diagram-viewport img{width:var(--diagram-width);height:auto;max-width:none;margin:0;display:block}
+
+
+.full-pipeline-figure[data-mode=overview] .diagram-viewport img{width:100%;max-width:100%}
+
+
+.full-pipeline-figure>figcaption{font-size:13px;margin:0;padding:12px 18px;border-top:1px solid var(--line)}
+
+
+.appendix{max-width:780px;margin:76px auto 0;padding-top:20px;border-top:1px solid #bcc4cc;font-size:16px}
+
+
+.appendix-heading h2{font-size:25px;margin:12px 0 18px}
+
+
+.appendix-heading p{font-size:14px;color:var(--muted)}
+
+
+.appendix-heading .eyebrow{display:none}
+
+
+.archive-group>summary{font-size:19px;font-weight:600;padding:20px 0;color:var(--heading)}
+
+
+.archive-group>summary span{font-size:12px;color:var(--muted);font-weight:400;display:block}
+
+
+.archive-note{font-size:13px;color:var(--muted)}
+
+
+.archive-note button{margin-left:10px}
+
+
+.history-card>summary,.source-card>summary{font-size:15px}
+
+
+.history-card>summary small,.source-card>summary small{display:block;font-size:12px;color:var(--muted)}
+
+
+.source-card>summary .evidence-date{font-size:12px;color:var(--muted);margin-right:8px}
+
+
+.source-content .group,.provenance,.missing,.external-mark{font-size:12px;color:var(--muted)}
+
+
+.library-tools{margin:20px 0;background:#f7f9fc;padding:16px}
+
+
+.tools-row,.tools-options{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+
+.tools-row input,.tools-row select{padding:8px;border:1px solid #cbd2db;background:#fff;font-size:12px;min-width:0}
+
+
+.tools-row input{flex:1 1 200px}
+
+
+.tools-row select{max-width:220px}
+
+
+.tools-options{font-size:12px;margin-top:10px}
+
+
+#search-status{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+
+.history-content .wide,.source-content .wide,.evidence-content .wide{width:100%;max-width:100%;margin-left:0;transform:none}
+
+
+.history-content .full-pipeline-figure img{max-width:none}
+
+
+.history-content .full-pipeline-figure[data-mode=overview] img{max-width:100%}
+
+
+.reading-detail{font-size:15px}
+
+
+.reading-detail>summary{font-size:14px}
+
+
+footer{max-width:780px;margin:50px auto 0;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+
+
+#image-dialog{border:1px solid #cbd2db;padding:0;max-width:96vw;max-height:94vh;width:96vw;height:94vh;background:#fff}
+
+
+#image-dialog::backdrop{background:rgba(18,29,42,.65)}
+
+
+.zoom-tools{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+
+
+.zoom-tools strong{font-size:14px;margin-right:auto}
+
+
+.zoom-area{height:calc(100% - 60px);overflow:auto}
+
+
+.zoom-area img{display:block;max-width:none;height:auto;margin:0 auto}
+
+
+#notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;padding:12px 18px;max-width:90vw;background:#263548;color:#fff;font-size:13px;z-index:10}
+
+
+@media(max-width:640px){.evidence-date{display:block}.evidence-list{padding-left:10px}.diagram-controls label{width:100%}.diagram-toolbar{padding:12px}.zoom-tools{gap:6px}.zoom-tools strong{font-size:11px}.zoom-tools button{padding:6px}.source-card>summary .evidence-date{display:block}.report-date{font-size:12px}}
+
+
+@media print{.diagram-controls,.library-tools,dialog,#notice{display:none!important}.diagram-viewport{overflow:visible}.full-pipeline-figure .diagram-viewport img{width:100%}.reference-group:not([open]){display:none}.article-body>.figure-block{max-width:100%}}
+
+
+
+
+
+:root{--ink:#171717;--heading:#111;--muted:#777;--line:#e7e7e4;--blue:#252525;--accent:#76a943;--code:#f6f6f4}
+
+
+body{padding:80px 48px 100px;font-size:19px;line-height:1.9;background:white;color:var(--ink)}
+
+
+.report-layout{grid-template-columns:220px minmax(0,1200px);max-width:1492px;gap:72px}
+
+
+.article-body{max-width:780px}
+
+
+#report-start{font-size:clamp(36px,3.4vw,54px);font-weight:600;letter-spacing:-.035em;line-height:1.25;margin-bottom:24px}
+
+
+.report-date{font-size:13px;line-height:1.7;margin:0 0 48px;color:#818181}
+
+
+.article-body h2{font-size:31px;line-height:1.35;font-weight:600;margin:80px 0 28px;letter-spacing:-.02em}
+
+
+.article-body h3{font-size:23px;font-weight:550;margin:44px 0 20px}
+
+
+.article-body h4{font-size:20px;font-weight:550;margin:30px 0 16px}
+
+
+.abstract-label{font-size:16px;font-weight:600;margin-bottom:16px}
+
+
+.article-body>p{margin-bottom:26px}
+
+
+.article-body strong{font-weight:600}
+
+
+.report-sidebar{top:68px;padding:0;border:0}
+
+
+.toc-panel{border:0}
+
+
+.toc-panel>summary{font-size:13px;color:#888;font-weight:400;padding:0 0 18px}
+
+
+#report-toc ol{list-style:none;padding:0;margin:0}
+
+
+#report-toc li{margin:0 0 19px}
+
+
+#report-toc a{font-size:14px;line-height:1.65;text-decoration:none;display:block;color:#858585;border:0;padding:0;white-space:normal}
+
+
+#report-toc a[aria-current=location],#report-toc a:hover{color:#111;font-weight:500;background:none;border:0}
+
+
+.article-body>.figure-block{width:1200px;max-width:100cqw;margin:56px 0 60px 50%;background:white;border:0;padding:0}
+
+
+.figure-block img{width:100%;max-width:100%;height:auto;margin:0;cursor:zoom-in}
+
+
+.figure-block>figcaption{font-size:13px;line-height:1.7;color:#777;font-weight:400;padding:0;margin:18px 0 0;text-align:left;border:0}
+
+
+.figure-block .figure-panel{margin:0 0 34px;border:0;padding:0}
+
+
+.figure-block .figure-panel+.figure-panel{padding-top:28px;border-top:1px solid #ededeb}
+
+
+.figure-panel>.panel-label{font-size:15px;font-weight:500;margin:0 0 8px;color:#333;line-height:1.5}
+
+
+.figure-panel img{display:block;width:100%}
+
+
+.full-pipeline-figure .figure-panel{margin-bottom:36px}
+
+
+.figure-block .figure-detail{font-size:13px;line-height:1.75;margin:14px 0 0;border:0}
+
+
+.figure-detail>summary{font-weight:400;font-size:12px;color:#888;padding:4px 0}
+
+
+.figure-detail pre{font-size:12px;line-height:1.65;max-height:none;white-space:pre-wrap;overflow-wrap:anywhere;background:#f7f7f5}
+
+
+.figure-detail p{font-size:13px;margin:12px 0}
+
+
+.figure-downloads{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
+
+
+.figure-downloads a{font-size:12px;color:#777}
+
+
+.figure-block.result-figure{max-width:100cqw}
+
+
+.reference-group{margin:16px 0 40px;border-top:0;border-bottom:1px solid #ededeb;padding:0 0 12px}
+
+
+.reference-group>summary{font-size:13px;color:#888;padding:4px 0;font-weight:400}
+
+
+.reference-group .inline-evidence{border-bottom:1px solid #efefed}
+
+
+.reference-group .inline-evidence>summary{font-weight:400;font-size:14px;line-height:1.65}
+
+
+.evidence-content,.source-content,.history-content{font-size:16px;color:#222;line-height:1.85}
+
+
+.evidence-content p,.source-content p,.history-content p{margin-bottom:20px}
+
+
+.source-content h1,.evidence-content h1,.history-content h1{font-size:26px;line-height:1.4;text-align:left}
+
+
+.source-content h2,.evidence-content h2,.history-content h2{font-size:23px;line-height:1.4}
+
+
+.source-content h3,.evidence-content h3,.history-content h3{font-size:20px;line-height:1.4}
+
+
+.table-scroll{margin:30px 0 34px}
+
+
+table{font-size:15px;line-height:1.8;color:#222}
+
+
+th,td{padding:13px 12px;border-color:#e7e7e4}
+
+
+th{background:none;font-weight:550;border-top:1px solid #b7b7b2;border-bottom:1px solid #b7b7b2}
+
+
+tr:nth-child(even) td{background:none}
+
+
+button{border:1px solid #d3d3cf;color:#444;background:#fff;border-radius:4px;box-shadow:none}
+
+
+button:hover{background:#f6f6f3}
+
+
+a{color:#363636;text-decoration-color:#b2b2ac}
+
+
+a:hover{color:#000}
+
+
+.reward-formula{background:none;border:0;padding:18px 0;font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:2;text-align:center}
+
+
+.appendix{margin-top:90px;border-top:1px solid #ddd}
+
+
+.appendix-heading h2{font-size:27px;line-height:1.4}
+
+
+.library-tools,.metadata{background:#f7f7f5}
+
+
+.archive-group>summary{font-size:19px;font-weight:500}
+
+
+.diagram-toolbar{background:#fafaf8}
+
+
+footer{font-size:12px;color:#888}
+
+
+#image-dialog{border:0;box-shadow:0 12px 80px #0003;background:white}
+
+
+#image-dialog::backdrop{background:#0009}
+
+
+.zoom-tools{background:white}
+
+
+.zoom-area{background:white}
+
+
+@media(max-width:1399px){body{padding:64px 30px 90px}.report-layout{grid-template-columns:185px minmax(0,1fr);gap:36px}.article-body{max-width:760px}.report-sidebar{top:40px}.article-body>.figure-block{width:1200px;max-width:100cqw}}
+
+
+@media(max-width:1279px){body{padding:36px 26px 80px}.report-layout{display:block;max-width:1080px}.report-sidebar{position:static;margin:0 auto 32px;max-width:780px}.toc-panel>summary{padding:0;font-size:14px}.toc-panel[open]{padding:0 0 20px;border-bottom:1px solid #eee}#report-toc ol{padding-top:24px}#report-toc li{margin-bottom:12px}.article-body{max-width:780px}.report-content{width:100%}.article-body>.figure-block{max-width:100cqw}}
+
+
+@media(max-width:840px){.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}}
+
+
+@media(max-width:640px){body{padding:26px 20px 60px;font-size:17px;line-height:1.85}#report-start{font-size:34px}.article-body h2{font-size:26px;margin-top:60px}.article-body h3{font-size:21px}.article-body>.figure-block{margin-top:36px;margin-bottom:42px}.figure-panel>.panel-label{font-size:13px}.report-date{font-size:12px}.table-scroll table{font-size:13px}.evidence-list{padding-left:8px}.reward-formula{font-size:16px;overflow-wrap:anywhere}}
+
+
+@media print{body{padding:0;font-size:11pt}.report-layout{display:block}.report-sidebar,button,.figure-detail,.library-tools,dialog,footer{display:none!important}.article-body{max-width:none}.article-body>.figure-block{width:100%;max-width:100%;margin-left:0;transform:none}.figure-panel{break-inside:avoid}.figure-block>figcaption{font-size:9pt}.reference-group:not([open]){display:none}}
+
+
+
+
+
+body{font-size:18px;font-weight:400;line-height:1.9;padding:76px 42px 100px;color:#202020}
+
+
+.report-layout{grid-template-columns:200px minmax(0,1160px);gap:64px;max-width:1424px}
+
+
+.article-body{max-width:760px}
+
+
+#report-start{font-size:clamp(36px,3.2vw,50px);font-weight:500;line-height:1.3;letter-spacing:-.035em;text-align:center;margin:0 0 22px}
+
+
+.report-date{text-align:center;font-size:13px;color:#8a8a8a;margin-bottom:64px}
+
+
+.article-body h2{font-size:29px;font-weight:500;line-height:1.45;margin-top:76px}
+
+
+.article-body h3{font-size:22px;font-weight:500;line-height:1.5;margin-top:40px}
+
+
+.article-body strong,.abstract-label{font-weight:550}
+
+
+.article-body>.figure-block{width:1160px;margin-top:48px;margin-bottom:50px}
+
+
+.figure-block .figure-panel{margin-bottom:24px}
+
+
+.figure-block .figure-panel+.figure-panel{padding-top:24px;border-top:0}
+
+
+.figure-panel>.panel-label{font-size:13px;font-weight:400;color:#6e6e6e}
+
+
+.figure-block>figcaption{font-size:12px;color:#888;margin-top:12px}
+
+
+.figure-detail>summary,.reference-group>summary{font-size:12px;color:#8a8a8a;font-weight:400}
+
+
+#report-toc a{font-size:13px;color:#888;line-height:1.65}
+
+
+#report-toc li{margin-bottom:16px}
+
+
+.article-body p{margin-bottom:24px}
+
+
+.table-scroll{margin-top:28px;margin-bottom:32px}
+
+
+th,td{padding:12px 10px}
+
+
+th{font-weight:500}
+
+
+.appendix-heading>p:not(.eyebrow){font-size:14px;color:#777}
+
+
+body[data-publication-genre=blog] .article-body h2{font-size:28px}
+
+
+.reference-list{font-size:13px;color:#777}
+
+
+@media(max-width:1399px){body{padding:54px 28px 80px}.report-layout{grid-template-columns:175px minmax(0,1fr);gap:34px}}
+
+
+@media(max-width:1279px){.report-layout{display:block;max-width:1100px}.report-sidebar{max-width:760px}.article-body>.figure-block{max-width:100cqw}}
+
+
+@media(max-width:840px){.article-body>.figure-block{width:100%;margin-left:0;transform:none}}
+
+
+@media(max-width:640px){body{padding:26px 20px 60px;font-size:17px}#report-start{font-size:32px}.report-date{margin-bottom:42px}.article-body h2,body[data-publication-genre=blog] .article-body h2{font-size:25px;margin-top:52px}.article-body h3{font-size:20px}}
+
+
+@media print{body{padding:0;font-size:11pt}.report-layout{display:block}.article-body{max-width:none}.article-body>.figure-block{width:100%;margin-left:0;transform:none}}
+
+
+</style><meta content="用评审反馈修复 Spec：实验设计、结果与方法总结。" name="description"/><link href="https://yechengzhang.duqi.top/writing/spec-repair/" rel="canonical"/><meta content="用评审反馈修复 Spec" property="og:title"/><meta content="用评审反馈修复 Spec：实验设计、结果与方法总结。" property="og:description"/><meta content="article" property="og:type"/><meta content="https://yechengzhang.duqi.top/writing/spec-repair/" property="og:url"/><link href="/assets/css/report-navigation.css" rel="stylesheet"/><script defer="" src="/assets/js/writing-diagram-style.js?v=7824b2169605"></script><link href="/assets/css/writing-diagram-themes.css?v=999537865d73" rel="stylesheet"/><style>.writing-map-figure .trajectory-map{max-width:1200px;margin:0 auto}.writing-map-figure .figure-panel{padding:0!important;background:none!important;border:0!important}.trajectory-map[hidden]{display:none}.trajectory-static{margin:12px 0;font-size:13px;color:#71767e}.trajectory-static>summary{cursor:pointer;padding:8px 0}.trajectory-static img{margin-top:16px}@media print{.trajectory-map{display:none}.trajectory-static>summary{display:none}}</style><style>.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:none}.writing-map-figure .trajectory-static{font-size:12px;margin:6px 0 12px}.writing-map-figure .trajectory-static>summary{padding:4px 0}@media print{.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:block}}</style><script defer="" src="/assets/js/writing-maps/spec-repair.js?v=fa9a5fdf3d9b"></script><script data-stylesheet="/assets/css/trajectory-map.css?v=968d17696f44" defer="" src="/assets/js/trajectory-map.js?v=00fa8c6d6ccc"></script><link href="/assets/css/writing-language.css?v=bc2f6f68bf5b" rel="stylesheet"/><script defer="" src="/assets/js/minimal.js?v=9e94e73097c5"></script><link href="/assets/css/writing-reader.css?v=ac6fd2319583" rel="stylesheet"/>
+<link href="/assets/css/writing-context.css?v=b22bc081cefb" rel="stylesheet"/>
+<script defer="" src="/assets/js/writing-reader.js?v=8cc175ba84f3"></script>
+<script defer="" src="/assets/js/writing-context.js?v=fe6f9c6f937f"></script>
+<link href="/assets/css/poetic-chapters.css?v=2eb17366fbd2" rel="stylesheet"/>
+<link href="/assets/css/poetic-writing-entry.css?v=67b07644679e" rel="stylesheet"/>
+<script defer="" src="/assets/js/poetic-writing-entry.js?v=306c557feaf4"></script>
+<script defer="" src="/assets/js/poetic-chapters.js?v=1455031d9719"></script>
+<link href="/assets/css/site-theme.css?v=3f7d383fde73" rel="stylesheet"/>
+<link href="/assets/css/editorial-reader.css?v=71c3e704108e" rel="stylesheet"/>
+<script defer="" src="/assets/js/editorial-reader.js?v=eeeabd18a914"></script>
+<link href="/assets/css/poetic-composition.css?v=f60b6eaf8a9a" rel="stylesheet"/>
+</head><body data-publication-edition="minimal" data-publication-genre="blog" data-report-version="V10"><nav aria-label="Writing" class="report-site-nav">
+<a class="writing-back" data-site-link="" href="/#writing"><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+<div aria-label="Article version" class="edition-switch">
+<a aria-current="page" data-site-link="" href="/writing/spec-repair/">Blog</a>
+<a data-site-link="" href="/writing/spec-repair/technical/"><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>
+</div>
+<div aria-label="Language" class="languages" role="group">
+<button aria-label="English" data-language="en" type="button">EN</button>
+<button aria-label="中文" data-language="zh" type="button">中</button>
+<button aria-label="日本語" data-language="ja" type="button">日</button>
+</div>
+</nav>
+<a class="skip-link" href="#report-start"><span lang="zh">跳到正文</span><span lang="en">Skip to content</span><span lang="ja">本文へ</span></a><div class="report-layout" id="top"><aside class="report-sidebar toc"><details class="toc-panel" open=""><summary><span lang="zh">目录</span><span lang="en">Contents</span><span lang="ja">目次</span></summary><nav aria-label="文章章节" data-aria-label-en="Article sections" data-aria-label-ja="記事の章" data-aria-label-zh="文章章节" id="report-toc"><ol><li><a href="#blog-1"><span lang="zh">先修依赖，再修下游</span><span lang="en">Repair dependencies before downstream design</span><span lang="ja">依存関係を先に修復する</span></a></li><li><a href="#blog-2"><span lang="zh">一次修复包含什么</span><span lang="en">What a repair contains</span><span lang="ja">一回の修復で行うこと</span></a></li><li><a href="#blog-3"><span lang="zh">少改一些，确实有用</span><span lang="en">Smaller edits helped</span><span lang="ja">変更を絞る効果</span></a></li><li><a href="#blog-4"><span lang="zh">重复判断解决不了所有错误</span><span lang="en">Repeated judgments cannot fix every error</span><span lang="ja">判断の繰り返しで直せない誤り</span></a></li><li><a href="#blog-5"><span lang="zh">Verifier 卡在了哪里</span><span lang="en">Where the Verifier stalled</span><span lang="ja">Verifierが停滞した理由</span></a></li><li><a href="#blog-6"><span lang="zh">格式通过以后，还要看业务</span><span lang="en">Check semantics after formatting</span><span lang="ja">形式の確認後も業務要件を検証する</span></a></li><li><a href="#blog-7"><span lang="zh">文档准出不等于建表通过</span><span lang="en">Passing the document check is not passing the build</span><span lang="ja">文書の合格と構築の成功は別</span></a></li><li><a href="#blog-8"><span lang="zh">接下来只改确认有问题的判断</span><span lang="en">Next: correct the judgments we can substantiate</span><span lang="ja">次に直すのは根拠を確認できた判断</span></a></li></ol></nav></details></aside><main class="report-content" id="main"><article class="article-body" id="article"><h1 data-page-title="" id="report-start"><span lang="zh">用评审反馈修复 Spec</span><span lang="en">Repairing Specs with Feedback</span><span lang="ja">評価フィードバックでSpecを修復する</span></h1><p class="report-date"><span lang="zh">2026 年 6—10 月</span><span lang="en">June–October 2026</span><span lang="ja">2026年6–10月</span></p><p><span lang="zh">用户要求统计培训完成度，设计里也有一个同名进度字段，但没有写明怎样从培训记录计算。管理员原本可以维护业务数据，修复后却变成只读。这两种设计都曾通过文档检查，直到执行建表后才暴露问题。</span><span lang="en">A user asked to track training completion. The design included a progress field with the right name, but never explained how to calculate it from training records. In another case, an administrator who could maintain business data became read-only after repair. Both designs passed document checks; their problems surfaced only after the applications were built.</span><span lang="ja">研修の完了率を集計する要求に対し、設計には同名の進捗フィールドがあっても、研修記録からの計算方法がなかった。別の例では、業務データを管理できた管理者が修復後に読み取り専用になった。どちらも文書審査を通過し、実際に構築して初めて問題が現れた。</span></p>
+<p><span lang="zh">Judge–Fix 要解决的就是这类错误：Judge 找出设计缺口，Fix 修改文档，Router 决定先修哪个业务域。项目还尝试了 Verifier，在写回之前比较修前、修后两份文档，判断这次修改是否应该接受。</span><span lang="en">Judge–Fix addresses these failures: Judge identifies design gaps, Fix edits the document, and Router chooses which domain to repair first. We also tried a Verifier that compares the before-and-after documents and decides whether to accept an edit before writing it back.</span><span lang="ja">Judge–Fixはこうした誤りを扱う。Judgeが設計の不足を指摘し、Fixが文書を修正し、Routerが修復する領域の順序を決める。書き戻す前に修復前後の文書を比較し、変更を採用するか判断するVerifierも試した。</span></p>
+<p><span lang="zh">几个月的实验没有得到“检查越多、修得越好”的结果。限制无关修改有过明确收益；增加候选、投票和修复轮数则经常只增加成本。判断一个改动是否值得保留，需要看原问题有没有解决，也需要看原来的业务还能不能完成。</span><span lang="en">Across several months of experiments, more checks did not consistently produce better repairs. Restricting unrelated edits helped; adding candidates, votes, or repair rounds often just added cost. A useful change must resolve the original problem while preserving the original task.</span><span lang="ja">数か月の実験では、確認を増やすほど修復が良くなるとは限らなかった。無関係な変更の制限には効果があったが、候補、投票、修復回数の追加は費用だけを増やすことも多かった。元の問題を解消し、元の業務も実行できることが採用条件となる。</span></p>
+<figure class="figure-block result-figure writing-map-figure" data-figure="research_design" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-01" hidden="" id="writing-map-1"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="研究设计" data-alt-en="Research design" data-alt-ja="研究設計" data-alt-zh="研究设计" data-diagram-image="" data-figure-key="/writing/assets/e647acae569a0cb3be7a.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-01.svg?v=7cbe6593dd40" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-01.svg?v=f03801722e39" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-01.svg?v=f78322896954" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-01.svg?v=3855d51a692e" data-src-ja="/writing/figures/ja/spec-repair-01.svg?v=9f93e5ab6a26" data-src-openai-blog-en="/writing/figures/en/spec-repair-01.svg?v=7cbe6593dd40" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-01.svg?v=9f93e5ab6a26" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-01.svg?v=ecd912a256c0" data-src-zh="/writing/figures/zh/spec-repair-01.svg?v=ecd912a256c0" data-zoom="true" decoding="async" height="309" loading="eager" src="/writing/figures/zh/spec-repair-01.svg?v=ecd912a256c0" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 1　研究设计</span><span lang="en">Figure 1 · Research design</span><span lang="ja">図1　研究設計</span></figcaption></figure>
+<h2 id="blog-1"><span lang="zh">先修依赖，再修下游</span><span lang="en">Repair dependencies before downstream design</span><span lang="ja">依存関係を先に修復する</span></h2><figure class="figure-block writing-map-figure" id="full-workflow"><div class="trajectory-map" data-entry="spec-repair-full-workflow" hidden="" id="writing-map-2"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Judge–Fix · 完整流程" data-alt-en="Judge–Fix · Full workflow" data-alt-ja="Judge–Fix · 全体フロー" data-alt-zh="Judge–Fix · 完整流程" data-diagram-image="" data-figure="spec-repair-full-workflow" data-figure-key="spec-repair-full-workflow" data-src-en="/writing/figures/en/spec-repair-full-workflow.svg?v=49960a452198" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-full-workflow.svg?v=48d7846716c1" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-full-workflow.svg?v=5d05a2c7e42f" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-full-workflow.svg?v=154daa732193" data-src-ja="/writing/figures/ja/spec-repair-full-workflow.svg?v=771ccea02714" data-src-openai-blog-en="/writing/figures/en/spec-repair-full-workflow.svg?v=49960a452198" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-full-workflow.svg?v=771ccea02714" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-full-workflow.svg?v=5aef000e443f" data-src-zh="/writing/figures/zh/spec-repair-full-workflow.svg?v=5aef000e443f" decoding="async" height="945" loading="lazy" src="/writing/figures/zh/spec-repair-full-workflow.svg?v=5aef000e443f" width="1440"/></details><figcaption><span lang="zh">完整流程保留入口确认、普通 / 难例修复与格式回退。点击修复模块可展开候选接纳、拒绝和重评路径。</span><span lang="en">The full workflow retains entry confirmation, regular and hard repair, and format-driven returns. Select a repair module to inspect candidate acceptance, rejection and re-evaluation.</span><span lang="ja">全体フローは入口確認、通常・難例修復、形式による差し戻しを保持。修復モジュールから候補の採否と再評価経路を確認できる。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">修复块内保留候选接纳 / 拒绝与按根因回退；点击模块可展开完整内部路径。投票只累计同一 Spec 版本。</span><span lang="en">Repair blocks retain candidate acceptance/rejection and root-cause retries; select a module to inspect its internal paths. Votes accumulate only for the same Spec version.</span><span lang="ja">各修復ブロックは候補の採否と根本原因別の再試行を保持。選択すると内部経路を表示。投票は同一 Spec バージョン内で集計する。</span></p><p><span lang="zh">格式缺口 → 对应领域回修
+
+
+共用格式回退预算：1 次</span><span lang="en">Format gap → domain repair
+
+
+Shared format return budget: 1</span><span lang="ja">形式不備 → 該当領域へ差し戻し
+
+
+形式用の共有予算：1回</span></p></details></figure>
+<p><span lang="zh">多维表格设计分为数据表、仪表盘、工作流和权限四个域。后三域依赖表和字段，因此不能把四份错误清单各自交给模型，最后拼起来。例如统计图和工作流同时缺一个字段，应先补表，再修改两个下游设计。</span><span lang="en">A Bitable design has four domains: tables, dashboards, workflows, and permissions. The latter three depend on tables and fields, so four independent error lists cannot simply be repaired and stitched together. If a chart and a workflow both lack the same field, repair the table first, then update both consumers.</span><span lang="ja">多次元テーブルの設計は、テーブル、ダッシュボード、ワークフロー、権限の四領域に分かれる。後ろの三領域はテーブルとフィールドに依存するため、別々のエラー一覧を修復して結合するだけでは足りない。グラフとワークフローが同じフィールドを必要とするなら、まずテーブルを補い、その後で両方を修正する。</span></p>
+<p><span lang="zh">主链路先检查四域，由 Router 选择修复位置。修改后重新检查；普通阶段未解决的样本可以进入难例阶段，但总预算有限。最后对同一份文档投票，确认业务通过后再处理格式。格式候选如果改变了文档，也需要重新确认业务判断。</span><span lang="en">The main pipeline checks all four domains, lets Router choose a repair location, then checks the revised document again. Unresolved cases can move from the regular stage to a hard-case stage within a bounded budget. Finally, votes on the same document confirm semantic acceptance before formatting. If a formatting candidate changes the document, its semantics must be checked again.</span><span lang="ja">主処理は四領域を審査し、Routerが修復箇所を選び、修正後に再審査する。通常段階で解決しない例は難例段階へ進めるが、総予算には上限がある。最後に同一文書への投票で業務要件の合格を確認し、形式を整える。形式修正で文書が変われば、業務面も再確認する。</span></p>
+<figure class="full-pipeline-figure wide figure-block writing-map-figure" data-figure="main_entry" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label"><span lang="zh">A · 入口检查</span><span lang="en">A · Entry checks</span><span lang="ja">A · 入口の確認</span></p><div class="trajectory-map" data-entry="spec-repair-03" hidden="" id="writing-map-3"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="A · 入口检查" data-alt-en="A · Entry checks" data-alt-ja="A · 入口の確認" data-alt-zh="A · 入口检查" data-diagram-image="" data-figure-key="/writing/assets/ad8ed4327da8728f89fe.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-03.svg?v=f8629bcbe3f6" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-03.svg?v=b2e1da395806" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-03.svg?v=54443dd21d90" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-03.svg?v=70e8ef6e970f" data-src-ja="/writing/figures/ja/spec-repair-03.svg?v=eb8e1818fd7f" data-src-openai-blog-en="/writing/figures/en/spec-repair-03.svg?v=f8629bcbe3f6" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-03.svg?v=eb8e1818fd7f" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-03.svg?v=ddfec14a32e0" data-src-zh="/writing/figures/zh/spec-repair-03.svg?v=ddfec14a32e0" data-zoom="true" decoding="async" height="340" loading="lazy" src="/writing/figures/zh/spec-repair-03.svg?v=ddfec14a32e0" width="864"/></details></div><div class="figure-panel"><p class="panel-label"><span lang="zh">B · 普通修复 · 共用回退预算 2 次</span><span lang="en">B · Regular repair · Shared fallback budget: 2</span><span lang="ja">B · 通常修復 · 共通フォールバック予算2回</span></p><div class="trajectory-map" data-entry="spec-repair-04" hidden="" id="writing-map-4"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="B · 普通修复 · 共用回退预算 2 次" data-alt-en="B · Regular repair · Shared fallback budget: 2" data-alt-ja="B · 通常修復 · 共通フォールバック予算2回" data-alt-zh="B · 普通修复 · 共用回退预算 2 次" data-diagram-image="" data-figure-key="/writing/assets/96bab7319c80cd000e6a.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-04.svg?v=bfca99ef26e5" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-04.svg?v=c0c071f18d9b" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-04.svg?v=c066e8f9308e" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-04.svg?v=f54c2c8f5e9d" data-src-ja="/writing/figures/ja/spec-repair-04.svg?v=e07c8f2c35fe" data-src-openai-blog-en="/writing/figures/en/spec-repair-04.svg?v=bfca99ef26e5" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-04.svg?v=e07c8f2c35fe" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-04.svg?v=b28872bbc8f0" data-src-zh="/writing/figures/zh/spec-repair-04.svg?v=b28872bbc8f0" data-zoom="true" decoding="async" height="468" loading="lazy" src="/writing/figures/zh/spec-repair-04.svg?v=b28872bbc8f0" width="864"/></details></div><div class="figure-panel"><p class="panel-label"><span lang="zh">C · 难例修复 · 独立回退预算 3 次</span><span lang="en">C · Hard-case repair · Separate fallback budget: 3</span><span lang="ja">C · 難例修復 · 独立フォールバック予算3回</span></p><div class="trajectory-map" data-entry="spec-repair-05" hidden="" id="writing-map-5"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="C · 难例修复 · 独立回退预算 3 次" data-alt-en="C · Hard-case repair · Separate fallback budget: 3" data-alt-ja="C · 難例修復 · 独立フォールバック予算3回" data-alt-zh="C · 难例修复 · 独立回退预算 3 次" data-diagram-image="" data-figure-key="/writing/assets/532a029e70811a11a29e.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-05.svg?v=9e257a295a76" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-05.svg?v=29f807b175d4" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-05.svg?v=3f0b22391633" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-05.svg?v=2a50605805fa" data-src-ja="/writing/figures/ja/spec-repair-05.svg?v=7dd6b04f172d" data-src-openai-blog-en="/writing/figures/en/spec-repair-05.svg?v=9e257a295a76" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-05.svg?v=7dd6b04f172d" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-05.svg?v=53bb7d387152" data-src-zh="/writing/figures/zh/spec-repair-05.svg?v=53bb7d387152" data-zoom="true" decoding="async" height="496" loading="lazy" src="/writing/figures/zh/spec-repair-05.svg?v=53bb7d387152" width="864"/></details></div><div class="figure-panel"><p class="panel-label"><span lang="zh">D · 准出 · 格式回退预算 1 次</span><span lang="en">D · Release checks · Formatting fallback budget: 1</span><span lang="ja">D · 准出確認 · 形式フォールバック予算1回</span></p><div class="trajectory-map" data-entry="spec-repair-06" hidden="" id="writing-map-6"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="D · 准出 · 格式回退预算 1 次" data-alt-en="D · Release checks · Formatting fallback budget: 1" data-alt-ja="D · 准出確認 · 形式フォールバック予算1回" data-alt-zh="D · 准出 · 格式回退预算 1 次" data-diagram-image="" data-figure-key="/writing/assets/515e12ce143dbbed4959.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-06.svg?v=af295279e66d" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-06.svg?v=88ca0b9f2b29" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-06.svg?v=489c2a3b38da" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-06.svg?v=8f6dd9ea3779" data-src-ja="/writing/figures/ja/spec-repair-06.svg?v=26d4d372470a" data-src-openai-blog-en="/writing/figures/en/spec-repair-06.svg?v=af295279e66d" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-06.svg?v=26d4d372470a" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-06.svg?v=bbd5af079848" data-src-zh="/writing/figures/zh/spec-repair-06.svg?v=bbd5af079848" data-zoom="true" decoding="async" height="237" loading="lazy" src="/writing/figures/zh/spec-repair-06.svg?v=bbd5af079848" width="864"/></details></div><figcaption><span lang="zh">图 2　主链路</span><span lang="en">Figure 2 · Main pipeline</span><span lang="ja">図2　主処理</span></figcaption></figure>
+<p><span lang="zh">流程图对应 2026-10-16 的实现；各实验采用各自固定的配置。</span><span lang="en">The diagrams show the implementation as of October 16, 2026; each experiment uses its own fixed configuration.</span><span lang="ja">フロー図は2026年10月16日時点の実装を示します。各実験では、それぞれ固定した設定を用いています。</span></p>
+<h2 id="blog-2"><span lang="zh">一次修复包含什么</span><span lang="en">What a repair contains</span><span lang="ja">一回の修復で行うこと</span></h2>
+<p><span lang="zh">Fix 读取用户需求、当前设计和待修问题。对 Markdown SpecDoc，它主要生成局部补丁；对 HostPlan，则按 JSON 结构写回。程序先确认输出能解析、补丁能应用，才把候选送去评审。原文没匹配上，不能算作修复已完成。</span><span lang="en">Fix reads the user requirements, current design, and outstanding issues. It mainly produces local patches for Markdown SpecDocs and writes structured JSON for HostPlan. A candidate is reviewed only after its output parses and its patch applies. A patch that cannot match the original text is not a completed repair.</span><span lang="ja">Fixはユーザー要求、現在の設計、未解決の問題を読む。Markdown SpecDocでは主に局所パッチを作り、HostPlanではJSON構造で書き戻す。出力を解析でき、パッチを適用できた候補だけを審査する。元の文面に一致しないパッチは、修復完了とは扱わない。</span></p>
+<p><span lang="zh">每轮候选从同一个输入版本生成，分别检查、择优接纳，不把不同候选直接拼接。候选被拒绝时保留旧文档，下一轮接收失败原因。局部通过后，还要返回主链路做整体检查。</span><span lang="en">Candidates in a round start from the same input version. They are checked separately and accepted by comparison, not spliced together. Rejection preserves the old document and sends the failure reason to the next round. A locally accepted repair still returns to the main pipeline for an overall check.</span><span lang="ja">同じラウンドの候補は同一の入力版から生成する。個別に審査して比較採用し、異なる候補を直接つなぎ合わせない。却下時は元の文書を保持し、失敗理由を次のラウンドへ渡す。局所的に合格しても、主処理に戻して全体を確認する。</span></p>
+<figure class="full-pipeline-figure wide figure-block writing-map-figure" data-figure="fix_generate" data-reconstructed="true" data-static-panels="true"><div class="figure-panel"><p class="panel-label"><span lang="zh">A · 生成候选</span><span lang="en">A · Generate candidates</span><span lang="ja">A · 候補生成</span></p><div class="trajectory-map" data-entry="spec-repair-07" hidden="" id="writing-map-7"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="A · 生成候选" data-alt-en="A · Generate candidates" data-alt-ja="A · 候補生成" data-alt-zh="A · 生成候选" data-diagram-image="" data-figure-key="/writing/assets/5509058bf848fb2ed2f1.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-07.svg?v=7e3b3466d703" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-07.svg?v=fd6853b7941e" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-07.svg?v=4642b72957b6" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-07.svg?v=94eecea2d765" data-src-ja="/writing/figures/ja/spec-repair-07.svg?v=233a7734c638" data-src-openai-blog-en="/writing/figures/en/spec-repair-07.svg?v=7e3b3466d703" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-07.svg?v=233a7734c638" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-07.svg?v=4cf8c7df0643" data-src-zh="/writing/figures/zh/spec-repair-07.svg?v=4cf8c7df0643" data-zoom="true" decoding="async" height="468" loading="lazy" src="/writing/figures/zh/spec-repair-07.svg?v=4cf8c7df0643" width="864"/></details></div><div class="figure-panel"><p class="panel-label"><span lang="zh">B · 评估候选</span><span lang="en">B · Evaluate candidates</span><span lang="ja">B · 候補評価</span></p><div class="trajectory-map" data-entry="spec-repair-08" hidden="" id="writing-map-8"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="B · 评估候选" data-alt-en="B · Evaluate candidates" data-alt-ja="B · 候補評価" data-alt-zh="B · 评估候选" data-diagram-image="" data-figure-key="/writing/assets/7dd3aea037815cbb227b.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-08.svg?v=af0ac7272fc4" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-08.svg?v=6bdc4560c9cb" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-08.svg?v=b09cfc535e2e" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-08.svg?v=4eed0ee0133d" data-src-ja="/writing/figures/ja/spec-repair-08.svg?v=1cb711a269e9" data-src-openai-blog-en="/writing/figures/en/spec-repair-08.svg?v=af0ac7272fc4" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-08.svg?v=1cb711a269e9" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-08.svg?v=cbc7943b7fcd" data-src-zh="/writing/figures/zh/spec-repair-08.svg?v=cbc7943b7fcd" data-zoom="true" decoding="async" height="374" loading="lazy" src="/writing/figures/zh/spec-repair-08.svg?v=cbc7943b7fcd" width="864"/></details></div><div class="figure-panel"><p class="panel-label"><span lang="zh">C · 接纳候选</span><span lang="en">C · Accept a candidate</span><span lang="ja">C · 候補採用</span></p><div class="trajectory-map" data-entry="spec-repair-09" hidden="" id="writing-map-9"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="C · 接纳候选" data-alt-en="C · Accept a candidate" data-alt-ja="C · 候補採用" data-alt-zh="C · 接纳候选" data-diagram-image="" data-figure-key="/writing/assets/f8d191d7c6d7be9a37d7.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-09.svg?v=e3e421fc2e6e" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-09.svg?v=f8c4a5acb9c8" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-09.svg?v=019af0200f63" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-09.svg?v=ea81feb870df" data-src-ja="/writing/figures/ja/spec-repair-09.svg?v=d675386a8215" data-src-openai-blog-en="/writing/figures/en/spec-repair-09.svg?v=e3e421fc2e6e" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-09.svg?v=d675386a8215" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-09.svg?v=e32318d162f3" data-src-zh="/writing/figures/zh/spec-repair-09.svg?v=e32318d162f3" data-zoom="true" decoding="async" height="561" loading="lazy" src="/writing/figures/zh/spec-repair-09.svg?v=e32318d162f3" width="864"/></details></div><figcaption><span lang="zh">图 3　Fix 内部流程</span><span lang="en">Figure 3 · Inside Fix</span><span lang="ja">図3　Fix内部の処理</span></figcaption></figure>
+<p><span lang="zh">局部补丁、输出恢复、对象替换、候选去重和回退都已有实现。后续发现同类错误，应查它在哪个入口失效，而不是再加一层同名机制。</span><span lang="en">Local patches, output recovery, object replacement, candidate deduplication, and fallback already exist. When a similar failure recurs, trace where the existing mechanism failed before adding another layer.</span><span lang="ja">局所パッチ、出力復旧、オブジェクト置換、候補重複排除、フォールバックは実装済みである。同類の失敗が起きたら、同名の仕組みを追加する前に既存の入口のどこで機能しなかったかを調べる。</span></p>
+<h2 id="blog-3"><span lang="zh">少改一些，确实有用</span><span lang="en">Smaller edits helped</span><span lang="ja">変更を絞る効果</span></h2>
+<p><span lang="zh">6 月的 Non-Table 对照固定了同一批 300 条输入。仅增加能力说明，Fix 阶段通过数从 156 变为 154；进一步要求保留合格段落、只修改问题及必要依赖后，通过数达到 177，已合格域的退化次数从 76 降到 47。另一组 Table 对照都是 179/300，未出现同样提升。</span><span lang="en">June’s Non-Table comparison used the same 300 inputs. Adding capability descriptions alone changed Fix-stage passes from 156 to 154. Requiring preservation of valid sections and limiting edits to issues and necessary dependencies raised passes to 177 and reduced regressions in already-passing domains from 76 to 47. A separate Table comparison stayed at 179/300 in both arms.</span><span lang="ja">6月のNon-Table比較は同じ300件の入力を固定した。機能説明の追加だけではFix段階の合格数は156から154になった。合格済みの段落を保持し、問題と必要な依存関係だけを修正する条件を加えると177件になり、合格済み領域の退化は76回から47回に減った。別のTable比較は両群とも179/300で、同じ改善はなかった。</span></p>
+<p><span lang="zh">保留下来的做法是限制无关修改，不是禁止修改所有旧内容。若工作流缺少必要字段，只保护旧表、不允许补字段，同样修不好。</span><span lang="en">We retained the restriction on unrelated edits, not a blanket ban on editing old content. A workflow missing a required field cannot be fixed if the old table is protected against every addition.</span><span lang="ja">残したのは無関係な変更の制限であり、既存部分をすべて変更禁止にする方針ではない。ワークフローに必要なフィールドがないとき、古いテーブルを保護して追加まで禁じれば修復できない。</span></p>
+<p><span lang="zh">8 月的 50 条策略实验进一步比较了模型和修改方式：</span><span lang="en">An August experiment on 50 cases compared models and editing methods:</span><span lang="ja">8月の50件実験では、モデルと修正方法を比較した。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">修复方式</span><span lang="en">Repair method</span><span lang="ja">修復方法</span></th>
+<th align="right"><span lang="zh">链路准出</span><span lang="en">Pipeline acceptance</span><span lang="ja">チェーン准出</span></th>
+<th align="right"><span lang="zh">调用数</span><span lang="en">Calls</span><span lang="ja">呼び出し数</span></th>
+<th align="right"><span lang="zh">总 token（百万）</span><span lang="en">Total tokens (millions)</span><span lang="ja">総トークン数（百万）</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">三轮 Seed，局部补丁</span><span lang="en">Three Seed rounds, local patches</span><span lang="ja">Seedを3回、局所パッチ</span></td>
+<td align="right">40/50</td>
+<td align="right">3,517</td>
+<td align="right">84.02</td>
+</tr>
+<tr>
+<td><span lang="zh">两轮 Seed，末轮 Luna</span><span lang="en">Two Seed rounds, Luna last</span><span lang="ja">Seedを2回、最終回はLuna</span></td>
+<td align="right">43/50</td>
+<td align="right">3,386</td>
+<td align="right">79.51</td>
+</tr>
+<tr>
+<td><span lang="zh">同上，加入本次 Fix 的历史</span><span lang="en">Same, with local Fix history</span><span lang="ja">同上、当該Fixの履歴を追加</span></td>
+<td align="right">43/50</td>
+<td align="right">2,957</td>
+<td align="right">71.18</td>
+</tr>
+<tr>
+<td><span lang="zh">全文候选、保护和审核，加入历史</span><span lang="en">Full-document candidates, protection and review, with history</span><span lang="ja">全文候補・保護・審査、履歴あり</span></td>
+<td align="right">37/50</td>
+<td align="right">4,289</td>
+<td align="right">93.62</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">末轮换模型在这组多修好 3 条；加入局部历史保持结果，少了 429 次调用。全文方案增加了审核和回滚，却没有生成足够多可接受的替代文档。</span><span lang="en">Switching the final-round model repaired three additional cases. Local history preserved that result with 429 fewer calls. The full-document approach added review and rollback, but failed to produce enough acceptable replacements.</span><span lang="ja">最終回のモデル変更で、この組ではさらに3件を修復した。局所履歴を加えると結果を維持したまま429回の呼び出しを削減できた。全文方式は審査とロールバックを増やしたが、採用可能な代替文書を十分に生成できなかった。</span></p>
+<p><span lang="zh">另一组 8 个工作流难例更直接：原文补丁准出 3 条，换成对象 ID 加文档哈希后只有 1 条；保留原补丁，只明确流程分支范围、首次命中和完成状态来源，准出 7 条。新定位协议拒绝了大量候选。定位更稳定是设计目标，并不等于整链结果更好。</span><span lang="en">Eight hard workflow cases made the trade-off clearer. Original-text patches accepted three cases; replacing them with object IDs and document hashes accepted only one. Keeping the original patch protocol but clarifying branch scope, first-match behavior, and the source of completion status accepted seven. The new addressing protocol rejected many candidates: more stable targeting did not translate into better end-to-end results.</span><span lang="ja">ワークフローの難例8件では差がより明確だった。原文パッチの准出は3件、オブジェクトIDと文書ハッシュへの変更後は1件だった。元のパッチを保ち、分岐の範囲、最初の一致、完了状態の出所だけを明確にすると7件になった。新しい位置指定方式は多くの候補を却下した。位置の安定性という設計目標が、そのままチェーン全体の改善になるわけではない。</span></p>
+<figure class="figure-block result-figure writing-map-figure" data-figure="repair_comparison" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-11" hidden="" id="writing-map-10"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="修复策略对照" data-alt-en="Repair strategy comparisons" data-alt-ja="修復戦略の比較" data-alt-zh="修复策略对照" data-diagram-image="" data-figure-key="/writing/assets/52c1e0f3d17bb7fcc6a7.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-11.svg?v=b974fd6b55c3" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-11.svg?v=a52826e636d5" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-11.svg?v=99f598445608" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-11.svg?v=94a311895561" data-src-ja="/writing/figures/ja/spec-repair-11.svg?v=a1630ab572be" data-src-openai-blog-en="/writing/figures/en/spec-repair-11.svg?v=b974fd6b55c3" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-11.svg?v=a1630ab572be" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-11.svg?v=76b33b2a40ac" data-src-zh="/writing/figures/zh/spec-repair-11.svg?v=76b33b2a40ac" data-zoom="true" decoding="async" height="777" loading="lazy" src="/writing/figures/zh/spec-repair-11.svg?v=76b33b2a40ac" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 4　修复策略对照</span><span lang="en">Figure 4 · Repair strategy comparisons</span><span lang="ja">図4　修復戦略の比較</span></figcaption></figure>
+<p><span lang="zh">扩大预算也未必有用。17 条难例从五轮增加到七轮，准出仍为 13 条，token 从 44.57M 增至 53.11M。上述结果来自不同样本集，不能把它们的绝对通过率排列成一条提升曲线。</span><span lang="en">More budget also failed to guarantee improvement. Expanding 17 hard cases from five to seven rounds left acceptance at 13 while tokens rose from 44.57M to 53.11M. These experiments use different samples; their absolute pass rates are not points on one improvement curve.</span><span lang="ja">予算を増やしても改善するとは限らない。難例17件を5回から7回に増やしても准出は13件のまま、トークンは44.57Mから53.11Mに増えた。これらは異なる標本の結果なので、絶対合格率を一本の改善曲線として並べることはできない。</span></p>
+<h2 id="blog-4"><span lang="zh">重复判断解决不了所有错误</span><span lang="en">Repeated judgments cannot fix every error</span><span lang="ja">判断の繰り返しで直せない誤り</span></h2>
+<p><span lang="zh">同一文档重复检查会得到不同结果。6,457 条 SpecDoc 曾在链内通过 6,291 条，单次独立重判只通过 5,315 条。这推动了同版本多数投票：最多三票，至少两票通过；结论已确定就不再凑满票数。</span><span lang="en">Repeated checks of one document can disagree. Of 6,457 SpecDocs, 6,291 had passed inside the pipeline, but only 5,315 passed a single independent reassessment. This motivated majority voting on the same version: at most three votes, at least two passes, stopping as soon as the outcome is determined.</span><span lang="ja">同じ文書を繰り返し審査しても結果は揺れる。6,457件のSpecDocはチェーン内で6,291件が合格したが、独立した単回再審査では5,315件だった。そこで同一版への多数決を導入した。最大3票、2票以上で合格とし、結論が決まった時点で打ち切る。</span></p>
+<figure class="historical-figure wide figure-block writing-map-figure" data-figure="vote" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-12" hidden="" id="writing-map-11"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="同版本多数投票" data-alt-en="Majority voting on one version" data-alt-ja="同一版への多数決" data-alt-zh="同版本多数投票" data-diagram-image="" data-figure-key="/writing/assets/f0f36a571cc27e5e302c.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-12.svg?v=1e842755dc06" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-12.svg?v=002c834dccc8" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-12.svg?v=896d0ebcb0db" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-12.svg?v=5b0c6775e8b6" data-src-ja="/writing/figures/ja/spec-repair-12.svg?v=2e99dce3bf22" data-src-openai-blog-en="/writing/figures/en/spec-repair-12.svg?v=1e842755dc06" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-12.svg?v=2e99dce3bf22" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-12.svg?v=241945ae6bae" data-src-zh="/writing/figures/zh/spec-repair-12.svg?v=241945ae6bae" data-zoom="true" decoding="async" height="244" loading="lazy" src="/writing/figures/zh/spec-repair-12.svg?v=241945ae6bae" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 5　同版本多数投票</span><span lang="en">Figure 5 · Majority voting on one version</span><span lang="ja">図5　同一版への多数決</span></figcaption></figure>
+<p><span lang="zh">固定已有票据的回放中，早停和有效首票复用让 146 个节点的调用从 2,442 次降至 2,190 次，结果相同。但在线重新采样时还有限流、重试和延迟，一次耗时对照只缩短约 0.66%。不能用离线调用节省比例代替实际加速。</span><span lang="en">A replay with fixed recorded votes reduced calls across 146 nodes from 2,442 to 2,190 through early stopping and reuse of valid first votes, with identical outcomes. Online sampling also involves rate limits, retries, and latency: one timing comparison improved by only about 0.66%. Saved replay calls are not equivalent to measured wall-clock speedup.</span><span lang="ja">既存の票を固定したリプレイでは、早期停止と有効な初回票の再利用により、146ノードの呼び出しが2,442回から2,190回へ減り、結果は同じだった。オンライン再生成には制限、再試行、遅延もあるため、ある実測比較での時間短縮は約0.66%にとどまった。リプレイでの呼び出し削減率を実際の高速化率とは扱えない。</span></p>
+<p><span lang="zh">投票主要减少随机翻转。Verifier 的 H002 错误图表连续三次被接受，H003 正确日期修改连续三次被暂缓，重复判断没有纠正它们。此时要改的是判断依据。</span><span lang="en">Voting mainly reduces random flips. Verifier accepted H002’s incorrect chart three times in a row and deferred H003’s correct date edit three times. Repetition did not fix either mistake; their judgment criteria need attention.</span><span lang="ja">投票が主に減らすのはランダムな反転である。VerifierはH002の誤ったグラフを3回連続で採用し、H003の正しい日付変更を3回連続で保留した。繰り返しでは直らず、判断根拠を見直す必要がある。</span></p>
+<h2 id="blog-5"><span lang="zh">Verifier 卡在了哪里</span><span lang="en">Where the Verifier stalled</span><span lang="ja">Verifierが停滞した理由</span></h2>
+<p><span lang="zh">Verifier 比较的不只是两个分数。它先列出当前问题，再确认候选是否修好了目标、保留了需求、没有破坏别处。只有这些条件满足，连续评分才用于比较候选；高分不能抵消删除需求或权限退化。</span><span lang="en">Verifier does more than compare two scores. It enumerates current problems, then checks whether a candidate fixes the target, preserves requirements, and avoids damage elsewhere. Continuous scores rank candidates only after these conditions hold; high scores cannot compensate for deleted requirements or degraded permissions.</span><span lang="ja">Verifierは二つの点数を比較するだけではない。まず現在の問題を列挙し、候補が対象を修復し、要求を保持し、他所を壊していないかを確認する。これらを満たした後に連続スコアで候補を比較する。高得点でも要求の削除や権限の退化は相殺できない。</span></p>
+<figure class="figure-block result-figure writing-map-figure" data-figure="verifier_method" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-13" hidden="" id="writing-map-12"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Verifier 方法" data-alt-en="Verifier method" data-alt-ja="Verifierの方法" data-alt-zh="Verifier 方法" data-diagram-image="" data-figure-key="/writing/assets/36aadf2d60ee62e1f7a4.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-13.svg?v=617a16aecfce" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-13.svg?v=b55c61ed71af" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-13.svg?v=9b86b2cee9f6" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-13.svg?v=f5b3398c3907" data-src-ja="/writing/figures/ja/spec-repair-13.svg?v=783c9e4d2115" data-src-openai-blog-en="/writing/figures/en/spec-repair-13.svg?v=617a16aecfce" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-13.svg?v=783c9e4d2115" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-13.svg?v=56f9b045aae8" data-src-zh="/writing/figures/zh/spec-repair-13.svg?v=56f9b045aae8" data-zoom="true" decoding="async" height="496" loading="lazy" src="/writing/figures/zh/spec-repair-13.svg?v=56f9b045aae8" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 6　Verifier 方法</span><span lang="en">Figure 6 · The Verifier method</span><span lang="ja">図6　Verifierの方法</span></figcaption></figure>
+<p><span lang="zh">一项固定 10 份文档、四域共 40 个判断单元的实验中，原方案由 Gemini 分析并评分，替代方案先让 Sol 分析、再由 Gemini 评分。参考一致数从 33 增至 38，问题类型 F1 从 56.3% 增至 88.4%。这项实验没有执行修复，且参考评审也来自 Sol；两组评分 token 上限存在差异，不能把全部变化归到同一个因素。</span><span lang="en">With 10 fixed documents and 40 domain-level judgment units, the original setup used Gemini for both analysis and scoring. Replacing analysis with Sol while retaining Gemini scoring increased reference agreement from 33 to 38 and issue-type F1 from 56.3% to 88.4%. No repair was performed, the reference also came from Sol, and the scoring token caps differed, so this comparison changes more than one factor.</span><span lang="ja">10文書、四領域で計40判断単位を固定した実験では、元の構成はGeminiが分析と採点を担当した。分析をSol、採点をGeminiとすると、参照との一致は33から38、問題タイプF1は56.3%から88.4%へ上がった。ただし修復は実行せず、参照もSol由来で、採点トークン上限も異なる。変化を一つの要因だけに帰属させる比較ではない。</span></p>
+<p><span lang="zh">另一组 10 条完整修复对照却得到相反结果：生产 Judge–Fix 的独立参考通过数为 4 条，Verifier 只有 1 条。原始 145 个问题分别关闭了 133 个和 15 个。</span><span lang="en">A separate end-to-end repair comparison on 10 cases went the other way. Production Judge–Fix passed four cases against the independent reference; Verifier passed one. They closed 133 and 15 of the original 145 issues, respectively.</span><span lang="ja">別の10件の全修復比較では逆の結果だった。独立参照での合格は本番Judge–Fixが4件、Verifierが1件。元の145問題のうち、それぞれ133件と15件を解消した。</span></p>
+<figure class="figure-block result-figure writing-map-figure" data-figure="verifier_comparison" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-14" hidden="" id="writing-map-13"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Verifier 两项独立对照" data-alt-en="Two separate Verifier comparisons" data-alt-ja="Verifierの独立した二つの比較" data-alt-zh="Verifier 两项独立对照" data-diagram-image="" data-figure-key="/writing/assets/e2ea43c24fe2e6402600.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-14.svg?v=310e22219006" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-14.svg?v=9a8438deb71d" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-14.svg?v=eeb70a82691a" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-14.svg?v=a96e7a04e570" data-src-ja="/writing/figures/ja/spec-repair-14.svg?v=72e6100ce26a" data-src-openai-blog-en="/writing/figures/en/spec-repair-14.svg?v=310e22219006" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-14.svg?v=72e6100ce26a" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-14.svg?v=9878061ed3bd" data-src-zh="/writing/figures/zh/spec-repair-14.svg?v=9878061ed3bd" data-zoom="true" decoding="async" height="374" loading="lazy" src="/writing/figures/zh/spec-repair-14.svg?v=9878061ed3bd" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 7　Verifier 两项独立对照</span><span lang="en">Figure 7 · Two separate Verifier comparisons</span><span lang="ja">図7　Verifierの独立した二つの比較</span></figcaption></figure>
+<p><span lang="zh">瓶颈出在修改没有真正落下去：大量候选重复，或补丁无法应用，最终 10 份文档中有 6 份仍是初稿。第 4 轮后继续跑到第 24 轮，通过内部检查的文档数也没有增加。较少引入新问题，主要是因为文档没怎么变；应先修候选生成和补丁写入，再考虑增加轮数。</span><span lang="en">The bottleneck was getting edits applied. Many candidates were duplicates or unusable patches, leaving 6 of the 10 documents unchanged. Extending the run from round 4 to round 24 produced no additional releases. Few new problems appeared largely because little changed. Candidate generation and patch application need attention before adding more rounds.</span><span lang="ja">詰まっていたのは、変更を実際に反映する段階です。候補の重複や適用できないパッチが多く、10件中6件が初稿のままでした。第4ラウンドから第24ラウンドまで続けても、通過文書は増えませんでした。新しい問題が少なかったのは、文書がほとんど変わらなかったためです。反復回数を増やす前に、候補生成とパッチ適用を改善する必要があります。</span></p>
+<p><span lang="zh">结构化修复目标的单次对照也暴露了相似问题。N02 把净现金流改成收入，N04 用创建人替代业务负责人：报错可能消失了，需求却变了。这组 10 个修复事务的 token 减少约 25.6%，可安全接纳的候选从 6 个降到 5 个。下一步必须确认目标真的实现，而不是只检查旧问题是否还出现在新列表中。</span><span lang="en">A single comparison of structured repair targets exposed the same risk. N02 replaced net cash flow with revenue; N04 replaced the business owner with the record creator. The error disappeared by changing the requirement. Across 10 repair transactions, tokens fell about 25.6%, while safely acceptable candidates fell from six to five. Acceptance must verify that the target was achieved, not merely that an old error vanished from a new list.</span><span lang="ja">構造化した修復目標の単回比較でも同じ危険が現れた。N02は純キャッシュフローを収入へ、N04は業務担当者を作成者へ置き換えた。エラーは消えても要求が変わっている。10修復トランザクションでトークンは約25.6%減ったが、安全に採用できる候補は6件から5件になった。新しい一覧から旧エラーが消えただけでなく、目標が実現したかを確認する必要がある。</span></p>
+<h2 id="blog-6"><span lang="zh">格式通过以后，还要看业务</span><span lang="en">Check semantics after formatting</span><span lang="ja">形式の確認後も業務要件を検証する</span></h2>
+<p><span lang="zh">格式模块处理下游无法可靠读取的表达问题。若修复需要改变字段来源、授权范围或业务资源，就应交回业务域，而不能当成标点或结构整理。</span><span lang="en">The formatting module handles expressions that downstream consumers cannot reliably read. Changes to field sources, authorization scope, or business resources belong back in a domain repair, not in punctuation or structural cleanup.</span><span lang="ja">形式モジュールは下流が安定して読めない表現を処理する。フィールドの出所、認可範囲、業務リソースを変える修復は、句読点や構造整理としてではなく、業務領域へ戻して扱う。</span></p>
+<p><span lang="zh">对 1,312 份历史未准出的文档继续修复，831 份最终准出。余下问题中，补丁写不进去、写入后格式仍不合规各有 108 份：前者要修写入过程，后者要修表达规则，不能都交给模型再改一遍。与此前数据合并后累计交付 3,999 份；这个总量包含多轮修复。</span><span lang="en">Resuming repair on 1,312 previously unreleased documents produced 831 releases. Among the remainder, 108 had patches that could not be applied and another 108 still violated formatting rules. The first group needs application fixes; the second needs better formatting rules. Sending both back for another rewrite misses that distinction. Combined with earlier releases, delivery reached 3,999 documents across multiple repair rounds.</span><span lang="ja">過去に未通過だった1,312件の修復を再開し、831件が最終的に通過しました。残りのうち、パッチを適用できないものと、適用後も書式が不適合なものが各108件ありました。前者は書き込み処理、後者は表現規則の問題であり、どちらも再生成させれば済むわけではありません。以前の分と合わせた累計納品は3,999件で、複数回の修復を含む総数です。</span></p>
+<p><span lang="zh">交付后扫描也需要核对规则。94 条“工作流非标准 Key”里，88 条是当前规则允许的通知正文 Key；另外 6 条确有非标准 Key，旧准出 2 条，恢复后准出 4 条。不能把规则差异全部算成漏判，也不能因为多数是误报而忽略真实错误。</span><span lang="en">Post-delivery scans also need rule checks. Of 94 flags for nonstandard workflow keys, 88 involved notification-body keys permitted by the current rules. Six were real nonstandard keys: two had passed earlier, and four passed after recovery. Rule differences must be separated from missed errors, while genuine failures still need attention.</span><span lang="ja">納品後の走査でもルールとの照合が必要だった。「ワークフローの非標準Key」94件のうち88件は現行ルールで許される通知本文Keyだった。残る6件は実際の非標準Keyで、旧准出は2件、復旧後は4件だった。ルール差異をすべて見逃しとは数えず、誤報が多数でも実際の誤りを無視しない。</span></p>
+<h2 id="blog-7"><span lang="zh">文档准出不等于建表通过</span><span lang="en">Passing the document check is not passing the build</span><span lang="ja">文書の合格と構築の成功は別</span></h2><figure class="figure-block writing-map-figure" id="recorded-case"><div class="trajectory-map" data-entry="spec-repair-recorded-case" hidden="" id="writing-map-14"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="真实案例 · 管理员权限退化" data-alt-en="Recorded case · administrator access regression" data-alt-ja="実例 · 管理者権限の退行" data-alt-zh="真实案例 · 管理员权限退化" data-diagram-image="" data-figure="spec-repair-recorded-case" data-figure-key="spec-repair-recorded-case" data-src-en="/writing/figures/en/spec-repair-recorded-case.svg?v=7563d249e140" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-recorded-case.svg?v=d991b0a04b9f" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-recorded-case.svg?v=57d997603e16" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-recorded-case.svg?v=3755fc77fcbc" data-src-ja="/writing/figures/ja/spec-repair-recorded-case.svg?v=ed17774bab63" data-src-openai-blog-en="/writing/figures/en/spec-repair-recorded-case.svg?v=7563d249e140" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-recorded-case.svg?v=ed17774bab63" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-recorded-case.svg?v=e7fd2538ee04" data-src-zh="/writing/figures/zh/spec-repair-recorded-case.svg?v=e7fd2538ee04" decoding="async" height="957" loading="lazy" src="/writing/figures/zh/spec-repair-recorded-case.svg?v=e7fd2538ee04" width="1440"/></details><figcaption><span lang="zh">Case 41：两组 CodeAgent 均执行成功，但 K 将管理员降为只读，E2E 因无法完成管理职责而失败。两组文档都未获准出，这里展示诊断执行。</span><span lang="en">Case 41: both CodeAgent runs succeed, but K reduces the administrator to read-only and fails E2E on required duties. Neither document was released; these are diagnostic executions.</span><span lang="ja">Case 41：CodeAgent は両方実行成功だが、K は管理者を読み取り専用にして業務責務の E2E に失敗。両文書ともリリース不合格であり、ここでは診断用実行を示す。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">这是下游退化诊断：两组都未获文档准出，实验仍执行 CodeAgent 对照。图保留 G/K 状态差异，不把 K 的产物画成已发布结果。</span><span lang="en">This is a downstream regression diagnosis: neither document was released, but the experiment executed both with CodeAgent. K’s artifact is not a released result.</span><span lang="ja">下流の退行を診断する実験。両文書ともリリース不合格だが、比較のため CodeAgent を実行した。K の成果物をリリース済みとは扱わない。</span></p></details></figure>
+<p><span lang="zh">G 提示词的一轮 Building 50 实验，Judge–Fix 准出 31 条，CodeAgent E2E 也通过 31 条，但交集只有 24 条。两个数字相同，并不说明文档检查预测了每一条建表结果。</span><span lang="en">In one Building 50 run with prompt G, Judge–Fix accepted 31 cases and CodeAgent E2E also passed 31, but their intersection was only 24. Equal totals did not mean document checks predicted each build outcome.</span><span lang="ja">GプロンプトのBuilding 50の一回では、Judge–Fix准出もCodeAgent E2E合格も31件だったが、共通部分は24件だけだった。総数が同じでも、文書審査が各構築結果を予測できたことにはならない。</span></p>
+<p><span lang="zh">后续 G/K 使用相同原始 50 条输入、相同 SFT CodeAgent、SDK 和 E2E Judge，分别创建独立 Base。K 改了 Workflow Judge、Table Fix 和 Non-Table Fix，Permission Judge 未变。同期 G 的 E2E 为 30/50，K 为 26/50：9 条通过转失败，5 条失败转通过。</span><span lang="en">A later G/K comparison used the same original 50 inputs, SFT CodeAgent, SDK, and E2E Judge, building separate Bases. K changed Workflow Judge, Table Fix, and Non-Table Fix but left Permission Judge unchanged. The contemporaneous E2E scores were G 30/50 and K 26/50: nine passes became failures and five failures became passes.</span><span lang="ja">後のG/K比較は同じ原始50入力、SFT CodeAgent、SDK、E2E Judgeを使い、Baseを独立に構築した。KはWorkflow Judge、Table Fix、Non-Table Fixを変更し、Permission Judgeは変えていない。同時期のE2EはGが30/50、Kが26/50で、合格から不合格が9件、逆が5件だった。</span></p>
+<figure class="figure-block result-figure writing-map-figure" data-figure="e2e_comparison" data-reconstructed="true"><div class="figure-panel"><div class="trajectory-map" data-entry="spec-repair-18" hidden="" id="writing-map-15"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="同期 G / K 对照" data-alt-en="Contemporaneous G/K comparison" data-alt-ja="同時期のG/K比較" data-alt-zh="同期 G / K 对照" data-diagram-image="" data-figure-key="/writing/assets/d74f771387ca6ecd7601.svg" data-natural-width="1200" data-src-en="/writing/figures/en/spec-repair-18.svg?v=55a8e12031dd" data-src-engineering-en="/writing/figures/en/engineering/spec-repair-18.svg?v=fe99dc595e2b" data-src-engineering-ja="/writing/figures/ja/engineering/spec-repair-18.svg?v=0abfa5743da3" data-src-engineering-zh="/writing/figures/zh/engineering/spec-repair-18.svg?v=ed580ac8f086" data-src-ja="/writing/figures/ja/spec-repair-18.svg?v=30dc8890efa3" data-src-openai-blog-en="/writing/figures/en/spec-repair-18.svg?v=55a8e12031dd" data-src-openai-blog-ja="/writing/figures/ja/spec-repair-18.svg?v=30dc8890efa3" data-src-openai-blog-zh="/writing/figures/zh/spec-repair-18.svg?v=005b35652c9c" data-src-zh="/writing/figures/zh/spec-repair-18.svg?v=005b35652c9c" data-zoom="true" decoding="async" height="424" loading="lazy" src="/writing/figures/zh/spec-repair-18.svg?v=005b35652c9c" width="864"/></details></div><figcaption class="map-duplicate-caption"><span lang="zh">图 8　同期 G / K 对照</span><span lang="en">Figure 8 · Contemporaneous G/K comparison</span><span lang="ja">図8　同時期のG/K比較</span></figcaption></figure>
+<p><span lang="zh">逐例追查才能判断责任。Case 41 的原始管理员可编辑，K 的 Judge 建议缩为只读，Fix 接受后，代码把七张表设为只读，退化确实发生在设计阶段。Case 14 则是 G、K 都有同样退化，只在 K 的 E2E 中报出，不能全部归给新增提示词。</span><span lang="en">Case traces locate responsibility. Case 41 originally allowed administrators to edit; K’s Judge suggested read-only access, Fix accepted it, and the code made all seven tables read-only. The regression began in the design. Case 14 had the same regression under both G and K but was flagged only in K’s E2E, so it cannot all be attributed to the new prompt.</span><span lang="ja">責任の所在は個別の追跡で確認する。Case 41は元々管理者が編集可能だったが、KのJudgeが読み取り専用を提案し、Fixが採用し、コードが7テーブルを読み取り専用にした。退化は設計段階で起きた。一方Case 14はGとKに同じ退化があり、KのE2Eだけで報告されたため、すべて新プロンプトのせいにはできない。</span></p>
+<p><span lang="zh">Case 38 用 Lookup 替代不支持的关联下钻，却没交代单值或集合以及比较含义。Case 50 补了配置表，却没补齐维护权限和状态更新。它们要求的是合法且完整的替代设计，不是删除能力限制或多写一句“保持闭环”。</span><span lang="en">Case 38 replaced unsupported linked-record traversal with Lookup but left single-value versus collection behavior and comparison semantics unspecified. Case 50 added a configuration table without maintenance permissions or state updates. Both need complete, supported alternative designs—not fewer capability constraints or another instruction to keep the loop closed.</span><span lang="ja">Case 38は未対応の関連フィールド下位参照をLookupに置き換えたが、単一値か集合か、比較の意味を定義していなかった。Case 50は設定テーブルを追加しても管理権限と状態更新を補わなかった。必要なのは制約の削除や「閉ループを保つ」という一文ではなく、実現可能で完全な代替設計である。</span></p>
+<p><span lang="zh">后续候选的 E2E 降到 18/50，但同时更换了评审版本，已无法单独衡量提示词的影响。另一次 CodeAgent 因限流未完成执行，只留下运行故障，没有得到可比较的业务结果。这两次都需要先恢复可比的运行条件。</span><span lang="en">A later candidate fell to 18/50 on E2E, but the evaluator changed at the same time, preventing attribution to the prompt alone. Another CodeAgent run was interrupted by rate limits and yielded no comparable business result. Both require comparable execution conditions before drawing quality conclusions.</span><span lang="ja">後続候補のE2Eは18/50まで下がりましたが、同時に評価器も変わっており、プロンプトだけの影響は測れません。別のCodeAgent実行はレート制限で完了せず、比較可能な業務結果が得られませんでした。どちらも、まず比較条件をそろえて再実行する必要があります。</span></p>
+<h2 id="blog-8"><span lang="zh">接下来只改确认有问题的判断</span><span lang="en">Next: correct the judgments we can substantiate</span><span lang="ja">次に直すのは根拠を確認できた判断</span></h2>
+<p><span lang="zh">Judge–Fix 首先应统一 Workflow Judge 和 Fix 的能力表述：记录筛选的左右值都不能沿关联字段下钻；替代方式必须保留原记录范围、字段类型和比较含义。其他位置合法的引用，不因这条规则一并禁止。</span><span lang="en">Judge–Fix should first align Workflow Judge and Fix on supported capabilities: neither side of a record-filter comparison may traverse linked fields. Alternatives must preserve record scope, field types, and comparison semantics. References that are valid elsewhere should remain allowed.</span><span lang="ja">Judge–FixはまずWorkflow JudgeとFixの機能表現を統一する。レコードフィルターの左右の値とも関連フィールドを下位参照できず、代替方法は元のレコード範囲、型、比較の意味を保つ必要がある。他の箇所で合法な参照まで一律に禁止しない。</span></p>
+<p><span lang="zh">权限和计算已有相关要求，应检查它们是否真正生效。用 Case 14/41 检验必要职责权限，用 Case 2 检验需要自动生成的计算结果，同时保留明确只读、允许手工记录的反例，避免一刀切。</span><span lang="en">Permissions and calculations already have relevant requirements; test whether they actually take effect. Use Cases 14/41 for necessary role permissions and Case 2 for calculations that must be automatic, alongside explicit read-only and manual-recording counterexamples.</span><span lang="ja">権限と計算には既存要件があるため、実際に効いているかを確かめる。Case 14/41で必要な職務権限、Case 2で自動計算が必要な結果を検証する。同時に明示的な読み取り専用や手動記録を許す反例も残し、一律化を避ける。</span></p>
+<p><span lang="zh">Verifier 则先修两类判断：不能仅凭对象名称相互包含就把新旧问题合并；不能仅凭修后列表不再报错就认为目标关闭。H003 检验旧问题是否误判为新增，N02/N04 检验指标和负责人是否被偷偷替换。现有函数已发现这些判定风险，但尚未复现证明它们就是每个历史案例的直接原因。</span><span lang="en">Verifier should correct two judgment patterns: merging old and new issues merely because object names overlap, and declaring a target closed because it disappears from the post-repair list. H003 tests whether an old issue is mistaken for a new one; N02/N04 test silent replacement of metrics and owners. Existing functions reveal these risks, though reproductions have not yet tied them causally to every historical case.</span><span lang="ja">Verifierは二種類の判断を修正する。オブジェクト名の包含だけで新旧問題を統合することと、修復後の一覧で報告されないだけで目標達成とすることである。H003は旧問題の新規誤認、N02/N04は指標や担当者のすり替えを検査する。既存関数からリスクは見つかったが、各過去事例の直接原因だという再現確認はまだない。</span></p>
+<p><span lang="zh">稳定对象定位、候选去重和回退不是待新增功能；全文重写、更多投票和扩大预算也没有足够证据支持默认启用。先用固定修前/修后对检查明确缺口，再用原始 Building 50 做配对修复和同版本 E2E，才知道下一次修改究竟改善了什么。</span><span lang="en">Stable object addressing, deduplication, and fallback are already implemented. The evidence does not support enabling full rewrites, more votes, or larger budgets by default. First test specific gaps on fixed before-and-after pairs, then run paired repair and same-version E2E on the original Building 50 to measure the next change.</span><span lang="ja">安定した位置指定、重複排除、フォールバックは実装済みである。全文書き直し、投票追加、予算拡大を標準化する根拠も十分ではない。まず固定した修復前後の対で具体的な不足を確認し、次に原始Building 50で対応のある修復と同一版E2Eを行い、変更の効果を測る。</span></p>
+</article>
+<details class="article-resources" id="figure-sources"><summary><span lang="zh">图源与代码</span><span lang="en">Figures and code</span><span lang="ja">図とコード</span></summary><ul class="article-resource-list"><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-01.svg"><span lang="zh">研究设计</span><span lang="en">Research design</span><span lang="ja">研究設計</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-full-workflow.html"><span lang="zh">Judge–Fix · 完整流程</span><span lang="en">Judge–Fix · Full workflow</span><span lang="ja">Judge–Fix · 全体フロー</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-03.svg"><span lang="zh">A · 入口检查</span><span lang="en">A · Entry checks</span><span lang="ja">A · 入口の確認</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-04.svg"><span lang="zh">B · 普通修复 · 共用回退预算 2 次</span><span lang="en">B · Regular repair · Shared fallback budget: 2</span><span lang="ja">B · 通常修復 · 共通フォールバック予算2回</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-05.svg"><span lang="zh">C · 难例修复 · 独立回退预算 3 次</span><span lang="en">C · Hard-case repair · Separate fallback budget: 3</span><span lang="ja">C · 難例修復 · 独立フォールバック予算3回</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-06.svg"><span lang="zh">D · 准出 · 格式回退预算 1 次</span><span lang="en">D · Release checks · Formatting fallback budget: 1</span><span lang="ja">D · 准出確認 · 形式フォールバック予算1回</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-07.svg"><span lang="zh">A · 生成候选</span><span lang="en">A · Generate candidates</span><span lang="ja">A · 候補生成</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-08.svg"><span lang="zh">B · 评估候选</span><span lang="en">B · Evaluate candidates</span><span lang="ja">B · 候補評価</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-09.svg"><span lang="zh">C · 接纳候选</span><span lang="en">C · Accept a candidate</span><span lang="ja">C · 候補採用</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-11.svg"><span lang="zh">修复策略对照</span><span lang="en">Repair strategy comparisons</span><span lang="ja">修復戦略の比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-12.svg"><span lang="zh">同版本多数投票</span><span lang="en">Majority voting on one version</span><span lang="ja">同一版への多数決</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-13.svg"><span lang="zh">Verifier 方法</span><span lang="en">Verifier method</span><span lang="ja">Verifierの方法</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-14.svg"><span lang="zh">Verifier 两项独立对照</span><span lang="en">Two separate Verifier comparisons</span><span lang="ja">Verifierの独立した二つの比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-recorded-case.html"><span lang="zh">真实案例 · 管理员权限退化</span><span lang="en">Recorded case · administrator access regression</span><span lang="ja">実例 · 管理者権限の退行</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-repair-18.svg"><span lang="zh">同期 G / K 对照</span><span lang="en">Contemporaneous G/K comparison</span><span lang="ja">同時期のG/K比較</span></a></li></ul><p class="article-resource-code"><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json"><span lang="zh">图中文字翻译</span><span lang="en">Figure translations</span><span lang="ja">図の翻訳</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/writing-maps/spec-repair.js?v=fa9a5fdf3d9b"><span lang="zh">流程与交互数据</span><span lang="en">Flow and interaction data</span><span lang="ja">フローと操作データ</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/trajectory-map.js"><span lang="zh">交互代码</span><span lang="en">Interaction code</span><span lang="ja">操作部分のコード</span></a></p></details></main></div>
+<dialog aria-label="放大流程图" data-aria-label-en="Enlarge diagram" data-aria-label-ja="図を拡大" data-aria-label-zh="放大流程图" id="image-dialog"><div class="zoom-tools"><strong id="zoom-title"><span lang="zh">流程图</span><span lang="en">Diagram</span><span lang="ja">図</span></strong><button id="zoom-fit"><span lang="zh">适合窗口</span><span lang="en">Fit to window</span><span lang="ja">ウィンドウに合わせる</span></button><button id="zoom-natural"><span lang="zh">原字号</span><span lang="en">Original size</span><span lang="ja">原寸</span></button><button id="zoom-close"><span lang="zh">关闭</span><span lang="en">Close</span><span lang="ja">閉じる</span></button></div><div class="zoom-area"><img alt="" id="zoom-image"/></div></dialog><div id="notice" role="status"></div>
+<script>
+
+
+function showImage(image) {
+
+
+  const zoom = document.getElementById('zoom-image');
+
+
+  zoom.src = image.src;
+
+
+  zoom.alt = image.alt;
+
+
+  zoom.dataset.naturalWidth = image.dataset.naturalWidth || image.naturalWidth;
+
+
+  zoom.style.width = zoom.dataset.naturalWidth + 'px';
+
+
+  document.getElementById('zoom-title').textContent = image.alt;
+
+
+  document.getElementById('image-dialog').showModal();
+
+
+}
+
+
+document.addEventListener('click', event => {
+
+
+  const image = event.target.closest('img[data-zoom]');
+
+
+  if (image) showImage(image);
+
+
+});
+
+
+document.getElementById('zoom-close').addEventListener('click', () => document.getElementById('image-dialog').close());
+
+
+document.getElementById('zoom-natural').addEventListener('click', () => {
+
+
+  const image = document.getElementById('zoom-image');
+
+
+  image.style.width = image.dataset.naturalWidth + 'px';
+
+
+});
+
+
+document.getElementById('zoom-fit').addEventListener('click', () => { document.getElementById('zoom-image').style.width = '100%'; });
+
+
+const narrow = matchMedia('(max-width:1279px)');
+
+
+const updateToc = () => { document.querySelector('.toc-panel').open = !narrow.matches; };
+
+
+updateToc();
+
+
+narrow.addEventListener('change', updateToc);
+
+
+const headings = [...document.querySelectorAll('#article>h2')];
+
+
+const links = [...document.querySelectorAll('#report-toc a')];
+
+
+let queued = false;
+
+
+function markSection() {
+
+
+  queued = false;
+
+
+  let active = headings[0];
+
+
+  for (const heading of headings) if (heading.getBoundingClientRect().top < 160) active = heading;
+
+
+  for (const link of links) {
+
+
+    if (active && link.getAttribute('href') === '#' + active.id) link.setAttribute('aria-current', 'location');
+
+
+    else link.removeAttribute('aria-current');
+
+
+  }
+
+
+}
+
+
+window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(markSection); } }, {passive:true});
+
+
+markSection();
+
+
+</script></body></html>

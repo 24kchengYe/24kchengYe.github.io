@@ -1,0 +1,30 @@
+.ppo-figure{width:min(1240px,calc(100vw - 56px));margin:42px 0 48px 50%;transform:translateX(-50%);color:var(--diagram-ink,var(--ink,#262a27));font-family:inherit;font-size:16px;line-height:1.6}
+.ppo-figure *{box-sizing:border-box}
+.ppo-figure-heading{padding:14px 0 16px;border-bottom:1px solid var(--line,#dfe2dc);font-size:14px;line-height:1.7;color:var(--muted,#62675e)}
+.ppo-figure-scroll{overflow:auto;max-height:1100px;overscroll-behavior:auto;touch-action:pan-x pan-y pinch-zoom;scrollbar-width:thin;scrollbar-color:var(--diagram-border,#adb3a6) transparent;outline-offset:4px;padding-top:18px}
+.ppo-figure-scroll:focus-visible{outline:1px solid var(--diagram-accent,#6b8e40)}
+.ppo-figure .canvas{position:relative;flex:none;font-family:Arial,"Hiragino Sans","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.55;color:var(--diagram-ink,#262a27);background:var(--diagram-paper,#fff);margin:auto}
+.ppo-figure .node{position:absolute;z-index:2;border:1px solid var(--diagram-border,#60665a);border-radius:9px;background:var(--diagram-paper,#fff);padding:10px 12px;display:flex;flex-direction:column;justify-content:center;gap:4px;text-align:center;color:var(--diagram-ink,#262a27);text-decoration:none;font-size:18px;font-weight:400;line-height:1.4}
+.ppo-figure .node strong{font:inherit;color:inherit;letter-spacing:0}
+.ppo-figure .node .sub{display:block;font-size:13px;font-weight:400;line-height:1.45;color:var(--diagram-muted,#65695f)}
+.ppo-figure a.node:hover,.ppo-figure a.node:focus-visible{outline:2px solid var(--diagram-accent,#699c35);outline-offset:4px}
+.ppo-figure .edge{position:absolute;display:block;height:0;border-top:1.5px solid var(--diagram-line,#454a40);transform-origin:left center;z-index:0}
+.ppo-figure .edge.arrow:after{content:'';position:absolute;right:-1px;top:-4px;border-left:7px solid var(--diagram-line,#454a40);border-top:3px solid transparent;border-bottom:3px solid transparent}
+.ppo-figure .edge.cache{border-top-style:dashed}
+.ppo-figure .edge.feedback{border-color:var(--diagram-accent,#699c35)}
+.ppo-figure .edge.feedback.arrow:after{border-left-color:var(--diagram-accent,#699c35)}
+.ppo-figure .ppo-label{position:absolute;z-index:1;padding:3px 4px;text-align:center;color:var(--diagram-muted,#65695f);background:var(--diagram-paper,#fff);font-size:13px;line-height:1.45}
+.ppo-figure .ppo-label.stage{font-size:15px;text-align:left;color:var(--diagram-ink,#262a27);padding-left:0}
+.ppo-figure .ppo-label.task-title{font-size:17px;text-align:left;color:var(--diagram-ink,#262a27);padding-left:0}
+.ppo-figure .math-label{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:var(--diagram-ink,#262a27)}
+.ppo-figure .ppo-divider{position:absolute;border-top:1px solid var(--line,#dfe2dc)}
+.ppo-figure .ppo-lifeline{position:absolute;border-left:1px dashed var(--diagram-border,#909889);opacity:.5}
+.ppo-figure figcaption{font-size:13px;line-height:1.8;color:var(--muted,#65695f);margin-top:16px;max-width:1050px}
+.ppo-figure[data-diagram-style="openai-blog"] .node.soft,.ppo-figure[data-diagram-style="openai-blog"] .node.accent{background-color:var(--diagram-soft,#f5faef);background-image:radial-gradient(#70a33d38 .5px,transparent .65px);background-size:5px 5px;border-color:var(--diagram-accent,#699c35)}
+.ppo-figure[data-diagram-style="engineering"] .node{border-radius:3px;background-image:none}
+html[data-theme="dark"] .ppo-figure{--diagram-paper:var(--paper,var(--bg,#181b19));--diagram-ink:var(--ink,#e5e7de);--diagram-muted:var(--muted,#abb2a5);--diagram-line:#aab3a0;--diagram-border:#87927d;--diagram-accent:#a8c984;--diagram-soft:#263321}
+html[data-theme="dark"] .ppo-figure .canvas .node{background-color:var(--diagram-paper)!important}
+html[data-theme="dark"] .ppo-figure[data-diagram-style="openai-blog"] .canvas .node:is(.soft,.accent){background-color:var(--diagram-soft)!important}
+html[data-theme="dark"] .ppo-figure .canvas :is(.ppo-label,.sub){color:var(--diagram-muted);background-color:transparent}
+@media(max-width:700px){.ppo-figure{width:100%;margin:30px 0 36px;transform:none}.ppo-figure-scroll{max-height:78vh}.ppo-figure figcaption{font-size:12px}}
+@media print{.ppo-figure{width:100%;margin:24px 0;transform:none;break-inside:avoid}.ppo-figure-scroll{max-height:none;overflow:visible}}

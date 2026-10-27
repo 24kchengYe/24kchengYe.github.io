@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script src="/assets/js/site-theme.js?v=51b41e61e6a0"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Yecheng Zhang</title>
+<meta content="Building-scale urban analytics and simulation, generative AI evaluation and alignment, and open-source research systems." name="description"/>
+<meta content="Yecheng Zhang" property="og:title"/>
+<meta content="Building-scale urban analytics and simulation, generative AI evaluation and alignment, and open-source research systems." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="/favicon.ico" rel="icon"/>
+<link href="/assets/css/minimal.css" rel="stylesheet"/>
+<link href="/assets/css/writing.css?v=more-writing-3" rel="stylesheet"/>
+<link href="/assets/css/homepage-marks.css" rel="stylesheet"/>
+<script defer="" src="/assets/js/minimal.js?v=9e94e73097c5"></script>
+<script defer="" src="/assets/js/homepage-marks.js"></script>
+<link href="/assets/css/writing-activity.css?v=465922cc60e0" rel="stylesheet"/><script defer="" src="/assets/js/writing-activity.js?v=7d267e65c442"></script>
+<link href="/assets/css/site-editorial.css?v=683ff7d8d224" rel="stylesheet"/>
+<script defer="" src="/assets/js/site-editorial.js?v=curation-20261027"></script>
+<link href="/assets/css/poetic-chapters.css?v=2eb17366fbd2" rel="stylesheet"/>
+<script defer="" src="/assets/js/poetic-chapters.js?v=1455031d9719"></script>
+<link href="/assets/css/site-theme.css?v=3f7d383fde73" rel="stylesheet"/>
+<link href="/assets/css/poetic-night-sky.css?v=9e9e60870574" rel="stylesheet"/>
+<script defer="" src="/assets/js/poetic-night-sky.js?v=9ad6178c59c2"></script>
+<link href="/assets/css/editorial-home.css?v=44288f08f5c4" rel="stylesheet"/>
+<link href="/assets/css/project-showcase.css?v=39e15fdc2987" rel="stylesheet"/>
+<script defer="" src="/assets/js/project-showcase.js?v=2fc89b4c3e8d"></script>
+<link href="/assets/css/poetic-composition.css?v=f60b6eaf8a9a" rel="stylesheet"/>
+<link href="/assets/css/site-curation.css?v=20261027" rel="stylesheet"/></head>
+<body id="top">
+<a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="zh">跳转到正文</span><span lang="ja">本文へ移動</span></a>
+<div class="site-shell">
+<div class="poetic-opening" data-poetic-scene="arrival" data-poetic-size="entry">
+<div class="poetic-copy poetic-arrival-copy"><blockquote><span lang="en">Hold infinity<br/>in the palm of your hand<br/>And eternity in an hour.</span><span lang="zh">把无限握在掌心，<br/>将永恒凝于一瞬。</span><span lang="ja">無限をその掌に、<br/>永遠をひとときに。</span></blockquote><cite><a href="https://www.poetryfoundation.org/poems/43650/auguries-of-innocence" rel="noopener" target="_blank" title="Hold infinity in the palm of your hand / And eternity in an hour."><span lang="en">William Blake · Auguries of Innocence</span><span lang="zh">威廉·布莱克 ·《天真的预言》</span><span lang="ja">ウィリアム・ブレイク · Auguries of Innocence</span></a></cite></div>
+<div aria-hidden="true" class="poetic-art"><img alt="" fetchpriority="high" height="650" src="/assets/artwork/poetic-arrival.svg?v=cc395d5b642c" width="1200"/></div>
+</div>
+<header class="site-nav">
+<nav aria-label="Sections" data-aria-label-en="Sections" data-aria-label-ja="サイトナビゲーション" data-aria-label-zh="网站栏目">
+<a data-site-link="" href="#writing"><span lang="en">Writing</span><span lang="zh">写作</span><span lang="ja">記事</span></a>
+<a data-site-link="" href="#research"><span lang="en">Research</span><span lang="zh">研究</span><span lang="ja">研究</span></a>
+<a data-site-link="" href="#projects"><span lang="en">Projects</span><span lang="zh">项目</span><span lang="ja">プロジェクト</span></a>
+<a data-site-link="" href="https://yechengzhang.duqi.top/reading/"><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></a>
+<a data-site-link="" href="/resume/"><span lang="en">Resume</span><span lang="zh">简历</span><span lang="ja">履歴書</span></a>
+</nav>
+<div aria-label="Language" class="languages" role="group">
+<button aria-label="English" aria-pressed="true" data-language="en" type="button">EN</button>
+<button aria-label="中文" aria-pressed="false" data-language="zh" type="button">中</button>
+<button aria-label="日本語" aria-pressed="false" data-language="ja" type="button">日</button>
+</div>
+</header>
+<main id="main">
+<header class="profile" id="about-me">
+<div class="profile-copy">
+<h1 id="yecheng-zhang-">Yecheng Zhang <span class="name-cn">张业成</span></h1>
+<div lang="en">
+<p>I am a Ph.D. student at the <a href="https://www.arch.tsinghua.edu.cn/">School of Architecture</a>, <a href="https://www.tsinghua.edu.cn/">Tsinghua University</a>.</p>
+<p>My research focuses on <strong>building-scale urban analytics and simulation</strong>, <strong>LLM/VLM post-training, evaluation and alignment</strong>, and <strong>multi-agent systems</strong>.</p>
+</div>
+<div lang="zh">
+<p>我是<a href="https://www.tsinghua.edu.cn/">清华大学</a><a href="https://www.arch.tsinghua.edu.cn/">建筑学院</a>博士生。</p>
+<p>研究方向包括<strong>建筑尺度城市分析与模拟</strong>、<strong>大模型后训练、评测与对齐</strong>和<strong>多智能体系统</strong>。</p>
+</div>
+<div lang="ja">
+<p><a href="https://www.tsinghua.edu.cn/">清華大学</a><a href="https://www.arch.tsinghua.edu.cn/">建築学院</a>の博士課程に在籍しています。</p>
+<p>研究分野は<strong>建築スケール都市分析・シミュレーション</strong>、<strong>LLM/VLMの事後学習・評価・アライメント</strong>、<strong>マルチエージェントシステム</strong>です。</p>
+</div>
+<nav aria-label="Contact" class="contact-links">
+<a href="mailto:zhangyec23@mails.tsinghua.edu.cn">Email</a>
+<a href="https://github.com/24kchengYe">GitHub</a>
+<a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar</a>
+</nav>
+</div>
+<div class="profile-portrait"><img alt="Yecheng Zhang" class="profile-photo" height="176" src="images/profile.jpg" width="176"/></div>
+</header>
+<details class="bio-more">
+<summary><span lang="en">More about my work</span><span lang="zh">更多研究介绍</span><span lang="ja">研究について</span></summary>
+<div lang="en">
+<p>I build large-scale urban datasets, evaluate generative AI for scientific discovery, and develop open-source research systems. See my <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar profile</a> for current citations.</p>
+</div>
+<div lang="zh">
+<p>致力于构建大规模城市数据集，评估生成式AI的科学发现能力，并开发开源研究系统。当前引用情况见 <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar</a>。</p>
+</div>
+<div lang="ja">
+<p>大規模都市データセットを構築し、科学的発見のための生成AIを評価するとともに、オープンソース研究システムを開発しています。最新の引用状況は <a href="https://scholar.google.com/citations?user=6vKhpBoAAAAJ">Google Scholar</a> を参照してください。</p>
+</div>
+<div class="profile-detail" id="research-vision">
+<div class="vision-card" lang="en">
+<p class="vision-kicker">BUILDING-SCALE URBAN ANALYTICS &amp; SIMULATION</p>
+<h2>Buildings are the basic cells of urban systems.</h2>
+<p>I connect building engineering with urban science through data foundations, generative AI, and bottom-up simulation.</p>
+<div class="vision-grid">
+<div><strong>01 · Unified modeling</strong><span>Connect semantic depth at the building scale with geographic breadth at the urban scale.</span></div>
+<div><strong>02 · Data foundations</strong><span>Build comprehensive, AI-enhanced building datasets with full spatial and temporal coverage.</span></div>
+<div><strong>03 · Generative diagnosis</strong><span>Use generative AI to evaluate building quality, performance, and urban efficacy.</span></div>
+<div><strong>04 · Bottom-up simulation</strong><span>Combine AI and generative rules to model morphological and behavioral transformations.</span></div>
+</div>
+<p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective paper</a> · <a href="https://yechengzhang.duqi.top/cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+<div class="vision-card" lang="zh">
+<p class="vision-kicker">建筑尺度城市分析与模拟</p>
+<h2>建筑是城市复杂系统的基本细胞。</h2>
+<p>通过数据底座、生成式人工智能和自下而上的模拟，连接建筑研究的语义深度与城市科学的地理广度。</p>
+<div class="vision-grid">
+<div><strong>01 · 统一建模</strong><span>衔接建筑尺度的语义深度与城市尺度的地理广度。</span></div>
+<div><strong>02 · 数据底座</strong><span>借助人工智能构建时空覆盖完整的建筑级综合数据集。</span></div>
+<div><strong>03 · 生成式诊断</strong><span>利用生成式人工智能评估建筑质量、性能与城市效能。</span></div>
+<div><strong>04 · 自下而上模拟</strong><span>结合人工智能与生成规则，模拟城市形态和行为的复杂演化。</span></div>
+</div>
+<p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective 论文</a> · <a href="https://yechengzhang.duqi.top/cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+<div class="vision-card" lang="ja">
+<p class="vision-kicker">建築スケール都市分析・シミュレーション</p>
+<h2>建築は都市複雑系を構成する基本単位です。</h2>
+<p>データ基盤、生成AI、ボトムアップ・シミュレーションを通じて、建築研究と都市科学を接続します。</p>
+<div class="vision-grid">
+<div><strong>01 · 統一モデリング</strong><span>建築スケールの意味的深さと都市スケールの地理的広がりを接続。</span></div>
+<div><strong>02 · データ基盤</strong><span>AIを活用し、時空間を包括する建築データセットを構築。</span></div>
+<div><strong>03 · 生成的診断</strong><span>生成AIにより建築の品質、性能、都市効果を評価。</span></div>
+<div><strong>04 · ボトムアップ・シミュレーション</strong><span>AIと生成ルールを組み合わせ、形態と行動の変容をモデル化。</span></div>
+</div>
+<p class="vision-links"><a href="https://doi.org/10.1007/s12273-026-1461-9">Perspective論文</a> · <a href="https://yechengzhang.duqi.top/cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+</div>
+</div>
+</details>
+<section aria-labelledby="writing-title" class="section writing-section" data-curation-group="writing" data-curation-label='{"en": "Writing", "zh": "写作", "ja": "記事"}' id="writing">
+<div data-poetic-scene="writing" data-poetic-size="compact">
+<div class="poetic-copy"><blockquote><span lang="en">Yet what endures<br/>is founded by poets.</span><span lang="zh">然而，长存之物，<br/>由诗人创立。</span><span lang="ja">しかし、長く残るものを<br/>詩人たちが築く。</span></blockquote><cite><a href="https://ausstellungen.deutsche-digitale-bibliothek.de/aufbrueche-abbrueche-hoelderlin" rel="noopener" target="_blank" title="Was bleibet aber, stiften die Dichter."><span lang="en">Hölderlin · Andenken</span><span lang="zh">荷尔德林 ·《纪念》</span><span lang="ja">ヘルダーリン ·『追想』</span></a></cite></div>
+<div aria-hidden="true" class="poetic-art"><img alt="" height="360" loading="lazy" src="/assets/artwork/poetic-writing.svg?v=36cf2b5b8f61" width="820"/></div>
+</div>
+<div class="section-heading">
+<h2 id="writing-title"><span lang="en">Selected writing</span><span lang="zh">精选写作</span><span lang="ja">執筆記事</span></h2>
+</div>
+<div class="series-intro">
+<p class="series-title">Data Generation &amp; Agentic RL for Seed Models</p>
+</div>
+<div class="curation-slot" data-curation-slot="featured" id="curation-writing-featured"><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:spec-generation" data-curation-order="0" data-curation-title='{"en": "Generating Better Specs", "zh": "让模型写好 Spec", "ja": "よりよいSpecを生成する"}' data-site-link="" href="/writing/spec-generation/">
+<div aria-hidden="true" class="thumbnail generation">
+<div class="thumb-sheet left"><i></i><i></i><i></i><i></i></div>
+<div class="thumb-wire first"></div>
+<div class="rule-stack"><i></i><i></i><i></i></div>
+<div class="thumb-wire second"></div>
+<div class="thumb-sheet final right"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="writing-copy">
+<h3><span lang="en">Generating Better Specs</span><span lang="zh">让模型写好 Spec</span><span lang="ja">よりよいSpecを生成する</span></h3>
+<p><span lang="en">Turn user requirements into design specifications (Specs), through prompt optimization and structured generation.</span><span lang="zh">从用户需求生成设计文档（Spec），探索提示词优化与结构化生成。</span><span lang="ja">プロンプトの最適化と構造化した生成を通じて、ユーザーの要件を設計仕様（Spec）に変換する。</span></p>
+<div class="writing-meta"><span>Harness for AutoResearch</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:spec-repair" data-curation-order="1" data-curation-title='{"en": "Repairing Specs with Feedback", "zh": "用评审反馈修复 Spec", "ja": "評価フィードバックでSpecを修復する"}' data-site-link="" href="/writing/spec-repair/">
+<div aria-hidden="true" class="thumbnail fix">
+<div class="thumb-sheet left"><i></i><i></i><i></i><i></i></div>
+<div class="thumb-wire first"></div><div class="patch-symbol"></div><div class="thumb-wire second"></div>
+<div class="thumb-sheet final right"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="writing-copy">
+<h3><span lang="en">Repairing Specs with Feedback</span><span lang="zh">用评审反馈修复 Spec</span><span lang="ja">評価フィードバックでSpecを修復する</span></h3>
+<p><span lang="en">Use Judge feedback to repair generated Specs, following dependencies and preserving correct designs.</span><span lang="zh">用 Judge 反馈修复已生成的 Spec，沿依赖关系补齐缺口，保留正确设计。</span><span lang="ja">Judgeのフィードバックで生成済みのSpecを修復し、依存関係に沿って不足を補い、正しい設計を保つ。</span></p>
+<div class="writing-meta"><span>Judge–Fix pipeline</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:rubric-model" data-curation-order="2" data-curation-title='{"en": "From designs to artifacts: training rubric judges", "zh": "从设计到产物：训练规则评审模型", "ja": "設計から成果物へ：ルール評価モデルの訓練"}' data-site-link="" href="/writing/rubric-model/">
+<div aria-hidden="true" class="thumbnail rubric">
+<div class="rubric-rules"><i></i><i></i><i></i></div>
+<div class="thumb-wire first"></div><div class="judge-symbol"><span></span></div><div class="thumb-wire second"></div>
+<div class="verdicts"><i></i><i></i><i></i></div>
+</div>
+<div class="writing-copy">
+<h3><span lang="en">From designs to artifacts: training rubric judges</span><span lang="zh">从设计到产物：训练规则评审模型</span><span lang="ja">設計から成果物へ：ルール評価モデルの訓練</span></h3>
+<p><span lang="en">Two review points for one user request: training design and artifact judges, with separate E2E comparisons.</span><span lang="zh">同一需求，两个评审点：设计与产物 Judge 的训练，以及独立的 E2E 对照。</span><span lang="ja">同じ要求を2つの段階で評価する。設計・成果物 Judge の訓練と、独立した E2E 比較。</span></p>
+<div class="writing-meta"><span>Judge Infra</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:coding-agent-trajectories" data-curation-order="3" data-curation-title='{"en": "Building Training Trajectories for Coding Agents", "zh": "为 Coding Agent 构建训练轨迹", "ja": "Coding Agentの学習軌跡を構築する"}' data-site-link="" href="/writing/coding-agent-trajectories/">
+<div aria-hidden="true" class="thumbnail agent-training">
+<div class="thumb-sheet left"><i></i><i></i><i></i><i></i></div>
+<div class="thumb-wire first"></div><div class="judge-symbol"><span></span></div><div class="thumb-wire second"></div>
+<div class="thumb-sheet final right"><span class="code-mark">&lt;/&gt;</span></div>
+</div>
+<div class="writing-copy">
+<h3 id="coding-agent-writing-title"><span lang="en">Building Training Trajectories for Coding Agents</span><span lang="zh">为 Coding Agent 构建训练轨迹</span><span lang="ja">Coding Agentの学習軌跡を構築する</span></h3>
+<p><span lang="en">Compare Spec-guided planning, online correction, and dependency-aware editing for training trajectories.</span><span lang="zh">比较 Spec 规划、在线纠偏与依赖感知的离线编辑，构建训练轨迹。</span><span lang="ja">Specによる計画、オンライン修正、依存関係を考慮した編集で学習軌跡を構築する。</span></p>
+<div class="writing-meta"><span>Agent trajectories</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:ppo-long-horizon" data-curation-order="4" data-curation-title='{"en": "PPO, Along a Long-Horizon Trajectory", "zh": "PPO：沿一条长程轨迹看训练", "ja": "長い実行軌跡から理解するPPO"}' data-site-link="" href="/writing/ppo-long-horizon/">
+<div aria-hidden="true" class="thumbnail"><svg fill="none" height="100" stroke="#9aa68b" stroke-width="1.2" viewbox="0 0 180 100" width="180"><rect height="20" rx="3" width="40" x="12" y="21"></rect><rect height="20" rx="3" width="40" x="12" y="59"></rect><rect height="20" rx="3" width="40" x="72" y="21"></rect><rect height="20" rx="3" width="40" x="72" y="59"></rect><path d="M52 31H72M52 69H72M112 31H137V50M112 69H137V50H165"></path><circle cx="165" cy="50" r="4"></circle></svg></div>
+<div class="writing-copy"><h3><span lang="en">PPO, Along a Long-Horizon Trajectory</span><span lang="zh">PPO：沿一条长程轨迹看训练</span><span lang="ja">長い実行軌跡から理解するPPO</span></h3><p><span lang="en">Follow one code repair from tool calls to parameter updates: what the Actor, Reference, Reward Model and Critic see, predict and learn.</span><span lang="zh">从一次代码修复出发，看 Actor、Reference、奖励模型与 Critic 分别读入什么、输出什么，以及参数如何更新。</span><span lang="ja">一つのコード修正を、ツール呼び出しからパラメータ更新までたどる。Actor、Reference、報酬モデル、Criticは何を読み、何を出力し、何を学ぶのか。</span></p><div class="writing-meta"><span>PPO / RLHF</span><span aria-hidden="true">·</span><span>2026.10</span></div></div><span aria-hidden="true" class="row-arrow">→</span></a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:terminal-rsi" data-curation-order="5" data-curation-title='{"en": "Terminal-RSI: From Execution to Recursive Training", "zh": "Terminal-RSI：从终端执行到递归训练", "ja": "Terminal-RSI：実行経験から再帰的な学習へ"}' data-site-link="" href="/writing/terminal-rsi/">
+<div aria-hidden="true" class="thumbnail"><svg fill="none" height="100" stroke="#9aa68b" stroke-width="1.2" viewbox="0 0 180 100" width="180"><rect height="28" rx="3" width="34" x="16" y="34"></rect><rect height="28" rx="3" width="34" x="75" y="34"></rect><rect height="28" rx="3" width="34" x="134" y="34"></rect><path d="M50 48H75M109 48H134M151 62V82H33V62M66 44L71 48L66 52M125 44L130 48L125 52"></path><path d="M25 45L30 49L25 53M34 54H42M84 44H100M84 51H96"></path></svg></div>
+<div class="writing-copy"><h3><span lang="en">Terminal-RSI: From Execution to Recursive Training</span><span lang="zh">Terminal-RSI：从终端执行到递归训练</span><span lang="ja">Terminal-RSI：実行経験から再帰的な学習へ</span></h3><p><span lang="en">Successful runs become new demonstrations; fresh attempts provide the next training signal. RSR, RPR and turn-based credit assignment connect the two.</span><span lang="zh">成功执行经过重写，成为新的示范；模型继续尝试，从验证结果中学习。RSR、RPR 与按回合回传的反馈，把两段训练连成循环。</span><span lang="ja">成功した実行を新しい手本に整え、次の試行結果から学ぶ。RSR、RPR、ターン単位の信用割り当てが二つの学習をつなぐ。</span></p><div class="writing-meta"><span>Terminal-RSI</span><span aria-hidden="true">·</span><span>2026.10</span></div></div><span aria-hidden="true" class="row-arrow">→</span></a></div><details class="writing-more" id="more-writing">
+<summary><span lang="en">More writing</span><span lang="zh">更多写作</span><span lang="ja">その他の記事</span></summary>
+<!-- rl-writings:start -->
+<!-- rl-writings:end -->
+<div class="curation-slot" data-curation-slot="archive" id="curation-writing-archive"><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:agent-memory" data-curation-order="6" data-curation-title='{"en": "How an Agent Remembers", "zh": "Agent 是怎么记住事情的", "ja": "エージェントはどう記憶するのか"}' data-site-link="" href="/writing/agent-memory/">
+<div aria-hidden="true" class="thumbnail"><img alt="" height="100" loading="lazy" src="/writing/figures/en/agent-memory-input.svg?v=a75aa6d06787" width="180"/></div>
+<div class="writing-copy">
+<h3><span lang="en">How an Agent Remembers</span><span lang="zh">Agent 是怎么记住事情的</span><span lang="ja">エージェントはどう記憶するのか</span></h3>
+<p><span lang="en">Follow a fact from storage to the next model call, through retrieval, compression, and session boundaries.</span><span lang="zh">从保存到下一次模型调用，图解记忆读取、上下文压缩与会话边界。</span><span lang="ja">保存した情報が次のモデル入力に届くまで。検索、文脈圧縮、セッションの境界を図解する。</span></p>
+<div class="writing-meta"><span>Agent memory</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:automation-blueprint" data-curation-order="7" data-curation-title='{"en": "An Interactive Blueprint for Agentic Development", "zh": "自动化开发的交互式流程蓝图", "ja": "自動開発のインタラクティブなフローマップ"}' data-site-link="" href="/writing/automation-blueprint/">
+<div aria-hidden="true" class="thumbnail">
+<svg fill="none" height="100" stroke="#a4b19d" stroke-width="1.2" viewbox="0 0 180 100" width="180">
+<path d="M45 28V39H90M135 28V39H90V48M90 66V78M82 57H26V15H37M98 57H150V78"></path>
+<rect fill="#f3f5ef" height="14" rx="3" width="32" x="29" y="14"></rect><rect fill="#f3f5ef" height="14" rx="3" width="32" x="119" y="14"></rect>
+<path d="M90 47L101 57L90 67L79 57Z" fill="#eaf0e1"></path>
+<rect fill="#eaf0e1" height="14" rx="3" width="32" x="74" y="78"></rect><rect fill="#f4f0e5" height="14" rx="3" width="32" x="134" y="78"></rect>
+</svg>
+</div>
+<div class="writing-copy">
+<h3><span lang="en">An Interactive Blueprint for Agentic Development</span><span lang="zh">自动化开发的交互式流程蓝图</span><span lang="ja">自動開発のインタラクティブなフローマップ</span></h3>
+<p><span lang="en">Explore a shared delivery path, with repair loops, risk gates and human decisions.</span><span lang="zh">沿交互流程图探索共用交付链路、返修回路、风险判断与人工介入。</span><span lang="ja">共通の実行経路、修復ループ、リスク判断、人の介入を図でたどる。</span></p>
+<div class="writing-meta"><span>Interactive system design</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:nimble-kev" data-curation-order="8" data-curation-title='{"en": "Training Routing Models with Soft Labels", "zh": "用软标签训练路由模型", "ja": "ソフトラベルでルーティングモデルを訓練する"}' data-site-link="" href="/writing/nimble-kev/">
+<div aria-hidden="true" class="thumbnail routing">
+<div class="routing-input"></div><div class="routing-stem"></div>
+<div class="routing-branches"><i></i><i></i><i></i></div>
+<div class="routing-probabilities"><i></i><i></i><i></i></div>
+</div>
+<div class="writing-copy">
+<h3><span lang="en">Training Routing Models with Soft Labels</span><span lang="zh">用软标签训练路由模型</span><span lang="ja">ソフトラベルでルーティングモデルを訓練する</span></h3>
+<p><span lang="en">Nimble and KEV experiments on class decisions, probability supervision, and confidence.</span><span lang="zh">围绕 Nimble 与 KEV，比较类别判断、概率监督与置信度的训练效果。</span><span lang="ja">NimbleとKEVで、クラス判定・確率による教師信号・信頼度を比較する。</span></p>
+<div class="writing-meta"><span>Nimble / KEV</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a><a class="writing-row" data-curation-archive-target="curation-writing-archive" data-curation-featured-target="curation-writing-featured" data-curation-item="writing:attention-mechanisms" data-curation-order="9" data-curation-title='{"en": "A Visual Guide to Attention", "zh": "注意力机制，按设计拆开看", "ja": "図で読む注意機構"}' data-site-link="" href="/writing/attention-mechanisms/">
+<div aria-hidden="true" class="thumbnail attention"><div class="attention-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="writing-copy">
+<h3><span lang="en">A Visual Guide to Attention</span><span lang="zh">注意力机制，按设计拆开看</span><span lang="ja">図で読む注意機構</span></h3>
+<p><span lang="en">A visual guide to KV sharing, compression, sparse reads, recurrent states, and tiled execution.</span><span lang="zh">图解 KV 共享、压缩、稀疏读取、递推状态与分块执行。</span><span lang="ja">KV共有・圧縮・疎な読み出し・再帰状態・タイル実行を図で読み解く。</span></p>
+<div class="writing-meta"><span>Attention architectures</span><span aria-hidden="true">·</span><span>2026.10</span></div>
+</div>
+<span aria-hidden="true" class="row-arrow">→</span>
+</a></div></details>
+</section>
+<section class="section" data-curation-group="research" data-curation-label='{"en": "Research", "zh": "研究", "ja": "研究"}' id="research">
+<div data-poetic-scene="research" data-poetic-size="compact">
+<div class="poetic-copy"><blockquote><span lang="en">To venture into the infinite,<br/>explore the finite in every direction.</span><span lang="zh">若要走向无限，<br/>就向有限的各个方向探寻。</span><span lang="ja">無限へ歩もうとするなら、<br/>有限をあらゆる方角へ探れ。</span></blockquote><cite><a href="https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/gedichte-ausgabe-letzter-hand/chapter/256/" rel="noopener" target="_blank" title="Willst du ins Unendliche schreiten, / Geh nur im Endlichen nach allen Seiten."><span lang="en">Goethe · Gott, Gemüt und Welt</span><span lang="zh">歌德 · Gott, Gemüt und Welt</span><span lang="ja">ゲーテ · Gott, Gemüt und Welt</span></a></cite></div>
+<div aria-hidden="true" class="poetic-art"><img alt="" height="360" loading="lazy" src="/assets/artwork/poetic-research.svg?v=c233aead0405" width="820"/></div>
+</div>
+<h2 id="selected-research"><span lang="en">Selected research</span><span lang="zh">研究论文</span><span lang="ja">研究論文</span></h2>
+<div class="curation-slot" data-curation-slot="featured" id="curation-research-featured"><div class="paper-box paper-feature paper-visual" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:6a225cee10b171" data-curation-order="10" data-curation-title='{"en": "UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment", "zh": "UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment", "ja": "UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment"}' data-research-visual="urbanalign"><figure class="research-figure"><a aria-label="UrbanAlign framework, Figure 2 in the paper" href="https://yechengzhang.duqi.top/cv/arxiv-eccv.pdf#page=4" rel="noopener" target="_blank"><img alt="UrbanAlign: semantic dimension extraction, multi-agent feature distillation, and local manifold calibration" decoding="async" height="714" loading="lazy" sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1196px) 44vw, 508px" src="/assets/artwork/urbanalign-framework.png?v=ef896a7c96b1" srcset="/assets/artwork/urbanalign-framework.png 1302w" width="1302"/></a><figcaption><span lang="en">From visual concepts to human judgments. Figure 2 from the UrbanAlign paper.</span><span lang="zh">从视觉概念到人类判断。UrbanAlign 论文图 2。</span><span lang="ja">視覚概念から人の判断へ。UrbanAlign 論文の図 2。</span></figcaption></figure>
+<div class="paper-box-text">
+<h3 id="urbanalign-post-hoc-semantic-calibration-for-vlm-human-preference-alignment"><strong>UrbanAlign: Post-hoc Semantic Calibration for VLM-Human Preference Alignment</strong></h3><p class="research-summary"><span lang="en">How can a frozen vision-language model reflect human judgments of a street? UrbanAlign extracts interpretable concepts, then calibrates their scores against human ratings.</span><span lang="zh">如何让冻结的视觉语言模型反映人们对街道的判断？UrbanAlign 提取可解释的概念，再依据人类评价校准概念分数。</span><span lang="ja">凍結した視覚言語モデルを、人が街路を評価する判断にどう合わせるか。UrbanAlign は解釈可能な概念を抽出し、人の評価に基づいてスコアを校正する。</span></p>
+<p><strong>Yecheng Zhang</strong>, Rong Zhao, Zhizhou Sha, Yong Li, Lei Wang, Ce Hou, Wen Ji, Hao Huang, Yunshan Wan, Jian Yu, Junhao Xia, Yuru Zhang, Chunlei Shi*</p>
+<p><em>ECCV 2026</em>. <a href="https://arxiv.org/abs/2602.19442">arXiv</a> | <a href="https://yechengzhang.duqi.top/cv/arxiv-eccv.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Proposed a <strong>training-free post-hoc concept bottleneck method</strong> to align frozen VLM outputs with human preferences — no fine-tuning, RLHF, or GPU training required.</li>
+<li>Designed an <strong>Observer-Debater-Judge multi-agent reasoning chain</strong> for structured scoring, and developed <strong>locally-weighted ridge regression (LWRR)</strong> on a hybrid CLIP+semantic manifold for geometric calibration.</li>
+<li>Achieved <strong>72.2% accuracy</strong> (κ = 0.45; +16.3pp over the uncalibrated VLM and +15.1pp over the supervised baseline), with <strong>dimension-level interpretability</strong>.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>提出<strong>免训练后置概念瓶颈方法</strong>（Post-hoc Concept Bottleneck），无需微调或RLHF即可将冻结VLM的输出与人类偏好对齐。</li>
+<li>设计 <strong>Observer-Debater-Judge 多智能体推理链</strong>实现结构化评分，在CLIP+语义混合流形上通过<strong>局部加权岭回归（LWRR）</strong> 进行几何校准。</li>
+<li>准确率达到 <strong>72.2%</strong>（κ = 0.45；比未校准VLM提升16.3pp，比有监督基线提升15.1pp），具备<strong>维度级可解释性</strong>。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li><strong>訓練不要の事後概念ボトルネック手法</strong>を提案し、ファインチューニングやRLHFなしで凍結VLMの出力を人間の選好に整合。</li>
+<li><strong>Observer-Debater-Judge マルチエージェント推論チェーン</strong>による構造化スコアリングを設計し、CLIP+意味的ハイブリッド多様体上の<strong>局所重み付きリッジ回帰（LWRR）</strong> による幾何学的キャリブレーションを開発。</li>
+<li><strong>精度72.2%</strong> を達成（κ = 0.45；未校正VLM比+16.3pp、教師ありベースライン比+15.1pp向上）、<strong>次元レベルの解釈可能性</strong>を提供。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="UrbanAlign" decoding="async" height="1584" loading="lazy" src="images/papers/urbanalign.png" width="1224"/></div></div>
+</details>
+</div>
+</div><div class="paper-box paper-visual paper-visual-right" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:2f94510547842c" data-curation-order="11" data-curation-title='{"en": "GenAI Models Capture Urban Science but Oversimplify Complexity", "zh": "GenAI Models Capture Urban Science but Oversimplify Complexity", "ja": "GenAI Models Capture Urban Science but Oversimplify Complexity"}' data-research-visual="genai">
+<figure class="research-figure" data-research-figure="genai"><a aria-label="View full figure: AI4US framework" href="/assets/artwork/research/genai-framework-2161.webp" rel="noopener" target="_blank"><img alt="AI4US framework connecting synthetic and real cities across urban scales, with data synthesis and conditional intervention" decoding="async" height="803" loading="lazy" sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1196px) 44vw, 508px" src="/assets/artwork/research/genai-framework-960.webp" srcset="/assets/artwork/research/genai-framework-960.webp 960w, /assets/artwork/research/genai-framework-2161.webp 2161w" width="960"/></a><figcaption data-research-copy="genai"><span lang="en">Data synthesis, empirical comparison and controlled intervention. Figure 1 from the AI4US paper.</span><span lang="zh">数据合成、实证比较与受控干预。AI4US 论文图 1。</span><span lang="ja">データ生成、実証データとの比較、条件を制御した介入。AI4US 論文の図 1。</span></figcaption></figure>
+<div class="paper-box-text">
+<h3 id="genai-models-capture-urban-science-but-oversimplify-complexity"><strong>GenAI Models Capture Urban Science but Oversimplify Complexity</strong></h3>
+<p class="research-summary" data-research-copy="genai"><span lang="en">AI4US evaluates generative AI through data synthesis and controlled virtual experiments: tested models reproduce recognizable scaling and distance-decay patterns, yet generated data often lack diversity and deviate systematically from empirical relationships.</span><span lang="zh">AI4US 通过数据合成与受控虚拟实验评估生成式 AI：所测试的模型能复现城市标度和距离衰减模式，但生成数据常多样性不足，并与实证关系存在系统性偏差。</span><span lang="ja">AI4US はデータ生成と条件を制御した仮想実験を通じて生成 AI を評価し、検証したモデルが都市スケーリングと距離減衰のパターンを再現する一方、生成データはしばしば多様性に乏しく、実証的な関係から系統的にずれることを示した。</span></p>
+<p><strong>Yecheng Zhang</strong>, Rong Zhao, Zimu Huang, Xinyu Wang, Yue Ma, Ying Long*</p>
+<p><em>arXiv</em>, 2025. <a href="https://arxiv.org/abs/2505.13803">arXiv</a> | <a href="https://yechengzhang.duqi.top/cv/aiusv3.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Developed <strong>AI4US</strong> to evaluate <strong>data synthesis and conditional intervention</strong> across urban scaling, distance decay, neighbourhood vitality, and streetscape perception.</li>
+<li>Found reproducible directional responses alongside compressed numerical coverage, local variation, and visual diversity. Used <strong>Profile–Probe–Intervene</strong> analysis on <strong>Qwen2.5-VL-72B</strong> to test which urban relationships could be decoded from intermediate representations and influence selected outputs.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>提出 <strong>AI4US 多模态评测框架</strong>，围绕<strong>数据合成与条件干预</strong>两条路径，在城市标度、距离衰减、街区活力与街景感知四类任务中评估模型。</li>
+<li>发现模型可产生稳定的方向响应，但会压缩数值覆盖、局部波动与视觉多样性；在 <strong>Qwen2.5-VL-72B</strong> 上开展 <strong>Profile–Probe–Intervene</strong> 机制分析，验证部分城市规律可由中间表征解码并影响局部输出。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li><strong>AI4US</strong>を開発し、都市スケーリング、距離減衰、近隣の活力、街路景観の知覚の4課題で、<strong>データ合成と条件付き介入</strong>を評価。</li>
+<li>再現可能な方向応答と同時に、数値範囲、局所変動、視覚的多様性の縮小を確認。<strong>Qwen2.5-VL-72B</strong>の<strong>Profile–Probe–Intervene</strong>分析により、一部の都市関係が中間表現から解読でき、局所的な出力に影響することを検証。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="AI4US" decoding="async" height="1584" loading="lazy" src="images/papers/ai4us.png" width="1224"/></div></div>
+</details>
+</div>
+</div><div class="paper-box paper-visual" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:a26d63a509e979" data-curation-order="12" data-curation-title='{"en": "Towards Building-Scale Urban Analytics and Simulation", "zh": "Towards Building-Scale Urban Analytics and Simulation", "ja": "Towards Building-Scale Urban Analytics and Simulation"}' data-research-visual="building-simulation">
+<figure class="research-figure" data-research-figure="building-simulation"><a aria-label="View full figure: Building-scale urban simulation" href="/assets/artwork/research/building-scale-fig2-large.webp" rel="noopener" target="_blank"><img alt="Building-scale urban simulation linking physical and social systems through agents, graphs, and iterative system updates" decoding="async" height="536" loading="lazy" sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1196px) 44vw, 508px" src="/assets/artwork/research/building-scale-fig2-thumb.webp" srcset="/assets/artwork/research/building-scale-fig2-thumb.webp 960w, /assets/artwork/research/building-scale-fig2-large.webp 1488w" width="960"/></a><figcaption data-research-copy="building-simulation"><span lang="en">A proposed simulation linking physical and social change through agents and graphs. Figure 2 from the Building Simulation paper.</span><span lang="zh">结合智能体与图结构，联动建筑物理与社会属性的模拟构想。Building Simulation 论文图 2。</span><span lang="ja">エージェントとグラフ構造で建物の物理的・社会的変化を結ぶシミュレーション構想。Building Simulation 論文の図 2。</span></figcaption></figure>
+<div class="paper-box-text">
+<h3 id="towards-building-scale-urban-analytics-and-simulation"><strong>Towards Building-Scale Urban Analytics and Simulation</strong></h3>
+<p class="research-summary" data-research-copy="building-simulation"><span lang="en">This perspective proposes shared modeling standards, richer building data, AI-assisted assessment, and bottom-up urban simulation to connect the physical form of buildings with their social roles.</span><span lang="zh">从单栋建筑理解城市，提出统一建模标准、更丰富的建筑数据、AI 辅助评估与自下而上模拟，连接建筑的物理形态与社会角色。</span><span lang="ja">個々の建物から都市を捉え、共通のモデリング基準、充実した建物データ、AI による評価、ボトムアップ型シミュレーションを通じて、建物の物理的形態と社会的役割を結ぶ構想を提示する。</span></p>
+<p><strong>Yecheng Zhang</strong>, Ying Long*</p>
+<p><em>Building Simulation</em>, 19(5), 1171–1176, 2026. <a href="https://doi.org/10.1007/s12273-026-1461-9">DOI</a> | <a href="https://www.sciopen.com/article/10.1007/s12273-026-1461-9">Publisher</a> | <a href="https://yechengzhang.duqi.top/cv/11Zhang et al 2026 Building Simulation-BuildingScale.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Proposed <strong>Building-Scale Urban Analytics and Simulation</strong> as a bridge between building studies and urban science.</li>
+<li>Defined four pillars: unified multi-scale modeling, comprehensive building data foundations, generative-AI diagnosis, and bottom-up urban simulation.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>提出<strong>建筑尺度城市分析与模拟</strong>研究框架，连接建筑研究与城市科学。</li>
+<li>明确四个支柱：多尺度统一建模、综合建筑数据底座、生成式AI诊断，以及自下而上的城市模拟。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li>建築研究と都市科学をつなぐ<strong>建築スケール都市分析・シミュレーション</strong>を提案。</li>
+<li>マルチスケール統一モデリング、包括的建築データ基盤、生成AI診断、ボトムアップ都市シミュレーションの4本柱を提示。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="Towards building-scale urban analytics and simulation" decoding="async" height="1200" loading="lazy" src="images/papers/building-scale-urban.png" width="908"/></div></div>
+</details>
+</div>
+</div><div class="paper-box paper-visual paper-visual-right" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:4eeb33b77ce502" data-curation-order="13" data-curation-title='{"en": "CMAB: A Multi-Attribute Building Dataset of China ESI Highly Cited", "zh": "CMAB: A Multi-Attribute Building Dataset of China ESI Highly Cited", "ja": "CMAB: A Multi-Attribute Building Dataset of China ESI Highly Cited"}' data-research-visual="cmab">
+<figure class="research-figure" data-research-figure="cmab"><a aria-label="View full figure: CMAB building attributes and data sources" href="/assets/artwork/research/cmab-fig3-large.webp" rel="noopener" target="_blank"><img alt="CMAB building attributes and their source data: remote sensing, urban GIS, street-view imagery, and housing statistics" decoding="async" height="405" loading="lazy" sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1196px) 44vw, 508px" src="/assets/artwork/research/cmab-fig3-thumb.webp" srcset="/assets/artwork/research/cmab-fig3-thumb.webp 960w, /assets/artwork/research/cmab-fig3-large.webp 1900w" width="960"/></a><figcaption data-research-copy="cmab"><span lang="en">Building attributes and the data used to derive and validate them. Figure 3 from the CMAB paper.</span><span lang="zh">建筑属性与计算、验证所用数据的对应关系。CMAB 论文图 3。</span><span lang="ja">建物属性と、その算出・検証に用いるデータ源の対応関係。CMAB 論文の図 3。</span></figcaption></figure>
+<div class="paper-box-text">
+<h3 id="cmab-a-multi-attribute-building-dataset-of-china-esi-highly-cited"><strong>CMAB: A Multi-Attribute Building Dataset of China</strong> <span class="recognition">ESI Highly Cited</span></h3>
+<p class="research-summary" data-research-copy="cmab"><span lang="en">CMAB combines remote sensing, street imagery, and spatial data to describe buildings across China, linking their physical form with function, age, and quality.</span><span lang="zh">CMAB 融合遥感、街景与多源空间数据，描述中国建筑的物理形态、功能、年代与品质。</span><span lang="ja">CMAB はリモートセンシング、街路画像、その他の空間データを統合し、中国の建物の物理的形態と用途、築年代、品質を結び付けて記述する。</span></p>
+<p><strong>Yecheng Zhang</strong>†, Huimin Zhao†, Ying Long*</p>
+<p><em>Scientific Data</em>, 12, 430, 2025. <a href="https://doi.org/10.1038/s41597-025-04730-5">DOI</a> | <a href="https://yechengzhang.duqi.top/cv/08Zhang et al 2025 Scientific_Data-CMAB.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Built <strong>China's Multi-Attribute Building Dataset</strong> from remote sensing, street-view imagery, and spatial data, covering about <strong>31 million buildings</strong> in <strong>3,667 spatial cities</strong>, with rooftop, height, function, age, and quality information.</li>
+<li><strong>45,000+ downloads</strong> on Figshare/GitHub; recognized as <strong>ESI Highly Cited Paper</strong> in Geoscience.</li>
+<li>Featured by <a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>Tsinghua University’s official Facebook account</strong></a> for research impact.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>构建<strong>中国多属性建筑数据集（CMAB）</strong>，融合遥感、街景与空间数据，覆盖 <strong>3,667 个空间城市、约 3,100 万栋建筑</strong>，包含屋顶轮廓、高度、功能、年代与品质等信息。</li>
+<li>Figshare/GitHub累计 <strong>45,000+次下载</strong>；入选Geoscience领域 <strong>ESI高被引论文</strong>。</li>
+<li>研究成果被<a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>清华大学官方Facebook账号</strong></a>报道推送。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li>リモートセンシング、街路画像、空間データを統合した<strong>中国多属性建物データセット（CMAB）</strong>を構築し、<strong>3,667 の空間的に画定された都市、約 3,100 万棟</strong>について、屋根形状、高さ、用途、築年代、品質などを収録。</li>
+<li>Figshare/GitHubにて <strong>45,000回以上ダウンロード</strong>；地球科学分野の <strong>ESI高被引用論文</strong> に認定。</li>
+<li><a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>清華大学公式Facebookアカウント</strong></a>にて研究成果が紹介。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="CMAB" decoding="async" height="1565" loading="lazy" src="images/papers/08Zhang et al 2025 Scientific_Data-CMAB.png" width="1191"/></div></div>
+</details>
+</div>
+</div><div class="paper-box paper-visual" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:f69c5508d21e46" data-curation-order="14" data-curation-title='{"en": "Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data ESI Highly Cited", "zh": "Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data ESI Highly Cited", "ja": "Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data ESI Highly Cited"}' data-research-visual="glogci">
+<figure class="research-figure" data-research-figure="glogci"><a aria-label="View full figure: Global Ghost City Index map" href="/assets/artwork/research/glogci-fig7a-large.webp" rel="noopener" target="_blank"><img alt="Global distribution of the Ghost City Index, retaining the original color legend, geographic coordinates, and scale" decoding="async" height="516" loading="lazy" sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1196px) 44vw, 508px" src="/assets/artwork/research/glogci-fig7a-thumb.webp" srcset="/assets/artwork/research/glogci-fig7a-thumb.webp 960w" width="960"/></a><figcaption data-research-copy="glogci"><span lang="en">Global Ghost City Index across 8,841 cities. Figure 7(a) from the GloGCI paper.</span><span lang="zh">全球 8,841 座城市的鬼城指数分布。GloGCI 论文图 7(a)。</span><span lang="ja">世界 8,841 都市のゴーストシティ指数の分布。GloGCI 論文の図 7(a)。</span></figcaption></figure>
+<div class="paper-box-text">
+<h3 id="inferring-ghost-cities-on-the-globe-in-newly-developed-urban-areas-based-on-urban-vitality-with-multi-source-data-esi-highly-cited"><strong>Inferring Ghost Cities on the Globe in Newly Developed Urban Areas Based on Urban Vitality with Multi-source Data</strong> <span class="recognition">ESI Highly Cited</span></h3>
+<p class="research-summary" data-research-copy="glogci"><span lang="en">Comparing vitality in new and established urban areas, GloGCI uses road, amenity, and population data to map the Ghost City Index across cities worldwide.</span><span lang="zh">比较全球城市中新旧城区的活力，结合道路、设施与人口数据，测算并呈现全球鬼城指数的空间分布。</span><span lang="ja">世界各地の新市街地と既成市街地の活力を比較し、道路、施設、人口のデータからゴーストシティ指数の空間分布を示す。</span></p>
+<p><strong>Yecheng Zhang</strong>, Tangqi Tu, Ying Long*</p>
+<p><em>Habitat International</em>, 2025. <a href="https://yechengzhang.duqi.top/cv/07Zhang et al 2025 Habitat_International-GloGCI.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Developed <strong>GloGCI (Global Ghost City Index)</strong> from road, POI, and population densities, comparing vitality in new and old urban areas across <strong>8,841 natural cities</strong> larger than <strong>5 km²</strong>.</li>
+<li>Recognized as <strong>ESI Highly Cited Paper</strong> in Social Science. Research reported by <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> (one of the most influential popular science media in the US).</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>融合道路、POI 与人口密度，在全球 <strong>8,841 座面积大于 5 km² 的自然城市</strong>中比较新旧城区活力，测算 <strong>GloGCI（全球鬼城指数）</strong>。</li>
+<li>入选Social Science领域 <strong>ESI高被引论文</strong>。研究被美国最具影响力的科普媒体之一 <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> 报道。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li>道路・POI・人口の密度から新旧市街地の活力を比較し、面積 <strong>5 km² 超</strong>の世界 <strong>8,841 の自然都市</strong>を対象に <strong>GloGCI（グローバルゴーストシティ指数）</strong>を算出。</li>
+<li>社会科学分野の <strong>ESI高被引用論文</strong> に認定。研究成果が米国の有力科学メディア <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> に報道される。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="GloGCI" decoding="async" height="1588" loading="lazy" src="images/papers/07Zhang et al 2025 Habitat_International-GloGCI.png" width="1191"/></div></div>
+</details>
+</div>
+</div></div><ul class="curation-slot other-papers curation-slot-empty" data-curation-slot="featured" id="curation-research-list-featured"></ul><details class="more-items">
+<summary><span lang="en">More publications</span><span lang="zh">更多论文</span><span lang="ja">その他の論文</span></summary><div class="curation-slot" data-curation-slot="archive" id="curation-research-archive"><div class="paper-box" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:65ebb655a0ecaf" data-curation-order="15" data-curation-title='{"en": "Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition", "zh": "Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition", "ja": "Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition"}'>
+<div class="paper-box-text">
+<h3 id="rethinking-the-country-level-percentage-of-population-residing-in-urban-area-with-a-global-harmonized-urban-definition"><strong>Rethinking the Country-level Percentage of Population Residing in Urban Area with a Global Harmonized Urban Definition</strong></h3>
+<p>Wenyue Li†, <strong>Yecheng Zhang</strong>†, Mengxing Li, Ying Long*</p>
+<p><em>iScience</em>, 27, 110125, 2024. <a href="https://doi.org/10.1016/j.isci.2024.110125">DOI</a> | <a href="https://yechengzhang.duqi.top/cv/04Li et al 2024 iScience-GloPPRUA.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Constructed a <strong>global harmonized urban definition (GloPPRUA)</strong> dataset, providing consistent urban-rural boundaries across countries for comparative urbanization research.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>构建<strong>全球统一城市定义数据集（GloPPRUA）</strong>，为跨国城镇化比较研究提供一致的城乡边界划分。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li>各国間の比較都市化研究のために一貫した都市・農村境界を提供する<strong>グローバル統一都市定義データセット（GloPPRUA）</strong> を構築。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="GloPPRUA" decoding="async" height="1566" loading="lazy" src="images/papers/04Li et al 2024 iScience-GloPPRUA.png" width="1206"/></div></div>
+</details>
+</div>
+</div><div class="paper-box" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:01c22a4690082c" data-curation-order="16" data-curation-title='{"en": "Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic", "zh": "Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic", "ja": "Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic"}'>
+<div class="paper-box-text">
+<h3 id="urban-spatial-risk-prediction-and-optimization-analysis-of-poi-based-on-deep-learning-from-the-perspective-of-an-epidemic"><strong>Urban Spatial Risk Prediction and Optimization Analysis of POI based on Deep Learning from the Perspective of an Epidemic</strong></h3>
+<p><strong>Yecheng Zhang</strong>, Qimin Zhang, Yuxuan Zhao, Yunjie Deng, Hao Zheng*</p>
+<p><em>International Journal of Applied Earth Observations and Geoinformation</em>, 112, 102942, 2022. <a href="https://yechengzhang.duqi.top/cv/01Zhang et al 2022 JAG-GAN.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Applied <strong>GAN-based deep learning</strong> for urban spatial risk prediction and POI optimization during epidemic scenarios, combining spatiotemporal modeling with urban planning applications.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>应用<strong>基于GAN的深度学习</strong>进行疫情背景下的城市空间风险预测与POI优化，将时空建模与城市规划应用相结合。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li><strong>GANベースの深層学習</strong>を用いて感染症下の都市空間リスク予測とPOI最適化を実施、時空間モデリングと都市計画への応用を融合。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="JAG-GAN" decoding="async" height="1588" loading="lazy" src="images/papers/01Zhang et al 2022 JAG-GAN.png" width="1191"/></div></div>
+</details>
+</div>
+</div><div class="paper-box" data-curation-archive-target="curation-research-archive" data-curation-featured-target="curation-research-featured" data-curation-item="research:e2d582d6e9ab34" data-curation-order="17" data-curation-title='{"en": "WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval", "zh": "WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval", "ja": "WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval"}'>
+<div class="paper-box-text">
+<h3 id="wavec2r-wavelet-driven-coarse-to-refined-hierarchical-learning-for-radar-retrieval"><strong>WaveC2R: Wavelet-driven Coarse-to-refined Hierarchical Learning for Radar Retrieval</strong></h3>
+<p>Chunlei Shi, Han Xu, Yinghao Li, Yi-Lin Wei, Yongchao Feng, <strong>Yecheng Zhang</strong>, Dan Niu</p>
+<p><em>AAAI 2026</em> (CCF-A). <a href="https://arxiv.org/abs/2511.17558">arXiv</a> | <a href="https://yechengzhang.duqi.top/cv/卫星雷达反演zyc20250730.pdf">PDF</a></p>
+<details class="paper-abstract">
+<summary><span lang="en">Details</span><span lang="zh">详情</span><span lang="ja">詳細</span></summary>
+<div lang="en">
+<ul>
+<li>Satellite-to-radar reflectivity inversion using wavelet-driven coarse-to-refined hierarchical learning framework for meteorological remote sensing.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li>提出基于小波驱动的粗到精层次学习框架，用于气象遥感中的卫星-雷达反射率反演。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li>気象リモートセンシングにおける衛星-レーダー反射率反転のためのウェーブレット駆動粗密階層学習フレームワークを提案。</li>
+</ul>
+</div>
+<div class="paper-box-image"><div><img alt="WaveC2R" decoding="async" height="1080" loading="lazy" src="images/papers/wavec2r.png" width="1920"/></div></div>
+</details>
+</div>
+</div></div>
+<div class="other-papers">
+<ul class="curation-slot" data-curation-slot="archive" id="curation-research-list-archive">
+<li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:91717d392082e3" data-curation-order="18" data-curation-title='{"en": "Shi C, Han X, Zhang Y , Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. arXiv , 2026.", "zh": "Shi C, Han X, Zhang Y , Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. arXiv , 2026.", "ja": "Shi C, Han X, Zhang Y , Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. arXiv , 2026."}'>Shi C, Han X, <strong>Zhang Y</strong>, Wu B, Hou J, Wang J, Niu D. AWFlowS2R: A Flow-Based New Paradigm for All-Weather Satellite-to-Radar Retrieval. <em>arXiv</em>, 2026.</li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:9721e681b30f79" data-curation-order="19" data-curation-title='{"en": "Wang L, Hou C, Zhang Y , He J . Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation , 132, 104058, 2024. PDF", "zh": "Wang L, Hou C, Zhang Y , He J . Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation , 132, 104058, 2024. PDF", "ja": "Wang L, Hou C, Zhang Y , He J . Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation , 132, 104058, 2024. PDF"}'>Wang L, Hou C, <strong>Zhang Y</strong>, He J<em>. Measuring Solar Radiation and Spatio-temporal Distribution in Different Street Network Direction through Solar Trajectories and Street View Images. *International Journal of Applied Earth Observation and Geoinformation</em>, 132, 104058, 2024. <a href="https://yechengzhang.duqi.top/cv/06Wang et al 2024 JAG-SolarSVIs.pdf">PDF</a></li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:5ecf986579b9b6" data-curation-order="20" data-curation-title='{"en": "Long Y , Zhao H, Zhang Y . 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW , 48, 2024. DOI | PDF", "zh": "Long Y , Zhao H, Zhang Y . 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW , 48, 2024. DOI | PDF", "ja": "Long Y , Zhao H, Zhang Y . 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW , 48, 2024. DOI | PDF"}'>Long Y<em>, Zhao H, <strong>Zhang Y</strong>. 新城市科学：技术、计算、变革与应用. *城市规划 CITY PLANNING REVIEW</em>, 48, 2024. <a href="https://doi.org/10.11819/cpr20240702a">DOI</a> | <a href="https://yechengzhang.duqi.top/cv/05龙瀛等 2024 城市规划-新城市科学.pdf">PDF</a></li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:1658f1dbf79a43" data-curation-order="21" data-curation-title='{"en": "Li Y, Zhang Y , Wu Q, Xue R, Wang X, Si M, Zhang Y . Greening the Concrete Jungle: Unveiling the Co-mitigation of Greenspace Configuration on PM2.5 and Land Surface Temperature with Explanatory Machine Learning. *Urban Forestry &amp; Urban Greening , 88, 128086, 2023. PDF", "zh": "Li Y, Zhang Y , Wu Q, Xue R, Wang X, Si M, Zhang Y . Greening the Concrete Jungle: Unveiling the Co-mitigation of Greenspace Configuration on PM2.5 and Land Surface Temperature with Explanatory Machine Learning. *Urban Forestry &amp; Urban Greening , 88, 128086, 2023. PDF", "ja": "Li Y, Zhang Y , Wu Q, Xue R, Wang X, Si M, Zhang Y . Greening the Concrete Jungle: Unveiling the Co-mitigation of Greenspace Configuration on PM2.5 and Land Surface Temperature with Explanatory Machine Learning. *Urban Forestry &amp; Urban Greening , 88, 128086, 2023. PDF"}'>Li Y, <strong>Zhang Y</strong>, Wu Q, Xue R, Wang X, Si M, Zhang Y<em>. Greening the Concrete Jungle: Unveiling the Co-mitigation of Greenspace Configuration on PM2.5 and Land Surface Temperature with Explanatory Machine Learning. *Urban Forestry &amp; Urban Greening</em>, 88, 128086, 2023. <a href="https://yechengzhang.duqi.top/cv/03Li et al 2023 UFUG-SHAP.pdf">PDF</a></li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:a3ac7a449ec605" data-curation-order="22" data-curation-title='{"en": "Ding X, Zhang Y , Zhang Y, …, Haick H , Zhang M . Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles. ACS Nano , 16, 17376–17388, 2022. DOI | PDF", "zh": "Ding X, Zhang Y , Zhang Y, …, Haick H , Zhang M . Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles. ACS Nano , 16, 17376–17388, 2022. DOI | PDF", "ja": "Ding X, Zhang Y , Zhang Y, …, Haick H , Zhang M . Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles. ACS Nano , 16, 17376–17388, 2022. DOI | PDF"}'>Ding X, <strong>Zhang Y</strong>, Zhang Y, …, Haick H<em>, Zhang M</em>. Modular Assembly of MXene Frameworks for Noninvasive Disease Diagnosis via Urinary Volatiles. <em>ACS Nano</em>, 16, 17376–17388, 2022. <a href="https://doi.org/10.1021/acsnano.2c08266">DOI</a> | <a href="https://yechengzhang.duqi.top/cv/02Ding et al 2022 ACS_nano-Datafusion.pdf">PDF</a></li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:5ffb4bdd629d87" data-curation-order="23" data-curation-title='{"en": "Yao J, Jian Y, Shen Y, …, Zhang Y . Decoding the Spatial Heterogeneity of Bike-Sharing Impacts. Journal of Urban Planning and Development , 2025. DOI", "zh": "Yao J, Jian Y, Shen Y, …, Zhang Y . Decoding the Spatial Heterogeneity of Bike-Sharing Impacts. Journal of Urban Planning and Development , 2025. DOI", "ja": "Yao J, Jian Y, Shen Y, …, Zhang Y . Decoding the Spatial Heterogeneity of Bike-Sharing Impacts. Journal of Urban Planning and Development , 2025. DOI"}'>Yao J, Jian Y, Shen Y, …, <strong>Zhang Y</strong>. Decoding the Spatial Heterogeneity of Bike-Sharing Impacts. <em>Journal of Urban Planning and Development</em>, 2025. <a href="https://doi.org/10.1061/JUPDDM.UPENG-5192">DOI</a></li><li data-curation-archive-target="curation-research-list-archive" data-curation-featured-target="curation-research-list-featured" data-curation-item="research:97b7ede7126d81" data-curation-order="24" data-curation-title='{"en": "Zhang Y , et al. Generative Design Method of Building Group Based on AIP Assessment. UIA World Congress of Architects , Copenhagen, 2023.", "zh": "Zhang Y , et al. Generative Design Method of Building Group Based on AIP Assessment. UIA World Congress of Architects , Copenhagen, 2023.", "ja": "Zhang Y , et al. Generative Design Method of Building Group Based on AIP Assessment. UIA World Congress of Architects , Copenhagen, 2023."}'><strong>Zhang Y</strong>, et al. Generative Design Method of Building Group Based on AIP Assessment. <em>UIA World Congress of Architects</em>, Copenhagen, 2023.</li></ul>
+</div>
+</details>
+</section>
+<section class="section" data-curation-group="projects" data-curation-label='{"en": "Projects", "zh": "项目", "ja": "プロジェクト"}' id="projects">
+<div data-poetic-scene="projects" data-poetic-size="compact">
+<div class="poetic-copy"><blockquote><span lang="en">A little spark<br/>can kindle a great flame.</span><span lang="zh">微小的火星，<br/>也能引出大火。</span><span lang="ja">小さな火花から、<br/>大きな炎が生まれる。</span></blockquote><cite><a href="https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_LEN=15&amp;INP_POEM=Par&amp;INP_SECT=1&amp;INP_START=33&amp;LANG=2" rel="noopener" target="_blank" title="Poca favilla gran fiamma seconda."><span lang="en">Dante · Paradiso I, 34</span><span lang="zh">但丁 ·《天堂篇》1.34</span><span lang="ja">ダンテ ·『神曲』天国篇 1.34</span></a></cite></div>
+<div aria-hidden="true" class="poetic-art"><img alt="" height="360" loading="lazy" src="/assets/artwork/poetic-projects.svg?v=8c0dbe437740" width="820"/></div>
+</div>
+<h2 id="open-source--projects"><span lang="en">Open source &amp; projects</span><span lang="zh">开源与项目</span><span lang="ja">オープンソース・プロジェクト</span></h2>
+<!-- Public, illustrative examples. No connection to the author's private projects or memory store. -->
+<div class="project-showcase curation-slot" data-curation-slot="featured" data-project-showcase="" id="curation-projects-showcase-featured">
+<article aria-labelledby="memomind-title" class="project-feature project-feature-memory" data-curation-archive-target="curation-projects-showcase-archive" data-curation-featured-target="curation-projects-showcase-featured" data-curation-item="projects:memomind" data-curation-order="25" data-curation-title='{"en": "MemoMind", "zh": "MemoMind", "ja": "MemoMind"}'>
+<header class="project-feature-heading">
+<div><p class="project-eyebrow">01 / <span lang="en">Agent memory</span><span lang="zh">智能体记忆</span><span lang="ja">エージェントの記憶</span></p><h3 id="memomind-title">MemoMind</h3></div>
+<div><p class="project-feature-deck"><span lang="en">Carry the decision forward.</span><span lang="zh">让下一次工作，接得上这一次。</span><span lang="ja">次の作業へ、判断をつなぐ。</span></p><p class="project-feature-description"><span lang="en">Keep decisions, find their sources, and bring the relevant context into a new session.</span><span lang="zh">留下决定与出处，在新的会话里找回相关上下文。</span><span lang="ja">判断と出典を残し、新しいセッションで必要な文脈を取り戻す。</span></p>
+<p class="project-feature-links"><a href="https://github.com/24kchengYe/MemoMind">GitHub ↗</a><a href="https://github.com/24kchengYe/MemoMind#quick-start"><span lang="en">Get started</span><span lang="zh">开始使用</span><span lang="ja">使い始める</span> ↗</a></p></div>
+</header>
+<div class="project-demo memory-demo" data-initial-tab="remember" data-project-demo="memory">
+<div class="project-demo-topline"><span><span lang="en">A reading app, across sessions</span><span lang="zh">一个阅读应用，几次连续的工作</span><span lang="ja">読書アプリを、セッションをまたいで</span></span><small><span lang="en">Interactive example</span><span lang="zh">交互示例</span><span lang="ja">操作例</span></small></div>
+<div aria-label="Memory workflow" class="project-demo-tabs" data-aria-label-en="Memory workflow" data-aria-label-ja="記憶の流れ" data-aria-label-zh="记忆流程" data-project-tabs="" hidden="" role="tablist">
+<button aria-controls="memory-panel-remember" data-project-tab="remember" id="memory-tab-remember" role="tab" type="button"><small aria-hidden="true">01</small><span lang="en">Remember</span><span lang="zh">记住</span><span lang="ja">残す</span></button><button aria-controls="memory-panel-recall" data-project-tab="recall" id="memory-tab-recall" role="tab" type="button"><small aria-hidden="true">02</small><span lang="en">Recall</span><span lang="zh">找回</span><span lang="ja">探す</span></button><button aria-controls="memory-panel-reflect" data-project-tab="reflect" id="memory-tab-reflect" role="tab" type="button"><small aria-hidden="true">03</small><span lang="en">Reflect</span><span lang="zh">综合</span><span lang="ja">つなぐ</span></button>
+</div>
+<div class="memory-workspace">
+<div aria-hidden="true" class="memory-thread">
+<svg class="memory-thread-lines" fill="none" viewbox="0 0 300 320"><path d="M40 38 V260 Q40 278 58 278 H97"></path><path d="M40 106 H97 M40 192 H97"></path><path class="memory-thread-return" d="M248 106 Q280 106 280 135 V250 Q280 278 250 278 H220"></path></svg>
+<div class="memory-thread-origin"><span lang="en">Reading app</span><span lang="zh">阅读应用</span><span lang="ja">読書アプリ</span></div>
+<div class="memory-thread-note memory-thread-note-one"><small>01</small><span lang="en">Local search</span><span lang="zh">本地检索</span><span lang="ja">ローカル検索</span></div>
+<div class="memory-thread-note memory-thread-note-two"><small>02</small><span lang="en">Traceable notes</span><span lang="zh">可溯源笔记</span><span lang="ja">出典のあるノート</span></div>
+<div class="memory-thread-note memory-thread-note-next"><small>↳</small><span lang="en">Next session</span><span lang="zh">新的会话</span><span lang="ja">次のセッション</span></div>
+</div>
+<div class="project-demo-content">
+<section aria-labelledby="memory-tab-remember" data-project-panel="remember" id="memory-panel-remember">
+<p class="demo-kicker"><span lang="en">Start with a decision</span><span lang="zh">从一个决定开始</span><span lang="ja">判断を残す</span></p>
+<blockquote class="memory-prompt"><span lang="en">“Keep the reading index on this device, so I can search offline. Every note should link back to its source.”</span><span lang="zh">“阅读索引保存在本机，离线时也能搜索。每条笔记都要能回到原始来源。”</span><span lang="ja">「読書の索引は端末に置いて、オフラインでも検索したい。各ノートから元の資料へ戻れるように。」</span></blockquote>
+<ol class="memory-facts"><li data-memory-fact="local"><span class="memory-fact-id">01</span><div><strong><span lang="en">Keep the index local.</span><span lang="zh">索引保留在本机。</span><span lang="ja">索引を端末に保存する。</span></strong><span><span lang="en">Reason: offline reading.</span><span lang="zh">原因：需要离线阅读。</span><span lang="ja">理由：オフラインでも読むため。</span></span></div></li><li data-memory-fact="sources"><span class="memory-fact-id">02</span><div><strong><span lang="en">Keep a source link with each note.</span><span lang="zh">每条笔记保留来源链接。</span><span lang="ja">ノートに出典リンクを付ける。</span></strong><span><span lang="en">Reason: check the original context.</span><span lang="zh">原因：便于核对原始语境。</span><span lang="ja">理由：元の文脈を確かめるため。</span></span></div></li></ol>
+</section>
+<section aria-labelledby="memory-tab-recall" data-project-panel="recall" id="memory-panel-recall">
+<p class="demo-kicker"><span lang="en">A new session, a familiar question</span><span lang="zh">新的会话，接着之前的问题</span><span lang="ja">新しいセッションで問い直す</span></p>
+<div aria-label="Choose an example question" class="memory-questions" data-aria-label-en="Choose an example question" data-aria-label-ja="例の質問を選ぶ" data-aria-label-zh="选择一个示例问题" data-memory-questions="" hidden="" role="group"><button aria-pressed="true" data-memory-question="local" type="button"><span lang="en">Why a local index?</span><span lang="zh">为什么用本地索引？</span><span lang="ja">なぜ端末に索引を？</span></button><button aria-pressed="false" data-memory-question="sources" type="button"><span lang="en">Why keep source links?</span><span lang="zh">为什么保留来源？</span><span lang="ja">なぜ出典リンクを？</span></button></div>
+<div class="memory-answer" data-memory-answer="local"><p><span lang="en">The index stays on the device because the reading app needs to work offline.</span><span lang="zh">因为阅读应用需要离线可用，所以决定将索引保存在本机。</span><span lang="ja">オフラインでも読めるように、索引を端末に保存する方針です。</span></p><button class="memory-source" data-memory-source="local" hidden="" type="button"><span lang="en">View the original decision</span><span lang="zh">查看原始决定</span><span lang="ja">元の判断を見る</span> <span aria-hidden="true">↗ 01</span></button></div>
+<div class="memory-answer" data-memory-answer="sources"><p><span lang="en">Source links let the reader check a note against its original context.</span><span lang="zh">保留来源链接，是为了让读者能回到原始语境核对笔记。</span><span lang="ja">ノートの内容を元の文脈と照らして確かめるために、出典リンクを残します。</span></p><button class="memory-source" data-memory-source="sources" hidden="" type="button"><span lang="en">View the original decision</span><span lang="zh">查看原始决定</span><span lang="ja">元の判断を見る</span> <span aria-hidden="true">↗ 02</span></button></div>
+</section>
+<section aria-labelledby="memory-tab-reflect" data-project-panel="reflect" id="memory-panel-reflect">
+<p class="demo-kicker"><span lang="en">Put the two decisions together</span><span lang="zh">把两个决定连起来</span><span lang="ja">二つの判断をつなぐ</span></p><blockquote class="memory-prompt"><span lang="en">“How should the next search result work?”</span><span lang="zh">“下一版搜索结果应该怎样展示？”</span><span lang="ja">「次の検索結果は、どう表示する？」</span></blockquote>
+<p class="memory-synthesis"><span lang="en">Search the local index. Show the matching note with a link to its source, so reading can continue and the evidence stays within reach.</span><span lang="zh">先检索本地索引，再把匹配的笔记和来源链接一起展示，让阅读可以接续，也让依据随时可查。</span><span lang="ja">端末内の索引を検索し、該当するノートと出典リンクを一緒に表示する。読書を続けながら根拠も確かめられます。</span></p>
+<p class="memory-evidence"><span lang="en">Based on</span><span lang="zh">依据</span><span lang="ja">根拠</span> <button class="memory-source" data-memory-source="local" hidden="" type="button"><span lang="en">01 · Local index</span><span lang="zh">01 · 本地索引</span><span lang="ja">01 · 端末内の索引</span></button><button class="memory-source" data-memory-source="sources" hidden="" type="button"><span lang="en">02 · Source links</span><span lang="zh">02 · 来源链接</span><span lang="ja">02 · 出典リンク</span></button></p>
+</section>
+</div></div>
+<p class="project-demo-note"><span lang="en">An illustrative workflow with fictional notes. Explore each step; no AI service is called.</span><span lang="zh">使用虚构笔记的流程演示。可逐步体验，不调用 AI 服务。</span><span lang="ja">架空のノートを使った操作例です。各ステップを試せます。AI サービスには接続しません。</span></p>
+</div>
+</article><article aria-labelledby="zync-title" class="project-feature project-feature-zync" data-curation-archive-target="curation-projects-showcase-archive" data-curation-featured-target="curation-projects-showcase-featured" data-curation-item="projects:zync" data-curation-order="26" data-curation-title='{"en": "Zync", "zh": "Zync", "ja": "Zync"}'>
+<header class="project-feature-heading"><div><p class="project-eyebrow">02 / <span lang="en">Agent workspace</span><span lang="zh">智能体工作区</span><span lang="ja">エージェントの作業環境</span></p><h3 id="zync-title">Zync</h3></div>
+<div><p class="project-feature-deck"><span lang="en">Parallel work. A clear place to review.</span><span lang="zh">并行去做，集中来看。</span><span lang="ja">並行して進め、一か所で確かめる。</span></p><p class="project-feature-description"><span lang="en">Run coding agents in separate Git worktrees, then inspect each change before bringing it back.</span><span lang="zh">在独立的 Git worktree 中运行编程智能体，汇总前逐一检查改动。</span><span lang="ja">独立した Git worktree でコーディングエージェントを動かし、取り込む前に変更を確認する。</span></p><p class="project-feature-links"><a href="https://github.com/24kchengYe/Zync">GitHub ↗</a><a href="https://github.com/24kchengYe/Zync#quick-start"><span lang="en">Get started</span><span lang="zh">开始使用</span><span lang="ja">使い始める</span> ↗</a></p></div></header>
+<div class="project-demo zync-demo" data-initial-tab="search" data-project-demo="zync"><div class="project-demo-topline"><span>reading-app</span><small><span lang="en">Interactive example</span><span lang="zh">交互示例</span><span lang="ja">操作例</span></small></div>
+<div class="zync-workspace"><div aria-label="Example workspaces" aria-orientation="vertical" class="zync-sessions" data-aria-label-en="Example workspaces" data-aria-label-ja="作業環境の例" data-aria-label-zh="示例工作区" data-project-tabs="" hidden="" role="tablist">
+<button aria-controls="zync-panel-search" data-project-tab="search" id="zync-tab-search" role="tab" type="button"><span class="zync-session-num">01</span><span><strong><span lang="en">Search</span><span lang="zh">搜索</span><span lang="ja">検索</span></strong><small>Claude Code</small></span><span aria-hidden="true" class="zync-session-marker"></span></button><button aria-controls="zync-panel-theme" data-project-tab="theme" id="zync-tab-theme" role="tab" type="button"><span class="zync-session-num">02</span><span><strong><span lang="en">Theme</span><span lang="zh">外观</span><span lang="ja">テーマ</span></strong><small>Codex</small></span><span aria-hidden="true" class="zync-session-marker"></span></button><button aria-controls="zync-panel-keyboard" data-project-tab="keyboard" id="zync-tab-keyboard" role="tab" type="button"><span class="zync-session-num">03</span><span><strong><span lang="en">Keyboard</span><span lang="zh">键盘</span><span lang="ja">キーボード</span></strong><small>Aider</small></span><span aria-hidden="true" class="zync-session-marker"></span></button></div><div class="zync-worktree-panels"><section aria-labelledby="zync-tab-search" data-project-panel="search" id="zync-panel-search"><div class="zync-task"><p class="demo-kicker">Claude Code <span aria-hidden="true">/</span> <code>agents/search</code></p><p><span lang="en">Ignore letter case in titles.</span><span lang="zh">标题搜索不区分大小写。</span><span lang="ja">タイトル検索で大文字・小文字を区別しない。</span></p></div><div class="zync-diff"><p class="zync-file">src/search.ts</p><pre aria-label="Example code changes" data-aria-label-en="Example code changes" data-aria-label-ja="コード変更の例" data-aria-label-zh="示例代码改动"><code><span class="diff-same"><i aria-hidden="true"> </i>function matches(title, query) {</span><span class="diff-remove"><i aria-hidden="true">−</i>  return title.includes(query);</span><span class="diff-add"><i aria-hidden="true">+</i>  return title.toLowerCase()</span><span class="diff-add"><i aria-hidden="true">+</i>    .includes(query.toLowerCase());</span><span class="diff-same"><i aria-hidden="true"> </i>}</span></code></pre></div><div class="zync-review-row"><span><span lang="en">A separate worktree for this change.</span><span lang="zh">这项改动在独立的 worktree 中。</span><span lang="ja">この変更は独立した worktree に。</span></span><button aria-pressed="false" class="zync-review" data-zync-review="search" hidden="" type="button"><span data-review-unchecked=""><span lang="en">Mark reviewed</span><span lang="zh">标为已检查</span><span lang="ja">確認済みにする</span> <span aria-hidden="true">↗</span></span><span data-review-checked="" hidden=""><span lang="en">Reviewed</span><span lang="zh">已检查</span><span lang="ja">確認済み</span> <span aria-hidden="true">✓</span></span></button></div></section><section aria-labelledby="zync-tab-theme" data-project-panel="theme" id="zync-panel-theme"><div class="zync-task"><p class="demo-kicker">Codex <span aria-hidden="true">/</span> <code>agents/theme</code></p><p><span lang="en">Restore the reader’s theme choice.</span><span lang="zh">恢复读者之前选择的主题。</span><span lang="ja">読者が選んだテーマを復元する。</span></p></div><div class="zync-diff"><p class="zync-file">src/theme.ts</p><pre aria-label="Example code changes" data-aria-label-en="Example code changes" data-aria-label-ja="コード変更の例" data-aria-label-zh="示例代码改动"><code><span class="diff-remove"><i aria-hidden="true">−</i>const theme = 'light';</span><span class="diff-add"><i aria-hidden="true">+</i>const theme =</span><span class="diff-add"><i aria-hidden="true">+</i>  localStorage.getItem('theme')</span><span class="diff-add"><i aria-hidden="true">+</i>  ?? 'dark';</span></code></pre></div><div class="zync-review-row"><span><span lang="en">A separate worktree for this change.</span><span lang="zh">这项改动在独立的 worktree 中。</span><span lang="ja">この変更は独立した worktree に。</span></span><button aria-pressed="false" class="zync-review" data-zync-review="theme" hidden="" type="button"><span data-review-unchecked=""><span lang="en">Mark reviewed</span><span lang="zh">标为已检查</span><span lang="ja">確認済みにする</span> <span aria-hidden="true">↗</span></span><span data-review-checked="" hidden=""><span lang="en">Reviewed</span><span lang="zh">已检查</span><span lang="ja">確認済み</span> <span aria-hidden="true">✓</span></span></button></div></section><section aria-labelledby="zync-tab-keyboard" data-project-panel="keyboard" id="zync-panel-keyboard"><div class="zync-task"><p class="demo-kicker">Aider <span aria-hidden="true">/</span> <code>agents/keyboard</code></p><p><span lang="en">Keep the focus visible on links.</span><span lang="zh">让链接的键盘焦点清晰可见。</span><span lang="ja">リンクのキーボードフォーカスを見やすくする。</span></p></div><div class="zync-diff"><p class="zync-file">src/reader.css</p><pre aria-label="Example code changes" data-aria-label-en="Example code changes" data-aria-label-ja="コード変更の例" data-aria-label-zh="示例代码改动"><code><span class="diff-add"><i aria-hidden="true">+</i>a:focus-visible {</span><span class="diff-add"><i aria-hidden="true">+</i>  outline: 2px solid currentColor;</span><span class="diff-add"><i aria-hidden="true">+</i>  outline-offset: 4px;</span><span class="diff-add"><i aria-hidden="true">+</i>}</span></code></pre></div><div class="zync-review-row"><span><span lang="en">A separate worktree for this change.</span><span lang="zh">这项改动在独立的 worktree 中。</span><span lang="ja">この変更は独立した worktree に。</span></span><button aria-pressed="false" class="zync-review" data-zync-review="keyboard" hidden="" type="button"><span data-review-unchecked=""><span lang="en">Mark reviewed</span><span lang="zh">标为已检查</span><span lang="ja">確認済みにする</span> <span aria-hidden="true">↗</span></span><span data-review-checked="" hidden=""><span lang="en">Reviewed</span><span lang="zh">已检查</span><span lang="ja">確認済み</span> <span aria-hidden="true">✓</span></span></button></div></section></div></div><p class="project-demo-note"><span lang="en">Switch workspaces to inspect sample changes. Review marks belong to this example only.</span><span lang="zh">切换工作区查看示例改动；检查标记仅作用于本演示。</span><span lang="ja">作業環境を切り替えて変更例を確認できます。確認の印はこの操作例だけに反映されます。</span></p></div></article><p class="project-companion" data-curation-archive-target="curation-projects-showcase-archive" data-curation-featured-target="curation-projects-showcase-featured" data-curation-item="projects:humanskilltree" data-curation-order="27" data-curation-title='{"en": "A companion exploration in AI-assisted lifelong learning.", "zh": "另一个探索：AI 辅助的终身学习。", "ja": "もう一つの探究：AI と生涯学習。"}'><a href="https://github.com/24kchengYe/human-skill-tree">HumanSkillTree ↗</a><span><span lang="en">A companion exploration in AI-assisted lifelong learning.</span><span lang="zh">另一个探索：AI 辅助的终身学习。</span><span lang="ja">もう一つの探究：AI と生涯学習。</span></span></p></div>
+<ul class="curation-slot project-list curation-slot-empty" data-curation-slot="featured" id="curation-projects-list-featured"></ul><details class="more-items">
+<summary><span lang="en">All projects</span><span lang="zh">全部项目</span><span lang="ja">すべてのプロジェクト</span></summary><div class="curation-slot project-showcase curation-slot-empty" data-curation-slot="archive" id="curation-projects-showcase-archive"></div>
+<h3 class="project-group" data-curation-heading-for="curation-projects-list-0"><span lang="en">Research systems</span><span lang="zh">研究系统</span><span lang="ja">研究システム</span></h3>
+<ul class="project-list curation-slot" data-curation-slot="archive" id="curation-projects-list-0"><li data-curation-archive-target="curation-projects-list-0" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:ai4urbanscience" data-curation-order="28" data-curation-title='{"en": "AI4UrbanScience", "zh": "AI4UrbanScience", "ja": "AI4UrbanScience"}'><div class="project-name"><a href="https://github.com/24kchengYe/AI4UrbanScience"><strong>AI4UrbanScience</strong></a></div><div><div class="project-description"><span lang="en">Evaluate and calibrate GenAI for urban-science data synthesis.</span><span lang="zh">评测并校准生成式AI的城市科学数据合成能力。</span><span lang="ja">都市科学データ生成における生成AIを評価・校正。</span></div><div class="project-links"><a href="https://arxiv.org/abs/2505.13803">Paper</a> · <a href="https://github.com/24kchengYe/AI4UrbanScience">Code</a></div></div></li><li data-curation-archive-target="curation-projects-list-0" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:urbanalign" data-curation-order="29" data-curation-title='{"en": "UrbanAlign", "zh": "UrbanAlign", "ja": "UrbanAlign"}'><div class="project-name"><a href="https://github.com/24kchengYe/UrbanAlign"><strong>UrbanAlign</strong></a></div><div><div class="project-description"><span lang="en">Training-free VLM–human preference alignment.</span><span lang="zh">免训练的视觉语言模型与人类偏好对齐。</span><span lang="ja">学習不要のVLM–人間選好アライメント。</span></div><div class="project-links"><a href="https://arxiv.org/abs/2602.19442">ECCV 2026</a> · <a href="https://github.com/24kchengYe/UrbanAlign">Code</a></div></div></li></ul>
+<h3 class="project-group" data-curation-heading-for="curation-projects-list-1"><span lang="en">AI products</span><span lang="zh">AI产品</span><span lang="ja">AIプロダクト</span></h3>
+<ul class="project-list curation-slot" data-curation-slot="archive" id="curation-projects-list-1"><li data-curation-archive-target="curation-projects-list-1" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:digitalme" data-curation-order="30" data-curation-title='{"en": "DigitalMe", "zh": "DigitalMe", "ja": "DigitalMe"}'><div class="project-name"><a href="https://github.com/24kchengYe/DigitalMe"><strong>DigitalMe</strong></a></div><div><div class="project-description"><span lang="en">Control coding agents from Feishu, Telegram, or Slack.</span><span lang="zh">通过飞书、Telegram或Slack远程控制编程智能体。</span><span lang="ja">Feishu、Telegram、Slackからコーディングエージェントを操作。</span></div><div class="project-links"><a href="https://github.com/24kchengYe/DigitalMe">GitHub</a></div></div></li><li data-curation-archive-target="curation-projects-list-1" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:smartbidding-server" data-curation-order="31" data-curation-title='{"en": "SmartBidding 🔒", "zh": "SmartBidding 🔒", "ja": "SmartBidding 🔒"}'><div class="project-name"><a href="https://github.com/24kchengYe/SmartBidding-Server"><strong>SmartBidding 🔒</strong></a></div><div><div class="project-description"><span lang="en">Production engineering-bid intelligence platform for OCR, structured review, retrieval, generation, and audit.</span><span lang="zh">面向工程投标的生产级智能审查与生成平台，覆盖OCR、结构化审查、检索、生成与审计。</span><span lang="ja">OCR、構造化レビュー、検索、生成、監査を備えた入札インテリジェンス基盤。</span></div><div class="project-links"><a href="https://github.com/24kchengYe/SmartBidding-Server">GitHub</a></div></div></li></ul>
+<h3 class="project-group" data-curation-heading-for="curation-projects-list-2"><span lang="en">Infrastructure and data</span><span lang="zh">基础设施与数据</span><span lang="ja">基盤とデータ</span></h3>
+<ul class="project-list curation-slot" data-curation-slot="archive" id="curation-projects-list-2"><li data-curation-archive-target="curation-projects-list-2" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:ai-api-gateway" data-curation-order="32" data-curation-title='{"en": "AI API Gateway 🔒", "zh": "AI API Gateway 🔒", "ja": "AI API Gateway 🔒"}'><div class="project-name"><a href="https://github.com/24kchengYe/ai-api-gateway"><strong>AI API Gateway 🔒</strong></a></div><div><div class="project-description"><span lang="en">Private model routing, shared-service access, device isolation, and credential-control architecture.</span><span lang="zh">私有模型路由、共享服务接入、设备隔离与凭据控制架构。</span><span lang="ja">プライベートモデルルーティング、共有サービス接続、デバイス分離、認証情報管理。</span></div><div class="project-links"><a href="https://github.com/24kchengYe/ai-api-gateway">GitHub</a></div></div></li><li data-curation-archive-target="curation-projects-list-2" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:gehi-batch-router" data-curation-order="33" data-curation-title='{"en": "GEHI Batch Router", "zh": "GEHI Batch Router", "ja": "GEHI Batch Router"}'><div class="project-name"><a href="https://github.com/24kchengYe/gehi-batch-router"><strong>GEHI Batch Router</strong></a></div><div><div class="project-description"><span lang="en">Restartable historical-imagery routing with actual-date provenance, quality gates, and auditable manifests.</span><span lang="zh">支持断点续跑的历史影像路由，记录实际日期、质量门禁与可审计血缘。</span><span lang="ja">実取得日、品質ゲート、監査可能なマニフェストを備えた再開可能な歴史画像ルーティング。</span></div><div class="project-links"><a href="https://github.com/24kchengYe/gehi-batch-router">GitHub</a></div></div></li><li data-curation-archive-target="curation-projects-list-2" data-curation-featured-target="curation-projects-list-featured" data-curation-item="projects:daylife" data-curation-order="34" data-curation-title='{"en": "DayLife", "zh": "DayLife", "ja": "DayLife"}'><div class="project-name"><a href="https://github.com/24kchengYe/daylife"><strong>DayLife</strong></a></div><div><div class="project-description"><span lang="en">Local-first personal activity understanding and AI-assisted reflection.</span><span lang="zh">Local-first 的个人活动理解与AI辅助反思系统。</span><span lang="ja">ローカルファーストな個人活動理解とAI支援リフレクション。</span></div><div class="project-links"><a href="https://github.com/24kchengYe/daylife">GitHub</a></div></div></li></ul>
+<p class="project-more"><span lang="en">Supporting systems include InfoHub, web-novel-crawler, HomeSync, Desktop Controller, Recall, Prompt Harness, Experiment Log, Note2Video, AI Reviewer, CiteMind, and k2md.</span><span lang="zh">配套系统包括 InfoHub、web-novel-crawler、HomeSync、Desktop Controller、Recall、Prompt Harness、Experiment Log、Note2Video、AI Reviewer、CiteMind 与 k2md。</span><span lang="ja">関連システムには InfoHub、web-novel-crawler、HomeSync、Desktop Controller、Recall、Prompt Harness、Experiment Log、Note2Video、AI Reviewer、CiteMind、k2md があります。</span></p>
+<p class="project-more"><a href="https://github.com/24kchengYe?tab=repositories"><span lang="en">Explore the complete project catalog →</span><span lang="zh">查看完整项目列表 →</span><span lang="ja">全プロジェクト一覧を見る →</span></a></p>
+</details>
+</section>
+<section class="section reading-entry" id="reading">
+<div data-poetic-scene="reading" data-poetic-size="compact">
+<div class="poetic-copy"><blockquote><span lang="en">And so we emerged<br/>to see the stars again.</span><span lang="zh">于是我们走出，<br/>重见群星。</span><span lang="ja">そして外へ出て、<br/>再び星を見た。</span></blockquote><cite><a href="https://www.treccani.it/enciclopedia/rivedere_%28Enciclopedia-Dantesca%29/" rel="noopener" target="_blank" title="E quindi uscimmo a riveder le stelle."><span lang="en">Dante · Inferno XXXIV, 139</span><span lang="zh">但丁 ·《地狱篇》34.139</span><span lang="ja">ダンテ ·『神曲』地獄篇 34.139</span></a></cite></div>
+<div aria-hidden="true" class="poetic-art"><img alt="" height="360" loading="lazy" src="/assets/artwork/poetic-reading.svg?v=b9e9f23595cc" width="820"/></div>
+</div>
+<h2><span lang="en">Reading</span><span lang="zh">阅读</span><span lang="ja">読書</span></h2>
+<a href="https://yechengzhang.duqi.top/reading/"><span lang="en">Bookshelf →</span><span lang="zh">书架 →</span><span lang="ja">本棚 →</span></a>
+<p><span lang="en">Technical reports, AI learning, and researchers’ writing.</span><span lang="zh">基模技术报告、AI 技术学习与研究者博客。</span><span lang="ja">技術レポート、AI 学習、研究者のブログ。</span></p>
+</section>
+<section class="section" id="experience">
+<h2 id="experience"><span lang="en">Experience</span><span lang="zh">经历</span><span lang="ja">経歴</span></h2>
+<div lang="en">
+<div class="experience-entry">
+<p><strong>ByteDance · PDI–Seed · Lark Base AI</strong> | LLM Algorithm Intern (ByteIntern) | 2026.05 – Present</p>
+</div>
+<div class="experience-entry">
+<p><strong>Nanjing Xinda Institute of Meteorological Science and Technology</strong> | Doctoral Practice (Excellent Evaluation) | 2025</p>
+<details class="experience-detail">
+<summary><span lang="en">Work &amp; methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
+<ul>
+<li>Systematically benchmarked <strong>10+ deep learning architectures</strong> (CNN/GAN/Diffusion/Transformer/Flow Matching) for FY-4B satellite-to-radar composite reflectivity inversion using <strong>22-channel</strong> input (15 base + 7 hand-crafted BTD features encoding cloud phase and moisture gradients); designed exponentially-weighted loss to address extreme class imbalance.</li>
+<li>Conditional Flow Matching (CFM) achieved CSI <strong>+7.2%</strong> and FAR <strong>-30%</strong> over baseline; <strong>zero-shot geographic transfer</strong> to radar-blind Xinjiang validated with GPM satellite data.</li>
+</ul>
+</details>
+</div>
+</div>
+<div lang="zh">
+<div class="experience-entry">
+<p><strong>字节跳动 · PDI–Seed · Lark Base AI</strong> | 大模型算法实习生（ByteIntern） | 2026.05 – 至今</p>
+</div>
+<div class="experience-entry">
+<p><strong>南京信大气象科学技术研究院</strong> | 博士实践（优秀评价）| 2025</p>
+<details class="experience-detail">
+<summary><span lang="en">Work &amp; methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
+<ul>
+<li>系统基准测试 <strong>10+深度学习架构</strong>（CNN/GAN/Diffusion/Transformer/Flow Matching），用于FY-4B卫星-雷达组合反射率反演，使用 <strong>22通道</strong>输入（15基础通道+7个手工设计BTD特征，编码云相态和水汽梯度）；设计指数加权损失函数解决极端类别不平衡问题。</li>
+<li>条件流匹配（CFM）在CSI上提升 <strong>+7.2%</strong>，FAR降低 <strong>-30%</strong>；实现至无雷达覆盖的新疆地区的<strong>零样本地理迁移</strong>，使用GPM卫星数据验证。</li>
+</ul>
+</details>
+</div>
+</div>
+<div lang="ja">
+<div class="experience-entry">
+<p><strong>ByteDance · PDI–Seed · Lark Base AI</strong> | LLMアルゴリズムインターン（ByteIntern） | 2026.05 – 現在</p>
+</div>
+<div class="experience-entry">
+<p><strong>南京信大気象科学技術研究院</strong> | 博士実践（優秀評価）| 2025</p>
+<details class="experience-detail">
+<summary><span lang="en">Work &amp; methods</span><span lang="zh">工作与方法</span><span lang="ja">業務・手法</span></summary>
+<ul>
+<li>FY-4B衛星-レーダー合成反射率反転のために <strong>10以上の深層学習アーキテクチャ</strong>（CNN/GAN/Diffusion/Transformer/Flow Matching）を体系的にベンチマーク、<strong>22チャネル</strong>入力（15ベース+7手作りBTD特徴量、雲相と水蒸気勾配をエンコード）を使用；極端なクラス不均衡に対処する指数加重損失を設計。</li>
+<li>条件付きフローマッチング（CFM）がCSI <strong>+7.2%</strong>、FAR <strong>-30%</strong> の改善を達成；GPM衛星データで検証されたレーダー未カバー地域新疆への<strong>ゼロショット地理的転移</strong>を実現。</li>
+</ul>
+</details>
+</div>
+</div>
+<p class="resume-entry-link" id="education"><a data-site-link="" href="/resume/"><span lang="en">Full resume →</span><span lang="zh">完整简历 →</span><span lang="ja">履歴書の全文 →</span></a></p>
+</section>
+<section class="section news-list" data-curation-group="news" data-curation-label='{"en": "News", "zh": "动态", "ja": "ニュース"}' id="news">
+<h2 id="news"><span lang="en">News</span><span lang="zh">动态</span><span lang="ja">ニュース</span></h2>
+<div lang="en">
+<ul class="curation-slot" data-curation-slot="featured" id="curation-news-en-featured">
+<li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:9bbd4eccd5d74a" data-curation-order="35" data-curation-title='{"en": "2026.09 : Received the National Scholarship at Tsinghua University."}'><em>2026.09</em>: Received the <strong>National Scholarship</strong> at Tsinghua University.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:f25bf0b831f0f4" data-curation-order="36" data-curation-title='{"en": "2026 : Selected for CAST’s doctoral talent development program ."}'><em>2026</em>: Selected for <strong>CAST’s doctoral talent development program</strong>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:e3428d0594d43d" data-curation-order="37" data-curation-title='{"en": "2026.06 : Paper “UrbanAlign” accepted at ECCV 2026 ."}'><em>2026.06</em>: Paper “UrbanAlign” accepted at <strong>ECCV 2026</strong>.</li></ul>
+<details class="more-items">
+<summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
+<ul class="curation-slot" data-curation-slot="archive" id="curation-news-en-archive">
+<li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:57becfff3fc72a" data-curation-order="38" data-curation-title='{"en": "2026.06 : Paper “Towards building-scale urban analytics and simulation” published in Building Simulation (SCI Q1)."}'><em>2026.06</em>: Paper “Towards building-scale urban analytics and simulation” published in <strong>Building Simulation</strong> (SCI Q1).</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:ee594c936677f9" data-curation-order="39" data-curation-title='{"en": "2026.04 : Ghost Cities paper recognized as ESI Highly Cited Paper in Social Science, Habitat International ."}'><em>2026.04</em>: Ghost Cities paper recognized as <strong>ESI Highly Cited Paper</strong> in Social Science, <em>Habitat International</em>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:ed8d0c399c3ff0" data-curation-order="40" data-curation-title='{"en": "2026.04 : Paper “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” accepted at CVPR 2026 Findings . Project Page"}'><em>2026.04</em>: Paper “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” accepted at <strong>CVPR 2026 Findings</strong>. <a href="https://junhaoooxia.github.io/DAPE.github.io/">Project Page</a></li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:aad511235c888c" data-curation-order="41" data-curation-title='{"en": "2026.01 : Our research on global ghost cities reported by Popular Mechanics (one of the most influential popular science media in the US)."}'><em>2026.01</em>: Our research on global ghost cities reported by <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> (one of the most influential popular science media in the US).</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:406078485387d0" data-curation-order="42" data-curation-title='{"en": "2025.11 : Paper “WaveC2R” accepted at AAAI 2026 (CCF-A)."}'><em>2025.11</em>: Paper “WaveC2R” accepted at <strong>AAAI 2026</strong> (CCF-A).</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:46301dbc6ac2cd" data-curation-order="43" data-curation-title='{"en": "2025.11 : CMAB paper recognized as ESI Highly Cited Paper in Geoscience."}'><em>2025.11</em>: CMAB paper recognized as <strong>ESI Highly Cited Paper</strong> in Geoscience.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:2c2bf113558d1e" data-curation-order="44" data-curation-title='{"en": "2025.11 : “新城市科学” paper listed in CNKI Top 20 Most-Cited Papers (2024-2025) in 城市规划 CITY PLANNING REVIEW ."}'><em>2025.11</em>: “新城市科学” paper listed in <a href="https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw"><strong>CNKI Top 20 Most-Cited Papers</strong></a> (2024-2025) in <em>城市规划 CITY PLANNING REVIEW</em>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:3309eb8bfd8651" data-curation-order="45" data-curation-title='{"en": "2025.11 : Received “GIS Rising Star” Award (10 nationwide) and served as Session Chair &amp; Speaker at the Rising Star Forum, The 13th China College GIS Forum, Shanghai."}'><em>2025.11</em>: Received <strong>“GIS Rising Star” Award</strong> (10 nationwide) and served as Session Chair &amp; Speaker at the Rising Star Forum, The 13th China College GIS Forum, Shanghai.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:23001b93edea7e" data-curation-order="46" data-curation-title='{"en": "2025.10 : Poster at China Urban Planning Informatization Annual Conference , Foshan."}'><em>2025.10</em>: Poster at <strong>China Urban Planning Informatization Annual Conference</strong>, Foshan.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:4211b71d341ed7" data-curation-order="47" data-curation-title='{"en": "2025.10 : Received Jin Jingchang Outstanding Paper Award (佳作奖, 22nd edition), Shanghai."}'><em>2025.10</em>: Received <strong>Jin Jingchang Outstanding Paper Award</strong> (佳作奖, 22nd edition), Shanghai.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:9bc2e4241c9e8c" data-curation-order="48" data-curation-title='{"en": "2025.08 : Recognized as Outstanding Teaching Assistant (Top 5%) at Tsinghua University, 2024–2025 Fall."}'><em>2025.08</em>: Recognized as <strong>Outstanding Teaching Assistant</strong> (Top 5%) at Tsinghua University, 2024–2025 Fall.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:6fc197ca746682" data-curation-order="49" data-curation-title='{"en": "2025.06 : CMAB research featured on Tsinghua University’s official Facebook account ."}'><em>2025.06</em>: CMAB research featured on <a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>Tsinghua University’s official Facebook account</strong></a>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:2a72df95d37514" data-curation-order="50" data-curation-title='{"en": "2025.05 : Nominated for Tsinghua University’s 29th Graduate “Academic Rising Star” (学术新秀; 10 university-wide, sole nominee from School of Architecture)."}'><em>2025.05</em>: Nominated for Tsinghua University’s 29th Graduate <strong>“Academic Rising Star”</strong> (学术新秀; 10 university-wide, sole nominee from School of Architecture).</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:0111cc39d6c898" data-curation-order="51" data-curation-title='{"en": "2025.05 : Exhibitor at China Pavilion, 19th Venice Architecture Biennale , Venice, Italy."}'><em>2025.05</em>: Exhibitor at <strong>China Pavilion, 19th Venice Architecture Biennale</strong>, Venice, Italy.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:153a58fd8826ee" data-curation-order="52" data-curation-title='{"en": "2025.03 : Presented at AAG 2025 , Detroit, USA."}'><em>2025.03</em>: Presented at <strong>AAG 2025</strong>, Detroit, USA.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:2df915c68cde6d" data-curation-order="53" data-curation-title='{"en": "2025.01 : Paper “CMAB” published in Scientific Data — 45,000+ downloads ."}'><em>2025.01</em>: Paper “CMAB” published in <strong>Scientific Data</strong> — <strong>45,000+ downloads</strong>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:4f3e0d5de2fd91" data-curation-order="54" data-curation-title='{"en": "2025.01 : Received Outstanding Case Award for “AI-Empowered Planning” from Urban Planning Society of China."}'><em>2025.01</em>: Received <strong>Outstanding Case Award for “AI-Empowered Planning”</strong> from Urban Planning Society of China.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:0bf8e537aa3bbe" data-curation-order="55" data-curation-title='{"en": "2024.12 : Paper “Inferring Ghost Cities” published in Habitat International ."}'><em>2024.12</em>: Paper “Inferring Ghost Cities” published in <strong>Habitat International</strong>.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:121c3164126685" data-curation-order="56" data-curation-title='{"en": "2024.11 : Presented at Tsinghua University “Future Urban Construction” Ph.D. Forum , Beijing."}'><em>2024.11</em>: Presented at <strong>Tsinghua University “Future Urban Construction” Ph.D. Forum</strong>, Beijing.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:00de19b9e11950" data-curation-order="57" data-curation-title='{"en": "2024.06 : Invited talk at Applied Urban Modelling (AUM2024) , University of Cambridge, UK."}'><em>2024.06</em>: Invited talk at <strong>Applied Urban Modelling (AUM2024)</strong>, University of Cambridge, UK.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:b4ffdb075819ef" data-curation-order="58" data-curation-title='{"en": "2024.01 : Attended NSFC Major Project Kick-off Meeting , Guangzhou."}'><em>2024.01</em>: Attended <strong>NSFC Major Project Kick-off Meeting</strong>, Guangzhou.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:1f00c5ff0b02ac" data-curation-order="59" data-curation-title='{"en": "2023.08 : Presented at The First Research Summit of Urban Science , Beijing."}'><em>2023.08</em>: Presented at <strong>The First Research Summit of Urban Science</strong>, Beijing.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:7bc1d5ba5688bb" data-curation-order="60" data-curation-title='{"en": "2023.08 : Presented at Global Smart Cities Summit (GSCS) &amp; 3rd International Conference on Urban Informatics (ICUI) , Hong Kong."}'><em>2023.08</em>: Presented at <strong>Global Smart Cities Summit (GSCS) &amp; 3rd International Conference on Urban Informatics (ICUI)</strong>, Hong Kong.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:3b3d4baffdcdf6" data-curation-order="61" data-curation-title='{"en": "2023.07 : Presented at UIA World Congress of Architects , Copenhagen, Denmark."}'><em>2023.07</em>: Presented at <strong>UIA World Congress of Architects</strong>, Copenhagen, Denmark.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:3d66457f323dcf" data-curation-order="62" data-curation-title='{"en": "2023.06 : Teaching assistant at Tongji University Architectural DigitalFUTURES workshop “Emerging Planetarism”, Shanghai."}'><em>2023.06</em>: Teaching assistant at <strong>Tongji University Architectural DigitalFUTURES</strong> workshop “Emerging Planetarism”, Shanghai.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:a8a5dba1a7d2e9" data-curation-order="63" data-curation-title='{"en": "2023.05 : Exhibitor at China Pavilion, 18th Venice Architecture Biennale , Venice, Italy."}'><em>2023.05</em>: Exhibitor at <strong>China Pavilion, 18th Venice Architecture Biennale</strong>, Venice, Italy.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:b11cb71b740dc4" data-curation-order="64" data-curation-title='{"en": "2022.09 : Presented at CUSR Urban Big Data Annual Meeting , Beijing."}'><em>2022.09</em>: Presented at <strong>CUSR Urban Big Data Annual Meeting</strong>, Beijing.</li><li data-curation-archive-target="curation-news-en-archive" data-curation-featured-target="curation-news-en-featured" data-curation-item="news:2c1a8304ebf979" data-curation-order="65" data-curation-title='{"en": "2022.07 : Presented at 4th International Conference on Computational Design and Robotic Fabrication , Shanghai."}'><em>2022.07</em>: Presented at <strong>4th International Conference on Computational Design and Robotic Fabrication</strong>, Shanghai.</li></ul>
+</details>
+</div>
+<div lang="zh">
+<ul class="curation-slot" data-curation-slot="featured" id="curation-news-zh-featured">
+<li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:9bbd4eccd5d74a" data-curation-order="66" data-curation-title='{"zh": "2026.09 : 获 清华大学国家奖学金 。", "en": "2026.09 : Received the National Scholarship at Tsinghua University."}'><em>2026.09</em>: 获<strong>清华大学国家奖学金</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:f25bf0b831f0f4" data-curation-order="66" data-curation-title='{"zh": "2026 : 入选 中国科协青年科技人才培育工程博士生专项计划 。", "en": "2026 : Selected for CAST’s doctoral talent development program ."}'><em>2026</em>: 入选<strong>中国科协青年科技人才培育工程博士生专项计划</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:e3428d0594d43d" data-curation-order="66" data-curation-title='{"zh": "2026.06 : 论文 “UrbanAlign” 被 ECCV 2026 录用。", "en": "2026.06 : Paper “UrbanAlign” accepted at ECCV 2026 ."}'><em>2026.06</em>: 论文 “UrbanAlign” 被 <strong>ECCV 2026</strong> 录用。</li></ul>
+<details class="more-items">
+<summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
+<ul class="curation-slot" data-curation-slot="archive" id="curation-news-zh-archive">
+<li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:57becfff3fc72a" data-curation-order="66" data-curation-title='{"zh": "2026.06 : 论文 “Towards building-scale urban analytics and simulation” 发表于 Building Simulation （SCI Q1）。", "en": "2026.06 : Paper “Towards building-scale urban analytics and simulation” published in Building Simulation (SCI Q1)."}'><em>2026.06</em>: 论文 “Towards building-scale urban analytics and simulation” 发表于 <strong>Building Simulation</strong>（SCI Q1）。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:ee594c936677f9" data-curation-order="66" data-curation-title='{"zh": "2026.04 : 鬼城论文入选Social Science领域 ESI高被引论文 ， Habitat International 。", "en": "2026.04 : Ghost Cities paper recognized as ESI Highly Cited Paper in Social Science, Habitat International ."}'><em>2026.04</em>: 鬼城论文入选Social Science领域 <strong>ESI高被引论文</strong>，<em>Habitat International</em>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:ed8d0c399c3ff0" data-curation-order="66" data-curation-title='{"zh": "2026.04 : 论文 “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” 被 CVPR 2026 Findings 录用。 项目主页", "en": "2026.04 : Paper “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” accepted at CVPR 2026 Findings . Project Page"}'><em>2026.04</em>: 论文 “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” 被 <strong>CVPR 2026 Findings</strong> 录用。<a href="https://junhaoooxia.github.io/DAPE.github.io/">项目主页</a></li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:aad511235c888c" data-curation-order="66" data-curation-title='{"zh": "2026.01 : 全球鬼城研究被美国最具影响力的科普媒体之一 Popular Mechanics 报道。", "en": "2026.01 : Our research on global ghost cities reported by Popular Mechanics (one of the most influential popular science media in the US)."}'><em>2026.01</em>: 全球鬼城研究被美国最具影响力的科普媒体之一 <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> 报道。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:406078485387d0" data-curation-order="66" data-curation-title='{"zh": "2025.11 : 论文 “WaveC2R” 被 AAAI 2026 (CCF-A) 录用。", "en": "2025.11 : Paper “WaveC2R” accepted at AAAI 2026 (CCF-A)."}'><em>2025.11</em>: 论文 “WaveC2R” 被 <strong>AAAI 2026</strong> (CCF-A) 录用。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:46301dbc6ac2cd" data-curation-order="66" data-curation-title='{"zh": "2025.11 : CMAB论文入选Geoscience领域 ESI高被引论文 。", "en": "2025.11 : CMAB paper recognized as ESI Highly Cited Paper in Geoscience."}'><em>2025.11</em>: CMAB论文入选Geoscience领域 <strong>ESI高被引论文</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:2c2bf113558d1e" data-curation-order="66" data-curation-title='{"zh": "2025.11 : “新城市科学”论文入选 中国知网《城市规划》2024-2025年度高被引论文TOP20 榜单。", "en": "2025.11 : “新城市科学” paper listed in CNKI Top 20 Most-Cited Papers (2024-2025) in 城市规划 CITY PLANNING REVIEW ."}'><em>2025.11</em>: “新城市科学”论文入选 <a href="https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw"><strong>中国知网《城市规划》2024-2025年度高被引论文TOP20</strong></a> 榜单。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:3309eb8bfd8651" data-curation-order="66" data-curation-title='{"zh": "2025.11 : 获 2025年第十三届高校GIS论坛‘高校GIS新秀’ （全国10人），主持新秀专场论坛并作报告，上海。", "en": "2025.11 : Received “GIS Rising Star” Award (10 nationwide) and served as Session Chair &amp; Speaker at the Rising Star Forum, The 13th China College GIS Forum, Shanghai."}'><em>2025.11</em>: 获<strong>2025年第十三届高校GIS论坛‘高校GIS新秀’</strong>（全国10人），主持新秀专场论坛并作报告，上海。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:23001b93edea7e" data-curation-order="66" data-curation-title='{"zh": "2025.10 : 在 中国城市规划信息化年会 展示展板，佛山。", "en": "2025.10 : Poster at China Urban Planning Informatization Annual Conference , Foshan."}'><em>2025.10</em>: 在<strong>中国城市规划信息化年会</strong>展示展板，佛山。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:4211b71d341ed7" data-curation-order="66" data-curation-title='{"zh": "2025.10 : 获第22届 金经昌城市规划优秀论文佳作奖 ，上海。", "en": "2025.10 : Received Jin Jingchang Outstanding Paper Award (佳作奖, 22nd edition), Shanghai."}'><em>2025.10</em>: 获第22届<strong>金经昌城市规划优秀论文佳作奖</strong>，上海。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:9bc2e4241c9e8c" data-curation-order="66" data-curation-title='{"zh": "2025.08 : 获清华大学2024-2025学年度秋季学期 优秀研究生助教 （前5%）。", "en": "2025.08 : Recognized as Outstanding Teaching Assistant (Top 5%) at Tsinghua University, 2024–2025 Fall."}'><em>2025.08</em>: 获清华大学2024-2025学年度秋季学期<strong>优秀研究生助教</strong>（前5%）。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:6fc197ca746682" data-curation-order="66" data-curation-title='{"zh": "2025.06 : CMAB研究成果被 清华大学官方Facebook账号 推送报道。", "en": "2025.06 : CMAB research featured on Tsinghua University’s official Facebook account ."}'><em>2025.06</em>: CMAB研究成果被<a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>清华大学官方Facebook账号</strong></a>推送报道。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:2a72df95d37514" data-curation-order="66" data-curation-title='{"zh": "2025.05 : 获清华大学第二十九届研究生 “学术新秀”提名 （全校10人，建筑学院唯一推荐）。", "en": "2025.05 : Nominated for Tsinghua University’s 29th Graduate “Academic Rising Star” (学术新秀; 10 university-wide, sole nominee from School of Architecture)."}'><em>2025.05</em>: 获清华大学第二十九届研究生<strong>“学术新秀”提名</strong>（全校10人，建筑学院唯一推荐）。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:0111cc39d6c898" data-curation-order="66" data-curation-title='{"zh": "2025.05 : 参展 第19届威尼斯国际建筑双年展中国国家馆 ，意大利威尼斯。", "en": "2025.05 : Exhibitor at China Pavilion, 19th Venice Architecture Biennale , Venice, Italy."}'><em>2025.05</em>: 参展<strong>第19届威尼斯国际建筑双年展中国国家馆</strong>，意大利威尼斯。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:153a58fd8826ee" data-curation-order="66" data-curation-title='{"zh": "2025.03 : 在 2025年美国地理学家协会年会 (AAG 2025) 作报告，美国底特律。", "en": "2025.03 : Presented at AAG 2025 , Detroit, USA."}'><em>2025.03</em>: 在<strong>2025年美国地理学家协会年会 (AAG 2025)</strong> 作报告，美国底特律。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:2df915c68cde6d" data-curation-order="66" data-curation-title='{"zh": "2025.01 : 论文 “CMAB” 发表于 Scientific Data — 累计 45,000+次下载 。", "en": "2025.01 : Paper “CMAB” published in Scientific Data — 45,000+ downloads ."}'><em>2025.01</em>: 论文 “CMAB” 发表于 <strong>Scientific Data</strong> — 累计 <strong>45,000+次下载</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:4f3e0d5de2fd91" data-curation-order="66" data-curation-title='{"zh": "2025.01 : 获中国城市规划学会 “AI赋能规划”优秀案例奖 。", "en": "2025.01 : Received Outstanding Case Award for “AI-Empowered Planning” from Urban Planning Society of China."}'><em>2025.01</em>: 获中国城市规划学会 <strong>“AI赋能规划”优秀案例奖</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:0bf8e537aa3bbe" data-curation-order="66" data-curation-title='{"zh": "2024.12 : 论文 “Inferring Ghost Cities” 发表于 Habitat International 。", "en": "2024.12 : Paper “Inferring Ghost Cities” published in Habitat International ."}'><em>2024.12</em>: 论文 “Inferring Ghost Cities” 发表于 <strong>Habitat International</strong>。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:121c3164126685" data-curation-order="66" data-curation-title='{"zh": "2024.11 : 在清华大学 “未来城市建设与发展”博士生学术论坛 作报告，北京。", "en": "2024.11 : Presented at Tsinghua University “Future Urban Construction” Ph.D. Forum , Beijing."}'><em>2024.11</em>: 在清华大学<strong>“未来城市建设与发展”博士生学术论坛</strong>作报告，北京。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:00de19b9e11950" data-curation-order="66" data-curation-title='{"zh": "2024.06 : 受邀在英国 剑桥大学 Applied Urban Modelling (AUM2024) 会议作报告。", "en": "2024.06 : Invited talk at Applied Urban Modelling (AUM2024) , University of Cambridge, UK."}'><em>2024.06</em>: 受邀在英国<strong>剑桥大学 Applied Urban Modelling (AUM2024)</strong> 会议作报告。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:b4ffdb075819ef" data-curation-order="66" data-curation-title='{"zh": "2024.01 : 参加 国家自然科学基金委重大项目启动会 ，广州。", "en": "2024.01 : Attended NSFC Major Project Kick-off Meeting , Guangzhou."}'><em>2024.01</em>: 参加<strong>国家自然科学基金委重大项目启动会</strong>，广州。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:1f00c5ff0b02ac" data-curation-order="66" data-curation-title='{"zh": "2023.08 : 在 第一届城市科学大会 (The First Research Summit of Urban Science) 作报告，北京。", "en": "2023.08 : Presented at The First Research Summit of Urban Science , Beijing."}'><em>2023.08</em>: 在<strong>第一届城市科学大会 (The First Research Summit of Urban Science)</strong> 作报告，北京。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:7bc1d5ba5688bb" data-curation-order="66" data-curation-title='{"zh": "2023.08 : 在 全球智慧城市峰会暨第三届国际城市信息学大会 (GSCS &amp; ICUI) 作报告，中国香港。", "en": "2023.08 : Presented at Global Smart Cities Summit (GSCS) &amp; 3rd International Conference on Urban Informatics (ICUI) , Hong Kong."}'><em>2023.08</em>: 在<strong>全球智慧城市峰会暨第三届国际城市信息学大会 (GSCS &amp; ICUI)</strong> 作报告，中国香港。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:3b3d4baffdcdf6" data-curation-order="66" data-curation-title='{"zh": "2023.07 : 在 UIA世界建筑师大会 作报告，丹麦哥本哈根。", "en": "2023.07 : Presented at UIA World Congress of Architects , Copenhagen, Denmark."}'><em>2023.07</em>: 在<strong>UIA世界建筑师大会</strong>作报告，丹麦哥本哈根。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:3d66457f323dcf" data-curation-order="66" data-curation-title='{"zh": "2023.06 : 担任 同济大学 Architectural DigitalFUTURES workshop “Emerging Planetarism” 助教，上海。", "en": "2023.06 : Teaching assistant at Tongji University Architectural DigitalFUTURES workshop “Emerging Planetarism”, Shanghai."}'><em>2023.06</em>: 担任<strong>同济大学 Architectural DigitalFUTURES</strong> workshop “Emerging Planetarism” 助教，上海。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:a8a5dba1a7d2e9" data-curation-order="66" data-curation-title='{"zh": "2023.05 : 参展 第18届威尼斯国际建筑双年展中国国家馆 ，意大利威尼斯。", "en": "2023.05 : Exhibitor at China Pavilion, 18th Venice Architecture Biennale , Venice, Italy."}'><em>2023.05</em>: 参展<strong>第18届威尼斯国际建筑双年展中国国家馆</strong>，意大利威尼斯。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:b11cb71b740dc4" data-curation-order="66" data-curation-title='{"zh": "2022.09 : 在 中国城市科学研究会城市大数据专业委员会2022年会 作报告，北京。", "en": "2022.09 : Presented at CUSR Urban Big Data Annual Meeting , Beijing."}'><em>2022.09</em>: 在<strong>中国城市科学研究会城市大数据专业委员会2022年会</strong>作报告，北京。</li><li data-curation-archive-target="curation-news-zh-archive" data-curation-featured-target="curation-news-zh-featured" data-curation-item="news:2c1a8304ebf979" data-curation-order="66" data-curation-title='{"zh": "2022.07 : 在 第四届国际计算设计和机器人制造会议 作报告，上海。", "en": "2022.07 : Presented at 4th International Conference on Computational Design and Robotic Fabrication , Shanghai."}'><em>2022.07</em>: 在<strong>第四届国际计算设计和机器人制造会议</strong>作报告，上海。</li></ul>
+</details>
+</div>
+<div lang="ja">
+<ul class="curation-slot" data-curation-slot="featured" id="curation-news-ja-featured">
+<li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:9bbd4eccd5d74a" data-curation-order="66" data-curation-title='{"ja": "2026.09 : 清華大学で 国家奨学金 を受給。", "en": "2026.09 : Received the National Scholarship at Tsinghua University."}'><em>2026.09</em>: 清華大学で<strong>国家奨学金</strong>を受給。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:f25bf0b831f0f4" data-curation-order="66" data-curation-title='{"ja": "2026 : 中国科学技術協会（CAST）の博士課程人材育成プログラム に採択。", "en": "2026 : Selected for CAST’s doctoral talent development program ."}'><em>2026</em>: <strong>中国科学技術協会（CAST）の博士課程人材育成プログラム</strong>に採択。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:e3428d0594d43d" data-curation-order="66" data-curation-title='{"ja": "2026.06 : 論文 “UrbanAlign” が ECCV 2026 に採択。", "en": "2026.06 : Paper “UrbanAlign” accepted at ECCV 2026 ."}'><em>2026.06</em>: 論文 “UrbanAlign” が <strong>ECCV 2026</strong> に採択。</li></ul>
+<details class="more-items">
+<summary><span lang="en">Earlier updates</span><span lang="zh">往期动态</span><span lang="ja">過去のニュース</span></summary>
+<ul class="curation-slot" data-curation-slot="archive" id="curation-news-ja-archive">
+<li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:57becfff3fc72a" data-curation-order="66" data-curation-title='{"ja": "2026.06 : 論文 “Towards building-scale urban analytics and simulation” が Building Simulation (SCI Q1) に掲載。", "en": "2026.06 : Paper “Towards building-scale urban analytics and simulation” published in Building Simulation (SCI Q1)."}'><em>2026.06</em>: 論文 “Towards building-scale urban analytics and simulation” が <strong>Building Simulation</strong> (SCI Q1) に掲載。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:ee594c936677f9" data-curation-order="66" data-curation-title='{"ja": "2026.04 : ゴーストシティ論文が社会科学分野の ESI高被引用論文 に認定、 Habitat International 。", "en": "2026.04 : Ghost Cities paper recognized as ESI Highly Cited Paper in Social Science, Habitat International ."}'><em>2026.04</em>: ゴーストシティ論文が社会科学分野の <strong>ESI高被引用論文</strong> に認定、<em>Habitat International</em>。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:ed8d0c399c3ff0" data-curation-order="66" data-curation-title='{"ja": "2026.04 : 論文 “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” が CVPR 2026 Findings に採択。 プロジェクトページ", "en": "2026.04 : Paper “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” accepted at CVPR 2026 Findings . Project Page"}'><em>2026.04</em>: 論文 “DAPE: Dual-Stage Parameter-Efficient Fine-Tuning for Consistent Spatial and Temporal Representation” が <strong>CVPR 2026 Findings</strong> に採択。<a href="https://junhaoooxia.github.io/DAPE.github.io/">プロジェクトページ</a></li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:aad511235c888c" data-curation-order="66" data-curation-title='{"ja": "2026.01 : グローバルゴーストシティ研究が米国の有力科学メディア Popular Mechanics に報道される。", "en": "2026.01 : Our research on global ghost cities reported by Popular Mechanics (one of the most influential popular science media in the US)."}'><em>2026.01</em>: グローバルゴーストシティ研究が米国の有力科学メディア <a href="https://www.popularmechanics.com/"><strong>Popular Mechanics</strong></a> に報道される。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:406078485387d0" data-curation-order="66" data-curation-title='{"ja": "2025.11 : 論文 “WaveC2R” が AAAI 2026 (CCF-A) に採択。", "en": "2025.11 : Paper “WaveC2R” accepted at AAAI 2026 (CCF-A)."}'><em>2025.11</em>: 論文 “WaveC2R” が <strong>AAAI 2026</strong> (CCF-A) に採択。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:46301dbc6ac2cd" data-curation-order="66" data-curation-title='{"ja": "2025.11 : CMAB論文が地球科学分野の ESI高被引用論文 に認定。", "en": "2025.11 : CMAB paper recognized as ESI Highly Cited Paper in Geoscience."}'><em>2025.11</em>: CMAB論文が地球科学分野の <strong>ESI高被引用論文</strong> に認定。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:2c2bf113558d1e" data-curation-order="66" data-curation-title='{"ja": "2025.11 : “新城市科学”論文が CNKI 被引用数Top20論文 （2024-2025）に選出、 城市规划 。", "en": "2025.11 : “新城市科学” paper listed in CNKI Top 20 Most-Cited Papers (2024-2025) in 城市规划 CITY PLANNING REVIEW ."}'><em>2025.11</em>: “新城市科学”論文が <a href="https://mp.weixin.qq.com/s/DvSMA-NzoxaCH_3sCWcCqw"><strong>CNKI 被引用数Top20論文</strong></a>（2024-2025）に選出、<em>城市规划</em>。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:3309eb8bfd8651" data-curation-order="66" data-curation-title='{"ja": "2025.11 : 「GIS新星賞」受賞 （全国10名）、第13回中国大学GISフォーラムの新星セッションで座長・発表者を担当、上海。", "en": "2025.11 : Received “GIS Rising Star” Award (10 nationwide) and served as Session Chair &amp; Speaker at the Rising Star Forum, The 13th China College GIS Forum, Shanghai."}'><em>2025.11</em>: <strong>「GIS新星賞」受賞</strong>（全国10名）、第13回中国大学GISフォーラムの新星セッションで座長・発表者を担当、上海。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:23001b93edea7e" data-curation-order="66" data-curation-title='{"ja": "2025.10 : 中国都市計画情報化年次会議 にてポスター発表、佛山。", "en": "2025.10 : Poster at China Urban Planning Informatization Annual Conference , Foshan."}'><em>2025.10</em>: <strong>中国都市計画情報化年次会議</strong>にてポスター発表、佛山。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:4211b71d341ed7" data-curation-order="66" data-curation-title='{"ja": "2025.10 : 金経昌都市計画優秀論文賞 （第22回）受賞、上海。", "en": "2025.10 : Received Jin Jingchang Outstanding Paper Award (佳作奖, 22nd edition), Shanghai."}'><em>2025.10</em>: <strong>金経昌都市計画優秀論文賞</strong>（第22回）受賞、上海。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:9bc2e4241c9e8c" data-curation-order="66" data-curation-title='{"ja": "2025.08 : 清華大学 優秀ティーチングアシスタント （上位5%、2024–2025秋学期）に認定。", "en": "2025.08 : Recognized as Outstanding Teaching Assistant (Top 5%) at Tsinghua University, 2024–2025 Fall."}'><em>2025.08</em>: 清華大学 <strong>優秀ティーチングアシスタント</strong>（上位5%、2024–2025秋学期）に認定。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:6fc197ca746682" data-curation-order="66" data-curation-title='{"ja": "2025.06 : CMAB研究が 清華大学公式Facebookアカウント で紹介。", "en": "2025.06 : CMAB research featured on Tsinghua University’s official Facebook account ."}'><em>2025.06</em>: CMAB研究が<a href="https://www.facebook.com/permalink.php?story_fbid=1050269787304015&amp;id=1489805271325213"><strong>清華大学公式Facebookアカウント</strong></a>で紹介。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:2a72df95d37514" data-curation-order="66" data-curation-title='{"ja": "2025.05 : 清華大学第29回大学院生 「学術新星」候補 に推薦（全学10名、建築学院唯一の推薦）。", "en": "2025.05 : Nominated for Tsinghua University’s 29th Graduate “Academic Rising Star” (学术新秀; 10 university-wide, sole nominee from School of Architecture)."}'><em>2025.05</em>: 清華大学第29回大学院生<strong>「学術新星」候補</strong>に推薦（全学10名、建築学院唯一の推薦）。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:0111cc39d6c898" data-curation-order="66" data-curation-title='{"ja": "2025.05 : 第19回ヴェネチア・ビエンナーレ国際建築展 中国館 に出展、イタリア・ヴェネチア。", "en": "2025.05 : Exhibitor at China Pavilion, 19th Venice Architecture Biennale , Venice, Italy."}'><em>2025.05</em>: <strong>第19回ヴェネチア・ビエンナーレ国際建築展 中国館</strong>に出展、イタリア・ヴェネチア。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:153a58fd8826ee" data-curation-order="66" data-curation-title='{"ja": "2025.03 : AAG 2025 （米国地理学者協会年次総会）にて発表、米国デトロイト。", "en": "2025.03 : Presented at AAG 2025 , Detroit, USA."}'><em>2025.03</em>: <strong>AAG 2025</strong>（米国地理学者協会年次総会）にて発表、米国デトロイト。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:2df915c68cde6d" data-curation-order="66" data-curation-title='{"ja": "2025.01 : 論文 “CMAB” が Scientific Data に掲載 — 45,000回以上ダウンロード 。", "en": "2025.01 : Paper “CMAB” published in Scientific Data — 45,000+ downloads ."}'><em>2025.01</em>: 論文 “CMAB” が <strong>Scientific Data</strong> に掲載 — <strong>45,000回以上ダウンロード</strong>。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:4f3e0d5de2fd91" data-curation-order="66" data-curation-title='{"ja": "2025.01 : 中国都市計画学会より 「AI活用計画」優秀事例賞 を受賞。", "en": "2025.01 : Received Outstanding Case Award for “AI-Empowered Planning” from Urban Planning Society of China."}'><em>2025.01</em>: 中国都市計画学会より <strong>「AI活用計画」優秀事例賞</strong> を受賞。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:0bf8e537aa3bbe" data-curation-order="66" data-curation-title='{"ja": "2024.12 : 論文 “Inferring Ghost Cities” が Habitat International に掲載。", "en": "2024.12 : Paper “Inferring Ghost Cities” published in Habitat International ."}'><em>2024.12</em>: 論文 “Inferring Ghost Cities” が <strong>Habitat International</strong> に掲載。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:121c3164126685" data-curation-order="66" data-curation-title='{"ja": "2024.11 : 清華大学 「未来都市建設」博士課程フォーラム にて発表、北京。", "en": "2024.11 : Presented at Tsinghua University “Future Urban Construction” Ph.D. Forum , Beijing."}'><em>2024.11</em>: 清華大学<strong>「未来都市建設」博士課程フォーラム</strong>にて発表、北京。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:00de19b9e11950" data-curation-order="66" data-curation-title='{"ja": "2024.06 : 英国 ケンブリッジ大学 Applied Urban Modelling (AUM2024) にて招待講演。", "en": "2024.06 : Invited talk at Applied Urban Modelling (AUM2024) , University of Cambridge, UK."}'><em>2024.06</em>: 英国<strong>ケンブリッジ大学 Applied Urban Modelling (AUM2024)</strong> にて招待講演。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:b4ffdb075819ef" data-curation-order="66" data-curation-title='{"ja": "2024.01 : 国家自然科学基金委員会重大プロジェクトキックオフ会議 に参加、広州。", "en": "2024.01 : Attended NSFC Major Project Kick-off Meeting , Guangzhou."}'><em>2024.01</em>: <strong>国家自然科学基金委員会重大プロジェクトキックオフ会議</strong>に参加、広州。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:1f00c5ff0b02ac" data-curation-order="66" data-curation-title='{"ja": "2023.08 : 第1回都市科学研究サミット (The First Research Summit of Urban Science) にて発表、北京。", "en": "2023.08 : Presented at The First Research Summit of Urban Science , Beijing."}'><em>2023.08</em>: <strong>第1回都市科学研究サミット (The First Research Summit of Urban Science)</strong> にて発表、北京。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:7bc1d5ba5688bb" data-curation-order="66" data-curation-title='{"ja": "2023.08 : グローバルスマートシティサミット (GSCS) &amp; 第3回国際都市情報学会議 (ICUI) にて発表、香港。", "en": "2023.08 : Presented at Global Smart Cities Summit (GSCS) &amp; 3rd International Conference on Urban Informatics (ICUI) , Hong Kong."}'><em>2023.08</em>: <strong>グローバルスマートシティサミット (GSCS) &amp; 第3回国際都市情報学会議 (ICUI)</strong> にて発表、香港。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:3b3d4baffdcdf6" data-curation-order="66" data-curation-title='{"ja": "2023.07 : UIA世界建築家会議 にて発表、デンマーク・コペンハーゲン。", "en": "2023.07 : Presented at UIA World Congress of Architects , Copenhagen, Denmark."}'><em>2023.07</em>: <strong>UIA世界建築家会議</strong>にて発表、デンマーク・コペンハーゲン。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:3d66457f323dcf" data-curation-order="66" data-curation-title='{"ja": "2023.06 : 同済大学 Architectural DigitalFUTURES ワークショップ “Emerging Planetarism” にてティーチングアシスタント、上海。", "en": "2023.06 : Teaching assistant at Tongji University Architectural DigitalFUTURES workshop “Emerging Planetarism”, Shanghai."}'><em>2023.06</em>: <strong>同済大学 Architectural DigitalFUTURES</strong> ワークショップ “Emerging Planetarism” にてティーチングアシスタント、上海。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:a8a5dba1a7d2e9" data-curation-order="66" data-curation-title='{"ja": "2023.05 : 第18回ヴェネチア・ビエンナーレ国際建築展 中国館 に出展、イタリア・ヴェネチア。", "en": "2023.05 : Exhibitor at China Pavilion, 18th Venice Architecture Biennale , Venice, Italy."}'><em>2023.05</em>: <strong>第18回ヴェネチア・ビエンナーレ国際建築展 中国館</strong>に出展、イタリア・ヴェネチア。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:b11cb71b740dc4" data-curation-order="66" data-curation-title='{"ja": "2022.09 : 中国都市科学研究会都市ビッグデータ委員会2022年次会議 にて発表、北京。", "en": "2022.09 : Presented at CUSR Urban Big Data Annual Meeting , Beijing."}'><em>2022.09</em>: <strong>中国都市科学研究会都市ビッグデータ委員会2022年次会議</strong>にて発表、北京。</li><li data-curation-archive-target="curation-news-ja-archive" data-curation-featured-target="curation-news-ja-featured" data-curation-item="news:2c1a8304ebf979" data-curation-order="66" data-curation-title='{"ja": "2022.07 : 第4回国際コンピュテーショナルデザイン・ロボティックファブリケーション会議 にて発表、上海。", "en": "2022.07 : Presented at 4th International Conference on Computational Design and Robotic Fabrication , Shanghai."}'><em>2022.07</em>: <strong>第4回国際コンピュテーショナルデザイン・ロボティックファブリケーション会議</strong>にて発表、上海。</li></ul>
+</details>
+</div>
+</section>
+<section aria-label="More background" class="background-details">
+<details class="background-item" id="service">
+<summary><span lang="en">Review history</span><span lang="zh">审稿记录</span><span lang="ja">査読の記録</span></summary>
+<div lang="en">
+<ul>
+<li><em>2023–present</em>: Invited Reviewer, <strong>Cities</strong> and <strong>Computers, Environment and Urban Systems</strong> (Elsevier).</li>
+<li><em>2024–present</em>: Invited Reviewer, <strong>Nature Cities</strong>, <strong>Scientific Data</strong>, and <strong>npj Urban Sustainability</strong> (Nature Portfolio).</li>
+<li><em>2025–present</em>: Invited Reviewer, <strong>Verixiv</strong>.</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li><em>2023–至今</em>：受邀担任 <strong>Cities</strong>、<strong>Computers, Environment and Urban Systems</strong>（Elsevier）审稿人。</li>
+<li><em>2024–至今</em>：受邀担任 <strong>Nature Cities</strong>、<strong>Scientific Data</strong>、<strong>npj Urban Sustainability</strong>（Nature Portfolio）审稿人。</li>
+<li><em>2025–至今</em>：受邀担任 <strong>Verixiv</strong> 审稿人。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li><em>2023–現在</em>：<strong>Cities</strong>、<strong>Computers, Environment and Urban Systems</strong>（Elsevier）の招待査読者。</li>
+<li><em>2024–現在</em>：<strong>Nature Cities</strong>、<strong>Scientific Data</strong>、<strong>npj Urban Sustainability</strong>（Nature Portfolio）の招待査読者。</li>
+<li><em>2025–現在</em>：<strong>Verixiv</strong> の招待査読者。</li>
+</ul>
+</div>
+</details>
+<details class="background-item" id="datasets">
+<summary><span lang="en">Open datasets</span><span lang="zh">开放数据集</span><span lang="ja">オープンデータ</span></summary>
+<div lang="en">
+<ul>
+<li><strong>CMAB</strong> — China’s Multi-Attribute Building Dataset (32M+ buildings, 45,000+ downloads, ESI Highly Cited). <a href="https://figshare.com/authors/Yecheng_Zhang/20402873">Dataset</a></li>
+<li><strong>GloGCI</strong> — Global Ghost City Index (10,000+ cities worldwide, 4,000+ downloads).</li>
+<li><strong>GloPPRUA</strong> — Global Harmonized Urban Definition.</li>
+<li><strong>AI4US</strong> — Generative AI Benchmarks for Urban Science (2,000+ downloads).</li>
+</ul>
+</div>
+<div lang="zh">
+<ul>
+<li><strong>CMAB</strong> — 中国多属性建筑数据集（3200万+栋建筑，45,000+次下载，ESI高被引）。<a href="https://figshare.com/authors/Yecheng_Zhang/20402873">数据集</a></li>
+<li><strong>GloGCI</strong> — 全球鬼城指数（覆盖全球10,000+城市，4,000+次下载）。</li>
+<li><strong>GloPPRUA</strong> — 全球统一城市定义数据集。</li>
+<li><strong>AI4US</strong> — 城市科学生成式AI评测基准（2,000+次下载）。</li>
+</ul>
+</div>
+<div lang="ja">
+<ul>
+<li><strong>CMAB</strong> — 中国多属性建物データセット（3,200万棟以上、45,000回以上ダウンロード、ESI高被引用）。<a href="https://figshare.com/authors/Yecheng_Zhang/20402873">データセット</a></li>
+<li><strong>GloGCI</strong> — グローバルゴーストシティ指数（世界10,000都市以上、4,000回以上ダウンロード）。</li>
+<li><strong>GloPPRUA</strong> — グローバル統一都市定義データセット。</li>
+<li><strong>AI4US</strong> — 都市科学のための生成AIベンチマーク（2,000回以上ダウンロード）。</li>
+</ul>
+</div>
+</details>
+</section>
+<section aria-labelledby="writing-activity-title" class="writing-activity section" data-activity-source="/assets/writing-activity.json?v=fa78bf3fa3a6" id="writing-activity">
+<div class="activity-heading">
+<h2 id="writing-activity-title"><span lang="en">Writing activity</span><span lang="zh">写作动态</span><span lang="ja">執筆の更新</span></h2>
+<select aria-label="Year" class="activity-year" data-aria-label-en="Year" data-aria-label-ja="年" data-aria-label-zh="年份"></select>
+</div>
+<div aria-label="Writing calendar" class="activity-calendar" data-aria-label-en="Writing calendar" data-aria-label-ja="執筆カレンダー" data-aria-label-zh="写作日历" role="group" tabindex="0">
+<div aria-hidden="true" class="activity-months"></div>
+<div class="activity-grid"></div>
+</div>
+<div class="activity-caption"><span class="activity-summary"></span><span aria-hidden="true" class="activity-legend"><span lang="en">Less</span><span lang="zh">少</span><span lang="ja">少</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span lang="en">More</span><span lang="zh">多</span><span lang="ja">多</span></span></div>
+<div aria-live="polite" class="activity-day-detail" hidden=""></div>
+<noscript><p><a href="#writing">Writing / 写作 / 記事 ↑</a></p></noscript>
+</section>
+</main>
+<footer class="site-footer">
+<span>Yecheng Zhang</span>
+<a href="#top"><span lang="en">Back to top ↑</span><span lang="zh">回到顶部 ↑</span><span lang="ja">トップへ ↑</span></a>
+</footer>
+</div>
+</body>
+</html>

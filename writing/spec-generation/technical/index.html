@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<script src="/assets/js/site-theme.js?v=51b41e61e6a0"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Spec 生成优化技术报告 · Yecheng Zhang</title><style>*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{margin:0;padding:64px 32px 90px;background:#fff;color:#252925;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:18px;line-height:1.9;font-weight:400}
+
+.layout{display:grid;grid-template-columns:178px minmax(0,1100px);gap:54px;max-width:1332px;margin:auto}
+
+aside{position:sticky;top:40px;align-self:start;max-height:calc(100vh - 80px);overflow:auto}
+
+.series{font-size:12px;color:#607d3e;letter-spacing:.1em;text-decoration:none}
+
+.toc-toggle{display:none}
+
+.figure-source{font-size:12px;color:#7c8476;margin-top:6px}.figure-source summary{cursor:pointer;display:inline-block}.figure-source p{margin:4px 0}
+
+.edition,.eyebrow{font-size:12px;color:#818982;line-height:1.8;margin:18px 0 30px}
+
+nav ol{list-style:none;padding:0;margin:0}nav li{margin:0 0 17px}nav a{font-size:13px;line-height:1.6;display:block;color:#7b857c;text-decoration:none}
+
+article{min-width:0;max-width:1100px}article>p,article>h2,article>h3,article>ul,article>ol,article>blockquote{max-width:760px;margin-left:auto;margin-right:auto}
+
+h1{font-size:46px;font-weight:500;line-height:1.3;letter-spacing:-.03em;text-align:center;margin:0 auto 24px;max-width:960px}
+
+h1+p{text-align:center;font-size:13px;color:#899188;margin-bottom:64px}
+
+h2{font-size:28px;font-weight:500;line-height:1.45;margin-top:72px;margin-bottom:26px;scroll-margin-top:28px}
+
+h3{font-size:22px;font-weight:500;margin-top:38px;line-height:1.5}p{margin:0 0 25px}strong{font-weight:550}
+
+a{color:#23794f;text-underline-offset:4px}article a[href^="#source"]{font-size:12px;color:#8a948b;text-decoration:none;white-space:nowrap}
+
+figure{margin:44px 0 50px;width:100%}figure img{width:100%;display:block;cursor:zoom-in}figcaption{font-size:12px;color:#899188;margin:12px 0 0}
+
+.source.brief{max-width:760px;margin-left:auto;margin-right:auto}
+
+.name-key{margin:65px 0 20px;border-top:1px solid #dce3d9;padding-top:18px}.name-key>summary{cursor:pointer;font-size:15px;color:#60784c}.name-key>p{font-size:14px;color:#7c8476;margin-top:18px}
+
+.table-scroll{width:100%;overflow-x:auto;margin:30px 0 34px}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.8}th,td{text-align:left;vertical-align:top;padding:12px 13px;border-bottom:1px solid #e2e8e2}th{font-weight:500;color:#67766a;background:#fafcfb}
+
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.75}
+
+blockquote{border-left:2px solid #bed4c5;padding-left:20px;color:#657469}
+
+.references{margin-top:90px}.references>p{font-size:14px;color:#7c897e}.source{margin:18px 0;border-top:1px solid #e5eae5;padding-top:17px;scroll-margin-top:25px}.source summary{font-size:14px;color:#697c6d;cursor:pointer;line-height:1.8}.source-meta{font-size:11px;line-height:1.7;color:#919a92;overflow-wrap:anywhere;margin-top:16px}.source-original{font-family:ui-monospace,SFMono-Regular,Menlo,"PingFang SC",monospace;color:#4f5b52;line-height:1.85;padding:18px;background:#fafcfb;max-height:none}.brief{font-size:13px}.brief>p{margin-bottom:8px}footer{font-size:12px;color:#939c94;border-top:1px solid #e5eae5;margin-top:70px;padding-top:22px}
+
+dialog{border:0;padding:45px 12px 12px;max-width:96vw;max-height:96vh;overflow:auto;background:white}dialog::backdrop{background:#1c2924b3}dialog img{display:block;width:1400px;max-width:90vw;height:auto}dialog button{position:sticky;top:0;display:block;margin:-36px 0 10px auto;background:white;border:1px solid #d8e2da;padding:5px 12px;color:#5f7264;cursor:pointer}
+
+@media(max-width:1150px){.layout{display:block;max-width:960px}aside{position:relative;top:0;max-height:none;margin-bottom:36px}.toc-toggle{display:block;border:0;background:none;padding:0;color:#697660;font-size:14px;cursor:pointer}aside nav{display:none;margin-top:16px}aside.expanded nav{display:block}nav li{margin:0 0 10px}.edition{margin:8px 0 12px}h1{font-size:38px}}
+
+@media(max-width:640px){body{padding:25px 18px 50px;font-size:17px}h1{font-size:30px}h2{font-size:24px;margin-top:48px}h3{font-size:20px}h1+p{margin-bottom:38px}figure{margin:28px 0}table{font-size:13px;min-width:600px}.source-original{padding:10px;font-size:12px}}
+
+@media print{body{padding:0;font-size:11pt}.layout{display:block}aside,dialog{display:none}h1{font-size:28pt}figure{break-inside:avoid}a{color:inherit}h2{break-after:avoid}.references{break-before:page}}
+
+</style><meta content="Spec 生成优化技术报告：实验设计、结果与方法总结。" name="description"/><link href="https://yechengzhang.duqi.top/writing/spec-generation/technical/" rel="canonical"/><meta content="Spec 生成优化技术报告" property="og:title"/><meta content="Spec 生成优化技术报告：实验设计、结果与方法总结。" property="og:description"/><meta content="article" property="og:type"/><meta content="https://yechengzhang.duqi.top/writing/spec-generation/technical/" property="og:url"/><link href="/assets/css/report-navigation.css" rel="stylesheet"/><script defer="" src="/assets/js/writing-diagram-style.js?v=7824b2169605"></script><link href="/assets/css/writing-diagram-themes.css?v=999537865d73" rel="stylesheet"/><style>.writing-map-figure .trajectory-map{max-width:1200px;margin:0 auto}.writing-map-figure .figure-panel{padding:0!important;background:none!important;border:0!important}.trajectory-map[hidden]{display:none}.trajectory-static{margin:12px 0;font-size:13px;color:#71767e}.trajectory-static>summary{cursor:pointer;padding:8px 0}.trajectory-static img{margin-top:16px}@media print{.trajectory-map{display:none}.trajectory-static>summary{display:none}}</style><style>.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:none}.writing-map-figure .trajectory-static{font-size:12px;margin:6px 0 12px}.writing-map-figure .trajectory-static>summary{padding:4px 0}@media print{.map-ready>.panel-label,.map-ready>.map-duplicate-caption{display:block}}</style><script defer="" src="/assets/js/writing-maps/spec-generation-technical.js?v=2e436074b084"></script><script data-stylesheet="/assets/css/trajectory-map.css?v=968d17696f44" defer="" src="/assets/js/trajectory-map.js?v=00fa8c6d6ccc"></script><link href="/assets/css/writing-language.css?v=bc2f6f68bf5b" rel="stylesheet"/><script defer="" src="/assets/js/minimal.js?v=9e94e73097c5"></script><link href="/assets/css/writing-reader.css?v=ac6fd2319583" rel="stylesheet"/>
+<link href="/assets/css/writing-context.css?v=b22bc081cefb" rel="stylesheet"/>
+<script defer="" src="/assets/js/writing-reader.js?v=8cc175ba84f3"></script>
+<script defer="" src="/assets/js/writing-context.js?v=fe6f9c6f937f"></script>
+<link href="/assets/css/poetic-chapters.css?v=2eb17366fbd2" rel="stylesheet"/>
+<link href="/assets/css/poetic-writing-entry.css?v=67b07644679e" rel="stylesheet"/>
+<script defer="" src="/assets/js/poetic-writing-entry.js?v=306c557feaf4"></script>
+<script defer="" src="/assets/js/poetic-chapters.js?v=1455031d9719"></script>
+<link href="/assets/css/site-theme.css?v=3f7d383fde73" rel="stylesheet"/>
+<link href="/assets/css/editorial-reader.css?v=71c3e704108e" rel="stylesheet"/>
+<script defer="" src="/assets/js/editorial-reader.js?v=eeeabd18a914"></script>
+<link href="/assets/css/poetic-composition.css?v=f60b6eaf8a9a" rel="stylesheet"/>
+</head><body><nav aria-label="Writing" class="report-site-nav">
+<a class="writing-back" data-site-link="" href="/#writing"><span lang="en">← Selected writing</span><span lang="zh">← 精选写作</span><span lang="ja">← 執筆記事</span></a>
+<div aria-label="Article version" class="edition-switch">
+<a data-site-link="" href="/writing/spec-generation/">Blog</a>
+<a aria-current="page" data-site-link="" href="/writing/spec-generation/technical/"><span lang="en">Technical report</span><span lang="zh">技术报告</span><span lang="ja">技術レポート</span></a>
+</div>
+<div aria-label="Language" class="languages" role="group">
+<button aria-label="English" data-language="en" type="button">EN</button>
+<button aria-label="中文" data-language="zh" type="button">中</button>
+<button aria-label="日本語" data-language="ja" type="button">日</button>
+</div>
+</nav><div class="layout"><aside><a class="series" href="#top">SPEC GENERATION</a><div class="edition">TECHNICAL REPORT<br/><span lang="zh">极简版</span><span lang="en">Minimal edition</span><span lang="ja">ミニマル版</span></div><button aria-expanded="false" class="toc-toggle"><span lang="zh">目录</span><span lang="en">Contents</span><span lang="ja">目次</span></button><nav aria-label="文章目录" data-aria-label-en="Article contents" data-aria-label-ja="記事の目次" data-aria-label-zh="文章目录"><ol><li><a href="#section-1"><span lang="zh">摘要</span><span lang="en">Abstract</span><span lang="ja">概要</span></a></li><li><a href="#section-2"><span lang="zh">1　任务与评测范围</span><span lang="en">1  Task and evaluation scope</span><span lang="ja">1　タスクと評価範囲</span></a></li><li><a href="#section-3"><span lang="zh">2　PE优化主线与运行方式</span><span lang="en">2  PE optimization and execution</span><span lang="ja">2　PE最適化と実行方式</span></a></li><li><a href="#section-6"><span lang="zh">3　主线：PE修改的结果与取舍</span><span lang="en">3  PE edits: results and decisions</span><span lang="ja">3　PE変更の結果と判断</span></a></li><li><a href="#section-13"><span lang="zh">4　旁支：生成流程对照与产物诊断</span><span lang="en">4  Generation variants and artifact diagnostics</span><span lang="ja">4　生成方式の比較と成果物の診断</span></a></li><li><a href="#section-17"><span lang="zh">5　Judge迁移与历史基线调查</span><span lang="en">5  Judge migration and historical baselines</span><span lang="ja">5　Judge移行と過去ベースラインの調査</span></a></li><li><a href="#section-18"><span lang="zh">6　旧规则整理与规则库迁移</span><span lang="en">6  Reorganizing and migrating rules</span><span lang="ja">6　旧ルールの整理と移行</span></a></li><li><a href="#section-19"><span lang="zh">7　人工PE双线：自由归因与动态策略记忆</span><span lang="en">7  Two human-PE tracks: Free and dynamic strategy memory</span><span lang="ja">7　人手PEの二系統：自由分析と動的戦略メモリ</span></a></li><li><a href="#section-20"><span lang="zh">8　主Harness的数据组织</span><span lang="en">8  Data organization for the main harness</span><span lang="ja">8　主Harnessのデータ構成</span></a></li><li><a href="#section-21"><span lang="zh">9　主Harness初始化的结构实验</span><span lang="en">9  Structural experiments for initialization</span><span lang="ja">9　初期化に向けた構造実験</span></a></li><li><a href="#section-25"><span lang="zh">10　最终PE的输入与职责</span><span lang="en">10  Final PE: inputs and responsibilities</span><span lang="ja">10　最終PEの入力と責務</span></a></li><li><a href="#section-26"><span lang="zh">11　五套PE的同口径质量与成本</span><span lang="en">11  Quality and cost of five PEs under one protocol</span><span lang="ja">11　統一条件での五種類のPEの品質とコスト</span></a></li><li><a href="#section-27"><span lang="zh">12　八轮迭代与重复评测</span><span lang="en">12  Eight iterations and repeated evaluation</span><span lang="ja">12　八回の反復と再評価</span></a></li><li><a href="#section-28"><span lang="zh">13　设计数据与训练协议</span><span lang="en">13  Design data and training protocol</span><span lang="ja">13　設計データと学習プロトコル</span></a></li><li><a href="#section-32"><span lang="zh">14　端到端验证与逐题归因</span><span lang="en">14  End-to-end validation and case-level attribution</span><span lang="ja">14　E2E検証とケース単位の原因分析</span></a></li><li><a href="#section-36"><span lang="zh">15　结论与后续实验</span><span lang="en">15  Conclusions and next experiments</span><span lang="ja">15　結論と次の実験</span></a></li><li></li></ol></nav></aside><article id="top"><h1 data-page-title=""><span lang="zh">Spec 生成优化技术报告</span><span lang="en">Spec Generation Optimization: Technical Report</span><span lang="ja">Spec生成最適化：技術レポート</span></h1>
+<p><span lang="zh">技术报告 · 记录窗口 2026-06-01—2026-10-10 · 2026-10-20 修订</span><span lang="en">Technical report · June 1–October 10, 2026 · Revised October 20, 2026</span><span lang="ja">技術レポート · 対象期間 2026-06-01〜2026-10-10 · 2026-10-20改訂</span></p>
+<h2 id="section-1"><span lang="zh">摘要</span><span lang="en">Abstract</span><span lang="ja">概要</span></h2>
+<p><span lang="zh">本报告回溯接手Spec生成任务后，在PE搜索、规则组织、生成架构、评测口径、监督数据和下游执行上的连续实验，必要时引用5月历史基线。核心目标是在一次模型调用中生成符合需求与产品能力的SpecDoc，并验证优化后的准确率和成本。</span><span lang="en">This report traces successive experiments in PE search, rule organization, generation architecture, evaluation protocols, supervision data, and downstream execution since taking over Spec generation, with May baselines where relevant. The goal is to produce a SpecDoc that satisfies requirements and product capabilities in one model call, and to measure its accuracy and cost.</span><span lang="ja">Spec生成を担当して以降のPE探索、ルール整理、生成構造、評価条件、教師データ、下流実行の実験を振り返り、必要に応じて5月の基準値を参照する。目的は、一回のモデル呼び出しで要求と製品能力に適合するSpecDocを生成し、精度とコストを検証することにある。</span></p>
+<p><span lang="zh">主要发现有四点。第一，定点修改改善了部分目标问题，但四域联合通过率仍受其他题退化影响，局部检查与全量验收需要配合使用。第二，呈现规范化和直接搬运高分样本特征出现多组回退，重构由此转向职责分层与字段依赖规划。第三，分层生成PE在七月统一口径下取得Dev150 16/150、Former50 31/50，Dev平均输入约8.8k；后续八轮搜索0 KEEP，同一PE两次全量运行有19题翻转，重复性成为下一阶段重点。第四，人工PE专项的动态策略记忆取得历史KEEP，后期继续训练配置在Building0.7同题对照中由32/50升至35/50。各阶段按题集与Judge分别报告。</span><span lang="en">Four findings stand out. Targeted edits improved some cases, but regressions elsewhere limited four-domain joint accuracy, requiring both local and full-set checks. Presentation normalization and direct transfer of high-scoring sample features repeatedly regressed, shifting restructuring toward responsibility layers and field dependencies. Under July's unified protocol, the layered PE achieved 16/150 on Dev150 and 31/50 on Former50 at about 8.8k Dev input tokens; eight subsequent search rounds yielded no KEEP, and two full runs of the same PE flipped 19 cases, making repeatability the next priority. Dynamic strategy memory produced historical KEEPs in the human-PE track; later, continued training improved a paired Building0.7 result from 32/50 to 35/50. Results remain grouped by dataset and Judge.</span><span lang="ja">主な知見は四つある。局所編集で目標ケースは改善したが、他ケースの悪化が四領域同時合格率を制約し、局所確認と全件検証の併用が必要だった。表現の正規化と高得点例の表面的特徴の移植は複数回悪化し、責務の分離とフィールド依存の設計へ方針を転換した。7月の統一条件では、階層型PEがDev150で16/150、Former50で31/50、Dev平均入力約8.8kを達成した。その後の八回の探索はKEEPゼロで、同じPEの全件実行二回で19問が反転し、再現性が次の焦点となった。人手PE系統では動的戦略メモリがKEEPを獲得し、後期の継続学習設定はBuilding0.7の同一問題比較で32/50から35/50へ改善した。各段階はデータセットとJudge別に報告する。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="01-paradigm-map" hidden="" id="writing-map-1"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="研究对象" data-alt-en="Research scope" data-alt-ja="研究対象" data-alt-zh="研究对象" data-diagram-image="" data-figure-key="/writing/assets/5930efdb0f0a6acb35b1.png" data-src-en="/writing/figures/en/01-paradigm-map.svg?v=e6408658e171" data-src-engineering-en="/writing/figures/en/engineering/01-paradigm-map.svg?v=f16691ca19c8" data-src-engineering-ja="/writing/figures/ja/engineering/01-paradigm-map.svg?v=318b77dcfade" data-src-engineering-zh="/writing/figures/zh/engineering/01-paradigm-map.svg?v=d0a9fbdd0168" data-src-ja="/writing/figures/ja/01-paradigm-map.svg?v=a8c525e6fdc5" data-src-openai-blog-en="/writing/figures/en/01-paradigm-map.svg?v=e6408658e171" data-src-openai-blog-ja="/writing/figures/ja/01-paradigm-map.svg?v=a8c525e6fdc5" data-src-openai-blog-zh="/writing/figures/zh/01-paradigm-map.svg?v=f7fd53a0c460" data-src-zh="/writing/figures/zh/01-paradigm-map.svg?v=f7fd53a0c460" decoding="async" height="540" loading="eager" src="/writing/figures/zh/01-paradigm-map.svg?v=f7fd53a0c460" width="1440"/></details><figcaption><span lang="zh">Spec 生成研究路线</span><span lang="en">Spec generation research map</span><span lang="ja">Spec生成の研究経路</span></figcaption></figure>
+<h2 id="section-2"><span lang="zh">1　任务与评测范围</span><span lang="en">1  Task and evaluation scope</span><span lang="ja">1　タスクと評価範囲</span></h2>
+<p><span lang="zh">输入为用户Query及其澄清Q&amp;A，输出是下一步搭建系统要消费的Lite SpecDoc。七月主线要求一次Seed2调用直接生成，不依赖外部Planner、生成后LLM repair、Contract剥离或best-of。离线Harness可使用多Agent分析和修改下一轮PE，这不改变线上调用次数。</span><span lang="en">The input is the user query and clarification Q&amp;A; the output is a Lite SpecDoc consumed by the downstream builder. July's main track requires one direct Seed2 generation call, without external planners, post-generation LLM repair, contract stripping, or best-of selection. The offline harness may use multiple agents to analyze and revise the next PE without changing the online call count.</span><span lang="ja">入力はユーザーQueryと確認Q&amp;A、出力は下流の構築処理が利用するLite SpecDocである。7月の主系統はSeed2一回での直接生成を要件とし、外部Planner、生成後のLLM修正、Contract除去、best-of選択を使わない。オフラインHarnessで複数Agentが分析し次のPEを変更しても、オンライン呼び出し回数は変わらない。</span></p>
+<p><span lang="zh">评测主要有两类：Spec Judge检查设计文档；E2E Judge检查执行器搭建的Base。文档通过后仍需验证实际产物。十月Building Mix与七月四域strict使用不同评测对象和指标。</span><span lang="en">Spec Judges evaluate design documents; E2E Judges evaluate the Base built by the executor. Passing the document check does not replace artifact validation. October's Building Mix and July's four-domain strict evaluation use different objects and metrics.</span><span lang="ja">Spec Judgeは設計文書を、E2E Judgeは実行器が構築したBaseを評価する。文書合格後も実成果物の検証が必要である。10月のBuilding Mixと7月の四領域strictでは、評価対象と指標が異なる。</span></p>
+<p><span lang="zh">Spec主线采用四域联合通过率：Table、Dashboard、Workflow、Permission均通过才计为整题通过。领域分数用于定位问题，全量通过数用于验收PE；E2E结果则按对应Building版本单独报告。</span><span lang="en">The main Spec metric is joint four-domain pass rate: a case passes only if Table, Dashboard, Workflow, and Permission all pass. Domain scores locate problems; full-set pass counts accept or reject a PE. E2E results are reported separately for each Building version.</span><span lang="ja">Specの主指標は四領域同時合格率で、Table・Dashboard・Workflow・Permissionの全てに合格して初めて一問合格となる。領域別スコアは原因特定に、全件合格数はPE採否に用いる。E2E結果はBuildingのバージョン別に報告する。</span></p>
+<h2 id="section-3"><span lang="zh">2　PE优化主线与运行方式</span><span lang="en">2  PE optimization and execution</span><span lang="ja">2　PE最適化と実行方式</span></h2><figure class="figure-block writing-map-figure" id="full-workflow"><div class="trajectory-map" data-entry="spec-generation-full-workflow" hidden="" id="writing-map-2"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Spec 生成 · 完整流程" data-alt-en="Spec generation · Full workflow" data-alt-ja="Spec 生成 · 全体フロー" data-alt-zh="Spec 生成 · 完整流程" data-diagram-image="" data-figure="spec-generation-full-workflow" data-figure-key="spec-generation-full-workflow" data-src-en="/writing/figures/en/spec-generation-full-workflow.svg?v=5cff12a820df" data-src-engineering-en="/writing/figures/en/engineering/spec-generation-full-workflow.svg?v=ab02fc6b2951" data-src-engineering-ja="/writing/figures/ja/engineering/spec-generation-full-workflow.svg?v=cd16c1874fdf" data-src-engineering-zh="/writing/figures/zh/engineering/spec-generation-full-workflow.svg?v=46ad02d9635f" data-src-ja="/writing/figures/ja/spec-generation-full-workflow.svg?v=91383e6d8598" data-src-openai-blog-en="/writing/figures/en/spec-generation-full-workflow.svg?v=5cff12a820df" data-src-openai-blog-ja="/writing/figures/ja/spec-generation-full-workflow.svg?v=91383e6d8598" data-src-openai-blog-zh="/writing/figures/zh/spec-generation-full-workflow.svg?v=bf83278f7069" data-src-zh="/writing/figures/zh/spec-generation-full-workflow.svg?v=bf83278f7069" decoding="async" height="857" loading="lazy" src="/writing/figures/zh/spec-generation-full-workflow.svg?v=bf83278f7069" width="1440"/></details><figcaption><span lang="zh">内层一次生成 Spec，外层修改 PE 与 Skills。历史搜索方法采用不同归因与候选策略，评测口径和 KEEP 规则随实验分别冻结。</span><span lang="en">A single inner call generates the Spec; the outer loop edits PE and Skills. Search methods differ in attribution and candidate strategy, with evaluation settings and KEEP rules frozen per experiment.</span><span lang="ja">内側で1回の Spec 生成、外側で PE と Skills を変更。探索方式の分析・候補戦略は異なり、評価設定と KEEP 基準は実験ごとに固定する。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">MASP、MASPCombine、自由归因与动态记忆是不同实验路线。图展示共用迭代闭环；子集大小、SP 策略和 KEEP 门槛按各实验分别记录。</span><span lang="en">MASP, MASPCombine, free attribution and dynamic memory are separate experiment routes. This is their shared loop; subset sizes, SP strategies and KEEP thresholds remain run-specific.</span><span lang="ja">MASP・MASPCombine・自由分析・動的記憶は別々の実験方式。図は共通ループを示し、部分集合の規模・SP 戦略・KEEP 基準は実験ごとに記録する。</span></p></details></figure>
+<h3 id="section-4"><span lang="zh">2.1　主线：自动修改PE</span><span lang="en">2.1  Main track: automatic PE editing</span><span lang="ja">2.1　主系統：PEの自動編集</span></h3>
+<p><span lang="zh">主线优化对象是Prompt和Skills：离线Agent提出修改，按各run固定的生成协议产生Spec，再由Judge验收候选。下表列出五种PE搜索方式；生成流程对照见第4节。 </span><span lang="en">Optimization targets Prompt and Skills. Offline agents propose edits, generate Specs under the fixed protocol of each run, and submit candidates to the Judge. The table lists five search methods; generation-protocol comparisons are in Section 4. </span><span lang="ja">最適化対象はPromptとSkillsである。オフラインAgentが変更を提案し、各runの固定生成条件でSpecを作り、Judgeが候補を評価する。表には五つの探索方式を示す。生成方式の比較は第4節を参照。 </span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="22-autoresearch-map" hidden="" id="writing-map-3"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="PE优化主线与对照旁支" data-alt-en="PE optimization and comparison branches" data-alt-ja="PE最適化と比較系統" data-alt-zh="PE优化主线与对照旁支" data-diagram-image="" data-figure-key="/writing/assets/b81e14139103f022d7a8.png" data-src-en="/writing/figures/en/22-autoresearch-map.svg?v=9d4d33ec3316" data-src-engineering-en="/writing/figures/en/engineering/22-autoresearch-map.svg?v=9e43c1a50431" data-src-engineering-ja="/writing/figures/ja/engineering/22-autoresearch-map.svg?v=d5c81bbd77fd" data-src-engineering-zh="/writing/figures/zh/engineering/22-autoresearch-map.svg?v=f97f082d6d5f" data-src-ja="/writing/figures/ja/22-autoresearch-map.svg?v=faae3cf3a348" data-src-openai-blog-en="/writing/figures/en/22-autoresearch-map.svg?v=9d4d33ec3316" data-src-openai-blog-ja="/writing/figures/ja/22-autoresearch-map.svg?v=faae3cf3a348" data-src-openai-blog-zh="/writing/figures/zh/22-autoresearch-map.svg?v=f9765427f57c" data-src-zh="/writing/figures/zh/22-autoresearch-map.svg?v=f9765427f57c" decoding="async" height="1130" loading="lazy" src="/writing/figures/zh/22-autoresearch-map.svg?v=f9765427f57c" width="1440"/></details><figcaption><span lang="zh">PE自动优化主线与对照旁支</span><span lang="en">Automated PE optimization and side experiments</span><span lang="ja">PE自動最適化と関連実験</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">路线</span><span lang="en">Track</span><span lang="ja">系統</span></th>
+<th><span lang="zh">实际改变什么</span><span lang="en">What changes</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">实验状态与主要记录</span><span lang="en">Status and principal observations</span><span lang="ja">実験状況と主要記録</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MASP</td>
+<td><span lang="zh">SP选择、Analyzer/Fixer/Reviewer定点修改Prompt或Skill</span><span lang="en">SP selection; targeted Prompt or Skill edits by Analyzer/Fixer/Reviewer</span><span lang="ja">SP選択とAnalyzer/Fixer/ReviewerによるPrompt・Skillの局所編集</span></td>
+<td><span lang="zh">多轮KEEP/DISCARD台账；后续用于分层生成PE搜索</span><span lang="en">Multi-round KEEP/DISCARD ledger; later used for layered-PE search</span><span lang="ja">複数回のKEEP/DISCARD記録。後に階層型PE探索へ使用</span></td>
+</tr>
+<tr>
+<td>MASPCombine</td>
+<td><span lang="zh">优先处理单域阻塞题，分开Target与Collateral验收</span><span lang="en">Prioritize cases blocked by one domain; separate Target and Collateral acceptance</span><span lang="ja">単一領域が障害となるケースを優先し、TargetとCollateralを別々に判定</span></td>
+<td><span lang="zh">Workflow目标改善而全量回退，首轮DISCARD</span><span lang="en">Workflow targets improved, full-set results regressed; first round discarded</span><span lang="ja">Workflow目標は改善、全件は悪化。初回DISCARD</span></td>
+</tr>
+<tr>
+<td>Guarded-Patch</td>
+<td><span lang="zh">多个锚点插入候选、机械diff检查、配对排序</span><span lang="en">Multi-anchor insertion candidates, mechanical diff checks, paired ranking</span><span lang="ja">複数アンカーへの挿入候補、機械的diff確認、ペア比較による順位付け</span></td>
+<td><span lang="zh">整写／Patch及SP-prior消融；早期自动晋升baseline未完成</span><span lang="en">Rewrite/Patch and SP-prior ablations; early automatic baseline promotion remained incomplete</span><span lang="ja">全文改稿/PatchとSP-priorのアブレーション。初期の自動baseline昇格は未完了</span></td>
+</tr>
+<tr>
+<td><span lang="zh">自由归因（Free）</span><span lang="en">Free-form diagnosis (Free)</span><span lang="ja">自由診断（Free）</span></td>
+<td><span lang="zh">根据失败直接提出执行协议修改</span><span lang="en">Propose execution-protocol edits directly from failures</span><span lang="ja">失敗から実行プロトコルの変更を直接提案</span></td>
+<td><span lang="zh">100题独立优化线，有KEEP与失败记录</span><span lang="en">Independent 100-case track with KEEP and failure records</span><span lang="ja">100問の独立系統。KEEPと失敗を記録</span></td>
+</tr>
+<tr>
+<td><span lang="zh">策略记忆（Data/SP）</span><span lang="en">Strategy memory (Data/SP)</span><span lang="ja">戦略メモリ（Data/SP）</span></td>
+<td><span lang="zh">先更新策略状态、查重与查冲突，再选一项修改</span><span lang="en">Update strategy state, deduplicate, check conflicts, then choose one edit</span><span lang="ja">戦略状態を更新し、重複・矛盾を確認してから一つを編集</span></td>
+<td><span lang="zh">同100题独立优化线，有KEEP和固定PE重复实验</span><span lang="en">Independent track on the same 100 cases, with KEEPs and fixed-PE repetitions</span><span lang="ja">同じ100問の独立系統。KEEPと固定PEでの反復実験あり</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">方法调研覆盖DSPy/MIPRO、OPRO、GEPA、ProTeGi/APO、TextGrad、EvoPrompt、APE、Promptbreeder、PromptWizard和AutoPrompt。本项目将搜索实现为四个环节：失败归因、局部编辑、候选评测和反馈记忆。MASP以策略为单位提出修改，Guarded-Patch以受保护的补丁为单位生成候选。实验结果按题集、Judge与调用预算分组。</span><span lang="en">The method survey covered DSPy/MIPRO, OPRO, GEPA, ProTeGi/APO, TextGrad, EvoPrompt, APE, Promptbreeder, PromptWizard, and AutoPrompt. Our search has four stages: failure attribution, local editing, candidate evaluation, and feedback memory. MASP proposes strategy-level edits; Guarded-Patch generates protected patches. Results are grouped by dataset, Judge, and call budget.</span><span lang="ja">DSPy/MIPRO、OPRO、GEPA、ProTeGi/APO、TextGrad、EvoPrompt、APE、Promptbreeder、PromptWizard、AutoPromptを調査した。本プロジェクトの探索は失敗分析、局所編集、候補評価、フィードバック記憶の四段階である。MASPは戦略単位、Guarded-Patchは保護されたパッチ単位で候補を提案する。結果はデータセット、Judge、呼び出し予算別に整理する。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="23-method-comparison" hidden="" id="writing-map-4"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="方法比较" data-alt-en="Method comparison" data-alt-ja="方法比較" data-alt-zh="方法比较" data-diagram-image="" data-figure-key="/writing/assets/1fcac2613fda6eaaefa5.png" data-src-en="/writing/figures/en/23-method-comparison.svg?v=6cedf3779a0a" data-src-engineering-en="/writing/figures/en/engineering/23-method-comparison.svg?v=e2c595cf47d3" data-src-engineering-ja="/writing/figures/ja/engineering/23-method-comparison.svg?v=80f13871cb45" data-src-engineering-zh="/writing/figures/zh/engineering/23-method-comparison.svg?v=e1fa6f90b897" data-src-ja="/writing/figures/ja/23-method-comparison.svg?v=f8836fc0a4ff" data-src-openai-blog-en="/writing/figures/en/23-method-comparison.svg?v=6cedf3779a0a" data-src-openai-blog-ja="/writing/figures/ja/23-method-comparison.svg?v=f8836fc0a4ff" data-src-openai-blog-zh="/writing/figures/zh/23-method-comparison.svg?v=4e2e7b096017" data-src-zh="/writing/figures/zh/23-method-comparison.svg?v=4e2e7b096017" decoding="async" height="945" loading="lazy" src="/writing/figures/zh/23-method-comparison.svg?v=4e2e7b096017" width="1440"/></details><figcaption><span lang="zh">五条 PE 优化路线</span><span lang="en">Five PE optimization approaches</span><span lang="ja">五つのPE最適化方式</span></figcaption></figure>
+<p><span lang="zh">五条PE路线的评测粒度不同：MASP和Combine逐项验收修改；Guarded-Patch按候选重复评测后排序；人工PE专项两条线固定修改执行协议，并独立积累历史。策略库由静态SP扩展到Data的动态记录，允许合并、停用和标记冲突。  </span><span lang="en">The five tracks use different evaluation units. MASP and Combine accept edits individually; Guarded-Patch ranks repeatedly evaluated candidates; the two human-PE tracks edit only the execution protocol and maintain independent histories. Static SPs evolved into Data's dynamic records, supporting merge, deactivation, and conflict flags.  </span><span lang="ja">五系統で評価粒度は異なる。MASPとCombineは変更ごとに採否を判定し、Guarded-Patchは反復評価した候補を順位付けする。人手PEの二系統は実行プロトコルのみを変更し、履歴を独立に蓄積する。静的SPはDataの動的記録へ拡張され、統合、無効化、矛盾の記録を可能にした。  </span></p>
+<h3 id="section-5"><span lang="zh">2.2　Goal 与 Loop</span><span lang="en">2.2  Goal and Loop</span><span lang="ja">2.2　GoalとLoop</span></h3>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="24-loop-control" hidden="" id="writing-map-5"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="两种调度方式" data-alt-en="Two scheduling modes" data-alt-ja="二つの実行管理方式" data-alt-zh="两种调度方式" data-diagram-image="" data-figure-key="/writing/assets/463d2f003571a452c919.png" data-src-en="/writing/figures/en/24-loop-control.svg?v=0a356b53b6d3" data-src-engineering-en="/writing/figures/en/engineering/24-loop-control.svg?v=236d192bcbd3" data-src-engineering-ja="/writing/figures/ja/engineering/24-loop-control.svg?v=736217042066" data-src-engineering-zh="/writing/figures/zh/engineering/24-loop-control.svg?v=9b13415ec459" data-src-ja="/writing/figures/ja/24-loop-control.svg?v=072aed051574" data-src-openai-blog-en="/writing/figures/en/24-loop-control.svg?v=0a356b53b6d3" data-src-openai-blog-ja="/writing/figures/ja/24-loop-control.svg?v=072aed051574" data-src-openai-blog-zh="/writing/figures/zh/24-loop-control.svg?v=4c2864aecbfc" data-src-zh="/writing/figures/zh/24-loop-control.svg?v=4c2864aecbfc" decoding="async" height="730" loading="lazy" src="/writing/figures/zh/24-loop-control.svg?v=4c2864aecbfc" width="1440"/></details><figcaption><span lang="zh">Goal 与 Loop 的调度方式</span><span lang="en">Goal and Loop orchestration</span><span lang="ja">GoalとLoopの制御</span></figcaption></figure>
+<p><span lang="zh">生成模式、搜索方法和调度方式分别记录：</span><span lang="en">Generation mode, search method, and scheduling are recorded separately:</span><span lang="ja">生成モード、探索方式、実行管理を分けて記録する：</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">维度</span><span lang="en">Dimension</span><span lang="ja">区分</span></th>
+<th><span lang="zh">选项</span><span lang="en">Options</span><span lang="ja">選択肢</span></th>
+<th><span lang="zh">回答的问题</span><span lang="en">Question addressed</span><span lang="ja">対応する問い</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">生成模式</span><span lang="en">Generation mode</span><span lang="ja">生成モード</span></td>
+<td>Lite / Standard / Pro</td>
+<td><span lang="zh">模型接收什么PE、采用什么生成协议</span><span lang="en">Which PE and generation protocol does the model receive?</span><span lang="ja">モデルが受け取るPEと生成条件は何か</span></td>
+</tr>
+<tr>
+<td><span lang="zh">搜索方法</span><span lang="en">Search method</span><span lang="ja">探索方式</span></td>
+<td>MASP / MASPCombine / Guarded-Patch</td>
+<td><span lang="zh">怎样提出候选、保护旧规则、评估修改</span><span lang="en">How are candidates proposed, existing rules protected, and edits evaluated?</span><span lang="ja">候補提案、既存ルールの保護、変更評価をどう行うか</span></td>
+</tr>
+<tr>
+<td><span lang="zh">循环持有者</span><span lang="en">Loop controller</span><span lang="ja">反復の制御主体</span></td>
+<td><span lang="zh">长会话Agent / Bash与代码driver</span><span lang="en">Long-running conversational agent / Bash and code driver</span><span lang="ja">長時間対話Agent / Bash・コードdriver</span></td>
+<td><span lang="zh">谁调度、停止、回滚、写状态</span><span lang="en">Who schedules, stops, rolls back, and writes state?</span><span lang="ja">実行、停止、ロールバック、状態記録を誰が担うか</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">早期Goal执行出现策略误标、收尾理由漂移等问题；A1将更多裁决交给代码，统一记录候选、评测与回滚状态。该阶段六轮终局均为DISCARD。 </span><span lang="en">Early Goal runs mislabeled strategies and drifted in their stopping rationale. A1 moved more decisions into code and standardized candidate, evaluation, and rollback state. All six rounds in that stage ended in DISCARD. </span><span lang="ja">初期Goalでは戦略の誤表示や終了理由のずれが生じた。A1は判定をよりコード側へ移し、候補・評価・ロールバック状態を統一した。この段階の六回は全てDISCARDで終了した。 </span></p>
+<p><span lang="zh">驱动器曾将历史候选混入当前排序，导致实验比较对象出错；清理候选状态后，循环能够完成评测与回滚，候选仍未通过验收。运行状态与 KEEP 统计由同一份结构化记录提供，便于核对每次裁决使用的候选和证据。</span><span lang="en">The driver once mixed historical candidates into the current ranking, changing what the experiment compared. Clearing that state restored evaluation and rollback, but the candidate still failed acceptance. Run status and KEEP counts now use the same structured record so each decision can be checked against its candidate and evidence.</span><span lang="ja">ドライバーが過去の候補を現在の順位付けに混ぜ、比較対象を取り違えたことがありました。候補状態を整理すると評価とロールバックは完了しましたが、候補自体は採用基準を満たしませんでした。実行状態とKEEP数を同じ構造化記録から取得し、各判断の候補と根拠を照合できるようにしています。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="02-two-loops" hidden="" id="writing-map-6"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="内外循环" data-alt-en="Inner and outer loops" data-alt-ja="内側と外側のループ" data-alt-zh="内外循环" data-diagram-image="" data-figure-key="/writing/assets/90d1fddc3d5285460aaa.png" data-src-en="/writing/figures/en/02-two-loops.svg?v=048c059ff928" data-src-engineering-en="/writing/figures/en/engineering/02-two-loops.svg?v=1e400e32261b" data-src-engineering-ja="/writing/figures/ja/engineering/02-two-loops.svg?v=fc8f6985268b" data-src-engineering-zh="/writing/figures/zh/engineering/02-two-loops.svg?v=635294959290" data-src-ja="/writing/figures/ja/02-two-loops.svg?v=02f667716457" data-src-openai-blog-en="/writing/figures/en/02-two-loops.svg?v=048c059ff928" data-src-openai-blog-ja="/writing/figures/ja/02-two-loops.svg?v=02f667716457" data-src-openai-blog-zh="/writing/figures/zh/02-two-loops.svg?v=44ae149d3ed8" data-src-zh="/writing/figures/zh/02-two-loops.svg?v=44ae149d3ed8" decoding="async" height="580" loading="lazy" src="/writing/figures/zh/02-two-loops.svg?v=44ae149d3ed8" width="1440"/></details><figcaption><span lang="zh">生成与离线优化</span><span lang="en">Generation and offline optimization</span><span lang="ja">生成とオフライン最適化</span></figcaption></figure>
+<p><span lang="zh">Pro策略库包含SP-1a～1i与SP-2～21，共29项；Lite/Standard后续使用SP-1～12。实验配置记录具体策略库与版本，成本按实际请求usage统计。</span><span lang="en">The Pro library contains 29 strategies: SP-1a–1i and SP-2–21. Lite/Standard later uses SP-1–12. Each experiment records its strategy library and version; costs use actual request usage.</span><span lang="ja">Pro戦略庫はSP-1a〜1iとSP-2〜21の計29項目。後のLite/StandardはSP-1〜12を使う。各実験で戦略庫と版を記録し、コストは実リクエストのusageで集計する。</span></p>
+<h2 id="section-6"><span lang="zh">3　主线：PE修改的结果与取舍</span><span lang="en">3  PE edits: results and decisions</span><span lang="ja">3　PE変更の結果と判断</span></h2>
+<p><span lang="zh">实验按题集、Judge和生成模式分组，每组列出自己的基线。“取舍”同时记录PE候选的去留，以及从实验中保留下来的编辑和验收机制。</span><span lang="en">Experiments are grouped by dataset, Judge, and generation mode, each with its own baseline. Decisions cover both candidate acceptance and the editing or validation mechanisms retained from the experiment.</span><span lang="ja">実験を題集、Judge、生成モードで分け、それぞれの基準を示す。採否にはPE候補の採用だけでなく、実験から残した編集・検証の仕組みも含める。</span></p>
+<h3 id="section-7"><span lang="zh">六月历史50题：定点编辑与补丁搜索</span><span lang="en">June · Former 50: targeted edits and patch search</span><span lang="ja">6月・旧50題：局所編集とパッチ探索</span></h3>
+<p><strong><span lang="zh">设置：Lite，历史50题，各自run的四域Judge。</span><span lang="en">Setup: Lite, former 50 cases, each run's four-domain Judge.</span><span lang="ja">設定：Lite、旧50題、各実行時の四領域Judge。</span></strong><span lang="zh"> 两条线分别建立基线；当期Judge、题集文件与生成服务未完整冻结。</span><span lang="en"> Each track established its own baseline; the contemporaneous Judge, dataset file, and generation service were not fully frozen.</span><span lang="ja"> 各系統は独自の基準を作った。当時のJudge、題集ファイル、生成サービスは完全には固定されていなかった。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">当期结果</span><span lang="en">Result at the time</span><span lang="ja">当時の結果</span></th>
+<th><span lang="zh">保留或放弃了什么</span><span lang="en">What was retained or dropped</span><span lang="ja">採用・棄却の判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">MASP · 定点编辑</span><span lang="en">MASP · Targeted editing</span><span lang="ja">MASP · 局所編集</span></td>
+<td><span lang="zh">根据失败选择SP，修改Prompt/Skill；包括Lookup反向关联、看板分组规则冲突修复</span><span lang="en">Select an SP from failures and edit Prompt/Skill; fixes included reverse Lookup links and conflicting dashboard grouping rules</span><span lang="ja">失敗からSPを選びPrompt/Skillを編集。Lookup逆関連や看板グループ規則の衝突を修正</span></td>
+<td><span lang="zh">本线25→33/50，台账3次有效KEEP</span><span lang="en">This track: 25→33/50; three valid KEEP decisions in the ledger</span><span lang="ja">本系統25→33/50、台帳で有効KEEP 3回</span></td>
+<td><strong><span lang="zh">保留PE快照与定点编辑。</span><span lang="en">Retained PE snapshots and targeted editing.</span><span lang="ja">PEスナップショットと局所編集を保持。</span></strong><span lang="zh"> 当期全量验收通过；后续复测另列</span><span lang="en"> Passed full evaluation at the time; later retests are separate</span><span lang="ja"> 当時の全量評価を通過。後の再測定は別記</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Guarded-Patch · 受保护补丁</span><span lang="en">Guarded-Patch · Protected patches</span><span lang="ja">Guarded-Patch · 保護付きパッチ</span></td>
+<td><span lang="zh">锚点插入、diff检查、保留章节与占位符，再比较候选</span><span lang="en">Anchor insertion, diff checks, section and placeholder preservation, then candidate comparison</span><span lang="ja">アンカー挿入、差分検査、章・プレースホルダー保持後に候補比較</span></td>
+<td><span lang="zh">本线25→29/50，台账2次KEEP</span><span lang="en">This track: 25→29/50; two KEEP decisions</span><span lang="ja">本系統25→29/50、KEEP 2回</span></td>
+<td><strong><span lang="zh">保留PE快照与修改保护。</span><span lang="en">Retained PE snapshots and edit protection.</span><span lang="ja">PEスナップショットと変更保護を保持。</span></strong><span lang="zh"> 早期driver实现到候选排序，自动晋升尚未接通</span><span lang="en"> The early driver ranked candidates; automatic promotion was not yet connected</span><span lang="ja"> 初期ドライバーは候補順位まで実装し、自動昇格は未接続</span></td>
+</tr>
+</tbody></table></div>
+<p><strong><span lang="zh">后期复测：本地GPT-5.2 low，四域strict-AND，Lite50题。</span><span lang="en">Later retest: local GPT-5.2 low, four-domain strict-AND, Lite 50 cases.</span><span lang="ja">後の再評価：ローカルGPT-5.2 low、四領域strict-AND、Lite 50題。</span></strong><span lang="zh"> 此次复测同时涉及题集、生成端点等条件变化，历史配置未完整冻结。</span><span lang="en"> The retest also changed the dataset, generation endpoint, and other conditions; historical settings were not fully frozen.</span><span lang="ja"> 題集、生成エンドポイント等も変化しており、過去設定は完全固定されていない。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">复测对象</span><span lang="en">Retested PE</span><span lang="ja">再評価対象</span></th>
+<th align="right"><span lang="zh">本次结果</span><span lang="en">Retest result</span><span lang="ja">今回の結果</span></th>
+<th><span lang="zh">实验条件</span><span lang="en">Conditions</span><span lang="ja">実験条件</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">历史MASP Lite保留PE</span><span lang="en">Historical retained MASP Lite PE</span><span lang="ja">過去のMASP Lite採用PE</span></td>
+<td align="right">24/50</td>
+<td><span lang="zh">复用历史PE，在后期生成与Judge配置下重新评测</span><span lang="en">Reused the historical PE under later generation and Judge settings</span><span lang="ja">過去PEを再利用し、後期の生成・Judge設定で再評価</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="section-8"><span lang="zh">六月开发10题：改写算子与策略先验</span><span lang="en">June · Dev 10: edit operators and strategy priors</span><span lang="ja">6月・開発10題：編集操作と戦略事前情報</span></h3>
+<p><strong><span lang="zh">设置：Guarded-Patch当期Judge，Lite开发10题；另10题独立列行。</span><span lang="en">Setup: contemporaneous Guarded-Patch Judge, Lite Dev 10; a separate 10-case slice is listed separately.</span><span lang="ja">設定：当時のGuarded-Patch Judge、Lite開発10題。別の10題は独立行で示す。</span></strong><span lang="zh"> 重复判定的binary按当期阈值统计。</span><span lang="en"> Repeated binary decisions use the threshold of that period.</span><span lang="ja"> 反復の二値判定は当時の閾値で集計。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">实验</span><span lang="en">Experiment</span><span lang="ja">実験</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">结果及复测</span><span lang="en">Result and repeats</span><span lang="ja">結果と再測定</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">整文件重写｜开发10题</span><span lang="en">Full-file rewrite | Dev 10</span><span lang="ja">全文書き直し｜開発10題</span></td>
+<td><span lang="zh">模型重写全部Prompt</span><span lang="en">Model rewrites the entire prompt</span><span lang="ja">モデルがPrompt全体を書き直す</span></td>
+<td><span lang="zh">基线5/10，四个候选均3/10；Lookup规则覆盖20→7，看板规则3→0</span><span lang="en">Baseline 5/10; all four candidates 3/10; Lookup coverage 20→7, dashboard rules 3→0</span><span lang="ja">基準5/10、4候補とも3/10。Lookup規則20→7、看板規則3→0</span></td>
+<td><strong><span lang="zh">放弃这批整写候选。</span><span lang="en">Dropped these full rewrites.</span><span lang="ja">これらの全文候補を棄却。</span></strong><span lang="zh"> 意外删掉已有规则</span><span lang="en"> Existing rules were unintentionally deleted</span><span lang="ja"> 既存ルールを意図せず削除</span></td>
+</tr>
+<tr>
+<td><span lang="zh">受保护插入｜开发10题</span><span lang="en">Protected insertion | Dev 10</span><span lang="ja">保護付き挿入｜開発10題</span></td>
+<td><span lang="zh">只提交anchor/insert，保护长度、章节及占位符</span><span lang="en">Only anchor/insert edits; protect length, sections, and placeholders</span><span lang="ja">anchor/insertだけを提出し、長さ・章・プレースホルダーを保護</span></td>
+<td><span lang="zh">早期最佳7/10；后续候选五次为5/6/6/6/7，基线5/5/6/7/7，均值6.0与6.0</span><span lang="en">Early best 7/10; five later candidate runs 5/6/6/6/7 vs. baseline 5/5/6/7/7; both means 6.0</span><span lang="ja">初期最高7/10。後の候補5/6/6/6/7、基準5/5/6/7/7、両平均6.0</span></td>
+<td><strong><span lang="zh">保留修改保护机制。</span><span lang="en">Retained edit protection.</span><span lang="ja">編集保護の仕組みを保持。</span></strong><span lang="zh"> 重复均值持平，停止以峰值作为晋升依据</span><span lang="en"> Equal repeat means; stopped promoting on peak scores</span><span lang="ja"> 反復平均は同点。最高値だけでの昇格を停止</span></td>
+</tr>
+<tr>
+<td><span lang="zh">同一补丁｜另10题</span><span lang="en">Same patch | Separate 10</span><span lang="ja">同じパッチ｜別の10題</span></td>
+<td><span lang="zh">不改候选，换独立切片</span><span lang="en">Unchanged candidate, independent slice</span><span lang="ja">候補を変えず独立スライスへ</span></td>
+<td><span lang="zh">候选5/10，基线4/10</span><span lang="en">Candidate 5/10; baseline 4/10</span><span lang="ja">候補5/10、基準4/10</span></td>
+<td><strong><span lang="zh">保留为补丁的另一组观察。</span><span lang="en">Retained as a separate observation.</span><span lang="ja">別標本の観測結果として保持。</span></strong><span lang="zh"> 10题切片净增1题，取舍结合前述重复评测</span><span lang="en"> One net extra pass on 10 cases; decision also uses the repeated tests above</span><span lang="ja"> 10題で純増1件。反復評価も合わせて判断</span></td>
+</tr>
+<tr>
+<td><span lang="zh">SP-prior开关｜开发10题</span><span lang="en">SP prior on/off | Dev 10</span><span lang="ja">SP事前情報オン・オフ｜開発10題</span></td>
+<td><span lang="zh">单代各3候选，每候选Judge重复2次</span><span lang="en">Three candidates per arm in one generation; two Judge repeats per candidate</span><span lang="ja">一世代各3候補、候補ごとにJudgeを2回</span></td>
+<td><span lang="zh">ON、OFF最佳均6/10；各自基线3/10、4/10</span><span lang="en">Both best candidates 6/10; respective baselines 3/10 and 4/10</span><span lang="ja">ON・OFFとも最高6/10、各基準3/10と4/10</span></td>
+<td><strong><span lang="zh">保持SP可配置。</span><span lang="en">Kept SP configurable.</span><span lang="ja">SPを設定可能なまま保持。</span></strong><span lang="zh"> 本次开关对照的最佳候选得分相同</span><span lang="en"> Best-candidate scores matched in this ablation</span><span lang="ja"> この比較では最高候補の得点は同じ</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="section-9"><span lang="zh">六月Lite50题：MASPCombine局部修复</span><span lang="en">June · Lite 50: MASPCombine local repair</span><span lang="ja">6月・Lite 50題：MASPCombineの局所修復</span></h3>
+<p><strong><span lang="zh">设置：6月12日当期生产四域Judge，历史50题，同窗基线。</span><span lang="en">Setup: June 12 production four-domain Judge, former 50, contemporaneous baseline.</span><span lang="ja">設定：6月12日の本番四領域Judge、旧50題、同時期基準。</span></strong><span lang="zh"> Judge hash未完整冻结。</span><span lang="en"> Judge hashes were not fully frozen.</span><span lang="ja"> Judgeハッシュは完全固定されていない。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">本次对照与后续检查</span><span lang="en">Comparison and follow-up checks</span><span lang="ja">今回の比較と後続確認</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">MASPCombine · 目标/全量分验</span><span lang="en">MASPCombine · Target and full-set checks</span><span lang="ja">MASPCombine · 目標と全量の分離検証</span></td>
+<td><span lang="zh">优先单域阻塞题；增加触发器选型、多节点拆分、聚合承载表规则</span><span lang="en">Prioritize single-domain blockers; add trigger selection, multi-node decomposition, and aggregate-carrier table rules</span><span lang="ja">単一領域の阻害題を優先し、トリガー選択、多ノード分割、集計を保持する表の規則を追加</span></td>
+<td><span lang="zh">目标题改善，候选29/50；同窗基线39、35/50，均值37。后续删自检清单、删重复约束分别32、31/50</span><span lang="en">Targets improved, but candidate 29/50 vs. baselines 39 and 35/50 (mean 37). Removing self-checks or duplicate constraints later gave 32 and 31/50</span><span lang="ja">目標は改善したが候補29/50、基準39・35/50、平均37。後の自己検査削除・重複制約削除は32・31/50</span></td>
+<td><strong><span lang="zh">这些候选回退；保留两段验收。</span><span lang="en">Rolled back candidates; retained two-stage validation.</span><span lang="ja">候補を復元し、二段階検証を保持。</span></strong><span lang="zh"> 全量退化，部分新旧规则冲突；只看目标改善会误KEEP</span><span lang="en"> Full-set regression and rule conflicts; target-only checks would falsely KEEP</span><span lang="ja"> 全量退化と規則衝突があり、目標だけなら誤KEEPになる</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="section-10"><span lang="zh">七月专项100题：旧JSON Schema Judge</span><span lang="en">July · Special 100: old JSON Schema Judge</span><span lang="ja">7月・専用100題：旧JSON Schema Judge</span></h3>
+<p><strong><span lang="zh">口径：旧vendored四域JSON Schema Judge，GPT-5.2；原50＋新增50。</span><span lang="en">Protocol: old vendored four-domain JSON Schema Judge, GPT-5.2; former 50 + new 50.</span><span lang="ja">口径：旧vendored四領域JSON Schema Judge、GPT-5.2、旧50＋新50題。</span></strong><span lang="zh"> Seed2 low，单次生成、单次Judge；两线只改人工PE的“SpecDoc生成执行协议”。</span><span lang="en"> Seed2 low, one generation and one Judge pass; both tracks edit only the human PE's SpecDoc generation protocol.</span><span lang="ja"> Seed2 low、単回生成・単回Judge。両系統とも人工PEのSpecDoc生成実行プロトコルだけを変更。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">实际保留的改动</span><span lang="en">Retained edits</span><span lang="ja">採用した変更</span></th>
+<th><span lang="zh">历史KEEP与复测</span><span lang="en">Historical KEEP and retests</span><span lang="ja">過去のKEEPと再測定</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">自由归因（Free）</span><span lang="en">Free-form diagnosis (Free)</span><span lang="ja">自由診断（Free）</span></td>
+<td><span lang="zh">普通记录优先View；从下游消费者回推表字段；相对月份表达</span><span lang="en">Prefer views for ordinary records; plan table fields backward from consumers; relative-month expressions</span><span lang="ja">通常レコードにはビューを優先。下流から表フィールドを逆算し、相対月を表現</span></td>
+<td>28→30/100</td>
+<td><strong><span lang="zh">保留独立PE快照。</span><span lang="en">Retained independent PE snapshots.</span><span lang="ja">独立PEスナップショットを保持。</span></strong><span lang="zh"> 全量验收净增2题</span><span lang="en"> Two net additional passes on the full set</span><span lang="ja"> 全量評価で純増2題</span></td>
+</tr>
+<tr>
+<td><span lang="zh">策略记忆（Data/SP）</span><span lang="en">Strategy memory (Data/SP)</span><span lang="ja">戦略メモリ（Data/SP）</span></td>
+<td><span lang="zh">先查重、查冲突再选策略；完善看板口径、Lookup参数、当前记录匹配键</span><span lang="en">Deduplicate and check conflicts before selecting strategies; refine dashboard semantics, Lookup parameters, and current-record matching keys</span><span lang="ja">戦略選択前に重複と衝突を確認。看板の意味、Lookup引数、現レコード照合キーを補完</span></td>
+<td><span lang="zh">28→28→29→30→40/100；同PE六次40/36/36/34/34/30，均值35%</span><span lang="en">28→28→29→30→40/100; six same-PE runs 40/36/36/34/34/30, mean 35%</span><span lang="ja">28→28→29→30→40/100。同じPEで6回40/36/36/34/34/30、平均35%</span></td>
+<td><strong><span lang="zh">保留独立PE与动态策略记忆。</span><span lang="en">Retained independent PE and dynamic strategy memory.</span><span lang="ja">独立PEと動的戦略メモリを保持。</span></strong><span lang="zh"> 40%为历史峰值，报告同时保留35%的复测均值</span><span lang="en"> 40% is the historical peak; repeat mean is 35%</span><span lang="ja"> 40%は過去最高、反復平均は35%</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="section-11"><span lang="zh">七月专项100题：冻结新版四域Judge</span><span lang="en">July · Special 100: frozen updated four-domain Judge</span><span lang="ja">7月・専用100題：固定した新版四領域Judge</span></h3>
+<p><strong><span lang="zh">设置：origin-main-63c9afd，GPT-5.2 medium、native JSON Schema，同一专项100题。</span><span lang="en">Setup: origin-main-63c9afd, GPT-5.2 medium, native JSON Schema, same special 100.</span><span lang="ja">設定：origin-main-63c9afd、GPT-5.2 medium、native JSON Schema、同じ専用100題。</span></strong><span lang="zh"> 两线迁移Judge后分别重新建立基线。    </span><span lang="en"> Each track re-established its baseline after Judge migration.    </span><span lang="ja"> Judge移行後に各系統で基準を再構築。    </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">本阶段保留的改动</span><span lang="en">Edits retained in this stage</span><span lang="ja">この段階で残した変更</span></th>
+<th><span lang="zh">历史KEEP与复测</span><span lang="en">Historical KEEP and retests</span><span lang="ja">過去のKEEPと再測定</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">自由归因（Free）</span><span lang="en">Free-form diagnosis (Free)</span><span lang="ja">自由診断（Free）</span></td>
+<td><span lang="zh">Lookup规范化；“最高/最低是哪条记录”先路由到源记录</span><span lang="en">Normalize Lookup; route record-level maxima/minima to source records first</span><span lang="ja">Lookupを正規化し、最高・最低のレコードを問う要求は源レコードへ先にルーティング</span></td>
+<td><span lang="zh">32→39→41/100；另一个41/100候选曾因目标机制未生效被DISCARD</span><span lang="en">32→39→41/100; a different 41/100 candidate was discarded because its target mechanism never took effect</span><span lang="ja">32→39→41/100。別の41/100候補は目標機構が働かずDISCARD</span></td>
+<td><strong><span lang="zh">保留机制核验通过的两次KEEP。</span><span lang="en">Retained two KEEP edits with verified mechanisms.</span><span lang="ja">機構の有効性を確認できたKEEP 2回を保持。</span></strong><span lang="zh"> 验收同时检查全量分数与修改是否生效</span><span lang="en"> Acceptance checks both total score and whether the edit worked as intended</span><span lang="ja"> 全量得点と変更の実効性をともに確認</span></td>
+</tr>
+<tr>
+<td><span lang="zh">策略记忆（Data/SP）</span><span lang="en">Strategy memory (Data/SP)</span><span lang="ja">戦略メモリ（Data/SP）</span></td>
+<td><span lang="zh">删除非法可选辅助视图；为“提醒我”补明确人员字段</span><span lang="en">Remove unsupported optional helper views; add explicit person fields for “remind me”</span><span lang="ja">不正な任意補助ビューを削除し、「私に通知」に明示的なユーザーフィールドを追加</span></td>
+<td><span lang="zh">33→35→42/100；同PE为42/100、37/99、36/100，三轮有效率均值38.46%</span><span lang="en">33→35→42/100; same PE 42/100, 37/99, 36/100; mean valid-output rate 38.46%</span><span lang="ja">33→35→42/100。同じPEで42/100、37/99、36/100、有効結果の平均38.46%</span></td>
+<td><strong><span lang="zh">保留独立KEEP并补充重复评测。</span><span lang="en">Retained independent KEEP and added repeat tests.</span><span lang="ja">独立KEEPを保持し反復評価を追加。</span></strong><span lang="zh"> 第二轮1题Judge空响应；99题共同交集中39题不稳定</span><span lang="en"> One empty Judge response in round two; 39 unstable cases among the 99 shared cases</span><span lang="ja"> 第2回はJudge空応答1題。共通99題のうち39題が不安定</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">两线最新KEEP相差1题。Free基线32、Data基线33，重复评测集中在Data；下一组方法对照需要为两臂安排相同的生成与评审次数。</span><span lang="en">The latest KEEP scores differ by one case. Free started at 32 and Data at 33; repeats focused on Data. The next method comparison needs equal generation and review repetitions for both arms.</span><span lang="ja">最新KEEPは1題差で、Free基準32、Data基準33。反復はDataに集中したため、次の方式比較では両群の生成・審査回数を揃える必要がある。</span></p>
+<h3 id="section-12"><span lang="zh">七月主Harness开发150题：分层生成PE后的搜索</span><span lang="en">July · Main harness Dev150: search after layered initialization</span><span lang="ja">7月・主Harness開発150題：階層化初期化後の探索</span></h3>
+<p><strong><span lang="zh">口径：同一冻结新版四域Judge，清洗后的Dev150，全量150题。</span><span lang="en">Protocol: the same frozen updated four-domain Judge; cleaned Dev150, all 150 cases.</span><span lang="ja">口径：同じ固定新版四領域Judge、清掃済みDev150全150題。</span></strong><span lang="zh"> 与专项100题分开；基线为分层生成PE的16/150。前五轮使用简化策略，后三轮恢复原MASP SP-1～SP-12。</span><span lang="en"> Separate from the special 100; layered-generation baseline 16/150. Five rounds used simplified strategies, then three restored original MASP SP-1–SP-12.</span><span lang="ja"> 専用100題とは別で、階層化生成の基準16/150。最初の5回は簡略戦略、後の3回は元のMASP SP-1–SP-12へ復帰。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法／候选</span><span lang="en">Method / candidate</span><span lang="ja">方法／候補</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">MASP · 八轮合计</span><span lang="en">MASP · Eight rounds total</span><span lang="ja">MASP · 計8回</span></td>
+<td><span lang="zh">依次改权限激活、Table依赖、指标、收件人、分母、动作能力、时间触发</span><span lang="en">Edits to permission activation, table dependencies, metrics, recipients, denominators, action capabilities, and timed triggers</span><span lang="ja">権限の有効化、表依存、指標、受信者、分母、動作能力、時間トリガーを順に変更</span></td>
+<td><strong>0 KEEP</strong><span lang="zh">；第6、8轮进入完整Dev150，其余停于Target/Guard</span><span lang="en">; rounds 6 and 8 reached full Dev150; the rest stopped at Target/Guard</span><span lang="ja">。第6・8回のみDev150全量へ進み、他はTarget/Guardで停止</span></td>
+<td><strong><span lang="zh">保留初始化PE，八轮候选回退。</span><span lang="en">Kept initialization; rolled back all eight candidates.</span><span lang="ja">初期化PEを保持し8候補をすべて復元。</span></strong><span lang="zh"> 目标问题改善伴随其他题退化</span><span lang="en"> Target improvements accompanied regressions elsewhere</span><span lang="ja"> 目標改善と他題の退化が併存</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Dashboard分母闭环</span><span lang="en">Dashboard denominator dependencies</span><span lang="ja">Dashboardの分母依存を補完</span></td>
+<td><span lang="zh">显式登记分母字段与聚合依赖</span><span lang="en">Explicitly register denominator fields and aggregation dependencies</span><span lang="ja">分母フィールドと集計依存を明示登録</span></td>
+<td><span lang="zh">Dashboard单域97→108/150；strict 16→13/150，新增8、丢失11</span><span lang="en">Dashboard 97→108/150; strict 16→13/150, eight gains and 11 losses</span><span lang="ja">Dashboard単域97→108/150、strict 16→13/150、8改善・11退化</span></td>
+<td><strong><span lang="zh">DISCARD候选。</span><span lang="en">Discarded candidate.</span><span lang="ja">候補をDISCARD。</span></strong><span lang="zh"> 单域改善仍伴随整题净退化</span><span lang="en"> Domain improvement but net whole-case regression</span><span lang="ja"> 単域は改善しても整題では純減</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Workflow时间路由</span><span lang="en">Workflow time routing</span><span lang="ja">Workflowの時間ルーティング</span></td>
+<td><span lang="zh">区分亚日级触发能力与时间实现路径</span><span lang="en">Distinguish sub-day trigger capabilities and implementation paths</span><span lang="ja">一日未満のトリガー能力と実装経路を区別</span></td>
+<td><span lang="zh">Workflow单域99→107/150；strict 16→11/150，新增7、丢失12</span><span lang="en">Workflow 99→107/150; strict 16→11/150, seven gains and 12 losses</span><span lang="ja">Workflow単域99→107/150、strict 16→11/150、7改善・12退化</span></td>
+<td><strong><span lang="zh">DISCARD候选。</span><span lang="en">Discarded candidate.</span><span lang="ja">候補をDISCARD。</span></strong><span lang="zh"> 同样未通过全量验收</span><span lang="en"> Also failed full-set acceptance</span><span lang="ja"> 全量の採用基準を満たさず</span></td>
+</tr>
+<tr>
+<td><span lang="zh">标准MASP＋旧Skills参考</span><span lang="en">Standard MASP + old Skills reference</span><span lang="ja">標準MASP＋旧Skills参照</span></td>
+<td><span lang="zh">旧Skills作为只读参考，沿原策略继续提出修改</span><span lang="en">Read old Skills as reference and continue proposing edits under original strategies</span><span lang="ja">旧Skillsを読み取り専用で参照し、元戦略で変更を提案</span></td>
+<td><span lang="zh">独立fresh基线17/150，首轮目标检查仍有Guard回退</span><span lang="en">Independent fresh baseline 17/150; first target check still regressed on Guard</span><span lang="ja">独立fresh基準17/150、初回目標検査でGuard退化</span></td>
+<td><strong><span lang="zh">停留在局部验证阶段。</span><span lang="en">Remained in local validation.</span><span lang="ja">局所検証段階にとどまる。</span></strong><span lang="zh"> 首轮结果记录为PARTIAL</span><span lang="en"> First-round result recorded as PARTIAL</span><span lang="ja"> 初回結果はPARTIALと記録</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">同一初始化PE两次全量为16、17/150，却只共同通过7题。下一步分别测量生成与Judge的波动，再据此设置Guard与KEEP门槛。</span><span lang="en">The unchanged initialization passed 16 and 17 of 150, but only seven cases passed both times. Next we measure generation and Judge variability separately to set Guard and KEEP thresholds.</span><span lang="ja">同じ初期化PEの全量は16、17/150だったが、共通合格は7題だけだった。次は生成とJudgeの変動を分けて測り、GuardとKEEPの閾値を決める。</span></p>
+<p><strong><span lang="zh">Former50回归：</span><span lang="en">Former50 regression: </span><span lang="ja">Former50回帰：</span></strong><span lang="zh"> 分层生成PE为31/50；历史MASP保留PE为27/50。各一次生成与Judge，比较固定PE快照。五套PE的分题集结果与成本见后文；Holdout50尚未运行。</span><span lang="en"> Layered-generation PE passed 31/50 and historical MASP PE 27/50, with one generation and Judge pass per fixed PE snapshot. Dataset-specific scores and costs for all five PEs appear later. Holdout50 has not run.</span><span lang="ja"> 階層化生成PEは31/50、過去MASP採用PEは27/50。固定PEごとに生成・Judge各一回で比較した。五つのPEの題集別得点と費用は後述。Holdout50は未実行。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="25-method-decisions" hidden="" id="writing-map-7"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="方法实验后的取舍" data-alt-en="Decisions after method experiments" data-alt-ja="手法実験後の採否" data-alt-zh="方法实验后的取舍" data-diagram-image="" data-figure-key="/writing/assets/eadef45645aed260de1b.png" data-src-en="/writing/figures/en/25-method-decisions.svg?v=b3a24cd82474" data-src-engineering-en="/writing/figures/en/engineering/25-method-decisions.svg?v=a77eb2d9d377" data-src-engineering-ja="/writing/figures/ja/engineering/25-method-decisions.svg?v=210afd02ec1c" data-src-engineering-zh="/writing/figures/zh/engineering/25-method-decisions.svg?v=09d31417fbb9" data-src-ja="/writing/figures/ja/25-method-decisions.svg?v=e3f1dacbe764" data-src-openai-blog-en="/writing/figures/en/25-method-decisions.svg?v=b3a24cd82474" data-src-openai-blog-ja="/writing/figures/ja/25-method-decisions.svg?v=e3f1dacbe764" data-src-openai-blog-zh="/writing/figures/zh/25-method-decisions.svg?v=de709d1c4ab9" data-src-zh="/writing/figures/zh/25-method-decisions.svg?v=de709d1c4ab9" decoding="async" height="880" loading="lazy" src="/writing/figures/zh/25-method-decisions.svg?v=de709d1c4ab9" width="1440"/></details><figcaption><span lang="zh">实验之后保留了什么</span><span lang="en">What the experiments retained</span><span lang="ja">実験から残したもの</span></figcaption></figure>
+<p><span lang="zh">MASP采用失败池、策略选择、定点编辑、Reviewer、Target与全量裁决；MASPCombine优先处理单域阻塞题，并分别检查目标改善与其他题的退化。</span><span lang="en">MASP uses a failure pool, strategy selection, targeted edits, reviewer, target checks, and full-set decisions. MASPCombine prioritizes single-domain bottlenecks and checks target improvement separately from regressions elsewhere.</span><span lang="ja">MASPは失敗プール、戦略選択、局所編集、Reviewer、Target確認、全件判定を用いる。MASPCombineは単一領域の障害を優先し、目標改善と他ケース悪化を分離して検証する。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="03-search-operators" hidden="" id="writing-map-8"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="MASP与组合" data-alt-en="MASP and Combine" data-alt-ja="MASPとCombine" data-alt-zh="MASP与组合" data-diagram-image="" data-figure-key="/writing/assets/e625a342260e0168cff0.png" data-src-en="/writing/figures/en/03-search-operators.svg?v=da38335e12d6" data-src-engineering-en="/writing/figures/en/engineering/03-search-operators.svg?v=4c9795ee58b9" data-src-engineering-ja="/writing/figures/ja/engineering/03-search-operators.svg?v=7130b541431f" data-src-engineering-zh="/writing/figures/zh/engineering/03-search-operators.svg?v=b0aae5e4aac3" data-src-ja="/writing/figures/ja/03-search-operators.svg?v=7dcc21b76d70" data-src-openai-blog-en="/writing/figures/en/03-search-operators.svg?v=da38335e12d6" data-src-openai-blog-ja="/writing/figures/ja/03-search-operators.svg?v=7dcc21b76d70" data-src-openai-blog-zh="/writing/figures/zh/03-search-operators.svg?v=52a9439d875d" data-src-zh="/writing/figures/zh/03-search-operators.svg?v=52a9439d875d" decoding="async" height="560" loading="lazy" src="/writing/figures/zh/03-search-operators.svg?v=52a9439d875d" width="1440"/></details><figcaption><span lang="zh">MASP 与 MASPCombine</span><span lang="en">MASP and MASPCombine</span><span lang="ja">MASPとMASPCombine</span></figcaption></figure>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="04-patch-guard" hidden="" id="writing-map-9"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Guarded Patch" data-diagram-image="" data-figure-key="/writing/assets/92461544b8e024270e8a.png" data-src-en="/writing/figures/en/04-patch-guard.svg?v=b664cdb8d86a" data-src-engineering-en="/writing/figures/en/engineering/04-patch-guard.svg?v=76d75bafaf56" data-src-engineering-ja="/writing/figures/ja/engineering/04-patch-guard.svg?v=cab99fd502fd" data-src-engineering-zh="/writing/figures/zh/engineering/04-patch-guard.svg?v=afbecb645ae7" data-src-ja="/writing/figures/ja/04-patch-guard.svg?v=8a3e68c126aa" data-src-openai-blog-en="/writing/figures/en/04-patch-guard.svg?v=b664cdb8d86a" data-src-openai-blog-ja="/writing/figures/ja/04-patch-guard.svg?v=8a3e68c126aa" data-src-openai-blog-zh="/writing/figures/zh/04-patch-guard.svg?v=51e9508d95cc" data-src-zh="/writing/figures/zh/04-patch-guard.svg?v=51e9508d95cc" decoding="async" height="490" loading="lazy" src="/writing/figures/zh/04-patch-guard.svg?v=51e9508d95cc" width="1440"/></details><figcaption><span lang="zh">整段重写与锚点补丁</span><span lang="en">Full rewrites and anchored patches</span><span lang="ja">全文改写とアンカーパッチ</span></figcaption></figure>
+<h2 id="section-13"><span lang="zh">4　旁支：生成流程对照与产物诊断</span><span lang="en">4  Generation variants and artifact diagnostics</span><span lang="ja">4　生成方式の比較と成果物の診断</span></h2>
+<p><span lang="zh">这些实验回答三个问题：增加领域生成是否有效、模型能否修正自己的初稿、确定性检查能否识别或选出更好的Spec。每组同时记录质量变化与额外调用成本。</span><span lang="en">These experiments ask whether additional domain generation helps, whether a model can revise its own draft, and whether deterministic checks identify or select better Specs. Each group records quality changes and extra call costs.</span><span lang="ja">実験では、領域別生成の追加は有効か、モデルは初稿を修正できるか、決定的な検査で良いSpecを識別・選択できるかを調べる。品質変化と追加呼び出しコストを同時に記録する。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="05-runtime-branches" hidden="" id="writing-map-10"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="旁支的四种操作" data-alt-en="Four side-experiment operations" data-alt-ja="関連実験の四操作" data-alt-zh="旁支的四种操作" data-diagram-image="" data-figure-key="/writing/assets/d25bc01cff62334013ac.png" data-src-en="/writing/figures/en/05-runtime-branches.svg?v=e6cd221002cb" data-src-engineering-en="/writing/figures/en/engineering/05-runtime-branches.svg?v=a420d737237a" data-src-engineering-ja="/writing/figures/ja/engineering/05-runtime-branches.svg?v=be0ff9a78f62" data-src-engineering-zh="/writing/figures/zh/engineering/05-runtime-branches.svg?v=de829df57ec0" data-src-ja="/writing/figures/ja/05-runtime-branches.svg?v=55cfb7d6b185" data-src-openai-blog-en="/writing/figures/en/05-runtime-branches.svg?v=e6cd221002cb" data-src-openai-blog-ja="/writing/figures/ja/05-runtime-branches.svg?v=55cfb7d6b185" data-src-openai-blog-zh="/writing/figures/zh/05-runtime-branches.svg?v=b6c11c687028" data-src-zh="/writing/figures/zh/05-runtime-branches.svg?v=b6c11c687028" decoding="async" height="745" loading="lazy" src="/writing/figures/zh/05-runtime-branches.svg?v=b6c11c687028" width="1440"/></details><figcaption><span lang="zh">旁支：生成流程对照与产物诊断</span><span lang="en">Generation experiments and artifact diagnostics</span><span lang="ja">生成方式の比較と成果物診断</span></figcaption></figure>
+<p><span lang="zh">Arch与SelfRefine增加模型调用，Virtual Gate检查固定产物，Selector比较多候选的选择规则。以下分别列出调用变化、结果和交付取舍。</span><span lang="en">Arch and SelfRefine add model calls; Virtual Gate checks fixed artifacts; Selector compares candidate-choice rules. Each is reported with its calling changes, results, and delivery decision.</span><span lang="ja">ArchとSelfRefineは呼び出しを追加し、Virtual Gateは固定成果物を検査し、Selectorは候補選択規則を比較する。呼び出しの変化、結果、納品時の採否をそれぞれ示す。</span></p>
+<h3 id="section-14"><span lang="zh">六月Lite50题：额外领域生成</span><span lang="en">June · Lite 50: extra domain generation</span><span lang="ja">6月・Lite 50題：追加領域生成</span></h3>
+<p><strong><span lang="zh">设置：6月9—10日当期生产四域Judge，历史50题，各自同窗对照。</span><span lang="en">Setup: June 9–10 production four-domain Judge, former 50, contemporaneous controls.</span><span lang="ja">設定：6月9–10日本番四領域Judge、旧50題、各同時期対照。</span></strong><span lang="zh"> Judge hash未完整冻结。  </span><span lang="en"> Judge hashes were not fully frozen.  </span><span lang="ja"> Judgeハッシュは完全固定されていない。  </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">本次对照与后续检查</span><span lang="en">Comparison and follow-up checks</span><span lang="ja">今回の比較と後続確認</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">Arch · 独立权限生成</span><span lang="en">Arch · Separate permission generation</span><span lang="ja">Arch · 権限の独立生成</span></td>
+<td><span lang="zh">初始Spec后，额外生成权限模块并拼回</span><span lang="en">Generate permissions after the initial Spec and merge them back</span><span lang="ja">初期Spec後に権限を追加生成して結合</span></td>
+<td><span lang="zh">两次基线31、33/50；候选33、32/50。均值32→32.5，权限失败均值7.5→4.5</span><span lang="en">Baselines 31, 33/50; candidates 33, 32/50. Mean 32→32.5; mean permission failures 7.5→4.5</span><span lang="ja">基準31・33/50、候補33・32/50。平均32→32.5、権限失敗平均7.5→4.5</span></td>
+<td><strong><span lang="zh">未采用。</span><span lang="en">Not adopted.</span><span lang="ja">不採用。</span></strong><span lang="zh"> 增加一次调用，整题平均仅多通过0.5题</span><span lang="en"> One extra call for only 0.5 additional whole-case passes on average</span><span lang="ja"> 一回追加して整題平均の増加は0.5題</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Arch · 多领域生成</span><span lang="en">Arch · Multiple domain generations</span><span lang="ja">Arch · 複数領域の生成</span></td>
+<td><span lang="zh">Table、Dashboard、Permission各增加一次独立生成</span><span lang="en">One extra generation each for Table, Dashboard, and Permission</span><span lang="ja">Table、Dashboard、Permissionに各一回独立生成を追加</span></td>
+<td><span lang="zh">初跑32→38/50；后续同窗两对34→33、31→32，平均净差0</span><span lang="en">First run 32→38/50; later paired runs 34→33 and 31→32, mean net difference zero</span><span lang="ja">初回32→38/50、後の対応比較34→33と31→32、平均純差0</span></td>
+<td><strong><span lang="zh">未采用。</span><span lang="en">Not adopted.</span><span lang="ja">不採用。</span></strong><span lang="zh"> 额外调用成本持续增加，后续两对复测的整题收益持平</span><span lang="en"> Extra-call costs persisted; the later two paired tests had no mean whole-case gain</span><span lang="ja"> 追加費用は継続し、後の二対は平均整題利益なし</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">多领域生成增加三次领域调用，初跑平均总token约31k→41k。</span><span lang="en">Multi-domain generation adds three domain calls, increasing average total tokens from about 31k to 41k in the initial run.</span><span lang="ja">領域別生成では呼び出しが3回増え、初回実験の平均総token数は約31kから41kへ増えた。</span></p>
+<h3 id="section-15"><span lang="zh">六月Pro重复切片：同模型自我修订</span><span lang="en">June · Repeated Pro slices: same-model self-revision</span><span lang="ja">6月・Pro反復スライス：同モデル自己改訂</span></h3>
+<p><strong><span lang="zh">设置：生产bitable-lcp四域Judge，Pro，三轮重复实验。</span><span lang="en">Setup: production bitable-lcp four-domain Judge, Pro, three repeated runs.</span><span lang="ja">設定：本番bitable-lcp四領域Judge、Pro、3回反復。</span></strong><span lang="zh"> 统计单位为“题目×轮次”，共72次判定。</span><span lang="en"> The unit is case × round, for 72 judgments.</span><span lang="ja"> 集計単位は題×ラウンド、計72判断。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法</span><span lang="en">Method</span><span lang="ja">方法</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">对照结果</span><span lang="en">Comparison result</span><span lang="ja">比較結果</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SelfRefine</td>
+<td><span lang="zh">同一生成模型对初稿critique，再全文revise</span><span lang="en">The generation model critiques its draft, then rewrites the full document</span><span lang="ja">生成モデルが初稿を批評し、全文を改訂</span></td>
+<td><span lang="zh">三轮合计40/72→33/72，即55.6%→45.8%，约−9.7pp；三轮均未超过对应基线</span><span lang="en">Total 40/72→33/72: 55.6%→45.8%, about −9.7 pp; none of the three rounds beat its baseline</span><span lang="ja">計40/72→33/72、55.6%→45.8%、約−9.7ポイント。3回とも対応基準を超えず</span></td>
+<td><strong><span lang="zh">回退该自修实现，0 KEEP。</span><span lang="en">Rolled back this self-revision implementation; zero KEEP.</span><span lang="ja">自己改訂実装を復元、KEEP 0。</span></strong><span lang="zh"> 修订引入Table等域的新错误，也有原样返回</span><span lang="en"> Revision introduced new Table and other errors; some outputs were unchanged</span><span lang="ja"> 改訂はTable等の新誤りを導入し、無変更出力もあった</span></td>
+</tr>
+</tbody></table></div>
+<h3 id="section-16"><span lang="zh">六月固定产物：检查器与选择器</span><span lang="en">June · Fixed artifacts: checker and selector</span><span lang="ja">6月・固定成果物：検査器と選択器</span></h3>
+<p><strong><span lang="zh">口径：历史Judge标签上的回放，生成PE未改变。</span><span lang="en">Protocol: replay against historical Judge labels; generation PE unchanged.</span><span lang="ja">口径：過去Judgeラベルでの再生、生成PEは変更なし。</span></strong><span lang="zh"> 两行分别使用309份Spec/Judge对、50题×4份候选；检查精确率与文档通过率属于不同指标。 </span><span lang="en"> The two rows use 309 Spec/Judge pairs and 50 cases × four candidates. Checker precision and document pass rate are different metrics. </span><span lang="ja"> 各行は309 Spec/Judge対と50題×4候補を使用。検査適合率と文書合格率は異なる指標。 </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方法与样本</span><span lang="en">Method and sample</span><span lang="ja">方法と標本</span></th>
+<th><span lang="zh">具体改动</span><span lang="en">Change</span><span lang="ja">変更内容</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+<th><span lang="zh">取舍</span><span lang="en">Decision</span><span lang="ja">判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">Virtual Gate｜309份产物</span><span lang="en">Virtual Gate | 309 artifacts</span><span lang="ja">Virtual Gate｜309成果物</span></td>
+<td><span lang="zh">定向检查权限、模糊收件人、公式范围、人员字段类型</span><span lang="en">Targeted checks for permissions, ambiguous recipients, formula scope, and person-field types</span><span lang="ja">権限、曖昧な受信者、式の範囲、ユーザーフィールド型を限定検査</span></td>
+<td><span lang="zh">合并检查精确率96.7%、召回33%</span><span lang="en">Combined checker precision 96.7%; recall 33%</span><span lang="ja">統合検査の適合率96.7%、再現率33%</span></td>
+<td><strong><span lang="zh">保留为诊断工具。</span><span lang="en">Retained for diagnosis.</span><span lang="ja">診断用として保持。</span></strong><span lang="zh"> 命中的错误较准确，但覆盖范围有限</span><span lang="en"> Accurate detections but limited coverage</span><span lang="ja"> 検出の精度は高いが範囲が限定的</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Selector｜50题×4候选</span><span lang="en">Selector | 50 cases × four candidates</span><span lang="ja">Selector｜50題×4候補</span></td>
+<td><span lang="zh">每题选违规检查最少的候选</span><span lang="en">Choose the candidate with the fewest detected violations</span><span lang="ja">検出違反が最少の候補を各題で選択</span></td>
+<td><span lang="zh">规则选择期望31.6/50，随机期望32/50，事后Oracle42/50</span><span lang="en">Rule-based expectation 31.6/50; random 32/50; post-hoc oracle 42/50</span><span lang="ja">ルール選択の期待31.6/50、ランダム32/50、事後Oracle 42/50</span></td>
+<td><strong><span lang="zh">未采用。</span><span lang="en">Not adopted.</span><span lang="ja">不採用。</span></strong><span lang="zh"> 仅约14%候选触发检查，规则对多数候选缺少区分度；Oracle用事后Judge选优，作为选择上限参考</span><span lang="en"> Only about 14% of candidates triggered checks, limiting discrimination. Oracle selects using post-hoc Judge outcomes as an upper-bound reference</span><span lang="ja"> 検査にかかる候補は約14%で識別力が不足。Oracleは事後Judgeで選び、上限参照とする</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">这些对照之后，Lite交付继续采用单次调用。额外领域生成的整题收益小，自修出现回退，规则选择器与随机选择接近；Virtual Gate则保留为定位特定错误的工具。</span><span lang="en">Lite retained single-call delivery after these comparisons. Extra domain generation brought little joint-pass benefit; self-repair regressed; rule-based selection was close to random selection. Virtual Gate remained a tool for locating specific errors.</span><span lang="ja">比較後もLiteは一回呼び出しを維持した。領域別生成追加の全問合格への寄与は小さく、自己修正は悪化し、ルール選択器はランダム選択と近かった。Virtual Gateは特定の誤りを探す診断用として残した。</span></p>
+<h2 id="section-17"><span lang="zh">5　Judge迁移与历史基线调查</span><span lang="en">5  Judge migration and historical baselines</span><span lang="ja">5　Judge移行と過去ベースラインの調査</span></h2>
+<p><span lang="zh">历史Pro记录为36/50（72%）。后续运行曾更换题集、Q&amp;A与reasoning；对齐回历史PE、413题集和关闭reasoning后，本地Judge下仍为13/50（26%）。历史逐题Spec与Judge快照缺失，复测中的跨时生成变化和评测变化难以分开。后续实验改为保存固定产物，再交叉更换Judge。 </span><span lang="en">The historical Pro result was 36/50 (72%). Later runs changed the dataset, Q&amp;A, and reasoning. Even after restoring the historical PE, dataset 413, and disabled reasoning, the local Judge gave 13/50 (26%). Missing case-level Spec and Judge snapshots made temporal generation changes hard to separate from evaluation changes. Later experiments therefore preserved fixed artifacts and crossed them with different Judges. </span><span lang="ja">過去のPro記録は36/50（72%）だった。後続実行ではデータセット、Q&amp;A、reasoningが変更された。過去PE、413データセット、reasoning無効へ戻してもlocal Judgeでは13/50（26%）だった。逐問SpecとJudgeのスナップショットがなく、時期による生成差と評価差を分離しにくかった。その後は成果物を固定保存し、Judgeを交差比較する方式へ変更した。 </span></p>
+<p><span lang="zh">7月的固定产物迁移有更明确的实验对象：</span><span lang="en">July's fixed-artifact migration provided a clearer comparison:</span><span lang="ja">7月は成果物を固定し、より明確な比較を行った：</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="06-judge-cross" hidden="" id="writing-map-11"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Judge交叉" data-alt-en="Cross-Judge comparison" data-alt-ja="Judge交差比較" data-alt-zh="Judge交叉" data-diagram-image="" data-figure-key="/writing/assets/5c9d544897108830bbd4.png" data-src-en="/writing/figures/en/06-judge-cross.svg?v=eb73a8c10de8" data-src-engineering-en="/writing/figures/en/engineering/06-judge-cross.svg?v=8c58853dca9d" data-src-engineering-ja="/writing/figures/ja/engineering/06-judge-cross.svg?v=2d501d1a83dc" data-src-engineering-zh="/writing/figures/zh/engineering/06-judge-cross.svg?v=ad2e324cac8a" data-src-ja="/writing/figures/ja/06-judge-cross.svg?v=0e8b7b5030e3" data-src-openai-blog-en="/writing/figures/en/06-judge-cross.svg?v=eb73a8c10de8" data-src-openai-blog-ja="/writing/figures/ja/06-judge-cross.svg?v=0e8b7b5030e3" data-src-openai-blog-zh="/writing/figures/zh/06-judge-cross.svg?v=76c8149a0284" data-src-zh="/writing/figures/zh/06-judge-cross.svg?v=76c8149a0284" decoding="async" height="460" loading="lazy" src="/writing/figures/zh/06-judge-cross.svg?v=76c8149a0284" width="1440"/></details><figcaption><span lang="zh">Judge 与产物的交叉比较</span><span lang="en">Crossing Judges with artifacts</span><span lang="ja">Judgeと成果物の交差比較</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">实验</span><span lang="en">Experiment</span><span lang="ja">実験</span></th>
+<th><span lang="zh">固定／变化项</span><span lang="en">Fixed / varied factors</span><span lang="ja">固定項目 / 変更項目</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">历史Top产物换Judge</span><span lang="en">Historical top artifacts, new Judge</span><span lang="ja">過去Top成果物のJudge変更</span></td>
+<td><span lang="zh">固定50份Spec；旧记录与JSON Schema比较</span><span lang="en">50 fixed Specs; historical scores vs. JSON Schema</span><span lang="ja">Spec50件を固定し、旧記録とJSON Schemaを比較</span></td>
+<td><span lang="zh">28→27；共同过21、共同败16、旧独有7、新独有6</span><span lang="en">28→27; 21 pass both, 16 fail both, 7 old-only, 6 new-only</span><span lang="ja">28→27。共通合格21、共通不合格16、旧のみ7、新のみ6</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Fresh当前PE</span><span lang="en">Fresh generation with current PE</span><span lang="ja">現行PEでの新規生成</span></td>
+<td><span lang="zh">当前workspace重新生成</span><span lang="en">Regenerate in the current workspace</span><span lang="ja">現行workspaceで再生成</span></td>
+<td><span lang="zh">SDK-local27/50，JSON Schema5/50；两条有wrapper产物缺失</span><span lang="en">SDK-local 27/50, JSON Schema 5/50; two wrapper artifacts missing</span><span lang="ja">SDK-local 27/50、JSON Schema 5/50。wrapper成果物が2件欠落</span></td>
+</tr>
+<tr>
+<td><span lang="zh">历史Skills恢复</span><span lang="en">Restore historical Skills</span><span lang="ja">過去Skillsの復元</span></td>
+<td><span lang="zh">6题定向检查</span><span lang="en">6 targeted cases</span><span lang="ja">対象6問の確認</span></td>
+<td>JSON Schema 0→1/6</td>
+</tr>
+<tr>
+<td><span lang="zh">Dify交叉检查</span><span lang="en">Dify cross-check</span><span lang="ja">Difyによる交差検証</span></td>
+<td><span lang="zh">固定6题当前／历史Spec</span><span lang="en">Fixed current/historical Specs for 6 cases</span><span lang="ja">6問の現行・過去Specを固定</span></td>
+<td><span lang="zh">当前Dify/local2/6、JSON0/6；历史Dify5/6、JSON4/6</span><span lang="en">Current: Dify/local 2/6, JSON 0/6; historical: Dify 5/6, JSON 4/6</span><span lang="ja">現行はDify/local 2/6、JSON 0/6。過去はDify 5/6、JSON 4/6</span></td>
+</tr>
+<tr>
+<td><span lang="zh">同PE三次生成</span><span lang="en">Three generations with the same PE</span><span lang="ja">同一PEで三回生成</span></td>
+<td><span lang="zh">每次生成后用两个Judge看同批产物</span><span lang="en">Two Judges evaluate the same artifacts after each generation</span><span lang="ja">各生成後に同じ成果物を二つのJudgeで評価</span></td>
+<td><span lang="zh">SDK-local23/24/26；JSON Schema均6/50</span><span lang="en">SDK-local 23/24/26; JSON Schema 6/50 each</span><span lang="ja">SDK-local 23/24/26、JSON Schemaは全て6/50</span></td>
+</tr>
+<tr>
+<td><span lang="zh">表达规范化v0</span><span lang="en">Presentation normalization v0</span><span lang="ja">表現正規化v0</span></td>
+<td><span lang="zh">50题，内部审查与格式闭环</span><span lang="en">50 cases; internal review and format checks</span><span lang="ja">50問。内部確認と形式チェック</span></td>
+<td>SDK-local26/50，JSON Schema5/50</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">三次fresh的JSON通过集合没有共同交集，但通过数均为6/50，持续低于历史产物的27/50。产物变化会改变通过题，新规则又持续压低fresh产物的整体得分；后续规则整理因此同时检查生成约束与Judge要求。</span><span lang="en">The three fresh runs shared no JSON-passing case, yet each scored 6/50, consistently below the historical artifacts' 27/50. Changed artifacts altered which cases passed, while the new rules consistently lowered fresh-artifact scores. Subsequent rule work therefore examined both generation constraints and Judge requirements.</span><span lang="ja">新規三回のJSON合格集合に共通項はなかったが、合格数はいずれも6/50で、過去成果物の27/50を一貫して下回った。成果物の変化は合格ケースを変え、新ルールは新規成果物の得点を継続的に下げた。以降は生成制約とJudge要件を併せて見直した。</span></p>
+<p><span lang="zh">后续Judge bundle固定为origin-main-63c9afd，使用Table、Dashboard、Workflow、Permission四域，Form文件仅归档。请求格式由json_object加schema文本迁移为native json_schema，版本与请求参数一并冻结。</span><span lang="en">The subsequent Judge bundle was frozen at origin-main-63c9afd for Table, Dashboard, Workflow, and Permission; Form files were archived only. Requests moved from json_object with schema text to native json_schema, freezing both version and parameters.</span><span lang="ja">以降のJudge bundleはorigin-main-63c9afdに固定し、Table・Dashboard・Workflow・Permissionの四領域を使用、Formは保管のみとした。リクエストはschemaテキスト付きjson_objectからnative json_schemaへ移し、版とパラメータを同時に固定した。</span></p>
+<h2 id="section-18"><span lang="zh">6　旧规则整理与规则库迁移</span><span lang="en">6  Reorganizing and migrating rules</span><span lang="ja">6　旧ルールの整理と移行</span></h2>
+<p><span lang="zh">旧规则整理版保留旧PE内容，调整表达与格式；精简规则库尝试薄Core与Shared/Domain/Pattern分层，明显缩短输入。两者构成7月初规范化实验的主要对照。</span><span lang="en">The reorganized legacy PE retained content while changing wording and format. The compact rule library tried a thin Core with Shared/Domain/Pattern layers, substantially shortening the input. These were the main early-July normalization comparisons.</span><span lang="ja">旧ルール整理版は内容を保ち表現と形式を変更した。簡潔ルール庫は薄いCoreとShared/Domain/Pattern層を試し、入力を大幅に短縮した。この二つが7月初旬の正規化比較の中心となった。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="07-normalization" hidden="" id="writing-map-12"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="规范化" data-alt-en="Normalization" data-alt-ja="正規化" data-alt-zh="规范化" data-diagram-image="" data-figure-key="/writing/assets/dc38eb12fbe99560666d.png" data-src-en="/writing/figures/en/07-normalization.svg?v=77b95d79044c" data-src-engineering-en="/writing/figures/en/engineering/07-normalization.svg?v=f415634d1025" data-src-engineering-ja="/writing/figures/ja/engineering/07-normalization.svg?v=d25425fd751c" data-src-engineering-zh="/writing/figures/zh/engineering/07-normalization.svg?v=35bcde40f129" data-src-ja="/writing/figures/ja/07-normalization.svg?v=90f4d0c8fbd9" data-src-openai-blog-en="/writing/figures/en/07-normalization.svg?v=77b95d79044c" data-src-openai-blog-ja="/writing/figures/ja/07-normalization.svg?v=90f4d0c8fbd9" data-src-openai-blog-zh="/writing/figures/zh/07-normalization.svg?v=e5c92bb0f3a7" data-src-zh="/writing/figures/zh/07-normalization.svg?v=e5c92bb0f3a7" decoding="async" height="580" loading="lazy" src="/writing/figures/zh/07-normalization.svg?v=e5c92bb0f3a7" width="1440"/></details><figcaption><span lang="zh">压缩规则与增加禁令的两次对照</span><span lang="en">Two comparisons: compressing rules and adding prohibitions</span><span lang="ja">ルール圧縮と禁止追加の二比較</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">阶段</span><span lang="en">Stage</span><span lang="ja">段階</span></th>
+<th><span lang="zh">样本／主要变量</span><span lang="en">Sample / main variable</span><span lang="ja">サンプル / 主な変数</span></th>
+<th><span lang="zh">结果与决定</span><span lang="en">Result and decision</span><span lang="ja">結果と判断</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">极薄原型</span><span lang="en">Ultra-thin prototype</span><span lang="ja">極薄プロトタイプ</span></td>
+<td><span lang="zh">2题；输入30783→2544</span><span lang="en">2 cases; input 30,783→2,544</span><span lang="ja">2問。入力30,783→2,544</span></td>
+<td><span lang="zh">Lite1/2、精简规则库 0/2，只确认链路</span><span lang="en">Lite 1/2, compact rules 0/2; pipeline check only</span><span lang="ja">Lite 1/2、簡潔ルール庫0/2。接続確認のみ</span></td>
+</tr>
+<tr>
+<td><span lang="zh">旧版三臂对照</span><span lang="en">Three-arm legacy comparison</span><span lang="ja">旧版の三群比較</span></td>
+<td><span lang="zh">前10题；旧Lite / 旧规则整理版 / 原型精简规则库</span><span lang="en">First 10 cases; legacy Lite / reorganized legacy / compact prototype</span><span lang="ja">先頭10問。旧Lite / 旧ルール整理版 / 簡潔プロトタイプ</span></td>
+<td>4/10、5/10、1/10</td>
+</tr>
+<tr>
+<td><span lang="zh">补旧红线</span><span lang="en">Restore legacy hard constraints</span><span lang="ja">旧版の必須制約を補完</span></td>
+<td><span lang="zh">目标2题后再扩10题</span><span lang="en">2 targeted cases, then expand to 10</span><span lang="ja">対象2問から10問へ拡大</span></td>
+<td><span lang="zh">冒烟2/2；扩测精简规则库 2/10，旧规则整理版 5/10</span><span lang="en">Smoke 2/2; expanded: compact 2/10, reorganized legacy 5/10</span><span lang="ja">スモーク2/2。拡大後は簡潔版2/10、旧整理版5/10</span></td>
+</tr>
+<tr>
+<td><span lang="zh">三层规则库</span><span lang="en">Three-layer rule library</span><span lang="ja">三層ルール庫</span></td>
+<td><span lang="zh">四轮2题冒烟</span><span lang="en">Four 2-case smoke rounds</span><span lang="ja">2問のスモークを四回</span></td>
+<td><span lang="zh">0、0、0、1题通过</span><span lang="en">0, 0, 0, 1 cases pass</span><span lang="ja">合格数0、0、0、1</span></td>
+</tr>
+<tr>
+<td><span lang="zh">结构化精简规则库 A/B</span><span lang="en">Structured compact-library A/B</span><span lang="ja">構造化した簡潔ルール庫のA/B</span></td>
+<td><span lang="zh">10题；实际平均输入30791→6707</span><span lang="en">10 cases; actual mean input 30,791→6,707</span><span lang="ja">10問。実平均入力30,791→6,707</span></td>
+<td><span lang="zh">旧规则整理版 6/10、精简规则库 4/10；Table8→5，Dashboard8→9</span><span lang="en">Reorganized legacy 6/10, compact 4/10; Table 8→5, Dashboard 8→9</span><span lang="ja">旧整理版6/10、簡潔版4/10。Table 8→5、Dashboard 8→9</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Table禁令强化</span><span lang="en">Stronger Table prohibitions</span><span lang="ja">Tableの禁止事項を強化</span></td>
+<td><span lang="zh">同10题；类型、Lookup、命名、自检</span><span lang="en">Same 10 cases; types, Lookup, names, self-checks</span><span lang="ja">同じ10問。型、Lookup、命名、自己確認</span></td>
+<td><span lang="zh">同轮旧规则整理版 5/10、精简规则库 3/10；二次修改2/10，回退</span><span lang="en">Same round: reorganized legacy 5/10, compact 3/10; second edit 2/10, reverted</span><span lang="ja">同一回で旧整理版5/10、簡潔版3/10。再編集2/10で撤回</span></td>
+</tr>
+<tr>
+<td><span lang="zh">四个P0桶迁移</span><span lang="en">Migrate four P0 rule groups</span><span lang="ja">四つのP0ルール群を移植</span></td>
+<td><span lang="zh">注册、字段行模板、权限、周期</span><span lang="en">Registration, field-row template, permissions, periods</span><span lang="ja">登録、フィールド行テンプレート、権限、周期</span></td>
+<td><span lang="zh">同轮整理版／精简规则库均4/10；Table改善未变成整体收益</span><span lang="en">Both versions 4/10 in the same round; Table gains did not lift joint accuracy</span><span lang="ja">同一回で両版4/10。Table改善は全体改善につながらず</span></td>
+</tr>
+<tr>
+<td><span lang="zh">高质量样本特征</span><span lang="en">Features from high-quality samples</span><span lang="ja">高品質サンプルの特徴</span></td>
+<td>format-density / format-only / time-trigger</td>
+<td><span lang="zh">三臂各1/10，对照5/10，均不迁入</span><span lang="en">Each of three arms 1/10 vs. control 5/10; none migrated</span><span lang="ja">三群とも1/10、対照5/10。全て不採用</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">各行采用当批PE快照与对应基线。压缩输入、增加禁令、迁移旧规则和提取样本特征，分别检验了四种初始化思路；多次回退促使后续重构聚焦规则职责与依赖关系。      </span><span lang="en">Each row uses that batch's PE snapshot and baseline. Input compression, added prohibitions, rule migration, and sample-feature extraction tested four initialization approaches. Repeated regressions shifted restructuring toward rule responsibilities and dependencies.      </span><span lang="ja">各行は当該バッチのPEと基準値を用いる。入力圧縮、禁止事項追加、旧ルール移植、サンプル特徴抽出という四つの初期化案を検証した。繰り返す悪化を受け、責務と依存関係を中心に再設計した。      </span></p>
+<p><span lang="zh">规则迁移矩阵按职责分桶，分别决定保留、合并或去除。每桶token估算用于安排迁移优先级，整体输入成本按实际请求usage统计。</span><span lang="en">The migration matrix groups rules by responsibility and assigns retain, merge, or remove decisions. Token estimates per group prioritize migration; total input cost uses actual request usage.</span><span lang="ja">移行行列はルールを責務別に分け、維持・統合・削除を決める。群ごとのtoken推定で優先順位を付け、総入力コストは実usageで測る。</span></p>
+<p><span lang="zh">高质量200按参考答案的Judge结果筛选，用于观察设计模式。Pattern Catalog随后按用途分类：生成规则进入Prompt，其他观察进入linter、rewrite、reviewer或诊断工具。后续单文件整理删去“触发信号／Judge风险”等评测术语，改为直接指导设计的正向规则。  </span><span lang="en">The high-quality 200 were selected by reference-answer Judge scores to inspect design patterns. The Pattern Catalog was then divided by purpose: generation rules entered the Prompt; other observations went to linters, rewriters, reviewers, or diagnostics. Later single-file cleanup removed evaluation jargon such as “trigger signals” and “Judge risks,” replacing it with direct design guidance.  </span><span lang="ja">高品質200件は参照回答のJudge結果で選び、設計パターンを観察した。Pattern Catalogを用途別に分け、生成ルールはPromptへ、それ以外はlinter、rewrite、reviewer、診断へ配置した。単一ファイル化では「トリガー信号」「Judgeリスク」などの評価用語を除き、設計を直接指示するルールへ変えた。  </span></p>
+<h2 id="section-19"><span lang="zh">7　人工PE双线：自由归因与动态策略记忆</span><span lang="en">7  Two human-PE tracks: Free and dynamic strategy memory</span><span lang="ja">7　人手PEの二系統：自由分析と動的戦略メモリ</span></h2>
+<p><span lang="zh">为豆包优化的人工PE专项使用同一100题集合，合并原50与新增50。只允许改“SpecDoc生成执行协议”，其余能力和输出边界冻结。两条线无独立运行时Skills目录，能力知识内联在长Prompt；SP策略库供优化Agent选取修改方案，生成模型接收修改后的PE。 </span><span lang="en">The Doubao human-PE project uses the same 100 cases, combining the original 50 with 50 new ones. Only the “SpecDoc generation execution protocol” may change; capability and output boundaries are frozen. Neither track has separate runtime Skills: capability knowledge is inline in the long Prompt. The optimization agent consults SP strategies; the generator receives the revised PE. </span><span lang="ja">豆包向け人手PE実験は旧50問と新50問を合わせた同じ100問を使う。変更可能なのは「SpecDoc生成実行プロトコル」のみで、能力と出力の境界は固定した。両系統に独立runtime Skillsはなく、能力知識は長いPromptへ内包する。最適化AgentがSPを参照し、生成モデルには変更後PEを渡す。 </span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="08-v3-memory" hidden="" id="writing-map-13"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="人工PE专项方法" data-alt-en="Human-PE search methods" data-alt-ja="人手PEの探索方式" data-alt-zh="人工PE专项方法" data-diagram-image="" data-figure-key="/writing/assets/ac5685d294785307cd30.png" data-src-en="/writing/figures/en/08-v3-memory.svg?v=beea3771ff93" data-src-engineering-en="/writing/figures/en/engineering/08-v3-memory.svg?v=4597c002f2ff" data-src-engineering-ja="/writing/figures/ja/engineering/08-v3-memory.svg?v=9e4c9018254e" data-src-engineering-zh="/writing/figures/zh/engineering/08-v3-memory.svg?v=5fe4ce887d2e" data-src-ja="/writing/figures/ja/08-v3-memory.svg?v=b95bb5c6f1dd" data-src-openai-blog-en="/writing/figures/en/08-v3-memory.svg?v=beea3771ff93" data-src-openai-blog-ja="/writing/figures/ja/08-v3-memory.svg?v=b95bb5c6f1dd" data-src-openai-blog-zh="/writing/figures/zh/08-v3-memory.svg?v=53bdffee0084" data-src-zh="/writing/figures/zh/08-v3-memory.svg?v=53bdffee0084" decoding="async" height="570" loading="lazy" src="/writing/figures/zh/08-v3-memory.svg?v=53bdffee0084" width="1440"/></details><figcaption><span lang="zh">人工PE的两条独立优化线</span><span lang="en">Two independent human-PE optimization tracks</span><span lang="ja">人工PEの独立した二つの最適化系統</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">对象</span><span lang="en">Item</span><span lang="ja">項目</span></th>
+<th>Free</th>
+<th>Data/SP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">提案依据</span><span lang="en">Proposal basis</span><span lang="ja">提案根拠</span></td>
+<td><span lang="zh">当前失败与跨域信息流</span><span lang="en">Current failures and cross-domain information flow</span><span lang="ja">現状の失敗と領域間の情報フロー</span></td>
+<td><span lang="zh">失败atlas＋动态LV3-SP</span><span lang="en">Failure atlas + dynamic LV3-SP</span><span lang="ja">失敗atlas＋動的LV3-SP</span></td>
+</tr>
+<tr>
+<td><span lang="zh">记忆更新</span><span lang="en">Memory updates</span><span lang="ja">記憶の更新</span></td>
+<td><span lang="zh">实验、失败、教训</span><span lang="en">Experiments, failures, lessons</span><span lang="ja">実験、失敗、教訓</span></td>
+<td><span lang="zh">状态、目标、改善/回退、兼容性、主导策略</span><span lang="en">State, target, gains/regressions, compatibility, dominant strategy</span><span lang="ja">状態、目標、改善/悪化、互換性、主戦略</span></td>
+</tr>
+<tr>
+<td><span lang="zh">编辑约束</span><span lang="en">Edit constraints</span><span lang="ja">編集制約</span></td>
+<td><span lang="zh">一轮一个主要假设</span><span lang="en">One main hypothesis per round</span><span lang="ja">一回につき一つの主要仮説</span></td>
+<td><span lang="zh">一项主导SP策略；先与已有策略查重、查冲突</span><span lang="en">One dominant SP; deduplicate and check conflicts first</span><span lang="ja">主SPを一つ選択。先に重複と矛盾を確認</span></td>
+</tr>
+<tr>
+<td><span lang="zh">早期有效变化</span><span lang="en">Early useful changes</span><span lang="ja">初期に有効だった変更</span></td>
+<td><span lang="zh">View优先、消费者字段回推、相对月份</span><span lang="en">View-first planning, consumer-driven fields, relative months</span><span lang="ja">View優先、利用側からのフィールド逆算、相対月</span></td>
+<td><span lang="zh">Dashboard口径、完整Lookup、当前记录具体键</span><span lang="en">Dashboard definitions, complete Lookups, concrete current-record keys</span><span lang="ja">Dashboardの集計定義、完全なLookup、現レコードの具体キー</span></td>
+</tr>
+<tr>
+<td><span lang="zh">新口径有效变化</span><span lang="en">Useful changes under the new protocol</span><span lang="ja">新評価条件で有効だった変更</span></td>
+<td><span lang="zh">Lookup规范化、源记录极值路由</span><span lang="en">Lookup normalization, source-record extrema routing</span><span lang="ja">Lookup正規化、最大/最小の元レコードへの振り分け</span></td>
+<td><span lang="zh">去掉非法可选辅助视图、为“提醒我”建立人员字段</span><span lang="en">Remove invalid optional helper views; add a person field for “remind me”</span><span lang="ja">無効な補助ビューを削除し、「自分に通知」の人物フィールドを設置</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">困难target10中，baseline、Data候选与Free候选均为0/10。完整100题上的旧口径共同baseline为28/100，Free一次KEEP到30；Data四次KEEP为28、29、30、40。Data最终PE六次生成的平均通过率为35%，峰值40%。 </span><span lang="en">On the difficult target10, baseline, Data, and Free all scored 0/10. Under the old Judge on all 100 cases, the shared baseline was 28/100; Free kept one edit to 30, while Data's four KEEPs were 28, 29, 30, and 40. Six generations with Data's final PE averaged 35%, peaking at 40%. </span><span lang="ja">難しいtarget10ではbaseline、Data、Freeが全て0/10だった。旧Judgeでの全100問の共通基準は28/100。Freeは一回のKEEPで30へ、Dataの四回のKEEPは28、29、30、40となった。Data最終PEの六回生成は平均35%、最高40%だった。 </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">Judge口径</span><span lang="en">Judge protocol</span><span lang="ja">Judge条件</span></th>
+<th><span lang="zh">Free历史KEEP</span><span lang="en">Free historical KEEP</span><span lang="ja">Freeの過去KEEP</span></th>
+<th><span lang="zh">Data历史KEEP</span><span lang="en">Data historical KEEP</span><span lang="ja">Dataの過去KEEP</span></th>
+<th><span lang="zh">重复性</span><span lang="en">Repeatability</span><span lang="ja">再現性</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">旧vendored</span><span lang="en">Old vendored Judge</span><span lang="ja">旧vendored Judge</span></td>
+<td>28→30/100</td>
+<td>28→28→29→30→40/100</td>
+<td><span lang="zh">Data40/36/36/34/34/30，均值35%</span><span lang="en">Data 40/36/36/34/34/30; mean 35%</span><span lang="ja">Data 40/36/36/34/34/30、平均35%</span></td>
+</tr>
+<tr>
+<td>main63c9afd</td>
+<td>32→39→41/100</td>
+<td>33→35→42/100</td>
+<td><span lang="zh">Data42/100、37/99、36/100，均值38.46%</span><span lang="en">Data 42/100, 37/99, 36/100; mean 38.46%</span><span lang="ja">Data 42/100、37/99、36/100、平均38.46%</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">新口径Data三次99题交集：21题全过、39题全败、39题不稳定。第二次084为Judge空响应，总提交100题中有效评审99题、通过37题。Free早期有一轮41/100因目标机制未产生而DISCARD；后续实现“最高／最低是哪条记录”的前置路由，以13新增、11回退成为第二次KEEP。   </span><span lang="en">Under the new Judge, the 99-case intersection across three Data runs had 21 always-pass, 39 always-fail, and 39 unstable cases. Run 2 had an empty Judge response for 084: 100 submitted, 99 valid judgments, 37 passes. An earlier Free run scored 41/100 but was discarded because the intended mechanism was absent. Later routing for “which record is highest/lowest” gained 13 cases and lost 11, becoming its second KEEP.   </span><span lang="ja">新JudgeのData三回で共通の99問は、常時合格21、常時不合格39、不安定39だった。二回目の084はJudgeが空応答で、100問提出・99問有効評価・37問合格。Freeは一度41/100を得たが意図した機構がなくDISCARD。後に「最大/最小はどのレコードか」の事前振り分けを実装し、新規13・悪化11で二回目のKEEPとなった。   </span></p>
+<p><span lang="zh">Free的41/100与Data的42/100分别是历史KEEP单轮结果；两臂初始基线为32和33，重复评测集中在Data。比较两种搜索方式的稳定表现，需要给两臂相同的生成与评审预算。</span><span lang="en">Free's 41/100 and Data's 42/100 are single-run historical KEEPs. Their starting baselines were 32 and 33; repeated evaluation focused on Data. A stable comparison of search methods requires equal generation and judging budgets for both arms.</span><span lang="ja">Freeの41/100とDataの42/100は各一回の過去KEEPである。初期値は32と33で、反復評価はDataに集中した。探索法の安定的な比較には、両群で生成・判定の予算を揃える必要がある。</span></p>
+<h2 id="section-20"><span lang="zh">8　主Harness的数据组织</span><span lang="en">8  Data organization for the main harness</span><span lang="ja">8　主Harnessのデータ構成</span></h2>
+<p><span lang="zh">新200由高质量参考样本抽取，Dev150用于开发，Holdout50保留，Former50独立回归。Dynamic Small从Dev150中抽取；Target随假设变化，Guard包括稳定锚点和轮换题。人工PE专项另用原50与新增50组成的100题集。 </span><span lang="en">The new 200 come from high-quality reference samples: Dev150 is for development, Holdout50 is reserved, and Former50 is separate regression coverage. Dynamic Small is drawn from Dev150; Targets change with the hypothesis, while Guards combine stable anchors with rotating cases. The human-PE project separately uses the original 50 plus 50 new cases. </span><span lang="ja">新200件は高品質参照サンプルから選び、Dev150を開発、Holdout50を保留、Former50を独立回帰に用いる。Dynamic SmallはDev150から抽出し、Targetは仮説に応じて変更、Guardは安定アンカーと輪番問題を組み合わせる。人手PE実験の100問は旧50＋新50の別集合である。 </span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="09-data-split" hidden="" id="writing-map-14"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="数据集" data-alt-en="Datasets" data-alt-ja="データセット" data-alt-zh="数据集" data-diagram-image="" data-figure-key="/writing/assets/07a9094fd9e5f2f6bb6f.png" data-src-en="/writing/figures/en/09-data-split.svg?v=5c6c7a78836c" data-src-engineering-en="/writing/figures/en/engineering/09-data-split.svg?v=43dc2bfbb6e6" data-src-engineering-ja="/writing/figures/ja/engineering/09-data-split.svg?v=52c81348cecc" data-src-engineering-zh="/writing/figures/zh/engineering/09-data-split.svg?v=7eabb6d386b6" data-src-ja="/writing/figures/ja/09-data-split.svg?v=899da2764721" data-src-openai-blog-en="/writing/figures/en/09-data-split.svg?v=5c6c7a78836c" data-src-openai-blog-ja="/writing/figures/ja/09-data-split.svg?v=899da2764721" data-src-openai-blog-zh="/writing/figures/zh/09-data-split.svg?v=85c7f788b093" data-src-zh="/writing/figures/zh/09-data-split.svg?v=85c7f788b093" decoding="async" height="550" loading="lazy" src="/writing/figures/zh/09-data-split.svg?v=85c7f788b093" width="1440"/></details><figcaption><span lang="zh">Dev150、Holdout50 与 Former50</span><span lang="en">Dev150, Holdout50, and Former50</span><span lang="ja">Dev150、Holdout50、Former50</span></figcaption></figure>
+<p><span lang="zh">新200偏长Query、Q&amp;A与多域约束，Former50偏历史短需求。参考答案经过筛选，查询本身仍包含较复杂的设计要求。清洗时用正常业务题替换元指令污染样本hq-000096，并修正两题字面量换行，所有比较PE统一补跑受影响题。</span><span lang="en">The new 200 emphasize longer queries, Q&amp;A, and multi-domain constraints; Former50 contains shorter historical requests. Filtering reference answers did not remove the queries' design complexity. Cleaning replaced the meta-instruction-contaminated hq-000096 with a normal business case and fixed literal newlines in two cases. All compared PEs reran the affected cases.</span><span lang="ja">新200問は長いQuery、Q&amp;A、多領域制約が多く、Former50は短い過去要求が中心である。参照回答の選別後もQueryには複雑な設計要求が残る。清掃ではメタ指示に汚染されたhq-000096を通常業務問題に置き換え、二問の改行リテラルを修正し、全比較PEで対象問を再実行した。</span></p>
+<p><span lang="zh">Holdout50尚未正式运行，其来源200曾用于Pattern抽取。它适合补充这批查询上的表现观察；最终泛化测试需要另取未参与规则设计的查询，并提前封存。</span><span lang="en">Holdout50 has not yet been formally run; its parent 200 were used for pattern extraction. It can add observations on these queries, but final generalization testing needs a separately sealed set that did not inform rule design.</span><span lang="ja">Holdout50はまだ正式実行しておらず、元の200件はパターン抽出に使われた。このQuery群での追加観測には使えるが、最終的な汎化検証にはルール設計に使っていない別の封印集合が必要である。</span></p>
+<h2 id="section-21"><span lang="zh">9　主Harness初始化的结构实验</span><span lang="en">9  Structural experiments for initialization</span><span lang="ja">9　初期化に向けた構造実験</span></h2>
+<p><span lang="zh">主Harness初始薄规则原型在Dev150仅3/150，促使工作从自动叠规则退回人工初始化。这一过程包含独立Planner、Contract和直接Spec三条设计分支。</span><span lang="en">The main harness's initial thin-rule prototype scored only 3/150 on Dev150, shifting work from automatic rule accumulation back to manual initialization. The redesign explored separate planners, contracts, and direct Spec output.</span><span lang="ja">主Harnessの初期薄ルール版はDev150で3/150にとどまり、自動ルール追加から人手初期化へ戻った。独立Planner、Contract、Spec直接出力の三案を検討した。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="10-initialization-tree" hidden="" id="writing-map-15"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="初始化全路径" data-alt-en="Initialization design paths" data-alt-ja="初期化の設計経路" data-alt-zh="初始化全路径" data-diagram-image="" data-figure-key="/writing/assets/3a31a0454de19bf0bf77.png" data-src-en="/writing/figures/en/10-initialization-tree.svg?v=412717595391" data-src-engineering-en="/writing/figures/en/engineering/10-initialization-tree.svg?v=2289212fe8e4" data-src-engineering-ja="/writing/figures/ja/engineering/10-initialization-tree.svg?v=26d5856da121" data-src-engineering-zh="/writing/figures/zh/engineering/10-initialization-tree.svg?v=8c5fc4bf1420" data-src-ja="/writing/figures/ja/10-initialization-tree.svg?v=8a1feaef3c26" data-src-openai-blog-en="/writing/figures/en/10-initialization-tree.svg?v=412717595391" data-src-openai-blog-ja="/writing/figures/ja/10-initialization-tree.svg?v=8a1feaef3c26" data-src-openai-blog-zh="/writing/figures/zh/10-initialization-tree.svg?v=6a595ecbc48a" data-src-zh="/writing/figures/zh/10-initialization-tree.svg?v=6a595ecbc48a" decoding="async" height="690" loading="lazy" src="/writing/figures/zh/10-initialization-tree.svg?v=6a595ecbc48a" width="1440"/></details><figcaption><span lang="zh">主Harness的初始化分支</span><span lang="en">Main-harness initialization branches</span><span lang="ja">主Harnessの初期化分岐</span></figcaption></figure>
+<h3 id="section-22"><span lang="zh">9.1　独立Permission Planner</span><span lang="en">9.1  Separate Permission Planner</span><span lang="ja">9.1　独立Permission Planner</span></h3>
+<p><span lang="zh">权限预规划方案包含权限规划、确定性校验、Core渲染，部分版本允许定向修复。固定10题三次，单阶段对照strict为2/0/1，预规划方案为0/3/1；Permission均值43.3%→73.3%，strict均值10%→13.3%。目标域改善，但其他域没有同步稳定，而且增加生成调用，不符合最终单份PE交付边界。</span><span lang="en">Permission preplanning combined planning, deterministic validation, and Core rendering; some versions allowed targeted repair. Across three runs of the same 10 cases, strict passes were 2/0/1 for the single-stage control and 0/3/1 for preplanning. Mean Permission accuracy rose 43.3%→73.3%, strict 10%→13.3%. Other domains did not stabilize, and extra generation calls violated the final single-PE delivery boundary.</span><span lang="ja">権限事前計画は計画、決定的検証、Core描画を組み合わせ、一部版で局所修正を許可した。同じ10問を三回実行し、strict合格は単段対照2/0/1、事前計画0/3/1。Permission平均は43.3%→73.3%、strict平均は10%→13.3%だった。他領域は安定せず、追加生成も単一PE納品の境界に合わなかった。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="11-planner-tradeoff" hidden="" id="writing-map-16"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Planner权衡" data-alt-en="Planner trade-offs" data-alt-ja="Plannerのトレードオフ" data-alt-zh="Planner权衡" data-diagram-image="" data-figure-key="/writing/assets/13cff1f8983c4148b205.png" data-src-en="/writing/figures/en/11-planner-tradeoff.svg?v=c3965d9640a6" data-src-engineering-en="/writing/figures/en/engineering/11-planner-tradeoff.svg?v=2750971d6b8f" data-src-engineering-ja="/writing/figures/ja/engineering/11-planner-tradeoff.svg?v=013a73588958" data-src-engineering-zh="/writing/figures/zh/engineering/11-planner-tradeoff.svg?v=9ed14b9a0723" data-src-ja="/writing/figures/ja/11-planner-tradeoff.svg?v=dde8c491c3b8" data-src-openai-blog-en="/writing/figures/en/11-planner-tradeoff.svg?v=c3965d9640a6" data-src-openai-blog-ja="/writing/figures/ja/11-planner-tradeoff.svg?v=dde8c491c3b8" data-src-openai-blog-zh="/writing/figures/zh/11-planner-tradeoff.svg?v=bc53954b791f" data-src-zh="/writing/figures/zh/11-planner-tradeoff.svg?v=bc53954b791f" decoding="async" height="420" loading="lazy" src="/writing/figures/zh/11-planner-tradeoff.svg?v=bc53954b791f" width="1440"/></details><figcaption><span lang="zh">Permission Planner 的重复评测</span><span lang="en">Repeated Permission Planner evaluation</span><span lang="ja">Permission Plannerの反復評価</span></figcaption></figure>
+<h3 id="section-23"><span lang="zh">9.2　单次输出Contract</span><span lang="en">9.2  Single-call contract output</span><span lang="ja">9.2　一回呼び出しでのContract出力</span></h3>
+<p><span lang="zh">单次生成原型回到一次调用，dev10为1/10。结构草稿与封套系列保持一次调用，探索内部Contract或同次显式Envelope，再由本地解析校验。固定3题结果：</span><span lang="en">The single-call prototype returned to one model call and scored 1/10 on dev10. Draft and envelope variants kept one call, exploring internal contracts or explicit same-call envelopes followed by local parsing and validation. Results on three fixed cases:</span><span lang="ja">単一呼び出し版はdev10で1/10だった。構造草案とEnvelopeの各案は一回呼び出しを保ち、内部Contractや同時出力する明示Envelopeをローカルで解析・検証した。固定三問の結果：</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">方案</span><span lang="en">Design</span><span lang="ja">方式</span></th>
+<th><span lang="zh">结构变量</span><span lang="en">Structural variable</span><span lang="ja">構造上の変数</span></th>
+<th align="right">compile</th>
+<th align="right">strict</th>
+<th align="right">Table</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">内部结构草稿</span><span lang="en">Internal structural draft</span><span lang="ja">内部構造草案</span></td>
+<td><span lang="zh">内部需求／字段Contract</span><span lang="en">Internal requirements/field contract</span><span lang="ja">内部の要求・フィールドContract</span></td>
+<td align="right">N/A</td>
+<td align="right">0/3</td>
+<td align="right">0/3</td>
+</tr>
+<tr>
+<td><span lang="zh">显式结构草稿</span><span lang="en">Explicit structural draft</span><span lang="ja">明示構造草案</span></td>
+<td><span lang="zh">显式Contract＋校验</span><span lang="en">Explicit contract + validation</span><span lang="ja">明示Contract＋検証</span></td>
+<td align="right">3/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+<tr>
+<td><span lang="zh">扩展结构草稿</span><span lang="en">Expanded structural draft</span><span lang="ja">拡張構造草案</span></td>
+<td><span lang="zh">更多生命周期、R-ID与依赖槽位</span><span lang="en">More lifecycle, R-ID, and dependency slots</span><span lang="ja">ライフサイクル、R-ID、依存スロットを追加</span></td>
+<td align="right">1/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+<tr>
+<td><span lang="zh">精简结构封套</span><span lang="en">Compact structural envelope</span><span lang="ja">簡潔な構造Envelope</span></td>
+<td><span lang="zh">精简Envelope＋对象口径Gate</span><span lang="en">Compact envelope + object-definition gate</span><span lang="ja">簡潔Envelope＋オブジェクト定義Gate</span></td>
+<td align="right">3/3</td>
+<td align="right">0/3</td>
+<td align="right">1/3</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">均未达到Table≥2/3且无错误的预设扩测门槛。固定显式结构草稿只改reasoning，low/medium的Table都1/3，compile从3/3变2/3，时延55.1→67.8秒。这次3题冒烟未改善Table且增加时延，后续继续使用low。</span><span lang="en">None met the expansion gate of Table ≥2/3 with no errors. Holding the explicit draft fixed and changing only reasoning gave Table 1/3 for both low and medium, compile 3/3→2/3, and latency 55.1→67.8 seconds. The three-case smoke test brought no Table gain and more latency, so low was retained.</span><span lang="ja">Table≥2/3かつエラーなしという拡大条件を満たす案はなかった。明示草案を固定してreasoningだけをlowからmediumへ変えてもTableは両方1/3で、compileは3/3→2/3、時間は55.1→67.8秒となった。三問スモークで改善せず遅延が増えたためlowを維持した。</span></p>
+<h3 id="section-24"><span lang="zh">9.3　直接输出SpecDoc</span><span lang="en">9.3  Direct SpecDoc output</span><span lang="ja">9.3　SpecDoc直接出力</span></h3>
+<p><span lang="zh">产品边界确认后，Contract剥离和额外Planner均退出。完整自然语言协议、短Core、旧表规则摘要在同3题都0/3；Table分别0、1、0。继续摘要式加规则没有恢复旧能力。旧3题反复用于开发，后续另取未参与该系列的冒烟切片。</span><span lang="en">Once product boundaries were confirmed, contract stripping and extra planners were removed. A full natural-language protocol, short Core, and legacy Table-rule summary all scored 0/3 on the same three cases; Table passes were 0, 1, and 0. Adding summarized rules did not restore earlier capability. Because those cases had been repeatedly used for development, later smoke tests used a fresh slice.</span><span lang="ja">製品境界を確定し、Contract除去と追加Plannerを撤去した。完全な自然言語プロトコル、短いCore、旧Table規則要約は同じ三問で全て0/3、Tableは0、1、0だった。要約規則の追加では旧能力を取り戻せず、繰り返し開発に使った三問の代わりに未使用スモーク集合を用いた。</span></p>
+<p><span lang="zh">后续依次做了五项修改：重划职责、补状态与字段依赖、将失败机制改为正向执行协议、明确六段Core、依据Permission Judge区分Actor及记录操作。最后冻结为分层生成PE。在新3题上短Core／职责分层／依赖闭环 strict都1/3，四域总通过9/12、8/12、10/12；最终同10题三次，正向执行协议为3/3/1，分层生成PE为3/3/2。</span><span lang="en">Five changes followed: redistribute responsibilities, restore state/field dependencies, turn failure mechanisms into positive execution guidance, clarify six Core stages, and distinguish actors from record operations using Permission Judge rules. The result was frozen as the layered PE. On three fresh cases, short Core, responsibility layers, and dependency closure each scored strict 1/3; domain passes were 9/12, 8/12, and 10/12. Across three final runs of the same 10 cases, positive protocol scored 3/3/1 and layered PE 3/3/2.</span><span lang="ja">以降は責務再分割、状態・フィールド依存補完、失敗機構の正向実行指針化、Core六段の明確化、Permission Judgeに基づくActorとレコード操作の区別を順に行い、階層型PEとして固定した。新三問では短Core・責務分離・依存閉包がstrict全て1/3、領域合格は9/12・8/12・10/12。同じ10問を最終三回実行した結果は、正向プロトコル3/3/1、階層型PE3/3/2だった。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">重复指标</span><span lang="en">Repeated-run metric</span><span lang="ja">反復指標</span></th>
+<th align="right"><span lang="zh">正向执行协议</span><span lang="en">Positive execution protocol</span><span lang="ja">正向実行プロトコル</span></th>
+<th align="right"><span lang="zh">分层生成PE</span><span lang="en">Layered-generation PE</span><span lang="ja">階層化生成PE</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">10题×3 strict均值</span><span lang="en">Mean strict accuracy: 10 cases × 3</span><span lang="ja">10問×3回のstrict平均</span></td>
+<td align="right">23.3%</td>
+<td align="right">26.7%</td>
+</tr>
+<tr>
+<td><span lang="zh">最差轮</span><span lang="en">Worst run</span><span lang="ja">最低回</span></td>
+<td align="right">10%</td>
+<td align="right">20%</td>
+</tr>
+<tr>
+<td><span lang="zh">总体标准差</span><span lang="en">Population standard deviation</span><span lang="ja">母標準偏差</span></td>
+<td align="right"><span lang="zh">约9.4pp</span><span lang="en">About 9.4 pp</span><span lang="ja">約9.4pp</span></td>
+<td align="right"><span lang="zh">约4.7pp</span><span lang="en">About 4.7 pp</span><span lang="ja">約4.7pp</span></td>
+</tr>
+<tr>
+<td><span lang="zh">四域通过总数</span><span lang="en">Total domain passes</span><span lang="ja">四領域の合格総数</span></td>
+<td align="right">78/120</td>
+<td align="right">80/120</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">该开发切片的均值与最差轮均有小幅改善。分层生成PE据此结束人工初始化，冻结为后续全量对照和自动搜索的起点。</span><span lang="en">The development slice showed small gains in both mean and worst-run performance. Manual initialization ended there; the layered PE was frozen as the starting point for full-set comparisons and automatic search.</span><span lang="ja">この開発集合では平均と最低回が小幅に改善した。ここで人手初期化を終え、階層型PEを全件比較と自動探索の起点として固定した。</span></p>
+<h2 id="section-25"><span lang="zh">10　最终PE的输入与职责</span><span lang="en">10  Final PE: inputs and responsibilities</span><span lang="ja">10　最終PEの入力と責務</span></h2>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="12-core-skills" hidden="" id="writing-map-17"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Core与Skills装配" data-alt-en="Core and Skills assembly" data-alt-ja="CoreとSkillsの組み立て" data-alt-zh="Core与Skills装配" data-diagram-image="" data-figure-key="/writing/assets/a8f7a580b68cf9c9c8f0.png" data-src-en="/writing/figures/en/12-core-skills.svg?v=fb7372f610b9" data-src-engineering-en="/writing/figures/en/engineering/12-core-skills.svg?v=720598690744" data-src-engineering-ja="/writing/figures/ja/engineering/12-core-skills.svg?v=bd10f5ec67b0" data-src-engineering-zh="/writing/figures/zh/engineering/12-core-skills.svg?v=50a2f606cf8a" data-src-ja="/writing/figures/ja/12-core-skills.svg?v=88e4a52d7a3c" data-src-openai-blog-en="/writing/figures/en/12-core-skills.svg?v=fb7372f610b9" data-src-openai-blog-ja="/writing/figures/ja/12-core-skills.svg?v=88e4a52d7a3c" data-src-openai-blog-zh="/writing/figures/zh/12-core-skills.svg?v=c342c9818fff" data-src-zh="/writing/figures/zh/12-core-skills.svg?v=c342c9818fff" decoding="async" height="630" loading="lazy" src="/writing/figures/zh/12-core-skills.svg?v=c342c9818fff" width="1440"/></details><figcaption><span lang="zh">Core 与 Skills 的装配</span><span lang="en">Assembling Core and Skills</span><span lang="ja">CoreとSkillsの組み立て</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">层</span><span lang="en">Layer</span><span lang="ja">層</span></th>
+<th><span lang="zh">内容</span><span lang="en">Contents</span><span lang="ja">内容</span></th>
+<th><span lang="zh">不应承载</span><span lang="en">Keep out</span><span lang="ja">含めないもの</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Core</td>
+<td><span lang="zh">Query理解→要素注册→Table依赖→四域Gate→一致性审计→渲染</span><span lang="en">Query understanding → entity registration → Table dependencies → four-domain gates → consistency audit → rendering</span><span lang="ja">Query理解→要素登録→Table依存→四領域Gate→整合性監査→描画</span></td>
+<td><span lang="zh">完整SDK教程、实验调度说明</span><span lang="en">Full SDK tutorials, experiment scheduling instructions</span><span lang="ja">SDK全チュートリアル、実験実行管理の説明</span></td>
+</tr>
+<tr>
+<td>Shared</td>
+<td><span lang="zh">对象、Actor、指标、动作、时间语义、跨域引用与依赖</span><span lang="en">Objects, actors, metrics, actions, temporal semantics, cross-domain references and dependencies</span><span lang="ja">オブジェクト、Actor、指標、動作、時間意味、領域間参照と依存</span></td>
+<td><span lang="zh">行业关键词触发、固定case答案</span><span lang="en">Industry-keyword triggers, fixed case answers</span><span lang="ja">業界キーワードのトリガー、固定ケースの答え</span></td>
+</tr>
+<tr>
+<td>Table / View</td>
+<td><span lang="zh">字段类型、关系、Lookup、Formula、消费者依赖</span><span lang="en">Field types, relations, Lookup, Formula, consumer dependencies</span><span lang="ja">フィールド型、関連、Lookup、Formula、利用側依存</span></td>
+<td><span lang="zh">下游首次发明字段</span><span lang="en">Fields invented for the first time downstream</span><span lang="ja">下流で初めて作り出すフィールド</span></td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td><span lang="zh">组件、指标、聚合、维度、筛选</span><span lang="en">Components, metrics, aggregations, dimensions, filters</span><span lang="ja">部品、指標、集計、軸、フィルタ</span></td>
+<td><span lang="zh">泛化“查看”自动触发看板</span><span lang="en">Automatically creating a dashboard from a generic “view” request</span><span lang="ja">一般的な「見る」要求から自動的にダッシュボードを作ること</span></td>
+</tr>
+<tr>
+<td>Workflow</td>
+<td><span lang="zh">触发、条件、接收人、回写、时间能力</span><span lang="en">Triggers, conditions, recipients, write-back, timing capabilities</span><span lang="ja">起動、条件、受信者、書き戻し、時間能力</span></td>
+<td><span lang="zh">系统字段写入、隐含接收人</span><span lang="en">Writes to system fields, implicit recipients</span><span lang="ja">システムフィールドへの書き込み、暗黙の受信者</span></td>
+</tr>
+<tr>
+<td>Permission</td>
+<td><span lang="zh">激活证据、记录／字段／功能权限、最小授权</span><span lang="en">Activation evidence, record/field/function permissions, least privilege</span><span lang="ja">有効化根拠、レコード/フィールド/機能権限、最小権限</span></td>
+<td><span lang="zh">裸角色名自动造权限</span><span lang="en">Inventing permissions from role names alone</span><span lang="ja">役割名だけから権限を作ること</span></td>
+</tr>
+<tr>
+<td><span lang="zh">输出规范</span><span lang="en">Output specification</span><span lang="ja">出力規約</span></td>
+<td><span lang="zh">综述、需求、模块顺序、行级格式、中性完整样例</span><span lang="en">Overview, requirements, module order, row format, complete neutral example</span><span lang="ja">概要、要求、モジュール順序、行形式、中立で完全な例</span></td>
+<td><span lang="zh">另一个必须被剥离的JSON产物</span><span lang="en">An additional JSON artifact that must be stripped away</span><span lang="ja">除去を要する別のJSON成果物</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">Skills包含生成时必须遵循的正向机制、能力边界和强制红线。实际装配8份规则Markdown：3 Shared、Table与View、其余三域各1份；README和registry仅用于导航。所有域固定加载，Shared去重，未使用逐题RAG，不增加模型调用次数。 </span><span lang="en">Skills contain required design mechanisms, capability boundaries, and hard constraints. Eight Markdown rule files are assembled: three Shared, Table and View, and one for each other domain. README and registry are navigation only. All domains are always loaded, Shared is deduplicated, and there is no per-query RAG or extra model call. </span><span lang="ja">Skillsには必須の設計機構、能力境界、厳守制約を含む。実装はShared三件、TableとView、残り三領域各一件の計八つのMarkdownを組み立てる。READMEとregistryは案内専用。全領域を常時ロードしSharedを重複排除する。逐問RAGも追加モデル呼び出しもない。 </span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="13-consumer-closure" hidden="" id="writing-map-18"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="字段依赖规划" data-alt-en="Planning field dependencies" data-alt-ja="フィールド依存の計画" data-alt-zh="字段依赖规划" data-diagram-image="" data-figure-key="/writing/assets/a105ce2d57377fc87975.png" data-src-en="/writing/figures/en/13-consumer-closure.svg?v=071d5290496f" data-src-engineering-en="/writing/figures/en/engineering/13-consumer-closure.svg?v=bf03cc3e4eb6" data-src-engineering-ja="/writing/figures/ja/engineering/13-consumer-closure.svg?v=ddb1c23173b5" data-src-engineering-zh="/writing/figures/zh/engineering/13-consumer-closure.svg?v=fbe7496d6604" data-src-ja="/writing/figures/ja/13-consumer-closure.svg?v=9f7e70c230d2" data-src-openai-blog-en="/writing/figures/en/13-consumer-closure.svg?v=071d5290496f" data-src-openai-blog-ja="/writing/figures/ja/13-consumer-closure.svg?v=9f7e70c230d2" data-src-openai-blog-zh="/writing/figures/zh/13-consumer-closure.svg?v=71917076b67d" data-src-zh="/writing/figures/zh/13-consumer-closure.svg?v=71917076b67d" decoding="async" height="470" loading="lazy" src="/writing/figures/zh/13-consumer-closure.svg?v=71917076b67d" width="1440"/></details><figcaption class="map-duplicate-caption"><span lang="zh">字段依赖规划</span><span lang="en">Planning field dependencies</span><span lang="ja">フィールド依存の計画</span></figcaption></figure>
+<p><span lang="zh">Permission仍是重要短板。Dev150有141题描述角色、仅10题明确访问控制，分层生成PE在136题生成权限，Permission通过50/150。这提示下一步应逐题区分业务职责、记录操作与访问控制需求，检查权限规划的激活条件及授权范围。</span><span lang="en">Permission remains a major weakness. Of Dev150, 141 cases describe roles but only 10 explicitly request access control; the layered PE generated permissions for 136, passing Permission in 50/150. The next step is to distinguish business responsibilities, record operations, and access-control needs per case, then inspect activation conditions and grant scope.</span><span lang="ja">Permissionは依然大きな弱点である。Dev150の141問が役割を述べる一方、明示的アクセス制御は10問だけで、階層型PEは136問に権限を生成し、Permission合格は50/150だった。業務責務、レコード操作、アクセス制御要求を逐問分離し、有効化条件と許可範囲を調べる必要がある。</span></p>
+<h2 id="section-26"><span lang="zh">11　五套PE的同口径质量与成本</span><span lang="en">11  Quality and cost of five PEs under one protocol</span><span lang="ja">11　統一条件での五種類のPEの品質とコスト</span></h2>
+<p><span lang="zh">七月对照采用以下冻结配置：生成Seed2 Lite，reasoning low，temperature0.2；Judge gpt-5.2-2025-12-11，medium，origin-main-63c9afd四域native json_schema，workers4、timeout900s、retry5。每题一次生成、一次Judge；任一域不为1即整题不通过。 </span><span lang="en">July comparisons froze generation at Seed2 Lite, reasoning low, temperature 0.2; Judge at gpt-5.2-2025-12-11, medium, origin-main-63c9afd four-domain native json_schema, 4 workers, 900s timeout, and 5 retries. Each case has one generation and one judging round; any domain not scoring 1 fails the case. </span><span lang="ja">7月比較は生成Seed2 Lite、reasoning low、temperature 0.2、Judge gpt-5.2-2025-12-11、medium、origin-main-63c9afd四領域native json_schema、workers 4、timeout 900秒、retry 5に固定した。一問一生成・一判定で、いずれかの領域が1でなければ不合格となる。 </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>PE</th>
+<th align="right">Dev150</th>
+<th align="right">Former50</th>
+<th align="right"><span lang="zh">输入token Dev / Former</span><span lang="en">Input tokens: Dev / Former</span><span lang="ja">入力token：Dev / Former</span></th>
+<th align="right"><span lang="zh">输出token Dev / Former</span><span lang="en">Output tokens: Dev / Former</span><span lang="ja">出力token：Dev / Former</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">薄规则原型</span><span lang="en">Thin-rule prototype</span><span lang="ja">薄ルール原型</span></td>
+<td align="right">3/150（2.00%）</td>
+<td align="right">11/50（22%）</td>
+<td align="right">4,978 / 4,739</td>
+<td align="right">1,570 / 1,215</td>
+</tr>
+<tr>
+<td><span lang="zh">分层生成PE</span><span lang="en">Layered-generation PE</span><span lang="ja">階層化生成PE</span></td>
+<td align="right">16/150（10.67%）</td>
+<td align="right">31/50（62%）</td>
+<td align="right">8,799 / 8,560</td>
+<td align="right">1,967 / 1,455</td>
+</tr>
+<tr>
+<td><span lang="zh">策略记忆PE（对照快照）</span><span lang="en">Strategy-memory PE (comparison snapshot)</span><span lang="ja">戦略メモリPE（対照スナップショット）</span></td>
+<td align="right">8/150（5.33%）</td>
+<td align="right">29/50（58%）</td>
+<td align="right">19,312 / 19,073</td>
+<td align="right">1,751 / 1,374</td>
+</tr>
+<tr>
+<td><span lang="zh">旧Lite PE</span><span lang="en">Legacy Lite PE</span><span lang="ja">旧Lite PE</span></td>
+<td align="right">7/150（4.67%）</td>
+<td align="right">29/50（58%）</td>
+<td align="right">28,871 / 28,632</td>
+<td align="right">1,695 / 1,360</td>
+</tr>
+<tr>
+<td><span lang="zh">历史MASP保留PE</span><span lang="en">Historical MASP retained PE</span><span lang="ja">過去MASP採用PE</span></td>
+<td align="right">11/150（7.33%）</td>
+<td align="right">27/50（54%）</td>
+<td align="right">29,295 / 29,056</td>
+<td align="right">1,723 / 1,354</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">Token来自生成接口usage，输入包含Core、实际Skills、Query和包装，输出为completion，不含Judge。旧Lite已经经过历史优化；它与MASP Top的主Prompt相同，但Dashboard/Permission Skills不同。</span><span lang="en">Tokens come from generation API usage. Input includes Core, loaded Skills, Query, and wrappers; output is completion usage, excluding Judge calls. Legacy Lite was already historically optimized. It shares the main Prompt with MASP Top, but differs in Dashboard/Permission Skills.</span><span lang="ja">tokenは生成APIのusageによる。入力はCore、実際にロードしたSkills、Query、ラッパーを含み、出力はcompletionでJudgeを含めない。旧Liteも過去に最適化済みで、主PromptはMASP Topと同じだがDashboard/Permission Skillsが異なる。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="14-pe-comparison" hidden="" id="writing-map-19"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="跨数据集" data-alt-en="Cross-dataset comparison" data-alt-ja="データセット間比較" data-alt-zh="跨数据集" data-diagram-image="" data-figure-key="/writing/assets/4d80119d51c4ae944162.png" data-src-en="/writing/figures/en/14-pe-comparison.svg?v=efa0cf1ea658" data-src-engineering-en="/writing/figures/en/engineering/14-pe-comparison.svg?v=8d7a96d30642" data-src-engineering-ja="/writing/figures/ja/engineering/14-pe-comparison.svg?v=a1bc5a0c8dda" data-src-engineering-zh="/writing/figures/zh/engineering/14-pe-comparison.svg?v=996883d36dbc" data-src-ja="/writing/figures/ja/14-pe-comparison.svg?v=752ff1acd11e" data-src-openai-blog-en="/writing/figures/en/14-pe-comparison.svg?v=efa0cf1ea658" data-src-openai-blog-ja="/writing/figures/ja/14-pe-comparison.svg?v=752ff1acd11e" data-src-openai-blog-zh="/writing/figures/zh/14-pe-comparison.svg?v=bdcc8397d11f" data-src-zh="/writing/figures/zh/14-pe-comparison.svg?v=bdcc8397d11f" decoding="async" height="710" loading="lazy" src="/writing/figures/zh/14-pe-comparison.svg?v=bdcc8397d11f" width="1440"/></details><figcaption><span lang="zh">五套 PE 的通过率与输入长度</span><span lang="en">Five PEs: pass rates and input length</span><span lang="ja">五つのPE：合格率と入力長</span></figcaption></figure>
+<p><span lang="zh">相对薄规则原型，分层生成PE补回领域机制，Table17.33%→53.33%、Workflow49.33%→66.00%；相对旧Lite，Dev输入减少约69.5%，单轮通过7→16。该对照同时改变Core、Skills与样例，测量整套PE的效果。它为后续搜索提供了质量与成本更好的单轮起点；Core职责、领域规则和完整样例各自的作用，可通过分项消融进一步分析。</span><span lang="en">Restoring domain mechanisms over the thin prototype raised Table 17.33%→53.33% and Workflow 49.33%→66.00%. Compared with legacy Lite, Dev input fell about 69.5% and single-run passes rose 7→16. Core, Skills, and examples changed together, so this measures the complete PE. It provides a better quality/cost starting point; separate ablations can isolate Core responsibilities, domain rules, and full examples.</span><span lang="ja">薄い原型から領域機構を補完し、Tableは17.33%→53.33%、Workflowは49.33%→66.00%へ改善した。旧Lite比でDev入力は約69.5%減り、一回の合格数は7→16となった。Core・Skills・例を同時変更しているためPE全体の効果である。品質とコストの良い起点を得た一方、各要素の寄与は個別アブレーションで切り分けられる。</span></p>
+<h2 id="section-27"><span lang="zh">12　八轮迭代与重复评测</span><span lang="en">12  Eight iterations and repeated evaluation</span><span lang="ja">12　八回の反復と再評価</span></h2>
+<p><span lang="zh">八轮分层生成PE探索中，前五轮使用专用简化策略，后三轮恢复原MASP SP-1～12。各轮先检查目标题与Guard，通过后再进入完整Dev150。 </span><span lang="en">The first five of eight layered-PE rounds used simplified custom strategies; the last three restored original MASP SP-1–12. Each checked Targets and Guards before proceeding to all Dev150 cases. </span><span lang="ja">階層型PEの八回のうち、前五回は専用簡略戦略、後三回は元のMASP SP-1〜12を使用した。毎回TargetとGuardを確認し、通過後にDev150全件へ進めた。 </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th align="right"><span lang="zh">轮</span><span lang="en">Round</span><span lang="ja">回</span></th>
+<th><span lang="zh">修改方向</span><span lang="en">Edit direction</span><span lang="ja">変更方針</span></th>
+<th><span lang="zh">局部信号</span><span lang="en">Local signal</span><span lang="ja">局所の兆候</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td><span lang="zh">Permission激活</span><span lang="en">Permission activation</span><span lang="ja">Permission有効化</span></td>
+<td><span lang="zh">2/13 target增益</span><span lang="en">2/13 targets improved</span><span lang="ja">Target 2/13改善</span></td>
+<td><span lang="zh">5/8 Guard回退</span><span lang="en">5/8 Guards regressed</span><span lang="ja">Guard 5/8悪化</span></td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td><span lang="zh">Table字段闭包</span><span lang="en">Table field closure</span><span lang="ja">Tableフィールド閉包</span></td>
+<td><span lang="zh">8/8目标issue消失，2题strict增益</span><span lang="en">8/8 target issues resolved; 2 strict gains</span><span lang="ja">目標issue 8/8解消、strict 2問改善</span></td>
+<td><span lang="zh">5/7 Guard回退</span><span lang="en">5/7 Guards regressed</span><span lang="ja">Guard 5/7悪化</span></td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td><span lang="zh">Table-only收窄</span><span lang="en">Narrow to Table-only</span><span lang="ja">Table-onlyへ限定</span></td>
+<td><span lang="zh">4/8 issue改善</span><span lang="en">4/8 issues improved</span><span lang="ja">issue 4/8改善</span></td>
+<td><span lang="zh">0 strict增益，7/7 Guard回退</span><span lang="en">No strict gains; 7/7 Guards regressed</span><span lang="ja">strict改善0、Guard 7/7悪化</span></td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td><span lang="zh">Dashboard槽位</span><span lang="en">Dashboard slots</span><span lang="ja">Dashboardスロット</span></td>
+<td><span lang="zh">2/2 issue改善</span><span lang="en">2/2 issues improved</span><span lang="ja">issue 2/2改善</span></td>
+<td><span lang="zh">0 strict增益，4/5 Guard回退</span><span lang="en">No strict gains; 4/5 Guards regressed</span><span lang="ja">strict改善0、Guard 4/5悪化</span></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td><span lang="zh">Workflow接收人</span><span lang="en">Workflow recipients</span><span lang="ja">Workflow受信者</span></td>
+<td><span lang="zh">1/2 target增益</span><span lang="en">1/2 targets improved</span><span lang="ja">Target 1/2改善</span></td>
+<td><span lang="zh">7/9 Guard回退</span><span lang="en">7/9 Guards regressed</span><span lang="ja">Guard 7/9悪化</span></td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td><span lang="zh">Dashboard分母</span><span lang="en">Dashboard denominators</span><span lang="ja">Dashboard分母</span></td>
+<td>Dashboard97→108</td>
+<td><span lang="zh">Dev13/150，新增8、丢失11</span><span lang="en">Dev 13/150; 8 gains, 11 losses</span><span lang="ja">Dev 13/150、新規8、喪失11</span></td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td><span lang="zh">Permission双向Gate</span><span lang="en">Two-way Permission gate</span><span lang="ja">Permission双方向Gate</span></td>
+<td><span lang="zh">消除两项overgrant</span><span lang="en">Removed two overgrants</span><span lang="ja">過剰付与を二件解消</span></td>
+<td><span lang="zh">变为undergrant，0/3 target增益</span><span lang="en">Shifted to undergrant; 0/3 target gains</span><span lang="ja">付与不足へ転じ、Target改善0/3</span></td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td><span lang="zh">Workflow亚日触发</span><span lang="en">Subdaily Workflow triggers</span><span lang="ja">一日未満のWorkflow起動</span></td>
+<td>Workflow99→107</td>
+<td><span lang="zh">Dev11/150，新增7、丢失12</span><span lang="en">Dev 11/150; 7 gains, 12 losses</span><span lang="ja">Dev 11/150、新規7、喪失12</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">全部DISCARD，分层生成PE初始化基线保持不变。后续旧Skills参考支线只读检索旧规则，每次将一项机制迁入当前Skill；fresh baseline17/150，首轮Target20通过7题，新增5、回退3（均为Guard），结果记录为PARTIAL，停留在局部验证阶段。</span><span lang="en">All candidates were discarded, leaving the initialization baseline unchanged. A later legacy-Skills track retrieved old rules read-only and migrated one mechanism into a current Skill at a time. Its fresh baseline was 17/150; the first Target20 check passed 7 cases, gaining 5 and losing 3, all Guards. It was recorded as PARTIAL and remained at local validation.</span><span lang="ja">全候補をDISCARDし、初期化基準は変更しなかった。後続の旧Skills参照系統では旧ルールを読み取り専用で検索し、一度に一機構を現Skillへ移植した。fresh基準17/150、初回Target20は7問合格、新規5・悪化3（全てGuard）。PARTIALとして局所検証にとどまった。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="15-local-global" hidden="" id="writing-map-20"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="局部全局" data-alt-en="Local vs. global" data-alt-ja="局所と全体" data-alt-zh="局部全局" data-diagram-image="" data-figure-key="/writing/assets/e652dd7a4d0c19a3adbd.png" data-src-en="/writing/figures/en/15-local-global.svg?v=c824af73afae" data-src-engineering-en="/writing/figures/en/engineering/15-local-global.svg?v=f20034cd6052" data-src-engineering-ja="/writing/figures/ja/engineering/15-local-global.svg?v=346df23c13b1" data-src-engineering-zh="/writing/figures/zh/engineering/15-local-global.svg?v=96e1dca7bfc9" data-src-ja="/writing/figures/ja/15-local-global.svg?v=63f626a5bc2b" data-src-openai-blog-en="/writing/figures/en/15-local-global.svg?v=c824af73afae" data-src-openai-blog-ja="/writing/figures/ja/15-local-global.svg?v=63f626a5bc2b" data-src-openai-blog-zh="/writing/figures/zh/15-local-global.svg?v=16037d913e08" data-src-zh="/writing/figures/zh/15-local-global.svg?v=16037d913e08" decoding="async" height="480" loading="lazy" src="/writing/figures/zh/15-local-global.svg?v=16037d913e08" width="1440"/></details><figcaption><span lang="zh">目标题改善与全量回归</span><span lang="en">Target improvement and full-set regression</span><span lang="ja">目標改善と全量退化</span></figcaption></figure>
+<p><span lang="zh">同一分层生成PE的16/150与17/150只有7题共同通过，9题仅首轮、10题仅fresh；通过集合Jaccard约27%。该比较同时包含生成变化与Judge变化。</span><span lang="en">The same layered PE's 16/150 and 17/150 runs shared only 7 passing cases; 9 passed only the first run and 10 only the fresh run. Pass-set Jaccard was about 27%. This comparison includes both generation and Judge variation.</span><span lang="ja">同じ階層型PEの16/150と17/150で共通合格は7問のみ、初回だけ9問、freshだけ10問だった。合格集合のJaccardは約27%。生成とJudge両方の変動を含む比較である。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="16-noise" hidden="" id="writing-map-21"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="逐题漂移" data-alt-en="Case-level variation" data-alt-ja="ケース単位の変動" data-alt-zh="逐题漂移" data-diagram-image="" data-figure-key="/writing/assets/dc6bc467686cebb179b7.png" data-src-en="/writing/figures/en/16-noise.svg?v=75ece017d0d7" data-src-engineering-en="/writing/figures/en/engineering/16-noise.svg?v=8ab10864c460" data-src-engineering-ja="/writing/figures/ja/engineering/16-noise.svg?v=8b674e64b558" data-src-engineering-zh="/writing/figures/zh/engineering/16-noise.svg?v=77123fdcb2e0" data-src-ja="/writing/figures/ja/16-noise.svg?v=6d8d53244d4e" data-src-openai-blog-en="/writing/figures/en/16-noise.svg?v=75ece017d0d7" data-src-openai-blog-ja="/writing/figures/ja/16-noise.svg?v=6d8d53244d4e" data-src-openai-blog-zh="/writing/figures/zh/16-noise.svg?v=bd196cae435e" data-src-zh="/writing/figures/zh/16-noise.svg?v=bd196cae435e" decoding="async" height="500" loading="lazy" src="/writing/figures/zh/16-noise.svg?v=bd196cae435e" width="1440"/></details><figcaption><span lang="zh">固定 PE 的两次全量评测</span><span lang="en">Two full evaluations of a fixed PE</span><span lang="ja">固定PEの全量評価2回</span></figcaption></figure>
+<p><span lang="zh">5月的重复实验已观察到类似波动：50题、5次生成、每次2轮Judge，通过数分别为19/18、20/19、19/17、20/18、14/21。验收门槛需要结合这些波动设置，才能判断一两题的变化是否值得保留。</span><span lang="en">May repeats had already shown similar variation: 50 cases, five generations, and two Judge rounds per generation produced pass counts 19/18, 20/19, 19/17, 20/18, and 14/21. Acceptance thresholds must account for this noise before retaining a one- or two-case improvement.</span><span lang="ja">5月にも50問・五回生成・各二回Judgeで19/18、20/19、19/17、20/18、14/21という揺れを観測していた。一、二問の改善を採用する前に、この揺れを踏まえた合格閾値が必要である。</span></p>
+<p><span lang="zh">下一轮先冻结Spec重复Judge，再独立生成并对各产物重复Judge。按重复结果建立Stable Pass、Stable Fail和Unstable题池，报告均值、波动与逐题变化，再配对复核已有候选。</span><span lang="en">Next, repeat Judge calls on frozen Specs, then independently regenerate and repeatedly judge each artifact. Form Stable Pass, Stable Fail, and Unstable pools, report means, variation, and case-level flips, and recheck existing candidates in paired comparisons.</span><span lang="ja">次はSpec固定でJudgeを反復し、続いて独立再生成した各成果物を繰り返し評価する。Stable Pass・Stable Fail・Unstable群を作り、平均・変動・逐問反転を報告し、既存候補をペア比較で再検証する。</span></p>
+<h2 id="section-28"><span lang="zh">13　设计数据与训练协议</span><span lang="en">13  Design data and training protocol</span><span lang="ja">13　設計データと学習プロトコル</span></h2>
+<h3 id="section-29"><span lang="zh">13.1　从格式到可执行交接</span><span lang="en">13.1  From formatting to executable handoff</span><span lang="ja">13.1　形式から実行可能な引き継ぎへ</span></h3>
+<p><span lang="zh">HostPlan45题保持任务次序与Table任务，转换64个非Table任务；CodeAct均45/45成功，E2E20→21/45，失败验收项48→36。HostPlan估算token增加20.55%，CodeAct总token近似不变。两轮使用不同Judge入口、各运行一次，整体结果同时包含格式与评测配置变化；格式如何影响执行，通过逐题产物追踪。</span><span lang="en">For 45 HostPlan cases, task order and Table tasks stayed fixed while 64 non-Table tasks were converted. CodeAct succeeded on 45/45 in both runs; E2E rose 20→21/45 and failed checks fell 48→36. Estimated HostPlan tokens rose 20.55%; total CodeAct tokens were roughly unchanged. The two one-off runs used different Judge entry points, mixing format and evaluation-setting changes. Case-level artifacts trace how formatting affected execution.</span><span lang="ja">HostPlan45問では順序とTableタスクを保ち、非Table64タスクを変換した。CodeActは両回45/45成功、E2Eは20→21/45、不合格確認項目は48→36。HostPlan推定tokenは20.55%増、CodeAct総tokenはほぼ不変だった。各一回・異なるJudge入口のため形式と評価設定の変化が混在する。形式が実行へ与える影響は逐問成果物で追跡する。</span></p>
+<p><span lang="zh">案例030将“本月＋已交”绑定到COUNT与SUM组件，Base才落下筛选，7.8→10；另有反例：Lookup本身漏筛选时，格式转换无法修复下游语义。</span><span lang="en">In case 030, binding “this month + submitted” to both COUNT and SUM finally carried the filters into Base, raising 7.8→10. Conversely, when a Lookup itself omitted a filter, format conversion could not repair the downstream semantics.</span><span lang="ja">ケース030では「今月＋提出済み」をCOUNTとSUM両方へ結び、Baseにフィルタが反映され7.8→10となった。一方、Lookup自体がフィルタを欠く場合、形式変換では下流の意味を修復できなかった。</span></p>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="17-design-handoff" hidden="" id="writing-map-22"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="配置交接" data-alt-en="Configuration handoff" data-alt-ja="設定の引き継ぎ" data-alt-zh="配置交接" data-diagram-image="" data-figure-key="/writing/assets/95169ef5533d8f0b4548.png" data-src-en="/writing/figures/en/17-design-handoff.svg?v=33742cfe6842" data-src-engineering-en="/writing/figures/en/engineering/17-design-handoff.svg?v=b7fd89bcbd7d" data-src-engineering-ja="/writing/figures/ja/engineering/17-design-handoff.svg?v=c35d6835b175" data-src-engineering-zh="/writing/figures/zh/engineering/17-design-handoff.svg?v=0b70f44cb889" data-src-ja="/writing/figures/ja/17-design-handoff.svg?v=ad946365f054" data-src-openai-blog-en="/writing/figures/en/17-design-handoff.svg?v=33742cfe6842" data-src-openai-blog-ja="/writing/figures/ja/17-design-handoff.svg?v=ad946365f054" data-src-openai-blog-zh="/writing/figures/zh/17-design-handoff.svg?v=7df5996ade90" data-src-zh="/writing/figures/zh/17-design-handoff.svg?v=7df5996ade90" decoding="async" height="500" loading="lazy" src="/writing/figures/zh/17-design-handoff.svg?v=7df5996ade90" width="1440"/></details><figcaption><span lang="zh">组件筛选条件的交接</span><span lang="en">Passing component filters to the executor</span><span lang="ja">部品の絞り込み条件を実行器へ渡す</span></figcaption></figure>
+<h3 id="section-30"><span lang="zh">13.2　数据血缘</span><span lang="en">13.2  Data lineage</span><span lang="ja">13.2　データ来歴</span></h3>
+<p><span lang="zh">2769/3081通过轨迹包保留源输入、最终HostPlan、Judge/Fix/Router轨迹和身份索引，以完整来源身份区分重复case_id。另一组901条领域重写的格式转换状态为875 pass、26 degraded、0 failed；语义质量由后续Judge评测。两个数据包分别登记，与3999训练包的逐条映射尚未完成。 </span><span lang="en">The 2,769/3,081 passing-trajectory packages preserve source input, final HostPlan, Judge/Fix/Router traces, and identity indexes; full provenance distinguishes repeated case_ids. A separate 901-item domain-rewrite set had format statuses of 875 pass, 26 degraded, and 0 failed; later Judges assessed semantics. The packages are registered separately; item-level mapping to the 3,999 training set remains incomplete. </span><span lang="ja">2,769/3,081件の合格軌跡パッケージは入力、最終HostPlan、Judge/Fix/Router履歴、識別索引を保存し、完全な来歴で重複case_idを区別する。別の領域書き換え901件は形式変換875 pass、26 degraded、0 failedで、意味品質は後続Judgeで評価する。両パッケージは別管理で、学習3,999件との逐件対応は未完了である。 </span></p>
+<p><span lang="zh">3999条以历史自动Judge通过为筛选标准，尚未全面人工复核。训练使用独立的训练规范PE，保留综述、需求、能力边界与中性完整格式示例，使system要求与assistant目标一致。格式示例按训练侧规范编写。  </span><span lang="en">The 3,999 items were selected by historical automated Judge passes, not yet fully human-reviewed. Training uses a separate training-specification PE retaining overview, requirements, capability boundaries, and a complete neutral format example, aligning system instructions with assistant targets. Examples follow the training-side format.  </span><span lang="ja">3,999件は過去の自動Judge合格で選別し、全面的な人手再確認は未実施である。学習専用PEに概要、要求、能力境界、中立で完全な形式例を残し、system要求とassistant目標を一致させる。例は学習側の規約に沿う。  </span></p>
+<h3 id="section-31"><span lang="zh">13.3　三组训练</span><span lang="en">13.3  Three training groups</span><span lang="ja">13.3　三つの学習群</span></h3>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="18-training-lineage" hidden="" id="writing-map-23"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="训练血缘" data-alt-en="Training lineage" data-alt-ja="学習来歴" data-alt-zh="训练血缘" data-diagram-image="" data-figure-key="/writing/assets/be101ed5c01324480414.png" data-src-en="/writing/figures/en/18-training-lineage.svg?v=1aab88452523" data-src-engineering-en="/writing/figures/en/engineering/18-training-lineage.svg?v=0284e456538b" data-src-engineering-ja="/writing/figures/ja/engineering/18-training-lineage.svg?v=09411eb0a8aa" data-src-engineering-zh="/writing/figures/zh/engineering/18-training-lineage.svg?v=c60c70a168b1" data-src-ja="/writing/figures/ja/18-training-lineage.svg?v=68e54e45da71" data-src-openai-blog-en="/writing/figures/en/18-training-lineage.svg?v=1aab88452523" data-src-openai-blog-ja="/writing/figures/ja/18-training-lineage.svg?v=68e54e45da71" data-src-openai-blog-zh="/writing/figures/zh/18-training-lineage.svg?v=e484583a49e9" data-src-zh="/writing/figures/zh/18-training-lineage.svg?v=e484583a49e9" decoding="async" height="590" loading="lazy" src="/writing/figures/zh/18-training-lineage.svg?v=e484583a49e9" width="1440"/></details><figcaption><span lang="zh">三组 SFT 的数据与模型</span><span lang="en">Data and models for three SFT groups</span><span lang="ja">三つのSFT群のデータとモデル</span></figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">训练组</span><span lang="en">Training group</span><span lang="ja">学習群</span></th>
+<th><span lang="zh">初始化／数据</span><span lang="en">Initialization / data</span><span lang="ja">初期化 / データ</span></th>
+<th><span lang="zh">训练与测试</span><span lang="en">Train and test</span><span lang="ja">学習とテスト</span></th>
+<th><span lang="zh">主要超参</span><span lang="en">Main hyperparameters</span><span lang="ja">主要ハイパーパラメータ</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>qh66q</td>
+<td>Seed2 Lite260428；3999</td>
+<td>3899 / 100</td>
+<td>LoRA64/alpha8，batch16，2 epochs，lr1e-5</td>
+</tr>
+<tr>
+<td>2f8v8</td>
+<td><span lang="zh">同基座；1770</span><span lang="en">Same base; 1,770</span><span lang="ja">同じ基盤、1,770件</span></td>
+<td>1670 / 100</td>
+<td><span lang="zh">同上</span><span lang="en">Same as above</span><span lang="ja">同上</span></td>
+</tr>
+<tr>
+<td>nm9gk</td>
+<td><span lang="zh">Q2 step696；合并5769</span><span lang="en">Q2 step 696; merged 5,769</span><span lang="ja">Q2 step696、統合5,769件</span></td>
+<td><span lang="zh">5669 / 新100</span><span lang="en">5,669 / new 100</span><span lang="ja">5,669 / 新100</span></td>
+<td>LoRA32/alpha4，batch48，2 epochs，lr8e-6</td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">共同seq_len32768、warmup0.05；继续训练有server validation10%。输入为system=训练规范PE、user=原始Query，target=最终SpecDoc，不将Judge/Fix反馈和质量标签写进生成答案。  </span><span lang="en">All use seq_len 32,768 and warmup 0.05; continued training reserves 10% for server validation. Inputs are system=training-specification PE and user=original query; target=final SpecDoc. Judge/Fix feedback and quality labels are excluded from generated answers.  </span><span lang="ja">共通設定はseq_len 32,768、warmup 0.05、継続学習はserver validation 10%。入力はsystem＝学習規約PE、user＝元Query、target＝最終SpecDocで、Judge/Fixのフィードバックや品質ラベルを回答へ入れない。  </span></p>
+<p><span lang="zh">三套Test100分别抽取：1770组含98个Query group，继续训练组含74个group，独立样本按Query group计数。合并后的新train覆盖部分旧Test100，因此继续训练使用新抽取的Test100。历史Q2语料与测试集的全量重叠检查尚未完成。</span><span lang="en">The three Test100 sets were sampled separately: the 1,770 group has 98 Query groups and continued training has 74. Independence is counted by Query group. The merged training set overlaps some old Test100 items, so continued training uses a newly sampled Test100. A complete overlap audit of historical Q2 data against tests remains unfinished.</span><span lang="ja">Test100は各群で別に抽出し、1,770群は98 Query group、継続学習群は74 groupを含む。独立性はQuery group単位で数える。統合trainは旧Test100の一部と重なるため、継続学習には新Test100を使う。過去Q2データとテストの完全な重複確認は未完了である。</span></p>
+<h2 id="section-32"><span lang="zh">14　端到端验证与逐题归因</span><span lang="en">14  End-to-end validation and case-level attribution</span><span lang="ja">14　E2E検証とケース単位の原因分析</span></h2><figure class="figure-block writing-map-figure" id="recorded-case"><div class="trajectory-map" data-entry="spec-generation-recorded-case" hidden="" id="writing-map-24"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="真实案例 · 招聘筛选条件" data-alt-en="Recorded case · recruitment filters" data-alt-ja="実例 · 採用の絞り込み条件" data-alt-zh="真实案例 · 招聘筛选条件" data-diagram-image="" data-figure="spec-generation-recorded-case" data-figure-key="spec-generation-recorded-case" data-src-en="/writing/figures/en/spec-generation-recorded-case.svg?v=194c2be7a9d4" data-src-engineering-en="/writing/figures/en/engineering/spec-generation-recorded-case.svg?v=ee313e6041c3" data-src-engineering-ja="/writing/figures/ja/engineering/spec-generation-recorded-case.svg?v=6c8722336569" data-src-engineering-zh="/writing/figures/zh/engineering/spec-generation-recorded-case.svg?v=054a11bd0f15" data-src-ja="/writing/figures/ja/spec-generation-recorded-case.svg?v=44b5325316aa" data-src-openai-blog-en="/writing/figures/en/spec-generation-recorded-case.svg?v=194c2be7a9d4" data-src-openai-blog-ja="/writing/figures/ja/spec-generation-recorded-case.svg?v=44b5325316aa" data-src-openai-blog-zh="/writing/figures/zh/spec-generation-recorded-case.svg?v=6f4fe3eea083" data-src-zh="/writing/figures/zh/spec-generation-recorded-case.svg?v=6f4fe3eea083" decoding="async" height="969" loading="lazy" src="/writing/figures/zh/spec-generation-recorded-case.svg?v=6f4fe3eea083" width="1440"/></details><figcaption><span lang="zh">同一招聘需求的两条原始轨迹：Q2 的名称 / 筛选矛盾从 Spec 传入代码和 Base，继续训练配置使用一致状态。55 与 100 是两套模型 + 提示词配置的整条 E2E 分数。</span><span lang="en">Two original traces for the same recruitment request: Q2 carries a name/filter mismatch from Spec into code and Base; the continued-training configuration uses consistent states. Scores of 55 and 100 compare complete model + prompt configurations.</span><span lang="ja">同じ採用要求に対する原軌跡。Q2 の名称と条件の矛盾が Spec からコード・Base に伝わり、継続学習設定では状態が整合。55点と100点はモデル＋プロンプト設定全体の E2E 比較。</span></figcaption><details class="figure-detail"><summary><span lang="zh">图注与口径</span><span lang="en">Figure notes</span><span lang="ja">図注と評価条件</span></summary><p><span lang="zh">两条独立运行比较模型 + 系统提示词的联合配置，并非同一 PE 的前后修复。状态值与代码为语义节选；原始轨迹和评审报告保留核对记录。</span><span lang="en">These independent runs compare model + system-prompt configurations, not a before/after PE-only repair. State values and code are translated excerpts; original trajectories and verdicts were checked.</span><span lang="ja">独立した2実行でモデル＋システムプロンプトの設定を比較。単一 PE の修復前後ではない。状態値とコードは意味を保った抜粋・翻訳で、原軌跡と判定を照合済み。</span></p></details></figure>
+<h3 id="section-33"><span lang="zh">14.1　同题配置对照</span><span lang="en">14.1  Paired configurations on the same cases</span><span lang="ja">14.1　同一問題での設定比較</span></h3>
+<p><span lang="zh">Building0.7主配对固定50题，Spec temperature0.7、top_p1、max_tokens16000、thinking disabled；下游CodeAgent b82zj、minimal、sft_short_system、四域scope。Judge为gpt-5.5-2026-04-24、high、Mix all dimensions、base/default。主配对固定SDK与Judge版本，每组保留一轮正式产物，执行失败题计入分母，技术重试按预定协议处理。 </span><span lang="en">The main Building0.7 pair fixes 50 cases: Spec temperature 0.7, top_p 1, max_tokens 16,000, thinking disabled; downstream CodeAgent b82zj, minimal, sft_short_system, four-domain scope. Judge is gpt-5.5-2026-04-24, high, Mix all dimensions, base/default. SDK and Judge versions are fixed; each arm keeps one formal artifact run, includes execution failures in the denominator, and handles technical retries by a predefined protocol. </span><span lang="ja">Building0.7の主比較は50問を固定し、Spec temperature 0.7、top_p 1、max_tokens 16,000、thinking disabled、下流CodeAgent b82zj・minimal・sft_short_system・四領域scopeとした。Judgeはgpt-5.5-2026-04-24、high、Mix all dimensions、base/default。SDKとJudge版を固定し、各群の正式成果物を一回分保存、実行失敗も分母に含め、技術的再試行は事前規約に従う。 </span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">配置</span><span lang="en">Configuration</span><span lang="ja">設定</span></th>
+<th align="right"><span lang="zh">E2E通过</span><span lang="en">E2E passes</span><span lang="ja">E2E合格</span></th>
+<th align="right"><span lang="zh">CodeAgent成功</span><span lang="en">CodeAgent successes</span><span lang="ja">CodeAgent成功</span></th>
+<th><span lang="zh">对照设置</span><span lang="en">Comparison setup</span><span lang="ja">比較条件</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">3999组＋训练规范PE</span><span lang="en">3,999 group + training-specification PE</span><span lang="ja">3,999群＋学習規約PE</span></td>
+<td align="right">32/50</td>
+<td align="right">50/50</td>
+<td><span lang="zh">历史同题运行，完整运行版本未统一</span><span lang="en">Historical same-case run; full run versions not unified</span><span lang="ja">過去の同一問題実行。実行版全体は未統一</span></td>
+</tr>
+<tr>
+<td><span lang="zh">1770组＋训练规范PE</span><span lang="en">1,770 group + training-specification PE</span><span lang="ja">1,770群＋学習規約PE</span></td>
+<td align="right">30/50</td>
+<td align="right">49/50</td>
+<td><span lang="zh">历史同题运行，完整运行版本未统一</span><span lang="en">Historical same-case run; full run versions not unified</span><span lang="ja">過去の同一問題実行。実行版全体は未統一</span></td>
+</tr>
+<tr>
+<td><span lang="zh">原始Q2＋旧SP</span><span lang="en">Original Q2 + old SP</span><span lang="ja">元Q2＋旧SP</span></td>
+<td align="right">32/50</td>
+<td align="right">47/50</td>
+<td><span lang="zh">与继续训练组构成同版本主配对</span><span lang="en">Same-version main pair with continued training</span><span lang="ja">継続学習群との同版主比較</span></td>
+</tr>
+<tr>
+<td><span lang="zh">继续训练＋训练规范PE</span><span lang="en">Continued training + training-specification PE</span><span lang="ja">継続学習＋学習規約PE</span></td>
+<td align="right">35/50</td>
+<td align="right">48/50</td>
+<td><span lang="zh">模型与SP共同改变</span><span lang="en">Model and SP changed together</span><span lang="ja">モデルとSPを同時変更</span></td>
+</tr>
+</tbody></table></div>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="19-e2e-paired" hidden="" id="writing-map-25"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="E2E配对" data-alt-en="Paired E2E results" data-alt-ja="E2Eペア比較" data-alt-zh="E2E配对" data-diagram-image="" data-figure-key="/writing/assets/185843a5d98011461c98.png" data-src-en="/writing/figures/en/19-e2e-paired.svg?v=5a5c172e8be1" data-src-engineering-en="/writing/figures/en/engineering/19-e2e-paired.svg?v=e380e3079659" data-src-engineering-ja="/writing/figures/ja/engineering/19-e2e-paired.svg?v=aa325240458f" data-src-engineering-zh="/writing/figures/zh/engineering/19-e2e-paired.svg?v=905c65955b93" data-src-ja="/writing/figures/ja/19-e2e-paired.svg?v=70b8004f6137" data-src-openai-blog-en="/writing/figures/en/19-e2e-paired.svg?v=5a5c172e8be1" data-src-openai-blog-ja="/writing/figures/ja/19-e2e-paired.svg?v=70b8004f6137" data-src-openai-blog-zh="/writing/figures/zh/19-e2e-paired.svg?v=d4dd5efa0cc4" data-src-zh="/writing/figures/zh/19-e2e-paired.svg?v=d4dd5efa0cc4" decoding="async" height="440" loading="lazy" src="/writing/figures/zh/19-e2e-paired.svg?v=d4dd5efa0cc4" width="1440"/></details><figcaption><span lang="zh">Building0.7 配对结果</span><span lang="en">Paired Building0.7 results</span><span lang="ja">Building0.7の対応比較</span></figcaption></figure>
+<p><span lang="zh">主配对共同过27、Q2独有5、继续训练独有8、共同未过10；均分89.26→92.44。继续训练模型与训练规范PE的组合净增3题；下一组对照可固定SP，单独比较模型变化。</span><span lang="en">The main pair shared 27 passes; 5 were Q2-only, 8 continued-training-only, and 10 failed both. Mean score rose 89.26→92.44. Continued training plus the training-specification PE gained a net three cases. A next comparison can hold SP fixed to isolate the model change.</span><span lang="ja">主比較は共通合格27、Q2のみ5、継続学習のみ8、共通不合格10、平均89.26→92.44だった。継続学習＋学習規約PEの組み合わせで純増3問。次はSPを固定してモデル変更の寄与を分離できる。</span></p>
+<h3 id="section-34"><span lang="zh">14.2　成本</span><span lang="en">14.2  Cost</span><span lang="ja">14.2　コスト</span></h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">平均token</span><span lang="en">Mean tokens</span><span lang="ja">平均token</span></th>
+<th align="right"><span lang="zh">Q2＋旧SP</span><span lang="en">Q2 + old SP</span><span lang="ja">Q2＋旧SP</span></th>
+<th align="right"><span lang="zh">继续训练＋训练规范PE</span><span lang="en">Continued training + training-specification PE</span><span lang="ja">継続学習＋学習規約PE</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">Spec输入 / 输出</span><span lang="en">Spec input / output</span><span lang="ja">Spec入力 / 出力</span></td>
+<td align="right">13,245 / 626</td>
+<td align="right">3,619 / 1,017</td>
+</tr>
+<tr>
+<td><span lang="zh">外层CodeAgent输入 / 输出</span><span lang="en">Outer CodeAgent input / output</span><span lang="ja">外側CodeAgent入力 / 出力</span></td>
+<td align="right">20,403 / 3,084</td>
+<td align="right">17,169 / 2,630</td>
+</tr>
+<tr>
+<td><span lang="zh">两阶段合计</span><span lang="en">Two-stage total</span><span lang="ja">二段階合計</span></td>
+<td align="right">37,358</td>
+<td align="right">24,435</td>
+</tr>
+</tbody></table></div>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="20-token-cost" hidden="" id="writing-map-26"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="Token来源" data-alt-en="Token breakdown" data-alt-ja="token内訳" data-alt-zh="Token来源" data-diagram-image="" data-figure-key="/writing/assets/1bebaa35682042427ab1.png" data-src-en="/writing/figures/en/20-token-cost.svg?v=5e0647e155d5" data-src-engineering-en="/writing/figures/en/engineering/20-token-cost.svg?v=85c3ed2a4530" data-src-engineering-ja="/writing/figures/ja/engineering/20-token-cost.svg?v=ba519d40b95e" data-src-engineering-zh="/writing/figures/zh/engineering/20-token-cost.svg?v=cd8e86fb885d" data-src-ja="/writing/figures/ja/20-token-cost.svg?v=1ca5de86a1bc" data-src-openai-blog-en="/writing/figures/en/20-token-cost.svg?v=5e0647e155d5" data-src-openai-blog-ja="/writing/figures/ja/20-token-cost.svg?v=1ca5de86a1bc" data-src-openai-blog-zh="/writing/figures/zh/20-token-cost.svg?v=e227bc84f907" data-src-zh="/writing/figures/zh/20-token-cost.svg?v=e227bc84f907" decoding="async" height="470" loading="lazy" src="/writing/figures/zh/20-token-cost.svg?v=e227bc84f907" width="1440"/></details><figcaption><span lang="zh">两阶段 Token 用量</span><span lang="en">Token usage across two stages</span><span lang="ja">二段階のtoken使用量</span></figcaption></figure>
+<p><span lang="zh">统计覆盖有usage的Spec与外层CodeAgent请求，排除SDK子Agent、离线Judge及缺失usage的失败请求。两组token差额约74.49%来自Spec输入缩短。平均耗时3.14→3.07分钟，计Spec耗时与CodeAgent墙钟，排除排队、Base前置准备与离线Judge。</span><span lang="en">Counts cover Spec and outer CodeAgent requests with usage, excluding SDK subagents, offline Judges, and failed requests without usage. About 74.49% of the token difference comes from shorter Spec input. Mean elapsed time fell 3.14→3.07 minutes, counting Spec time plus CodeAgent wall time but excluding queues, Base preparation, and offline judging.</span><span lang="ja">usageがあるSpecと外側CodeAgentを集計し、SDK子Agent、オフラインJudge、usage欠落の失敗要求は除外した。token差の約74.49%はSpec入力短縮による。平均時間は3.14→3.07分で、Spec時間とCodeAgent実時間を含み、待ち行列・Base事前準備・オフラインJudgeは含まない。</span></p>
+<h3 id="section-35"><span lang="zh">14.3　各组测试集与Building1.0</span><span lang="en">14.3  Per-group tests and Building1.0</span><span lang="ja">14.3　各群のテストとBuilding1.0</span></h3>
+<p><span lang="zh">三个训练组分别使用各自的Test100；Building1.0另在同一继续训练模型上对比两套SP。</span><span lang="en">Each training group uses its own Test100. Building1.0 separately compares two SPs on the same continued-training model.</span><span lang="ja">各学習群はそれぞれのTest100を使う。Building1.0では同じ継続学習モデルで二種類のSPを比較する。</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">评测组</span><span lang="en">Evaluation group</span><span lang="ja">評価群</span></th>
+<th><span lang="zh">测试集／固定项</span><span lang="en">Test set / fixed factors</span><span lang="ja">テスト集合 / 固定条件</span></th>
+<th><span lang="zh">结果</span><span lang="en">Result</span><span lang="ja">結果</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">3999训练组</span><span lang="en">3,999 training group</span><span lang="ja">3,999学習群</span></td>
+<td><span lang="zh">本组Test100</span><span lang="en">This group's Test100</span><span lang="ja">当該群のTest100</span></td>
+<td>49/100</td>
+</tr>
+<tr>
+<td><span lang="zh">1770训练组</span><span lang="en">1,770 training group</span><span lang="ja">1,770学習群</span></td>
+<td><span lang="zh">本组Test100</span><span lang="en">This group's Test100</span><span lang="ja">当該群のTest100</span></td>
+<td>54/100</td>
+</tr>
+<tr>
+<td><span lang="zh">继续训练组</span><span lang="en">Continued-training group</span><span lang="ja">継続学習群</span></td>
+<td><span lang="zh">新Test100</span><span lang="en">New Test100</span><span lang="ja">新Test100</span></td>
+<td><span lang="zh">49通过、50未过、1题Judge汇总错误</span><span lang="en">49 pass, 50 fail, 1 Judge aggregation error</span><span lang="ja">合格49、不合格50、Judge集計エラー1</span></td>
+</tr>
+<tr>
+<td><span lang="zh">Building1.0 SP对照</span><span lang="en">Building1.0 SP comparison</span><span lang="ja">Building1.0のSP比較</span></td>
+<td><span lang="zh">同一继续训练endpoint、同50题</span><span lang="en">Same continued-training endpoint and 50 cases</span><span lang="ja">同一の継続学習endpoint、同じ50問</span></td>
+<td><span lang="zh">训练规范PE 12/50，旧SP 9/50</span><span lang="en">Training-specification PE 12/50; old SP 9/50</span><span lang="ja">学習規約PE 12/50、旧SP 9/50</span></td>
+</tr>
+</tbody></table></div>
+<figure class="writing-map-figure"><div class="trajectory-map" data-entry="21-error-localization" hidden="" id="writing-map-27"></div><details class="trajectory-static" open=""><summary><span lang="zh">静态图</span><span lang="en">Static figure</span><span lang="ja">静止図</span></summary><img alt="归因链" data-alt-en="Attribution chain" data-alt-ja="原因分析の連鎖" data-alt-zh="归因链" data-diagram-image="" data-figure-key="/writing/assets/5f027d98d4046d5b3961.png" data-src-en="/writing/figures/en/21-error-localization.svg?v=0190ccfdfdf6" data-src-engineering-en="/writing/figures/en/engineering/21-error-localization.svg?v=5061bbd6c26a" data-src-engineering-ja="/writing/figures/ja/engineering/21-error-localization.svg?v=892df6ed5f9e" data-src-engineering-zh="/writing/figures/zh/engineering/21-error-localization.svg?v=574ae0c18225" data-src-ja="/writing/figures/ja/21-error-localization.svg?v=337494051963" data-src-openai-blog-en="/writing/figures/en/21-error-localization.svg?v=0190ccfdfdf6" data-src-openai-blog-ja="/writing/figures/ja/21-error-localization.svg?v=337494051963" data-src-openai-blog-zh="/writing/figures/zh/21-error-localization.svg?v=15d66197d818" data-src-zh="/writing/figures/zh/21-error-localization.svg?v=15d66197d818" decoding="async" height="550" loading="lazy" src="/writing/figures/zh/21-error-localization.svg?v=15d66197d818" width="1440"/></details><figcaption><span lang="zh">逐题错误定位</span><span lang="en">Tracing errors case by case</span><span lang="ja">各題の誤りを追跡する</span></figcaption></figure>
+<p><span lang="zh">007招聘的筛选状态已在Q2 Spec写错，继续训练修正后55→100；045餐饮100→33同时有Spec门店分组变品类、代码丢失已有时间筛选；041两组产物都增加Spec未要求的普通用户角色。逐题对照Query、Spec、代码与Base，可以将修复分别落到生成遗漏、设计错误和执行器偏离上。</span><span lang="en">In recruitment case 007, the filter status was already wrong in the Q2 Spec; continued training corrected it, raising 55→100. Restaurant case 045 fell 100→33: the Spec changed store grouping to category grouping, and code lost an existing time filter. Both outputs for 041 added a regular-user role absent from the Spec. Comparing Query, Spec, code, and Base per case directs fixes to omissions, design errors, or executor deviations.</span><span lang="ja">採用007はQ2 Spec段階で選考状態が誤り、継続学習で修正され55→100。飲食045は100→33に下がり、Specで店舗別がカテゴリ別に変わったうえ、コードが既存時間フィルタを失った。041では両成果物がSpecにない一般利用者ロールを追加した。Query、Spec、コード、Baseを逐問比較することで、生成漏れ・設計誤り・実行器の逸脱へ修正を振り分けられる。</span></p>
+<h2 id="section-36"><span lang="zh">15　结论与后续实验</span><span lang="en">15  Conclusions and next experiments</span><span lang="ja">15　結論と次の実験</span></h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">工作线</span><span lang="en">Workstream</span><span lang="ja">作業系統</span></th>
+<th><span lang="zh">实验发现与取舍</span><span lang="en">Findings and decisions</span><span lang="ja">知見と判断</span></th>
+<th><span lang="zh">下一步问题</span><span lang="en">Next question</span><span lang="ja">次の問い</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">搜索框架</span><span lang="en">Search framework</span><span lang="ja">探索フレームワーク</span></td>
+<td><span lang="zh">保留定点编辑、旧规则保护、目标与全量分验；回退引起整体退化的候选</span><span lang="en">Retain targeted editing, legacy-rule protection, and separate target/full checks; revert globally regressive candidates</span><span lang="ja">局所編集、旧ルール保護、Target/全件分離を維持。全体を悪化させる候補は撤回</span></td>
+<td><span lang="zh">同等预算下，哪种提案方式更容易得到可重复的KEEP？</span><span lang="en">At equal budgets, which proposal method yields more repeatable KEEPs?</span><span lang="ja">同予算で、どの提案法が再現可能なKEEPを得やすいか</span></td>
+</tr>
+<tr>
+<td><span lang="zh">规则重构</span><span lang="en">Rule restructuring</span><span lang="ja">ルール再構成</span></td>
+<td><span lang="zh">纯压缩和增加禁令多次回退；分层生成PE改善质量与输入成本</span><span lang="en">Compression and extra prohibitions repeatedly regressed; layered PE improved quality and input cost</span><span lang="ja">圧縮と禁止追加は繰り返し悪化。階層型PEは品質と入力コストを改善</span></td>
+<td><span lang="zh">Core信息流、领域规则和完整样例分别贡献多少？</span><span lang="en">How much comes from Core flow, domain rules, and complete examples?</span><span lang="ja">Coreの情報流、領域ルール、完全な例の寄与はそれぞれどれほどか</span></td>
+</tr>
+<tr>
+<td><span lang="zh">人工PE专项</span><span lang="en">Human-PE project</span><span lang="ja">人手PE実験</span></td>
+<td><span lang="zh">Free与Data各有KEEP；Data重复均值低于峰值</span><span lang="en">Both Free and Data have KEEPs; Data's repeated mean is below its peak</span><span lang="ja">Free・DataともKEEPあり。Dataの反復平均は最高値を下回る</span></td>
+<td><span lang="zh">两臂相同预算、相同重复次数时，动态记忆有多大收益？</span><span lang="en">How much does dynamic memory help with equal budgets and repeat counts?</span><span lang="ja">予算と反復回数を揃えたとき動的記憶はどれほど有効か</span></td>
+</tr>
+<tr>
+<td><span lang="zh">主Harness</span><span lang="en">Main harness</span><span lang="ja">主Harness</span></td>
+<td><span lang="zh">初始化PE冻结；八轮候选回退，同PE运行有19题翻转</span><span lang="en">Initialization frozen; eight candidates reverted; 19 case flips between same-PE runs</span><span lang="ja">初期PE固定、八候補撤回、同PE実行間で19問反転</span></td>
+<td><span lang="zh">Judge波动、生成变化和规则副作用各占多少？</span><span lang="en">How much variation comes from the Judge, generation, and rule side effects?</span><span lang="ja">Judge、生成、ルール副作用が各どれほど変動に寄与するか</span></td>
+</tr>
+<tr>
+<td><span lang="zh">数据与SFT</span><span lang="en">Data and SFT</span><span lang="ja">データとSFT</span></td>
+<td><span lang="zh">继续训练＋规范PE在Building0.7净增3题，token下降</span><span lang="en">Continued training + normalized PE gained 3 Building0.7 cases and reduced tokens</span><span lang="ja">継続学習＋規約PEでBuilding0.7が3問増、token減</span></td>
+<td><span lang="zh">固定SP后模型变化有多少收益？未见查询上是否保持？</span><span lang="en">What is the model-only gain with SP fixed, and does it hold on unseen queries?</span><span lang="ja">SP固定時のモデル改善量はどれほどで、未知Queryでも維持されるか</span></td>
+</tr>
+</tbody></table></div>
+<p><span lang="zh">优先完成固定Spec的重复Judge与固定PE的重复生成，用两层实验确定波动范围，再配对复核候选。随后在未参与规则设计的封存查询上验证泛化；动态检索、扩数据和Harness Dropout分别作为独立实验开展。</span><span lang="en">Prioritize repeated judging of fixed Specs and repeated generation with a fixed PE to establish the variation range, then recheck candidates in pairs. Next test generalization on sealed queries unused in rule design. Dynamic retrieval, data expansion, and Harness Dropout should be separate experiments.</span><span lang="ja">まず固定Specの反復Judgeと固定PEの反復生成で変動幅を確定し、候補をペアで再確認する。続いてルール設計未使用の封印Queryで汎化を測る。動的検索、データ拡張、Harness Dropoutは個別実験とする。</span></p>
+<details class="name-key">
+<summary><span lang="zh">附录：PE 版本索引</span><span lang="en">Appendix: PE version index</span><span lang="ja">付録：PEバージョン索引</span></summary>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th><span lang="zh">报告名称</span><span lang="en">Name in this report</span><span lang="ja">本稿での名称</span></th>
+<th><span lang="zh">历史标识</span><span lang="en">Historical identifier</span><span lang="ja">過去の識別子</span></th>
+<th><span lang="zh">区分依据</span><span lang="en">Distinguishing feature</span><span lang="ja">区別する特徴</span></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><span lang="zh">旧 Lite PE</span><span lang="en">Old Lite PE</span><span lang="ja">旧Lite PE</span></td>
+<td><span lang="zh">旧Lite／R81状态；后续回退到此快照</span><span lang="en">Old Lite / R81 state; later rollback target</span><span lang="ja">旧Lite／R81状態、後の復元先</span></td>
+<td><span lang="zh">已历经历史优化，含旧Lite Skills；非未经优化的原始基线</span><span lang="en">Already historically optimized, with old Lite Skills; not an untouched baseline</span><span lang="ja">旧Lite Skillsを含む過去最適化済み版で、未調整の原始基準ではない</span></td>
+</tr>
+<tr>
+<td><span lang="zh">历史MASP保留PE</span><span lang="en">Historical MASP retained PE</span><span lang="ja">過去MASP採用PE</span></td>
+<td><span lang="zh">2026-06-22 MASP Lite top KEEP，worktree快照eb11b3cf</span><span lang="en">June 22, 2026 MASP Lite Top KEEP; snapshot eb11b3cf</span><span lang="ja">2026-06-22 MASP Lite Top KEEP、スナップショットeb11b3cf</span></td>
+<td><span lang="zh">Prompt与旧Lite相同；Dashboard、Permission Skills不同</span><span lang="en">Same Prompt as old Lite; different Dashboard and Permission Skills</span><span lang="ja">Promptは旧Liteと同じ、DashboardとPermission Skillsが異なる</span></td>
+</tr>
+<tr>
+<td><span lang="zh">旧规则整理版</span><span lang="en">Organized old rules</span><span lang="ja">既存ルール整理版</span></td>
+<td><span lang="zh">规范化V1</span><span lang="en">Normalization V1</span><span lang="ja">正規化V1</span></td>
+<td><span lang="zh">保留旧规则内容，整理表达与格式</span><span lang="en">Preserves old rules while organizing wording and format</span><span lang="ja">旧規則内容を保ち、表現と形式を整理</span></td>
+</tr>
+<tr>
+<td><span lang="zh">精简规则库</span><span lang="en">Compact rule library</span><span lang="ja">簡略ルール集</span></td>
+<td><span lang="zh">7月初规范化V2</span><span lang="en">Early-July normalization V2</span><span lang="ja">7月初の正規化V2</span></td>
+<td><span lang="zh">薄Core＋Shared/Domain/Pattern；与后来的主Harness重构系列分开</span><span lang="en">Thin Core + Shared/Domain/Pattern; separate from later main-harness reconstruction</span><span lang="ja">薄Core＋Shared/Domain/Pattern。後の主Harness再設計とは別</span></td>
+</tr>
+<tr>
+<td><span lang="zh">人工PE双线：自由归因／策略记忆</span><span lang="en">Human-PE tracks: Free / strategy memory</span><span lang="ja">人工PE二系統：自由診断／戦略メモリ</span></td>
+<td>Lite V3 Free／Data-SP</td>
+<td><span lang="zh">同人工Prompt起点，分别只修改生成执行协议</span><span lang="en">Same human-authored starting prompt; independent generation-protocol edits only</span><span lang="ja">同じ人工Prompt起点から生成プロトコルだけを独立編集</span></td>
+</tr>
+<tr>
+<td><span lang="zh">策略记忆PE（对照快照）</span><span lang="en">Strategy-memory PE (comparison snapshot)</span><span lang="ja">戦略メモリPE（対照スナップショット）</span></td>
+<td><span lang="zh">五套PE比较中的Data V3，Prompt SHA-256前缀d9d427b3a629</span><span lang="en">Data V3 in the five-PE comparison; Prompt SHA-256 prefix d9d427b3a629</span><span lang="ja">五版比較のData V3、Prompt SHA-256接頭辞d9d427b3a629</span></td>
+<td><span lang="zh">用于Dev150／Former50比较的固定快照；专项100题的逐轮KEEP另行保存</span><span lang="en">Fixed Dev150/Former50 snapshot; special-100 KEEP snapshots saved separately</span><span lang="ja">Dev150／Former50用の固定版。専用100の各KEEPは別保存</span></td>
+</tr>
+<tr>
+<td><span lang="zh">薄规则原型</span><span lang="en">Thin-rule prototype</span><span lang="ja">薄ルール原型</span></td>
+<td>Main Framework v2.1</td>
+<td><span lang="zh">主Harness初始薄Core与少量规则</span><span lang="en">Initial main-harness thin Core and sparse rules</span><span lang="ja">主Harness初期の薄いCoreと少数ルール</span></td>
+</tr>
+<tr>
+<td><span lang="zh">权限预规划</span><span lang="en">Permission preplanning</span><span lang="ja">権限の事前計画</span></td>
+<td>Main v2.2</td>
+<td><span lang="zh">外部Permission Planner、校验、渲染</span><span lang="en">External Permission Planner, validation, rendering</span><span lang="ja">外部Permission Planner、検証、描画</span></td>
+</tr>
+<tr>
+<td><span lang="zh">单次生成原型</span><span lang="en">Single-generation prototype</span><span lang="ja">単回生成原型</span></td>
+<td>Main v2.3</td>
+<td><span lang="zh">回到一次模型调用</span><span lang="en">Return to one model call</span><span lang="ja">一度のモデル呼び出しへ復帰</span></td>
+</tr>
+<tr>
+<td><span lang="zh">内部结构草稿／显式结构草稿／扩展结构草稿／精简结构封套</span><span lang="en">Internal / explicit / extended structural drafts / compact envelope</span><span lang="ja">内部／明示／拡張構造草稿／簡略Envelope</span></td>
+<td>Main v2.4／v2.5／v2.6／v2.7</td>
+<td><span lang="zh">同次调用的Contract/Envelope实验</span><span lang="en">Same-call Contract/Envelope experiments</span><span lang="ja">同一呼び出しのContract/Envelope実験</span></td>
+</tr>
+<tr>
+<td><span lang="zh">完整自然语言协议／短Core／旧表规则摘要</span><span lang="en">Full natural-language protocol / short Core / old Table-rule summary</span><span lang="ja">完全自然言語プロトコル／短Core／旧Table規則要約</span></td>
+<td>Main v2.8／v2.9／v2.10</td>
+<td><span lang="zh">直接输出SpecDoc的三种早期方案</span><span lang="en">Three early designs that directly output SpecDoc</span><span lang="ja">SpecDocを直接出す初期三方式</span></td>
+</tr>
+<tr>
+<td><span lang="zh">职责分层／依赖闭环／正向执行协议／六段Core</span><span lang="en">Responsibility layers / dependency closure / positive protocol / six-part Core</span><span lang="ja">責任分層／依存完結／正向手順／六段Core</span></td>
+<td>Main v2.11／v2.12／v2.13／v2.14</td>
+<td><span lang="zh">人工重构中的四次中间修改</span><span lang="en">Four intermediate manual-reconstruction edits</span><span lang="ja">手動再設計中の四変更</span></td>
+</tr>
+<tr>
+<td><span lang="zh">分层生成PE</span><span lang="en">Layered-generation PE</span><span lang="ja">階層化生成PE</span></td>
+<td><span lang="zh">Main Framework V2.15；Prompt SHA-256前缀b95ca32dbc2a</span><span lang="en">Main Framework V2.15; Prompt SHA-256 prefix b95ca32dbc2a</span><span lang="ja">Main Framework V2.15、Prompt SHA-256接頭辞b95ca32dbc2a</span></td>
+<td><span lang="zh">Core＋Shared＋四域Skills，补全Actor与权限判定；本文主要初始化方案</span><span lang="en">Core + Shared + four domain Skills; completes Actor and permission decisions; main initialization here</span><span lang="ja">Core＋Shared＋四領域Skills、Actorと権限判定を補完。本稿の主初期化</span></td>
+</tr>
+<tr>
+<td><span lang="zh">训练规范PE</span><span lang="en">Training-standard PE</span><span lang="ja">訓練標準PE</span></td>
+<td>SFT system prompt v05</td>
+<td><span lang="zh">训练侧独立提示词，包含能力约束与完整格式示例</span><span lang="en">Independent training prompt with capability constraints and full format examples</span><span lang="ja">能力制約と完全な形式例を持つ独立した訓練用Prompt</span></td>
+</tr>
+</tbody></table></div>
+</details>
+<details class="article-resources" id="figure-sources"><summary><span lang="zh">图源与代码</span><span lang="en">Figures and code</span><span lang="ja">図とコード</span></summary><ul class="article-resource-list"><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/01-paradigm-map.html"><span lang="zh">研究对象</span><span lang="en">Research scope</span><span lang="ja">研究対象</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-generation-full-workflow.html"><span lang="zh">Spec 生成 · 完整流程</span><span lang="en">Spec generation · Full workflow</span><span lang="ja">Spec 生成 · 全体フロー</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/22-autoresearch-map.html"><span lang="zh">PE优化主线与对照旁支</span><span lang="en">PE optimization and comparison branches</span><span lang="ja">PE最適化と比較系統</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/23-method-comparison.html"><span lang="zh">方法比较</span><span lang="en">Method comparison</span><span lang="ja">方法比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/24-loop-control.html"><span lang="zh">两种调度方式</span><span lang="en">Two scheduling modes</span><span lang="ja">二つの実行管理方式</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/02-two-loops.html"><span lang="zh">内外循环</span><span lang="en">Inner and outer loops</span><span lang="ja">内側と外側のループ</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/25-method-decisions.html"><span lang="zh">方法实验后的取舍</span><span lang="en">Decisions after method experiments</span><span lang="ja">手法実験後の採否</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/03-search-operators.html"><span lang="zh">MASP与组合</span><span lang="en">MASP and Combine</span><span lang="ja">MASPとCombine</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/04-patch-guard.html"><span lang="zh">Guarded Patch</span><span lang="en">Guarded Patch</span><span lang="ja">Guarded Patch</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/05-runtime-branches.html"><span lang="zh">旁支的四种操作</span><span lang="en">Four side-experiment operations</span><span lang="ja">関連実験の四操作</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/06-judge-cross.html"><span lang="zh">Judge交叉</span><span lang="en">Cross-Judge comparison</span><span lang="ja">Judge交差比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/07-normalization.html"><span lang="zh">规范化</span><span lang="en">Normalization</span><span lang="ja">正規化</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/08-v3-memory.html"><span lang="zh">人工PE专项方法</span><span lang="en">Human-PE search methods</span><span lang="ja">人手PEの探索方式</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/09-data-split.html"><span lang="zh">数据集</span><span lang="en">Datasets</span><span lang="ja">データセット</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/10-initialization-tree.html"><span lang="zh">初始化全路径</span><span lang="en">Initialization design paths</span><span lang="ja">初期化の設計経路</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/11-planner-tradeoff.html"><span lang="zh">Planner权衡</span><span lang="en">Planner trade-offs</span><span lang="ja">Plannerのトレードオフ</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/12-core-skills.html"><span lang="zh">Core与Skills装配</span><span lang="en">Core and Skills assembly</span><span lang="ja">CoreとSkillsの組み立て</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/13-consumer-closure.html"><span lang="zh">字段依赖规划</span><span lang="en">Planning field dependencies</span><span lang="ja">フィールド依存の計画</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/14-pe-comparison.html"><span lang="zh">跨数据集</span><span lang="en">Cross-dataset comparison</span><span lang="ja">データセット間比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/15-local-global.html"><span lang="zh">局部全局</span><span lang="en">Local vs. global</span><span lang="ja">局所と全体</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/16-noise.html"><span lang="zh">逐题漂移</span><span lang="en">Case-level variation</span><span lang="ja">ケース単位の変動</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/17-design-handoff.html"><span lang="zh">配置交接</span><span lang="en">Configuration handoff</span><span lang="ja">設定の引き継ぎ</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/18-training-lineage.html"><span lang="zh">训练血缘</span><span lang="en">Training lineage</span><span lang="ja">学習来歴</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/spec-generation-recorded-case.html"><span lang="zh">真实案例 · 招聘筛选条件</span><span lang="en">Recorded case · recruitment filters</span><span lang="ja">実例 · 採用の絞り込み条件</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/19-e2e-paired.html"><span lang="zh">E2E配对</span><span lang="en">Paired E2E results</span><span lang="ja">E2Eペア比較</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/20-token-cost.html"><span lang="zh">Token来源</span><span lang="en">Token breakdown</span><span lang="ja">token内訳</span></a></li><li><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/21-error-localization.html"><span lang="zh">归因链</span><span lang="en">Attribution chain</span><span lang="ja">原因分析の連鎖</span></a></li></ul><p class="article-resource-code"><a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/_data/writing/figures/translations.json"><span lang="zh">图中文字翻译</span><span lang="en">Figure translations</span><span lang="ja">図の翻訳</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/writing-maps/spec-generation-technical.js?v=2e436074b084"><span lang="zh">流程与交互数据</span><span lang="en">Flow and interaction data</span><span lang="ja">フローと操作データ</span></a> · <a href="https://github.com/24kchengYe/24kchengYe.github.io/blob/main/assets/js/trajectory-map.js"><span lang="zh">交互代码</span><span lang="en">Interaction code</span><span lang="ja">操作部分のコード</span></a></p></details><footer>Spec Generation Research · 2026-10-20</footer></article></div><dialog id="zoom"><button aria-label="关闭大图" data-aria-label-en="Close enlarged image" data-aria-label-ja="拡大画像を閉じる" data-aria-label-zh="关闭大图"><span lang="zh">关闭 ×</span><span lang="en">Close ×</span><span lang="ja">閉じる ×</span></button><img alt=""/></dialog><script>document.querySelector('.toc-toggle').addEventListener('click',event=>{const expanded=event.currentTarget.getAttribute('aria-expanded')==='true';event.currentTarget.setAttribute('aria-expanded',String(!expanded));document.querySelector('aside').classList.toggle('expanded',!expanded)});document.querySelectorAll('figure img').forEach(image=>{image.tabIndex=0;const open=()=>{const dialog=document.querySelector('#zoom');dialog.querySelector('img').src=image.src;dialog.querySelector('img').alt=image.alt;dialog.showModal()};image.addEventListener('click',open);image.addEventListener('keydown',event=>{if(event.key==='Enter')open()})});document.querySelector('#zoom button').addEventListener('click',()=>document.querySelector('#zoom').close());document.querySelector('#zoom').addEventListener('click',event=>{if(event.target.tagName==='DIALOG')event.target.close()});document.querySelectorAll('a[href^="#source-"]').forEach(link=>link.addEventListener('click',()=>{const target=document.querySelector(link.getAttribute('href'));if(target&&target.tagName==='DETAILS')target.open=true}));</script>
+</body></html>

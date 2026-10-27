@@ -1,0 +1,328 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="849.6pt" height="446.4pt" viewBox="0 0 849.6 446.4" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja" data-diagram-style="engineering" data-diagram-kind="data">
+
+ <defs>
+<path id="m2893a7d686" d="M 0 3.872983  C 1.027127 3.872983 2.012324 3.464901 2.738613 2.738613  C 3.464901 2.012324 3.872983 1.027127 3.872983 0  C 3.872983 -1.027127 3.464901 -2.012324 2.738613 -2.738613  C 2.012324 -3.464901 1.027127 -3.872983 0 -3.872983  C -1.027127 -3.872983 -2.012324 -3.464901 -2.738613 -2.738613  C -3.464901 -2.012324 -3.872983 -1.027127 -3.872983 0  C -3.872983 1.027127 -3.464901 2.012324 -2.738613 2.738613  C -2.012324 3.464901 -1.027127 3.872983 0 3.872983  z " style="stroke: #7a7a7a; stroke-width: 0.95"/>
+<path id="m233244db81" d="M -0 5.147815  L 5.147815 0  L 0 -5.147815  L -5.147815 -0  z " style="stroke: #78a641"/>
+<path id="mf33e520728" d="M 0 3.5  C 0.928211 3.5 1.81853 3.131218 2.474874 2.474874  C 3.131218 1.81853 3.5 0.928211 3.5 0  C 3.5 -0.928211 3.131218 -1.81853 2.474874 -2.474874  C 1.81853 -3.131218 0.928211 -3.5 0 -3.5  C -0.928211 -3.5 -1.81853 -3.131218 -2.474874 -2.474874  C -3.131218 -1.81853 -3.5 -0.928211 -3.5 0  C -3.5 0.928211 -3.131218 1.81853 -2.474874 2.474874  C -1.81853 3.131218 -0.928211 3.5 0 3.5  z " style="stroke: #7a7a7a"/>
+<path id="m023504b794" d="M -0 4.242641  L 4.242641 0  L 0 -4.242641  L -4.242641 -0  z " style="stroke: #78a641; stroke-linejoin: miter"/>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 446.4  L 849.6 446.4  L 849.6 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 267.624 196.416  L 683.928 196.416  L 683.928 84.816  L 267.624 84.816  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 267.624 196.416  L 267.624 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1"><text x="267.97525" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="267.97525" dy="0">50</tspan></text></g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 406.392 196.416  L 406.392 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2"><text x="406.74325" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="55" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="406.74325" dy="0">55</tspan></text></g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 545.16 196.416  L 545.16 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3"><text x="545.51125" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="545.51125" dy="0">60</tspan></text></g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 683.928 196.416  L 683.928 84.816  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4"><text x="684.27925" y="214.036" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="65" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="684.27925" dy="0">65</tspan></text></g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_5"><text x="150" y="119.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="通常SFT" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="150" dy="0">通常SFT</tspan></text></g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_6"><text x="150" y="172.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="中間学習後SFT" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="150" dy="0">中間学習後SFT</tspan></text></g>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 461.344128 114.044571  L 557.094048 114.044571  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #bbbbbb; stroke-width: 1.3; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 531.005664 167.187429  L 607.6056 167.187429  " clip-path="url(#p03cc6fe949)" style="fill: none; stroke: #bbbbbb; stroke-width: 1.3; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 267.624 196.416  L 683.928 196.416  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="text_7"><text x="461.507761" y="104.094571" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.98" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="461.507761" dy="0">56.98</tspan></text></g>
+   <g id="text_8"><text x="574" y="137.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="60.43" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="574" dy="0">60.43</tspan></text></g>
+   <g id="text_9"><text x="736.89536" y="119.006759" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+3.45" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="736.89536" dy="0">+3.45</tspan></text></g>
+   <g id="text_10"><text x="516" y="156.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" data-layout-label="true" aria-label="59.49" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="516" dy="0">59.49</tspan></text></g>
+   <g id="text_11"><text x="607.769233" y="190.23742900000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="62.25" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="607.769233" dy="0">62.25</tspan></text></g>
+   <g id="text_12"><text x="736.89536" y="172.149616" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+2.77" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="736.89536" dy="0">+2.77</tspan></text></g>
+   <g id="text_13"><text x="743.89536" y="75.006" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="Δ ポイント" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="743.89536" dy="0">Δ ポイント</tspan></text></g>
+   <g id="PathCollection_1">
+
+    <g clip-path="url(#p03cc6fe949)">
+     <use xlink:href="#m2893a7d686" x="461.344128" y="114.044571" style="fill: #ffffff; stroke: #7a7a7a; stroke-width: 0.95"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+
+    <g clip-path="url(#p03cc6fe949)">
+     <use xlink:href="#m233244db81" x="557.094048" y="114.044571" style="fill: #78a641; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#p03cc6fe949)">
+     <use xlink:href="#m2893a7d686" x="531.005664" y="167.187429" style="fill: #ffffff; stroke: #7a7a7a; stroke-width: 0.95"/>
+    </g>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#p03cc6fe949)">
+     <use xlink:href="#m233244db81" x="607.6056" y="167.187429" style="fill: #78a641; stroke: #78a641"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_4">
+    <path d="M 267.624 374.976  L 683.928 374.976  L 683.928 263.376  L 267.624 263.376  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_13">
+      <path d="M 267.624 374.976  L 267.624 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_14"><text x="267.97525" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="50" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="267.97525" dy="0">50</tspan></text></g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_15">
+      <path d="M 406.392 374.976  L 406.392 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_15"><text x="406.74325" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="55" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="406.74325" dy="0">55</tspan></text></g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_17">
+      <path d="M 545.16 374.976  L 545.16 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_16"><text x="545.51125" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="60" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="545.51125" dy="0">60</tspan></text></g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_19">
+      <path d="M 683.928 374.976  L 683.928 263.376  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #eeeeee; stroke-width: 0.65; stroke-linecap: square" data-diagram-stroke="guide"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_17"><text x="684.27925" y="392.596" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#666666" aria-label="65" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="684.27925" dy="0">65</tspan></text></g>
+    </g>
+    <g id="text_18"><text x="475.891625" y="416.489125" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#424242" aria-label="誤り型F1（%）" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="475.891625" dy="0">誤り型F1（%）</tspan></text></g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_3">
+     <g id="line2d_21"/>
+     <g id="text_19"><text x="150" y="298.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="中間学習＋旧版経験" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="150" dy="0">中間学習＋旧版経験</tspan></text></g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_22"/>
+     <g id="text_20"><text x="150" y="351.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="中間学習、旧版未学習" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="150" dy="0">中間学習、旧版未学習</tspan></text></g>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <path d="M 461.066592 292.604571  L 514.908576 292.604571  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #bbbbbb; stroke-width: 1.3; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 439.418784 345.747429  L 428.872416 345.747429  " clip-path="url(#p1d5e304a33)" style="fill: none; stroke: #bbbbbb; stroke-width: 1.3; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 267.624 374.976  L 683.928 374.976  " style="fill: none; stroke: #b8b8b8; stroke-width: 0.65; stroke-linejoin: miter; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="text_21"><text x="461.230225" y="282.65457100000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.97" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="461.230225" dy="0">56.97</tspan></text></g>
+   <g id="text_22"><text x="515.0722089999999" y="315.65457100000003" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="58.91" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="515.0722089999999" dy="0">58.91</tspan></text></g>
+   <g id="text_23"><text x="736.89536" y="297.566759" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#78a641" aria-label="+1.94" data-type-role="secondary" text-anchor="middle" data-diagram-text="accent"><tspan x="736.89536" dy="0">+1.94</tspan></text></g>
+   <g id="text_24"><text x="439.582417" y="335.797429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="56.19" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="439.582417" dy="0">56.19</tspan></text></g>
+   <g id="text_25"><text x="429.036049" y="368.797429" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="55.81" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="429.036049" dy="0">55.81</tspan></text></g>
+   <g id="text_26"><text x="735.39536" y="350.709616" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="-0.38" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="735.39536" dy="0">-0.38</tspan></text></g>
+   <g id="PathCollection_5">
+    <g clip-path="url(#p1d5e304a33)">
+     <use xlink:href="#m2893a7d686" x="461.066592" y="292.604571" style="fill: #ffffff; stroke: #7a7a7a; stroke-width: 0.95"/>
+    </g>
+   </g>
+   <g id="PathCollection_6">
+    <g clip-path="url(#p1d5e304a33)">
+     <use xlink:href="#m233244db81" x="514.908576" y="292.604571" style="fill: #78a641; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="PathCollection_7">
+    <g clip-path="url(#p1d5e304a33)">
+     <use xlink:href="#m2893a7d686" x="439.418784" y="345.747429" style="fill: #ffffff; stroke: #7a7a7a; stroke-width: 0.95"/>
+    </g>
+   </g>
+   <g id="PathCollection_8">
+    <g clip-path="url(#p1d5e304a33)">
+     <use xlink:href="#m233244db81" x="428.872416" y="345.747429" style="fill: #78a641; stroke: #78a641"/>
+    </g>
+   </g>
+  </g>
+  <g id="text_27"><text x="98.72800000000001" y="68.00999999999999" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="1,056件 · 固定参照" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="98.72800000000001" dy="0">1,056件 · 固定参照</tspan></text></g>
+  <g id="text_28"><text x="90.22800000000001" y="246.57000000000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#7a7a7a" aria-label="792件 · Sol参照" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="90.22800000000001" dy="0">792件 · Sol参照</tspan></text></g>
+  <g id="legend_1">
+   <g id="line2d_25">
+    <path d="M 623.889359 20.104  L 635.389359 20.104  L 646.889359 20.104  " style="fill: none"/>
+
+    <g>
+     <use xlink:href="#mf33e520728" x="635.389359" y="20.104" style="fill: #ffffff; stroke: #7a7a7a"/>
+    </g>
+   </g>
+   <g id="text_29"><text x="665.089359" y="25.179000000000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" aria-label="SFT" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="665.089359" dy="0">SFT</tspan></text></g>
+   <g id="line2d_26">
+    <path d="M 695.291781 20.104  L 706.791781 20.104  L 718.291781 20.104  " style="fill: none"/>
+
+    <g>
+     <use xlink:href="#m023504b794" x="706.791781" y="20.104" style="fill: #78a641; stroke: #78a641; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="text_30"><text x="764" y="25.25" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#171717" data-layout-label="true" aria-label="継続RL" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="764" dy="0">継続RL</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p03cc6fe949">
+   <rect x="267.624" y="84.816" width="416.304" height="111.6"/>
+  </clipPath>
+  <clipPath id="p1d5e304a33">
+   <rect x="267.624" y="263.376" width="416.304" height="111.6"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></svg>

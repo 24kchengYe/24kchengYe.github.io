@@ -1,0 +1,449 @@
+/* Ink surfaces, muted paper and clear controls; source figures retain original colors. */
+button.site-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  margin: 0 0 0 8px;
+  padding: 6px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted, #646970);
+  box-shadow: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+button.site-theme-toggle:hover { color: var(--ink, #272b30); }
+button.site-theme-toggle:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
+button.site-theme-toggle svg { display: block; width: 18px; height: 18px; }
+.languages:has(> .site-theme-toggle) { align-items: center; }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-page: #171d21;
+  --theme-surface: #20282d;
+  --theme-raised: #2b3438;
+  --ink: #dce0dc;
+  --heading: #edf0e8;
+  --muted: #a6b0ad;
+  --link: #b8cbbd;
+  --line: #394448;
+  --theme-focus: #c4d3bc;
+  --paper: var(--theme-surface);
+  --green: #b3c69e;
+  --green-line: #718360;
+  --article-ink: var(--ink);
+  --article-muted: var(--muted);
+  --article-line: var(--line);
+  background: var(--theme-page);
+  color: var(--ink);
+}
+html[data-theme="dark"] body { background: var(--theme-page); color: var(--ink); }
+html[data-theme="dark"] :is(h1,h2,h3,h4,h5,h6) { color: var(--heading); }
+html[data-theme="dark"] a { color: var(--link); }
+html[data-theme="dark"] :is(.site-nav,.report-site-nav,.toolbar,.article-toolbar,.pdf-controls,.wr-popover,.diagram-style-menu,.library-tools,.skip-link) {
+  background: var(--theme-page);
+  color: var(--ink);
+  border-color: var(--line);
+}
+html[data-theme="dark"] :is(.site-nav,.report-site-nav,.toolbar,.article-toolbar,.sidebar-tabs,.article-sidebar-tabs,.wr-controls) :is(a,button,summary) { color: var(--muted); }
+html[data-theme="dark"] :is(.languages button,.report-interface-languages button,.edition-switch a,.toolbar button,.article-toolbar button,.sidebar-tabs button,.article-sidebar-tabs button):is([aria-current],[aria-pressed="true"],[aria-selected="true"],.active) { color: var(--ink); border-color: var(--ink); }
+html[data-theme="dark"] :is(.profile-copy,.blog-article,.report-content,.article-body,.note,.paper,.reading-article,.writing-copy) :is(p,li,dt,dd) { color: inherit; }
+html[data-theme="dark"] :is(.article-deck,.article-byline,.writing-meta,.detail-meta,.detail-title-long,.list-meta,.reader-meta,.reader-subtitle,.source-note,.note-date,.note-kicker,.report-date,.page-label,.footnote,.caption,.byline,.subtitle,.eyebrow,.site-footer,figcaption,.wr-footer) { color: var(--muted); }
+html[data-theme="dark"] .series-title { color: var(--muted); }
+html[data-theme="dark"] :is(.blog-sidebar,.report-sidebar,.reader-sidebar,.article-sidebar,body>.layout>aside) :is(a,p,summary) { color: var(--muted); }
+html[data-theme="dark"] :is(.blog-sidebar,.report-sidebar,.reader-sidebar,.article-sidebar,body>.layout>aside) a:is(.active,[aria-current="location"],[aria-current="true"]) { color: var(--ink); border-color: var(--ink); }
+html[data-theme="dark"] :is(input,select,textarea) { color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] :is(select option,.wr-popover select,.diagram-style-control,.diagram-style-menu button:hover,.history-remove:hover,.shelf-navigation button:hover:not(:disabled)) { background: var(--theme-surface); color: var(--ink); }
+html[data-theme="dark"] input::placeholder { color: var(--muted); opacity: 1; }
+html[data-theme="dark"] :is(pre,.source-card,.document-library,.reference-group,.source-original) { background: var(--theme-surface); color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] :is(th,td,thead,tbody,hr,.chapter-list li,.reading-article .article-content th,.reading-article .article-content td) { border-color: var(--line); }
+html[data-theme="dark"] :is(th,thead) { background: var(--theme-surface); color: var(--ink); }
+html[data-theme="dark"] :is(td,.table-scroll,.blog-table-scroll,.ltx_tabular) { color: var(--ink); }
+html[data-theme="dark"] :is(.history-dates input,.history-dates select) { color-scheme: dark; }
+html[data-theme="dark"] .history-position progress,
+html[data-theme="dark"] .history-position progress::-webkit-progress-bar { background: var(--line); }
+html[data-theme="dark"] .history-position progress::-webkit-progress-value { background: #a4b591; }
+html[data-theme="dark"] .history-position progress::-moz-progress-bar { background: #a4b591; }
+/* Preserve the source's blue mathematical emphasis at a readable luminance. */
+html[data-theme="dark"] body[data-report] [mathcolor="#0000FF"],
+html[data-theme="dark"] body[data-report] [style*="--ltx-fg-color:#0000FF"] { color: #a8c6ef; --ltx-fg-color: #a8c6ef !important; }
+html[data-theme="dark"] body[data-report] [style*="--ltx-fg-color:#000064"] { --ltx-fg-color: #a8c6ef !important; }
+html[data-theme="dark"] body[data-report] :is([style*="--ltx-fg-color:#006400"],[style*="--ltx-fg-color:#008000"]) { --ltx-fg-color: #a8cc9a !important; }
+html[data-theme="dark"] body[data-report] :is([style*="--ltx-fg-color:#640000"],[style*="--ltx-fg-color:#FF0000"]) { --ltx-fg-color: #e3a8a0 !important; }
+html[data-theme="dark"] body[data-report] [style*="--ltx-fg-color:#000000"] { --ltx-fg-color: var(--ink) !important; }
+html[data-theme="dark"] body[data-report] [style*="--ltx-bg-color:#F2F2F2"] { --ltx-bg-color: var(--theme-surface) !important; }
+html[data-theme="dark"] body[data-report] [style*="--ltx-bg-color:#FFFF00"] { --ltx-bg-color: #5e5329 !important; }
+html[data-theme="dark"] body[data-report] [style*="--ltx-border-color:#CCCCCC"] { --ltx-border-color: var(--line) !important; }
+html[data-theme="dark"] body[data-report] .ltx_tabular :is(td,th) { border-color: var(--line); }
+html[data-theme="dark"] :is(.pdf-viewer,.reader-frame,.wr-image-stage) { background: #2a2e28; }
+/* Do not invert or recolor the scientific source image, canvas or PDF. */
+html[data-theme="dark"] :is(.pdf-sheet,.pdf-first-preview,.figure-link,.plate,.image-frame,.zoom-area,.wr-image-stage img,figure>img,figure>a>img,.blog-figure img,.figure-block img,.paper img,.paper svg,.article-content img,img.math) { background: #fff; color-scheme: light; }
+html[data-theme="dark"] .paper svg { color: #272b30; --ink: #272b30; --muted: #646970; --link: #456b93; --line: #ddd; }
+html[data-theme="dark"] :is(dialog,.wr-image-dialog,.wr-image-bar,.zoom-tools) { background: var(--theme-surface); color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] :is(.wr-image-bar button,dialog>button) { background: var(--theme-raised); color: var(--ink); border-color: var(--line); }
+html[data-theme="dark"] [data-poetic-scene] { background: var(--theme-page); --poetic-ink: var(--ink); }
+html[data-theme="dark"] .poetic-copy blockquote { color: var(--ink); }
+html[data-theme="dark"] .poetic-copy cite { color: var(--muted); }
+html[data-theme="dark"] .poetic-subtitle { color: var(--muted); }
+html[data-theme="dark"] .poetic-art svg [stroke] { stroke: #bdc5b3; }
+html[data-theme="dark"] .poetic-art svg [data-appear] { fill: #b69d73; }
+html[data-theme="dark"] ::selection { color: #f3f2e9; background: #526248; }
+@media(max-width:680px) { button.site-theme-toggle { min-width:36px; min-height:44px; margin-left:3px; } }
+@media print {
+  button.site-theme-toggle { display: none !important; }
+  html[data-theme="dark"] {
+    color-scheme: light;
+    --theme-page: #fff; --theme-surface: #f6f6f4; --theme-raised: #efefed;
+    --ink: #222; --heading: #111; --muted: #555; --link: #333; --line: #ccc;
+    --green: #526445; --green-line: #718360;
+    background: #fff; color: #222;
+  }
+  html[data-theme="dark"] body { background: #fff; color: #222; }
+  html[data-theme="dark"] body[data-report] [mathcolor="#0000FF"],
+  html[data-theme="dark"] body[data-report] [style*="--ltx-fg-color:#0000FF"],
+  html[data-theme="dark"] body[data-report] [style*="--ltx-fg-color:#000064"] { color: #245b9d; --ltx-fg-color: #245b9d !important; }
+}
+
+
+/* Component rules only affect screens. Native print/PDF keeps the original palette. */
+@media screen {
+html[data-theme="dark"] { accent-color:#b0c49e; scrollbar-color:#647574 var(--theme-page); }
+html[data-theme="dark"] :is(a,button,input,select,textarea,summary):focus-visible { outline:2px solid var(--theme-focus); outline-offset:4px; }
+html[data-theme="dark"] ::selection { color:#f0f3ed; background:#415b5a; }
+html[data-theme="dark"] :is(dialog,.wr-image-dialog)::backdrop { background:#080e14bb; }
+html[data-theme="dark"] :is(input,textarea):autofill { color:var(--ink); background:var(--theme-surface); }
+html[data-theme="dark"] :is(input,textarea):-webkit-autofill { -webkit-text-fill-color:var(--ink); box-shadow:0 0 0 1000px var(--theme-surface) inset; caret-color:var(--ink); }
+/* Homepage: illustrated entries and activity retain their own hierarchy at night. */
+html[data-theme="dark"] .writing-section .series-intro .series-title { color:var(--muted); }
+html[data-theme="dark"] .writing-section .writing-row { color:var(--ink); }
+html[data-theme="dark"] .writing-section .writing-copy p { color:var(--muted); }
+html[data-theme="dark"] .writing-section .writing-copy h3 { color:var(--heading); }
+html[data-theme="dark"] .writing-section .writing-row:is(:hover,:focus-visible) :is(h3,.row-arrow) { color:var(--link); }
+html[data-theme="dark"] .writing-section .row-arrow { color:var(--muted); }
+html[data-theme="dark"] .writing-meta .separator { color:#657775; }
+html[data-theme="dark"] .writing-more .more-count { color:var(--muted); }
+html[data-theme="dark"] .writing-section .thumbnail { background:var(--theme-surface); }
+html[data-theme="dark"] .line-study path { stroke:#a2b9b1; }
+html[data-theme="dark"] .line-study .study-accent { stroke:#b0c9a5; }
+html[data-theme="dark"] .line-study .study-paper { fill:#2c373a; }
+html[data-theme="dark"] .thumbnail :is(.thumb-sheet,.rule-stack i,.patch-symbol,.rubric-rules i,.judge-symbol,.routing-input) { background-color:#2c373a; border-color:#96aaa0; }
+html[data-theme="dark"] .thumbnail :is(.thumb-sheet i,.thumb-wire,.routing-probabilities i) { background-color:#a1b1a8; }
+html[data-theme="dark"] .thumbnail :is(.thumb-sheet.final,.rule-stack i,.patch-symbol,.judge-symbol) { border-color:#b0c9a5; }
+html[data-theme="dark"] .thumbnail :is(.thumb-wire::after,.routing-stem,.routing-branches,.routing-branches i) { border-color:#a1b1a8; }
+html[data-theme="dark"] .thumbnail :is(.thumb-sheet.final i,.routing-probabilities i:nth-child(2)) { background-color:#b0c9a5; }
+html[data-theme="dark"] .thumbnail .attention-grid i { background:#2b3b35; border-color:#586e60; }
+html[data-theme="dark"] .thumbnail .attention-grid :is(i:nth-child(1),i:nth-child(n+7):nth-child(-n+8),i:nth-child(n+13):nth-child(-n+15),i:nth-child(n+20):nth-child(-n+22),i:nth-child(n+27):nth-child(-n+29),i:nth-child(n+34):nth-child(-n+36)) { background:#718d69; border-color:#8ca57b; }
+html[data-theme="dark"] .thumbnail .verdicts i::before { border-color:#a6ba9e; }
+html[data-theme="dark"] .thumbnail .verdicts i::after { background:#a6ba9e; }
+html[data-theme="dark"] .visual-mark { --mark-ink:#abc39b; --mark-soft:#25302b; }
+html[data-theme="dark"] .mark-bytedance { --mark-ink:#a3c5d2; --mark-soft:#232e36; }
+html[data-theme="dark"] .mark-weather { --mark-ink:#a1c1c8; --mark-soft:#243136; }
+html[data-theme="dark"] .mark-university { --mark-ink:#c7b6cf; --mark-soft:#2d2933; }
+html[data-theme="dark"] :is(.mark-dataset i:nth-child(4),.mark-agents i:nth-child(2)) { background:#536a4b; }
+html[data-theme="dark"] .paper-box-image img { border-color:var(--line); background:#fff; }
+html[data-theme="dark"] :is(.paper-box-text h3 a,.project-name a,.resume-entry h3 a) { color:var(--heading); }
+html[data-theme="dark"] :is(.paper-box-text h3 a,.project-name a,.resume-entry h3 a):hover { color:var(--link); }
+html[data-theme="dark"] .resume-section h2 { color:var(--muted); }
+html[data-theme="dark"] :is(.site-footer a,.site-nav a) { color:var(--muted); }
+/* The shared analytics widget supplies inline opacity; restore readable text. */
+html[data-theme="dark"] .duqi-stats-entry { opacity:1 !important; color:var(--muted); }
+html[data-theme="dark"] :is(.site-nav a,.site-footer a):is(:hover,:focus-visible,[aria-current="page"]) { color:var(--heading); }
+html[data-theme="dark"] details > summary::after { color:var(--muted); }
+html[data-theme="dark"] .activity-calendar { scrollbar-color:#647574 transparent; }
+html[data-theme="dark"] :is(.activity-day,.activity-legend i) { background:#293534; border-color:#3d4e47; }
+html[data-theme="dark"] :is(.activity-day,.activity-legend i)[data-level="1"] { background:#3d594a; border-color:#526e59; }
+html[data-theme="dark"] :is(.activity-day,.activity-legend i)[data-level="2"] { background:#597c5f; border-color:#6c8e6d; }
+html[data-theme="dark"] :is(.activity-day,.activity-legend i)[data-level="3"] { background:#80a278; border-color:#92b087; }
+html[data-theme="dark"] :is(.activity-day,.activity-legend i)[data-level="4"] { background:#b1c69a; border-color:#c1d1ad; }
+html[data-theme="dark"] .activity-day[data-state="unknown"] { background:transparent; border-color:#4e5c5b; border-style:dotted; }
+html[data-theme="dark"] .activity-day[data-state="future"] { background:transparent; border-color:#2f393d; }
+html[data-theme="dark"] .activity-day:hover:not(:disabled) { box-shadow:0 0 0 1px var(--theme-focus); }
+html[data-theme="dark"] .activity-day:is(:focus-visible,[aria-pressed="true"]) { outline:2px solid var(--theme-focus); outline-offset:2px; }
+
+/* Reading at night: colored cloth books, quiet rails, and readable controls.
+   Append after the shared theme rules. No dimensions or reading state change. */
+@media screen {
+  html[data-theme="dark"] :is(.library,.reading-history-page,.reading-article,.pdf-reader-layout) {
+    --reading-scrollbar: #62716f;
+  }
+
+  /* Map the five existing cover colors; identity stays stable across themes. */
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover) { --night-book-paper: #a1b19c; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover)[style*="#e5e8df"] { --night-book-paper: #a1b19c; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover)[style*="#ebe4d6"] { --night-book-paper: #baab8a; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover)[style*="#e0e7e8"] { --night-book-paper: #99b1b9; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover)[style*="#e7e1dc"] { --night-book-paper: #b9a19a; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover)[style*="#e7e7d7"] { --night-book-paper: #b9b895; }
+  html[data-theme="dark"] :is(.shelf-volume,.detail-cover) {
+    --book-ink: #25312b;
+    --ink: var(--book-ink);
+    --heading: #202b25;
+    --muted: #313e34;
+    --link: #193d34;
+    --line: #25312b38;
+    --theme-focus: #253c30;
+    color: var(--book-ink);
+    background: var(--night-book-paper);
+    border-color: #17201e33;
+    border-left-color: #e9e7d77a;
+    border-top-color: #f7f3df69;
+    box-shadow: 1px 3px 6px #030b0d3d, inset 0 -1px #17201e14;
+  }
+  html[data-theme="dark"] .shelf-volume::before {
+    opacity: 1;
+    background: linear-gradient(90deg,#f4eddb30,transparent 11px),repeating-linear-gradient(96deg,#f5f1dc05 0 1px,transparent 1px 4px);
+  }
+  html[data-theme="dark"] .shelf-volume::after {
+    opacity: .85;
+    border-right-color: #eee8d655;
+    background: repeating-linear-gradient(#303b332b 0 1px,#e9e4d74d 1px 3px);
+  }
+  html[data-theme="dark"] .shelf-volume:is(:hover,.is-open) {
+    border-top-color: #f7f3df99;
+    box-shadow: 2px 4px 9px #030b0d54,inset 2px 0 #e7e5d359;
+  }
+  html[data-theme="dark"] :is(.book-year,.book-marker,.detail-cover span) { color: var(--muted); }
+  html[data-theme="dark"] .shelf-book { color: var(--book-ink); }
+  html[data-theme="dark"] .library .shelf-volume .shelf-book:focus-visible { outline: 2px solid #e0e8dc; outline-offset: 4px; }
+  html[data-theme="dark"] .shelf-stage::after {
+    border-right-color: #72796b;
+    background: linear-gradient(90deg,#3b453e,#626a5c 28%,#77806b 70%,#454d43);
+    box-shadow: 2px 0 6px #060b0b44;
+  }
+  html[data-theme="dark"] .shelf-stage.has-next::before { background: linear-gradient(transparent,var(--theme-page)); }
+  html[data-theme="dark"] .shelf-track { scrollbar-color: var(--reading-scrollbar) transparent; }
+  html[data-theme="dark"] .shelf-track::-webkit-scrollbar-thumb { background: var(--reading-scrollbar); }
+
+  /* Details stay on their book's paper; a separate menu uses the site surface. */
+  html[data-theme="dark"] .detail-file-menu > div {
+    background: var(--theme-raised);
+    color: var(--ink);
+    border-color: var(--line);
+    box-shadow: 0 7px 22px #04090c59;
+  }
+  html[data-theme="dark"] .shelf-volume .book-detail-inline { color: var(--book-ink); border-top-color: var(--line); }
+  html[data-theme="dark"] .book-detail-inline :is(.detail-title-long,.detail-quality,.detail-close,.chapter-number,.collection-contents h3,.chapter-list small,.chapter-extra) { color: var(--muted); }
+  html[data-theme="dark"] .book-detail-inline :is(.detail-links a,.detail-file-menu summary,.detail-continue,.detail-blog,.chapter-list a) { color: var(--link); }
+  html[data-theme="dark"] .book-detail-inline .detail-file-menu > div {
+    color: var(--book-ink);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  html[data-theme="dark"] .book-detail-inline :is(a,button,summary):focus-visible { outline: 2px solid var(--theme-focus); outline-offset: 3px; }
+  html[data-theme="dark"] .book-detail-inline :is(a,summary):hover { color: var(--heading); text-decoration: underline; text-underline-offset: .25em; }
+  html[data-theme="dark"] .book-detail-inline .detail-close:hover { color: var(--heading); background: #25312b0d; }
+  html[data-theme="dark"] .book-detail-inline ::selection { color: #f0f1e8; background: #3d594d; }
+
+  /* Active, hover, disabled and focus states are independent of the book tint. */
+  html[data-theme="dark"] .library :is(.library-collections a,.library-tabs button) { color: var(--muted); }
+  html[data-theme="dark"] .library :is(.library-collections a[aria-current="page"],.library-tabs button[aria-pressed="true"]) { color: var(--ink); border-color: var(--ink); }
+  html[data-theme="dark"] .library :is(.library-collections a,.library-tabs button):hover { color: var(--heading); }
+  html[data-theme="dark"] .shelf-navigation button:disabled { color: #687370; opacity: .65; }
+  html[data-theme="dark"] .shelf-navigation button:hover:not(:disabled) { background: var(--theme-raised); color: var(--heading); }
+  html[data-theme="dark"] :is(.library,.reading-history-page,.reader-sidebar,.pdf-viewer) :is(a,button,select,input,summary):focus-visible { outline: 2px solid var(--theme-focus); outline-offset: 4px; }
+  html[data-theme="dark"] .library :is(.list-number,.chapter-number,.report-keywords,.chapter-list a > span) { color: var(--muted); }
+  html[data-theme="dark"] :is(.library-filters,.history-dates,.pdf-controls) select { color-scheme: dark; }
+
+  /* Reader rails are navigation, not dimmed article text. */
+  html[data-theme="dark"] :is(.reader-sidebar,.reading-article .article-sidebar) { scrollbar-color: #62716f transparent; }
+  html[data-theme="dark"] .reader-sidebar :is(details,.neighbor-list) { scrollbar-color: #62716f transparent; }
+  html[data-theme="dark"] :is(.reader-sidebar,.reading-article .article-sidebar) :is(small,.neighbor-topic,.neighbor-status) { color: var(--muted); }
+  html[data-theme="dark"] :is(.reader-sidebar .neighbor-list a,.reading-article .article-neighbors a)[aria-current="page"] { color: var(--ink); border-left-color: var(--theme-focus); }
+  html[data-theme="dark"] :is(.reader-sidebar .neighbor-list a,.reading-article .article-neighbors a):hover { color: var(--heading); background: #b8cbbd0a; }
+  html[data-theme="dark"] :is(.reading-article .article-toolbar,body[data-report] .toolbar,.pdf-controls) { background: var(--theme-page); color: var(--ink); border-color: var(--line); }
+  html[data-theme="dark"] .reading-article .article-content blockquote { border-color: #697b71; color: var(--muted); }
+  html[data-theme="dark"] .reading-article .article-content pre { background: var(--theme-surface); border-color: var(--line); color: var(--ink); }
+
+  /* White source pages are kept intact inside a quieter charcoal viewer. */
+  html[data-theme="dark"] :is(.pdf-viewer,.reader-frame,.note-frame) { background: #11171b; border-color: var(--line); }
+  html[data-theme="dark"] .pdf-scroll { scrollbar-color: #62716f #11171b; }
+  html[data-theme="dark"] .pdf-controls :is(button,input,select) { color: var(--ink); }
+  html[data-theme="dark"] .pdf-controls input { border-bottom-color: #65736e; }
+  html[data-theme="dark"] .pdf-controls button:hover:not(:disabled) { background: var(--theme-raised); color: var(--heading); }
+  html[data-theme="dark"] .pdf-controls button:disabled { color: #7b8580; opacity: .55; }
+  html[data-theme="dark"] :is(.pdf-sheet,.pdf-first-preview) { box-shadow: 0 2px 8px #03080b73; }
+  html[data-theme="dark"] .pdf-page-placeholder { color: #626b68; }
+  html[data-theme="dark"] .pdf-page-retry { color: #2e5145; border-color: #aab5ac; background: #fff; }
+  html[data-theme="dark"] .pdf-viewer .textLayer ::selection { color: transparent; background: #2a6f9e44; }
+
+  /* History/login/date controls use the same hierarchy as the catalogue. */
+  html[data-theme="dark"] .reading-history-page .history-entry { color: var(--ink); }
+  html[data-theme="dark"] .history-entry:hover h3 { color: var(--heading); }
+  html[data-theme="dark"] .reading-history-page button:hover:not(:disabled) { color: var(--heading); }
+  html[data-theme="dark"] .history-remove:hover { background: var(--theme-raised); }
+  html[data-theme="dark"] .history-account button:disabled { color: var(--muted); opacity: .6; }
+  html[data-theme="dark"] .history-login-fields input:is(:autofill,:-webkit-autofill) { -webkit-text-fill-color: var(--ink); caret-color: var(--ink); box-shadow: 0 0 0 1000px var(--theme-page) inset; }
+  html[data-theme="dark"] .history-merge input { accent-color: #a4bdaa; }
+  html[data-theme="dark"] .history-auth-error { color: #e6aca0; }
+  html[data-theme="dark"] .history-position progress,
+  html[data-theme="dark"] .history-position progress::-webkit-progress-bar { background: #394844; }
+  html[data-theme="dark"] .history-position progress { color: #a2bea9; }
+  html[data-theme="dark"] .history-position progress::-webkit-progress-value { background: #a2bea9; }
+  html[data-theme="dark"] .history-position progress::-moz-progress-bar { background: #a2bea9; }
+}
+
+/* Writing and native reports: quiet reading surfaces, distinct controls, and
+   original-color scientific artwork. Kept outside print to retain paper output. */
+@media screen {
+  html[data-theme="dark"] :is(.writing-series-top,.writing-series-position,.writing-series-number,.writing-series-format,.writing-series-direction,.wr-popover label,.wr-settings>summary,.wr-contents>summary,.wr-image-enlarge,.trajectory-static,.figure-source,.source-meta,.edition,.hero-caption,.diagram-stage>p,.diagram-sub,.diagram-foot) {
+    color: var(--muted);
+  }
+  html[data-theme="dark"] :is(.writing-series-top .writing-series-link,.writing-series-bottom .writing-series-neighbor,.article-byline a,.breadcrumb a,.toc-toggle,.article-resources,.name-key>summary,.source>summary) {
+    color: var(--link);
+  }
+  html[data-theme="dark"] :is(.writing-series-top .writing-series-link,.writing-series-bottom .writing-series-neighbor,.wr-contents a):is(:hover,[aria-current="page"],[aria-current="location"]),
+  html[data-theme="dark"] .report-site-nav .edition-switch a:is(:hover,[aria-current="page"]) {
+    color: var(--heading);
+  }
+  html[data-theme="dark"] :is(.writing-series-list,.writing-series-bottom,.wr-footer,.article-resources,.name-key,.source,.source-note,.blog-article blockquote,.note blockquote,.blog-table-scroll tbody tr) {
+    border-color: var(--line);
+  }
+  html[data-theme="dark"].writing-reader article :is(blockquote,.name-key>p,.references>p,h1+p),
+  html[data-theme="dark"] :is(.blog-article blockquote,.note blockquote,.blog-article>.figure-block>.figure-evidence-v25>summary) {
+    color: var(--muted);
+  }
+  html[data-theme="dark"] :is(.blog-sidebar,.reader-sidebar) a:hover {
+    color: var(--heading);
+    border-left-color: var(--theme-focus);
+  }
+  html[data-theme="dark"] .report-site-nav .languages button[aria-pressed="true"] {
+    color: var(--heading);
+    box-shadow: 0 1px var(--theme-focus);
+  }
+
+  /* Reader settings and term definitions are elevated surfaces, not white cards. */
+  html[data-theme="dark"] :is(.wr-popover,.writing-note,.diagram-style-menu,body[data-report] .pdf-links>div) {
+    background: var(--theme-surface);
+    color: var(--ink);
+    border-color: var(--line);
+    box-shadow: 0 12px 32px #080d1259;
+  }
+  html[data-theme="dark"] :is(.wr-popover select,.diagram-style-control) {
+    background: var(--theme-raised);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  html[data-theme="dark"] .diagram-style-menu button { color: var(--ink); }
+  html[data-theme="dark"] .diagram-style-menu small { color: var(--muted); }
+  html[data-theme="dark"] .diagram-style-menu button:is(:hover,[aria-checked="true"]),
+  html[data-theme="dark"] .diagram-style-control:is(:hover,[aria-expanded="true"]) {
+    background: var(--theme-raised);
+    border-color: var(--theme-focus);
+    color: var(--heading);
+  }
+  html[data-theme="dark"] .diagram-style-icon { box-shadow: inset 4px 0 var(--theme-raised); }
+  html[data-theme="dark"] .writing-note .writing-note-title { color: var(--heading); }
+  html[data-theme="dark"] .writing-note :is(.writing-note-source,.writing-note-close) { color: var(--link); }
+  html[data-theme="dark"] .writing-term { border-bottom-color: var(--muted) !important; }
+  html[data-theme="dark"] .writing-term:is(:hover,[aria-expanded="true"]) { border-bottom-color: var(--theme-focus) !important; }
+  html[data-theme="dark"] :is(.wr-image-enlarge,.wr-settings>summary,.wr-contents>summary,.writing-note-close):hover { color: var(--heading); }
+  html[data-theme="dark"] :is(.writing-term,.writing-series-toggle,.writing-series-link,.writing-series-neighbor,.wr-settings>summary,.wr-contents>summary,.diagram-style-picker button):focus-visible {
+    outline-color: var(--theme-focus) !important;
+  }
+
+  /* Semantic table data, quotes and source code remain text, with readable emphasis. */
+  html[data-theme="dark"] :is(.blog-article,.note,.edition-library) tbody tr {
+    border-color: var(--line);
+  }
+  html[data-theme="dark"] .note tbody tr.emphasis { color: var(--link); }
+  html[data-theme="dark"] :is(.blog-article,.note,.edition-library) :is(pre,code),
+  html[data-theme="dark"] body[data-report] .paper :is(.ltx_listing,.ltx_listing_data) {
+    color: var(--ink);
+  }
+  html[data-theme="dark"] body[data-report] .paper .ltx_listing {
+    background: var(--theme-surface);
+    border-color: var(--line);
+  }
+  html[data-theme="dark"] body[data-report] .paper .ltx_eqn_eqno { color: var(--muted); }
+  html[data-theme="dark"] body[data-report] .skip:focus {
+    background: var(--theme-raised);
+    color: var(--heading);
+  }
+  html[data-theme="dark"] .reader-sidebar :is(.neighbor-topic,.neighbor-status,small) { color: var(--muted); }
+  html[data-theme="dark"] .reader-sidebar .neighbor-list a:hover {
+    background: var(--theme-surface);
+    color: var(--heading);
+  }
+  html[data-theme="dark"] .reader-sidebar .neighbor-list a[aria-current="page"] {
+    color: var(--heading);
+    border-left-color: var(--theme-focus);
+  }
+  html[data-theme="dark"] :is(.sidebar-tabs,.reader-sidebar,.blog-sidebar) { border-color: var(--line); }
+
+  /* Images keep all original pixels and scientific color encodings; the frame
+     separates the paper from the dark reading surface without using a filter. */
+  html[data-theme="dark"] :is(.blog-figure img,.figure-block img,.note figure img,.edition-library img,.paper .figure-link,.paper .ltx_picture) {
+    background-color: #fff;
+    color-scheme: light;
+    box-shadow: 0 0 0 1px var(--line), 0 5px 20px #080d1229;
+  }
+  html[data-theme="dark"] :is(.wr-image-stage,#figure-zoom .figure-viewport) { background: var(--theme-page); }
+  html[data-theme="dark"] :is(.wr-image-stage img,#figure-zoom img,dialog.diagram-style-dialog img) {
+    background: #fff;
+    color-scheme: light;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  html[data-theme="dark"] #figure-zoom :is(.figure-toolbar,button) {
+    background: var(--theme-surface);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  html[data-theme="dark"] :is(.wr-image-bar button,#figure-zoom button):hover {
+    background: var(--theme-raised);
+    color: var(--heading);
+  }
+  html[data-theme="dark"] :is(.wr-image-dialog,#figure-zoom,dialog.diagram-style-dialog)::backdrop { background: #080d12cc; }
+
+  /* Native source SVGs contain HTML/MathML in foreignObject. Their own light
+     palette must not accidentally inherit the page's night tokens. */
+  html[data-theme="dark"] body[data-report] .paper svg {
+    --theme-page: #fff;
+    --theme-surface: #f2f2f2;
+    --theme-raised: #fff;
+    --heading: #20242a;
+    --ink: #272b30;
+    --muted: #646970;
+    --link: #245c87;
+    --line: #ccc;
+    color: #272b30;
+    color-scheme: light;
+  }
+  html[data-theme="dark"] body[data-report] .paper svg :is([mathcolor="#000000"],[style*="--ltx-fg-color:#000000"]) { color: #000; --ltx-fg-color: #000 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg :is([mathcolor="#0000FF"],[style*="--ltx-fg-color:#0000FF"]) { color: #0000ff; --ltx-fg-color: #0000ff !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-fg-color:#000064"] { --ltx-fg-color: #000064 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-fg-color:#006400"] { --ltx-fg-color: #006400 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-fg-color:#008000"] { --ltx-fg-color: #008000 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-fg-color:#640000"] { --ltx-fg-color: #640000 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-fg-color:#FF0000"] { --ltx-fg-color: #ff0000 !important; }
+  html[data-theme="dark"] body[data-report] .paper svg [style*="--ltx-bg-color:#FFFF00"] { --ltx-bg-color: #ffff00 !important; }
+
+  /* The selectable OpenAI Blog/Engineering diagram styles deliberately use
+     paper canvases. Isolate their palette instead of partially darkening nodes.
+     Trajectory diagrams already isolate this palette inside their Shadow DOM. */
+  html[data-theme="dark"] .automation-map {
+    --ink: #202020;
+    --heading: #202020;
+    --muted: #62625e;
+    --line: #d9dfd8;
+    --link: #4e7425;
+    background: #fff;
+    color: var(--diagram-ink, #202020);
+    color-scheme: light;
+    box-shadow: 0 0 0 1px #394448, 0 5px 20px #080d1229;
+  }
+  html[data-theme="dark"] .automation-map :is(h1,h2,h3,h4,h5,h6,button,select,option) {
+    color: var(--diagram-ink, #202020);
+  }
+  html[data-theme="dark"] .automation-map :is(select,option) { background: #fff; }
+  html[data-theme="dark"] .automation-map :is(.am-toolbar,.am-breadcrumb,.am-aside,.am-status) a {
+    color: var(--diagram-accent-ink, #4e7425);
+  }
+  html[data-theme="dark"] .automation-map.am-expanded { box-shadow: 0 0 0 100vmax #080d12cc; }
+}
+
+}

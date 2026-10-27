@@ -1,0 +1,381 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="792pt" viewBox="0 0 1080 792" xmlns="http://www.w3.org/2000/svg" version="1.1" lang="ja" data-diagram-style="openai-blog" data-diagram-kind="data">
+
+ <defs>
+<path id="m31ebb93347" d="M 0 2.75  C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544  C 2.460243 1.428845 2.75 0.729309 2.75 0  C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544  C 1.428845 -2.460243 0.729309 -2.75 0 -2.75  C -0.729309 -2.75 -1.428845 -2.460243 -1.944544 -1.944544  C -2.460243 -1.428845 -2.75 -0.729309 -2.75 0  C -2.75 0.729309 -2.460243 1.428845 -1.944544 1.944544  C -1.428845 2.460243 -0.729309 2.75 0 2.75  z " style="stroke: #202124"/>
+<path id="m8938351b1c" d="M 0 2.75  C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544  C 2.460243 1.428845 2.75 0.729309 2.75 0  C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544  C 1.428845 -2.460243 0.729309 -2.75 0 -2.75  C -0.729309 -2.75 -1.428845 -2.460243 -1.944544 -1.944544  C -2.460243 -1.428845 -2.75 -0.729309 -2.75 0  C -2.75 0.729309 -2.460243 1.428845 -1.944544 1.944544  C -1.428845 2.460243 -0.729309 2.75 0 2.75  z " style="stroke: #78a641"/>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 792  L 1080 792  L 1080 0  L 0 0  z " style="fill: #ffffff" data-diagram-fill="paper"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 147.6 25.92  L 147.6 108  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_2">
+
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <path d="M 282.96 40.32  L 588.24 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_4">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_5">
+    <path d="M 599.76 40.32  L 905.04 40.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_6">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="40.32" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_7">
+    <path d="M 147.6 134.64  L 147.6 216.72  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_8">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 282.96 149.04  L 588.24 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_10">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 599.76 149.04  L 905.04 149.04  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_12">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="149.04" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 147.6 243.36  L 147.6 325.44  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 282.96 257.76  L 588.24 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_17">
+    <path d="M 599.76 257.76  L 905.04 257.76  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="257.76" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_19">
+    <path d="M 147.6 352.08  L 147.6 434.16  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_20">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_21">
+    <path d="M 282.96 366.48  L 588.24 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_22">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <path d="M 599.76 366.48  L 905.04 366.48  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_24">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="366.48" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <path d="M 147.6 460.8  L 147.6 542.88  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_26">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_27">
+    <path d="M 282.96 475.2  L 588.24 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_28">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_29">
+    <path d="M 599.76 475.2  L 905.04 475.2  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_30">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="475.2" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_31">
+    <path d="M 147.6 569.52  L 147.6 651.6  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_32">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_33">
+    <path d="M 282.96 583.92  L 588.24 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="594" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_35">
+    <path d="M 599.76 583.92  L 905.04 583.92  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #bec3ba; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="910.8" y="583.92" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_37">
+    <path d="M 147.6 678.24  L 147.6 760.32  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke: #e1e4e0; stroke-width: 0.8; stroke-linecap: square" data-diagram-stroke="neutral"/>
+   </g>
+   <g id="line2d_38">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m31ebb93347" x="277.2" y="692.64" style="fill: #202124; stroke: #202124"/>
+    </g>
+   </g>
+   <g id="line2d_39">
+    <path d="M 282.96 692.64  L 588.24 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_40">
+
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="594" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="line2d_41">
+    <path d="M 599.76 692.64  L 905.04 692.64  " clip-path="url(#p50ed8afd8c)" style="fill: none; stroke-dasharray: 3.2,3.2; stroke-dashoffset: 0; stroke: #78a641; stroke-width: 0.8" data-diagram-stroke="accent"/>
+   </g>
+   <g id="line2d_42">
+    <g clip-path="url(#p50ed8afd8c)">
+     <use xlink:href="#m8938351b1c" x="910.8" y="692.64" style="fill: #ffffff; stroke: #78a641"/>
+    </g>
+   </g>
+   <g id="text_1"><text x="33" y="65.737734" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="データ" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="33" dy="0">データ</tspan></text></g>
+   <g id="text_2"><text x="277.474531" y="26.837563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="7/21 棚卸し" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.474531" dy="0">7/21 棚卸し</tspan></text></g>
+   <g id="text_3"><text x="277.2" y="67.77000000000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="過去の事例" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">過去の事例</tspan></text></g>
+   <g id="text_4"><text x="277.554492" y="90.795" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="追跡可能6,457件" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.554492" dy="0">追跡可能6,457件</tspan></text></g>
+   <g id="text_5"><text x="594.488094" y="26.837563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="8/6 出力" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.488094" dy="0">8/6 出力</tspan></text></g>
+   <g id="text_6"><text x="594" y="67.77000000000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="証拠を確認" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">証拠を確認</tspan></text></g>
+   <g id="text_7"><text x="594.041992" y="90.795" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="2,566件収録" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.041992" dy="0">2,566件収録</tspan></text></g>
+   <g id="text_8"><text x="911.174531" y="26.837563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/5〜6 固定" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.174531" dy="0">9/5〜6 固定</tspan></text></g>
+   <g id="text_9"><text x="910.8" y="67.77000000000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="統一データ" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">統一データ</tspan></text></g>
+   <g id="text_10"><text x="910.846875" y="91.17" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="学習7,127 / テスト792" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="910.846875" dy="0">学習7,127 / テスト792</tspan></text></g>
+   <g id="text_11"><text x="40.5" y="174.45773400000002" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="Prompt" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="40.5" dy="0">Prompt</tspan></text></g>
+   <g id="text_12"><text x="277.688094" y="135.55756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="8/5 比較" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.688094" dy="0">8/5 比較</tspan></text></g>
+   <g id="text_13"><text x="277.2" y="176.49" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="規則を書き換え" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">規則を書き換え</tspan></text></g>
+   <g id="text_14"><text x="275.914844" y="199.515" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 55.38% → 64.62%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="275.914844" dy="0">F1 55.38% → 64.62%</tspan></text></g>
+   <g id="text_15"><text x="594.274531" y="135.55756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="8/24 再審査" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.274531" dy="0">8/24 再審査</tspan></text></g>
+   <g id="text_16"><text x="594" y="176.49" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="逐項確認" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">逐項確認</tspan></text></g>
+   <g id="text_17"><text x="592.714844" y="199.515" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 54.03% → 55.50%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="592.714844" dy="0">F1 54.03% → 55.50%</tspan></text></g>
+   <g id="text_18"><text x="911.288094" y="135.55756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/5 再審査" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.288094" dy="0">9/5 再審査</tspan></text></g>
+   <g id="text_19"><text x="910.8" y="176.49" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="不一致規則の改訂" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">不一致規則の改訂</tspan></text></g>
+   <g id="text_20"><text x="911.270703" y="199.815781" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="三回一致62/100→73/100" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.270703" dy="0">三回一致62/100→73/100</tspan></text></g>
+   <g id="text_21"><text x="48" y="262.267969" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="教師あり微調整" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="48" dy="0">教師あり </tspan><tspan x="48" dy="21.599999999999998">微調整</tspan></text></g>
+   <g id="text_22"><text x="277.474531" y="244.27756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="7/24 評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.474531" dy="0">7/24 評価</tspan></text></g>
+   <g id="text_23"><text x="277.2" y="285.21" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="初回モデル" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">初回モデル</tspan></text></g>
+   <g id="text_24"><text x="277.248828" y="308.235" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="232件全て問題あり判定" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.248828" dy="0">232件全て問題あり判定</tspan></text></g>
+   <g id="text_25"><text x="594.488094" y="244.27756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="8/9 評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.488094" dy="0">8/9 評価</tspan></text></g>
+   <g id="text_26"><text x="594" y="285.21" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="学習起点比較" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">学習起点比較</tspan></text></g>
+   <g id="text_27"><text x="592.714844" y="308.235" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 25.70% → 38.83%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="592.714844" dy="0">F1 25.70% → 38.83%</tspan></text></g>
+   <g id="text_28"><text x="911.174531" y="244.27756200000002" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/6〜7 学習・評価登録" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.174531" dy="0">9/6〜7 学習・評価登録</tspan></text></g>
+   <g id="text_29"><text x="910.8" y="285.21" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="統一データ比較" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">統一データ比較</tspan></text></g>
+   <g id="text_30"><text x="909.764844" y="308.235" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 55.72%–56.97%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="909.764844" dy="0">F1 55.72%–56.97%</tspan></text></g>
+   <g id="text_31"><text x="48" y="381.787969" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="強化学習" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="48" dy="0">強化学習</tspan></text></g>
+   <g id="text_32"><text x="277.562625" y="352.99756199999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="8/27投入、9/7評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.562625" dy="0">8/27投入、9/7評価</tspan></text></g>
+   <g id="text_33"><text x="277.2" y="393.92999999999995" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="二つの混合比" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">二つの混合比</tspan></text></g>
+   <g id="text_34"><text x="276.131641" y="416.955" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 46.20% → 42.65% / 38.25%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="276.131641" dy="0">F1 46.20% → 42.65% / 38.25%</tspan></text></g>
+   <g id="text_35"><text x="594.374531" y="352.99756199999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/1〜7 学習" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.374531" dy="0">9/1〜7 学習</tspan></text></g>
+   <g id="text_36"><text x="594" y="393.92999999999995" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="問題件数報酬" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">問題件数報酬</tspan></text></g>
+   <g id="text_37"><text x="594.209961" y="417.318281" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 +3.45 / +2.77ポイント" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.209961" dy="0">F1 +3.45 / +2.77ポイント</tspan></text></g>
+   <g id="text_38"><text x="911.099062" y="352.99756199999996" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/30〜10/9 学習・評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.099062" dy="0">9/30〜10/9 学習・評価</tspan></text></g>
+   <g id="text_39"><text x="910.8" y="393.92999999999995" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="統一データ再検証" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">統一データ再検証</tspan></text></g>
+   <g id="text_40"><text x="911.009961" y="417.318281" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 +1.94 / −0.38ポイント" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.009961" dy="0">F1 +1.94 / −0.38ポイント</tspan></text></g>
+   <g id="text_41"><text x="48" y="490.507969" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="確率蒸留" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="48" dy="0">確率蒸留</tspan></text></g>
+   <g id="text_42"><text x="277.474531" y="461.717563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/22 検証" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.474531" dy="0">9/22 検証</tspan></text></g>
+   <g id="text_43"><text x="277.2" y="502.65" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="蒸留経路を接続" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">蒸留経路を接続</tspan></text></g>
+   <g id="text_44"><text x="277.2" y="525.675" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="教師・学生呼出を確認" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.2" dy="0">教師・学生呼出を確認</tspan></text></g>
+   <g id="text_45"><text x="594.274531" y="461.717563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/28 評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.274531" dy="0">9/28 評価</tspan></text></g>
+   <g id="text_46"><text x="594" y="502.65" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="教師手掛かり比較" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">教師手掛かり比較</tspan></text></g>
+   <g id="text_47"><text x="592.964844" y="525.675" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 20.69%–22.01%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="592.964844" dy="0">F1 20.69%–22.01%</tspan></text></g>
+   <g id="text_48"><text x="911.099062" y="461.717563" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/30〜10/9 学習・評価" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.099062" dy="0">9/30〜10/9 学習・評価</tspan></text></g>
+   <g id="text_49"><text x="910.8" y="502.65" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="学生に完全規則" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">学生に完全規則</tspan></text></g>
+   <g id="text_50"><text x="909.514844" y="525.675" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="F1 35.03% → 51.12%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="909.514844" dy="0">F1 35.03% → 51.12%</tspan></text></g>
+   <g id="text_51"><text x="48" y="599.227969" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="理由学習" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="48" dy="0">理由学習</tspan></text></g>
+   <g id="text_52"><text x="277.2855" y="570.437562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="9/30〜10/13 学習・比較" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.2855" dy="0">9/30〜10/13 学習・比較</tspan></text></g>
+   <g id="text_53"><text x="277.2" y="611.37" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="同ラベルの理由比較" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">同ラベルの理由比較</tspan></text></g>
+   <g id="text_54"><text x="275.960742" y="634.945781" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="裁定のみ56.56%" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="275.960742" dy="0">裁定のみ56.56%</tspan></text></g>
+   <g id="text_55"><text x="594.233844" y="570.437562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="10/12〜13 確認" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.233844" dy="0">10/12〜13 確認</tspan></text></g>
+   <g id="text_56"><text x="594" y="611.37" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="原生理由の整理" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594" dy="0">原生理由の整理</tspan></text></g>
+   <g id="text_57"><text x="594.25" y="634.395" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="原文過長、整理後も意味問題" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.25" dy="0">原文過長、整理後も意味問題</tspan></text></g>
+   <g id="text_58"><text x="911.260969" y="570.437562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="10/13 データ完了" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.260969" dy="0">10/13 データ完了</tspan></text></g>
+   <g id="text_59"><text x="910.8" y="611.37" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="学生短理由を選別" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">学生短理由を選別</tspan></text></g>
+   <g id="text_60"><text x="911.154492" y="634.395" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="7,065件、未学習" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="911.154492" dy="0">7,065件、未学習</tspan></text></g>
+   <g id="text_61"><text x="63" y="697.1632030000001" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="審査データ系統" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="63" dy="0">審査データ </tspan><tspan x="63" dy="21.599999999999998">系統</tspan></text></g>
+   <g id="text_62"><text x="277.410969" y="679.157562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="10/16時点の試行" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.410969" dy="0">10/16時点の試行</tspan></text></g>
+   <g id="text_63"><text x="277.2" y="720.120469" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="二経路審査" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="277.2" dy="0">二経路審査</tspan></text></g>
+   <g id="text_64"><text x="277.292773" y="743.577891" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="一致6単位 / 実行失敗9" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="277.292773" dy="0">一致6単位 / 実行失敗9</tspan></text></g>
+   <g id="text_65"><text x="594.060969" y="679.157562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="10/16 提案" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594.060969" dy="0">10/16 提案</tspan></text></g>
+   <g id="text_66"><text x="594.252734" y="720.09" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="ATMS支持集合" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="594.252734" dy="0">ATMS支持集合</tspan></text></g>
+   <g id="text_67"><text x="594" y="743.165781" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="伝播・矛盾排除は未実装" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="594" dy="0">伝播・矛盾排除は未実装</tspan></text></g>
+   <g id="text_68"><text x="910.860969" y="679.157562" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="10/16 提案" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="910.860969" dy="0">10/16 提案</tspan></text></g>
+   <g id="text_69"><text x="910.8" y="720.09" font-size="18" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#202124" aria-label="因果ペア合成" data-type-role="primary" text-anchor="middle" data-diagram-text="primary"><tspan x="910.8" dy="0">因果ペア合成</tspan></text></g>
+   <g id="text_70"><text x="910.8" y="743.115" font-size="15" font-family="Arial, PingFang SC, Hiragino Sans, Microsoft YaHei, sans-serif" fill="#707570" aria-label="合成・学習効果は未検証" data-type-role="secondary" text-anchor="middle" data-diagram-text="secondary"><tspan x="910.8" dy="0">合成・学習効果は未検証</tspan></text></g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p50ed8afd8c">
+   <rect x="0" y="0" width="1080" height="792"/>
+  </clipPath>
+ </defs>
+<style>[data-diagram-style="openai-blog"] {
+  --diagram-ink:#202020;
+  --diagram-muted:#62625e;
+  --diagram-line:#30332e;
+  --diagram-border:#3d403a;
+  --diagram-accent:#699c35;
+  --diagram-accent-ink:#4e7425;
+  --diagram-failure:#a07040;
+  --diagram-paper:#fff;
+  --diagram-soft:#f5faef;
+  --diagram-warm:#fcf5e9;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.3px;
+  --diagram-edge-width:1.8px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style="engineering"] {
+  --diagram-ink:#252525;
+  --diagram-muted:#626262;
+  --diagram-line:#454545;
+  --diagram-border:#555;
+  --diagram-accent:#52634a;
+  --diagram-accent-ink:#52634a;
+  --diagram-failure:#80604a;
+  --diagram-paper:#fff;
+  --diagram-soft:#fff;
+  --diagram-warm:#fff;
+  --diagram-grid:none;
+  --diagram-vector-stroke:1.2px;
+  --diagram-edge-width:1.6px;
+  --diagram-box-width:1.4px;
+}
+[data-diagram-style] .tm-viewport,[data-diagram-style] .am-viewport {
+  background-color:var(--diagram-paper);
+  background-image:var(--diagram-grid);
+  background-size:20px 20px;
+}
+[data-diagram-style] .canvas { color:var(--diagram-ink); background-color:var(--diagram-paper); }
+[data-diagram-style] .canvas :is(.node,.event,.checkpoint,.restore,.bundle) {
+  border-color:var(--diagram-border)!important;
+  color:var(--diagram-ink);
+}
+[data-diagram-kind="flow"] :is(.node,.event,.checkpoint,.restore,.bundle) { border-width:var(--diagram-box-width); }
+[data-diagram-style] .canvas :is(.sub,.note,.edge-label,.label:not(.title),.key,.index,.legend) { color:var(--diagram-muted); }
+[data-diagram-style] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired) { background-color:var(--diagram-soft)!important; border-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas :is(.node.failed,.node.issue,.event.failed) { background-color:var(--diagram-warm)!important; border-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge { border-top-color:var(--diagram-line)!important; border-top-width:var(--diagram-edge-width); }
+[data-diagram-style] .canvas .edge.arrow::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff) { border-top-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.feedback,.rewind,.retry,.handoff).arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt) { border-top-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .edge:is(.failure,.attempt).arrow::after { border-left-color:var(--diagram-failure)!important; }
+[data-diagram-style] .canvas .wire { border-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .tip { border-top-color:var(--diagram-line)!important; border-right-color:var(--diagram-line)!important; }
+[data-diagram-style] [data-diagram-stroke="neutral"] { stroke:var(--diagram-line)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-stroke="guide"] { stroke:#e3e5df!important; }
+[data-diagram-style] [data-diagram-stroke="accent"] { stroke:var(--diagram-accent)!important; stroke-width:var(--diagram-vector-stroke)!important; }
+[data-diagram-style] [data-diagram-fill="paper"] { fill:var(--diagram-paper)!important; }
+[data-diagram-style] [data-diagram-fill="node"] { fill:#fff!important; }
+[data-diagram-style] [data-diagram-fill="soft"],
+[data-diagram-style] [data-diagram-fill="accent"] { fill:var(--diagram-soft)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="soft"] { fill:url(#writing-dot-neutral)!important; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] [data-diagram-fill="accent"] { fill:url(#writing-dot-accent)!important; }
+[data-diagram-style="openai-blog"] rect[data-diagram-node] { rx:7.2px; }
+[data-diagram-style="engineering"] rect[data-diagram-node] { rx:2px; }
+[data-diagram-style] [data-diagram-text="primary"] { fill:var(--diagram-ink)!important; }
+[data-diagram-style] [data-diagram-text="secondary"] { fill:var(--diagram-muted)!important; }
+[data-diagram-style] [data-diagram-text="accent"] { fill:var(--diagram-accent-ink)!important; }
+[data-diagram-style] .canvas .connection.is-active .edge { border-top-color:var(--diagram-accent)!important; border-top-width:2.6px; }
+[data-diagram-style] .canvas .connection.is-active .edge.arrow::after { border-left-color:var(--diagram-accent)!important; }
+[data-diagram-style] .canvas.tm-replaying .connection.is-active .edge { border-top-width:0; }
+[data-diagram-style] .canvas .connection.is-active [data-diagram-stroke] { stroke:var(--diagram-accent)!important; stroke-width:2px!important; }
+[data-diagram-style] .automation-map,.automation-map[data-diagram-style] { --map-border:var(--diagram-border); --map-accent:var(--diagram-accent); --map-soft:var(--diagram-soft); }
+[data-diagram-style] .am-edge { stroke:var(--diagram-line); stroke-width:var(--diagram-edge-width); }
+[data-diagram-style] marker path { stroke:var(--diagram-line); }
+[data-diagram-style] .am-node { border-color:var(--diagram-border); border-width:var(--diagram-box-width); border-radius:8px; box-shadow:none; color:var(--diagram-ink); }
+[data-diagram-style] .am-node-note,[data-diagram-style] .am-label { color:var(--diagram-muted); }
+[data-diagram-style] .am-label { background:var(--diagram-paper); }
+[data-diagram-style] .am-edge.is-active { stroke:var(--diagram-accent); stroke-width:2.6px; }
+[data-diagram-style] .canvas :is(.arrow:not(.edge),.rule) { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .arrow:not(.edge)::after { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .vertical { border-left-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .down::after { border-top-color:var(--diagram-line)!important; }
+[data-diagram-style] .canvas .up::after { border-bottom-color:var(--diagram-line)!important; }
+[data-diagram-style="openai-blog"].tm-shell,
+[data-diagram-style="openai-blog"].automation-map { border:1px solid transparent; border-radius:0; box-shadow:none; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) { border-bottom:1px solid #e4e8e0; padding:14px; background:#fff; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { border-color:transparent; border-radius:0; background:transparent; }
+[data-diagram-style="openai-blog"] :is(.tm-toolbar,.am-toolbar) button:hover { background:#f2f5ec; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="openai-blog"] .am-node { border-radius:12px!important; box-shadow:none!important; background-color:#fff; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle,.workspace),
+[data-diagram-style="openai-blog"] .am-node { background-image:none; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.soft,.node.accent,.node.output,.node.result,.event.repaired,.restore),
+[data-diagram-style="openai-blog"] .am-node:is([data-type="tool"],[data-type="terminal"]) { background-color:var(--diagram-soft); background-image:radial-gradient(#70a33d38 .5px,transparent .65px); background-size:5px 5px; }
+[data-diagram-style="openai-blog"][data-diagram-kind="flow"] .canvas :is(.node.failed,.node.issue,.event.failed) { background-image:none; }
+[data-diagram-style="openai-blog"] .am-node { justify-content:center; text-align:center; }
+[data-diagram-style="openai-blog"] .am-node-icon { display:none; }
+[data-diagram-style="openai-blog"] .am-chevron { font-size:16px; }
+[data-diagram-style="openai-blog"] :is(.tm-replay,.tm-navigator,.tm-aside,.am-aside) { background:#fff; border-color:#e4e8e0; }
+[data-diagram-style="openai-blog"] .canvas :is(.group,.workspace) { border-color:#84897e!important; border-radius:5px; background-color:#fafaf8; background-image:radial-gradient(#7777702e .45px,transparent .6px); background-size:5px 5px; }
+[data-diagram-style="engineering"].tm-shell,
+[data-diagram-style="engineering"].automation-map { border:1px solid #d4d4d4; border-radius:4px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) { background:#fff; border-bottom:1px solid #dedede; padding:14px; }
+[data-diagram-style="engineering"] :is(.tm-toolbar,.am-toolbar) :is(button,select) { background:#fff; border-color:#d4d4d4; border-radius:3px; box-shadow:none; }
+[data-diagram-style="engineering"] :is(.tm-breadcrumb,.am-breadcrumb,.tm-replay) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .canvas { background-image:none; }
+[data-diagram-style="engineering"] .canvas :is(.node,.event,.checkpoint,.restore,.bundle),
+[data-diagram-style="engineering"] .am-node { background-color:#fff; background-image:none; border-radius:3px!important; box-shadow:none!important; }
+[data-diagram-style="engineering"] .canvas :is(.group,.workspace) { background:#fff!important; border-color:#b0b0b0!important; border-radius:2px; box-shadow:none; }
+[data-diagram-style="engineering"] .canvas :is(.label,.edge-label,.note) { background-color:#fff; }
+[data-diagram-style="engineering"] .canvas .vector-canvas,
+[data-diagram-style="engineering"] .vector-canvas { background:#fff; }
+[data-diagram-style="engineering"] [data-diagram-node] { filter:none; }
+[data-diagram-style="engineering"] :is(.tm-aside,.am-aside,.tm-navigator) { background:#fff; border-color:#dedede; }
+[data-diagram-style="engineering"] .am-node-icon { border-radius:2px; border:1px solid #aaa; background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="condition"] .am-node-icon,
+[data-diagram-style="engineering"] .am-node[data-type="approval"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="tool"] .am-node-icon { background:#fff; color:#454545; }
+[data-diagram-style="engineering"] .am-node[data-type="terminal"] .am-node-icon { background:#fff; color:#52634a; }
+[data-diagram-style="engineering"] .am-label { background:#fff; }
+</style></svg>

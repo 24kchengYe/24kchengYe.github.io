@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="writing-reader rl-writing" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Terminal-RSI: From Execution to Recursive Training · Yecheng Zhang</title><meta content="Successful runs become new demonstrations; fresh attempts provide the next training signal. RSR, RPR and turn-based credit assignment connect the two." name="description"/><link href="https://yechengzhang.duqi.top/writing/terminal-rsi/" rel="canonical"/><meta content="Terminal-RSI: From Execution to Recursive Training" property="og:title"/><meta content="https://yechengzhang.duqi.top/writing/terminal-rsi/" property="og:url"/><meta content="article" property="og:type"/>
+<script>try{const l=new URLSearchParams(location.search).get('lang');document.documentElement.lang=['en','zh','ja'].includes(l)?l:'en'}catch(e){}</script><script src="/assets/js/site-theme.js"></script>
+<link href="/writing/rl-assets/research-note.css?v=workflow-20261027" rel="stylesheet"/><link href="/writing/rl-assets/article.css?v=workflow-20261027" rel="stylesheet"/><link href="/assets/css/writing-language.css" rel="stylesheet"/><link href="/assets/css/writing-diagram-themes.css" rel="stylesheet"/><link href="/writing/rl-assets/rl-writing.css?v=workflow-20261027" rel="stylesheet"/><link href="/assets/css/site-theme.css" rel="stylesheet"/><link href="/writing/rl-assets/ppo-figures.css?v=workflow-20261027" rel="stylesheet"/>
+<link href="/writing/rl-assets/rl-diagram-theme.css?v=workflow-20261027" rel="stylesheet"/><script defer="" src="/assets/js/minimal.js"></script><script defer="" src="/assets/js/writing-diagram-style.js"></script><script defer="" src="/writing/rl-assets/rl-reader.js?v=workflow-20261027"></script><script defer="" src="assets/rsi-diagrams.js?v=workflow-20261027"></script><script data-stylesheet="assets/diagram-reader.css?v=workflow-20261027" defer="" src="assets/trajectory-map.js?v=workflow-20261027-mobile2"></script></head><body>
+<nav aria-label="Writing navigation" class="report-site-nav"><a data-site-link="" href="/#writing">← <span lang="en">Selected writing</span><span lang="zh">精选写作</span><span lang="ja">執筆</span></a><span class="edition"><span lang="en">Writing</span><span lang="zh">论文解读</span><span lang="ja">論文を読む</span></span><div class="writing-preferences"><details class="mobile-contents"><summary><span lang="en">Contents</span><span lang="zh">目录</span><span lang="ja">目次</span></summary><nav><div lang="en"><a href="#en-rsi">1 The workflow: demonstrations, then execution feedback</a><a href="#en-rewrite">2 RSR: rerun successful experience as demonstrations</a><a href="#en-reward">3 RPR: how verification outcomes become training signals</a><a href="#en-tb-gae">4 TB-GAE: passing feedback back by turn</a><a href="#en-handoff">5 Calibrating values under a new policy</a><a href="#en-task">6 From local tests to complete delivery</a></div><div lang="zh"><a href="#zh-rsi">1 整体流程：先学示范，再从执行中学习</a><a href="#zh-rewrite">2 RSR：把成功经验重做成示范</a><a href="#zh-reward">3 RPR：验证结果怎样进入训练</a><a href="#zh-tb-gae">4 TB-GAE：按回合回传反馈</a><a href="#zh-handoff">5 新策略下的价值校准</a><a href="#zh-task">6 从局部测试到完整交付</a></div><div lang="ja"><a href="#ja-rsi">1 全体像：手本を学び、実行結果から学ぶ</a><a href="#ja-rewrite">2 RSR：成功経験を再実行し、手本にする</a><a href="#ja-reward">3 RPR：検証結果を学習信号にする</a><a href="#ja-tb-gae">4 TB-GAE：ターン単位でフィードバックを遡らせる</a><a href="#ja-handoff">5 新しい方策に合わせて価値を校正する</a><a href="#ja-task">6 局所テストから課題全体の達成へ</a></div></nav></details><div aria-label="Language" class="languages" role="group"><button aria-pressed="true" data-language="en">EN</button><button aria-pressed="false" data-language="zh">中</button><button aria-pressed="false" data-language="ja">日</button></div></div></nav>
+<aside aria-label="Contents" class="article-toc visible"><div lang="en"><a href="#en-rsi">1 The workflow: demonstrations, then execution feedback</a><a href="#en-rewrite">2 RSR: rerun successful experience as demonstrations</a><a href="#en-reward">3 RPR: how verification outcomes become training signals</a><a href="#en-tb-gae">4 TB-GAE: passing feedback back by turn</a><a href="#en-handoff">5 Calibrating values under a new policy</a><a href="#en-task">6 From local tests to complete delivery</a></div><div lang="zh"><a href="#zh-rsi">1 整体流程：先学示范，再从执行中学习</a><a href="#zh-rewrite">2 RSR：把成功经验重做成示范</a><a href="#zh-reward">3 RPR：验证结果怎样进入训练</a><a href="#zh-tb-gae">4 TB-GAE：按回合回传反馈</a><a href="#zh-handoff">5 新策略下的价值校准</a><a href="#zh-task">6 从局部测试到完整交付</a></div><div lang="ja"><a href="#ja-rsi">1 全体像：手本を学び、実行結果から学ぶ</a><a href="#ja-rewrite">2 RSR：成功経験を再実行し、手本にする</a><a href="#ja-reward">3 RPR：検証結果を学習信号にする</a><a href="#ja-tb-gae">4 TB-GAE：ターン単位でフィードバックを遡らせる</a><a href="#ja-handoff">5 新しい方策に合わせて価値を校正する</a><a href="#ja-task">6 局所テストから課題全体の達成へ</a></div></aside><main class="note"><header class="note-header" id="article-start"><p class="note-kicker"><span lang="en">Reinforcement learning · October 2026</span><span lang="zh">强化学习 · 2026 年 10 月</span><span lang="ja">強化学習 · 2026年10月</span></p><h1 data-page-title=""><span lang="en">Terminal-RSI: From Execution to Recursive Training</span><span lang="zh">Terminal-RSI：从终端执行到递归训练</span><span lang="ja">Terminal-RSI：実行経験から再帰的な学習へ</span></h1><p class="lead"><span lang="en">Successful runs become new demonstrations; fresh attempts provide the next training signal. RSR, RPR and turn-based credit assignment connect the two.</span><span lang="zh">成功执行经过重写，成为新的示范；模型继续尝试，从验证结果中学习。RSR、RPR 与按回合回传的反馈，把两段训练连成循环。</span><span lang="ja">成功した実行を新しい手本に整え、次の試行結果から学ぶ。RSR、RPR、ターン単位の信用割り当てが二つの学習をつなぐ。</span></p></header>
+<div class="lang-article" lang="en"><p>A terminal agent reads files, edits code, and runs tests through command-line tools. The complete interaction record for a task is its <strong>trajectory</strong>. Terminal-RSI alternates two uses of this experience: <strong>RSR reruns successful solutions to create demonstrations; RPR runs new tasks and uses verification outcomes to train the policy and value networks.</strong></p><section aria-labelledby="en-rsi"><h2 id="en-rsi">1 The workflow: demonstrations, then execution feedback</h2><p id="en-framework">The <strong>Actor</strong> is the policy network that generates commands and code. The <strong>Critic</strong> is the value network: from the task and interaction history at a particular position, it predicts the return from continuing. Follow RSR across the top, then RPR below. The <strong>verifier</strong> is the program that runs checks and determines whether the task is complete.</p><figure class="trajectory-figure" id="en-figure-overview"><div class="trajectory-map" data-entry="overview" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/overview.en.html" title="Static diagram"></iframe></details><figcaption>Figure 1 · RSR tunes the Actor. RPR combines verification rewards and value estimates, then updates the Actor and Critic with separate targets. Both sets of weights carry into the next round. <a href="https://arxiv.org/html/2610.22192v1#S2.F2">Original Figure 2</a>, <a href="https://arxiv.org/html/2610.22192v1#S2.F3">Figure 3</a>.</figcaption></figure><p><a href="#en-rewrite">A · RSR</a> supplies demonstrations: extract a plan from a verified success, execute it in a clean environment, and keep the accepted new trajectory. <a href="#en-reward">B · RPR</a> trains on new attempts: the verifier supplies reward, the Critic supplies value predictions, and <a href="#en-tb-gae">GAE / TB-GAE</a> computes advantages A and return targets Ĝ at generated positions. The Actor uses A for PPO; the Critic fits Ĝ.</p><p>RSR changes the Actor. Each new RPR phase therefore holds the Actor fixed while <a href="#en-handoff">calibrating the inherited Critic</a>, then trains both. The updated models produce experience for the next round—the recursive step in <strong>Recursive Self-Improvement (RSI)</strong>.</p><p class="source-note">The diagram includes both advantage estimators. Section 2.3 proposes TB-GAE; the first training phase documented in §2.4 uses standard GAE with γ = λ = 1.</p><details class="method-detail framework-source" open=""><summary>The paper’s original diagrams and actual training order</summary>
+<p><a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_overall_from_ppt.png" rel="noopener" target="_blank">Figure 2 · Overall Framework ↗</a>　<a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_single_step_from_ppt.png" rel="noopener" target="_blank">Figure 3 · Single Recursive Step ↗</a></p>
+<p>The actual stage order is  <strong>Base → RSR-1 → RPR-1 → RSR-2 → RPR-2</strong>. At the top of the original diagram,  <em>Actor: RSR-1</em>  and  <em>Warm-up Critic Model</em>  indicate that, on first entering RPR, the policy has completed supervised learning and the value network has completed its initial warm-up.</p>
+</details><div class="table-scroll"><table class="comparison"><caption>Comparison with a PPO-only training loop</caption><thead><tr><th scope="col">Step</th><th scope="col">Ordinary PPO loop</th><th scope="col">Terminal-RSI</th></tr></thead><tbody>
+<tr><th scope="row">Using execution experience</th><td>Sample trajectories, estimate advantages from returns, and update.</td><td>Also re-execute and filter verified successful experience for SFT.</td></tr>
+<tr><th scope="row">After the policy update</th><td>Continue sampling and training the Actor / Critic.</td><td>Preserve the Critic across SFT and calibrate it at the start of a new RPR stage.</td></tr>
+<tr><th scope="row">Starting the next round</th><td>Continue PPO with the updated policy.</td><td>Use the updated policy to discover experience again, then enter RSR → RPR.</td></tr>
+</tbody></table></div></section><section aria-labelledby="en-rewrite">
+<h2 id="en-rewrite">2 RSR: rerun successful experience as demonstrations</h2>
+<p>The most direct way to learn is to imitate successful attempts. Yet a successful log may contain many detours or depend on tools specific to one harness. Copying that log may not reproduce success in the deployment environment.</p>
+<p><strong>Recursive Self-Rewrite (RSR)</strong> first distills a successful approach into a plan, then executes it again in the target environment. The trajectory is what gets ‘rewritten’; qualifying trajectories are subsequently used for training.</p><figure class="trajectory-figure" id="en-figure-rsr"><div class="trajectory-map" data-entry="rsr" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/rsr.en.html" title="Static diagram"></iframe></details><figcaption>Figure 2 · RSR demonstrations come from fresh execution. The plan guides the run; after acceptance, public interactions become training context and generated actions become supervision targets. <a href="https://arxiv.org/html/2610.22192v1#S2.SS1">§2.1</a>.</figcaption></figure>
+<ol class="method-steps">
+<li><strong>Collect successful experience.</strong> The current model attempts tasks in different harnesses, retaining only trajectories that fully pass verification. A harness provides tools, maintains interaction history, and controls execution and stopping conditions.</li>
+<li><strong>Distill a plan.</strong> The Planner organizes key steps, checks, and recovery procedures into a  <strong>runbook</strong>. A reviewer checks whether the plan works in the target environment and whether it leaks the answer.</li>
+<li><strong>Execute again.</strong> With the plan, the Executor solves the same task in a clean <strong>sandbox</strong>—an isolated, resettable environment—making real tool calls and receiving new responses.</li>
+<li><strong>Verify and train.</strong> Once a new trajectory passes task verification and leakage checks, remove the private plan and review dialogue, retaining the public task and real interactions. These demonstrations update the language model responsible for actions: the <strong>policy network (Actor)</strong>. </li>
+</ol>
+<p>The final step is <strong>Supervised Fine-Tuning (SFT)</strong>: given the task and history, increase the probability of generating the demonstrated behavior. The private plan helps produce demonstrations; training teaches the model to act without that extra guidance.<a class="cite" href="https://arxiv.org/html/2610.22192v1#S2.SS1">[1, §2.1]</a></p>
+<h3>Rewriting trajectories for a Markdown task</h3>
+<p>The preceding RSR paper gives a Markdown-processing example. A <strong>parser</strong> identifies structures such as headings, paragraphs, and tables for downstream code. A <strong>precompiled parser</strong> is already compiled and can be loaded directly in a compatible environment, avoiding some generation and compilation work.</p>
+<p>The source execution took 64 turns to succeed. The distilled plan starts by looking for a compatible precompiled parser, and calls attention to output-summary and table-processing parameters. A new execution can therefore avoid some detours.</p>
+<figure class="trajectory-figure" id="en-figure-rewrite">
+<div class="trajectory-map" data-entry="rewrite" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/rewrite.en.html" title="Static diagram"></iframe></details>
+<figcaption>Figure 3 · Two executions of the same plan: one passes in 32 turns; the other fails after 38 turns. Each new trajectory is verified independently. Source: <a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>. </figcaption>
+</figure>
+<p>The same plan produced both a successful and a failed branch. A successful trajectory enters the SFT data only after passing verification.</p>
+<details class="method-detail" open=""><summary>Complete rewriting results for this task</summary>
+<p>The source execution tried generating a parser at turn 26 and used a precompiled parser at turn 51; the successful rewrite shown here used one at turn 9. Across 12 rewrites of this task, 7 succeeded, with a median of 32 turns among successful rewrites. Source: <a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>. </p>
+</details>
+<p>The model generates one <strong>token</strong> at a time—a textual unit such as a character, part of a word, or punctuation. SFT learns the model-generated portions of demonstrations; tool logs serve as input rather than imitation targets. The selection flags that determine which positions contribute to the training loss form the <strong>training mask</strong>. </p>
+<details class="method-detail" open=""><summary>Three roles for the same model</summary>
+<p>In the preceding RSR paper, the same base model takes on planning, review, and execution through different prompts and contexts. The Planner organizes the approach, the Reviewer checks the plan, and the Executor calls tools to complete the task.</p>
+<p>When producing demonstrations, the Executor may consult the private plan. Training retains only the public task and interaction history, checking whether each action can be explained by that public information. Source: <a href="https://arxiv.org/html/2610.02826v1#S2">RSR §2</a>. </p>
+</details>
+<details class="method-detail" open=""><summary>The corresponding SFT objective</summary><p>θ denotes the trainable model parameters. πθ(yⱼ | hⱼ) is the probability that the policy with parameters θ generates demonstration token yⱼ given history hⱼ. A smaller negative log loss means a higher probability for that demonstrated choice.</p>
+<div class="formula-scroll"><math aria-label="SFT loss is the sum of negative log probabilities at selected generated positions" display="block"><mrow><msub><mi>L</mi><mtext>SFT</mtext></msub><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>m</mi><mi>j</mi></msub><mi>log</mi><msub><mi>π</mi><mi>θ</mi></msub><mo>(</mo><msub><mi>y</mi><mi>j</mi></msub><mo>∣</mo><msub><mi>h</mi><mi>j</mi></msub><mo>)</mo></mrow></math></div>
+<p>This is the form for a single demonstration; training also averages over the demonstration set. <var>hⱼ</var>  is the public history, <var>yⱼ</var>  is the demonstration token, and <var>mⱼ</var>  selects the generated positions to learn from. Minimizing negative log probability increases the probability of the verified demonstration under its corresponding history. Source: <a href="https://arxiv.org/html/2610.22192v1#S2.SS1">Equation 3</a>. </p>
+</details>
+<p class="section-bridge">Demonstrations teach the model an approach. On new attempts of its own, it also needs to learn from actual outcomes.</p>
+</section><section aria-labelledby="en-reward">
+<h2 id="en-reward">3 RPR: how verification outcomes become training signals</h2>
+<p><strong>Recursive Policy-Refine (RPR)</strong> has the supervised-fine-tuned Actor execute tasks again, using verification outcomes as rewards to update the policy with PPO. The  <strong>Critic</strong>  predicts future returns from the task and interaction history, providing a baseline for advantage estimation. For how each model is trained, see <a data-site-link="" href="/writing/ppo-long-horizon/">PPO: training along a long-horizon trajectory</a>. </p><p>Terminal-RSI uses programmatic verification directly, without a separately trained preference reward model; the paper sets both KL and entropy coefficients to 0. PPO still uses old-policy probabilities to control policy changes.</p><figure class="trajectory-figure" id="en-figure-reward"><div class="trajectory-map" data-entry="reward" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/reward.en.html" title="Static diagram"></iframe></details><figcaption>Figure 4 · A trajectory supplies terminal reward R and generated prefixes. Advantage estimation combines R with Critic predictions V to produce A for the Actor and Ĝ for Critic regression. <a href="https://arxiv.org/html/2610.22192v1#S2">§2</a>.</figcaption></figure><p>Within an RPR phase, trajectory sampling, verification, and model updates repeat. After the phase ends, the retained Actor enters the next RSR round.</p>
+<p><strong>Reward (R)</strong> converts verification outcomes into a training score. The paper starts with two quantities: <var>P</var>  counts passed semantic checks—checks of task functionality, excluding auxiliary checks such as cleanup; <var>S</var>  is the strict-success indicator: 1 for a full pass, 0 otherwise. The score is computed at the end of an execution, rather than issued anew after every command.</p>
+<p>The earlier <strong>Family Dense Reward (FDR)</strong> uses  <var>P / D</var>  to represent partial completion, with  <var>D</var>  set in advance for the task family. This gives a signal for getting some things right. A partial-check score alone, however, need not rank full success above every failure.</p>
+<p>The subsequent <strong>Success-Prioritized Reward (SPR)</strong> therefore uses  <var>S + P / (P + D′)</var>. The second term is always below 1, while full success adds another 1: failures score below 1 and successes at least 1. Here,  <var>D′</var>  is a positive scale calibrated offline for each task family and held fixed within the stage.</p>
+<p>With 8 checks passed and D′ = 10, the reward is about 0.444 without strict success and 1.444 with strict success. SPR first distinguishes full success, then compares partial completion.</p>
+<details class="method-detail" open=""><summary>Exact reward formulas, scales, and training stages</summary>
+<div aria-label="FDR reward equals P divided by D" class="equation"><span class="equation-name">FDR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mi>P</mi><mi>D</mi></mfrac></mrow></math></div><div aria-label="SPR reward equals S plus P divided by P plus D prime" class="equation"><span class="equation-name">SPR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mi>S</mi><mo>+</mo><mfrac><mi>P</mi><mrow><mi>P</mi><mo>+</mo><msup><mi>D</mi><mo>′</mo></msup></mrow></mfrac></mrow></math></div>
+<p>These formulas apply when the check report is valid; an invalid report makes both fall back to the strict-success indicator S. FDR uses the 90th percentile of historical total check counts within the task family for D, falling back to 82 when no family scale is available. SPR uses a positive, offline-calibrated D′ fixed within the stage.</p>
+<p>The ordinary RPR-2 branch uses FDR; the retained Long-Reward RPR-2 branch uses SPR. Sources: <a href="https://arxiv.org/html/2610.22192v1#S2.SS2">§2.2</a>, <a href="https://arxiv.org/html/2610.22192v1#S3.SS1">§3.1</a>. </p>
+</details>
+<p>In RPR-1, the training side recomputes old-policy probabilities using the old Actor for PPO’s comparison of new and old probabilities. <a href="https://arxiv.org/html/2610.22192v1#S2.SS4">[§2.4]</a></p>
+</section><section aria-labelledby="en-tb-gae">
+<h2 id="en-tb-gae">4 TB-GAE: passing feedback back by turn</h2>
+<p>A task often spans many <strong>turns</strong>: the model generates a response or tool call, then receives an environmental response. Rewards arrive only at task completion, yet training needs an advantage for every earlier generated position.</p>
+<p><strong>Generalized Advantage Estimation (GAE)</strong> combines rewards and value predictions along the trajectory, recursively estimating advantages backward from the end. Later feedback usually decays as it propagates, so the choice of what counts as one step affects the signal reaching earlier positions.</p>
+<p>If every text token multiplies feedback by a factor below 1, simply lengthening a tool log weakens the feedback reaching earlier positions. Masking out the training loss at log positions is not enough: <strong>logs may still participate in the advantage recursion and incur additional decay.</strong></p>
+<p><strong>Turn-Boundary Skip-Observation Generalized Advantage Estimation (TB-GAE)</strong> skips tool observations in the recursion. Generated tokens within the same turn incur no decay; decay occurs only across turn boundaries.</p>
+<figure aria-labelledby="en-credit-caption" class="credit-timeline">
+<div aria-label="Generated positions across two turns and the TB-GAE recursion direction" class="timeline-scroll" role="region" tabindex="0">
+<svg aria-labelledby="en-credit-title en-credit-desc" height="228" role="img" viewbox="0 0 780 228" width="780">
+<title id="en-credit-title">Generation moves right in time; advantages recurse left through generated positions</title>
+<desc id="en-credit-desc">The first turn generates g1 and g2, followed by a tool log; the second generates g3 and g4. Advantages recurse from g4 to g1, with factor 1 within a turn and γλ across turns, skipping the intervening tool log.</desc>
+<defs><marker id="en-credit-arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="5" refy="3" viewbox="0 0 6 6"><path d="M0 0 L6 3 L0 6" fill="none" stroke="currentColor"></path></marker></defs>
+<g class="timeline-label"><text x="36" y="24">Generation</text><text text-anchor="middle" x="127" y="65">Turn 1</text><text text-anchor="middle" x="347" y="65">Tool log</text><text text-anchor="middle" x="567" y="65">Turn 2</text><text text-anchor="middle" x="732" y="65">Verify</text></g>
+<path class="timeline-line" d="M113 19 H756" marker-end="url(#en-credit-arrow)"></path>
+<g class="timeline-token"><rect height="44" rx="3" width="72" x="36" y="82"></rect><rect height="44" rx="3" width="72" x="146" y="82"></rect><rect height="44" rx="3" width="72" x="476" y="82"></rect><rect height="44" rx="3" width="72" x="586" y="82"></rect></g>
+<rect class="timeline-log" height="44" rx="3" width="182" x="256" y="82"></rect>
+<g class="timeline-text"><text text-anchor="middle" x="72" y="111">g₁</text><text text-anchor="middle" x="182" y="111">g₂</text><text text-anchor="middle" x="347" y="110">… test output …</text><text text-anchor="middle" x="512" y="111">g₃</text><text text-anchor="middle" x="622" y="111">g₄</text><text text-anchor="middle" x="732" y="111">R</text></g>
+<path class="timeline-line" d="M665 104 H700" marker-end="url(#en-credit-arrow)"></path>
+<path class="timeline-credit" d="M182 151 H72" marker-end="url(#en-credit-arrow)"></path>
+<path class="timeline-credit" d="M512 151 H182" marker-end="url(#en-credit-arrow)"></path>
+<path class="timeline-credit" d="M622 151 H512" marker-end="url(#en-credit-arrow)"></path>
+<g class="timeline-factor"><text text-anchor="middle" x="127" y="178">1</text><text text-anchor="middle" x="347" y="178">γλ</text><text text-anchor="middle" x="567" y="178">1</text></g>
+<text class="timeline-label" x="36" y="215">Advantage recursion ←</text>
+</svg>
+</div>
+<figcaption id="en-credit-caption">Below are the factors applied to the next advantage: 1 within a turn, γλ across turns.</figcaption>
+</figure>
+<p>Logs remain in the model input, influencing subsequent actions and value predictions. Positions g₁ through g₄ each use the context before their own generation, so they have different value baselines. The training system can batch these predictions after collecting the trajectory.</p>
+<h3>How log length affects decay</h3>
+<p>After one step, the difference between ‘immediate reward plus discounted future expectation’ and the previous expectation is the <strong>temporal-difference residual (TD residual, δ)</strong>. Below, we track only this change at the final position and see how much reaches the first position.</p>
+<p>The example has two turns and four generated positions. Set  <var>γ = 0.9，λ = 0.8</var>, multiplying by  <var>0.72</var> at each decay step. Drag the log-length control to compare three recursion chains.</p>
+<div aria-label="Compare three clocks for advantage recursion" class="clock-example">
+<div class="clock-controls"><label for="en-observation-length">Intervening observation positions  <output for="['observation-length']" id="en-observation-count">3</output></label><label class="unit-clock"><input id="en-unit-clock" type="checkbox"/> γ = λ = 1</label></div>
+<input aria-describedby="en-clock-reading" id="en-observation-length" max="400" min="0" step="1" type="range" value="3"/>
+<div class="clock-row"><span>Mixed token chain</span><code id="en-clock-full-power">0.72⁶</code><output id="en-clock-full">0.1393</output><span aria-hidden="true" class="clock-track"><span id="en-clock-full-bar" style="width:13.93%"></span></span></div>
+<div class="clock-row"><span>Skip observations only</span><code id="en-clock-skip-power">0.72³</code><output id="en-clock-skip">0.3732</output><span aria-hidden="true" class="clock-track"><span id="en-clock-skip-bar" style="width:37.32%"></span></span></div>
+<div class="clock-row"><span>TB-GAE</span><code id="en-clock-turn-power">0.72¹</code><output id="en-clock-turn">0.7200</output><span aria-hidden="true" class="clock-track"><span id="en-clock-turn-bar" style="width:72%"></span></span></div>
+<p aria-live="polite" class="example-reading" id="en-clock-reading">The mixed chain crosses 6 edges; skipping observations crosses 3; TB-GAE crosses just 1 turn boundary.</p>
+</div>
+<p class="source-note">The values are the coefficients carrying the final change back to the start. Generated positions, values, and other inputs are fixed; only log length changes. With γ = λ = 1 checked, all three coefficients equal 1.</p>
+<details class="method-detail example-detail" open=""><summary>Three recursion chains: working through four positions</summary>
+<p>Let g₁ and g₂ belong to the first turn, and g₃ and g₄ to the second. Their pre-generation values are 0.2, 0.4, 0.5, and 0.8, respectively; reward 1 arrives only at task completion.</p>
+<p>First compute each position’s temporal-difference residual, then accumulate backward from the end.</p>
+<figure class="trajectory-figure" id="en-figure-gae">
+<div class="trajectory-map" data-entry="gae" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/gae.en.html" title="Static diagram"></iframe></details>
+<figcaption>Figure 5 · A numerical example with two turns and four generated positions. The upper half compares feedback decay; the lower half distinguishes return targets from advantages. <a href="https://arxiv.org/html/2610.22192v1#S2.SS3">Method: §2.3</a>. </figcaption>
+</figure>
+<ol class="calculation-steps">
+<li><strong>g₄: the task ends.</strong> The reward is 1, against a prediction of 0.8, so  <var>A₄ = 1 − 0.8 = 0.20</var>. </li>
+<li><strong>g₃: still in the second turn.</strong> The value changes from 0.5 to 0.8, giving residual 0.3. There is no within-turn decay, so  <var>A₃ = (0.8 − 0.5) + 0.20 = 0.50</var>. </li>
+<li><strong>g₂: crossing back into the first turn.</strong> The residual is  <var>0.9 × 0.5 − 0.4 = 0.05</var>; the next advantage is multiplied by  <var>0.9 × 0.8</var>, giving  <var>A₂ = 0.05 + 0.72 × 0.50 = 0.41</var>. </li>
+<li><strong>g₁: still in the first turn.</strong> Again there is no within-turn decay: <var>A₁ = (0.4 − 0.2) + 0.41 = 0.61</var>. </li>
+</ol>
+<div class="table-scroll"><table class="gae-values"><caption>Worked example · Value target Ĝ = A + v</caption><thead><tr><th scope="col">Generated position</th><th scope="col">Turn</th><th scope="col">Predicted v</th><th scope="col">Advantage A</th><th scope="col">Value target Ĝ</th></tr></thead><tbody>
+<tr><th scope="row">g₁</th><td>1</td><td>0.20</td><td>0.61</td><td>0.81</td></tr>
+<tr><th scope="row">g₂</th><td>1</td><td>0.40</td><td>0.41</td><td>0.81</td></tr>
+<tr><th scope="row">g₃</th><td>2</td><td>0.50</td><td>0.50</td><td>1.00</td></tr>
+<tr><th scope="row">g₄</th><td>2</td><td>0.80</td><td>0.20</td><td>1.00</td></tr>
+</tbody></table></div>
+<p>The first turn’s two positions share a return target of 0.81, but their advantages are 0.61 and 0.41 because their prior expectations differ. The Actor updates probabilities using each position’s advantage; the Critic fits its corresponding return target.</p>
+</details>
+<details class="method-detail" open=""><summary>Writing the calculation as a single recursion</summary><p>r̃ⱼ is the reward assigned to generated position j. In this terminal-reward example, only the final position has a nonzero reward.</p>
+<p>Enumerate only the retained generated positions  <var>j</var>, and let  <var>vⱼ</var>  be the value before that token is generated. When the next generated position is in the same turn, set  <var>Γⱼ = Λⱼ = 1</var>; across turns, use  <var>Γⱼ = γ<sub>turn</sub>，Λⱼ = λ<sub>turn</sub></var>. <var>dⱼ = 1</var>  indicates actual termination.</p>
+<div class="formula-scroll"><math aria-label="The TB residual equals the causal reward plus Gamma times one minus the termination indicator times the next value, minus the current value" display="block"><mrow><msub><mi>δ</mi><mi>j</mi></msub><mo>=</mo><msub><mover><mi>r</mi><mo>~</mo></mover><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>v</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>v</mi><mi>j</mi></msub></mrow></math></div>
+<div class="formula-scroll"><math aria-label="The TB advantage equals the residual plus Gamma times Lambda times one minus the termination indicator times the next advantage" display="block"><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msub><mi>δ</mi><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><msub><mi>Λ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>A</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></div>
+<p>The terminal reward is injected once at the last generated position. With no intermediate rewards within a turn, adjacent values cancel, yielding a shared return target Uₜ. Each position subtracts its own value prediction to obtain Aⱼ = Uₜ − vⱼ. Here, the first turn’s target is U₁ = 0.9 × (0.5 + 0.8 × 0.5) = 0.81.</p>
+<p>TB-GAE discounts by turn, applying one time-decay step per complete action. Log length and within-turn token count therefore no longer determine the number of discount steps. Sources: <a href="https://arxiv.org/html/2610.22192v1#S2.SS3">Equations 8–13</a> and <a href="https://arxiv.org/html/2610.22192v1#A3">Appendix C</a>. </p>
+</details>
+<details class="method-detail" open=""><summary>What happens at the boundary when a long trajectory is split?</summary>
+<p>To save GPU memory or compute in batches, a complete trajectory can be split into chunks, passing the recursion from later chunks back to earlier ones. If this example is split after g₂, retaining the next value prediction of 0.5 but zeroing the next advantage of 0.5 changes A₂ to 0.05 and A₁ to 0.25. The missing feedback is exactly 0.72 × 0.5 = 0.36.</p>
+<p>A complete continuation must pass both the next value and the next advantage, or compute backward over the full sequence. When sampling stops early and the future has not yet been executed, use <strong>value bootstrapping</strong>—estimating future returns with the current value prediction. At true task termination, the next value and advantage are zero. Context summarization also changes the history the model reads and requires separate handling.</p>
+</details>
+<p class="source-note">This section describes TB-GAE as proposed in §2.3. The first stage documented in §2.4 uses standard GAE with γ = λ = 1.</p>
+</section><section aria-labelledby="en-handoff">
+<h2 id="en-handoff">5 Calibrating values under a new policy</h2>
+<p>RSR changes how the Actor acts, while the old Critic still scores from earlier experience. If the reward formula also changes, so does the score scale. Using old predictions to estimate advantages for a new policy can miscalibrate the learning signal.</p>
+<p>Terminal-RSI therefore retains the existing Critic and begins each RPR stage by <strong>freezing the Actor</strong>—temporarily leaving its weights unchanged—for 4 Critic-only calibration updates, before joint training. This preserves existing experience while bringing value predictions in line with the new policy and rewards.</p>
+<figure class="trajectory-figure" id="en-figure-handoff">
+<div class="trajectory-map" data-entry="handoff" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/handoff.en.html" title="Static diagram"></iframe></details>
+<figcaption>Figure 6 · RSR preserves the Critic; each RPR stage starts with 4 calibration updates before joint updates. Source: <a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a>. </figcaption>
+</figure>
+<details class="method-detail" id="en-critic-initialization" open=""><summary>The Critic, from initial warm-up to recursive training</summary>
+<ol class="method-steps">
+<li><strong>Initial warm-up.</strong> Freeze the RSR-1 Actor after supervised fine-tuning and train the Critic for one epoch—one pass through <strong>Scientific Workflow Reconstruction (SWR)</strong> tasks. These tasks reconstruct executable scientific programs and verify their behavior with hidden checks. The Actor supplies trajectories; the Critic learns their return targets, producing the <em>Warm-up Critic Model</em>.</li>
+<li><strong>Entering RPR.</strong> Each RPR stage starts with the Actor fixed for 4 Critic-only calibration updates. The Actor then uses advantages for PPO updates, while the Critic regresses on return targets; the two parameter sets are trained separately.</li>
+<li><strong>Entering the next round.</strong> RSR-2 fine-tunes only the Actor, retaining the RPR-1 Critic’s weights. RPR-2 calibrates the Critic against executions by the new Actor, then resumes joint training.</li>
+</ol>
+<p>The paper describes this warm-up and weight handoff, but does not specify the checkpoint—the model-weight file—loaded into the Critic backbone before its first warm-up. Sources: <a href="https://arxiv.org/html/2610.22192v1#S2.SS1.p3">§2.1</a>, <a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a> and <a href="https://arxiv.org/html/2610.22192v1#A1.p5">Appendix A</a>. </p>
+</details>
+</section><section aria-labelledby="en-task">
+<h2 id="en-task">6 From local tests to complete delivery</h2>
+<p>The task asks for a calculator written in Rust and C. It has two final checks: can the entry script recompile automatically after build artifacts are deleted, and do outputs for hidden inputs match the reference implementation <strong>character for character</strong>?</p>
+<p>One execution by the initial Base model passed local arithmetic tests and rebuilt automatically, but its final-check output was  <code>23</code>, while the reference returned  <code>23.0</code>. The numbers are equal, but the strings differ. An independent execution by the later RPR-2 version passed both checks.</p>
+<figure class="trajectory-figure" id="en-figure-case">
+<div class="trajectory-map" data-entry="case" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>Static diagram</summary><iframe class="static-diagram" loading="lazy" src="figures/case.en.html" title="Static diagram"></iframe></details>
+<figcaption>Figure 7 · Independent evaluations of Base and RPR-2 on the same calculator task. Final acceptance checks both automatic builds and output formatting. Source: <a href="https://arxiv.org/html/2610.22192v1#A8">Terminal-RSI, Appendix H, Figure 16</a>. </figcaption>
+</figure>
+<p>The RPR-2 execution combines Rust / C components with Python expression evaluation and passes both automatic-rebuild and output-format checks.</p>
+<details class="method-detail" open=""><summary>How often did each of the five model versions pass this task?</summary>
+<p>Each version was evaluated twice. Full passes were Base 0/2, RSR-1 0/2, RPR-1 1/2, RSR-2 2/2, and RPR-2 2/2.</p>
+</details>
+</section><footer class="sources" id="en-sources"><h2>References</h2>
+<ol><li><a href="https://arxiv.org/html/2610.22192v1">Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine</a>. Mechanisms: §2; real executions: Appendix H. <a href="https://arxiv.org/pdf/2610.22192">PDF ↗</a></li>
+<li><a href="https://arxiv.org/html/2610.02826v1">Recursive Self-Rewrite（RSR）</a>. The real Markdown rewrite example is in §3.4.</li>
+<li><a href="https://arxiv.org/abs/1707.06347">Proximal Policy Optimization Algorithms</a>; <a href="https://arxiv.org/abs/1506.02438">Generalized Advantage Estimation</a>. </li>
+</ol>
+</footer>
+</div><div class="lang-article" lang="zh"><p>终端 Agent 通过命令行读文件、改代码、跑测试。一次任务留下的完整交互记录叫<strong>执行轨迹</strong>。Terminal-RSI 用这些轨迹交替进行两种训练：<strong>RSR 重做成功经验，制作监督学习的示范；RPR 执行新任务，根据验证结果更新策略与价值网络。</strong></p><section aria-labelledby="zh-rsi"><h2 id="zh-rsi">1 整体流程：先学示范，再从执行中学习</h2><p id="zh-framework">图中的 <strong>Actor</strong> 是生成命令与代码的策略网络；<strong>Critic</strong> 是价值网络，根据截至某个位置的任务与交互历史，预测继续执行能获得的回报。先沿上方看 RSR，再沿下方看 RPR。<strong>验证器（verifier）</strong>是运行检查、判断任务是否完成的程序。</p><figure class="trajectory-figure" id="zh-figure-overview"><div class="trajectory-map" data-entry="overview" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/overview.zh.html" title="静态图"></iframe></details><figcaption>图 1 · RSR 只微调 Actor；RPR 把验证奖励与价值预测交给优势估计，再分别更新 Actor 与 Critic。两套权重进入下一轮。<a href="https://arxiv.org/html/2610.22192v1#S2.F2">原文 Figure 2</a>、<a href="https://arxiv.org/html/2610.22192v1#S2.F3">Figure 3</a>。</figcaption></figure><p><a href="#zh-rewrite">A · RSR</a> 解决示范从哪里来：从通过验收的旧轨迹中提炼做法，在干净环境重做，留下可以学习的新轨迹。<a href="#zh-reward">B · RPR</a> 解决新尝试怎么训练：验证器给出奖励，Critic 给出价值预测，<a href="#zh-tb-gae">GAE / TB-GAE</a> 算出各生成位置的优势 A 和回报目标 Ĝ。Actor 用 A 做 PPO 更新；Critic 拟合 Ĝ。</p><p>每次 RSR 都会改变 Actor。进入新的 RPR 阶段时，先固定 Actor，<a href="#zh-handoff">校准继承的 Critic</a>，再联合训练。更新后的模型又为下一轮产生经验，这就是这里的<strong>递归自我改进（Recursive Self-Improvement，RSI）</strong>。</p><p class="source-note">图中保留两种优势估计方法。论文 §2.3 提出 TB-GAE；§2.4 披露的第一训练阶段使用标准 GAE，γ = λ = 1。</p><details class="method-detail framework-source" open=""><summary>对照论文原图与具体训练顺序</summary>
+<p><a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_overall_from_ppt.png" rel="noopener" target="_blank">Figure 2 · Overall Framework ↗</a>　<a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_single_step_from_ppt.png" rel="noopener" target="_blank">Figure 3 · Single Recursive Step ↗</a></p>
+<p>实际阶段顺序为 <strong>Base → RSR-1 → RPR-1 → RSR-2 → RPR-2</strong>。原图顶部的 <em>Actor: RSR-1</em> 与 <em>Warm-up Critic Model</em> 表示首次进入 RPR 时，策略已完成监督学习，价值网络已完成初始预热。</p>
+</details><div class="table-scroll"><table class="comparison"><caption>与只使用 PPO 训练循环的对照</caption><thead><tr><th scope="col">环节</th><th scope="col">普通 PPO 循环</th><th scope="col">Terminal-RSI</th></tr></thead><tbody>
+<tr><th scope="row">执行经验怎么用</th><td>采样轨迹，按回报计算优势并更新。</td><td>还把验证过的成功经验重新执行、过滤后用于 SFT。</td></tr>
+<tr><th scope="row">策略更新之后</th><td>继续采样并训练 Actor / Critic。</td><td>跨 SFT 阶段保留 Critic，进入新 RPR 阶段先校准。</td></tr>
+<tr><th scope="row">下一轮从哪里开始</th><td>用更新后的策略继续 PPO。</td><td>用更新后的策略重新发现经验，再进入 RSR → RPR。</td></tr>
+</tbody></table></div></section><section aria-labelledby="zh-rewrite">
+<h2 id="zh-rewrite">2 RSR：把成功经验重做成示范</h2>
+<p>最直接的学习办法，是模仿成功尝试。但成功日志也可能包含许多弯路，或依赖特定框架的工具。照搬日志，未必能在部署环境里重现成功。</p>
+<p><strong>递归自我重写（Recursive Self-Rewrite，RSR）</strong>先把成功做法整理成计划，再在目标环境里重新执行。“重写”的是轨迹，合格轨迹随后才用于训练。</p><figure class="trajectory-figure" id="zh-figure-rsr"><div class="trajectory-map" data-entry="rsr" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/rsr.zh.html" title="静态图"></iframe></details><figcaption>图 2 · RSR 的示范来自重新执行。计划引导执行；通过验收后，公开交互成为训练输入，模型生成的动作成为监督目标。<a href="https://arxiv.org/html/2610.22192v1#S2.SS1">§2.1</a>。</figcaption></figure>
+<ol class="method-steps">
+<li><strong>收集成功经验。</strong>当前模型在不同执行框架中尝试任务，只保留完整通过验证的轨迹。执行框架（harness）负责提供工具、维护交互历史、控制运行与结束条件。</li>
+<li><strong>提炼计划。</strong>规划角色（Planner）整理关键步骤、检查与恢复办法，形成操作说明 <strong>runbook</strong>。审查角色检查计划能否在目标环境使用，以及是否夹带答案。</li>
+<li><strong>重新执行。</strong>执行角色（Executor）带着计划，在干净的<strong>沙盒</strong>——隔离、可重新初始化的运行环境——里解决同一任务，实际调用工具并获得新的返回。</li>
+<li><strong>验收并训练。</strong>新轨迹通过任务验证与泄漏检查后，移除私有计划和审查对话，保留公开任务与真实交互。用这些示范更新负责行动的语言模型，即<strong>策略网络（Actor）</strong>。</li>
+</ol>
+<p>最后一步叫<strong>监督微调（Supervised Fine-Tuning，SFT）</strong>：给定任务和历史，提高模型生成示范行为的概率。私有计划帮助制作示范，训练则让模型在没有这份额外指导时也能行动。<a class="cite" href="https://arxiv.org/html/2610.22192v1#S2.SS1">[1, §2.1]</a></p>
+<h3>Markdown 任务中的轨迹重写</h3>
+<p>RSR 前置论文给出一个处理 Markdown 的案例。<strong>语法解析器（parser）</strong>把文本识别为标题、段落、表格等结构，供后续代码处理。<strong>预编译 parser</strong>已经编译好，可在兼容环境中直接加载，省去部分生成与编译工作。</p>
+<p>源执行花了 64 轮才成功。提炼后的计划把寻找兼容的预编译解析器作为起步策略，并提醒对齐输出摘要和表格处理参数。重做时，模型有机会少走弯路。</p>
+<figure class="trajectory-figure" id="zh-figure-rewrite">
+<div class="trajectory-map" data-entry="rewrite" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/rewrite.zh.html" title="静态图"></iframe></details>
+<figcaption>图 3 · 同一计划的两次重做：32 轮通过，38 轮失败。每条新轨迹都经过独立验收。来源：<a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>。</figcaption>
+</figure>
+<p>同一份计划产生了成功与失败两条分支。成功轨迹通过验收后，才进入 SFT 数据。</p>
+<details class="method-detail" open=""><summary>这项任务的完整重写结果</summary>
+<p>源执行在第 26 轮尝试生成 parser，第 51 轮使用预编译 parser；图中成功重写在第 9 轮就用上了它。这项任务共重写 12 次，7 次成功，成功重写的中位轮数为 32。来源：<a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>。</p>
+</details>
+<p>模型逐个生成<strong>token</strong>——一个字、词的一部分或标点等文字单位。SFT 学习示范中的模型生成部分，工具日志作为输入，不作为模仿目标。决定哪些位置参与训练损失的选择标记，叫<strong>训练掩码（mask）</strong>。</p>
+<details class="method-detail" open=""><summary>同一模型的三种角色</summary>
+<p>RSR 前置论文让同一基础模型通过不同提示和上下文，分别承担规划、审查和执行。规划者整理做法，审查者检查计划，执行者调用工具完成任务。</p>
+<p>制作示范时，Executor 可以参考私有计划；训练时，只留下公开任务与交互历史，并筛查每一步行为是否能由这些公开信息解释。来源：<a href="https://arxiv.org/html/2610.02826v1#S2">RSR §2</a>。</p>
+</details>
+<details class="method-detail" open=""><summary>对应的 SFT 目标</summary><p>θ 表示模型的可训练参数；πθ(yⱼ | hⱼ) 表示参数为 θ 的策略网络，在历史 hⱼ 下生成示范 token yⱼ 的概率。负对数损失越小，这个示范选择的概率越大。</p>
+<div class="formula-scroll"><math aria-label="SFT损失为被选中生成位置的负对数概率之和" display="block"><mrow><msub><mi>L</mi><mtext>SFT</mtext></msub><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>m</mi><mi>j</mi></msub><mi>log</mi><msub><mi>π</mi><mi>θ</mi></msub><mo>(</mo><msub><mi>y</mi><mi>j</mi></msub><mo>∣</mo><msub><mi>h</mi><mi>j</mi></msub><mo>)</mo></mrow></math></div>
+<p>这里画的是单条示范的形式；训练还对示范集合取平均。<var>hⱼ</var> 是公开历史，<var>yⱼ</var> 是示范 token，<var>mⱼ</var> 选择需要学习的生成位置。最小化负对数概率，就是提高合格示范在相应历史下的生成概率。来源：<a href="https://arxiv.org/html/2610.22192v1#S2.SS1">式 3</a>。</p>
+</details>
+<p class="section-bridge">示范教会模型一种做法。面对自己新产生的尝试，它还需要从实际结果中学习。</p>
+</section><section aria-labelledby="zh-reward">
+<h2 id="zh-reward">3 RPR：验证结果怎样进入训练</h2>
+<p><strong>递归策略精炼（Recursive Policy-Refine，RPR）</strong>让完成监督微调的 Actor 再次执行任务，用验证结果作为奖励，通过 PPO 更新策略。这里的 <strong>Critic</strong> 根据任务与交互历史预测后续回报，为优势估计提供基线。模型各自如何训练，见<a data-site-link="" href="/writing/ppo-long-horizon/">PPO：沿一条长程轨迹看训练</a>。</p><p>Terminal-RSI 直接使用程序验收，没有另行训练偏好奖励模型；论文配置中的 KL 与熵系数均为 0。PPO 更新仍使用旧策略概率来控制策略变化。</p><figure class="trajectory-figure" id="zh-figure-reward"><div class="trajectory-map" data-entry="reward" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/reward.zh.html" title="静态图"></iframe></details><figcaption>图 4 · 同一条轨迹提供终点奖励 R 和各生成前缀。优势估计结合 R 与 Critic 的预测 V，分别产生 Actor 使用的 A 与 Critic 拟合的 Ĝ。<a href="https://arxiv.org/html/2610.22192v1#S2">§2</a>。</figcaption></figure><p>一个 RPR 阶段会反复采样轨迹、验收并更新模型；阶段结束后，保留的 Actor 再进入下一轮 RSR。</p>
+<p><strong>奖励（reward，R）</strong>是把验证结果转换成的训练分数。论文从两项结果出发：<var>P</var> 是通过的语义检查数量，也就是与任务功能有关的检查，不含清理等辅助检查；<var>S</var> 是严格成功标记，完整通过为 1，否则为 0。分数在一次执行结束时计算，并非每条命令之后都重新发一次。</p>
+<p>先前使用的<strong>家族稠密奖励（Family Dense Reward，FDR）</strong>用 <var>P / D</var> 表达部分完成程度，其中 <var>D</var> 是同类任务预先确定的尺度。这样“做对一些”也有信号。但部分检查得分本身，不一定把完整成功排在所有失败之前。</p>
+<p>后续的<strong>成功优先奖励（Success-Prioritized Reward，SPR）</strong>因此改为 <var>S + P / (P + D′)</var>。后一项永远小于 1，完整成功则另加 1：失败在 1 分以下，成功至少 1 分。这里的 <var>D′</var> 是按任务家族离线校准、在该阶段固定的正尺度。</p>
+<p>通过 8 项检查、D′ = 10 时，未严格成功的奖励约为 0.444，严格成功则为 1.444。SPR 先区分是否完整成功，再比较部分完成程度。</p>
+<details class="method-detail" open=""><summary>奖励的精确公式、尺度和使用阶段</summary>
+<div aria-label="FDR奖励等于P除以D" class="equation"><span class="equation-name">FDR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mi>P</mi><mi>D</mi></mfrac></mrow></math></div><div aria-label="SPR奖励等于S加上P除以P加D撇" class="equation"><span class="equation-name">SPR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mi>S</mi><mo>+</mo><mfrac><mi>P</mi><mrow><mi>P</mi><mo>+</mo><msup><mi>D</mi><mo>′</mo></msup></mrow></mfrac></mrow></math></div>
+<p>这里写的是检查报告有效时的形式；报告无效时都回退到严格成功标记 S。FDR 的 D 使用该任务家族历史检查总数的第 90 百分位，没有可用家族尺度时取 82。SPR 的 D′ 为离线校准的正数，在阶段内固定。</p>
+<p>普通 RPR-2 分支使用 FDR，最终保留的 Long-Reward RPR-2 分支使用 SPR。来源：<a href="https://arxiv.org/html/2610.22192v1#S2.SS2">§2.2</a>、<a href="https://arxiv.org/html/2610.22192v1#S3.SS1">§3.1</a>。</p>
+</details>
+<p>RPR-1 的旧策略概率由训练端使用旧 Actor 重算，用于 PPO 的新旧概率比较。 <a href="https://arxiv.org/html/2610.22192v1#S2.SS4">[§2.4]</a></p>
+</section><section aria-labelledby="zh-tb-gae">
+<h2 id="zh-tb-gae">4 TB-GAE：按回合回传反馈</h2>
+<p>一次任务往往包含许多<strong>回合（turn）</strong>：模型生成一段响应或工具调用，随后得到环境返回。奖励直到任务结束才出现，训练却需要为此前的每个生成位置计算优势。</p>
+<p><strong>广义优势估计（Generalized Advantage Estimation，GAE）</strong>结合沿途的奖励和价值预测，从末尾向前递推优势。递推时，后续反馈通常会逐步衰减，因而“多长算一步”会影响早先位置收到的信号。</p>
+<p>若每经过一个文本 token 都乘一个小于 1 的系数，那么仅仅加长工具日志，也会削弱传到早先位置的反馈。关掉日志位置的训练损失还不够：<strong>日志可能仍参与优势递推，额外消耗了衰减。</strong></p>
+<p><strong>回合边界跳过观测的广义优势估计（Turn-Boundary Skip-Observation Generalized Advantage Estimation，TB-GAE）</strong>从递推链里跳过工具观察；同一回合的生成 token 之间不衰减，跨回合时才衰减。</p>
+<figure aria-labelledby="zh-credit-caption" class="credit-timeline">
+<div aria-label="两回合的生成位置与 TB-GAE 递推方向" class="timeline-scroll" role="region" tabindex="0">
+<svg aria-labelledby="zh-credit-title zh-credit-desc" height="228" role="img" viewbox="0 0 780 228" width="780">
+<title id="zh-credit-title">生成按时间向右，优势沿生成位置向左递推</title>
+<desc id="zh-credit-desc">第一回合生成 g1、g2，然后工具返回日志，再进入第二回合生成 g3、g4。优势从 g4 向 g1 递推，同回合系数为 1，跨回合为 γλ；递推跳过中间的工具日志。</desc>
+<defs><marker id="zh-credit-arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="5" refy="3" viewbox="0 0 6 6"><path d="M0 0 L6 3 L0 6" fill="none" stroke="currentColor"></path></marker></defs>
+<g class="timeline-label"><text x="36" y="24">生成顺序</text><text text-anchor="middle" x="127" y="65">第 1 回合</text><text text-anchor="middle" x="347" y="65">工具日志</text><text text-anchor="middle" x="567" y="65">第 2 回合</text><text text-anchor="middle" x="732" y="65">验收</text></g>
+<path class="timeline-line" d="M113 19 H756" marker-end="url(#zh-credit-arrow)"></path>
+<g class="timeline-token"><rect height="44" rx="3" width="72" x="36" y="82"></rect><rect height="44" rx="3" width="72" x="146" y="82"></rect><rect height="44" rx="3" width="72" x="476" y="82"></rect><rect height="44" rx="3" width="72" x="586" y="82"></rect></g>
+<rect class="timeline-log" height="44" rx="3" width="182" x="256" y="82"></rect>
+<g class="timeline-text"><text text-anchor="middle" x="72" y="111">g₁</text><text text-anchor="middle" x="182" y="111">g₂</text><text text-anchor="middle" x="347" y="110">… 测试输出 …</text><text text-anchor="middle" x="512" y="111">g₃</text><text text-anchor="middle" x="622" y="111">g₄</text><text text-anchor="middle" x="732" y="111">R</text></g>
+<path class="timeline-line" d="M665 104 H700" marker-end="url(#zh-credit-arrow)"></path>
+<path class="timeline-credit" d="M182 151 H72" marker-end="url(#zh-credit-arrow)"></path>
+<path class="timeline-credit" d="M512 151 H182" marker-end="url(#zh-credit-arrow)"></path>
+<path class="timeline-credit" d="M622 151 H512" marker-end="url(#zh-credit-arrow)"></path>
+<g class="timeline-factor"><text text-anchor="middle" x="127" y="178">1</text><text text-anchor="middle" x="347" y="178">γλ</text><text text-anchor="middle" x="567" y="178">1</text></g>
+<text class="timeline-label" x="36" y="215">优势递推 ←</text>
+</svg>
+</div>
+<figcaption id="zh-credit-caption">下方标出后继优势的传递系数：同回合为 1，跨回合为 γλ。</figcaption>
+</figure>
+<p>日志仍保留在模型的输入中，影响后续行动和价值预测。g₁ 到 g₄ 各自使用生成前的上下文，因而有不同的价值基线。训练系统可以在轨迹收集完成后，批量计算这些位置的预测。</p>
+<h3>日志长度对衰减的影响</h3>
+<p>一步之后，“即时奖励加上折扣后的后续预期”，与原先预期之差，叫<strong>时序差分残差（TD residual，δ）</strong>。下面只跟踪最后一个位置的这份变化，看看它传到第一个位置时还剩多少。</p>
+<p>例子有两回合、四个生成位置。取 <var>γ = 0.9，λ = 0.8</var>，每次衰减乘 <var>0.72</var>。拖动日志长度，比较三条递推链。</p>
+<div aria-label="比较三种优势递推时钟" class="clock-example">
+<div class="clock-controls"><label for="zh-observation-length">中间的观察位置数 <output for="['observation-length']" id="zh-observation-count">3</output></label><label class="unit-clock"><input id="zh-unit-clock" type="checkbox"/> γ = λ = 1</label></div>
+<input aria-describedby="zh-clock-reading" id="zh-observation-length" max="400" min="0" step="1" type="range" value="3"/>
+<div class="clock-row"><span>混合 token 链</span><code id="zh-clock-full-power">0.72⁶</code><output id="zh-clock-full">0.1393</output><span aria-hidden="true" class="clock-track"><span id="zh-clock-full-bar" style="width:13.93%"></span></span></div>
+<div class="clock-row"><span>只跳过观察</span><code id="zh-clock-skip-power">0.72³</code><output id="zh-clock-skip">0.3732</output><span aria-hidden="true" class="clock-track"><span id="zh-clock-skip-bar" style="width:37.32%"></span></span></div>
+<div class="clock-row"><span>TB-GAE</span><code id="zh-clock-turn-power">0.72¹</code><output id="zh-clock-turn">0.7200</output><span aria-hidden="true" class="clock-track"><span id="zh-clock-turn-bar" style="width:72%"></span></span></div>
+<p aria-live="polite" class="example-reading" id="zh-clock-reading">混合链跨 6 条边；只跳过观察跨 3 条边；TB-GAE 只跨 1 个回合边界。</p>
+</div>
+<p class="source-note">图中数值是末端变化传回起点的系数。例子固定生成位置与价值等输入，只改变日志长度。勾选 γ = λ = 1，三条链的系数都为 1。</p>
+<details class="method-detail example-detail" open=""><summary>三条递推链与四个位置的逐步手算</summary>
+<p>设 g₁、g₂ 属于第一回合，g₃、g₄ 属于第二回合。四个位置生成前的价值依次为 0.2、0.4、0.5、0.8，只在任务结束时获得奖励 1。</p>
+<p>先算各位置的时序差分残差，再从末尾逐步向前累积。</p>
+<figure class="trajectory-figure" id="zh-figure-gae">
+<div class="trajectory-map" data-entry="gae" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/gae.zh.html" title="静态图"></iframe></details>
+<figcaption>图 5 · 两回合、四个生成位置的数值示例：上半图比较反馈的衰减，下半图区分回报目标与优势。<a href="https://arxiv.org/html/2610.22192v1#S2.SS3">方法见 §2.3</a>。</figcaption>
+</figure>
+<ol class="calculation-steps">
+<li><strong>g₄：任务结束。</strong>拿到 1 分，之前预计 0.8 分，所以 <var>A₄ = 1 − 0.8 = 0.20</var>。</li>
+<li><strong>g₃：还在第二回合。</strong>价值从 0.5 变成 0.8，残差为 0.3；同轮不衰减，故 <var>A₃ = (0.8 − 0.5) + 0.20 = 0.50</var>。</li>
+<li><strong>g₂：跨回第一回合。</strong>残差为 <var>0.9 × 0.5 − 0.4 = 0.05</var>；后续优势要乘 <var>0.9 × 0.8</var>，因此 <var>A₂ = 0.05 + 0.72 × 0.50 = 0.41</var>。</li>
+<li><strong>g₁：还在第一回合。</strong>同轮继续不衰减，<var>A₁ = (0.4 − 0.2) + 0.41 = 0.61</var>。</li>
+</ol>
+<div class="table-scroll"><table class="gae-values"><caption>教学手算 · 价值目标 Ĝ = A + v</caption><thead><tr><th scope="col">生成位置</th><th scope="col">回合</th><th scope="col">原预测 v</th><th scope="col">优势 A</th><th scope="col">价值目标 Ĝ</th></tr></thead><tbody>
+<tr><th scope="row">g₁</th><td>1</td><td>0.20</td><td>0.61</td><td>0.81</td></tr>
+<tr><th scope="row">g₂</th><td>1</td><td>0.40</td><td>0.41</td><td>0.81</td></tr>
+<tr><th scope="row">g₃</th><td>2</td><td>0.50</td><td>0.50</td><td>1.00</td></tr>
+<tr><th scope="row">g₄</th><td>2</td><td>0.80</td><td>0.20</td><td>1.00</td></tr>
+</tbody></table></div>
+<p>第一回合的两个位置共享 0.81 的回报目标，却分别有 0.61 和 0.41 的优势，因为它们原先的预期不同。Actor 用各位置的优势更新概率，Critic 拟合相应的回报目标。</p>
+</details>
+<details class="method-detail" open=""><summary>把手算写成统一递推式</summary><p>r̃ⱼ 表示分配到第 j 个生成位置的奖励；在这里的末尾奖励示例中，仅最后一个位置非零。</p>
+<p>只枚举保留的生成位置 <var>j</var>，令 <var>vⱼ</var> 是该 token 生成前的价值。与下一生成位置同轮时，取 <var>Γⱼ = Λⱼ = 1</var>；跨轮时取 <var>Γⱼ = γ<sub>turn</sub>，Λⱼ = λ<sub>turn</sub></var>。<var>dⱼ = 1</var> 表示真实终止。</p>
+<div class="formula-scroll"><math aria-label="TB残差等于因果奖励加Gamma乘一减终止标记乘下一价值减当前价值" display="block"><mrow><msub><mi>δ</mi><mi>j</mi></msub><mo>=</mo><msub><mover><mi>r</mi><mo>~</mo></mover><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>v</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>v</mi><mi>j</mi></msub></mrow></math></div>
+<div class="formula-scroll"><math aria-label="TB优势等于残差加Gamma Lambda乘一减终止标记乘下一优势" display="block"><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msub><mi>δ</mi><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><msub><mi>Λ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>A</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></div>
+<p>终点奖励在最后一个生成位置注入一次。同轮无中间奖励时，相邻价值相互抵消，得到共同回报目标 Uₜ；每个位置分别扣除自己的价值预测，得到 Aⱼ = Uₜ − vⱼ。本例第一轮的目标为 U₁ = 0.9 × (0.5 + 0.8 × 0.5) = 0.81。</p>
+<p>TB-GAE 以回合为折扣单位，让一次完整行动承担一次时间衰减。日志长度与回合内的 token 数由此从折扣步数中移除。来源：<a href="https://arxiv.org/html/2610.22192v1#S2.SS3">式 8–13</a>及<a href="https://arxiv.org/html/2610.22192v1#A3">附录 C</a>。</p>
+</details>
+<details class="method-detail" open=""><summary>长轨迹被切成两块，边界该怎么办？</summary>
+<p>为节省显存或分批计算，可以把一条完整轨迹切成几块，再把后半块的递推结果传回前半块。若在本例 g₂ 后切开，只保留下一价值预测 0.5，却把下一优势 0.5 清零，A₂ 会变成 0.05，A₁ 变成 0.25，缺失的反馈正是 0.72 × 0.5 = 0.36。</p>
+<p>完整续接需要同时传递后继价值与后继优势，或对完整序列统一反向计算。若采样提前停止、未来尚未执行，则用<strong>价值自举（bootstrap）</strong>——以当前价值预测估计未来回报。任务真正终止时，后继价值与优势取零。上下文摘要还会改变模型读取的历史，需要单独处理。</p>
+</details>
+<p class="source-note">本节介绍 §2.3 提出的 TB-GAE。论文 §2.4 记录的第一阶段使用标准 GAE，γ = λ = 1。</p>
+</section><section aria-labelledby="zh-handoff">
+<h2 id="zh-handoff">5 新策略下的价值校准</h2>
+<p>RSR 改变了 Actor 的做法，旧 Critic 却还按之前的经验估分。若奖励公式也变了，分数尺度也随之改变。用旧预测计算新策略的优势，学习信号就可能失准。</p>
+<p>Terminal-RSI 因而保留已有 Critic，在每个 RPR 阶段开头先<strong>冻结 Actor</strong>——暂时不更新其权重——做 4 次只更新 Critic 的校准，再联合训练。已有经验得以保留，价值预测也能跟上新的策略与奖励。</p>
+<figure class="trajectory-figure" id="zh-figure-handoff">
+<div class="trajectory-map" data-entry="handoff" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/handoff.zh.html" title="静态图"></iframe></details>
+<figcaption>图 6 · RSR 保留 Critic；RPR 阶段开头先校准 4 次，再联合更新。来源：<a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a>。</figcaption>
+</figure>
+<details class="method-detail" id="zh-critic-initialization" open=""><summary>Critic 从首次预热到递归训练</summary>
+<ol class="method-steps">
+<li><strong>首次预热。</strong>固定完成监督微调的 RSR-1 Actor，在<strong>科学工作流重建（Scientific Workflow Reconstruction，SWR）</strong>任务上训练 Critic 一个 epoch，即遍历一轮数据。这类任务要求重建可执行的科学程序，并用隐藏检查验证其行为。Actor 提供执行轨迹，Critic 学习相应的回报目标，得到原图中的 <em>Warm-up Critic Model</em>。</li>
+<li><strong>进入 RPR。</strong>每个 RPR 阶段先固定 Actor，做 4 次只更新 Critic 的校准；随后 Actor 用优势做 PPO 更新，Critic 用回报目标做价值回归，两套参数分别训练。</li>
+<li><strong>进入下一轮。</strong>RSR-2 只微调 Actor，保留 RPR-1 的 Critic 权重。到了 RPR-2，再按新 Actor 的执行结果校准 Critic，然后继续联合训练。</li>
+</ol>
+<p>论文说明了上述预热和权重交接；首次预热之前，Critic 骨干加载的具体 checkpoint（模型权重文件）没有明确给出。来源：<a href="https://arxiv.org/html/2610.22192v1#S2.SS1.p3">§2.1</a>、<a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a>与<a href="https://arxiv.org/html/2610.22192v1#A1.p5">附录 A</a>。</p>
+</details>
+</section><section aria-labelledby="zh-task">
+<h2 id="zh-task">6 从局部测试到完整交付</h2>
+<p>任务要求用 Rust 和 C 写一个计算器。它有两道最终检查：删除构建产物后，入口脚本能否自动重新编译；面对隐藏输入时，输出能否与参考实现<strong>逐字一致</strong>。</p>
+<p>初始模型 Base 的一条执行通过了本地算术测试，也做到了自动重建，却在最终检查里输出了 <code>23</code>，而参考输出是 <code>23.0</code>。数值相等，字符串仍不同。一个后期训练版本 RPR-2 的独立执行则通过了两道检查。</p>
+<figure class="trajectory-figure" id="zh-figure-case">
+<div class="trajectory-map" data-entry="case" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静态图</summary><iframe class="static-diagram" loading="lazy" src="figures/case.zh.html" title="静态图"></iframe></details>
+<figcaption>图 7 · Base 与 RPR-2 在同一计算器任务上的独立评测。最终验收同时检查自动构建与输出格式。来源：<a href="https://arxiv.org/html/2610.22192v1#A8">Terminal-RSI 附录 H，Figure 16</a>。</figcaption>
+</figure>
+<p>RPR-2 的这条执行组合了 Rust / C 组件与 Python 表达式求值，最终通过自动重建与输出格式两道检查。</p>
+<details class="method-detail" open=""><summary>五个模型版本在这项任务上各通过几次？</summary>
+<p>每个版本各评测两次，完整通过次数依次为 Base 0/2、RSR-1 0/2、RPR-1 1/2、RSR-2 2/2、RPR-2 2/2。</p>
+</details>
+</section><footer class="sources" id="zh-sources"><h2>参考资料</h2>
+<ol><li><a href="https://arxiv.org/html/2610.22192v1">Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine</a>。机制见 §2，真实执行见附录 H。<a href="https://arxiv.org/pdf/2610.22192">PDF ↗</a></li>
+<li><a href="https://arxiv.org/html/2610.02826v1">Recursive Self-Rewrite（RSR）</a>。Markdown 真实重写案例见 §3.4。</li>
+<li><a href="https://arxiv.org/abs/1707.06347">Proximal Policy Optimization Algorithms</a>；<a href="https://arxiv.org/abs/1506.02438">Generalized Advantage Estimation</a>。</li>
+</ol>
+</footer>
+</div><div class="lang-article" lang="ja"><p>端末 Agent はコマンドラインでファイルを読み、コードを編集し、テストを実行する。一つの課題における対話記録全体を<strong>軌跡</strong>と呼ぶ。Terminal-RSI はこの経験を二つの学習に使う。<strong>RSR は成功した解法を再実行して手本を作り、RPR は新たな実行の検証結果から方策と価値ネットワークを学習する。</strong></p><section aria-labelledby="ja-rsi"><h2 id="ja-rsi">1 全体像：手本を学び、実行結果から学ぶ</h2><p id="ja-framework"><strong>Actor</strong> はコマンドやコードを生成する方策ネットワーク。<strong>Critic</strong> は、ある位置までの課題と対話履歴から、その先のリターンを予測する価値ネットワークだ。上段の RSR、下段の RPR の順に読む。<strong>検証器（verifier）</strong>は、チェックを実行して課題が完了したかを判定するプログラムである。</p><figure class="trajectory-figure" id="ja-figure-overview"><div class="trajectory-map" data-entry="overview" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/overview.ja.html" title="静的な図"></iframe></details><figcaption>図 1 · RSR は Actor を調整する。RPR は検証報酬と価値予測から学習目標を計算し、Actor と Critic をそれぞれ更新する。両方の重みを次のラウンドへ継承する。<a href="https://arxiv.org/html/2610.22192v1#S2.F2">原論文 Figure 2</a>、<a href="https://arxiv.org/html/2610.22192v1#S2.F3">Figure 3</a>。</figcaption></figure><p><a href="#ja-rewrite">A · RSR</a> は手本を作る。検証済みの成功から計画を抽出し、初期化した環境で実行し直して、合格した新しい軌跡を残す。<a href="#ja-reward">B · RPR</a> は新しい試行を学習に使う。検証器の報酬と Critic の価値予測から、<a href="#ja-tb-gae">GAE / TB-GAE</a> が各生成位置のアドバンテージ A とリターン目標 Ĝ を計算する。Actor は A で PPO 更新を行い、Critic は Ĝ に回帰する。</p><p>RSR によって Actor が変わるため、各 RPR 段階では Actor を固定して<a href="#ja-handoff">継承した Critic を校正</a>してから共同学習へ進む。更新されたモデルが次の経験を作る。この循環が<strong>再帰的自己改善（Recursive Self-Improvement、RSI）</strong>である。</p><p class="source-note">図は二つのアドバンテージ推定法を含む。§2.3 は TB-GAE を提案し、§2.4 に記載された最初の学習段階は標準 GAE、γ = λ = 1 を使う。</p><details class="method-detail framework-source" open=""><summary>論文の原図と実際の学習順序を照らし合わせる</summary>
+<p><a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_overall_from_ppt.png" rel="noopener" target="_blank">Figure 2 · Overall Framework ↗</a>　<a href="https://arxiv.org/html/2610.22192v1/terminal_rsi_single_step_from_ppt.png" rel="noopener" target="_blank">Figure 3 · Single Recursive Step ↗</a></p>
+<p>実際の段階順序は <strong>Base → RSR-1 → RPR-1 → RSR-2 → RPR-2</strong>です。原図上部の <em>Actor: RSR-1</em> と <em>Warm-up Critic Model</em> は、最初にRPRへ入る時点で、方策は教師あり学習を、価値ネットワークは初回ウォームアップを完了していることを表します。</p>
+</details><div class="table-scroll"><table class="comparison"><caption>PPOだけの学習ループとの比較</caption><thead><tr><th scope="col">段階</th><th scope="col">通常のPPOループ</th><th scope="col">Terminal-RSI</th></tr></thead><tbody>
+<tr><th scope="row">実行経験の使い方</th><td>軌跡をサンプリングし、収益からアドバンテージを計算して更新する。</td><td>検証済みの成功経験をさらに再実行し、選別してSFTに使う。</td></tr>
+<tr><th scope="row">方策更新の後</th><td>サンプリングとActor / Criticの学習を続ける。</td><td>SFTをまたいでCriticを保持し、新しいRPR段階の冒頭で校正する。</td></tr>
+<tr><th scope="row">次の反復の出発点</th><td>更新した方策でPPOを続ける。</td><td>更新した方策で経験を再び発見し、RSR → RPRに進む。</td></tr>
+</tbody></table></div></section><section aria-labelledby="ja-rewrite">
+<h2 id="ja-rewrite">2 RSR：成功経験を再実行し、手本にする</h2>
+<p>最も直接的な学習方法は、成功した試行をまねることです。ただし成功ログにも遠回りが含まれ、特定の実行基盤のツールに依存する場合があります。そのまま写しても、配備先の環境で成功を再現できるとは限りません。</p>
+<p><strong>再帰的自己書き換え（Recursive Self-Rewrite、RSR）</strong>は、成功した方法を計画にまとめ、対象環境でもう一度実行します。「書き換える」のは軌跡であり、条件を満たした軌跡がその後の学習に使われます。</p><figure class="trajectory-figure" id="ja-figure-rsr"><div class="trajectory-map" data-entry="rsr" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/rsr.ja.html" title="静的な図"></iframe></details><figcaption>図 2 · RSR の手本は再実行から得る。計画を使って実行し、合格後の公開対話を入力、生成行動を教師信号として学習する。<a href="https://arxiv.org/html/2610.22192v1#S2.SS1">§2.1</a>。</figcaption></figure>
+<ol class="method-steps">
+<li><strong>成功経験を集める。</strong>現在のモデルが複数の実行基盤で課題を試み、検証に完全合格した軌跡だけを残します。実行基盤（harness）は、ツールの提供、対話履歴の管理、実行と終了条件の制御を担います。</li>
+<li><strong>計画を抽出する。</strong>Plannerが主要な手順、確認項目、復旧方法を整理し、手順書である <strong>runbook</strong>を作ります。Reviewerは対象環境で計画を使えるか、答えが紛れ込んでいないかを確認します。</li>
+<li><strong>再実行する。</strong>Executorは計画を参考に、クリーンな<strong>サンドボックス</strong>、つまり分離され再初期化できる実行環境で同じ課題を解きます。実際にツールを呼び出し、新たな応答を受け取ります。</li>
+<li><strong>検証し、学習する。</strong>新しい軌跡が課題の検証と漏洩検査に合格したら、非公開の計画とレビュー対話を除き、公開された課題と実際の対話を残します。この手本で、行動を担う言語モデルである<strong>方策ネットワーク（Actor）を更新します</strong>。</li>
+</ol>
+<p>最後の段階を<strong>教師あり微調整（Supervised Fine-Tuning、SFT）</strong>と呼びます。課題と履歴を与えたときに、手本の行動を生成する確率を高めます。非公開の計画は手本を作るために使い、学習では追加の指示なしでも行動できるようにします。<a class="cite" href="https://arxiv.org/html/2610.22192v1#S2.SS1">[1, §2.1]</a></p>
+<h3>Markdown課題の軌跡を書き換える</h3>
+<p>先行するRSR論文は、Markdownを処理する例を示しています。<strong>構文解析器（parser）</strong>は、後続のコードが扱えるよう、テキストから見出し、段落、表などの構造を認識します。<strong>コンパイル済みparser</strong>は、互換性のある環境ならそのまま読み込めるため、生成やコンパイルの作業を一部省けます。</p>
+<p>元の実行は成功まで64ターンかかりました。抽出した計画では、互換性のあるコンパイル済みparserを探すことを最初の方針とし、出力要約と表処理のパラメータを合わせるよう促しています。やり直す際には、遠回りを減らせる可能性があります。</p>
+<figure class="trajectory-figure" id="ja-figure-rewrite">
+<div class="trajectory-map" data-entry="rewrite" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/rewrite.ja.html" title="静的な図"></iframe></details>
+<figcaption>図 3 · 同じ計画から2回再実行し、32ターンで合格したものと、38ターンで失敗したもの。新しい軌跡はそれぞれ独立に検証されます。出典：<a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>。</figcaption>
+</figure>
+<p>同じ計画から、成功と失敗の両方の分岐が生まれました。成功した軌跡は、検証に合格して初めてSFTデータに入ります。</p>
+<details class="method-detail" open=""><summary>この課題の書き換え結果全体</summary>
+<p>元の実行では26ターン目にparserの生成を試み、51ターン目にコンパイル済みparserを使いました。図中の成功した書き換えでは、9ターン目で利用しています。この課題は計12回書き換えられ、そのうち7回が成功し、成功例のターン数中央値は32でした。出典：<a href="https://arxiv.org/html/2610.02826v1#S3.SS4">RSR §3.4</a>。</p>
+</details>
+<p>モデルは<strong>token</strong>を1つずつ生成します。これは文字、単語の一部、句読点などのテキスト単位です。SFTは手本のうちモデルが生成した部分を学習し、ツールログは模倣対象ではなく入力として使います。どの位置を学習損失に含めるかを選ぶ印が<strong>学習マスク（mask）です</strong>。</p>
+<details class="method-detail" open=""><summary>同じモデルが担う3つの役割</summary>
+<p>先行するRSR論文では、同じ基盤モデルが異なるプロンプトと文脈を通じて、計画、レビュー、実行を担います。Plannerが方法を整理し、Reviewerが計画を確認し、Executorがツールを呼び出して課題を完了します。</p>
+<p>手本を作る際、Executorは非公開の計画を参照できます。学習時には公開された課題と対話履歴だけを残し、各行動がその公開情報から説明できるかを検査します。出典：<a href="https://arxiv.org/html/2610.02826v1#S2">RSR §2</a>。</p>
+</details>
+<details class="method-detail" open=""><summary>対応するSFTの目的関数</summary><p>θは学習可能なモデルパラメータです。πθ(yⱼ | hⱼ)は、パラメータθの方策が履歴hⱼの下で手本のtoken yⱼを生成する確率を表します。負の対数損失が小さいほど、その手本の選択確率は高くなります。</p>
+<div class="formula-scroll"><math aria-label="SFT損失は、選択した生成位置の負の対数確率の和" display="block"><mrow><msub><mi>L</mi><mtext>SFT</mtext></msub><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>m</mi><mi>j</mi></msub><mi>log</mi><msub><mi>π</mi><mi>θ</mi></msub><mo>(</mo><msub><mi>y</mi><mi>j</mi></msub><mo>∣</mo><msub><mi>h</mi><mi>j</mi></msub><mo>)</mo></mrow></math></div>
+<p>これは1つの手本に対する形です。学習では手本の集合全体でも平均を取ります。<var>hⱼ</var> は公開履歴、<var>yⱼ</var> は手本のtoken、<var>mⱼ</var> は学習対象の生成位置を選びます。負の対数確率を最小化すると、その履歴において検証済みの手本を生成する確率が高まります。出典：<a href="https://arxiv.org/html/2610.22192v1#S2.SS1">式3</a>。</p>
+</details>
+<p class="section-bridge">手本からモデルは方法を学びます。自ら新たに試みる際には、実際の結果からも学ぶ必要があります。</p>
+</section><section aria-labelledby="ja-reward">
+<h2 id="ja-reward">3 RPR：検証結果を学習信号にする</h2>
+<p><strong>再帰的方策精練（Recursive Policy-Refine、RPR）</strong>では、教師あり微調整を終えたActorが課題を再び実行し、検証結果を報酬としてPPOで方策を更新します。ここでの <strong>Critic</strong> は、課題と対話履歴から将来の収益を予測し、アドバンテージ推定のベースラインを提供します。各モデルの学習方法は次の記事で説明しています：<a data-site-link="" href="/writing/ppo-long-horizon/">PPO：長期軌跡に沿って学習を見る</a>。</p><p>Terminal-RSIはプログラムによる検証を直接使い、選好報酬モデルを別途学習しません。論文の設定では、KLとエントロピーの係数はいずれも0です。PPOの更新では、引き続き旧方策の確率を使って方策の変化を制御します。</p><figure class="trajectory-figure" id="ja-figure-reward"><div class="trajectory-map" data-entry="reward" data-reader-ready="" hidden=""></div><details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/reward.ja.html" title="静的な図"></iframe></details><figcaption>図 4 · 同じ軌跡から終端報酬 R と各生成前の履歴を得る。アドバンテージ推定は R と価値予測 V を使い、Actor 用の A と Critic の回帰目標 Ĝ を計算する。<a href="https://arxiv.org/html/2610.22192v1#S2">§2</a>。</figcaption></figure><p>各 RPR 段階では軌跡の生成、検証、モデル更新を繰り返す。段階が終わると、継承した Actor が次の RSR に入る。</p>
+<p><strong>報酬（reward、R）</strong>は、検証結果を学習用の点数に変換したものです。論文では2つの値を用います。<var>P</var> は合格した意味的検査の数です。課題の機能に関する検査を指し、後片付けなどの補助検査は含みません。<var>S</var> は厳密な成功の印で、完全合格なら1、それ以外は0です。点数は実行の終了時に計算され、各コマンドの直後に毎回付与されるものではありません。</p>
+<p>先に使われた<strong>課題ファミリー別の密な報酬（Family Dense Reward、FDR）</strong>は、 <var>P / D</var> で部分的な達成度を表します。 <var>D</var> は同じ課題ファミリーで事前に定める尺度です。これにより、一部を正しくできた場合にも信号が得られます。ただし部分検査の点数だけでは、完全成功があらゆる失敗より上に並ぶとは限りません。</p>
+<p>そこで、後の<strong>成功優先報酬（Success-Prioritized Reward、SPR）</strong>は <var>S + P / (P + D′)</var>を使います。後半の項は常に1未満で、完全成功にはさらに1を加えます。失敗は1点未満、成功は少なくとも1点になります。ここで <var>D′</var> は課題ファミリーごとにオフラインで校正され、その段階内では固定される正の尺度です。</p>
+<p>8項目に合格しD′ = 10の場合、厳密な成功でなければ報酬は約0.444、厳密な成功なら1.444です。SPRはまず完全成功かどうかを分け、その後で部分的な達成度を比べます。</p>
+<details class="method-detail" open=""><summary>報酬の正確な式、尺度、適用段階</summary>
+<div aria-label="FDR報酬はPをDで割った値" class="equation"><span class="equation-name">FDR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mi>P</mi><mi>D</mi></mfrac></mrow></math></div><div aria-label="SPR報酬はSに、PをPとDプライムの和で割った値を加える" class="equation"><span class="equation-name">SPR</span><math display="block"><mrow><mi>r</mi><mo>=</mo><mi>S</mi><mo>+</mo><mfrac><mi>P</mi><mrow><mi>P</mi><mo>+</mo><msup><mi>D</mi><mo>′</mo></msup></mrow></mfrac></mrow></math></div>
+<p>ここでの式は検査レポートが有効な場合のものです。無効な場合は、どちらも厳密な成功の印Sに戻ります。FDRのDは、その課題ファミリーの過去の検査総数の第90百分位で、利用できるファミリー尺度がなければ82を使います。SPRのD′はオフラインで校正された正数で、段階内では固定です。</p>
+<p>通常のRPR-2分岐はFDRを使い、最終的に採用されたLong-Reward RPR-2分岐はSPRを使います。出典：<a href="https://arxiv.org/html/2610.22192v1#S2.SS2">§2.2</a>、<a href="https://arxiv.org/html/2610.22192v1#S3.SS1">§3.1</a>。</p>
+</details>
+<p>RPR-1では、学習側が旧Actorを使って旧方策の確率を再計算し、PPOの新旧確率の比較に用います。 <a href="https://arxiv.org/html/2610.22192v1#S2.SS4">[§2.4]</a></p>
+</section><section aria-labelledby="ja-tb-gae">
+<h2 id="ja-tb-gae">4 TB-GAE：ターン単位でフィードバックを遡らせる</h2>
+<p>1つの課題には、多くの<strong>ターン（turn）</strong>が含まれます。モデルが応答やツール呼び出しを生成し、環境から結果を受け取る単位です。報酬は課題の終了時にしか得られませんが、学習には、それ以前の各生成位置のアドバンテージが必要です。</p>
+<p><strong>一般化アドバンテージ推定（Generalized Advantage Estimation、GAE）</strong>は、軌跡上の報酬と価値予測を組み合わせ、末尾から逆向きにアドバンテージを再帰計算します。後から得たフィードバックは通常、伝わる過程で減衰するため、「何を1ステップと数えるか」が前の位置に届く信号を左右します。</p>
+<p>各テキストtokenを通るたびに1未満の係数を掛けると、ツールログを長くするだけで、前の位置に届くフィードバックが弱くなります。ログ位置の学習損失を無効にするだけでは十分ではありません。<strong>ログがアドバンテージの再帰計算に残り、追加の減衰を生むことがあるためです。</strong></p>
+<p><strong>ターン境界・観測スキップ型一般化アドバンテージ推定（Turn-Boundary Skip-Observation Generalized Advantage Estimation、TB-GAE）</strong>は、再帰計算からツールの観測を飛ばします。同じターン内の生成token間では減衰せず、ターン境界を越えるときだけ減衰させます。</p>
+<figure aria-labelledby="ja-credit-caption" class="credit-timeline">
+<div aria-label="2ターンの生成位置とTB-GAEの再帰方向" class="timeline-scroll" role="region" tabindex="0">
+<svg aria-labelledby="ja-credit-title ja-credit-desc" height="228" role="img" viewbox="0 0 780 228" width="780">
+<title id="ja-credit-title">生成は時間順に右へ、アドバンテージは生成位置を左へ遡る</title>
+<desc id="ja-credit-desc">第1ターンでg1、g2を生成し、ツールログを受け取り、第2ターンでg3、g4を生成します。アドバンテージはg4からg1へ遡り、同一ターン内の係数は1、ターン間はγλです。途中のツールログは飛ばします。</desc>
+<defs><marker id="ja-credit-arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="5" refy="3" viewbox="0 0 6 6"><path d="M0 0 L6 3 L0 6" fill="none" stroke="currentColor"></path></marker></defs>
+<g class="timeline-label"><text x="36" y="24">生成順</text><text text-anchor="middle" x="127" y="65">第1ターン</text><text text-anchor="middle" x="347" y="65">ツールログ</text><text text-anchor="middle" x="567" y="65">第2ターン</text><text text-anchor="middle" x="732" y="65">検証</text></g>
+<path class="timeline-line" d="M113 19 H756" marker-end="url(#ja-credit-arrow)"></path>
+<g class="timeline-token"><rect height="44" rx="3" width="72" x="36" y="82"></rect><rect height="44" rx="3" width="72" x="146" y="82"></rect><rect height="44" rx="3" width="72" x="476" y="82"></rect><rect height="44" rx="3" width="72" x="586" y="82"></rect></g>
+<rect class="timeline-log" height="44" rx="3" width="182" x="256" y="82"></rect>
+<g class="timeline-text"><text text-anchor="middle" x="72" y="111">g₁</text><text text-anchor="middle" x="182" y="111">g₂</text><text text-anchor="middle" x="347" y="110">… テスト出力 …</text><text text-anchor="middle" x="512" y="111">g₃</text><text text-anchor="middle" x="622" y="111">g₄</text><text text-anchor="middle" x="732" y="111">R</text></g>
+<path class="timeline-line" d="M665 104 H700" marker-end="url(#ja-credit-arrow)"></path>
+<path class="timeline-credit" d="M182 151 H72" marker-end="url(#ja-credit-arrow)"></path>
+<path class="timeline-credit" d="M512 151 H182" marker-end="url(#ja-credit-arrow)"></path>
+<path class="timeline-credit" d="M622 151 H512" marker-end="url(#ja-credit-arrow)"></path>
+<g class="timeline-factor"><text text-anchor="middle" x="127" y="178">1</text><text text-anchor="middle" x="347" y="178">γλ</text><text text-anchor="middle" x="567" y="178">1</text></g>
+<text class="timeline-label" x="36" y="215">アドバンテージの再帰計算 ←</text>
+</svg>
+</div>
+<figcaption id="ja-credit-caption">下段は後続のアドバンテージに掛ける係数です。同一ターン内は1、ターン間はγλです。</figcaption>
+</figure>
+<p>ログはモデルの入力には残り、次の行動や価値予測に影響します。g₁からg₄はそれぞれ生成直前の文脈を使うため、価値のベースラインが異なります。学習システムは、軌跡の収集後に各位置の予測をまとめて計算できます。</p>
+<h3>ログの長さが減衰に与える影響</h3>
+<p>1ステップ後の「即時報酬と割引後の将来予測の和」から、元の予測を引いた差を<strong>時間差分残差（TD residual、δ）</strong>と呼びます。以下では最後の位置でのこの変化だけを追い、最初の位置までどれだけ届くかを見ます。</p>
+<p>例は2ターン、4つの生成位置です。 <var>γ = 0.9，λ = 0.8</var>とし、減衰のたびに <var>0.72</var>を掛けます。ログ長を動かして、3種類の再帰計算を比べてください。</p>
+<div aria-label="アドバンテージ再帰計算の3種類の時計を比べる" class="clock-example">
+<div class="clock-controls"><label for="ja-observation-length">間に入る観測位置の数  <output for="['observation-length']" id="ja-observation-count">3</output></label><label class="unit-clock"><input id="ja-unit-clock" type="checkbox"/> γ = λ = 1</label></div>
+<input aria-describedby="ja-clock-reading" id="ja-observation-length" max="400" min="0" step="1" type="range" value="3"/>
+<div class="clock-row"><span>混合token列</span><code id="ja-clock-full-power">0.72⁶</code><output id="ja-clock-full">0.1393</output><span aria-hidden="true" class="clock-track"><span id="ja-clock-full-bar" style="width:13.93%"></span></span></div>
+<div class="clock-row"><span>観測だけをスキップ</span><code id="ja-clock-skip-power">0.72³</code><output id="ja-clock-skip">0.3732</output><span aria-hidden="true" class="clock-track"><span id="ja-clock-skip-bar" style="width:37.32%"></span></span></div>
+<div class="clock-row"><span>TB-GAE</span><code id="ja-clock-turn-power">0.72¹</code><output id="ja-clock-turn">0.7200</output><span aria-hidden="true" class="clock-track"><span id="ja-clock-turn-bar" style="width:72%"></span></span></div>
+<p aria-live="polite" class="example-reading" id="ja-clock-reading">混合列は6本の辺、観測だけを飛ばす列は3本の辺、TB-GAEは1つのターン境界を越えます。</p>
+</div>
+<p class="source-note">表示値は、末端の変化を起点へ伝える係数です。生成位置や価値などの入力は固定し、ログ長だけを変えています。γ = λ = 1にチェックすると、3種類とも係数は1になります。</p>
+<details class="method-detail example-detail" open=""><summary>3種類の再帰計算と4位置の手計算</summary>
+<p>g₁、g₂を第1ターン、g₃、g₄を第2ターンとします。各位置の生成直前の価値は順に0.2、0.4、0.5、0.8で、課題終了時だけ報酬1を得ます。</p>
+<p>まず各位置の時間差分残差を求め、末尾から順に遡って累積します。</p>
+<figure class="trajectory-figure" id="ja-figure-gae">
+<div class="trajectory-map" data-entry="gae" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/gae.ja.html" title="静的な図"></iframe></details>
+<figcaption>図 5 · 2ターン、4つの生成位置による数値例。上段はフィードバックの減衰を比較し、下段は収益目標とアドバンテージを区別します。<a href="https://arxiv.org/html/2610.22192v1#S2.SS3">方法は§2.3</a>。</figcaption>
+</figure>
+<ol class="calculation-steps">
+<li><strong>g₄：課題終了。</strong>報酬は1、事前予測は0.8なので、 <var>A₄ = 1 − 0.8 = 0.20</var>。</li>
+<li><strong>g₃：まだ第2ターン。</strong>価値が0.5から0.8へ変わるため、残差は0.3です。同じターンでは減衰しないので、 <var>A₃ = (0.8 − 0.5) + 0.20 = 0.50</var>。</li>
+<li><strong>g₂：第1ターンへ戻る。</strong>残差は <var>0.9 × 0.5 − 0.4 = 0.05</var>です。後続のアドバンテージには <var>0.9 × 0.8</var>を掛けるため、 <var>A₂ = 0.05 + 0.72 × 0.50 = 0.41</var>。</li>
+<li><strong>g₁：まだ第1ターン。</strong>同じターンなので引き続き減衰せず、<var>A₁ = (0.4 − 0.2) + 0.41 = 0.61</var>。</li>
+</ol>
+<div class="table-scroll"><table class="gae-values"><caption>手計算例 · 価値目標 Ĝ = A + v</caption><thead><tr><th scope="col">生成位置</th><th scope="col">ターン</th><th scope="col">元の予測 v</th><th scope="col">アドバンテージ A</th><th scope="col">価値目標 Ĝ</th></tr></thead><tbody>
+<tr><th scope="row">g₁</th><td>1</td><td>0.20</td><td>0.61</td><td>0.81</td></tr>
+<tr><th scope="row">g₂</th><td>1</td><td>0.40</td><td>0.41</td><td>0.81</td></tr>
+<tr><th scope="row">g₃</th><td>2</td><td>0.50</td><td>0.50</td><td>1.00</td></tr>
+<tr><th scope="row">g₄</th><td>2</td><td>0.80</td><td>0.20</td><td>1.00</td></tr>
+</tbody></table></div>
+<p>第1ターンの2位置は0.81という収益目標を共有しますが、事前予測が異なるため、アドバンテージは0.61と0.41です。Actorは各位置のアドバンテージで確率を更新し、Criticは対応する収益目標に適合させます。</p>
+</details>
+<details class="method-detail" open=""><summary>手計算を共通の再帰式で表す</summary><p>r̃ⱼは第j生成位置に割り当てる報酬です。この終端報酬の例では、最後の位置だけが非ゼロです。</p>
+<p>保持する生成位置だけに <var>j</var>を付け、 <var>vⱼ</var> をそのtokenの生成直前の価値とします。次の生成位置が同じターンなら <var>Γⱼ = Λⱼ = 1</var>、ターンをまたぐなら <var>Γⱼ = γ<sub>turn</sub>，Λⱼ = λ<sub>turn</sub></var>。<var>dⱼ = 1</var> は実際の終端を表します。</p>
+<div class="formula-scroll"><math aria-label="TB残差は、因果的報酬にGammaと1から終端フラグを引いた値と次の価値の積を加え、現在の価値を引く" display="block"><mrow><msub><mi>δ</mi><mi>j</mi></msub><mo>=</mo><msub><mover><mi>r</mi><mo>~</mo></mover><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>v</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>v</mi><mi>j</mi></msub></mrow></math></div>
+<div class="formula-scroll"><math aria-label="TBアドバンテージは、残差にGammaとLambdaと1から終端フラグを引いた値と次のアドバンテージの積を加える" display="block"><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msub><mi>δ</mi><mi>j</mi></msub><mo>+</mo><msub><mi>Γ</mi><mi>j</mi></msub><msub><mi>Λ</mi><mi>j</mi></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>d</mi><mi>j</mi></msub><mo>)</mo><msub><mi>A</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></div>
+<p>終端報酬は最後の生成位置に1回だけ入れます。同じターン内に中間報酬がなければ、隣り合う価値が相殺され、共通の収益目標Uₜが得られます。各位置で自分の価値予測を引くと、Aⱼ = Uₜ − vⱼです。この例の第1ターンの目標はU₁ = 0.9 × (0.5 + 0.8 × 0.5) = 0.81です。</p>
+<p>TB-GAEはターンを割引の単位とし、完結した1回の行動に1回の時間減衰を適用します。これにより、ログ長とターン内のtoken数が割引ステップ数から外れます。出典：<a href="https://arxiv.org/html/2610.22192v1#S2.SS3">式8–13</a>および<a href="https://arxiv.org/html/2610.22192v1#A3">付録C</a>。</p>
+</details>
+<details class="method-detail" open=""><summary>長い軌跡を分割したら、境界をどう扱うか</summary>
+<p>GPUメモリを節約したり分割計算したりするため、完全な軌跡を複数の区間に分け、後半の再帰計算結果を前半へ渡すことがあります。この例をg₂の後で切り、次の価値予測0.5だけを残して次のアドバンテージ0.5をゼロにすると、A₂は0.05、A₁は0.25になります。失われるフィードバックは、ちょうど0.72 × 0.5 = 0.36です。</p>
+<p>完全に接続するには、後続の価値とアドバンテージを両方渡すか、全系列をまとめて逆向きに計算する必要があります。サンプリングが早く止まり、将来部分をまだ実行していない場合には、<strong>価値のブートストラップ（bootstrap）</strong>を使い、現在の価値予測で将来の収益を見積もります。課題が実際に終了した場合、後続の価値とアドバンテージはゼロです。文脈の要約もモデルが読む履歴を変えるため、別途扱う必要があります。</p>
+</details>
+<p class="source-note">この節は§2.3で提案されたTB-GAEを説明しています。論文§2.4に記載された第1段階は、γ = λ = 1の標準GAEを使います。</p>
+</section><section aria-labelledby="ja-handoff">
+<h2 id="ja-handoff">5 新しい方策に合わせて価値を校正する</h2>
+<p>RSRでActorの行動は変わりますが、旧Criticは以前の経験で評価を続けます。報酬式も変われば、点数の尺度も変わります。古い予測で新方策のアドバンテージを計算すると、学習信号がずれる場合があります。</p>
+<p>そこでTerminal-RSIは既存のCriticを引き継ぎ、各RPR段階の冒頭で<strong>Actorを凍結</strong>します。つまりActorの重みを一時的に更新せず、Criticだけを4回校正してから共同学習に移ります。既存の経験を残しつつ、価値予測を新しい方策と報酬に合わせます。</p>
+<figure class="trajectory-figure" id="ja-figure-handoff">
+<div class="trajectory-map" data-entry="handoff" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/handoff.ja.html" title="静的な図"></iframe></details>
+<figcaption>図 6 · RSRではCriticを保持し、RPR段階の冒頭で4回校正してから共同更新します。出典：<a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a>。</figcaption>
+</figure>
+<details class="method-detail" id="ja-critic-initialization" open=""><summary>Criticの初回ウォームアップから再帰学習まで</summary>
+<ol class="method-steps">
+<li><strong>初回ウォームアップ。</strong>教師あり微調整を終えた RSR-1 Actor を固定し、<strong>科学ワークフロー再構築（Scientific Workflow Reconstruction、SWR）</strong>課題で Critic を 1 epoch、つまりデータを 1 巡して学習する。この課題では実行可能な科学プログラムを再構築し、隠されたチェックで動作を検証する。Actor が軌跡を供給し、Critic がリターン目標を学ぶ。その結果が原図の <em>Warm-up Critic Model</em> である。</li>
+<li><strong>RPRに入る。</strong>各RPR段階の最初にActorを固定し、Criticだけを4回校正します。その後、Actorはアドバンテージを用いてPPOで更新し、Criticは収益目標への価値回帰を行います。2組のパラメータはそれぞれ学習されます。</li>
+<li><strong>次の反復に入る。</strong>RSR-2はActorだけを微調整し、RPR-1のCriticの重みを保持します。RPR-2では新しいActorの実行結果でCriticを校正し、その後に共同学習を続けます。</li>
+</ol>
+<p>論文はこのウォームアップと重みの引き継ぎを説明していますが、初回ウォームアップ前にCriticの基盤へ読み込む具体的なcheckpoint、つまりモデル重みファイルは明記していません。出典：<a href="https://arxiv.org/html/2610.22192v1#S2.SS1.p3">§2.1</a>、<a href="https://arxiv.org/html/2610.22192v1#S2.SS4">§2.4</a>と<a href="https://arxiv.org/html/2610.22192v1#A1.p5">付録A</a>。</p>
+</details>
+</section><section aria-labelledby="ja-task">
+<h2 id="ja-task">6 局所テストから課題全体の達成へ</h2>
+<p>課題は Rust と C で計算機を作ること。最終検証は二つある。ビルド成果物を削除しても起動スクリプトが自動で再コンパイルできるか、そして未知の入力に対する出力が参照実装と<strong>一字一句一致するか</strong>を確認する。</p>
+<p>初期モデルBaseのある実行は、ローカルの計算テストと自動再ビルドには成功しました。しかし最終検証の出力は <code>23</code>で、参照出力は <code>23.0</code>でした。数値は同じでも、文字列は異なります。後の学習段階のRPR-2による独立した実行は、両方の検証に合格しました。</p>
+<figure class="trajectory-figure" id="ja-figure-case">
+<div class="trajectory-map" data-entry="case" data-reader-ready="" hidden=""></div>
+<details class="trajectory-static" open=""><summary>静的な図</summary><iframe class="static-diagram" loading="lazy" src="figures/case.ja.html" title="静的な図"></iframe></details>
+<figcaption>図 7 · 同じ計算機課題に対するBaseとRPR-2の独立した評価。最終検証では、自動ビルドと出力形式の両方を確認します。出典：<a href="https://arxiv.org/html/2610.22192v1#A8">Terminal-RSI、付録H、Figure 16</a>。</figcaption>
+</figure>
+<p>この RPR-2 の実行は Rust / C の部品と Python の式評価を組み合わせ、自動再ビルドと出力形式の両検証に合格した。</p>
+<details class="method-detail" open=""><summary>5つのモデル版は、この課題にそれぞれ何回合格したか</summary>
+<p>各版を2回ずつ評価した結果、完全合格はBase 0/2、RSR-1 0/2、RPR-1 1/2、RSR-2 2/2、RPR-2 2/2でした。</p>
+</details>
+</section><footer class="sources" id="ja-sources"><h2>参考文献</h2>
+<ol><li><a href="https://arxiv.org/html/2610.22192v1">Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine</a>。仕組みは§2、実際の実行例は付録Hを参照。<a href="https://arxiv.org/pdf/2610.22192">PDF ↗</a></li>
+<li><a href="https://arxiv.org/html/2610.02826v1">Recursive Self-Rewrite（RSR）</a>。実際のMarkdown書き換え例は§3.4を参照。</li>
+<li><a href="https://arxiv.org/abs/1707.06347">Proximal Policy Optimization Algorithms</a>；<a href="https://arxiv.org/abs/1506.02438">Generalized Advantage Estimation</a>。</li>
+</ol>
+</footer>
+</div>
+<p class="companion"><a data-site-link="" href="/writing/ppo-long-horizon/"><span lang="en">PPO, Along a Long-Horizon Trajectory</span><span lang="zh">PPO：沿一条长程轨迹看训练</span><span lang="ja">長い実行軌跡から理解するPPO</span> →</a></p><details class="article-resources"><summary><span lang="en">Figures and code</span><span lang="zh">图与代码</span><span lang="ja">図とコード</span></summary><p><a download="terminal-rsi-sources.json" href="sources.json"><span lang="en">Download article and figure sources (JSON)</span><span lang="zh">下载正文与可编辑图源（JSON）</span><span lang="ja">本文と編集可能な図のソースをダウンロード（JSON）</span></a></p></details></main>
+<footer class="site-footer"><a data-site-link="" href="/">Yecheng Zhang</a><a href="#article-start"><span lang="en">Back to top ↑</span><span lang="zh">回到顶部 ↑</span><span lang="ja">ページ上部 ↑</span></a></footer></body></html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" fill="none" role="img" aria-labelledby="poetic-writing-title">
+  <title id="poetic-writing-title">Water leaving the folds of a page</title>
+  <g stroke="#41453f" stroke-linecap="round" stroke-linejoin="round">
+    <path data-start="0" data-duration="1900" data-phase="current-to-crest" stroke-width="1.65" d="M42 266 C101 260 120 237 163 237 C204 238 225 259 274 257 C315 255 341 222 379 215 C418 207 449 225 492 223 C529 222 548 196 580 192 C615 187 654 200 678 192 C704 184 711 162 700 151 C688 138 668 147 665 162 C660 183 679 204 715 216 C741 225 758 227 786 225"/>
+    <path data-start="100" data-duration="1250" data-phase="current" stroke-width="1.5" d="M48 282 C96 279 128 253 165 253 C206 253 230 274 276 273 C322 271 347 239 382 232 C417 223 450 240 493 239 C539 236 556 214 584 210 C616 205 648 215 675 211"/>
+    <path data-start="230" data-duration="1300" data-phase="current" stroke-width="1.35" d="M62 299 C109 294 134 269 169 271 C208 273 237 290 278 289 C322 288 351 256 386 249 C423 242 458 257 499 255 C542 252 562 232 588 228 C615 225 636 231 661 229"/>
+    <path data-start="380" data-duration="1150" data-phase="current" stroke-width="1.05" d="M86 315 C124 308 145 289 176 290 C217 291 239 306 279 305 C326 303 355 275 391 267 C423 261 454 273 489 273"/>
+    <path data-start="640" data-duration="960" data-phase="current" stroke-width="1" d="M147 322 C173 315 189 313 209 317 M295 321 C338 315 362 292 397 284 C429 278 454 288 480 289"/>
+    <path data-start="880" data-duration="740" data-phase="current" stroke-width="1.1" d="M512 271 C546 268 564 252 589 246 C616 241 639 247 663 246"/>
+    <path data-start="1080" data-duration="580" data-phase="current" stroke-width=".9" d="M531 287 C556 282 576 270 595 266 C615 262 631 266 648 265"/>
+    <path data-start="2080" data-duration="380" data-phase="wake" stroke-width="1.05" d="M711 236 C739 244 760 244 784 242 M697 250 C724 259 746 261 771 258"/>
+    <path data-start="2260" data-duration="340" data-phase="wake" stroke-width=".85" d="M692 267 C715 274 737 278 757 275"/>
+    <path data-start="2420" data-duration="380" data-phase="wake" stroke-width=".8" d="M685 283 C708 291 724 294 743 291"/>
+    <path data-start="1720" data-duration="420" data-phase="curl" stroke-width="1.05" d="M668 183 C652 168 652 146 667 135 C680 126 700 128 711 139"/>
+    <path data-start="1950" data-duration="350" data-phase="curl" stroke-width=".75" d="M685 119 C700 118 712 124 719 132"/>
+    <path data-start="2100" data-duration="370" data-phase="curl" stroke-width=".8" d="M726 153 C733 174 743 185 758 190"/>
+    <path data-start="2310" data-duration="260" data-phase="spray" stroke-width=".8" d="M667 106 C675 103 681 103 688 104"/>
+    <path data-start="2410" data-duration="220" data-phase="spray" stroke-width="1" d="M635 128 C638 123 641 121 644 120"/>
+    <path data-start="2510" data-duration="240" data-phase="spray" stroke-width=".9" d="M736 115 C740 116 742 118 744 122"/>
+    <path data-start="2600" data-duration="200" data-phase="spray" stroke-width=".8" d="M629 178 L634 174"/>
+    <path data-start="1800" data-duration="340" data-phase="echo" stroke-width=".65" d="M120 211 C143 202 158 203 174 208 M240 219 C253 223 265 222 276 219"/>
+    <path data-start="2010" data-duration="350" data-phase="echo" stroke-width=".7" d="M340 201 C354 193 365 191 378 192 M439 202 C453 206 466 207 480 204"/>
+    <path data-start="2270" data-duration="320" data-phase="echo" stroke-width=".65" d="M537 180 C550 174 561 173 573 174"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+/* Reading controls are quiet until a figure or contents panel is opened. */
+html.writing-reader { --reader-ease:cubic-bezier(.22,1,.36,1); }
+.writing-reader .report-site-nav { grid-template-columns:minmax(150px,1fr) auto minmax(230px,1fr); gap:12px 24px; }
+.writing-reader .writing-preferences { gap:14px; }
+.writing-reader .diagram-style-picker { display:none; }
+.wr-controls { display:flex; align-items:center; gap:16px; font-size:13px; }
+.wr-settings,.wr-contents { position:relative; }
+.wr-settings>summary,.wr-contents>summary { list-style:none; cursor:pointer; color:#666b68; padding:8px 0; white-space:nowrap; }
+.wr-settings>summary::-webkit-details-marker,.wr-contents>summary::-webkit-details-marker { display:none; }
+.wr-settings>summary::after,.wr-contents>summary::after { content:'⌄'; display:inline-block; margin-left:7px; transition:transform .2s var(--reader-ease); }
+.wr-settings[open]>summary::after,.wr-contents[open]>summary::after { transform:rotate(180deg); }
+.wr-popover { position:absolute; z-index:60; top:calc(100% + 8px); right:0; background:#fff; width:245px; padding:20px; border:1px solid #e3e5e1; box-shadow:0 8px 24px #252a2310; animation:wr-reveal .2s var(--reader-ease); }
+.wr-popover label { display:block; font-size:12px; color:#73776f; margin:0 0 10px; }
+.wr-popover select { width:100%; font:inherit; color:#30342f; background:#fff; padding:9px 8px; border:1px solid #daddd5; border-radius:0; }
+.wr-contents { display:none; }
+.wr-contents .wr-popover { width:min(360px,calc(100vw - 40px)); max-height:65dvh; overflow:auto; overscroll-behavior:contain; }
+.wr-contents ol { list-style:none; padding:0; margin:0; }
+.wr-contents li { margin:0; }
+.wr-contents a { display:block; padding:9px 0; line-height:1.6; font-size:14px; overflow-wrap:anywhere; text-decoration:none; }
+.wr-contents a[aria-current] { color:#272c24; text-decoration:underline; }
+.wr-contents :is(nav>p,h2,h3) { display:none; }
+.writing-reader :is(.wr-settings,.wr-contents) summary:focus-visible,.wr-image-enlarge:focus-visible { outline:2px solid #748269; outline-offset:4px; }
+.wr-footer { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; max-width:1264px; margin:90px auto 0; padding:22px 0 0; border-top:1px solid #e5e7e2; font-size:12px; line-height:1.5; color:#72776f; }
+.wr-footer a { color:inherit; text-decoration:none; }
+.wr-footer .site-analytics-link { position:static!important; inset:auto!important; display:inline!important; padding:0!important; border:0!important; background:none!important; box-shadow:none!important; font:inherit!important; }
+.wr-image-enlarge { display:block; margin:8px 0 0 auto; border:0; padding:7px 0; background:none; color:#67705f; font-family:inherit; font-size:13px; line-height:1.5; cursor:pointer; }
+dialog.wr-image-dialog { width:96vw; max-width:1800px; height:94dvh; max-height:94dvh; padding:0; border:0; background:#fff; overflow:hidden; }
+dialog.wr-image-dialog::backdrop { background:#242923a8; }
+.wr-image-bar { display:flex; align-items:center; flex-wrap:wrap; gap:8px; padding:12px 18px; border-bottom:1px solid #e3e5df; font:13px/1.5 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; }
+.wr-image-bar button { padding:8px 12px; border:1px solid #e3e5df; background:#fff; color:#30342d; font:inherit; cursor:pointer; }
+.wr-image-bar button:last-child { margin-left:auto; }
+.wr-image-stage { overflow:auto; height:calc(100% - 65px); padding:24px; overscroll-behavior:contain; background:#fbfbf8; }
+.wr-image-stage img { display:block; max-width:none; height:auto; margin:0 auto; }
+.wr-image-dialog[open] { animation:wr-reveal .22s var(--reader-ease); }
+@keyframes wr-reveal { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:1199px) { .wr-contents { display:block; } }
+@media(max-width:1000px) {
+  .writing-reader .report-site-nav { grid-template-columns:minmax(0,1fr) auto; gap:8px 16px; }
+  .writing-reader .writing-back { grid-row:1; grid-column:1; }
+  .writing-reader .writing-preferences { display:contents; }
+  .writing-reader .languages { grid-row:1; grid-column:2; }
+  .writing-reader .edition-switch { grid-row:2; grid-column:1; min-width:0; }
+  .writing-reader .wr-controls { grid-row:2; grid-column:2; justify-self:end; gap:14px; }
+  .wr-contents .wr-popover { position:fixed; top:calc(var(--writing-nav-height,96px) + 12px); left:20px; right:20px; width:auto; }
+  .wr-settings .wr-popover { right:0; }
+}
+@media(max-width:480px) {
+  .writing-reader .report-site-nav { gap:8px 6px; margin-top:0; padding:10px 0; }
+  .writing-reader .writing-back { font-size:12px; }
+  .writing-reader .edition-switch { gap:4px; }
+  .writing-reader .report-site-nav .edition-switch a { padding:6px 4px; font-size:12px; }
+  .wr-controls { font-size:12px; }
+  .wr-footer { margin-top:56px; }
+  dialog.wr-image-dialog { width:100vw; height:100dvh; max-width:100vw; max-height:100dvh; margin:0; }
+}
+/* This sheet is also loaded in the existing open Shadow DOM of each diagram. */
+:host([data-reader-ready]) .tm-toolbar { gap:8px; padding:10px 0!important; }
+:host([data-reader-ready]:not([data-expanded])) .tm-toolbar { flex-wrap:nowrap; }
+:host([data-reader-ready]) .tm-toolbar>.tm-tools:first-child { flex:1; min-width:0; }
+:host([data-reader-ready]) .tm-toolbar select { max-width:100%; text-overflow:ellipsis; }
+:host([data-reader-ready]:not([data-expanded])) .tm-toolbar>.tm-tools:last-child>*:not([data-expand]) { display:none!important; }
+:host([data-reader-ready]:not([data-expanded])) :is(.tm-replay,.tm-navigator,.tm-breadcrumb,.tm-status) { display:none!important; }
+:host([data-reader-ready]:not([data-expanded])) .tm-viewport { pointer-events:none; }
+:host([data-reader-ready]:not([data-expanded])) .canvas .connection { animation:none!important; }
+:host([data-reader-ready]) [data-expand] { white-space:nowrap; color:#495442!important; }
+:host([data-reader-ready][data-expanded]) .tm-toolbar { padding:10px 14px!important; }
+:host([data-reader-ready][data-expanded]) [data-expand] { order:9; margin-left:8px; }
+.automation-map[data-reader-ready]:not(.am-expanded) .am-toolbar>.am-tools:last-child>*:not([data-reader-expand]) { display:none!important; }
+.automation-map[data-reader-ready]:not(.am-expanded) :is(.am-breadcrumb,.am-status) { display:none!important; }
+.automation-map[data-reader-ready]:not(.am-expanded) .am-viewport { pointer-events:none; }
+.automation-map[data-reader-ready]:not(.am-expanded) .am-toolbar { flex-wrap:nowrap; padding:10px 0!important; }
+.automation-map[data-reader-ready] .am-toolbar>.am-tools:first-child { flex:1; min-width:0; }
+.automation-map[data-reader-ready] .am-toolbar select { max-width:100%; text-overflow:ellipsis; }
+.automation-map[data-reader-ready].am-expanded .am-status { flex:none; height:64px; min-height:64px; overflow:auto; }
+@media(max-width:700px) {
+  :host([data-reader-ready]:not([data-expanded])) .tm-viewport { height:240px!important; }
+  :host([data-reader-ready]) .tm-toolbar select { font-size:13px; }
+  :host([data-reader-ready][data-expanded]) .tm-toolbar>.tm-tools:first-child { flex-basis:100%; }
+  :host([data-reader-ready][data-expanded]) .tm-toolbar>.tm-tools:last-child { gap:4px; }
+  :host([data-reader-ready][data-expanded]) .tm-toolbar button { padding:8px 7px; }
+  .automation-map[data-reader-ready]:not(.am-expanded) .am-viewport { max-height:260px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html.writing-reader { scroll-behavior:auto!important; }
+  .wr-popover,.wr-image-dialog[open] { animation:none!important; }
+  .wr-settings>summary::after,.wr-contents>summary::after { transition:none; }
+  :host([data-reader-ready]) .canvas *, .automation-map[data-reader-ready] * { animation:none!important; transition:none!important; }
+}
+@media print { .wr-controls,.wr-footer,.wr-image-enlarge,dialog.wr-image-dialog { display:none!important; } }
+
+/* The original image remains available on load failure, without JS, and in print.
+   map-ready is applied by the existing renderer only after its stylesheet loads. */
+@media screen { .writing-reader .map-ready > .trajectory-static { display:none; } }

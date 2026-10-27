@@ -1,0 +1,19 @@
+/* Only the injected Writing opening. The article, nav and dialogs keep their styles. */
+body:has(> .poetic-writing-entry.poetic-opening) { padding-top: 0; }
+.poetic-writing-entry[data-poetic-scene="writing"][data-poetic-size="entry"] {
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  margin-block: 0;
+  padding: 0;
+}
+/* These are the three known legacy contents sidebars, never a blanket aside/nav rule. */
+html[data-poetic-writing-cover] body > .blog-layout > .blog-sidebar,
+html[data-poetic-writing-cover] body > .report-layout > .report-sidebar,
+html[data-poetic-writing-cover] body > .layout > aside {
+  visibility: hidden;
+  pointer-events: none;
+}
+@media print {
+  .poetic-writing-entry[data-poetic-scene="writing"] { display: none; }
+}
